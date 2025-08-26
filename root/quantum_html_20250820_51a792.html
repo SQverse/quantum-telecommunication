@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPK TechPro - Pelatihan Teknisi Telekomunikasi & HP Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Variabel Warna untuk Light dan Dark Mode */
+        :root {
+            /* Light Mode */
+            --blue-light: #e6f0ff;
+            --blue-medium: #4a90e2;
+            --blue-dark: #1a3c6e;
+            --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f9fbff;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
+            
+            /* Transisi */
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variabel */
+        [data-theme="dark"] {
+            --blue-light: #1a3c6e;
+            --blue-medium: #3a7bd5;
+            --blue-dark: #e6f0ff;
+            --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
+            --text-dark: #f0f0f0;
+            --text-light: #e6e6e6;
+            --bg-light: #121212;
+            --card-bg: #1e1e1e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--blue-gradient);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .logo h1 {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--text-light);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Hero Section dengan Slideshow */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeIn 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-light);
+            color: var(--blue-medium);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--blue-medium);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 90px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--blue-gradient);
+            border-radius: 2px;
+        }
+
+        /* Keunggulan Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--blue-gradient);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--blue-dark);
+        }
+
+        /* Program Section dengan Carousel */
+        .programs-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .programs-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 25px;
+        }
+
+        .program-content h3 {
+            color: var(--blue-dark);
+            margin-bottom: 12px;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .program-price {
+            color: var(--blue-medium);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .program-benefits {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .program-benefits li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .program-benefits li::before {
+            content: '✓';
+            color: var(--blue-medium);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background: var(--blue-medium);
+            transform: scale(1.2);
+        }
+
+        /* Galeri Section dengan Layout Zigzag */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .gallery-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .gallery-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .gallery-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 350px;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-content {
+            flex: 1;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 60, 110, 0.85);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .gallery-image:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Testimoni Section dengan Video */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-video {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-video:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .testimonial-content {
+            padding: 20px;
+        }
+
+        .testimonial-content h3 {
+            margin-bottom: 10px;
+            color: var(--blue-dark);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--blue-medium);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--blue-dark);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-item.active .faq-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .faq-toggle {
+            transition: var(--transition);
+        }
+
+        /* Stats Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--blue-medium);
+            margin-bottom: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--blue-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section .section-title h2 {
+            color: var(--text-light);
+        }
+
+        .cta-section .section-title h2::after {
+            background: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--blue-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--blue-gradient);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--blue-medium);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3,
+        .footer-newsletter h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .footer-links h3::after,
+        .footer-newsletter h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--blue-medium);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--text-light);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--blue-medium);
+            width: 20px;
+        }
+
+        .map-container {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form button {
+            background: var(--blue-medium);
+            color: var(--text-light);
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--blue-light);
+            color: var(--blue-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--blue-gradient);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .gallery-item,
+            .gallery-item:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .gallery-image {
+                margin-bottom: 20px;
+            }
+
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+
+            .program-card {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--blue-dark);
+                padding: 80px 20px 20px;
+                transition: var(--transition);
+                z-index: 999;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                border-radius: 5px;
+            }
+
+            nav ul li a:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .mobile-menu-btn {
+                position: relative;
+                z-index: 1000;
+            }
+
+            .hero {
+                padding: 100px 0 80px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .program-card {
+                flex: 0 0 calc(100% - 20px);
+            }
+
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTAiIGZpbGw9IiM0QTkwRTIiLz4KPHBhdGggZD0iTTE1IDM1TDM1IDE1TTM1IDM1TDE1IDE1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="TechPro Logo">
+                <h1>LPK TechPro</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#programs">Program Pelatihan</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div class="container hero-content">
+            <h2>Pelatihan Teknisi Telekomunikasi & HP Profesional</h2>
+            <p>LPK TechPro menyediakan program pelatihan berkualitas tinggi di bidang telekomunikasi dan teknisi HP untuk mencetak tenaga kerja profesional dan kompeten.</p>
+            <div class="hero-buttons">
+                <a href="#programs" class="btn">Lihat Program Kami</a>
+                <a href="#contact" class="btn btn-outline">Daftar Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keunggulan LPK TechPro</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Instruktur Berpengalaman</h3>
+                    <p>Diajar oleh praktisi yang telah berkecimpung di industri telekomunikasi selama lebih dari 10 tahun</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Fasilitas Modern</h3>
+                    <p>Peralatan praktik terkini dan lengkap untuk menunjang proses belajar mengajar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Sertifikasi Resmi</h3>
+                    <p>Lulusan mendapatkan sertifikat kompetensi yang diakui oleh industri dan pemerintah</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Penyaluran Kerja</h3>
+                    <p>Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service center terkemuka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" style="background-color: var(--blue-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Pelatihan</h2>
+            </div>
+            <div class="programs-carousel">
+                <div class="programs-track" id="programsTrack">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknisi HP" loading="lazy">
+                        </div>
+                        <div class="program-content">
+                            <h3>Teknisi HP Professional</h3>
+                            <div class="program-meta">
+                                <span><i class="far fa-clock"></i> 3 bulan</span>
+                                <span class="program-price">Rp 3.500.000</span>
+                            </div>
+                            <ul class="program-benefits">
+                                <li>Perbaikan hardware dan software</li>
+                                <li>Microsoldering dan chip-level repair</li>
+                                <li>Data recovery dan flashing</li>
+                                <li>Konsultasi bisnis service center</li>
+                            </ul>
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fiber Optic" loading="lazy">
+                        </div>
+                        <div class="program-content">
+                            <h3>Teknisi Fiber Optic</h3>
+                            <div class="program-meta">
+                                <span><i class="far fa-clock"></i> 4 bulan</span>
+                                <span class="program-price">Rp 4.200.000</span>
+                            </div>
+                            <ul class="program-benefits">
+                                <li>Instalasi dan penyambungan kabel fiber</li>
+                                <li>Pengukuran dan testing jaringan</li>
+                                <li>Pemeliharaan dan troubleshooting</li>
+                                <li>Sertifikasi kompetensi</li>
+                            </ul>
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="BTS" loading="lazy">
+                        </div>
+                        <div class="program-content">
+                            <h3>Teknisi BTS & Jaringan 5G</h3>
+                            <div class="program-meta">
+                                <span><i class="far fa-clock"></i> 5 bulan</span>
+                                <span class="program-price">Rp 4.800.000</span>
+                            </div>
+                            <ul class="program-benefits">
+                                <li>Instalasi dan konfigurasi BTS</li>
+                                <li>Pemeliharaan jaringan 4G & 5G</li>
+                                <li>Troubleshooting network</li>
+                                <li>K3 dalam pekerjaan tower</li>
+                            </ul>
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <span class="carousel-dot active" data-index="0"></span>
+                    <span class="carousel-dot" data-index="1"></span>
+                    <span class="carousel-dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Praktik Teknisi HP" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Praktik Teknisi HP</h3>
+                            <p>Peserta pelatihan sedang mempraktikkan perbaikan motherboard smartphone dengan alat modern</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Angkatan XXII - Juni 2023</h3>
+                        <p>Pelatihan teknisi HP angkatan ke-22 dengan fokus pada chip-level repair dan microsoldering. Kelas ini diikuti oleh 25 peserta yang berasal dari berbagai daerah di Indonesia.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Praktik Fiber Optic" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Penyambungan Fiber Optic</h3>
+                            <p>Peserta pelatihan mempraktikkan teknik penyambungan kabel fiber optic dengan menggunakan fusion splicer</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Angkatan XVIII - April 2023</h3>
+                        <p>Pelatihan teknisi fiber optic dengan fokus pada instalasi, penyambungan, dan testing jaringan fiber. Peserta melakukan praktik langsung di lapangan dengan peralatan terkini.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pemasangan BTS" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pemasangan Menara BTS</h3>
+                            <p>Peserta pelatihan melakukan praktik pemasangan perangkat BTS di menara komunikasi dengan penerapan K3</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Angkatan XV - Februari 2023</h3>
+                        <p>Pelatihan teknisi BTS dan jaringan 5G dengan materi instalasi, konfigurasi, dan pemeliharaan menara telekomunikasi. Peserta dibekali dengan sertifikasi K3 tower.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background-color: var(--blue-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2Testimoni Alumni</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-video">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Testimoni Alumni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>Budi Santoso</h3>
+                        <p class="testimonial-text">"Setelah lulus dari LPK TechPro, saya langsung diterima bekerja di service center ternama. Materi yang diajarkan sangat relevan dengan kebutuhan industri."</p>
+                        <p class="testimonial-author">Teknisi HP - Lulusan 2022</p>
+                    </div>
+                </div>
+                <div class="testimonial-video">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Testimoni Alumni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>Sinta Nurhaliza</h3>
+                        <p class="testimonial-text">"Instruktur di LPK TechPro sangat berpengalaman dan metode pembelajarannya mudah dipahami. Fasilitas praktiknya juga lengkap dan modern."</p>
+                        <p class="testimonial-author">Teknisi BTS - Lulusan 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara mendaftar program pelatihan?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pendaftaran dapat dilakukan secara online melalui website kami atau langsung datang ke kantor LPK TechPro. Untuk pendaftaran online, isi formulir pendaftaran pada bagian Kontak dan kami akan menghubungi Anda untuk proses selanjutnya.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah tersedia program pelatihan online?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan program pelatihan online untuk materi-materi teori. Namun untuk praktik, tetap diperlukan kehadiran di lokasi karena membutuhkan peralatan khusus yang disediakan oleh LPK.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah ada garansi sampai bisa?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami memberikan garansi hingga peserta mampu dan menguasai materi pelatihan. Jika setelah selesai pelatihan masih merasa kurang menguasai, peserta dapat mengulang di angkatan berikutnya tanpa biaya tambahan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah disediakan asrama untuk peserta dari luar kota?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan asrama dengan fasilitas lengkap untuk peserta dari luar kota dengan biaya tambahan yang terjangkau. Asrama berada dalam jarak yang dekat dari lokasi pelatihan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" style="background-color: var(--blue-medium); color: var(--text-light);">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1250">0</div>
+                    <div class="stat-label">Alumni Terlatih</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">Tingkat Penyerapan Kerja</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="28">0</div>
+                    <div class="stat-label">Angkatan Terlaksana</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Mitra Industri</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Siap Mengembangkan Karier Anda?</h2>
+            </div>
+            <p>Daftar sekarang dan raih peluang kerja di bidang telekomunikasi dan teknisi HP yang semakin berkembang</p>
+            <a href="#contact" class="btn btn-outline" style="margin-top: 30px;">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontak Kami</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Telekomunikasi No. 123, Bandung, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>(022) 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@lpktechpro.id</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
+                            <p>Sabtu: 08:00 - 14:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="program">Program yang Diminati</label>
+                            <select id="program" required>
+                                <option value="">Pilih Program</option>
+                                <option value="teknisi-hp">Teknisi HP Professional</option>
+                                <option value="fiber-optic">Teknisi Fiber Optic</option>
+                                <option value="bts">Teknisi BTS & Jaringan 5G</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">LPK TechPro</div>
+                    <p>Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang menghasilkan tenaga kerja profesional dan kompeten.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#programs">Program Pelatihan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Kontak</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123, Bandung</p>
+                    <p><i class="fas fa-phone"></i> (022) 1234-5678</p>
+                    <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@lpktechpro.id</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7892828312786!2d107.6083944740441!3d-6.917355293083251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62577714b17%3A0x19e1e82b39159f1d!2sBandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1692469959231!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru tentang program pelatihan.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Alamat email Anda" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LPK TechPro Telecommunication. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        const body = document.body;
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                body.style.overflow = '';
+                
+                // Reset icon
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or respect OS preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Hero Slideshow
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroSlides[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide === heroSlides.length - 1) ? 0 : currentSlide + 1;
+            showSlide(currentSlide);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Program Carousel
+        const programsTrack = document.getElementById('programsTrack');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        let currentProgram = 0;
+        
+        function moveCarousel(index) {
+            const programWidth = document.querySelector('.program-card').offsetWidth + 20;
+            programsTrack.style.transform = `translateX(-${index * programWidth}px)`;
+            
+            carouselDots.forEach(dot => dot.classList.remove('active'));
+            carouselDots[index].classList.add('active');
+            
+            currentProgram = index;
+        }
+        
+        carouselDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                moveCarousel(index);
+            });
+        });
+
+        // Auto rotate carousel
+        setInterval(() => {
+            currentProgram = (currentProgram === carouselDots.length - 1) ? 0 : currentProgram + 1;
+            moveCarousel(currentProgram);
+        }, 4000);
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Animated Stats Counter
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let counted = false;
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        function checkStats() {
+            const statsSection = document.getElementById('stats');
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            const triggerHeight = window.innerHeight * 0.8;
+            
+            if (sectionTop < triggerHeight && !counted) {
+                counted = true;
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    animateValue(stat, 0, target, 2000);
+                });
+            }
+        }
+
+        // Scroll animations
+        function checkScroll() {
+            const sections = document.querySelectorAll('section');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerHeight = window.innerHeight * 0.8;
+                
+                if (sectionTop < triggerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+            
+            // Show/hide back to top button
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+            
+            // Check if stats section is in view
+            checkStats();
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Form validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                const program = document.getElementById('program');
+                const message = document.getElementById('message');
+                
+                let isValid = true;
+                
+                if (name.value.trim() === '') {
+                    isValid = false;
+                    highlightError(name);
+                } else {
+                    removeHighlight(name);
+                }
+                
+                if (email.value.trim() === '' || !isValidEmail(email.value)) {
+                    isValid = false;
+                    highlightError(email);
+                } else {
+                    removeHighlight(email);
+                }
+                
+                if (phone.value.trim() === '') {
+                    isValid = false;
+                    highlightError(phone);
+                } else {
+                    removeHighlight(phone);
+                }
+                
+                if (program.value === '') {
+                    isValid = false;
+                    highlightError(program);
+                } else {
+                    removeHighlight(program);
+                }
+                
+                if (message.value.trim() === '') {
+                    isValid = false;
+                    highlightError(message);
+                } else {
+                    removeHighlight(message);
+                }
+                
+                if (isValid) {
+                    // Here you would normally submit the form
+                    alert('Terima kasih! Pendaftaran Anda telah berhasil dikirim. Kami akan menghubungi Anda segera.');
+                    contactForm.reset();
+                }
+            });
+        }
+        
+        function highlightError(field) {
+            field.style.borderColor = '#ff3860';
+        }
+        
+        function removeHighlight(field) {
+            field.style.borderColor = '#ddd';
+        }
+        
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                
+                if (emailInput.value && isValidEmail(emailInput.value)) {
+                    alert('Terima kasih telah berlangganan newsletter kami!');
+                    emailInput.value = '';
+                } else {
+                    alert('Silakan masukkan alamat email yang valid.');
+                    emailInput.focus();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
