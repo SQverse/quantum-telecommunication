@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LPK TechPro - Pelatihan Teknisi Telekomunikasi & HP Profesional</title>
+    <title>LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
@@ -21,8 +21,8 @@
             --text-light: #fff;
             --bg-light: #f9fbff;
             --card-bg: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
             
             /* Transisi */
             --transition: all 0.3s ease;
@@ -38,8 +38,8 @@
             --text-light: #e6e6e6;
             --bg-light: #121212;
             --card-bg: #1e1e1e;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         /* Reset & Base Styles */
@@ -52,6 +52,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -100,6 +101,7 @@
         .logo h1 {
             color: var(--text-light);
             font-size: 1.5rem;
+            font-weight: 700;
             transition: var(--transition);
         }
 
@@ -109,7 +111,8 @@
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 20px;
+            position: relative;
         }
 
         nav ul li a {
@@ -120,6 +123,7 @@
             padding: 8px 12px;
             border-radius: 4px;
             position: relative;
+            font-size: 0.95rem;
         }
 
         nav ul li a::after {
@@ -136,6 +140,48 @@
 
         nav ul li a:hover::after {
             width: 80%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card-bg);
+            min-width: 200px;
+            box-shadow: var(--shadow-hover);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark);
+            padding: 12px 16px;
+            display: block;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--blue-light);
+            color: var(--blue-dark);
+        }
+
+        .dropdown-content a::after {
+            display: none;
         }
 
         .mobile-menu-btn {
@@ -165,6 +211,7 @@
         /* Hero Section dengan Slideshow */
         .hero {
             height: 100vh;
+            min-height: 700px;
             position: relative;
             overflow: hidden;
             color: var(--text-light);
@@ -218,17 +265,21 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease;
+            font-weight: 800;
+            max-width: 800px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 30px;
             animation: fadeInUp 1s ease 0.3s forwards;
             opacity: 0;
+            font-weight: 300;
         }
 
         .hero-buttons {
@@ -289,11 +340,12 @@
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--blue-dark);
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
+            font-weight: 700;
         }
 
         .section-title h2::after {
@@ -308,20 +360,45 @@
             border-radius: 2px;
         }
 
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
         /* Keunggulan Section */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .feature-card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 30px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--blue-gradient);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
         }
 
         .feature-card:hover {
@@ -330,15 +407,15 @@
         }
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: var(--blue-gradient);
             color: var(--text-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin: 0 auto 20px;
             transition: var(--transition);
         }
@@ -350,38 +427,66 @@
         .feature-card h3 {
             margin-bottom: 15px;
             color: var(--blue-dark);
+            font-size: 1.3rem;
         }
 
-        /* Program Section dengan Carousel */
-        .programs-carousel {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
+        /* Program Section dengan Tabs */
+        .programs-section {
+            background-color: var(--blue-light);
         }
 
-        .programs-track {
+        .program-tabs {
             display: flex;
-            transition: transform 0.5s ease;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .program-tab {
+            padding: 12px 25px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .program-tab.active {
+            background: var(--blue-medium);
+            color: var(--text-light);
+        }
+
+        .program-tab:hover:not(.active) {
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .program-card {
-            flex: 0 0 calc(33.333% - 20px);
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            margin: 0 10px;
             transition: var(--transition);
+            display: none;
         }
 
-        .program-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-hover);
+        .program-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
         }
 
         .program-image {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
 
         .program-image img {
@@ -395,6 +500,18 @@
             transform: scale(1.1);
         }
 
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--blue-medium);
+            color: var(--text-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         .program-content {
             padding: 25px;
         }
@@ -402,6 +519,7 @@
         .program-content h3 {
             color: var(--blue-dark);
             margin-bottom: 12px;
+            font-size: 1.3rem;
         }
 
         .program-meta {
@@ -414,8 +532,8 @@
 
         .program-price {
             color: var(--blue-medium);
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
 
         .program-benefits {
@@ -436,96 +554,365 @@
             left: -20px;
         }
 
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
+        .program-cta {
+            margin-top: 20px;
         }
 
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: var(--transition);
+        /* Instruktur Section */
+        .instructors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .carousel-dot.active {
-            background: var(--blue-medium);
-            transform: scale(1.2);
-        }
-
-        /* Galeri Section dengan Layout Zigzag */
-        .gallery-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .gallery-item {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .gallery-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .gallery-image {
-            flex: 1;
-            border-radius: 10px;
+        .instructor-card {
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            position: relative;
-            height: 350px;
+            transition: var(--transition);
+            text-align: center;
         }
 
-        .gallery-image img {
+        .instructor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .instructor-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .instructor-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .gallery-content {
-            flex: 1;
+        .instructor-card:hover .instructor-image img {
+            transform: scale(1.1);
         }
 
-        .gallery-image:hover img {
-            transform: scale(1.05);
+        .instructor-info {
+            padding: 20px;
         }
 
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 60, 110, 0.85);
-            color: var(--text-light);
+        .instructor-name {
+            font-size: 1.2rem;
+            color: var(--blue-dark);
+            margin-bottom: 5px;
+        }
+
+        .instructor-role {
+            color: var(--blue-medium);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .instructor-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .instructor-social {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 25px;
-            text-align: center;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .gallery-image:hover .gallery-overlay {
+        .instructor-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--blue-light);
+            color: var(--blue-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .instructor-social a:hover {
+            background: var(--blue-medium);
+            color: var(--text-light);
+        }
+
+        /* Mitra Section */
+        .partners-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .partner-item {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .partner-item img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-item:hover img {
+            filter: grayscale(0%);
             opacity: 1;
         }
 
-        .gallery-overlay h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+        /* Alumni Section */
+        .alumni-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 10px;
         }
 
-        /* Testimoni Section dengan Video */
+        .alumni-tab {
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .alumni-tab.active {
+            background: var(--blue-medium);
+            color: var(--text-light);
+        }
+
+        .alumni-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .alumni-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: none;
+        }
+
+        .alumni-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .alumni-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .alumni-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .alumni-info {
+            padding: 20px;
+        }
+
+        .alumni-name {
+            font-size: 1.2rem;
+            color: var(--blue-dark);
+            margin-bottom: 5px;
+        }
+
+        .alumni-batch {
+            color: var(--blue-medium);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .alumni-testimonial {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .alumni-current {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .alumni-current span {
+            color: var(--blue-medium);
+            font-weight: 600;
+        }
+
+        /* Berita Section */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            color: var(--blue-dark);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .news-card:hover .news-title {
+            color: var(--blue-medium);
+        }
+
+        .news-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .news-link {
+            color: var(--blue-medium);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .news-link:hover {
+            gap: 10px;
+        }
+
+        /* Kerjasama Section */
+        .collaboration-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .collaboration-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .collaboration-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .collaboration-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .collaboration-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .collaboration-card:hover .collaboration-image img {
+            transform: scale(1.1);
+        }
+
+        .collaboration-content {
+            padding: 20px;
+        }
+
+        .collaboration-title {
+            font-size: 1.2rem;
+            color: var(--blue-dark);
+            margin-bottom: 10px;
+        }
+
+        .collaboration-partner {
+            color: var(--blue-medium);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .collaboration-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .collaboration-date {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Testimoni Video Section */
+        .testimonials-section {
+            background-color: var(--blue-light);
+        }
+
         .testimonials-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -534,7 +921,7 @@
 
         .testimonial-video {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -930,21 +1317,18 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .gallery-item,
-            .gallery-item:nth-child(even) {
-                flex-direction: column;
-            }
-            
-            .gallery-image {
-                margin-bottom: 20px;
-            }
-
             .hero h2 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
 
-            .program-card {
-                flex: 0 0 calc(50% - 20px);
+            .programs-container,
+            .instructors-container,
+            .partners-container,
+            .alumni-container,
+            .news-container,
+            .collaboration-container,
+            .testimonials-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
 
@@ -965,6 +1349,7 @@
                 transition: var(--transition);
                 z-index: 999;
                 box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+                overflow-y: auto;
             }
             
             nav.active {
@@ -987,6 +1372,21 @@
 
             nav ul li a:hover {
                 background: rgba(255, 255, 255, 0.1);
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                margin-left: 20px;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
             }
 
             .mobile-menu-btn {
@@ -1015,12 +1415,9 @@
                 gap: 15px;
             }
 
-            .program-card {
-                flex: 0 0 calc(100% - 20px);
-            }
-
-            .testimonials-container {
-                grid-template-columns: 1fr;
+            .program-tabs,
+            .alumni-tabs {
+                flex-wrap: wrap;
             }
         }
 
@@ -1048,6 +1445,16 @@
             .stat-number {
                 font-size: 2.5rem;
             }
+
+            .programs-container,
+            .instructors-container,
+            .partners-container,
+            .alumni-container,
+            .news-container,
+            .collaboration-container,
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1056,16 +1463,27 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTAiIGZpbGw9IiM0QTkwRTIiLz4KPHBhdGggZD0iTTE1IDM1TDM1IDE1TTM1IDM1TDE1IDE1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="TechPro Logo">
-                <h1>LPK TechPro</h1>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTAiIGZpbGw9IiM0QTkwRTIiLz4KPHBhdGggZD0iTTE1IDM1TDM1IDE1TTM1IDM1TDE1IDE1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Quantum Telecommunication Logo">
+                <h1>LPK Quantum</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#programs">Program Pelatihan</a></li>
-                    <li><a href="#gallery">Galeri</a></li>
+                    <li class="dropdown">
+                        <a href="#programs">Program <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#offline">Kelas Offline</a>
+                            <a href="#online">Kelas Online</a>
+                            <a href="#subsidi">Kelas Subsidi</a>
+                            <a href="#gratis">Kelas Gratis</a>
+                        </div>
+                    </li>
+                    <li><a href="#collaboration">Kerjasama</a></li>
+                    <li><a href="#alumni">Alumni</a></li>
+                    <li><a href="#news">Berita/Artikel</a></li>
                     <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#partners">Mitra</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -1088,8 +1506,8 @@
             <div class="hero-slide"></div>
         </div>
         <div class="container hero-content">
-            <h2>Pelatihan Teknisi Telekomunikasi & HP Profesional</h2>
-            <p>LPK TechPro menyediakan program pelatihan berkualitas tinggi di bidang telekomunikasi dan teknisi HP untuk mencetak tenaga kerja profesional dan kompeten.</p>
+            <h2>Pelatihan Teknisi HP & Telekomunikasi Profesional</h2>
+            <p>LPK Quantum menyediakan program pelatihan berkualitas tinggi di bidang telekomunikasi dan teknisi HP untuk mencetak tenaga kerja profesional dan kompeten.</p>
             <div class="hero-buttons">
                 <a href="#programs" class="btn">Lihat Program Kami</a>
                 <a href="#contact" class="btn btn-outline">Daftar Sekarang</a>
@@ -1101,7 +1519,7 @@
     <section id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Keunggulan LPK TechPro</h2>
+                <h2>Keunggulan LPK Quantum</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -1137,135 +1555,362 @@
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" style="background-color: var(--blue-light);">
+    <section id="programs" class="programs-section">
         <div class="container">
             <div class="section-title">
                 <h2>Program Pelatihan</h2>
             </div>
-            <div class="programs-carousel">
-                <div class="programs-track" id="programsTrack">
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknisi HP" loading="lazy">
-                        </div>
-                        <div class="program-content">
-                            <h3>Teknisi HP Professional</h3>
-                            <div class="program-meta">
-                                <span><i class="far fa-clock"></i> 3 bulan</span>
-                                <span class="program-price">Rp 3.500.000</span>
-                            </div>
-                            <ul class="program-benefits">
-                                <li>Perbaikan hardware dan software</li>
-                                <li>Microsoldering dan chip-level repair</li>
-                                <li>Data recovery dan flashing</li>
-                                <li>Konsultasi bisnis service center</li>
-                            </ul>
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fiber Optic" loading="lazy">
-                        </div>
-                        <div class="program-content">
-                            <h3>Teknisi Fiber Optic</h3>
-                            <div class="program-meta">
-                                <span><i class="far fa-clock"></i> 4 bulan</span>
-                                <span class="program-price">Rp 4.200.000</span>
-                            </div>
-                            <ul class="program-benefits">
-                                <li>Instalasi dan penyambungan kabel fiber</li>
-                                <li>Pengukuran dan testing jaringan</li>
-                                <li>Pemeliharaan dan troubleshooting</li>
-                                <li>Sertifikasi kompetensi</li>
-                            </ul>
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="BTS" loading="lazy">
-                        </div>
-                        <div class="program-content">
-                            <h3>Teknisi BTS & Jaringan 5G</h3>
-                            <div class="program-meta">
-                                <span><i class="far fa-clock"></i> 5 bulan</span>
-                                <span class="program-price">Rp 4.800.000</span>
-                            </div>
-                            <ul class="program-benefits">
-                                <li>Instalasi dan konfigurasi BTS</li>
-                                <li>Pemeliharaan jaringan 4G & 5G</li>
-                                <li>Troubleshooting network</li>
-                                <li>K3 dalam pekerjaan tower</li>
-                            </ul>
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-nav">
-                    <span class="carousel-dot active" data-index="0"></span>
-                    <span class="carousel-dot" data-index="1"></span>
-                    <span class="carousel-dot" data-index="2"></span>
-                </div>
+            <div class="program-tabs">
+                <button class="program-tab active" data-category="all">Semua Program</button>
+                <button class="program-tab" data-category="offline">Kelas Offline</button>
+                <button class="program-tab" data-category="online">Kelas Online</button>
+                <button class="program-tab" data-category="subsidi">Kelas Subsidi</button>
+                <button class="program-tab" data-category="gratis">Kelas Gratis</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Galeri Section -->
-    <section id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Galeri Kegiatan</h2>
-            </div>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Praktik Teknisi HP" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Praktik Teknisi HP</h3>
-                            <p>Peserta pelatihan sedang mempraktikkan perbaikan motherboard smartphone dengan alat modern</p>
-                        </div>
+            <div class="programs-container">
+                <div class="program-card active" data-category="offline">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknisi HP" loading="lazy">
+                        <div class="program-badge">Offline</div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>Angkatan XXII - Juni 2023</h3>
-                        <p>Pelatihan teknisi HP angkatan ke-22 dengan fokus pada chip-level repair dan microsoldering. Kelas ini diikuti oleh 25 peserta yang berasal dari berbagai daerah di Indonesia.</p>
+                    <div class="program-content">
+                        <h3>Teknisi HP Professional</h3>
+                        <div class="program-meta">
+                            <span><i class="far fa-clock"></i> 3 bulan</span>
+                            <span class="program-price">Rp 3.500.000</span>
+                        </div>
+                        <ul class="program-benefits">
+                            <li>Perbaikan hardware dan software</li>
+                            <li>Microsoldering dan chip-level repair</li>
+                            <li>Data recovery dan flashing</li>
+                            <li>Konsultasi bisnis service center</li>
+                        </ul>
+                        <div class="program-cta">
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Praktik Fiber Optic" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Penyambungan Fiber Optic</h3>
-                            <p>Peserta pelatihan mempraktikkan teknik penyambungan kabel fiber optic dengan menggunakan fusion splicer</p>
-                        </div>
+                <div class="program-card active" data-category="online">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kelas Online" loading="lazy">
+                        <div class="program-badge">Online</div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>Angkatan XVIII - April 2023</h3>
-                        <p>Pelatihan teknisi fiber optic dengan fokus pada instalasi, penyambungan, dan testing jaringan fiber. Peserta melakukan praktik langsung di lapangan dengan peralatan terkini.</p>
+                    <div class="program-content">
+                        <h3>Kursus Online Teknisi HP</h3>
+                        <div class="program-meta">
+                            <span><i class="far fa-clock"></i> 2 bulan</span>
+                            <span class="program-price">Rp 1.800.000</span>
+                        </div>
+                        <ul class="program-benefits">
+                            <li>Akses video pembelajaran selamanya</li>
+                            <li>Grup diskusi dengan instruktur</li>
+                            <li>Konsultasi online</li>
+                            <li>Sertifikat elektronik</li>
+                        </ul>
+                        <div class="program-cta">
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pemasangan BTS" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Pemasangan Menara BTS</h3>
-                            <p>Peserta pelatihan melakukan praktik pemasangan perangkat BTS di menara komunikasi dengan penerapan K3</p>
-                        </div>
+                <div class="program-card active" data-category="subsidi">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fiber Optic" loading="lazy">
+                        <div class="program-badge">Subsidi</div>
                     </div>
-                    <div class="gallery-content">
-                        <h3>Angkatan XV - Februari 2023</h3>
-                        <p>Pelatihan teknisi BTS dan jaringan 5G dengan materi instalasi, konfigurasi, dan pemeliharaan menara telekomunikasi. Peserta dibekali dengan sertifikasi K3 tower.</p>
+                    <div class="program-content">
+                        <h3>Teknisi Fiber Optic Bersubsidi</h3>
+                        <div class="program-meta">
+                            <span><i class="far fa-clock"></i> 4 bulan</span>
+                            <span class="program-price">Rp 2.500.000</span>
+                        </div>
+                        <ul class="program-benefits">
+                            <li>Instalasi dan penyambungan kabel fiber</li>
+                            <li>Pengukuran dan testing jaringan</li>
+                            <li>Pemeliharaan dan troubleshooting</li>
+                            <li>Sertifikasi kompetensi</li>
+                        </ul>
+                        <div class="program-cta">
+                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" style="background-color: var(--blue-light);">
+    <!-- Instruktur Section -->
+    <section id="instructors">
         <div class="container">
             <div class="section-title">
-                <h2Testimoni Alumni</h2>
+                <h2>Tim Instruktur Profesional</h2>
+            </div>
+            <p class="section-subtitle">Belajar langsung dari para praktisi berpengalaman di bidang telekomunikasi dan teknisi HP</p>
+            <div class="instructors-container">
+                <!-- Instructor 1 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Instruktur" loading="lazy">
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Ahmad Supriyadi</h3>
+                        <p class="instructor-role">Senior Teknisi HP</p>
+                        <p class="instructor-desc">Berpengalaman lebih dari 12 tahun di bidang reparasi smartphone dan microsoldering.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instructor 2 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Instruktur" loading="lazy">
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Dewi Anggraini</h3>
+                        <p class="instructor-role">Spesialis Jaringan</p>
+                        <p class="instructor-desc">Ahli dalam instalasi dan maintenance jaringan fiber optic dengan pengalaman 10 tahun.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instructor 3 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Instruktur" loading="lazy">
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Budi Santoso</h3>
+                        <p class="instructor-role">Engineer BTS</p>
+                        <p class="instructor-desc">Berkecimpung di industri telekomunikasi selama 15 tahun, khususnya tower dan BTS.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instructor 4 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Instruktur" loading="lazy">
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Rina Wijaya</h3>
+                        <p class="instructor-role">Software Specialist</p>
+                        <p class="instructor-desc">Ahli dalam software repair, flashing, dan data recovery berbagai merek smartphone.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#instructors" class="btn">Lihat Semua Instruktur</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mitra Section -->
+    <section id="partners" style="background-color: var(--blue-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mitra Kerjasama LPK Quantum</h2>
+            </div>
+            <p class="section-subtitle">Kami bekerja sama dengan berbagai perusahaan dan institusi untuk menyediakan pelatihan terbaik dan penyaluran kerja</p>
+            <div class="partners-container">
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=LCD" alt="LCD Partner">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Magic+Service" alt="Magic Service">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Telkom" alt="Telkom">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=XL+Axiata" alt="XL Axiata">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Indosat" alt="Indosat">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Smartfren" alt="Smartfren">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="alumni">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kisah Sukses Alumni</h2>
+            </div>
+            <div class="alumni-tabs">
+                <button class="alumni-tab active" data-category="offline">Alumni Offline</button>
+                <button class="alumni-tab" data-category="online">Alumni Online</button>
+            </div>
+            <div class="alumni-container">
+                <!-- Alumni 1 -->
+                <div class="alumni-card active" data-category="offline">
+                    <div class="alumni-image">
+                        <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Alumni" loading="lazy">
+                    </div>
+                    <div class="alumni-info">
+                        <h3 class="alumni-name">Rudi Hermawan</h3>
+                        <p class="alumni-batch">Angkatan XVIII - Teknisi HP</p>
+                        <p class="alumni-testimonial">"Setelah lulus dari LPK Quantum, saya membuka service center sendiri dan sekarang sudah memiliki 2 cabang."</p>
+                        <p class="alumni-current">Kini: <span>Pemilik Rudi Cell</span></p>
+                    </div>
+                </div>
+                
+                <!-- Alumni 2 -->
+                <div class="alumni-card active" data-category="offline">
+                    <div class="alumni-image">
+                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Alumni" loading="lazy">
+                    </div>
+                    <div class="alumni-info">
+                        <h3 class="alumni-name">Siti Rahayu</h3>
+                        <p class="alumni-batch">Angkatan XXII - Fiber Optic</p>
+                        <p class="alumni-testimonial">"Pelatihan di LPK Quantum sangat lengkap dan instruktur sangat berpengalaman. Saya langsung diterima kerja di perusahaan jaringan."</p>
+                        <p class="alumni-current">Kini: <span>Teknisi Fiber Optic di Netwave</span></p>
+                    </div>
+                </div>
+                
+                <!-- Alumni 3 -->
+                <div class="alumni-card active" data-category="online">
+                    <div class="alumni-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nama Alumni" loading="lazy">
+                    </div>
+                    <div class="alumni-info">
+                        <h3 class="alumni-name">Diana Putri</h3>
+                        <p class="alumni-batch">Kelas Online - Angkatan VII</p>
+                        <p class="alumni-testimonial">"Meski belajar online, materi yang disampaikan sangat detail dan mudah dipahami. Sekarang saya bisa servis HP sendiri dan buka usaha sampingan."</p>
+                        <p class="alumni-current">Kini: <span>Teknisi HP Freelance</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section id="news" style="background-color: var(--blue-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Berita & Artikel Terbaru</h2>
+            </div>
+            <p class="section-subtitle">Informasi terkini seputar dunia telekomunikasi, teknisi HP, dan kegiatan LPK Quantum</p>
+            <div class="news-container">
+                <!-- Berita 1 -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 12 Oktober 2023</p>
+                        <h3 class="news-title">Peluncuran Program Pelatihan 5G Technology</h3>
+                        <p class="news-excerpt">LPK Quantum meluncurkan program pelatihan baru khusus teknologi 5G untuk memenuhi kebutuhan industri telekomunikasi yang semakin berkembang.</p>
+                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Berita 2 -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 5 Oktober 2023</p>
+                        <h3 class="news-title">Tips Merawat Baterai Smartphone agar Awet</h3>
+                        <p class="news-excerpt">Bagaimana cara merawat baterai smartphone Anda agar tetap awet dan tidak cepat rusak? Simak tips dari instruktur LPK Quantum.</p>
+                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Berita 3 -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 28 September 2023</p>
+                        <h3 class="news-title">Kerjasama LPK Quantum dengan Dinas Tenaga Kerja</h3>
+                        <p class="news-excerpt">LPK Quantum menjalin kerjasama dengan Dinas Tenaga Kerja setempat untuk menyelenggarakan pelatihan gratis bagi pengangguran.</p>
+                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#news" class="btn">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kerjasama Section -->
+    <section id="collaboration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dokumentasi Kerjasama</h2>
+            </div>
+            <p class="section-subtitle">Kegiatan kerjasama LPK Quantum dengan berbagai instansi pemerintah dan swasta</p>
+            <div class="collaboration-container">
+                <!-- Kerjasama 1 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-image">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Kerjasama" loading="lazy">
+                    </div>
+                    <div class="collaboration-content">
+                        <h3 class="collaboration-title">Bimtek Teknisi Telekomunikasi</h3>
+                        <p class="collaboration-partner">Dengan Dinas Komunikasi dan Informatika</p>
+                        <p class="collaboration-desc">Pelatihan teknis bagi staf dinas Kominfo dalam hal perawatan dan perbaikan perangkat telekomunikasi.</p>
+                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 15 Agustus 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Kerjasama 2 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Kerjasama" loading="lazy">
+                    </div>
+                    <div class="collaboration-content">
+                        <h3 class="collaboration-title">Pelatihan Kewirausahaan</h3>
+                        <p class="collaboration-partner">Dengan Dinas Koperasi dan UKM</p>
+                        <p class="collaboration-desc">Program pelatihan kewirausahaan bagi alumni LPK Quantum yang ingin membuka usaha service center.</p>
+                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 3 September 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Kerjasama 3 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-image">
+                        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Kerjasama" loading="lazy">
+                    </div>
+                    <div class="collaboration-content">
+                        <h3 class="collaboration-title">Magang Industri</h3>
+                        <p class="collaboration-partner">Dengan PT. Telekomunikasi Indonesia</p>
+                        <p class="collaboration-desc">Program magang bagi peserta pelatihan untuk mendapatkan pengalaman langsung di industri telekomunikasi.</p>
+                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 20 September 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Video Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Alumni</h2>
             </div>
             <div class="testimonials-container">
                 <div class="testimonial-video">
@@ -1274,7 +1919,7 @@
                     </div>
                     <div class="testimonial-content">
                         <h3>Budi Santoso</h3>
-                        <p class="testimonial-text">"Setelah lulus dari LPK TechPro, saya langsung diterima bekerja di service center ternama. Materi yang diajarkan sangat relevan dengan kebutuhan industri."</p>
+                        <p class="testimonial-text">"Setelah lulus dari LPK Quantum, saya langsung diterima bekerja di service center ternama. Materi yang diajarkan sangat relevan dengan kebutuhan industri."</p>
                         <p class="testimonial-author">Teknisi HP - Lulusan 2022</p>
                     </div>
                 </div>
@@ -1284,8 +1929,18 @@
                     </div>
                     <div class="testimonial-content">
                         <h3>Sinta Nurhaliza</h3>
-                        <p class="testimonial-text">"Instruktur di LPK TechPro sangat berpengalaman dan metode pembelajarannya mudah dipahami. Fasilitas praktiknya juga lengkap dan modern."</p>
+                        <p class="testimonial-text">"Instruktur di LPK Quantum sangat berpengalaman dan metode pembelajarannya mudah dipahami. Fasilitas praktiknya juga lengkap dan modern."</p>
                         <p class="testimonial-author">Teknisi BTS - Lulusan 2021</p>
+                    </div>
+                </div>
+                <div class="testimonial-video">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Testimoni Alumni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>Adi Pratama</h3>
+                        <p class="testimonial-text">"Saya mengambil kelas online dan sangat terbantu dengan modul yang lengkap serta konsultasi langsung dengan instruktur via grup WhatsApp."</p>
+                        <p class="testimonial-author">Teknisi HP - Kelas Online 2023</p>
                     </div>
                 </div>
             </div>
@@ -1305,7 +1960,7 @@
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Pendaftaran dapat dilakukan secara online melalui website kami atau langsung datang ke kantor LPK TechPro. Untuk pendaftaran online, isi formulir pendaftaran pada bagian Kontak dan kami akan menghubungi Anda untuk proses selanjutnya.</p>
+                        <p>Pendaftaran dapat dilakukan secara online melalui website kami atau langsung datang ke kantor LPK Quantum. Untuk pendaftaran online, isi formulir pendaftaran pada bagian Kontak dan kami akan menghubungi Anda untuk proses selanjutnya.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1380,95 +2035,9 @@
             <div class="section-title">
                 <h2>Kontak Kami</h2>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Alamat</h3>
-                            <p>Jl. Telekomunikasi No. 123, Bandung, Jawa Barat</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Telepon</h3>
-                            <p>(022) 1234-5678</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p>+62 812-3456-7890</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@lpktechpro.id</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h3>Jam Operasional</h3>
-                            <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
-                            <p>Sabtu: 08:00 - 14:00 WIB</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Nomor Telepon</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="program">Program yang Diminati</label>
-                            <select id="program" required>
-                                <option value="">Pilih Program</option>
-                                <option value="teknisi-hp">Teknisi HP Professional</option>
-                                <option value="fiber-optic">Teknisi Fiber Optic</option>
-                                <option value="bts">Teknisi BTS & Jaringan 5G</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">LPK TechPro</div>
+                    <div class="footer-logo">LPK Quantum</div>
                     <p>Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang menghasilkan tenaga kerja profesional dan kompeten.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1494,7 +2063,7 @@
                     <p><i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123, Bandung</p>
                     <p><i class="fas fa-phone"></i> (022) 1234-5678</p>
                     <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@lpktechpro.id</p>
+                    <p><i class="fas fa-envelope"></i> info@lpkquantum.id</p>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7892828312786!2d107.6083944740441!3d-6.917355293083251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62577714b17%3A0x19e1e82b39159f1d!2sBandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1692469959231!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
                     </div>
@@ -1508,8 +2077,14 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="copyright">
-                <p>&copy; 2023 LPK TechPro Telecommunication. All Rights Reserved.</p>
+                <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1529,6 +2104,7 @@
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
         const body = document.body;
+        const dropdowns = document.querySelectorAll('.dropdown');
         
         mobileMenuBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
@@ -1546,7 +2122,7 @@
         });
         
         // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a');
+        const navLinks = document.querySelectorAll('nav ul li a:not(.dropdown > a)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -1556,6 +2132,18 @@
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+            });
+        });
+
+        // Dropdown toggle for mobile
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
             });
         });
 
@@ -1602,33 +2190,51 @@
         // Change slide every 5 seconds
         setInterval(nextSlide, 5000);
 
-        // Program Carousel
-        const programsTrack = document.getElementById('programsTrack');
-        const carouselDots = document.querySelectorAll('.carousel-dot');
-        let currentProgram = 0;
+        // Program Tabs
+        const programTabs = document.querySelectorAll('.program-tab');
+        const programCards = document.querySelectorAll('.program-card');
         
-        function moveCarousel(index) {
-            const programWidth = document.querySelector('.program-card').offsetWidth + 20;
-            programsTrack.style.transform = `translateX(-${index * programWidth}px)`;
-            
-            carouselDots.forEach(dot => dot.classList.remove('active'));
-            carouselDots[index].classList.add('active');
-            
-            currentProgram = index;
-        }
-        
-        carouselDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const index = parseInt(dot.getAttribute('data-index'));
-                moveCarousel(index);
+        programTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+                
+                // Update active tab
+                programTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show/hide programs based on category
+                programCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
             });
         });
 
-        // Auto rotate carousel
-        setInterval(() => {
-            currentProgram = (currentProgram === carouselDots.length - 1) ? 0 : currentProgram + 1;
-            moveCarousel(currentProgram);
-        }, 4000);
+        // Alumni Tabs
+        const alumniTabs = document.querySelectorAll('.alumni-tab');
+        const alumniCards = document.querySelectorAll('.alumni-card');
+        
+        alumniTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+                
+                // Update active tab
+                alumniTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show/hide alumni based on category
+                alumniCards.forEach(card => {
+                    if (card.getAttribute('data-category') === category) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            });
+        });
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
