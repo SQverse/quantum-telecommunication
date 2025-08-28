@@ -6,7 +6,7 @@
     <title>LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
@@ -73,7 +73,7 @@
         /* Header & Navigation */
         header {
             background: var(--blue-gradient);
-            padding: 15px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -93,25 +93,26 @@
         }
 
         .logo img {
-            height: 50px;
-            margin-right: 10px;
+            height: 45px;
+            margin-right: 12px;
             transition: var(--transition);
         }
 
         .logo h1 {
             color: var(--text-light);
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
             transition: var(--transition);
+            letter-spacing: 0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
+            gap: 5px;
         }
 
         nav ul li {
-            margin-left: 20px;
             position: relative;
         }
 
@@ -120,10 +121,11 @@
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
-            padding: 8px 12px;
+            padding: 8px 15px;
             border-radius: 4px;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            display: block;
         }
 
         nav ul li a::after {
@@ -139,7 +141,7 @@
         }
 
         nav ul li a:hover::after {
-            width: 80%;
+            width: 70%;
         }
 
         /* Dropdown Menu */
@@ -173,6 +175,7 @@
             padding: 12px 16px;
             display: block;
             border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.9rem;
         }
 
         .dropdown-content a:hover {
@@ -192,6 +195,7 @@
             border: none;
             cursor: pointer;
             z-index: 1001;
+            margin-left: 15px;
         }
 
         .theme-toggle {
@@ -200,7 +204,7 @@
             color: var(--text-light);
             font-size: 1.2rem;
             cursor: pointer;
-            margin-left: 20px;
+            margin-left: 15px;
             transition: var(--transition);
         }
 
@@ -264,27 +268,40 @@
             padding: 0 20px;
         }
 
-        .hero h2 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
+        .hero-title {
+            font-size: 1rem; /* Diperkecil */
+            font-weight: 700;
+            margin-bottom: 15px;
             animation: fadeInDown 1s ease;
-            font-weight: 800;
-            max-width: 800px;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            animation: fadeInUp 1s ease 0.3s forwards;
+        .hero-subtitle {
+            font-size: 3.2rem; /* Diperbesar */
+            font-weight: 800;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease 0.2s forwards;
             opacity: 0;
-            font-weight: 300;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-tagline {
+            font-size: 3.5rem; /* Diperbesar */
+            font-weight: 800;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease 0.4s forwards;
+            opacity: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffd700;
         }
 
         .hero-buttons {
-            display: flex;
-            gap: 20px;
             animation: fadeIn 1s ease 0.6s forwards;
             opacity: 0;
         }
@@ -293,13 +310,16 @@
             display: inline-block;
             background-color: var(--text-light);
             color: var(--blue-medium);
-            padding: 14px 35px;
+            padding: 16px 40px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: var(--transition);
             box-shadow: var(--shadow);
             border: 2px solid transparent;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
@@ -345,7 +365,7 @@
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .section-title h2::after {
@@ -366,6 +386,86 @@
             margin: 0 auto 50px;
             font-size: 1.1rem;
             color: #666;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--blue-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Tombol About Section */
+        .about-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .about-buttons .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+
+        /* Video Profile Section */
+        .video-profile {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }   
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Keunggulan Section */
@@ -428,6 +528,10 @@
             margin-bottom: 15px;
             color: var(--blue-dark);
             font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-dark);
         }
 
         /* Program Section dengan Tabs */
@@ -639,44 +743,6 @@
         .instructor-social a:hover {
             background: var(--blue-medium);
             color: var(--text-light);
-        }
-
-        /* Mitra Section */
-        .partners-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-
-        .partner-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .partner-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .partner-item img {
-            max-width: 100%;
-            max-height: 80px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .partner-item:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
         }
 
         /* Alumni Section */
@@ -1003,6 +1069,7 @@
         .faq-item.active .faq-answer {
             max-height: 300px;
             padding: 0 20px 20px;
+            color: var(--text-dark);
         }
 
         .faq-item.active .faq-toggle i {
@@ -1039,6 +1106,66 @@
             font-weight: 700;
             color: var(--blue-medium);
             margin-bottom: 10px;
+        }
+
+        /* Partners Carousel Section */
+        .partners-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .partners-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .partners-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: calc(200px * 14);
+        }
+
+        .partner-item {
+            height: 120px;
+            margin: 0 20px;
+            flex-shrink: 0;
+            width: 200px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .partner-item img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 7));
+            }
         }
 
         /* CTA Section */
@@ -1317,18 +1444,31 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero h2 {
+            .hero-title {
+                font-size: 0.9rem;
+            }
+            
+            .hero-subtitle {
                 font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 2.8rem;
             }
 
             .programs-container,
             .instructors-container,
-            .partners-container,
             .alumni-container,
             .news-container,
             .collaboration-container,
             .testimonials-container {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .about-content,
+            .vm-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
@@ -1358,10 +1498,11 @@
             
             nav ul {
                 flex-direction: column;
+                gap: 0;
             }
             
             nav ul li {
-                margin: 15px 0;
+                margin: 10px 0;
             }
 
             nav ul li a {
@@ -1398,26 +1539,46 @@
                 padding: 100px 0 80px;
             }
             
-            .hero h2 {
+            .hero-title {
+                font-size: 0.8rem;
+            }
+            
+            .hero-subtitle {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .hero-tagline {
+                font-size: 2.2rem;
             }
 
             .section-title h2 {
                 font-size: 1.8rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
             .program-tabs,
             .alumni-tabs {
                 flex-wrap: wrap;
+            }
+            
+            .partners-track {
+                animation: scroll 20s linear infinite;
+            }
+
+            .theme-toggle {
+                margin-left: 15px; /* Ditambah jarak */
+            }
+
+            .mobile-menu-btn {
+                margin-left: 15px; /* Ditambah jarak */
+            }
+
+            .about-buttons {
+                flex-direction: column;
+            }
+
+            .about-buttons .btn {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -1426,12 +1587,21 @@
                 font-size: 1.2rem;
             }
 
-            .hero h2 {
+            .hero-title {
+                font-size: 0.7rem;
+            }
+            
+            .hero-subtitle {
                 font-size: 1.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 2rem;
             }
 
             .btn {
-                padding: 12px 25px;
+                padding: 14px 30px;
+                font-size: 1rem;
             }
 
             .features-grid {
@@ -1448,12 +1618,27 @@
 
             .programs-container,
             .instructors-container,
-            .partners-container,
             .alumni-container,
             .news-container,
             .collaboration-container,
             .testimonials-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .partner-item {
+                width: 180px;
+                margin: 0 15px;
+            }
+
+            .about-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -1463,8 +1648,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTAiIGZpbGw9IiM0QTkwRTIiLz4KPHBhdGggZD0iTTE1IDM1TDM1IDE1TTM1IDM1TDE1IDE1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Quantum Telecommunication Logo">
-                <h1>LPK Quantum</h1>
+                <img src="assets/photos/logo/quantum logo color.png" alt="Quantum Telecommunication Logo">
             </div>
             <nav>
                 <ul>
@@ -1479,15 +1663,19 @@
                             <a href="#gratis">Kelas Gratis</a>
                         </div>
                     </li>
-                    <li><a href="#collaboration">Kerjasama</a></li>
+                    <li class="dropdown">
+                        <a href="#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#government">Pemerintah</a>
+                            <a href="#private">Swasta</a>
+                        </div>
+                    </li>
                     <li><a href="#alumni">Alumni</a></li>
-                    <li><a href="#news">Berita/Artikel</a></li>
+                    <li><a href="#news">Berita</a></li>
                     <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#partners">Mitra</a></li>
-                    <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
-            <div>
+            <div style="display: flex; align-items: center;">
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -1506,11 +1694,49 @@
             <div class="hero-slide"></div>
         </div>
         <div class="container hero-content">
-            <h2>Pelatihan Teknisi HP & Telekomunikasi Profesional</h2>
-            <p>LPK Quantum menyediakan program pelatihan berkualitas tinggi di bidang telekomunikasi dan teknisi HP untuk mencetak tenaga kerja profesional dan kompeten.</p>
+            <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
+            <h3 class="hero-subtitle">MAGANG - TRAINING</h3>
+            <h3 class="hero-tagline">DIJAMIN KERJA</h3>
             <div class="hero-buttons">
-                <a href="#programs" class="btn">Lihat Program Kami</a>
-                <a href="#contact" class="btn btn-outline">Daftar Sekarang</a>
+                <a href="#programs" class="btn">Daftar Kelas Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="LPK Quantum" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>LPK Quantum Telecommunication</h3>
+                    <p>Kami Adalah Lembaga Pelatihan Kerja Swasta merupakan Tempat Pelatihan / Tempat kursus / Sekolah Teknisi Smartphone sejak Tahun 2000. Alhamdulillah saat ini LPK QUANTUM TELECOMMUNICATION telah berhasil mencetak ribuan Alumni yang tersebar di se-Indonesia sebagai pengusaha dan Teknisi Handphone yang trampil dan siap kerja maupun sebagai Pengusaha mandiri sukses profesional.</p>
+                    <p>Dengan metode pembelajaran yang efektif dan penyaluran kerja yang terjamin, LPK QUANTUM TELECOMMUNICATION menjadi pilihan tepat bagi Anda yang ingin mengembangkan karier di bidang telekomunikasi dan teknisi handphone.</p>
+                    <div class="about-buttons">
+                        <a href="company-profile.html" class="btn">COMPANY PROFILE</a>
+                        <a href="materi-pembelajaran.html" class="btn btn-outline">CEK MATERI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Profile Section -->
+    <section class="video-profile">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Company Profile</h2>
+            </div>
+            <p class="section-subtitle">Tonton video profil LPK Quantum untuk mengenal lebih dekat tentang program dan fasilitas kami</p>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/xV4UjI_EjRg?si=W4VFaEznil2d6llJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -1549,6 +1775,41 @@
                     </div>
                     <h3>Penyaluran Kerja</h3>
                     <p>Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service center terkemuka</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Kelas Offline</h3>
+                    <p>Belajar langsung dengan instruktur dan praktik menggunakan peralatan terkini</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Kelas Bersubsidi</h3>
+                    <p>Program pelatihan dengan harga terjangkau dan fasilitas lengkap</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Ribuan Alumni</h3>
+                    <p>Lebih dari 1250 alumni tersebar dan sukses di industri telekomunikasi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Kelas Online</h3>
+                    <p>Materi pembelajaran fleksibel yang dapat diakses dari mana saja</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legalitas Lengkap</h3>
+                    <p>Lembaga terdaftar resmi dengan izin operasional dari instansi terkait</p>
                 </div>
             </div>
         </div>
@@ -1720,36 +1981,6 @@
         </div>
     </section>
 
-    <!-- Mitra Section -->
-    <section id="partners" style="background-color: var(--blue-light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mitra Kerjasama LPK Quantum</h2>
-            </div>
-            <p class="section-subtitle">Kami bekerja sama dengan berbagai perusahaan dan institusi untuk menyediakan pelatihan terbaik dan penyaluran kerja</p>
-            <div class="partners-container">
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=LCD" alt="LCD Partner">
-                </div>
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Magic+Service" alt="Magic Service">
-                </div>
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Telkom" alt="Telkom">
-                </div>
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=XL+Axiata" alt="XL Axiata">
-                </div>
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Indosat" alt="Indosat">
-                </div>
-                <div class="partner-item">
-                    <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Smartfren" alt="Smartfren">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Alumni Section -->
     <section id="alumni">
         <div class="container">
@@ -1795,7 +2026,7 @@
                     <div class="alumni-info">
                         <h3 class="alumni-name">Diana Putri</h3>
                         <p class="alumni-batch">Kelas Online - Angkatan VII</p>
-                        <p class="alumni-testimonial">"Meski belajar online, materi yang disampaikan sangat detail dan mudah dipahami. Sekarang saya bisa servis HP sendiri dan buka usaha sampingan."</p>
+                        <p class="alumni-testimonial">"Meski belajar online, materi yang disampaikan sangat detail và mudah dipahami. Sekarang saya bisa servis HP sendiri dan buka usaha sampingan."</p>
                         <p class="alumni-current">Kini: <span>Teknisi HP Freelance</span></p>
                     </div>
                 </div>
@@ -1947,72 +2178,61 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq">
+    <!-- Partners Carousel Section -->
+    <section class="partners-section">
         <div class="container">
             <div class="section-title">
-                <h2>Pertanyaan Umum</h2>
+                <h2>Mitra Kerjasama</h2>
             </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Bagaimana cara mendaftar program pelatihan?</span>
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            <p class="section-subtitle">Kami bekerja sama dengan berbagai perusahaan dan institusi untuk menyediakan pelatihan terbaik dan penyaluran kerja</p>
+            
+            <div class="partners-carousel">
+                <div class="partners-track">
+                    <!-- Partner Items (duplicated for seamless loop) -->
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=LCD" alt="LCD Partner">
                     </div>
-                    <div class="faq-answer">
-                        <p>Pendaftaran dapat dilakukan secara online melalui website kami atau langsung datang ke kantor LPK Quantum. Untuk pendaftaran online, isi formulir pendaftaran pada bagian Kontak dan kami akan menghubungi Anda untuk proses selanjutnya.</p>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Magic+Service" alt="Magic Service">
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Apakah tersedia program pelatihan online?</span>
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Telkom" alt="Telkom">
                     </div>
-                    <div class="faq-answer">
-                        <p>Ya, kami menyediakan program pelatihan online untuk materi-materi teori. Namun untuk praktik, tetap diperlukan kehadiran di lokasi karena membutuhkan peralatan khusus yang disediakan oleh LPK.</p>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=XL+Axiata" alt="XL Axiata">
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Apakah ada garansi sampai bisa?</span>
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Indosat" alt="Indosat">
                     </div>
-                    <div class="faq-answer">
-                        <p>Ya, kami memberikan garansi hingga peserta mampu dan menguasai materi pelatihan. Jika setelah selesai pelatihan masih merasa kurang menguasai, peserta dapat mengulang di angkatan berikutnya tanpa biaya tambahan.</p>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Smartfren" alt="Smartfren">
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Apakah disediakan asrama untuk peserta dari luar kota?</span>
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Samsung" alt="Samsung">
                     </div>
-                    <div class="faq-answer">
-                        <p>Ya, kami menyediakan asrama dengan fasilitas lengkap untuk peserta dari luar kota dengan biaya tambahan yang terjangkau. Asrama berada dalam jarak yang dekat dari lokasi pelatihan.</p>
+                    
+                    <!-- Duplicated items for seamless loop -->
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=LCD" alt="LCD Partner">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" style="background-color: var(--blue-medium); color: var(--text-light);">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="1250">0</div>
-                    <div class="stat-label">Alumni Terlatih</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="95">0</div>
-                    <div class="stat-label">Tingkat Penyerapan Kerja</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="28">0</div>
-                    <div class="stat-label">Angkatan Terlaksana</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="15">0</div>
-                    <div class="stat-label">Mitra Industri</div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Magic+Service" alt="Magic Service">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Telkom" alt="Telkom">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=XL+Axiata" alt="XL Axiata">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Indosat" alt="Indosat">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Smartfren" alt="Smartfren">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://via.placeholder.com/150x80/4a90e2/ffffff?text=Samsung" alt="Samsung">
+                    </div>
                 </div>
             </div>
         </div>
@@ -2029,12 +2249,9 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="section-title">
-                <h2>Kontak Kami</h2>
-            </div>
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">LPK Quantum</div>
@@ -2077,12 +2294,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
             <div class="copyright">
                 <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
             </div>
@@ -2168,8 +2379,6 @@
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
             }
         });
 
@@ -2247,38 +2456,6 @@
             });
         });
 
-        // Animated Stats Counter
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let counted = false;
-        
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-        
-        function checkStats() {
-            const statsSection = document.getElementById('stats');
-            const sectionTop = statsSection.getBoundingClientRect().top;
-            const triggerHeight = window.innerHeight * 0.8;
-            
-            if (sectionTop < triggerHeight && !counted) {
-                counted = true;
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-count'));
-                    animateValue(stat, 0, target, 2000);
-                });
-            }
-        }
-
         // Scroll animations
         function checkScroll() {
             const sections = document.querySelectorAll('section');
@@ -2299,9 +2476,6 @@
             } else {
                 backToTop.classList.remove('visible');
             }
-            
-            // Check if stats section is in view
-            checkStats();
         }
         
         window.addEventListener('scroll', checkScroll);
