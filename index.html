@@ -245,15 +245,43 @@
         }
 
         .hero-slide:nth-child(1) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero1.jpg');
         }
 
         .hero-slide:nth-child(2) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero2.jpg');
         }
 
         .hero-slide:nth-child(3) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero3.jpg');
+        }
+
+        .hero-slide:nth-child(4) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero4.jpg');
+        }
+
+        .hero-slide:nth-child(5) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero5.jpg');
+        }
+
+        .hero-slide:nth-child(6) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero6.jpg');
+        }
+
+        .hero-slide:nth-child(7) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero7.jpg');
+        }
+
+        .hero-slide:nth-child(8) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero8.jpg');
+        }
+
+        .hero-slide:nth-child(9) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero9.jpg');
+        }
+
+        .hero-slide:nth-child(10) {
+            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero10.jpg');
         }
 
         .hero-content {
@@ -330,9 +358,33 @@
             border-color: var(--text-light);
         }
 
+        .btn-company {
+            display: inline-block;
+            background-color: var(--text-light);
+            color: var(--blue-medium);
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-company:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: transparent;
+            color: var(--blue-medium);
+            border-color: var(--text-light);
+        }
+
         .btn-outline {
             background: transparent;
-            color: var(--text-light);
+            color: var(--blue-medium);
             border-color: var(--text-light);
         }
 
@@ -1711,14 +1763,14 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="LPK Quantum" loading="lazy">
+                    <img src="assets/photos/section/tentang-kami.jpg" alt="LPK Quantum" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>LPK Quantum Telecommunication</h3>
                     <p>Kami Adalah Lembaga Pelatihan Kerja Swasta merupakan Tempat Pelatihan / Tempat kursus / Sekolah Teknisi Smartphone sejak Tahun 2000. Alhamdulillah saat ini LPK QUANTUM TELECOMMUNICATION telah berhasil mencetak ribuan Alumni yang tersebar di se-Indonesia sebagai pengusaha dan Teknisi Handphone yang trampil dan siap kerja maupun sebagai Pengusaha mandiri sukses profesional.</p>
                     <p>Dengan metode pembelajaran yang efektif dan penyaluran kerja yang terjamin, LPK QUANTUM TELECOMMUNICATION menjadi pilihan tepat bagi Anda yang ingin mengembangkan karier di bidang telekomunikasi dan teknisi handphone.</p>
                     <div class="about-buttons">
-                        <a href="company-profile.html" class="btn">COMPANY PROFILE</a>
+                        <a href="assets/photos/pdf/LPK-Quantum-Profile.pdf" class="btn btn-company">COMPANY PROFILE</a>
                         <a href="materi-pembelajaran.html" class="btn btn-outline">CEK MATERI</a>
                     </div>
                 </div>
@@ -1735,7 +1787,7 @@
             <p class="section-subtitle">Tonton video profil LPK Quantum untuk mengenal lebih dekat tentang program dan fasilitas kami</p>
             <div class="video-container">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/xV4UjI_EjRg?si=W4VFaEznil2d6llJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cpdx_JTrg68?si=7FqA6Sj5qyW9u7FU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
