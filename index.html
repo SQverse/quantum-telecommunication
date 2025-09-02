@@ -1,2714 +1,3285 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
-        /* Variabel Warna untuk Light dan Dark Mode */
-        :root {
-            /* Light Mode */
-            --blue-light: #e6f0ff;
-            --blue-medium: #4a90e2;
-            --blue-dark: #1a3c6e;
-            --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-            --text-dark: #333;
-            --text-light: #fff;
-            --bg-light: #f9fbff;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
-            
-            /* Transisi */
-            --transition: all 0.3s ease;
-        }
+      /* Variabel Warna untuk Light dan Dark Mode */
+      :root {
+        /* Light Mode */
+        --blue-light: #e6f0ff;
+        --blue-medium: #4a90e2;
+        --blue-dark: #1a3c6e;
+        --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+        --text-dark: #333;
+        --text-light: #fff;
+        --bg-light: #f9fbff;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
-        /* Dark Mode Variabel */
-        [data-theme="dark"] {
-            --blue-light: #1a3c6e;
-            --blue-medium: #3a7bd5;
-            --blue-dark: #e6f0ff;
-            --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
-            --text-dark: #f0f0f0;
-            --text-light: #e6e6e6;
-            --bg-light: #121212;
-            --card-bg: #1e1e1e;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
+        /* Transisi */
+        --transition: all 0.3s ease;
+      }
 
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      /* Dark Mode Variabel */
+      [data-theme="dark"] {
+        --blue-light: #1a3c6e;
+        --blue-medium: #3a7bd5;
+        --blue-dark: #e6f0ff;
+        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
+        --text-dark: #f0f0f0;
+        --text-light: #e6e6e6;
+        --bg-light: #121212;
+        --card-bg: #1e1e1e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--bg-light);
-            overflow-x: hidden;
-            transition: var(--transition);
-        }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+        transition: var(--transition);
+      }
 
-        /* Header & Navigation */
-        header {
-            background: var(--blue-gradient);
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      /* Header & Navigation */
+      header {
+        background: var(--blue-gradient);
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo img {
-            height: 45px;
-            margin-right: 12px;
-            transition: var(--transition);
-        }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
 
-        .logo h1 {
-            color: var(--text-light);
-            font-size: 1.4rem;
-            font-weight: 800;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-        }
+      .logo img {
+        height: 45px;
+        margin-right: 12px;
+        transition: var(--transition);
+      }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 5px;
-        }
+      .logo h1 {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        font-weight: 800;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+      }
 
-        nav ul li {
-            position: relative;
-        }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
 
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 15px;
-            border-radius: 4px;
-            position: relative;
-            font-size: 0.9rem;
-            display: block;
-        }
+      nav ul li {
+        position: relative;
+      }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--text-light);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
+      nav ul li a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+        font-size: 0.9rem;
+        display: block;
+      }
 
-        nav ul li a:hover::after {
-            width: 70%;
-        }
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--text-light);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
 
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
+      nav ul li a:hover::after {
+        width: 70%;
+      }
 
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--card-bg);
-            min-width: 200px;
-            box-shadow: var(--shadow-hover);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: var(--transition);
-            z-index: 1000;
-        }
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+      }
 
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--card-bg);
+        min-width: 200px;
+        box-shadow: var(--shadow-hover);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 1000;
+      }
 
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 16px;
-            display: block;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 0.9rem;
-        }
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
 
-        .dropdown-content a:hover {
-            background: var(--blue-light);
-            color: var(--blue-dark);
-        }
+      .dropdown-content a {
+        color: var(--text-dark);
+        padding: 12px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+      }
 
-        .dropdown-content a::after {
-            display: none;
-        }
+      .dropdown-content a:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
 
-        .mobile-menu-btn {
-            display: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-            margin-left: 15px;
-        }
+      .dropdown-content a::after {
+        display: none;
+      }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-left: 15px;
-            transition: var(--transition);
-        }
+      .mobile-menu-btn {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        margin-left: 15px;
+      }
 
-        .theme-toggle:hover {
-            transform: rotate(30deg);
-        }
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: var(--transition);
+      }
 
-        /* Hero Section dengan Slideshow */
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            position: relative;
-            overflow: hidden;
-            color: var(--text-light);
-        }
+      .theme-toggle:hover {
+        transform: rotate(30deg);
+      }
 
-        .hero-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
+      /* Hero Section dengan Slideshow */
+      .hero {
+        height: 100vh;
+        min-height: 700px;
+        position: relative;
+        overflow: hidden;
+        color: var(--text-light);
+      }
 
-        .hero-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
+      .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
 
-        .hero-slide.active {
-            opacity: 1;
-        }
+      .hero-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+      }
 
-        .hero-slide:nth-child(1) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero1.jpg');
-        }
+      .hero-slide.active {
+        opacity: 1;
+      }
 
-        .hero-slide:nth-child(2) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero2.jpg');
-        }
+      .hero-slide:nth-child(1) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero1.jpg");
+      }
 
-        .hero-slide:nth-child(3) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero3.jpg');
-        }
+      .hero-slide:nth-child(2) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero2.jpg");
+      }
 
-        .hero-slide:nth-child(4) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero4.jpg');
-        }
+      .hero-slide:nth-child(3) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero3.jpg");
+      }
 
-        .hero-slide:nth-child(5) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero5.jpg');
-        }
+      .hero-slide:nth-child(4) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero4.jpg");
+      }
 
-        .hero-slide:nth-child(6) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero6.jpg');
-        }
+      .hero-slide:nth-child(5) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero5.jpg");
+      }
 
-        .hero-slide:nth-child(7) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero7.jpg');
-        }
+      .hero-slide:nth-child(6) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero6.jpg");
+      }
 
-        .hero-slide:nth-child(8) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero8.jpg');
-        }
+      .hero-slide:nth-child(7) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero7.jpg");
+      }
 
-        .hero-slide:nth-child(9) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero9.jpg');
-        }
+      .hero-slide:nth-child(8) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero8.jpg");
+      }
 
-        .hero-slide:nth-child(10) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero10.jpg');
-        }
+      .hero-slide:nth-child(9) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero9.jpg");
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            text-align: center;
-            padding: 0 20px;
-        }
+      .hero-slide:nth-child(10) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero10.jpg");
+      }
 
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-size: 1rem; /* Diperkecil */
+        font-weight: 700;
+        margin-bottom: 15px;
+        animation: fadeInDown 1s ease;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-size: 3.2rem; /* Diperbesar */
+        font-weight: 800;
+        margin-bottom: 15px;
+        animation: fadeInDown 1s ease 0.2s forwards;
+        opacity: 0;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .hero-tagline {
+        font-size: 3.5rem; /* Diperbesar */
+        font-weight: 800;
+        margin-bottom: 30px;
+        animation: fadeInDown 1s ease 0.4s forwards;
+        opacity: 0;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ffd700;
+      }
+
+      .hero-buttons {
+        animation: fadeIn 1s ease 0.6s forwards;
+        opacity: 0;
+      }
+
+      /* Hero Slideshow Indicators */
+      .hero-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 3;
+      }
+
+      .hero-indicators .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .hero-indicators .indicator.active {
+        background-color: var(--text-light);
+        transform: scale(1.2);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--text-light);
+        color: var(--blue-medium);
+        padding: 16px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-company {
+        display: inline-block;
+        background-color: var(--text-light);
+        color: var(--blue-medium);
+        padding: 16px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-company:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--blue-medium);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--blue-medium);
+        border-color: var(--text-light);
+      }
+
+      .btn-daftar {
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline:hover {
+        background: var(--text-light);
+        color: var(--blue-medium);
+      }
+
+      .btn-daftar:hover {
+        background: var(--text-light);
+        color: var(--blue-medium);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 90px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--blue-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        font-weight: 800;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--blue-gradient);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-image {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--blue-dark);
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+      }
+
+      /* Tombol About Section */
+      .about-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+
+      .about-buttons .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      /* Video Profile Section */
+      .video-profile {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Keunggulan Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 0;
+        background: var(--blue-gradient);
+        transition: var(--transition);
+      }
+
+      .feature-card:hover::before {
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 20px;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .feature-card h3 {
+        margin-bottom: 15px;
+        color: var(--blue-dark);
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        color: var(--text-dark);
+      }
+
+      /* Program Section dengan Tabs */
+      .programs-section {
+        background-color: var(--blue-light);
+      }
+
+      .program-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .program-tab {
+        padding: 12px 25px;
+        background: var(--card-bg);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .program-tab.active {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .program-tab:hover:not(.active) {
+        background: rgba(74, 144, 226, 0.1);
+      }
+
+      .programs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .program-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .program-card.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .program-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .program-card:hover .program-image img {
+        transform: scale(1.1);
+      }
+
+      .program-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--blue-medium);
+        color: var(--text-light);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .program-content {
+        padding: 25px;
+      }
+
+      .program-content h3 {
+        color: var(--blue-dark);
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+      }
+
+      .program-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .program-price {
+        color: var(--blue-medium);
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+
+      .program-benefits {
+        margin: 15px 0;
+        padding-left: 20px;
+      }
+
+      .program-benefits li {
+        margin-bottom: 8px;
+        position: relative;
+      }
+
+      .program-benefits li::before {
+        content: "✓";
+        color: var(--blue-medium);
+        font-weight: bold;
+        position: absolute;
+        left: -20px;
+      }
+
+      .program-cta {
+        margin-top: 20px;
+      }
+
+      /* Instruktur Section */
+      .instructors-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .instructor-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .instructor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .instructor-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .instructor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .instructor-card:hover .instructor-image img {
+        transform: scale(1.1);
+      }
+
+      .instructor-info {
+        padding: 20px;
+      }
+
+      .instructor-name {
+        font-size: 1.2rem;
+        color: var(--blue-dark);
+        margin-bottom: 5px;
+      }
+
+      .instructor-role {
+        color: var(--blue-medium);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+
+      .instructor-desc {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .instructor-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .instructor-social a {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: var(--blue-light);
+        color: var(--blue-medium);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .instructor-social a:hover {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      /* Alumni Section */
+      .alumni-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 10px;
+      }
+
+      .alumni-tab {
+        padding: 10px 20px;
+        background: var(--card-bg);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .alumni-tab.active {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .alumni-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .alumni-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .alumni-card.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .alumni-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .alumni-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .alumni-info {
+        padding: 20px;
+      }
+
+      .alumni-name {
+        font-size: 1.2rem;
+        color: var(--blue-dark);
+        margin-bottom: 5px;
+      }
+
+      .alumni-batch {
+        color: var(--blue-medium);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+
+      .alumni-testimonial {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .alumni-current {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .alumni-current span {
+        color: var(--blue-medium);
+        font-weight: 600;
+      }
+
+      /* Berita Section */
+      .news-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .news-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .news-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .news-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .news-card:hover .news-image img {
+        transform: scale(1.1);
+      }
+
+      .news-content {
+        padding: 20px;
+      }
+
+      .news-date {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 10px;
+      }
+
+      .news-title {
+        font-size: 1.2rem;
+        color: var(--blue-dark);
+        margin-bottom: 10px;
+        transition: var(--transition);
+      }
+
+      .news-card:hover .news-title {
+        color: var(--blue-medium);
+      }
+
+      .news-excerpt {
+        color: #666;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      .news-link {
+        color: var(--blue-medium);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: var(--transition);
+      }
+
+      .news-link:hover {
+        gap: 10px;
+      }
+
+      /* Kerjasama Section */
+      .collaboration-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .collaboration-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .collaboration-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .collaboration-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .collaboration-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .collaboration-card:hover .collaboration-image img {
+        transform: scale(1.1);
+      }
+
+      .collaboration-content {
+        padding: 20px;
+      }
+
+      .collaboration-title {
+        font-size: 1.2rem;
+        color: var(--blue-dark);
+        margin-bottom: 10px;
+      }
+
+      .collaboration-partner {
+        color: var(--blue-medium);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+
+      .collaboration-desc {
+        color: #666;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      .collaboration-date {
+        font-size: 0.8rem;
+        color: #777;
+      }
+
+      /* Testimoni Video Section */
+      .testimonials-section {
+        background-color: var(--blue-light);
+      }
+
+      .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .testimonial-video {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .testimonial-video:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .testimonial-content {
+        padding: 20px;
+      }
+
+      .testimonial-content h3 {
+        margin-bottom: 10px;
+        color: var(--blue-dark);
+      }
+
+      /* Rating Stars */
+      .testimonial-rating {
+        color: #ffd700;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--blue-medium);
+      }
+
+      /* FAQ Section */
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--card-bg);
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .faq-question {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: var(--blue-dark);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 0 20px 20px;
+        color: var(--text-dark);
+      }
+
+      .faq-item.active .faq-toggle i {
+        transform: rotate(180deg);
+      }
+
+      .faq-toggle {
+        transition: var(--transition);
+      }
+
+      /* Stats Section */
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+
+      .stat-item {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--blue-medium);
+        margin-bottom: 10px;
+      }
+
+      /* Partners Carousel Section */
+      .partners-section {
+        padding: 80px 0;
+        background-color: var(--bg-light);
+      }
+
+      .partners-carousel {
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      .partners-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(200px * 14);
+      }
+
+      .partner-item {
+        height: 120px;
+        margin: 0 20px;
+        flex-shrink: 0;
+        width: 200px;
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .partner-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .partner-item img {
+        max-width: 100%;
+        max-height: 80px;
+        opacity: 0.8;
+        transition: var(--transition);
+      }
+
+      .partner-item:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-200px * 7));
+        }
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        text-align: center;
+        padding: 80px 0;
+      }
+
+      .cta-section .section-title h2 {
+        color: var(--text-light);
+      }
+
+      .cta-section .section-title h2::after {
+        background: var(--text-light);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--blue-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--blue-gradient);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+        font-size: 1.2rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        background: var(--blue-medium);
+        transform: translateY(-3px);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .footer-links h3::after,
+      .footer-newsletter h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--blue-medium);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--text-light);
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-contact i {
+        color: var(--blue-medium);
+        width: 20px;
+      }
+
+      .map-container {
+        height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 15px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: transparent;
+        color: var(--text-light);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form button {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        border: none;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Animasi */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
         .hero-title {
-            font-size: 1rem; /* Diperkecil */
-            font-weight: 700;
-            margin-bottom: 15px;
-            animation: fadeInDown 1s ease;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+          font-size: 0.9rem;
         }
 
         .hero-subtitle {
-            font-size: 3.2rem; /* Diperbesar */
-            font-weight: 800;
-            margin-bottom: 15px;
-            animation: fadeInDown 1s ease 0.2s forwards;
-            opacity: 0;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+          font-size: 2.5rem;
         }
 
         .hero-tagline {
-            font-size: 3.5rem; /* Diperbesar */
-            font-weight: 800;
-            margin-bottom: 30px;
-            animation: fadeInDown 1s ease 0.4s forwards;
-            opacity: 0;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffd700;
+          font-size: 2.8rem;
         }
 
-        .hero-buttons {
-            animation: fadeIn 1s ease 0.6s forwards;
-            opacity: 0;
+        .programs-container,
+        .instructors-container,
+        .alumni-container,
+        .news-container,
+        .collaboration-container,
+        .testimonials-container {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        /* Hero Slideshow Indicators */
-        .hero-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 3;
+        .about-content,
+        .vm-container {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
         }
 
-        .hero-indicators .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
+        nav {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: var(--blue-dark);
+          padding: 80px 20px 20px;
+          transition: left 0.3s ease;
+          z-index: 999;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+          overflow-y: auto;
         }
 
-        .hero-indicators .indicator.active {
-            background-color: var(--text-light);
-            transform: scale(1.2);
+        nav.active {
+          left: 0;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--text-light);
-            color: var(--blue-medium);
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        nav ul {
+          flex-direction: column;
+          gap: 0;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            background: transparent;
-            color: var(--text-light);
-            border-color: var(--text-light);
+        nav ul li {
+          margin: 10px 0;
         }
 
-        .btn-company {
-            display: inline-block;
-            background-color: var(--text-light);
-            color: var(--blue-medium);
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        nav ul li a {
+          display: block;
+          padding: 12px;
+          border-radius: 5px;
         }
 
-        .btn-company:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            background: transparent;
-            color: var(--blue-medium);
-            border-color: var(--text-light);
+        nav ul li a:hover {
+          background: rgba(255, 255, 255, 0.1);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--blue-medium);
-            border-color: var(--text-light);
+        .dropdown-content {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
+          display: none;
         }
 
-        .btn-daftar {
-            background: transparent;
-            color: var(--text-light);
-            border-color: var(--text-light);
+        .dropdown.active .dropdown-content {
+          display: block;
         }
 
-        .btn-outline:hover {
-            background: var(--text-light);
-            color: var(--blue-medium);
+        .mobile-menu-btn {
+          position: relative;
+          z-index: 1000;
         }
 
-        .btn-daftar:hover {
-            background: var(--text-light);
-            color: var(--blue-medium);
+        .hero {
+          padding: 100px 0 80px;
         }
 
-        /* Section Styles */
-        section {
-            padding: 90px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+        .hero-title {
+          font-size: 0.8rem;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .hero-subtitle {
+          font-size: 2rem;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
+        .hero-tagline {
+          font-size: 2.2rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--blue-dark);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            font-weight: 800;
+          font-size: 1.8rem;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--blue-gradient);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--blue-dark);
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Tombol About Section */
-        .about-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .about-buttons .btn {
-            padding: 12px 25px;
-            font-size: 1rem;
-        }
-
-        /* Video Profile Section */
-        .video-profile {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-        }   
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Keunggulan Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 0;
-            background: var(--blue-gradient);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover::before {
-            height: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--blue-gradient);
-            color: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 20px;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: var(--blue-dark);
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: var(--text-dark);
-        }
-
-        /* Program Section dengan Tabs */
-        .programs-section {
-            background-color: var(--blue-light);
-        }
-
-        .program-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .program-tab {
-            padding: 12px 25px;
-            background: var(--card-bg);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .program-tab.active {
-            background: var(--blue-medium);
-            color: var(--text-light);
-        }
-
-        .program-tab:hover:not(.active) {
-            background: rgba(74, 144, 226, 0.1);
-        }
-
-        .programs-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .program-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .program-card.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .program-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .program-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .program-card:hover .program-image img {
-            transform: scale(1.1);
-        }
-
-        .program-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--blue-medium);
-            color: var(--text-light);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .program-content {
-            padding: 25px;
-        }
-
-        .program-content h3 {
-            color: var(--blue-dark);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
-
-        .program-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .program-price {
-            color: var(--blue-medium);
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        .program-benefits {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        .program-benefits li {
-            margin-bottom: 8px;
-            position: relative;
-        }
-
-        .program-benefits li::before {
-            content: '✓';
-            color: var(--blue-medium);
-            font-weight: bold;
-            position: absolute;
-            left: -20px;
-        }
-
-        .program-cta {
-            margin-top: 20px;
-        }
-
-        /* Instruktur Section */
-        .instructors-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .instructor-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .instructor-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .instructor-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .instructor-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .instructor-card:hover .instructor-image img {
-            transform: scale(1.1);
-        }
-
-        .instructor-info {
-            padding: 20px;
-        }
-
-        .instructor-name {
-            font-size: 1.2rem;
-            color: var(--blue-dark);
-            margin-bottom: 5px;
-        }
-
-        .instructor-role {
-            color: var(--blue-medium);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .instructor-desc {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .instructor-social {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .instructor-social a {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: var(--blue-light);
-            color: var(--blue-medium);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .instructor-social a:hover {
-            background: var(--blue-medium);
-            color: var(--text-light);
-        }
-
-        /* Alumni Section */
+        .program-tabs,
         .alumni-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 10px;
-        }
-
-        .alumni-tab {
-            padding: 10px 20px;
-            background: var(--card-bg);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .alumni-tab.active {
-            background: var(--blue-medium);
-            color: var(--text-light);
-        }
-
-        .alumni-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .alumni-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .alumni-card.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .alumni-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .alumni-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .alumni-info {
-            padding: 20px;
-        }
-
-        .alumni-name {
-            font-size: 1.2rem;
-            color: var(--blue-dark);
-            margin-bottom: 5px;
-        }
-
-        .alumni-batch {
-            color: var(--blue-medium);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .alumni-testimonial {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .alumni-current {
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .alumni-current span {
-            color: var(--blue-medium);
-            font-weight: 600;
-        }
-
-        /* Berita Section */
-        .news-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .news-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .news-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .news-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .news-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .news-card:hover .news-image img {
-            transform: scale(1.1);
-        }
-
-        .news-content {
-            padding: 20px;
-        }
-
-        .news-date {
-            font-size: 0.8rem;
-            color: #777;
-            margin-bottom: 10px;
-        }
-
-        .news-title {
-            font-size: 1.2rem;
-            color: var(--blue-dark);
-            margin-bottom: 10px;
-            transition: var(--transition);
-        }
-
-        .news-card:hover .news-title {
-            color: var(--blue-medium);
-        }
-
-        .news-excerpt {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .news-link {
-            color: var(--blue-medium);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: var(--transition);
-        }
-
-        .news-link:hover {
-            gap: 10px;
-        }
-
-        /* Kerjasama Section */
-        .collaboration-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .collaboration-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .collaboration-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .collaboration-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .collaboration-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .collaboration-card:hover .collaboration-image img {
-            transform: scale(1.1);
-        }
-
-        .collaboration-content {
-            padding: 20px;
-        }
-
-        .collaboration-title {
-            font-size: 1.2rem;
-            color: var(--blue-dark);
-            margin-bottom: 10px;
-        }
-
-        .collaboration-partner {
-            color: var(--blue-medium);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .collaboration-desc {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .collaboration-date {
-            font-size: 0.8rem;
-            color: #777;
-        }
-
-        /* Testimoni Video Section */
-        .testimonials-section {
-            background-color: var(--blue-light);
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-video {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .testimonial-video:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .testimonial-content {
-            padding: 20px;
-        }
-
-        .testimonial-content h3 {
-            margin-bottom: 10px;
-            color: var(--blue-dark);
-        }
-
-        /* Rating Stars */
-        .testimonial-rating {
-            color: #FFD700;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--blue-medium);
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--blue-dark);
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 20px 20px;
-            color: var(--text-dark);
-        }
-
-        .faq-item.active .faq-toggle i {
-            transform: rotate(180deg);
-        }
-
-        .faq-toggle {
-            transition: var(--transition);
-        }
-
-        /* Stats Section */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--blue-medium);
-            margin-bottom: 10px;
-        }
-
-        /* Partners Carousel Section */
-        .partners-section {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-
-        .partners-carousel {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
+          flex-wrap: wrap;
         }
 
         .partners-track {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            width: calc(200px * 14);
+          animation: scroll 20s linear infinite;
         }
 
-        .partner-item {
-            height: 120px;
-            margin: 0 20px;
-            flex-shrink: 0;
-            width: 200px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        .theme-toggle {
+          margin-left: 15px;
         }
 
-        .partner-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+        .mobile-menu-btn {
+          margin-left: 15px;
         }
 
-        .partner-item img {
-            max-width: 100%;
-            max-height: 80px;
-            opacity: 0.8;
-            transition: var(--transition);
+        .about-buttons {
+          flex-direction: column;
         }
 
-        .partner-item:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
+        .about-buttons .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo h1 {
+          font-size: 1.2rem;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-200px * 7));
-            }
+        .hero-title {
+          font-size: 0.7rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: var(--blue-gradient);
-            color: var(--text-light);
-            text-align: center;
-            padding: 80px 0;
+        .hero-subtitle {
+          font-size: 1.8rem;
         }
 
-        .cta-section .section-title h2 {
-            color: var(--text-light);
+        .hero-tagline {
+          font-size: 2rem;
         }
 
-        .cta-section .section-title h2::after {
-            background: var(--text-light);
+        .btn {
+          padding: 14px 30px;
+          font-size: 1rem;
         }
 
-        /* Footer */
-        footer {
-            background: var(--blue-dark);
-            color: var(--text-light);
-            padding: 60px 0 20px;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--blue-gradient);
+        .features-grid {
+          grid-template-columns: 1fr;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
+          grid-template-columns: 1fr;
         }
 
-        .footer-logo {
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-light);
+        .stat-number {
+          font-size: 2.5rem;
         }
 
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
+        .programs-container,
+        .instructors-container,
+        .alumni-container,
+        .news-container,
+        .collaboration-container,
+        .testimonials-container {
+          grid-template-columns: 1fr;
         }
 
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            font-size: 1.2rem;
-            border-radius: 50%;
-            transition: var(--transition);
+        .partner-item {
+          width: 180px;
+          margin: 0 15px;
         }
 
-        .footer-social a:hover {
-            background: var(--blue-medium);
-            transform: translateY(-3px);
+        .about-cta-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
-        .footer-links h3,
-        .footer-newsletter h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            color: var(--text-light);
+        .about-cta-buttons .btn {
+          width: 100%;
+          max-width: 280px;
+          margin-bottom: 10px;
         }
-
-        .footer-links h3::after,
-        .footer-newsletter h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--blue-medium);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--text-light);
-            transform: translateX(5px);
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-contact i {
-            color: var(--blue-medium);
-            width: 20px;
-        }
-
-        .map-container {
-            height: 200px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 15px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            background: transparent;
-            color: var(--text-light);
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .newsletter-form button {
-            background: var(--blue-medium);
-            color: var(--text-light);
-            border: none;
-            padding: 0 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background: var(--blue-light);
-            color: var(--blue-dark);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--blue-gradient);
-            color: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* Animasi */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from { 
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes countUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 0.9rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 2.5rem;
-            }
-            
-            .hero-tagline {
-                font-size: 2.8rem;
-            }
-
-            .programs-container,
-            .instructors-container,
-            .alumni-container,
-            .news-container,
-            .collaboration-container,
-            .testimonials-container {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            .about-content,
-            .vm-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--blue-dark);
-                padding: 80px 20px 20px;
-                transition: left 0.3s ease;
-                z-index: 999;
-                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-                overflow-y: auto;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 12px;
-                border-radius: 5px;
-            }
-
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown-content {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: transparent;
-                margin-left: 20px;
-                display: none;
-            }
-
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-
-            .mobile-menu-btn {
-                position: relative;
-                z-index: 1000;
-            }
-
-            .hero {
-                padding: 100px 0 80px;
-            }
-            
-            .hero-title {
-                font-size: 0.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 2rem;
-            }
-            
-            .hero-tagline {
-                font-size: 2.2rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .program-tabs,
-            .alumni-tabs {
-                flex-wrap: wrap;
-            }
-            
-            .partners-track {
-                animation: scroll 20s linear infinite;
-            }
-
-            .theme-toggle {
-                margin-left: 15px;
-            }
-
-            .mobile-menu-btn {
-                margin-left: 15px;
-            }
-
-            .about-buttons {
-                flex-direction: column;
-            }
-
-            .about-buttons .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-
-            .hero-title {
-                font-size: 0.7rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.8rem;
-            }
-            
-            .hero-tagline {
-                font-size: 2rem;
-            }
-
-            .btn {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .programs-container,
-            .instructors-container,
-            .alumni-container,
-            .news-container,
-            .collaboration-container,
-            .testimonials-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .partner-item {
-                width: 180px;
-                margin: 0 15px;
-            }
-
-            .about-cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-cta-buttons .btn {
-                width: 100%;
-                max-width: 280px;
-                margin-bottom: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="assets/photos/logo/quantum logo color.png" alt="Quantum Telecommunication Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="menu/about.html">Tentang Kami</a></li>
-                    <li class="dropdown">
-                        <a href="#programs">Program <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="menu/programs/offline.html">Kelas Offline</a>
-                            <a href="menu/programs/online.html">Kelas Online</a>
-                            <a href="menu/programs/private.html">Kelas Private</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
-                            <a href="menu/kerjasama/swasta.html">Swasta</a>
-                        </div>
-                    </li>
-                    <li><a href="menu/alumni.html">Alumni</a></li>
-                    <li><a href="menu/news.html">Berita</a></li>
-                    <li><a href="menu/testimoni.html">Testimoni</a></li>
-                </ul>
-            </nav>
-            <div style="display: flex; align-items: center;">
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+      <div class="container header-content">
+        <div class="logo">
+          <img
+            src="assets/photos/logo/quantum logo color.png"
+            alt="Quantum Telecommunication Logo"
+          />
         </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="menu/about.html">Tentang Kami</a></li>
+            <li class="dropdown">
+              <a href="#programs"
+                >Program <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="menu/programs/offline.html">Kelas Offline</a>
+                <a href="menu/programs/online.html">Kelas Online</a>
+                <a href="menu/programs/private.html">Kelas Private</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#collaboration"
+                >Kerjasama <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="menu/kerjasama/swasta.html">Swasta</a>
+              </div>
+            </li>
+            <li><a href="menu/alumni.html">Alumni</a></li>
+            <li><a href="menu/news.html">Berita</a></li>
+            <li><a href="menu/testimoni.html">Testimoni</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide active"></div>
-            <div class="hero-slide"></div>
-            <div class="hero-slide"></div>
+      <div class="hero-slideshow">
+        <div class="hero-slide active"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+      </div>
+      <div class="container hero-content">
+        <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
+        <h3 class="hero-subtitle">PELATIHAN - MAGANG - KERJA</h3>
+        <h3 class="hero-tagline">DIJAMIN KERJA</h3>
+        <div class="hero-buttons">
+          <a href="#programs" class="btn">Daftar Kelas Sekarang</a>
         </div>
-        <div class="container hero-content">
-            <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
-            <h3 class="hero-subtitle">MAGANG - TRAINING</h3>
-            <h3 class="hero-tagline">DIJAMIN KERJA</h3>
-            <div class="hero-buttons">
-                <a href="#programs" class="btn">Daftar Kelas Sekarang</a>
-            </div>
-            <div class="hero-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-            </div>
+        <div class="hero-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang Kami</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="assets/photos/section/tentang-kami.jpg" alt="LPK Quantum" loading="lazy">
-                </div>
-                <div class="about-text">
-                    <h3>LPK Quantum Telecommunication</h3>
-                    <p>Kami Adalah Lembaga Pelatihan Kerja Swasta merupakan Tempat Pelatihan / Tempat kursus / Sekolah Teknisi Smartphone sejak Tahun 2008. Alhamdulillah saat ini LPK QUANTUM TELECOMMUNICATION telah berhasil mencetak ribuan Alumni yang tersebar di se-Indonesia sebagai pengusaha dan Teknisi Handphone yang trampil dan siap kerja maupun sebagai Pengusaha mandiri sukses profesional.</p>
-                    <p>Dengan metode pembelajaran yang efektif dan penyaluran kerja yang terjamin, LPK QUANTUM TELECOMMUNICATION menjadi pilihan tepat bagi Anda yang ingin mengembangkan karier di bidang telekomunikasi dan teknisi handphone.</p>
-                    <div class="about-buttons">
-                        <a href="assets/photos/pdf/LPK-Quantum-Profile.pdf" class="btn btn-company">COMPANY PROFILE</a>
-                        <a href="materi-pembelajaran.html" class="btn btn-outline">CEK MATERI</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Tentang Kami</h2>
         </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img
+              src="assets/photos/section/tentang-kami.jpg"
+              alt="LPK Quantum"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-text">
+            <h3>LPK Quantum Telecommunication</h3>
+            <p>
+              LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja
+              Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi
+              tempat pelatihan, kursus, sekaligus sekolah teknisi smartphone
+              terpercaya di Indonesia. <br />
+              Sejak tahun 2012, lembaga ini telah resmi berizin kedinasan dan
+              terakreditasi LA-LPK sebagai pengakuan atas kualitas serta
+              legalitas penyelenggaraan pelatihan. Hingga kini, lebih dari 5.000
+              alumni telah berhasil dicetak dan tersebar di seluruh Indonesia
+              bahkan mancanegara, baik sebagai teknisi handphone yang trampil
+              dan siap kerja, maupun sebagai pengusaha mandiri yang sukses dan
+              profesional. <br />
+              Dengan metode pembelajaran yang efektif, kurikulum terarah, serta
+              penyaluran kerja yang terjamin, LPK Quantum Telecommunication
+              menjadi pilihan tepat bagi siapa saja yang ingin mengembangkan
+              karier, meningkatkan keterampilan, dan merintis usaha di bidang
+              teknisi smartphone.
+            </p>
+            <div class="about-buttons">
+              <a
+                href="assets/photos/pdf/Compro Quantum Telecommunication.pdf"
+                class="btn btn-company"
+                >COMPANY PROFILE</a
+              >
+              <a href="materi-pembelajaran.html" class="btn btn-outline"
+                >CEK MATERI</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Video Profile Section -->
     <section class="video-profile">
-        <div class="container">
-            <div class="section-title">
-                <h2>Video Company Profile</h2>
-            </div>
-            <p class="section-subtitle">Tonton video profil LPK Quantum untuk mengenal lebih dekat tentang program dan fasilitas kami</p>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cpdx_JTrg68?si=7FqA6Sj5qyW9u7FU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Video Company Profile</h2>
         </div>
+        <p class="section-subtitle">
+          Tonton video profil LPK Quantum untuk mengenal lebih dekat tentang
+          program dan fasilitas kami
+        </p>
+        <div class="video-container">
+          <div class="video-wrapper">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Cpdx_JTrg68?si=7FqA6Sj5qyW9u7FU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Keunggulan Section -->
     <section id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Keunggulan LPK Quantum</h2>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Instruktur Berpengalaman</h3>
-                    <p>Diajar oleh praktisi yang telah berkecimpung di industri telekomunikasi selama lebih dari 10 tahun</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Fasilitas Modern</h3>
-                    <p>Peralatan praktik terkini dan lengkap untuk menunjang proses belajar mengajar</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Sertifikasi Resmi</h3>
-                    <p>Lulusan mendapatkan sertifikat kompetensi yang diakui oleh industri dan pemerintah</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Penyaluran Kerja</h3>
-                    <p>Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service center terkemuka</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Kelas Offline</h3>
-                    <p>Belajar langsung dengan instruktur dan praktik menggunakan peralatan terkini</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>Kelas Bersubsidi</h3>
-                    <p>Program pelatihan dengan harga terjangkau dan fasilitas lengkap</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Ribuan Alumni</h3>
-                    <p>Lebih dari 1250 alumni tersebar dan sukses di industri telekomunikasi</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>Kelas Online</h3>
-                    <p>Materi pembelajaran fleksibel yang dapat diakses dari mana saja</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Legalitas Lengkap</h3>
-                    <p>Lembaga terdaftar resmi dengan izin operasional dari instansi terkait</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Keunggulan LPK Quantum</h2>
         </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Instruktur Berpengalaman</h3>
+            <p>
+              Diajar oleh praktisi yang telah berkecimpung di industri
+              telekomunikasi selama lebih dari 10 tahun
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Fasilitas Modern</h3>
+            <p>
+              Peralatan praktik terkini dan lengkap untuk menunjang proses
+              belajar mengajar
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Sertifikasi Resmi</h3>
+            <p>
+              Lulusan mendapatkan sertifikat kompetensi yang diakui oleh
+              industri dan pemerintah
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Penyaluran Kerja</h3>
+            <p>
+              Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service
+              center terkemuka
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Kelas Offline</h3>
+            <p>
+              Materi disampaikan LIVE STREAMING di group FB tertutup Dibimbing
+              DARI NOL SAMPAI MAHIR GARANSI sampai BISA!i
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3>Kelas Bersubsidi</h3>
+            <p>
+              Program pelatihan dengan harga terjangkau dan fasilitas lengkap
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Ribuan Alumni</h3>
+            <p>
+              Lebih dari 5000++ alumni tersebar dan sukses menjadi teknisi
+              ponsel
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3>Kelas Online</h3>
+            <p>
+              Materi pembelajaran fleksibel yang dapat diakses dari mana saja
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <h3>Legalitas Lengkap</h3>
+            <p>
+              Lembaga terdaftar resmi dengan izin operasional dari instansi
+              terkait
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Programs Section -->
     <section id="programs" class="programs-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Program Pelatihan</h2>
-            </div>
-            <div class="program-tabs">
-                <button class="program-tab active" data-category="all">Semua Program</button>
-                <button class="program-tab" data-category="offline">Kelas Offline</button>
-                <button class="program-tab" data-category="online">Kelas Online</button>
-                <button class="program-tab" data-category="private">Kelas Private</button>
-            </div>
-            <div class="programs-container">
-                <div class="program-card active" data-category="offline">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknisi HP" loading="lazy">
-                        <div class="program-badge">Offline</div>
-                    </div>
-                    <div class="program-content">
-                        <h3>Teknisi HP Professional</h3>
-                        <div class="program-meta">
-                            <span><i class="far fa-clock"></i> 3 bulan</span>
-                            <span class="program-price">Rp 3.500.000</span>
-                        </div>
-                        <ul class="program-benefits">
-                            <li>Perbaikan hardware dan software</li>
-                            <li>Microsoldering dan chip-level repair</li>
-                            <li>Data recovery dan flashing</li>
-                            <li>Konsultasi bisnis service center</li>
-                        </ul>
-                        <div class="program-cta">
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="program-card active" data-category="online">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kelas Online" loading="lazy">
-                        <div class="program-badge">Online</div>
-                    </div>
-                    <div class="program-content">
-                        <h3>Kursus Online Teknisi HP</h3>
-                        <div class="program-meta">
-                            <span><i class="far fa-clock"></i> 2 bulan</span>
-                            <span class="program-price">Rp 1.800.000</span>
-                        </div>
-                        <ul class="program-benefits">
-                            <li>Akses video pembelajaran selamanya</li>
-                            <li>Grup diskusi dengan instruktur</li>
-                            <li>Konsultasi online</li>
-                            <li>Sertifikat elektronik</li>
-                        </ul>
-                        <div class="program-cta">
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="program-card active" data-category="subsidi">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fiber Optic" loading="lazy">
-                        <div class="program-badge">Subsidi</div>
-                    </div>
-                    <div class="program-content">
-                        <h3>Teknisi Fiber Optic Bersubsidi</h3>
-                        <div class="program-meta">
-                            <span><i class="far fa-clock"></i> 4 bulan</span>
-                            <span class="program-price">Rp 2.500.000</span>
-                        </div>
-                        <ul class="program-benefits">
-                            <li>Instalasi dan penyambungan kabel fiber</li>
-                            <li>Pengukuran and testing jaringan</li>
-                            <li>Pemeliharaan dan troubleshooting</li>
-                            <li>Sertifikasi kompetensi</li>
-                        </ul>
-                        <div class="program-cta">
-                            <a href="#contact" class="btn" style="width: 100%; text-align: center;">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Program Pelatihan</h2>
         </div>
+        <div class="program-tabs">
+          <button class="program-tab active" data-category="all">
+            Semua Program
+          </button>
+          <button class="program-tab" data-category="offline">
+            Kelas Offline
+          </button>
+          <button class="program-tab" data-category="online">
+            Kelas Online
+          </button>
+          <button class="program-tab" data-category="private">
+            Kelas Private
+          </button>
+        </div>
+        <div class="programs-container">
+          <div class="program-card active" data-category="offline">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Teknisi HP"
+                loading="lazy"
+              />
+              <div class="program-badge">Offline</div>
+            </div>
+            <div class="program-content">
+              <h3>Kelas Offline</h3>
+              <div class="program-meta">
+                <span><i class="far fa-clock"></i> 10 Hari</span>
+                <span class="program-price">Rp 4.000.000</span>
+              </div>
+              <ul class="program-benefits">
+                <li>Tatap muka di Semarang</li>
+                <li>Belajar Hardware & Software dari Nol</li>
+                <li>
+                  Full Fasilitas: Mess AC, WiFi, Kaos, Transport antar-jemput
+                </li>
+                <li>70% Praktik, 30% Teori dengan studi kasus nyata</li>
+                <li>Video materi bisa didownload + Gratis mengulang kelas</li>
+                <li>Selesai pelatihan → MAGANG langsung + peluang kerja</li>
+              </ul>
+              <div class="program-cta">
+                <a
+                  href="menu/offline.html"
+                  class="btn"
+                  style="width: 100%; text-align: center"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="program-card active" data-category="online">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Kelas Online"
+                loading="lazy"
+              />
+              <div class="program-badge">Online</div>
+            </div>
+            <div class="program-content">
+              <h3>Kelas Online</h3>
+              <div class="program-meta">
+                <span><i class="far fa-clock"></i> Sampai Bisa!</span>
+                <span class="program-price">Rp 800.000</span>
+              </div>
+              <ul class="program-benefits">
+                <li>Belajar lewat Live Streaming FB (Group FB Tertutup)</li>
+                <li>Garansi sampai bisa!</li>
+                <li>Gratis Borneo Schematic 1 bulan</li>
+                <li>Bonus materi Bisnis & Scale Up Usaha</li>
+                <li>E-Sertifikat Resmi</li>
+                <li>Bebas konsultasi via WA & Bedah Kasus Live</li>
+              </ul>
+              <div class="program-cta">
+                <a
+                  href="#contact"
+                  class="btn"
+                  style="width: 100%; text-align: center"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="program-card active" data-category="subsidi">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Fiber Optic"
+                loading="lazy"
+              />
+              <div class="program-badge">Subsidi</div>
+            </div>
+            <div class="program-content">
+              <h3>Teknisi Fiber Optic Bersubsidi</h3>
+              <div class="program-meta">
+                <span><i class="far fa-clock"></i> 4 bulan</span>
+                <span class="program-price">Rp 2.500.000</span>
+              </div>
+              <ul class="program-benefits">
+                <li>Instalasi dan penyambungan kabel fiber</li>
+                <li>Pengukuran and testing jaringan</li>
+                <li>Pemeliharaan dan troubleshooting</li>
+                <li>Sertifikasi kompetensi</li>
+              </ul>
+              <div class="program-cta">
+                <a
+                  href="#contact"
+                  class="btn"
+                  style="width: 100%; text-align: center"
+                  >Daftar Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Instruktur Section -->
     <section id="instructors">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tim Instruktur Profesional</h2>
-            </div>
-            <p class="section-subtitle">Belajar langsung dari para praktisi berpengalaman di bidang telekomunikasi dan teknisi HP</p>
-            <div class="instructors-container">
-                <!-- Instructor 1 -->
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="assets/photos/instruktur/tomi.jpg" alt="Nama Instruktur" loading="lazy">
-                    </div>
-                    <div class="instructor-info">
-                        <h3 class="instructor-name">Tomi Sudiarno</h3>
-                        <p class="instructor-role">Owner LPK Quantum Telecommunication</p>
-                        <p class="instructor-desc">Berpengalaman lebih dari 12 tahun di bidang reparasi smartphone dan microsoldering.</p>
-                        <div class="instructor-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Instructor 2 -->
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="assets/photos/instruktur/danur.jpg" alt="Mas Danur" loading="lazy">
-                    </div>
-                    <div class="instructor-info">
-                        <h3 class="instructor-name">Danur Dyantoro</h3>
-                        <p class="instructor-role">Instruktur Senior</p>
-                        <p class="instructor-desc">Berpengalaman mengajar di LPK Quantum Telecommunication selama bertahun-tahun.</p>
-                        <div class="instructor-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#instructors" class="btn">Lihat Semua Instruktur</a>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Tim Instruktur Profesional</h2>
         </div>
+        <p class="section-subtitle">
+          Belajar langsung dari para praktisi berpengalaman di bidang
+          telekomunikasi dan teknisi HP
+        </p>
+        <div class="instructors-container">
+          <!-- Instructor 1 -->
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/.jpg"
+                alt="Tomi Sudiarno"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Tomi Sudiarno</h3>
+              <p class="instructor-role">Owner LPK Quantum Telecommunication</p>
+              <p class="instructor-desc">
+                Owner sekaligus instruktur utama di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instructor 2 -->
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/ika.jpg"
+                alt="Ika Fitrianingsih"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Ika Fitrianingsih</h3>
+              <p class="instructor-role">Divisi Keuangan</p>
+              <p class="instructor-desc">
+                Divisi keuangan di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/jun.jpg"
+                alt="Djunaedin Sammad"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Djunaedin Sammad</h3>
+              <p class="instructor-role">Asisten Instruktur</p>
+              <p class="instructor-desc">
+                Asisten instruktur di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/yupi.jpg"
+                alt="Yupi Yana Munthe"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Yupi Yana Munthe</h3>
+              <p class="instructor-role">Koordinator</p>
+              <p class="instructor-desc">
+                Koordinator di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/.jpg"
+                alt="Rata Kusumasari"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Ratna Kusumasari</h3>
+              <p class="instructor-role">Bagian Administrasi</p>
+              <p class="instructor-desc">
+                Bagian administrasi di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img
+                src="assets/photos/instruktur/habib.jpg"
+                alt="M. Habib Kurniawansya"
+                loading="lazy"
+              />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">M. Habib Kurniawansya</h3>
+              <p class="instructor-role">Bagian Marketing</p>
+              <p class="instructor-desc">
+                Bagian marketing di LPK Quantum Telecommunication
+              </p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 40px">
+          <a href="#instructors" class="btn">Lihat Semua Instruktur</a>
+        </div>
+      </div>
     </section>
 
     <!-- Alumni Section -->
     <section id="alumni">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kisah Sukses Alumni</h2>
-            </div>
-            <div class="alumni-tabs">
-                <button class="alumni-tab active" data-category="offline">Alumni Offline</button>
-                <button class="alumni-tab" data-category="online">Alumni Online</button>
-            </div>
-            <div class="alumni-container">
-                <!-- Alumni 1 -->
-                <div class="alumni-card active" data-category="offline">
-                    <div class="alumni-image">
-                        <img src="assets/photos/alumni/alumni1.JPG" alt="Alumni 1" loading="lazy">
-                    </div>
-                    <div class="alumni-info">
-                        <h3 class="alumni-name">Khoirul Hidayat</h3>
-                        <p class="alumni-batch">Alumni Kelas Offline 2023</p>
-                        <p class="alumni-testimonial">"Setelah lulus dari LPK Quantum, saya membuka service center sendiri dan sekarang dipercaya untuk service iphone."</p>
-                        <p class="alumni-current">Kini: <span>Punya Konter HP Sendiri</span></p>
-                    </div>
-                </div>
-                
-                <!-- Alumni 2 -->
-                <div class="alumni-card active" data-category="offline">
-                    <div class="alumni-image">
-                        <img src="assets/photos/alumni/alumni3.JPG" alt="Alumni 2" loading="lazy">
-                    </div>
-                    <div class="alumni-info">
-                        <h3 class="alumni-name">Abdul Rohman</h3>
-                        <p class="alumni-batch">Alumni Kelas Offline 2024</p>
-                        <p class="alumni-testimonial">"Pelatihan di LPK Quantum sangat lengkap dan instruktur sangat berpengalaman. Cara penyampaiannya mudah dipahami dan sangat jelas."</p>
-                        <p class="alumni-current">Kini: <span>Sudah Buka Konter HP Sendiri.</span></p>
-                    </div>
-                </div>
-                
-                <!-- Alumni 3 -->
-                <div class="alumni-card active" data-category="online">
-                    <div class="alumni-image">
-                        <img src="assets/photos/alumni/alumni2.JPG" alt="Alumni 3" loading="lazy">
-                    </div>
-                    <div class="alumni-info">
-                        <h3 class="alumni-name">Zulian Tunjung Sidartak</h3>
-                        <p class="alumni-batch">Alumni Kelas Offline 2024</p>
-                        <p class="alumni-testimonial">"Meski saya sangat sangat pemula, materi yang disampaikan sangat detail dan mudah dipahami. Sekarang saya bisa servis HP sendiri dan buka usaha sampingan."</p>
-                        <p class="alumni-current">Kini: <span>Buka Konter HP Sendiri</span></p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Kisah Sukses Alumni</h2>
         </div>
+        <div class="alumni-tabs">
+          <button class="alumni-tab active" data-category="offline">
+            Alumni Offline
+          </button>
+          <button class="alumni-tab" data-category="online">
+            Alumni Online
+          </button>
+        </div>
+        <div class="alumni-container">
+          <!-- Alumni 1 -->
+          <div class="alumni-card active" data-category="offline">
+            <div class="alumni-image">
+              <img
+                src="assets/photos/alumni/alumni1.JPG"
+                alt="Alumni 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="alumni-info">
+              <h3 class="alumni-name">Khoirul Hidayat</h3>
+              <p class="alumni-batch">Alumni Kelas Offline 2023</p>
+              <p class="alumni-testimonial">
+                "Setelah lulus dari LPK Quantum, saya membuka service center
+                sendiri dan sekarang dipercaya untuk service iphone."
+              </p>
+              <p class="alumni-current">
+                Kini: <span>Punya Konter HP Sendiri</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Alumni 2 -->
+          <div class="alumni-card active" data-category="offline">
+            <div class="alumni-image">
+              <img
+                src="assets/photos/alumni/alumni3.JPG"
+                alt="Alumni 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="alumni-info">
+              <h3 class="alumni-name">Abdul Rohman</h3>
+              <p class="alumni-batch">Alumni Kelas Offline 2024</p>
+              <p class="alumni-testimonial">
+                "Pelatihan di LPK Quantum sangat lengkap dan instruktur sangat
+                berpengalaman. Cara penyampaiannya mudah dipahami dan sangat
+                jelas."
+              </p>
+              <p class="alumni-current">
+                Kini: <span>Sudah Buka Konter HP Sendiri.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Alumni 3 -->
+          <div class="alumni-card active" data-category="online">
+            <div class="alumni-image">
+              <img
+                src="assets/photos/alumni/alumni2.JPG"
+                alt="Alumni 3"
+                loading="lazy"
+              />
+            </div>
+            <div class="alumni-info">
+              <h3 class="alumni-name">Zulian Tunjung Sidartak</h3>
+              <p class="alumni-batch">Alumni Kelas Offline 2024</p>
+              <p class="alumni-testimonial">
+                "Meski saya sangat sangat pemula, materi yang disampaikan sangat
+                detail dan mudah dipahami. Sekarang saya bisa servis HP sendiri
+                dan buka usaha sampingan."
+              </p>
+              <p class="alumni-current">
+                Kini: <span>Buka Konter HP Sendiri</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Berita Section -->
-    <section id="news" style="background-color: var(--blue-light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Berita & Artikel Terbaru</h2>
-            </div>
-            <p class="section-subtitle">Informasi terkini seputar dunia telekomunikasi, teknisi HP, dan kegiatan LPK Quantum</p>
-            <div class="news-container">
-                <!-- Berita 1 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
-                    </div>
-                    <div class="news-content">
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 12 Oktober 2023</p>
-                        <h3 class="news-title">Peluncuran Program Pelatihan 5G Technology</h3>
-                        <p class="news-excerpt">LPK Quantum meluncurkan program pelatihan baru khusus teknologi 5G untuk memenuhi kebutuhan industri telekomunikasi yang semakin berkembang.</p>
-                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Berita 2 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
-                    </div>
-                    <div class="news-content">
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 5 Oktober 2023</p>
-                        <h3 class="news-title">Tips Merawat Baterai Smartphone agar Awet</h3>
-                        <p class="news-excerpt">Bagaimana cara merawat baterai smartphone Anda agar tetap awet dan tidak cepat rusak? Simak tips dari instruktur LPK Quantum.</p>
-                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Berita 3 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Judul Berita" loading="lazy">
-                    </div>
-                    <div class="news-content">
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 28 September 2023</p>
-                        <h3 class="news-title">Kerjasama LPK Quantum dengan Dinas Tenaga Kerja</h3>
-                        <p class="news-excerpt">LPK Quantum menjalin kerjasama dengan Dinas Tenaga Kerja setempat untuk menyelenggarakan pelatihan gratis bagi pengangguran.</p>
-                        <a href="#" class="news-link">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="menu/news.html" class="btn">Lihat Semua Berita</a>
-            </div>
+    <section id="news" style="background-color: var(--blue-light)">
+      <div class="container">
+        <div class="section-title">
+          <h2>Berita & Artikel Terbaru</h2>
         </div>
+        <p class="section-subtitle">
+          Informasi terkini seputar dunia telekomunikasi, teknisi HP, dan
+          kegiatan LPK Quantum
+        </p>
+        <div class="news-container">
+          <!-- Berita 1 -->
+          <div class="news-card">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Tk8oUcqTSDQ?si=wVViseFbYJ76tj9s"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 12 Oktober 2023
+              </p>
+              <h3 class="news-title">PEMBAHASAN UMUM SEPUTAR SERVICE!</h3>
+              <p class="news-excerpt">
+                Pembahasan dalam video ini juga menyoroti berbagai permasalahan
+                umum yang sering terjadi dalam dunia service HP, mulai dari
+                kendala teknis hingga kesalahan pemilihan alat, sehingga isinya
+                benar-benar relevan dengan kondisi nyata yang biasa dihadapi
+                teknisi di lapangan.
+              </p>
+              <a
+                href="https://youtu.be/Tk8oUcqTSDQ?si=DmE3rIs29EZrnAQJ"
+                class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+          <div class="news-card">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/U3pUf1KOcek?si=niLszSOorBJDEISv"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 5 Oktober 2023
+              </p>
+              <h3 class="news-title">
+                "Rahasia Counter Service Sukses! Pilih Alat Analisa HP yang
+                Tepat"
+              </h3>
+              <p class="news-excerpt">
+                Video ini membahas jenis alat analisa HP yang wajib dimiliki,
+                cara memilih sesuai kebutuhan, tips hemat tapi tetap
+                profesional, serta rahasia meningkatkan kecepatan dan akurasi
+                servis agar counter bisa jadi pilihan utama pelanggan!
+              </p>
+              <a href="#" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 3 -->
+          <div class="news-card">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/bx7uBHpV-o4?si=QTPlKeCrnfB1-6rX"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 28 September 2023
+              </p>
+              <h3 class="news-title">
+                The Ultimate Guide to Smartphone Repair Tools : Cara Setting
+                Microscope Trinoculer
+              </h3>
+              <p class="news-excerpt">
+                Mikroskop trinokuler adalah alat penting bagi teknisi ponsel, karena memberikan presisi tinggi saat menangani komponen kecil. Baik pemula maupun berpengalaman, tutorial ini akan membantu Anda memaksimalkan penggunaannya untuk perbaikan smartphone yang lebih efisien dan akurat.
+              </p>
+              <a href="#" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px">
+          <a href="menu/news.html" class="btn">Lihat Semua Berita</a>
+        </div>
+      </div>
     </section>
 
     <!-- Kerjasama Section -->
     <section id="collaboration">
-        <div class="container">
-            <div class="section-title">
-                <h2>Dokumentasi Kerjasama</h2>
-            </div>
-            <p class="section-subtitle">Kegiatan kerjasama LPK Quantum dengan berbagai instansi pemerintah dan swasta</p>
-            <div class="collaboration-container">
-                <!-- Kerjasama 1 -->
-                <div class="collaboration-card">
-                    <div class="collaboration-image">
-                        <img src="assets/photos/kerjasama/bimtek-semarang1.jpeg" alt="Judul Kerjasama" loading="lazy">
-                    </div>
-                    <div class="collaboration-content">
-                        <h3 class="collaboration-title">Bimtek Kota Semarang 2018</h3>
-                        <p class="collaboration-partner">Dengan Kementerian Perindustrian RI</p>
-                        <p class="collaboration-desc">Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Semarang - Jawa Tengah.</p>
-                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 2018</p>
-                    </div>
-                </div>
-                
-                <!-- Kerjasama 2 -->
-                <div class="collaboration-card">
-                    <div class="collaboration-image">
-                        <img src="assets/photos/kerjasama/bimtek-tanjungpinang.jpeg" alt="Judul Kerjasama" loading="lazy">
-                    </div>
-                    <div class="collaboration-content">
-                        <h3 class="collaboration-title">Bimtek Tanjung Pinang 2019</h3>
-                        <p class="collaboration-partner">Dengan Kementerian Perindustrian RI</p>
-                        <p class="collaboration-desc">Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Tanjung Pinang - Kepulauan Riau.</p>
-                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 2019</p>
-                    </div>
-                </div>
-                
-                <!-- Kerjasama 3 -->
-                <div class="collaboration-card">
-                    <div class="collaboration-image">
-                        <img src="assets/photos/kerjasama/bimtek-bangkaselatan.jpeg" alt="Judul Kerjasama" loading="lazy">
-                    </div>
-                    <div class="collaboration-content">
-                        <h3 class="collaboration-title">Bimtek Bangka Selatan 2019</h3>
-                        <p class="collaboration-partner">Dengan Kementerian Perindustrian RI.</p>
-                        <p class="collaboration-desc">Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Bangka Selatan - Kepulauan Bangka Belitung.</p>
-                        <p class="collaboration-date"><i class="far fa-calendar-alt"></i> 2019</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Dokumentasi Kerjasama</h2>
         </div>
+        <p class="section-subtitle">
+          Kegiatan kerjasama LPK Quantum dengan berbagai instansi pemerintah dan
+          swasta
+        </p>
+        <div class="collaboration-container">
+          <!-- Kerjasama 1 -->
+          <div class="collaboration-card">
+            <div class="collaboration-image">
+              <img
+                src="assets/photos/kerjasama/bamuis1.jpg"
+                alt="Judul Kerjasama"
+                loading="lazy"
+              />
+            </div>
+            <div class="collaboration-content">
+              <h3 class="collaboration-title">BAMUIS 1</h3>
+              <p class="collaboration-partner">
+                Dengan Kementerian Perindustrian RI
+              </p>
+              <p class="collaboration-desc">
+                Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Semarang
+                - Jawa Tengah.
+              </p>
+              <p class="collaboration-date">
+                <i class="far fa-calendar-alt"></i> 2018
+              </p>
+            </div>
+          </div>
+
+          <!-- Kerjasama 2 -->
+          <div class="collaboration-card">
+            <div class="collaboration-image">
+              <img
+                src="assets/photos/kerjasama/bamuis2.jpg"
+                alt="Judul Kerjasama"
+                loading="lazy"
+              />
+            </div>
+            <div class="collaboration-content">
+              <h3 class="collaboration-title">BAMUIS II</h3>
+              <p class="collaboration-partner">
+                Dengan Kementerian Perindustrian RI
+              </p>
+              <p class="collaboration-desc">
+                Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Tanjung
+                Pinang - Kepulauan Riau.
+              </p>
+              <p class="collaboration-date">
+                <i class="far fa-calendar-alt"></i> 2019
+              </p>
+            </div>
+          </div>
+
+          <!-- Kerjasama 3 -->
+          <div class="collaboration-card">
+            <div class="collaboration-image">
+              <img
+                src="assets/photos/kerjasama/bamuis3.jpg"
+                alt="Judul Kerjasama"
+                loading="lazy"
+              />
+            </div>
+            <div class="collaboration-content">
+              <h3 class="collaboration-title">BAMUIS III</h3>
+              <p class="collaboration-partner">
+                Dengan Kementerian Perindustrian RI.
+              </p>
+              <p class="collaboration-desc">
+                Bimbingan Teknis Wirausaha Baru Teknisi Handphone Kota Bangka
+                Selatan - Kepulauan Bangka Belitung.
+              </p>
+              <p class="collaboration-date">
+                <i class="far fa-calendar-alt"></i> 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Testimoni Video Section -->
     <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimoni Peserta & Alumni</h2>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial-video">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ySjxQHP5vJU?si=ftFgKq7s8pCnp0CO&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="testimonial-content">
-                        <h3>Testimoni Kelas Offline</h3>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">Dengarkan testimoni peserta kelas offline di video ini.</p>
-                        <p class="testimonial-author">Peserta Kelas Offline</p>
-                    </div>
-                </div>
-                <div class="testimonial-video">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bGI5joet5wM?si=mxJaxgD5PVY7l9Yy&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="testimonial-content">
-                        <h3>Testimoni Kelas Online</h3>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">Dengarkan pengalaman dari alumni langsung</p>
-                        <p class="testimonial-author">Alumni Kelas Online</p>
-                    </div>
-                </div>
-                <div class="testimonial-video">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/iu6lvrXriNo?si=A5uDZr3YcQyG1Fd1&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="testimonial-content">
-                        <h3>Testimoni Kelas Offline</h3>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">Dengarkan pengalaman dari alumni langsung.</p>
-                        <p class="testimonial-author">Alumni Kelas Offline</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimoni Peserta & Alumni</h2>
         </div>
+        <div class="testimonials-container">
+          <div class="testimonial-video">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/ySjxQHP5vJU?si=ftFgKq7s8pCnp0CO&amp;start=10"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="testimonial-content">
+              <h3>Testimoni Kelas Offline</h3>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="testimonial-text">
+                Dengarkan testimoni peserta kelas offline di video ini.
+              </p>
+              <p class="testimonial-author">Peserta Kelas Offline</p>
+            </div>
+          </div>
+          <div class="testimonial-video">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/bGI5joet5wM?si=mxJaxgD5PVY7l9Yy&amp;start=10"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="testimonial-content">
+              <h3>Testimoni Kelas Online</h3>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                Dengarkan pengalaman dari alumni langsung
+              </p>
+              <p class="testimonial-author">Alumni Kelas Online</p>
+            </div>
+          </div>
+          <div class="testimonial-video">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/iu6lvrXriNo?si=A5uDZr3YcQyG1Fd1&amp;start=10"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="testimonial-content">
+              <h3>Testimoni Kelas Offline</h3>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                Dengarkan pengalaman dari alumni langsung.
+              </p>
+              <p class="testimonial-author">Alumni Kelas Offline</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Partners Carousel Section -->
     <section class="partners-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mitra Kerjasama</h2>
-            </div>
-            <p class="section-subtitle">Kami bekerja sama dengan berbagai perusahaan dan institusi untuk menyediakan pelatihan terbaik dan penyaluran kerja</p>
-            
-            <div class="partners-carousel">
-                <div class="partners-track">
-                    <!-- Partner Items (duplicated for seamless loop) -->
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra1.png" alt="LCD Partner" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra2.png" alt="Magic Service" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra3.png" alt="Telkom" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra4.png" alt="XL Axiata" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra5.png" alt="Indosat" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra6.png" alt="Smartfren" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra7.png" alt="Samsung" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra8.png" alt="LCD Partner" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra9.png" alt="Magic Service" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra10.png" alt="Telkom" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra11.png" alt="XL Axiata" loading="lazy">
-                    </div>
-                    
-                    <!-- Duplicated items for seamless loop -->
-                      <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra1.png" alt="LCD Partner" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra2.png" alt="Magic Service" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra3.png" alt="Telkom" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra4.png" alt="XL Axiata" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra5.png" alt="Indosat" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra6.png" alt="Smartfren" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra7.png" alt="Samsung" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra8.png" alt="LCD Partner" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra9.png" alt="Magic Service" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra10.png" alt="Telkom" loading="lazy">
-                    </div>
-                    <div class="partner-item">
-                        <img src="assets/photos/mitra/mitra11.png" alt="XL Axiata" loading="lazy">
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Mitra Kerjasama</h2>
         </div>
+        <p class="section-subtitle">
+          Kami bekerja sama dengan berbagai perusahaan dan institusi untuk
+          menyediakan pelatihan terbaik dan penyaluran kerja
+        </p>
+
+        <div class="partners-carousel">
+          <div class="partners-track">
+            <!-- Partner Items (duplicated for seamless loop) -->
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra1.png"
+                alt="LCD Partner"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra2.png"
+                alt="Magic Service"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra3.png"
+                alt="Telkom"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra4.png"
+                alt="XL Axiata"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra5.png"
+                alt="Indosat"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra6.png"
+                alt="Smartfren"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra7.png"
+                alt="Samsung"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra8.png"
+                alt="LCD Partner"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra9.png"
+                alt="Magic Service"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra10.png"
+                alt="Telkom"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra11.png"
+                alt="XL Axiata"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Duplicated items for seamless loop -->
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra1.png"
+                alt="LCD Partner"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra2.png"
+                alt="Magic Service"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra3.png"
+                alt="Telkom"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra4.png"
+                alt="XL Axiata"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra5.png"
+                alt="Indosat"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra6.png"
+                alt="Smartfren"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra7.png"
+                alt="Samsung"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra8.png"
+                alt="LCD Partner"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra9.png"
+                alt="Magic Service"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra10.png"
+                alt="Telkom"
+                loading="lazy"
+              />
+            </div>
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/mitra11.png"
+                alt="XL Axiata"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Siap Mengembangkan Karier Anda?</h2>
-            </div>
-            <p>Daftar sekarang dan raih peluang kerja di bidang telekomunikasi dan teknisi HP yang semakin berkembang</p>
-            <a href="#contact" class="btn btn-daftar" style="margin-top: 30px;">Daftar Sekarang</a>
+      <div class="container">
+        <div class="section-title">
+          <h2>Siap Mengembangkan Karier Anda?</h2>
         </div>
+        <p>
+          Daftar sekarang dan raih peluang kerja di bidang Teknisi Ponsel yang
+          semakin berkembang
+        </p>
+        <a
+          href="https://www.facebook.com/LPKQuantumtelecommunication/"
+          class="btn btn-daftar"
+          style="margin-top: 30px"
+          >Daftar Sekarang</a
+        >
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">LPK Quantum</div>
-                    <p>Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang menghasilkan tenaga kerja profesional dan kompeten.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/LPKQuantumtelecommunication/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/quantum.telecommunication/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@quantumtelecom41"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Link Cepat</h3>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="menu/about.html">Tentang Kami</a></li>
-                        <li><a href="#programs">Program Pelatihan</a></li>
-                        <li><a href="menu/alumni.html">Galeri</a></li>
-                        <li><a href="menu/testimoni.html">Testimoni</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Kontak</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123, Bandung</p>
-                    <p><i class="fas fa-phone"></i> (022) 1234-5678</p>
-                    <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@lpkquantum.id</p>
-                    <div class="map-container">
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru tentang program pelatihan.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Alamat email Anda" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang Teknisi Ponsel yang menghasilkan
+              tenaga kerja profesional dan kompeten.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@quantumtelecom41"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Link Cepat</h3>
+            <ul>
+              <li><a href="#home">Beranda</a></li>
+              <li><a href="menu/about.html">Tentang Kami</a></li>
+              <li><a href="#programs">Program Pelatihan</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="menu/alumni.html">Alumni</a></li>
+              <li><a href="menu/news.html">Berita</a></li>
+              <li><a href="menu/testimoni.html">Testimoni</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
+              Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
+            </p>
+            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 8217 1727 337</p>
+            <p><i class="fas fa-envelope"></i> quantumtelecommunication38@gmail.com</p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Berlangganan newsletter kami untuk mendapatkan informasi terbaru
+              tentang program pelatihan.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Alamat email Anda" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a
+      href="https://wa.me/6281234567890"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
-        const body = document.body;
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-            
-            // Change icon
-            const icon = mobileMenuBtn.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
+      const body = document.body;
+      const dropdowns = document.querySelectorAll(".dropdown");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
+
+        // Change icon
+        const icon = mobileMenuBtn.querySelector("i");
+        if (nav.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(
+        "nav ul li a:not(.dropdown > a)"
+      );
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          body.style.overflow = "";
+
+          // Reset icon
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Dropdown toggle for mobile
+      dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+
+        link.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      // Check for saved theme preference or respect OS preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage.getItem("theme"))
+      ) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // Hero Slideshow dengan Indikator
+      const heroSlides = document.querySelectorAll(".hero-slide");
+      const indicators = document.querySelectorAll(
+        ".hero-indicators .indicator"
+      );
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        heroSlides.forEach((slide) => slide.classList.remove("active"));
+        indicators.forEach((indicator) => indicator.classList.remove("active"));
+
+        heroSlides[index].classList.add("active");
+        indicators[index].classList.add("active");
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= heroSlides.length) next = 0;
+        showSlide(next);
+      }
+
+      // Event listener untuk indikator
+      indicators.forEach((indicator) => {
+        indicator.addEventListener("click", function () {
+          let slideIndex = parseInt(this.getAttribute("data-slide"));
+          showSlide(slideIndex);
+        });
+      });
+
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 5000);
+
+      // Program Tabs dengan animasi
+      const programTabs = document.querySelectorAll(".program-tab");
+      const programCards = document.querySelectorAll(".program-card");
+
+      programTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const category = tab.getAttribute("data-category");
+
+          // Update active tab
+          programTabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Animate out current active cards
+          programCards.forEach((card) => {
+            if (card.classList.contains("active")) {
+              card.classList.remove("active");
             }
-        });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a:not(.dropdown > a)');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                body.style.overflow = '';
-                
-                // Reset icon
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
+          });
 
-        // Dropdown toggle for mobile
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
+          // Animate in new active cards
+          setTimeout(() => {
+            programCards.forEach((card) => {
+              if (
+                category === "all" ||
+                card.getAttribute("data-category") === category
+              ) {
+                card.classList.add("active");
+              }
             });
+          }, 50);
         });
+      });
 
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
-        
-        // Check for saved theme preference or respect OS preference
-        if (localStorage.getItem('theme') === 'dark' || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
+      // Alumni Tabs dengan animasi
+      const alumniTabs = document.querySelectorAll(".alumni-tab");
+      const alumniCards = document.querySelectorAll(".alumni-card");
+
+      alumniTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const category = tab.getAttribute("data-category");
+
+          // Update active tab
+          alumniTabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Animate out current active cards
+          alumniCards.forEach((card) => {
+            if (card.classList.contains("active")) {
+              card.classList.remove("active");
             }
+          });
+
+          // Animate in new active cards
+          setTimeout(() => {
+            alumniCards.forEach((card) => {
+              if (card.getAttribute("data-category") === category) {
+                card.classList.add("active");
+              }
+            });
+          }, 50);
+        });
+      });
+
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+
+      // Scroll animations
+      function checkScroll() {
+        const sections = document.querySelectorAll("section");
+        const backToTop = document.querySelector(".back-to-top");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (sectionTop < triggerHeight) {
+            section.classList.add("visible");
+          }
         });
 
-        // Hero Slideshow dengan Indikator
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const indicators = document.querySelectorAll('.hero-indicators .indicator');
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            heroSlides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            heroSlides[index].classList.add('active');
-            indicators[index].classList.add('active');
-            currentSlide = index;
+        // Show/hide back to top button
+        if (window.scrollY > 500) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
         }
-        
-        function nextSlide() {
-            let next = currentSlide + 1;
-            if (next >= heroSlides.length) next = 0;
-            showSlide(next);
-        }
-        
-        // Event listener untuk indikator
-        indicators.forEach(indicator => {
-            indicator.addEventListener('click', function() {
-                let slideIndex = parseInt(this.getAttribute('data-slide'));
-                showSlide(slideIndex);
-            });
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+
+      // Form validation
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simple validation
+          const name = document.getElementById("name");
+          const email = document.getElementById("email");
+          const phone = document.getElementById("phone");
+          const program = document.getElementById("program");
+          const message = document.getElementById("message");
+
+          let isValid = true;
+
+          if (name.value.trim() === "") {
+            isValid = false;
+            highlightError(name);
+          } else {
+            removeHighlight(name);
+          }
+
+          if (email.value.trim() === "" || !isValidEmail(email.value)) {
+            isValid = false;
+            highlightError(email);
+          } else {
+            removeHighlight(email);
+          }
+
+          if (phone.value.trim() === "") {
+            isValid = false;
+            highlightError(phone);
+          } else {
+            removeHighlight(phone);
+          }
+
+          if (program.value === "") {
+            isValid = false;
+            highlightError(program);
+          } else {
+            removeHighlight(program);
+          }
+
+          if (message.value.trim() === "") {
+            isValid = false;
+            highlightError(message);
+          } else {
+            removeHighlight(message);
+          }
+
+          if (isValid) {
+            // Here you would normally submit the form
+            alert(
+              "Terima kasih! Pendaftaran Anda telah berhasil dikirim. Kami akan menghubungi Anda segera."
+            );
+            contactForm.reset();
+          }
         });
-        
-        // Change slide every 5 seconds
-        setInterval(nextSlide, 5000);
+      }
 
-        // Program Tabs dengan animasi
-        const programTabs = document.querySelectorAll('.program-tab');
-        const programCards = document.querySelectorAll('.program-card');
-        
-        programTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.getAttribute('data-category');
-                
-                // Update active tab
-                programTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Animate out current active cards
-                programCards.forEach(card => {
-                    if (card.classList.contains('active')) {
-                        card.classList.remove('active');
-                    }
-                });
-                
-                // Animate in new active cards
-                setTimeout(() => {
-                    programCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.classList.add('active');
-                        }
-                    });
-                }, 50);
-            });
+      function highlightError(field) {
+        field.style.borderColor = "#ff3860";
+      }
+
+      function removeHighlight(field) {
+        field.style.borderColor = "#ddd";
+      }
+
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      // Newsletter form
+      const newsletterForm = document.querySelector(".newsletter-form");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[type="email"]');
+
+          if (emailInput.value && isValidEmail(emailInput.value)) {
+            alert("Terima kasih telah berlangganan newsletter kami!");
+            emailInput.value = "";
+          } else {
+            alert("Silakan masukkan alamat email yang valid.");
+            emailInput.focus();
+          }
         });
-
-        // Alumni Tabs dengan animasi
-        const alumniTabs = document.querySelectorAll('.alumni-tab');
-        const alumniCards = document.querySelectorAll('.alumni-card');
-        
-        alumniTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.getAttribute('data-category');
-                
-                // Update active tab
-                alumniTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Animate out current active cards
-                alumniCards.forEach(card => {
-                    if (card.classList.contains('active')) {
-                        card.classList.remove('active');
-                    }
-                });
-                
-                // Animate in new active cards
-                setTimeout(() => {
-                    alumniCards.forEach(card => {
-                        if (card.getAttribute('data-category') === category) {
-                            card.classList.add('active');
-                        }
-                    });
-                }, 50);
-            });
-        });
-
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Scroll animations
-        function checkScroll() {
-            const sections = document.querySelectorAll('section');
-            const backToTop = document.querySelector('.back-to-top');
-            
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const triggerHeight = window.innerHeight * 0.8;
-                
-                if (sectionTop < triggerHeight) {
-                    section.classList.add('visible');
-                }
-            });
-            
-            // Show/hide back to top button
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        }
-        
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-
-        // Form validation
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const name = document.getElementById('name');
-                const email = document.getElementById('email');
-                const phone = document.getElementById('phone');
-                const program = document.getElementById('program');
-                const message = document.getElementById('message');
-                
-                let isValid = true;
-                
-                if (name.value.trim() === '') {
-                    isValid = false;
-                    highlightError(name);
-                } else {
-                    removeHighlight(name);
-                }
-                
-                if (email.value.trim() === '' || !isValidEmail(email.value)) {
-                    isValid = false;
-                    highlightError(email);
-                } else {
-                    removeHighlight(email);
-                }
-                
-                if (phone.value.trim() === '') {
-                    isValid = false;
-                    highlightError(phone);
-                } else {
-                    removeHighlight(phone);
-                }
-                
-                if (program.value === '') {
-                    isValid = false;
-                    highlightError(program);
-                } else {
-                    removeHighlight(program);
-                }
-                
-                if (message.value.trim() === '') {
-                    isValid = false;
-                    highlightError(message);
-                } else {
-                    removeHighlight(message);
-                }
-                
-                if (isValid) {
-                    // Here you would normally submit the form
-                    alert('Terima kasih! Pendaftaran Anda telah berhasil dikirim. Kami akan menghubungi Anda segera.');
-                    contactForm.reset();
-                }
-            });
-        }
-        
-        function highlightError(field) {
-            field.style.borderColor = '#ff3860';
-        }
-        
-        function removeHighlight(field) {
-            field.style.borderColor = '#ddd';
-        }
-        
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-        
-        // Newsletter form
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                
-                if (emailInput.value && isValidEmail(emailInput.value)) {
-                    alert('Terima kasih telah berlangganan newsletter kami!');
-                    emailInput.value = '';
-                } else {
-                    alert('Silakan masukkan alamat email yang valid.');
-                    emailInput.focus();
-                }   
-            });
-        }
+      }
     </script>
-</body>
+  </body>
 </html>
