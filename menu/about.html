@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni - LPK Quantum Telecommunication</title>
+    <title>Tentang Kami - LPK Quantum Telecommunication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -212,6 +212,48 @@
             transform: rotate(30deg);
         }
 
+        /* Hero Section untuk Halaman Tentang */
+        .about-hero {
+            padding: 150px 0 100px;
+            background: var(--blue-gradient);
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/photos/CTA/hero1.jpg') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
         /* Section Styles */
         section {
             padding: 90px 0;
@@ -259,238 +301,281 @@
             color: #666;
         }
 
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 20px 0;
-            background-color: var(--blue-light);
-            margin-bottom: 40px;
-        }
-
-        .breadcrumb-content {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb-content a {
-            color: var(--blue-medium);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .breadcrumb-content a:hover {
-            color: var(--blue-dark);
-        }
-
-        .breadcrumb-content span {
-            color: var(--text-dark);
-        }
-
-        /* Daftar Tahun Angkatan */
-        .years-grid {
+        /* Sejarah & Profil Section */
+        .history-content {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .year-card {
-            background: var(--card-bg);
+        .history-image {
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .history-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .history-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* Visi Misi Section */
+        .vm-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .vm-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .year-card.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--blue-gradient);
+            transition: var(--transition);
         }
 
-        .year-card:hover {
+        .vm-card:hover::before {
+            height: 100%;
+        }
+
+        .vm-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
 
-        .year-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .year-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .year-card:hover .year-image img {
-            transform: scale(1.1);
-        }
-
-        .year-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .year-content h3 {
-            color: var(--blue-dark);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .year-content p {
-            color: var(--blue-medium);
-            font-weight: 600;
+        .vm-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--blue-gradient);
+            color: var(--text-light);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-        }
-
-        /* Detail Tahun */
-        #alumni-detail {
-            display: none;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--blue-medium);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin: 0 auto 20px;
             transition: var(--transition);
         }
 
-        .back-button:hover {
-            gap: 12px;
+        .vm-card:hover .vm-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .vm-card h3 {
+            margin-bottom: 15px;
             color: var(--blue-dark);
+            font-size: 1.3rem;
         }
 
-        .activities-timeline {
+        .vm-card ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .vm-card ul li {
+            margin-bottom: 10px;
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-left: 30px;
         }
 
-        .activities-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: var(--blue-gradient);
-            border-radius: 2px;
+        /* Mengapa Memilih Kami Section */
+        .why-us-section {
+            background-color: var(--blue-light);
         }
 
-        .activity-card {
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
             background: var(--card-bg);
             border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
+            padding: 30px;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
-            opacity: 0;
-            transform: translateY(20px);
+            overflow: hidden;
         }
 
-        .activity-card.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--blue-gradient);
+            transition: var(--transition);
         }
 
-        .activity-card:hover {
-            transform: translateY(-5px);
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
 
-        .activity-card::before {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: 30px;
-            width: 20px;
-            height: 20px;
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--blue-gradient);
+            color: var(--text-light);
             border-radius: 50%;
-            background: var(--blue-medium);
-            border: 4px solid var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
         }
 
-        .activity-image {
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
             margin-bottom: 15px;
+            color: var(--blue-dark);
+            font-size: 1.3rem;
         }
 
-        .activity-image img {
+        .feature-card p {
+            color: var(--text-dark);
+        }
+
+        /* Tim & Instruktur Section */
+        .instructors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .instructor-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .instructor-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .instructor-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .activity-card:hover .activity-image img {
-            transform: scale(1.05);
+        .instructor-card:hover .instructor-image img {
+            transform: scale(1.1);
         }
 
-        .activity-content h3 {
+        .instructor-info {
+            padding: 20px;
+        }
+
+        .instructor-name {
+            font-size: 1.2rem;
             color: var(--blue-dark);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
-        .activity-content p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .activity-cta {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--blue-medium);
-            color: var(--text-light);
-            border-radius: 30px;
-            text-decoration: none;
+        .instructor-role {
+            color: var(--blue-medium);
             font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .instructor-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .instructor-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .instructor-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--blue-light);
+            color: var(--blue-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: var(--transition);
         }
 
-        .activity-cta:hover {
-            background: var(--blue-dark);
-            transform: translateY(-3px);
+        .instructor-social a:hover {
+            background: var(--blue-medium);
+            color: var(--text-light);
         }
 
-        /* Galeri Dokumentasi */
-        #alumni-galeri {
-            display: none;
+        /* Dokumentasi Kegiatan Section */
+        .gallery-section {
+            background-color: var(--blue-light);
         }
 
-        .gallery-grid {
+        .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
         }
 
         .gallery-item {
-            position: relative;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            cursor: pointer;
-            transition: var(--transition);
+            position: relative;
             height: 250px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -513,8 +598,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            background: rgba(26, 60, 110, 0.8);
             color: var(--text-light);
             padding: 15px;
             transform: translateY(100%);
@@ -525,94 +610,112 @@
             transform: translateY(0);
         }
 
-        /* Lightbox */
-        .lightbox {
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
             position: fixed;
-            top: 0;
+            z-index: 2000;
+            padding-top: 50px;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1000px;
         }
 
         .lightbox-content img {
-            max-width: 100%;
-            max-height: 80vh;
+            width: 100%;
             border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-lightbox {
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-lightbox:hover {
+            color: #ccc;
         }
 
         .lightbox-caption {
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
+            color: #fff;
             text-align: center;
-            color: var(--text-light);
             padding: 10px;
+            font-size: 1.1rem;
         }
 
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
+        /* CTA Section */
+        .cta-section {
+            background: var(--blue-gradient);
             color: var(--text-light);
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
+            text-align: center;
+            padding: 80px 0;
         }
 
-        .lightbox-close:hover {
-            color: var(--blue-medium);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
-        }
-
-        .lightbox-button {
-            background: rgba(255, 255, 255, 0.2);
+        .cta-section .section-title h2 {
             color: var(--text-light);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        }
+
+        .cta-section .section-title h2::after {
+            background: var(--text-light);
+        }
+
+        .cta-buttons {
             display: flex;
-            align-items: center;
             justify-content: center;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 1.5rem;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-        .lightbox-button:hover {
-            background: var(--blue-medium);
+        .btn {
+            display: inline-block;
+            background-color: var(--text-light);
+            color: var(--blue-medium);
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--blue-medium);
         }
 
         /* Footer */
@@ -864,12 +967,16 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .years-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .history-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
             
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            .vm-container,
+            .features-grid,
+            .instructors-container,
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
 
@@ -936,24 +1043,27 @@
                 z-index: 1000;
             }
 
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-
-            .years-grid {
-                grid-template-columns: 1fr;
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .activities-timeline {
-                padding-left: 20px;
-            }
-
-            .activity-card::before {
-                left: -30px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 10px;
             }
 
             .theme-toggle {
@@ -970,26 +1080,28 @@
                 font-size: 1.2rem;
             }
 
-            .section-title h2 {
-                font-size: 1.5rem;
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .about-hero p {
+                font-size: 0.9rem;
             }
 
-            .year-image {
-                height: 160px;
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
             }
 
-            .activity-image {
-                height: 160px;
+            .vm-container,
+            .features-grid,
+            .instructors-container,
+            .gallery-container {
+                grid-template-columns: 1fr;
             }
 
-            .gallery-item {
-                height: 200px;
-            }
-
-            .lightbox-button {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1004,25 +1116,25 @@
             <nav>
                 <ul>
                     <li><a href="/index.html">Beranda</a></li>
-                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="menu/about.html" class="active">Tentang Kami</a></li>
                     <li class="dropdown">
-                        <a href="index.html#programs">Program <i class="fas fa-chevron-down"></i></a>
+                        <a href="#programs">Program <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="programs/offline.html">Kelas Offline</a>
-                            <a href="programs/online.html">Kelas Online</a>
-                            <a href="programs/private.html">Kelas Private</a>
+                            <a href="menu/programs/offline.html">Kelas Offline</a>
+                            <a href="menu/programs/online.html">Kelas Online</a>
+                            <a href="menu/programs/private.html">Kelas Private</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="index.html#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
+                        <a href="#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="kerjasama/pemerintah.html">Pemerintah</a>
-                            <a href="kerjasama/swasta.html">Swasta</a>
+                            <a href="menu/pemerintah.html">Pemerintah</a>
+                            <a href="menu/swasta.html">Swasta</a>
                         </div>
                     </li>
-                    <li><a href="alumni.html">Alumni</a></li>
-                    <li><a href="berita.html">Berita</a></li>
-                    <li><a href="testimoni.html">Testimoni</a></li>
+                    <li><a href="menu/alumni.html">Alumni</a></li>
+                    <li><a href="menu/berita.html">Berita</a></li>
+                    <li><a href="menu/testimoni.html">Testimoni</a></li>
                 </ul>
             </nav>
             <div style="display: flex; align-items: center;">
@@ -1036,202 +1148,288 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <a href="/index.html">Beranda</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>Alumni</span>
-            </div>
+    <!-- Hero Section untuk Halaman Tentang -->
+    <section class="about-hero">
+        <div class="container about-hero-content">
+            <h1>Tentang LPK Quantum Telecommunication</h1>
+            <p>Membentuk teknisi handal dengan pengalaman nyata dan bimbingan berkelanjutan sejak tahun 2015.</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Daftar Tahun Angkatan -->
-    <section id="alumni-tahun">
+    <!-- Sejarah & Profil Section -->
+    <section id="sejarah">
         <div class="container">
             <div class="section-title">
-                <h2>Dokumentasi Alumni</h2>
+                <h2>Sejarah & Profil</h2>
             </div>
-            <p class="section-subtitle">Jejak perjalanan dan prestasi alumni LPK Quantum Telecommunication dari tahun ke tahun</p>
+            <div class="history-content">
+                <div class="history-image">
+                    <img src="assets/photos/section/sejarah-quantum.jpg" alt="Sejarah LPK Quantum" loading="lazy">
+                </div>
+                <div class="history-text">
+                    <p>LPK Quantum Telecommunication didirikan pada tahun 2015 dengan visi untuk mencetak teknisi handphone profesional yang siap kerja dan mandiri. Sejak awal berdirinya, kami telah berkomitmen untuk memberikan pelatihan berkualitas tinggi dengan metode pembelajaran yang efektif dan praktis.</p>
+                    <p>Dengan pengalaman lebih dari 20 tahun, kami telah menghasilkan ribuan alumni yang tersebar di seluruh Indonesia. Banyak dari mereka yang kini sukses sebagai teknisi handphone profesional, pengusaha service center, atau bekerja di perusahaan telekomunikasi terkemuka.</p>
+                    <p>Kami terus berinovasi dalam kurikulum dan metode pengajaran untuk selalu sesuai dengan perkembangan teknologi terbaru, memastikan setiap peserta mendapatkan pengetahuan dan keterampilan yang relevan dengan kebutuhan industri.</p>
+                </div>
+            </div>
             
-            <div class="years-grid">
-                <div class="year-card" data-year="2023">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2023" loading="lazy">
+            <div class="vm-container">
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-                    <div class="year-content">
-                        <h3>Alumni 2023</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
+                    <h3>Visi</h3>
+                    <p>Menjadi lembaga pelatihan teknisi telekomunikasi terdepan di Indonesia yang menghasilkan tenaga kerja profesional, kompeten, dan berdaya saing global.</p>
+                </div>
+                
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misi</h3>
+                    <ul>
+                        <li>Menyelenggarakan pelatihan berbasis kompetensi dengan kurikulum sesuai kebutuhan industri.</li>
+                        <li>Menyediakan fasilitas pelatihan yang modern dan lengkap.</li>
+                        <li>Memberikan bimbingan karir dan penyaluran kerja bagi lulusan.</li>
+                        <li>Membangun kemitraan dengan berbagai pihak untuk pengembangan program.</li>
+                    </ul>
+                </div>
+                
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Nilai Inti</h3>
+                    <ul>
+                        <li>Profesionalisme dalam setiap aspek pelayanan</li>
+                        <li>Inovasi terus-menerus dalam metode pengajaran</li>
+                        <li>Integritas dalam menjalankan kegiatan pelatihan</li>
+                        <li>Komitmen terhadap keberhasilan peserta didik</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mengapa Memilih Kami Section -->
+    <section id="why-us" class="why-us-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih Kami</h2>
+            </div>
+            <p class="section-subtitle">Berbagai keunggulan yang membuat LPK Quantum menjadi pilihan tepat untuk pelatihan teknisi HP dan telekomunikasi</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Instruktur Berpengalaman</h3>
+                    <p>Diajar oleh praktisi yang telah berkecimpung di industri telekomunikasi selama lebih dari 10 tahun</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Kurikulum Sesuai Industri</h3>
+                    <p>Materi pelatihan selalu diperbarui mengikuti perkembangan teknologi dan kebutuhan industri terbaru</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Fasilitas Lengkap</h3>
+                    <p>Peralatan praktik terkini dan lengkap untuk menunjang proses belajar mengajar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Sertifikasi Resmi</h3>
+                    <p>Lulusan mendapatkan sertifikat kompetensi yang diakui oleh industri dan pemerintah</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Penyaluran Kerja</h3>
+                    <p>Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service center terkemuka</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Biaya Terjangkau</h3>
+                    <p>Program pelatihan dengan harga terjangkau dan berbagai pilihan paket sesuai kebutuhan</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Komunitas Alumni</h3>
+                    <p>Jaringan alumni yang luas untuk berbagi pengalaman dan peluang bisnis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Legalitas Lengkap</h3>
+                    <p>Lembaga terdaftar resmi dengan izin operasional dari instansi terkait</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tim & Instruktur Section -->
+    <section id="instructors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tim & Instruktur Utama</h2>
+            </div>
+            <p class="section-subtitle">Belajar langsung dari para praktisi berpengalaman di bidang telekomunikasi dan teknisi HP</p>
+            
+            <div class="instructors-container">
+                <!-- Instructor 1 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="assets/photos/instruktur/tomi.jpg" alt="Tomi Sudiarno" loading="lazy">
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Tomi Sudiarno</h3>
+                        <p class="instructor-role">Owner & Instruktur Utama</p>
+                        <p class="instructor-desc">Berpengalaman lebih dari 12 tahun di bidang reparasi smartphone dan microsoldering.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="year-card" data-year="2022">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2022" loading="lazy">
+                <!-- Instructor 2 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="assets/photos/instruktur/danur.jpg" alt="Danur Dyantoro" loading="lazy">
                     </div>
-                    <div class="year-content">
-                        <h3>Alumni 2022</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </div>
-                
-                <div class="year-card" data-year="2021">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2021" loading="lazy">
-                    </div>
-                    <div class="year-content">
-                        <h3>Alumni 2021</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Danur Dyantoro</h3>
+                        <p class="instructor-role">Instruktur Senior</p>
+                        <p class="instructor-desc">Berpengalaman mengajar di LPK Quantum Telecommunication selama bertahun-tahun.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="year-card" data-year="2020">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2020" loading="lazy">
+                <!-- Instructor 3 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Budi Santoso" loading="lazy">
                     </div>
-                    <div class="year-content">
-                        <h3>Alumni 2020</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </div>
-                
-                <div class="year-card" data-year="2019">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1535982337059-51a5b2d3c079?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2019" loading="lazy">
-                    </div>
-                    <div class="year-content">
-                        <h3>Alumni 2019</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Budi Santoso</h3>
+                        <p class="instructor-role">Engineer BTS</p>
+                        <p class="instructor-desc">Berkecimpung di industri telekomunikasi selama 15 tahun, khususnya tower dan BTS.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="year-card" data-year="2018">
-                    <div class="year-image">
-                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alumni 2018" loading="lazy">
+                <!-- Instructor 4 -->
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Rina Wijaya" loading="lazy">
                     </div>
-                    <div class="year-content">
-                        <h3>Alumni 2018</h3>
-                        <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Rina Wijaya</h3>
+                        <p class="instructor-role">Software Specialist</p>
+                        <p class="instructor-desc">Ahli dalam software repair, flashing, dan data recovery berbagai merek smartphone.</p>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detail Tahun -->
-    <section id="alumni-detail">
+    <!-- Dokumentasi Kegiatan Section -->
+    <section id="gallery" class="gallery-section">
         <div class="container">
-            <a href="#" class="back-button" id="back-to-years">
-                <i class="fas fa-arrow-left"></i> Kembali ke Daftar Tahun
-            </a>
-            
             <div class="section-title">
-                <h2 id="detail-title">Kegiatan Alumni</h2>
+                <h2>Dokumentasi Kegiatan</h2>
             </div>
+            <p class="section-subtitle">Momen-momen berharga selama proses pelatihan di LPK Quantum Telecommunication</p>
             
-            <div class="activities-timeline">
-                <div class="activity-card" data-activity="wisuda">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wisuda Angkatan" loading="lazy">
-                    </div>
-                    <div class="activity-content">
-                        <h3>Wisuda Angkatan XVIII</h3>
-                        <p>Acara wisuda angkatan XVIII LPK Quantum Telecommunication yang dihadiri oleh seluruh alumni, instruktur, dan perwakilan dari perusahaan mitra.</p>
-                        <a href="#" class="activity-cta" data-gallery="wisuda">Lihat Foto</a>
-                    </div>
+            <div class="gallery-container">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/praktik1.jpg', 'Sesi Praktik Teknisi HP')">
+                    <img src="assets/photos/gallery/praktik1.jpg" alt="Sesi Praktik Teknisi HP" loading="lazy">
+                    <div class="gallery-caption">Sesi Praktik Teknisi HP</div>
                 </div>
                 
-                <div class="activity-card" data-activity="workshop">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Workshop" loading="lazy">
-                    </div>
-                    <div class="activity-content">
-                        <h3>Workshop Fiber Optic</h3>
-                        <p>Pelatihan intensif tentang teknologi fiber optic yang diikuti oleh alumni dan teknisi profesional untuk meningkatkan kompetensi di bidang telekomunikasi.</p>
-                        <a href="#" class="activity-cta" data-gallery="workshop">Lihat Foto</a>
-                    </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/workshop1.jpg', 'Workshop Microsoldering')">
+                    <img src="assets/photos/gallery/workshop1.jpg" alt="Workshop Microsoldering" loading="lazy">
+                    <div class="gallery-caption">Workshop Microsoldering</div>
                 </div>
                 
-                <div class="activity-card" data-activity="reuni">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Reuni Alumni" loading="lazy">
-                    </div>
-                    <div class="activity-content">
-                        <h3>Reuni Alumni</h3>
-                        <p>Acara silaturahmi dan reuni alumni LPK Quantum Telecommunication yang diselenggarakan setiap tahun untuk mempererat jaringan dan kerjasama.</p>
-                        <a href="#" class="activity-cta" data-gallery="reuni">Lihat Foto</a>
-                    </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/wisuda1.jpg', 'Wisuda Angkatan XXV')">
+                    <img src="assets/photos/gallery/wisuda1.jpg" alt="Wisuda Angkatan XXV" loading="lazy">
+                    <div class="gallery-caption">Wisuda Angkatan XXV</div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/pelatihan1.jpg', 'Pelatihan Fiber Optic')">
+                    <img src="assets/photos/gallery/pelatihan1.jpg" alt="Pelatihan Fiber Optic" loading="lazy">
+                    <div class="gallery-caption">Pelatihan Fiber Optic</div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/sertifikasi1.jpg', 'Sertifikasi Kompetensi')">
+                    <img src="assets/photos/gallery/sertifikasi1.jpg" alt="Sertifikasi Kompetensi" loading="lazy">
+                    <div class="gallery-caption">Sertifikasi Kompetensi</div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" onclick="openLightbox('assets/photos/gallery/kunjungan1.jpg', 'Kunjungan Industri')">
+                    <img src="assets/photos/gallery/kunjungan1.jpg" alt="Kunjungan Industri" loading="lazy">
+                    <div class="gallery-caption">Kunjungan Industri</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeri Dokumentasi -->
-    <section id="alumni-galeri">
-        <div class="container">
-            <a href="#" class="back-button" id="back-to-detail">
-                <i class="fas fa-arrow-left"></i> Kembali ke Kegiatan
-            </a>
-            
-            <div class="section-title">
-                <h2 id="gallery-title">Galeri Dokumentasi</h2>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Suasana Praktik Chip Level" loading="lazy">
-                    <div class="gallery-caption">Suasana Praktik Chip Level 2023</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Peserta Workshop" loading="lazy">
-                    <div class="gallery-caption">Peserta Workshop Fiber Optic 2023</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sesi Kelas" loading="lazy">
-                    <div class="gallery-caption">Sesi Kelas Teknisi HP 2023</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Penyerahan Sertifikat" loading="lazy">
-                    <div class="gallery-caption">Penyerahan Sertifikat Kelulusan</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Bersama" loading="lazy">
-                    <div class="gallery-caption">Foto Bersama Instruktur dan Alumni</div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1535982337059-51a5b2d3c079?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Demo Praktik" loading="lazy">
-                    <div class="gallery-caption">Demo Praktik Microsoldering</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightbox-close">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="lightbox-nav">
-            <button class="lightbox-button" id="lightbox-prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-button" id="lightbox-next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
         <div class="lightbox-content">
-            <img src="" alt="" id="lightbox-image">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <img id="lightboxImage" src="" alt="">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
         </div>
     </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Siap Mengembangkan Karier Anda?</h2>
+            </div>
+            <p>Daftar sekarang dan raih peluang kerja di bidang telekomunikasi dan teknisi HP yang semakin berkembang</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">Daftar Sekarang</a>
+                <a href="https://wa.me/6281234567890" class="btn btn-outline">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1252,11 +1450,11 @@
                     <h3>Link Cepat</h3>
                     <ul>
                         <li><a href="index.html">Beranda</a></li>
-                        <li><a href="index.html#about">Tentang Kami</a></li>
-                        <li><a href="index.html#programs">Program Pelatihan</a></li>
-                        <li><a href="index.html#gallery">Galeri</a></li>
-                        <li><a href="index.html#testimonials">Testimoni</a></li>
-                        <li><a href="index.html#contact">Kontak</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="#programs">Program Pelatihan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -1290,7 +1488,7 @@
     </a>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#home" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -1366,10 +1564,35 @@
             }
         });
 
+        // Lightbox functionality
+        function openLightbox(imageSrc, caption) {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            
+            lightboxImage.src = imageSrc;
+            lightboxCaption.innerHTML = caption;
+            lightboxModal.style.display = 'block';
+            body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightboxModal = document.getElementById('lightboxModal');
+            lightboxModal.style.display = 'none';
+            body.style.overflow = '';
+        }
+
+        // Close lightbox when clicking outside the image
+        window.addEventListener('click', (e) => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            if (e.target === lightboxModal) {
+                closeLightbox();
+            }
+        });
+
         // Scroll animations
         function checkScroll() {
             const sections = document.querySelectorAll('section');
-            const cards = document.querySelectorAll('.year-card, .activity-card');
             const backToTop = document.querySelector('.back-to-top');
             
             sections.forEach(section => {
@@ -1378,15 +1601,6 @@
                 
                 if (sectionTop < triggerHeight) {
                     section.classList.add('visible');
-                }
-            });
-            
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                const triggerHeight = window.innerHeight * 0.8;
-                
-                if (cardTop < triggerHeight) {
-                    card.classList.add('visible');
                 }
             });
             
@@ -1401,169 +1615,27 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
 
-        // Back to top functionality
-        const backToTopBtn = document.querySelector('.back-to-top');
-        
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Alumni Page Functionality
-        const yearCards = document.querySelectorAll('.year-card');
-        const alumniTahunSection = document.getElementById('alumni-tahun');
-        const alumniDetailSection = document.getElementById('alumni-detail');
-        const alumniGaleriSection = document.getElementById('alumni-galeri');
-        const detailTitle = document.getElementById('detail-title');
-        const galleryTitle = document.getElementById('gallery-title');
-        const backToYearsBtn = document.getElementById('back-to-years');
-        const backToDetailBtn = document.getElementById('back-to-detail');
-        const activityCtas = document.querySelectorAll('.activity-cta');
-        
-        // Show year detail when a year card is clicked
-        yearCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const year = card.getAttribute('data-year');
-                detailTitle.textContent = `Kegiatan Alumni ${year}`;
-                
-                alumniTahunSection.style.display = 'none';
-                alumniDetailSection.style.display = 'block';
-                
-                // Scroll to top of detail section
-                window.scrollTo({
-                    top: alumniDetailSection.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Back to years list
-        backToYearsBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alumniDetailSection.style.display = 'none';
-            alumniTahunSection.style.display = 'block';
-            
-            // Scroll to top of years section
-            window.scrollTo({
-                top: alumniTahunSection.offsetTop - 100,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Show gallery when activity CTA is clicked
-        activityCtas.forEach(cta => {
-            cta.addEventListener('click', (e) => {
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const activity = cta.getAttribute('data-gallery');
-                galleryTitle.textContent = `Galeri ${activity.charAt(0).toUpperCase() + activity.slice(1)}`;
+                const emailInput = this.querySelector('input[type="email"]');
                 
-                alumniDetailSection.style.display = 'none';
-                alumniGaleriSection.style.display = 'block';
-                
-                // Scroll to top of gallery section
-                window.scrollTo({
-                    top: alumniGaleriSection.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                if (emailInput.value && isValidEmail(emailInput.value)) {
+                    alert('Terima kasih telah berlangganan newsletter kami!');
+                    emailInput.value = '';
+                } else {
+                    alert('Silakan masukkan alamat email yang valid.');
+                    emailInput.focus();
+                }   
             });
-        });
-        
-        // Back to detail from gallery
-        backToDetailBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alumniGaleriSection.style.display = 'none';
-            alumniDetailSection.style.display = 'block';
-            
-            // Scroll to top of detail section
-            window.scrollTo({
-                top: alumniDetailSection.offsetTop - 100,
-                behavior: 'smooth'
-            });
-        });
-
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        let currentImageIndex = 0;
-        const images = [];
-        const captions = [];
-        
-        // Prepare images and captions for lightbox
-        galleryItems.forEach((item, index) => {
-            const img = item.querySelector('img');
-            const caption = item.querySelector('.gallery-caption');
-            
-            images.push(img.src);
-            captions.push(caption.textContent);
-            
-            item.addEventListener('click', () => {
-                currentImageIndex = index;
-                openLightbox();
-            });
-        });
-        
-        // Open lightbox with current image
-        function openLightbox() {
-            lightboxImage.src = images[currentImageIndex];
-            lightboxCaption.textContent = captions[currentImageIndex];
-            lightbox.classList.add('active');
-            body.style.overflow = 'hidden';
         }
         
-        // Close lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            body.style.overflow = '';
-        });
-        
-        // Navigate to previous image
-        lightboxPrev.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            lightboxImage.src = images[currentImageIndex];
-            lightboxCaption.textContent = captions[currentImageIndex];
-        });
-        
-        // Navigate to next image
-        lightboxNext.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            lightboxImage.src = images[currentImageIndex];
-            lightboxCaption.textContent = captions[currentImageIndex];
-        });
-        
-        // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-        
-        // Keyboard navigation for lightbox
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    lightbox.classList.remove('active');
-                    body.style.overflow = '';
-                } else if (e.key === 'ArrowLeft') {
-                    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                    lightboxImage.src = images[currentImageIndex];
-                    lightboxCaption.textContent = captions[currentImageIndex];
-                } else if (e.key === 'ArrowRight') {
-                    currentImageIndex = (currentImageIndex + 1) % images.length;
-                    lightboxImage.src = images[currentImageIndex];
-                    lightboxCaption.textContent = captions[currentImageIndex];
-                }
-            }
-        });
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
     </script>
 </body>
 </html>

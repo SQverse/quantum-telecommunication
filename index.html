@@ -1751,25 +1751,24 @@
             <nav>
                 <ul>
                     <li><a href="#home">Beranda</a></li>
-                    <li><a href="menu/tentang.html">Tentang Kami</a></li>
+                    <li><a href="menu/about.html">Tentang Kami</a></li>
                     <li class="dropdown">
                         <a href="#programs">Program <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="menu/offline.html">Kelas Offline</a>
-                            <a href="menu/online.html">Kelas Online</a>
-                            <a href="#subsidi">Kelas Subsidi</a>
-                            <a href="#gratis">Kelas Gratis</a>
+                            <a href="menu/programs/offline.html">Kelas Offline</a>
+                            <a href="menu/programs/online.html">Kelas Online</a>
+                            <a href="menu/programs/private.html">Kelas Private</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="menu/pemerintah.html">Pemerintah</a>
-                            <a href="menu/swasta.html">Swasta</a>
+                            <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
+                            <a href="menu/kerjasama/swasta.html">Swasta</a>
                         </div>
                     </li>
                     <li><a href="menu/alumni.html">Alumni</a></li>
-                    <li><a href="menu/berita.html">Berita</a></li>
+                    <li><a href="menu/news.html">Berita</a></li>
                     <li><a href="menu/testimoni.html">Testimoni</a></li>
                 </ul>
             </nav>
@@ -1818,7 +1817,7 @@
                 </div>
                 <div class="about-text">
                     <h3>LPK Quantum Telecommunication</h3>
-                    <p>Kami Adalah Lembaga Pelatihan Kerja Swasta merupakan Tempat Pelatihan / Tempat kursus / Sekolah Teknisi Smartphone sejak Tahun 2000. Alhamdulillah saat ini LPK QUANTUM TELECOMMUNICATION telah berhasil mencetak ribuan Alumni yang tersebar di se-Indonesia sebagai pengusaha dan Teknisi Handphone yang trampil dan siap kerja maupun sebagai Pengusaha mandiri sukses profesional.</p>
+                    <p>Kami Adalah Lembaga Pelatihan Kerja Swasta merupakan Tempat Pelatihan / Tempat kursus / Sekolah Teknisi Smartphone sejak Tahun 2008. Alhamdulillah saat ini LPK QUANTUM TELECOMMUNICATION telah berhasil mencetak ribuan Alumni yang tersebar di se-Indonesia sebagai pengusaha dan Teknisi Handphone yang trampil dan siap kerja maupun sebagai Pengusaha mandiri sukses profesional.</p>
                     <p>Dengan metode pembelajaran yang efektif dan penyaluran kerja yang terjamin, LPK QUANTUM TELECOMMUNICATION menjadi pilihan tepat bagi Anda yang ingin mengembangkan karier di bidang telekomunikasi dan teknisi handphone.</p>
                     <div class="about-buttons">
                         <a href="assets/photos/pdf/LPK-Quantum-Profile.pdf" class="btn btn-company">COMPANY PROFILE</a>
@@ -1928,8 +1927,7 @@
                 <button class="program-tab active" data-category="all">Semua Program</button>
                 <button class="program-tab" data-category="offline">Kelas Offline</button>
                 <button class="program-tab" data-category="online">Kelas Online</button>
-                <button class="program-tab" data-category="subsidi">Kelas Subsidi</button>
-                <button class="program-tab" data-category="gratis">Kelas Gratis</button>
+                <button class="program-tab" data-category="private">Kelas Private</button>
             </div>
             <div class="programs-container">
                 <div class="program-card active" data-category="offline">
@@ -2044,39 +2042,7 @@
                     </div>
                 </div>
                 
-                <!-- Instructor 3 -->
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="" alt="Nama Instruktur" loading="lazy">
-                    </div>
-                    <div class="instructor-info">
-                        <h3 class="instructor-name">Budi Santoso</h3>
-                        <p class="instructor-role">Engineer BTS</p>
-                        <p class="instructor-desc">Berkecimpung di industri telekomunikasi selama 15 tahun, khususnya tower dan BTS.</p>
-                        <div class="instructor-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Instructor 4 -->
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="" alt="Nama Instruktur" loading="lazy">
-                    </div>
-                    <div class="instructor-info">
-                        <h3 class="instructor-name">Rina Wijaya</h3>
-                        <p class="instructor-role">Software Specialist</p>
-                        <p class="instructor-desc">Ahli dalam software repair, flashing, dan data recovery berbagai merek smartphone.</p>
-                        <div class="instructor-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#instructors" class="btn">Lihat Semua Instruktur</a>
@@ -2185,7 +2151,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="#news" class="btn">Lihat Semua Berita</a>
+                <a href="menu/news.html" class="btn">Lihat Semua Berita</a>
             </div>
         </div>
     </section>
@@ -2405,21 +2371,20 @@
                     <div class="footer-logo">LPK Quantum</div>
                     <p>Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang menghasilkan tenaga kerja profesional dan kompeten.</p>
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/LPKQuantumtelecommunication/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/quantum.telecommunication/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@quantumtelecom41"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <h3>Link Cepat</h3>
                     <ul>
                         <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="menu/about.html">Tentang Kami</a></li>
                         <li><a href="#programs">Program Pelatihan</a></li>
-                        <li><a href="#gallery">Galeri</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="menu/alumni.html">Galeri</a></li>
+                        <li><a href="menu/testimoni.html">Testimoni</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
@@ -2430,7 +2395,7 @@
                     <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
                     <p><i class="fas fa-envelope"></i> info@lpkquantum.id</p>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7892828312786!2d107.6083944740441!3d-6.917355293083251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62577714b17%3A0x19e1e82b39159f1d!2sBandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1692469959231!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="footer-newsletter">
