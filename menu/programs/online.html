@@ -1,1815 +1,2066 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelas Online Teknisi Ponsel - LPK Quantum Telecommunication</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
-        /* Variabel Warna untuk Light dan Dark Mode */
-        :root {
-            /* Light Mode */
-            --blue-light: #e6f0ff;
-            --blue-medium: #4a90e2;
-            --blue-dark: #1a3c6e;
-            --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-            --text-dark: #333;
-            --text-light: #fff;
-            --bg-light: #f9fbff;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
-            
-            /* Transisi */
-            --transition: all 0.3s ease;
-        }
+      /* Variabel Warna untuk Light dan Dark Mode */
+      :root {
+        /* Light Mode */
+        --blue-light: #e6f0ff;
+        --blue-medium: #4a90e2;
+        --blue-dark: #1a3c6e;
+        --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+        --text-dark: #333;
+        --text-light: #fff;
+        --bg-light: #f9fbff;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
-        /* Dark Mode Variabel */
-        [data-theme="dark"] {
-            --blue-light: #1a3c6e;
-            --blue-medium: #3a7bd5;
-            --blue-dark: #e6f0ff;
-            --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
-            --text-dark: #f0f0f0;
-            --text-light: #e6e6e6;
-            --bg-light: #121212;
-            --card-bg: #1e1e1e;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
+        /* Transisi */
+        --transition: all 0.3s ease;
+      }
 
-        /* Progress Bar */
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: transparent;
-            z-index: 1001;
-        }
+      /* Dark Mode Variabel */
+      [data-theme="dark"] {
+        --blue-light: #1a3c6e;
+        --blue-medium: #3a7bd5;
+        --blue-dark: #e6f0ff;
+        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
+        --text-dark: #f0f0f0;
+        --text-light: #e6e6e6;
+        --bg-light: #121212;
+        --card-bg: #1e1e1e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
 
-        .progress-bar {
-            height: 4px;
-            background: var(--blue-gradient);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
+      /* Progress Bar */
+      .progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        z-index: 1001;
+      }
 
-        /* Shape Dividers */
-        .shape-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-            z-index: 1;
-        }
+      .progress-bar {
+        height: 4px;
+        background: var(--blue-gradient);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
 
-        .shape-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
-        }
+      /* Shape Dividers */
+      .shape-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        z-index: 1;
+      }
 
-        .shape-divider .shape-fill {
-            fill: var(--bg-light);
-        }
+      .shape-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 60px;
+      }
 
-        .section-with-divider {
-            position: relative;
-        }
+      .shape-divider .shape-fill {
+        fill: var(--bg-light);
+      }
 
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      .section-with-divider {
+        position: relative;
+      }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--bg-light);
-            overflow-x: hidden;
-            transition: var(--transition);
-        }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+        transition: var(--transition);
+      }
 
-        /* Header & Navigation */
-        header {
-            background: var(--blue-gradient);
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      /* Header & Navigation */
+      header {
+        background: var(--blue-gradient);
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo img {
-            height: 45px;
-            margin-right: 12px;
-            transition: var(--transition);
-        }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
 
-        .logo h1 {
-            color: var(--text-light);
-            font-size: 1.4rem;
-            font-weight: 800;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-        }
+      .logo img {
+        height: 45px;
+        margin-right: 12px;
+        transition: var(--transition);
+      }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 5px;
-        }
+      .logo h1 {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        font-weight: 800;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+      }
 
-        nav ul li {
-            position: relative;
-        }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
 
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 15px;
-            border-radius: 4px;
-            position: relative;
-            font-size: 0.9rem;
-            display: block;
-        }
+      nav ul li {
+        position: relative;
+      }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--text-light);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
+      nav ul li a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+        font-size: 0.9rem;
+        display: block;
+      }
 
-        nav ul li a:hover::after {
-            width: 70%;
-        }
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--text-light);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
 
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
+      nav ul li a:hover::after {
+        width: 70%;
+      }
 
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--card-bg);
-            min-width: 200px;
-            box-shadow: var(--shadow-hover);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: var(--transition);
-            z-index: 1000;
-        }
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+      }
 
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--card-bg);
+        min-width: 200px;
+        box-shadow: var(--shadow-hover);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 1000;
+      }
 
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 16px;
-            display: block;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 0.9rem;
-        }
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
 
-        .dropdown-content a:hover {
-            background: var(--blue-light);
-            color: var(--blue-dark);
-        }
+      .dropdown-content a {
+        color: var(--text-dark);
+        padding: 12px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+      }
 
-        .dropdown-content a::after {
-            display: none;
-        }
+      .dropdown-content a:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
 
-        .mobile-menu-btn {
-            display: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-            margin-left: 15px;
-        }
+      .dropdown-content a::after {
+        display: none;
+      }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-left: 15px;
-            transition: var(--transition);
-        }
+      .mobile-menu-btn {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        margin-left: 15px;
+      }
 
-        .theme-toggle:hover {
-            transform: rotate(30deg);
-        }
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: var(--transition);
+      }
 
-        /* Hero Section dengan Slideshow */
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            position: relative;
-            overflow: hidden;
-            color: var(--text-light);
-        }
+      .theme-toggle:hover {
+        transform: rotate(30deg);
+      }
 
-        .hero-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
+      /* Hero Section dengan Slideshow */
+      .hero {
+        height: 100vh;
+        min-height: 700px;
+        position: relative;
+        overflow: hidden;
+        color: var(--text-light);
+      }
 
-        .hero-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
+      .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
 
-        .hero-slide.active {
-            opacity: 1;
-        }
+      .hero-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+      }
 
-        .hero-slide:nth-child(1) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero1.jpg');
-        }
+      .hero-slide.active {
+        opacity: 1;
+      }
 
-        .hero-slide:nth-child(2) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero2.jpg');
-        }
+      .hero-slide:nth-child(1) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero1.jpg");
+      }
 
-        .hero-slide:nth-child(3) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero3.jpg');
-        }
+      .hero-slide:nth-child(2) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero2.jpg");
+      }
 
-        .hero-slide:nth-child(4) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero4.jpg');
-        }
+      .hero-slide:nth-child(3) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero3.jpg");
+      }
 
-        .hero-slide:nth-child(5) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero5.jpg');
-        }
+      .hero-slide:nth-child(4) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero4.jpg");
+      }
 
-        .hero-slide:nth-child(6) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero6.jpg');
-        }
+      .hero-slide:nth-child(5) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero5.jpg");
+      }
 
-        .hero-slide:nth-child(7) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero7.jpg');
-        }
+      .hero-slide:nth-child(6) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero6.jpg");
+      }
 
-        .hero-slide:nth-child(8) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero8.jpg');
-        }
+      .hero-slide:nth-child(7) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero7.jpg");
+      }
 
-        .hero-slide:nth-child(9) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero9.jpg');
-        }
+      .hero-slide:nth-child(8) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero8.jpg");
+      }
 
-        .hero-slide:nth-child(10) {
-            background-image: linear-gradient(rgba(26, 60, 110, 0.7), rgba(26, 60, 110, 0.7)), url('assets/photos/CTA/hero10.jpg');
-        }
+      .hero-slide:nth-child(9) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero9.jpg");
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            text-align: center;
-            padding: 0 20px;
-        }
+      .hero-slide:nth-child(10) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/CTA/hero10.jpg");
+      }
 
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-size: 1rem; /* Diperkecil */
+        font-weight: 700;
+        margin-bottom: 15px;
+        animation: fadeInDown 1s ease;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-size: 3.2rem; /* Diperbesar */
+        font-weight: 800;
+        margin-bottom: 15px;
+        animation: fadeInDown 1s ease 0.2s forwards;
+        opacity: 0;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .hero-tagline {
+        font-size: 1.5rem; /* Diperbesar */
+        font-weight: 500;
+        margin-bottom: 30px;
+        animation: fadeInDown 1s ease 0.4s forwards;
+        opacity: 0;
+        line-height: 1.1;
+        max-width: 800px;
+      }
+
+      .hero-buttons {
+        animation: fadeIn 1s ease 0.6s forwards;
+        opacity: 0;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--text-light);
+        color: var(--blue-medium);
+        padding: 16px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-cta {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .btn-cta:hover {
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline:hover {
+        background: var(--text-light);
+        color: var(--blue-medium);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 90px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        position: relative;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .bg-white {
+        background-color: var(--card-bg);
+      }
+
+      .bg-blue-light {
+        background-color: var(--blue-light);
+      }
+
+      .bg-gradient {
+        background: var(--blue-gradient);
+        color: var(--text-light);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--blue-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        font-weight: 800;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--blue-gradient);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* Program Online Section */
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .program-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .program-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .program-card:hover .program-image img {
+        transform: scale(1.05);
+      }
+
+      .program-content {
+        padding: 25px;
+      }
+
+      .program-title {
+        font-size: 1.4rem;
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .program-duration {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        color: var(--blue-medium);
+        font-weight: 600;
+      }
+
+      .program-duration i {
+        margin-right: 8px;
+      }
+
+      .program-price {
+        font-size: 1.5rem;
+        color: var(--blue-dark);
+        margin-bottom: 20px;
+        font-weight: 800;
+      }
+
+      .program-benefits {
+        margin-bottom: 20px;
+      }
+
+      .program-benefit {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .program-benefit i {
+        color: var(--blue-medium);
+        margin-right: 10px;
+        font-size: 0.9rem;
+      }
+
+      .program-button {
+        text-align: center;
+      }
+
+      /* Testimoni Section */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--blue-dark);
+      }
+
+      .testimonial-rating {
+        color: #ffc107;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Galeri Section */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        height: 200px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-overlay i {
+        color: white;
+        font-size: 2rem;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+
+      .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+      }
+
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 8px;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 20px;
+      }
+
+      .lightbox-nav button {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .lightbox-nav button:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--blue-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--blue-gradient);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+        font-size: 1.2rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        background: var(--blue-medium);
+        transform: translateY(-3px);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .footer-links h3::after,
+      .footer-newsletter h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--blue-medium);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--text-light);
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-contact i {
+        color: var(--blue-medium);
+        width: 20px;
+      }
+
+      .map-container {
+        height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 15px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: transparent;
+        color: var(--text-light);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form button {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        border: none;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Animasi */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--text-light);
+        }
+      }
+
+      .typing-effect {
+        overflow: hidden;
+        border-right: 3px solid var(--text-light);
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end), blink 1s step-end infinite;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
         .hero-title {
-            font-size: 1rem; /* Diperkecil */
-            font-weight: 700;
-            margin-bottom: 15px;
-            animation: fadeInDown 1s ease;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+          font-size: 0.9rem;
         }
 
         .hero-subtitle {
-            font-size: 3.2rem; /* Diperbesar */
-            font-weight: 800;
-            margin-bottom: 15px;
-            animation: fadeInDown 1s ease 0.2s forwards;
-            opacity: 0;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+          font-size: 2.5rem;
         }
 
         .hero-tagline {
-            font-size: 1.5rem; /* Diperbesar */
-            font-weight: 500;
-            margin-bottom: 30px;
-            animation: fadeInDown 1s ease 0.4s forwards;
-            opacity: 0;
-            line-height: 1.1;
-            max-width: 800px;
+          font-size: 1.3rem;
         }
 
-        .hero-buttons {
-            animation: fadeIn 1s ease 0.6s forwards;
-            opacity: 0;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .programs-grid,
+        .testimonials-grid,
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--text-light);
-            color: var(--blue-medium);
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
+        nav {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: var(--blue-dark);
+          padding: 80px 20px 20px;
+          transition: var(--transition);
+          z-index: 999;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+          overflow-y: auto;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: 0.5s;
+        nav.active {
+          left: 0;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        nav ul {
+          flex-direction: column;
+          gap: 0;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            background: transparent;
-            color: var(--text-light);
-            border-color: var(--text-light);
+        nav ul li {
+          margin: 10px 0;
         }
 
-        .btn-cta {
-            background: var(--blue-medium);
-            color: var(--text-light);
+        nav ul li a {
+          display: block;
+          padding: 12px;
+          border-radius: 5px;
         }
 
-        .btn-cta:hover {
-            background: transparent;
-            color: var(--text-light);
-            border-color: var(--text-light);
+        nav ul li a:hover {
+          background: rgba(255, 255, 255, 0.1);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--text-light);
-            border-color: var(--text-light);
+        .dropdown-content {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
+          display: none;
         }
 
-        .btn-outline:hover {
-            background: var(--text-light);
-            color: var(--blue-medium);
+        .dropdown.active .dropdown-content {
+          display: block;
         }
 
-        /* Section Styles */
-        section {
-            padding: 90px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            position: relative;
+        .mobile-menu-btn {
+          position: relative;
+          z-index: 1000;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .hero {
+          padding: 100px 0 80px;
         }
 
-        .bg-white {
-            background-color: var(--card-bg);
+        .hero-title {
+          font-size: 0.8rem;
         }
 
-        .bg-blue-light {
-            background-color: var(--blue-light);
+        .hero-subtitle {
+          font-size: 2rem;
         }
 
-        .bg-gradient {
-            background: var(--blue-gradient);
-            color: var(--text-light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+        .hero-tagline {
+          font-size: 1.1rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--blue-dark);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            font-weight: 800;
+          font-size: 1.8rem;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--blue-gradient);
-            border-radius: 2px;
+        .theme-toggle {
+          margin-left: 15px;
         }
 
-        .section-subtitle {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            font-size: 1.1rem;
-            color: #666;
+        .mobile-menu-btn {
+          margin-left: 15px;
         }
 
-        /* Program Online Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
-        .program-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        .btn {
+          width: 100%;
+          max-width: 250px;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo h1 {
+          font-size: 1.2rem;
         }
 
-        .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
+        .hero-title {
+          font-size: 0.7rem;
         }
 
-        .program-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
+        .hero-subtitle {
+          font-size: 1.8rem;
         }
 
-        .program-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        .hero-tagline {
+          font-size: 1rem;
         }
 
-        .program-card:hover .program-image img {
-            transform: scale(1.05);
+        .btn {
+          padding: 14px 30px;
+          font-size: 1rem;
         }
 
-        .program-content {
-            padding: 25px;
-        }
-
-        .program-title {
-            font-size: 1.4rem;
-            color: var(--blue-dark);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .program-duration {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: var(--blue-medium);
-            font-weight: 600;
-        }
-
-        .program-duration i {
-            margin-right: 8px;
-        }
-
-        .program-price {
-            font-size: 1.5rem;
-            color: var(--blue-dark);
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .program-benefits {
-            margin-bottom: 20px;
-        }
-
-        .program-benefit {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .program-benefit i {
-            color: var(--blue-medium);
-            margin-right: 10px;
-            font-size: 0.9rem;
-        }
-
-        .program-button {
-            text-align: center;
-        }
-
-        /* Testimoni Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .testimonial-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--blue-dark);
-        }
-
-        .testimonial-rating {
-            color: #ffc107;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Galeri Section */
+        .programs-grid,
+        .testimonials-grid,
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+          grid-template-columns: 1fr;
         }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            height: 200px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 8px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
-        }
-
-        .lightbox-nav button {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .lightbox-nav button:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--blue-dark);
-            color: var(--text-light);
-            padding: 60px 0 20px;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--blue-gradient);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            font-size: 1.2rem;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            background: var(--blue-medium);
-            transform: translateY(-3px);
-        }
-
-        .footer-links h3,
-        .footer-newsletter h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            color: var(--text-light);
-        }
-
-        .footer-links h3::after,
-        .footer-newsletter h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--blue-medium);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--text-light);
-            transform: translateX(5px);
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-contact i {
-            color: var(--blue-medium);
-            width: 20px;
-        }
-
-        .map-container {
-            height: 200px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 15px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            background: transparent;
-            color: var(--text-light);
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .newsletter-form button {
-            background: var(--blue-medium);
-            color: var(--text-light);
-            border: none;
-            padding: 0 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background: var(--blue-light);
-            color: var(--blue-dark);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--blue-gradient);
-            color: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* Animasi */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from { 
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes countUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: var(--text-light); }
-        }
-
-        .typing-effect {
-            overflow: hidden;
-            border-right: 3px solid var(--text-light);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink 1s step-end infinite;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 0.9rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 2.5rem;
-            }
-            
-            .hero-tagline {
-                font-size: 1.3rem;
-            }
-
-            .programs-grid,
-            .testimonials-grid,
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--blue-dark);
-                padding: 80px 20px 20px;
-                transition: var(--transition);
-                z-index: 999;
-                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-                overflow-y: auto;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 12px;
-                border-radius: 5px;
-            }
-
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown-content {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: transparent;
-                margin-left: 20px;
-                display: none;
-            }
-
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-
-            .mobile-menu-btn {
-                position: relative;
-                z-index: 1000;
-            }
-
-            .hero {
-                padding: 100px 0 80px;
-            }
-            
-            .hero-title {
-                font-size: 0.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 2rem;
-            }
-            
-            .hero-tagline {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .theme-toggle {
-                margin-left: 15px;
-            }
-
-            .mobile-menu-btn {
-                margin-left: 15px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-
-            .hero-title {
-                font-size: 0.7rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.8rem;
-            }
-            
-            .hero-tagline {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-
-            .programs-grid,
-            .testimonials-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Progress Bar -->
     <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-bar" id="progressBar"></div>
     </div>
 
     <!-- Header & Navigation -->
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="/assets/photos/logo/quantum logo color.png" alt="Quantum Telecommunication Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li class="dropdown">
-                        <a href="index.html#programs">Program <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="offline.html">Kelas Offline</a>
-                            <a href="online.html">Kelas Online</a>
-                            <a href="private.html">Kelas Subsidi</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="index.html#collaboration">Kerjasama <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="kerjasama/pemerintah.html">Pemerintah</a>
-                            <a href="kerjasama/swasta.html">Swasta</a>
-                        </div>
-                    </li>
-                    <li><a href="alumni.html">Alumni</a></li>
-                    <li><a href="news.html">Berita</a></li>
-                    <li><a href="testimoni.html">Testimoni</a></li>
-                </ul>
-            </nav>
-            <div style="display: flex; align-items: center;">
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+      <div class="container header-content">
+        <div class="logo">
+          <img
+            src="/assets/photos/logo/quantum logo color.png"
+            alt="Quantum Telecommunication Logo"
+          />
         </div>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li class="dropdown">
+              <a href="index.html#programs"
+                >Program <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="offline.html">Kelas Offline</a>
+                <a href="online.html">Kelas Online</a>
+                <a href="private.html">Kelas Subsidi</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="index.html#collaboration"
+                >Kerjasama <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="kerjasama/bamuis1.html">Pemerintah</a>
+                <a href="kerjasama/swasta.html">Swasta</a>
+              </div>
+            </li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="news.html">Berita</a></li>
+            <li><a href="testimoni.html">Testimoni</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide active"></div>
-            <div class="hero-slide"></div>
-            <div class="hero-slide"></div>
+      <div class="hero-slideshow">
+        <div class="hero-slide active"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+      </div>
+      <div class="container hero-content">
+        <h2 class="hero-title">Kursus Online Teknisi Ponsel</h2>
+        <h3 class="hero-subtitle">BELAJAR FLEKSIBEL DARI MANA SAJA</h3>
+        <h3 class="hero-tagline typing-effect">
+          Dibimbing dari NOL sampai Mahir dengan akses materi selamanya.
+          Insyaallah Mudah Dipahami Walau Tidak Pernah Belajar Elektronika
+          Sekalipun
+        </h3>
+        <div class="hero-buttons">
+          <a href="https://wa.me/6281234567890" class="btn btn-cta"
+            >Daftar Sekarang</a
+          >
+          <a href="#programs" class="btn btn-outline">Lihat Program</a>
         </div>
-        <div class="container hero-content">
-            <h2 class="hero-title">Kursus Online Teknisi Ponsel</h2>
-            <h3 class="hero-subtitle">BELAJAR FLEKSIBEL DARI MANA SAJA</h3>
-            <h3 class="hero-tagline typing-effect">Dibimbing dari NOL sampai Mahir dengan akses materi selamanya. Insyaallah Mudah Dipahami Walau Tidak Pernah Belajar Elektronika Sekalipun</h3>
-            <div class="hero-buttons">
-                <a href="https://wa.me/6281234567890" class="btn btn-cta">Daftar Sekarang</a>
-                <a href="#programs" class="btn btn-outline">Lihat Program</a>
-            </div>
-        </div>
-        <div class="shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Program Online Section -->
     <section id="programs" class="bg-white section-with-divider">
-        <div class="container">
-            <div class="section-title">
-                <h2>Program Kelas Online</h2>
-                <p class="section-subtitle">Pilih program yang sesuai dengan kebutuhan belajar Anda</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card animate__animated animate__fadeInUp">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kursus Online Teknisi HP" loading="lazy">
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Kursus Online Teknisi HP</h3>
-                        <div class="program-duration">
-                            <i class="far fa-clock"></i> 6 Minggu
-                        </div>
-                        <div class="program-price">Rp 1.500.000</div>
-                        <div class="program-benefits">
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Akses video materi selamanya
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Grup diskusi online
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Sertifikat digital
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Modul pembelajaran digital
-                            </div>
-                        </div>
-                        <div class="program-button">
-                            <a href="https://wa.me/6281234567890" class="btn btn-cta">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="program-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Belajar Fiber Optic dari Rumah" loading="lazy">
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Belajar Fiber Optic dari Rumah</h3>
-                        <div class="program-duration">
-                            <i class="far fa-clock"></i> 4 Minggu
-                        </div>
-                        <div class="program-price">Rp 1.200.000</div>
-                        <div class="program-benefits">
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Akses video materi selamanya
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Grup diskusi online
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Sertifikat digital
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Panduan praktik mandiri
-                            </div>
-                        </div>
-                        <div class="program-button">
-                            <a href="https://wa.me/6281234567890" class="btn btn-cta">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="program-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kursus Jaringan Komputer Online" loading="lazy">
-                    </div>
-                    <div class="program-content">
-                        <h3 class="program-title">Kursus Jaringan Komputer Online</h3>
-                        <div class="program-duration">
-                            <i class="far fa-clock"></i> 8 Minggu
-                        </div>
-                        <div class="program-price">Rp 2.000.000</div>
-                        <div class="program-benefits">
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Akses video materi selamanya
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Grup diskusi online
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Sertifikat digital
-                            </div>
-                            <div class="program-benefit">
-                                <i class="fas fa-check-circle"></i> Simulasi jaringan virtual
-                            </div>
-                        </div>
-                        <div class="program-button">
-                            <a href="https://wa.me/6281234567890" class="btn btn-cta">Daftar Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Program Kelas Online</h2>
+          <p class="section-subtitle">
+            Pilih program yang sesuai dengan kebutuhan belajar Anda
+          </p>
         </div>
-        <div class="shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+        <div class="programs-grid">
+          <div class="program-card animate__animated animate__fadeInUp">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Kursus Online Teknisi HP"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">Kursus Online Teknisi HP</h3>
+              <div class="program-duration">
+                <i class="far fa-clock"></i> 6 Minggu
+              </div>
+              <div class="program-price">Rp 1.500.000</div>
+              <div class="program-benefits">
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Akses video materi
+                  selamanya
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Grup diskusi online
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Sertifikat digital
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Modul pembelajaran digital
+                </div>
+              </div>
+              <div class="program-button">
+                <a href="https://wa.me/6281234567890" class="btn btn-cta"
+                  >Daftar Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="program-card animate__animated animate__fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Belajar Fiber Optic dari Rumah"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">Belajar Fiber Optic dari Rumah</h3>
+              <div class="program-duration">
+                <i class="far fa-clock"></i> 4 Minggu
+              </div>
+              <div class="program-price">Rp 1.200.000</div>
+              <div class="program-benefits">
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Akses video materi
+                  selamanya
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Grup diskusi online
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Sertifikat digital
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Panduan praktik mandiri
+                </div>
+              </div>
+              <div class="program-button">
+                <a href="https://wa.me/6281234567890" class="btn btn-cta"
+                  >Daftar Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="program-card animate__animated animate__fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Kursus Jaringan Komputer Online"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-content">
+              <h3 class="program-title">Kursus Jaringan Komputer Online</h3>
+              <div class="program-duration">
+                <i class="far fa-clock"></i> 8 Minggu
+              </div>
+              <div class="program-price">Rp 2.000.000</div>
+              <div class="program-benefits">
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Akses video materi
+                  selamanya
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Grup diskusi online
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Sertifikat digital
+                </div>
+                <div class="program-benefit">
+                  <i class="fas fa-check-circle"></i> Simulasi jaringan virtual
+                </div>
+              </div>
+              <div class="program-button">
+                <a href="https://wa.me/6281234567890" class="btn btn-cta"
+                  >Daftar Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Testimoni Section -->
     <section id="testimonials" class="bg-blue-light section-with-divider">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimoni Peserta Online</h2>
-                <p class="section-subtitle">Apa kata mereka yang telah mengikuti kelas online kami</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate__animated animate__fadeInUp">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ahmad Rizki" loading="lazy">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Ahmad Rizki</h3>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        "Materinya sangat lengkap dan mudah dipahami. Saya bisa belajar kapan saja dan di mana saja. Sekarang sudah bisa servis HP sendiri!"
-                    </div>
-                </div>
-
-                <div class="testimonial-card animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Siti Nurjanah" loading="lazy">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Siti Nurjanah</h3>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        "Instrukturnya sangat responsif dan sabar menjawab pertanyaan. Grup diskusinya sangat membantu saat saya mengalami kesulitan."
-                    </div>
-                </div>
-
-                <div class="testimonial-card animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dewi Anggraeni" loading="lazy">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Dewi Anggraeni</h3>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        "Akses materi selamanya sangat membantu. Saya bisa mengulang-ulang materi yang sulit sampai benar-benar paham. Terima kasih LPK Quantum!"
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimoni Peserta Online</h2>
+          <p class="section-subtitle">
+            Apa kata mereka yang telah mengikuti kelas online kami
+          </p>
         </div>
-        <div class="shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+        <div class="testimonials-grid">
+          <div class="testimonial-card animate__animated animate__fadeInUp">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Ahmad Rizki"
+                  loading="lazy"
+                />
+              </div>
+              <div class="testimonial-info">
+                <h3>Ahmad Rizki</h3>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              "Materinya sangat lengkap dan mudah dipahami. Saya bisa belajar
+              kapan saja dan di mana saja. Sekarang sudah bisa servis HP
+              sendiri!"
+            </div>
+          </div>
+
+          <div
+            class="testimonial-card animate__animated animate__fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Siti Nurjanah"
+                  loading="lazy"
+                />
+              </div>
+              <div class="testimonial-info">
+                <h3>Siti Nurjanah</h3>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              "Instrukturnya sangat responsif dan sabar menjawab pertanyaan.
+              Grup diskusinya sangat membantu saat saya mengalami kesulitan."
+            </div>
+          </div>
+
+          <div
+            class="testimonial-card animate__animated animate__fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Dewi Anggraeni"
+                  loading="lazy"
+                />
+              </div>
+              <div class="testimonial-info">
+                <h3>Dewi Anggraeni</h3>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              "Akses materi selamanya sangat membantu. Saya bisa mengulang-ulang
+              materi yang sulit sampai benar-benar paham. Terima kasih LPK
+              Quantum!"
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Galeri Section -->
     <section id="gallery" class="bg-white section-with-divider">
-        <div class="container">
-            <div class="section-title">
-                <h2>Galeri Kelas Online</h2>
-                <p class="section-subtitle">Moment-moment selama proses belajar mengajar online</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item animate__animated animate__fadeInUp">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sesi Zoom Kelas Online" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Materi Digital" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Forum Diskusi" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                    <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Praktik Mandiri" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Konsultasi Online" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-                    <img src="https://images.unsplash.com/photo-1581092580896-7d3d7e1dc0f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sertifikat Digital" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Galeri Kelas Online</h2>
+          <p class="section-subtitle">
+            Moment-moment selama proses belajar mengajar online
+          </p>
         </div>
-        <div class="shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+        <div class="gallery-grid">
+          <div class="gallery-item animate__animated animate__fadeInUp">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Sesi Zoom Kelas Online"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div
+            class="gallery-item animate__animated animate__fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Materi Digital"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div
+            class="gallery-item animate__animated animate__fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Forum Diskusi"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div
+            class="gallery-item animate__animated animate__fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Praktik Mandiri"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div
+            class="gallery-item animate__animated animate__fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Konsultasi Online"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div
+            class="gallery-item animate__animated animate__fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581092580896-7d3d7e1dc0f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Sertifikat Digital"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <img src="" alt="" id="lightbox-image">
-            <span class="lightbox-close">&times;</span>
-            <div class="lightbox-nav">
-                <button id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-                <button id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightbox-image" />
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-nav">
+          <button id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">LPK Quantum</div>
-                    <p>Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang menghasilkan tenaga kerja profesional dan kompeten.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Link Cepat</h3>
-                    <ul>
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="index.html#about">Tentang Kami</a></li>
-                        <li><a href="index.html#programs">Program Pelatihan</a></li>
-                        <li><a href="index.html#gallery">Galeri</a></li>
-                        <li><a href="index.html#testimonials">Testimoni</a></li>
-                        <li><a href="index.html#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Kontak</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123, Bandung</p>
-                    <p><i class="fas fa-phone"></i> (022) 1234-5678</p>
-                    <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@lpkquantum.id</p>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru tentang program pelatihan.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Alamat email Anda" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang
+              menghasilkan tenaga kerja profesional dan kompeten.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Link Cepat</h3>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="tentang.html">Tentang Kami</a></li>
+              <li><a href="#programs">Program Pelatihan</a></li>
+              <li><a href="#gallery">Kerjasama</a></li>
+              <li><a href="#testimonials">Alumni</a></li>
+              <li><a href="#contact">Berita</a></li>
+              <li><a href="#contact">Testimoni</a></li>  
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123,
+              Bandung
+            </p>
+            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 8217 1727 337</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              quantumtelecommunication38@gmail.com
+            </p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Berlangganan newsletter kami untuk mendapatkan informasi terbaru
+              tentang program pelatihan.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Alamat email Anda" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a
+      href="https://wa.me/6281234567890"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
-        // Progress Bar
-        window.onscroll = function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-        };
+      // Progress Bar
+      window.onscroll = function () {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
-        const body = document.body;
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-            
-            // Change icon
-            const icon = mobileMenuBtn.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a:not(.dropdown > a)');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                body.style.overflow = '';
-                
-                // Reset icon
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
+      const body = document.body;
+      const dropdowns = document.querySelectorAll(".dropdown");
 
-        // Dropdown toggle for mobile
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        });
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
 
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
-        
-        // Check for saved theme preference or respect OS preference
-        if (localStorage.getItem('theme') === 'dark' || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+        // Change icon
+        const icon = mobileMenuBtn.querySelector("i");
+        if (nav.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
         }
-        
-        themeToggle.addEventListener('click', () => {
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(
+        "nav ul li a:not(.dropdown > a)"
+      );
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          body.style.overflow = "";
+
+          // Reset icon
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Dropdown toggle for mobile
+      dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+
+        link.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      // Check for saved theme preference or respect OS preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage.getItem("theme"))
+      ) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+          themeIcon.classList.remove("fa-moon");
+          themeIcon.classList.add("fa-sun");
+        }
+      });
+
+      // Hero Slideshow
+      const heroSlides = document.querySelectorAll(".hero-slide");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        heroSlides.forEach((slide) => slide.classList.remove("active"));
+        heroSlides[index].classList.add("active");
+      }
+
+      function nextSlide() {
+        currentSlide =
+          currentSlide === heroSlides.length - 1 ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+      }
+
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 5000);
+
+      // Lightbox Functionality
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-image");
+      const lightboxClose = document.querySelector(".lightbox-close");
+      const lightboxPrev = document.getElementById("lightbox-prev");
+      const lightboxNext = document.getElementById("lightbox-next");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      let currentImageIndex = 0;
+
+      // Open lightbox
+      galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          currentImageIndex = index;
+          const imgSrc = item.querySelector("img").src;
+          lightboxImg.src = imgSrc;
+          lightbox.classList.add("active");
+          body.style.overflow = "hidden";
+        });
+      });
+
+      // Close lightbox
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+        body.style.overflow = "";
+      });
+
+      // Navigate lightbox
+      lightboxPrev.addEventListener("click", () => {
+        currentImageIndex =
+          currentImageIndex === 0
+            ? galleryItems.length - 1
+            : currentImageIndex - 1;
+        const imgSrc = galleryItems[currentImageIndex].querySelector("img").src;
+        lightboxImg.src = imgSrc;
+      });
+
+      lightboxNext.addEventListener("click", () => {
+        currentImageIndex =
+          currentImageIndex === galleryItems.length - 1
+            ? 0
+            : currentImageIndex + 1;
+        const imgSrc = galleryItems[currentImageIndex].querySelector("img").src;
+        lightboxImg.src = imgSrc;
+      });
+
+      // Close lightbox when clicking outside
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+          body.style.overflow = "";
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("active")) {
+          if (e.key === "Escape") {
+            lightbox.classList.remove("active");
+            body.style.overflow = "";
+          } else if (e.key === "ArrowLeft") {
+            lightboxPrev.click();
+          } else if (e.key === "ArrowRight") {
+            lightboxNext.click();
+          }
+        }
+      });
+
+      // Scroll animations
+      function checkScroll() {
+        const sections = document.querySelectorAll("section");
+        const backToTop = document.querySelector(".back-to-top");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (sectionTop < triggerHeight) {
+            section.classList.add("visible");
+          }
         });
 
-        // Hero Slideshow
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            heroSlides.forEach(slide => slide.classList.remove('active'));
-            heroSlides[index].classList.add('active');
+        // Show/hide back to top button
+        if (window.scrollY > 500) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
         }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide === heroSlides.length - 1) ? 0 : currentSlide + 1;
-            showSlide(currentSlide);
-        }
-        
-        // Change slide every 5 seconds
-        setInterval(nextSlide, 5000);
+      }
 
-        // Lightbox Functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-image');
-        const lightboxClose = document.querySelector('.lightbox-close');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        let currentImageIndex = 0;
-        
-        // Open lightbox
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                currentImageIndex = index;
-                const imgSrc = item.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                lightbox.classList.add('active');
-                body.style.overflow = 'hidden';
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+
+      // Newsletter form
+      const newsletterForm = document.querySelector(".newsletter-form");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[type="email"]');
+
+          if (emailInput.value && isValidEmail(emailInput.value)) {
+            alert("Terima kasih telah berlangganan newsletter kami!");
+            emailInput.value = "";
+          } else {
+            alert("Silakan masukkan alamat email yang valid.");
+            emailInput.focus();
+          }
+        });
+      }
+
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
-        
-        // Close lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            body.style.overflow = '';
-        });
-        
-        // Navigate lightbox
-        lightboxPrev.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex === 0) ? galleryItems.length - 1 : currentImageIndex - 1;
-            const imgSrc = galleryItems[currentImageIndex].querySelector('img').src;
-            lightboxImg.src = imgSrc;
-        });
-        
-        lightboxNext.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex === galleryItems.length - 1) ? 0 : currentImageIndex + 1;
-            const imgSrc = galleryItems[currentImageIndex].querySelector('img').src;
-            lightboxImg.src = imgSrc;
-        });
-        
-        // Close lightbox when clicking outside
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    lightbox.classList.remove('active');
-                    body.style.overflow = '';
-                } else if (e.key === 'ArrowLeft') {
-                    lightboxPrev.click();
-                } else if (e.key === 'ArrowRight') {
-                    lightboxNext.click();
-                }
-            }
-        });
-
-        // Scroll animations
-        function checkScroll() {
-            const sections = document.querySelectorAll('section');
-            const backToTop = document.querySelector('.back-to-top');
-            
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const triggerHeight = window.innerHeight * 0.8;
-                
-                if (sectionTop < triggerHeight) {
-                    section.classList.add('visible');
-                }
-            });
-            
-            // Show/hide back to top button
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        }
-        
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-
-        // Newsletter form
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                
-                if (emailInput.value && isValidEmail(emailInput.value)) {
-                    alert('Terima kasih telah berlangganan newsletter kami!');
-                    emailInput.value = '';
-                } else {
-                    alert('Silakan masukkan alamat email yang valid.');
-                    emailInput.focus();
-                }   
-            });
-        }
-        
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
