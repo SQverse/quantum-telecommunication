@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembukaan Konter Gajah Ponsel - LPK Quantum Telecommunication</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* Variabel Warna untuk Light dan Dark Mode */
+      :root {
+        /* Light Mode */
+        --blue-light: #e6f0ff;
+        --blue-medium: #4a90e2;
+        --blue-dark: #1a3c6e;
+        --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+        --text-dark: #333;
+        --text-light: #fff;
+        --bg-light: #f9fbff;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        /* Transisi */
+        --transition: all 0.3s ease;
+      }
+
+      /* Dark Mode Variabel */
+      [data-theme="dark"] {
+        --blue-light: #1a3c6e;
+        --blue-medium: #3a7bd5;
+        --blue-dark: #e6f0ff;
+        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
+        --text-dark: #f0f0f0;
+        --text-light: #e6e6e6;
+        --bg-light: #121212;
+        --card-bg: #1e1e1e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+        transition: var(--transition);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header & Navigation */
+      header {
+        background: var(--blue-gradient);
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 45px;
+        margin-right: 12px;
+        transition: var(--transition);
+      }
+
+      .logo h1 {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        font-weight: 800;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+        font-size: 0.9rem;
+        display: block;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--text-light);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      nav ul li a:hover::after {
+        width: 70%;
+      }
+
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--card-bg);
+        min-width: 200px;
+        box-shadow: var(--shadow-hover);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 1000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-content a {
+        color: var(--text-dark);
+        padding: 12px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+      }
+
+      .dropdown-content a:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
+
+      .dropdown-content a::after {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        margin-left: 15px;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: var(--transition);
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(30deg);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 90px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--blue-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        font-weight: 800;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--blue-gradient);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        padding: 20px 0;
+        background-color: var(--blue-light);
+        margin-bottom: 40px;
+      }
+
+      .breadcrumb-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb-content a {
+        color: var(--blue-medium);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .breadcrumb-content a:hover {
+        color: var(--blue-dark);
+        text-decoration: underline;
+      }
+
+      .breadcrumb-content span {
+        color: #777;
+      }
+
+      /* Kerjasama Pemerintah Section */
+      .kerjasama-hero {
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        text-align: center;
+        padding: 100px 0;
+        margin-bottom: 60px;
+      }
+
+      .kerjasama-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease;
+      }
+
+      .kerjasama-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease 0.3s forwards;
+        opacity: 0;
+      }
+
+      /* Dokumentasi Kerjasama Grid */
+      .kerjasama-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .kerjasama-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .kerjasama-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .kerjasama-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .kerjasama-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .kerjasama-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .kerjasama-card:hover .kerjasama-image img {
+        transform: scale(1.1);
+      }
+
+      .kerjasama-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .kerjasama-card:hover .kerjasama-overlay {
+        opacity: 1;
+      }
+
+      .kerjasama-overlay i {
+        color: white;
+        font-size: 2.5rem;
+        background: var(--blue-medium);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .kerjasama-content {
+        padding: 25px;
+      }
+
+      .kerjasama-title {
+        font-size: 1.3rem;
+        color: var(--blue-dark);
+        margin-bottom: 12px;
+        transition: var(--transition);
+      }
+
+      .kerjasama-card:hover .kerjasama-title {
+        color: var(--blue-medium);
+      }
+
+      .kerjasama-partner {
+        color: var(--blue-medium);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      .kerjasama-desc {
+        color: #666;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .kerjasama-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .kerjasama-date {
+        font-size: 0.85rem;
+        color: #777;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .kerjasama-cta {
+        color: var(--blue-medium);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .kerjasama-cta:hover {
+        gap: 10px;
+        color: var(--blue-dark);
+      }
+
+      /* Lightbox Gallery */
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+      }
+
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .lightbox-close:hover {
+        color: var(--blue-medium);
+      }
+
+      .lightbox-caption {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 20px;
+      }
+
+      .lightbox-nav button {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .lightbox-nav button:hover {
+        background: var(--blue-medium);
+      }
+
+      /* Gallery Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .gallery-item {
+        border-radius: 8px;
+        overflow: hidden;
+        height: 100px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--blue-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--blue-gradient);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+        font-size: 1.2rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        background: var(--blue-medium);
+        transform: translateY(-3px);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .footer-links h3::after,
+      .footer-newsletter h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--blue-medium);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--text-light);
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-contact i {
+        color: var(--blue-medium);
+        width: 20px;
+        }
+
+      .map-container {
+        height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 15px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: transparent;
+        color: var(--text-light);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form button {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        border: none;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Animasi */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .kerjasama-grid {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: var(--blue-dark);
+          padding: 80px 20px 20px;
+          transition: left 0.3s ease;
+          z-index: 999;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+          overflow-y: auto;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 12px;
+          border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
+          display: none;
+        }
+
+        .dropdown.active .dropdown-content {
+          display: block;
+        }
+
+        .mobile-menu-btn {
+          position: relative;
+          z-index: 1000;
+        }
+
+        .kerjasama-hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .kerjasama-hero p {
+          font-size: 1rem;
+        }
+
+        .theme-toggle {
+          margin-left: 15px;
+        }
+
+        .mobile-menu-btn {
+          margin-left: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .kerjasama-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .kerjasama-hero {
+          padding: 70px 0;
+        }
+
+        .kerjasama-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-content">
+        <div class="logo">
+          <img
+            src="/assets/photos/logo/quantum-logo-color.png"
+            alt="Quantum Telecommunication Logo"
+          />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#about">Tentang Kami</a></li>
+            <li class="dropdown">
+              <a href="index.html#programs"
+                >Program <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="offline.html">Kelas Offline</a>
+                <a href="online.html">Kelas Online</a>
+                <a href="private.hmtl">Kelas Private</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#collaboration"
+                >Kerjasama <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="kerjasama-bamuis1.html">BAMUIS I</a>
+                <a href="kerjasama-swasta.html">BAMUIS II</a>
+              </div>
+            </li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="news.html">Berita</a></li>
+            <li><a href="testimonials.html">Testimoni</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-content">
+          <a href="index.html">Beranda</a>
+          <i class="fas fa-chevron-right"></i>
+          <a href="index.html#collaboration">Kerjasama</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Pembukaan Konter Gajah Ponsel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kerjasama Pemerintah Hero Section -->
+    <section id="kerjasama-pemerintah" class="kerjasama-hero">
+      <div class="container">
+        <h1>Pembukaan Konter Gajah Ponsel</h1>
+        <p>
+          LPK Quantum Telecommunication dengan bangga mendukung peresmian Konter Gajah Ponsel, 
+          sebagai wujud nyata implementasi program pelatihan teknisi handphone yang menghasilkan 
+          lulusan siap berwirausaha di bidang servis dan penjualan handphone.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dokumentasi Kerjasama Section -->
+    <section id="kerjasama-detail">
+      <div class="container">
+        <div class="section-title">
+          <h2>Dokumentasi Pembukaan Konter</h2>
+        </div>
+        <p class="section-subtitle">
+          Momen bersejarah dalam peresmian Konter Gajah Ponsel yang diinisiasi oleh alumni LPK Quantum 
+          dengan dukungan penuh dari lembaga kami dalam pengembangan usaha di bidang telekomunikasi.
+        </p>
+
+        <div class="kerjasama-grid">
+          <!-- Kerjasama 1 -->
+          <div class="kerjasama-card">
+            <div class="kerjasama-image" data-gallery="gallery1">
+              <img
+                src="/assets/photos/kerjasama/gajah-ponsel/gajah-ponsel1.jpg"
+                alt="Prosesi Pemotongan Pita"
+                loading="lazy"
+              />
+              <div class="kerjasama-overlay">
+                <i class="fas fa-images"></i>
+              </div>
+            </div>
+            <div class="kerjasama-content">
+              <h3 class="kerjasama-title">Prosesi Pemotongan Pita</h3>
+              <p class="kerjasama-partner">Konter Gajah Ponsel</p>
+              <p class="kerjasama-desc">
+                Momen simbolis pemotongan pita oleh perwakilan LPK Quantum dan Perwakilan dari Mitra LPK Quantum Telecommunication
+                sebagai tanda dibukanya secara resmi usaha servis handphone ini.
+              </p>
+              <div class="kerjasama-meta">
+                <span class="kerjasama-date"
+                  ><i class="far fa-calendar-alt"></i> 2025</span
+                >
+                <span class="kerjasama-cta" data-gallery="gallery1"
+                  >Lihat Dokumentasi <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kerjasama 2 -->
+          <div class="kerjasama-card">
+            <div class="kerjasama-image" data-gallery="gallery2">
+              <img
+                src="/assets/photos/kerjasama/gajah-ponsel/gajah-ponsel2.jpg"
+                alt="Sambutan dari Perwakilan Mitra Kerjasama LPK Quantum"
+                loading="lazy"
+              />
+              <div class="kerjasama-overlay">
+                <i class="fas fa-images"></i>
+              </div>
+            </div>
+            <div class="kerjasama-content">
+              <h3 class="kerjasama-title">Sambutan dari Perwakilan Mitra Kerjasama LPK Quantum</h3>
+              <p class="kerjasama-partner">LPK Quantum Telecommunication</p>
+              <p class="kerjasama-desc">
+                Sambutan hangat dari salah satu perwakilan mitra LPK Quantum
+              </p>
+              <div class="kerjasama-meta">
+                <span class="kerjasama-date"
+                  ><i class="far fa-calendar-alt"></i> 2025</span
+                >
+                <span class="kerjasama-cta" data-gallery="gallery2"
+                  >Lihat Dokumentasi <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kerjasama 6 -->
+          <div class="kerjasama-card">
+            <div class="kerjasama-image" data-gallery="gallery6">
+              <img
+                src="/assets/photos/kerjasama/gajah-ponsel/gajah-ponsel3.jpg"
+                alt="Dokumentasi Pada Acara Peresmian Konter Gajah Ponsel"
+                loading="lazy"
+              />
+              <div class="kerjasama-overlay">
+                <i class="fas fa-images"></i>
+              </div>
+            </div>
+            <div class="kerjasama-content">
+              <h3 class="kerjasama-title">Dokumentasi Kegiatan</h3>
+              <p class="kerjasama-partner">LPK Quantum Telecommunication/p>
+              <p class="kerjasama-desc">
+                Dokumentasi pada acara peresmian Konter Gajah Ponsel yang dihadiri oleh berbagai pihak terkait.
+              </p>
+              <div class="kerjasama-meta">
+                <span class="kerjasama-date"
+                  ><i class="far fa-calendar-alt"></i> 5 November 2023</span
+                >
+                <span class="kerjasama-cta" data-gallery="gallery6"
+                  >Lihat Dokumentasi <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Gallery -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="" />
+        <div class="lightbox-nav">
+          <button class="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Gallery Data (hidden) -->
+    <div style="display: none">
+      <!-- Gallery 1 -->
+      <div id="gallery1-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Prosesi Pemotongan Pita oleh Perwakilan LPK Quantum"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Momen Pemotongan Pita Secara Simbolis"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Sambutan Meriah dari Hadirin"
+        ></div>
+      </div>
+
+      <!-- Gallery 2 -->
+      <div id="gallery2-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Sambutan dari Direktur LPK Quantum"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Penyampaian Apresiasi untuk Alumni Berprestasi"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Penyerahan Plakat Penghargaan"
+        ></div>
+      </div>
+
+      <!-- Gallery 3 -->
+      <div id="gallery3-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Pelanggan Pertama yang Datang ke Konter"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1581092580107-7d0b446719b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Pelayanan Profesional kepada Pelanggan"
+        ></div>
+      </div>
+
+      <!-- Gallery 4 -->
+      <div id="gallery4-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Demo Perbaikan Layar Handphone"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Teknisi Memperagakan Keahliannya"
+        ></div>
+      </div>
+
+      <!-- Gallery 5 -->
+      <div id="gallery5-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Tampilan Interior Konter yang Profesional"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Area Servis dengan Peralatan Lengkap"
+        ></div>
+      </div>
+
+      <!-- Gallery 6 -->
+      <div id="gallery6-data">
+        <div
+          data-src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Foto Bersama Seluruh Undangan"
+        ></div>
+        <div
+          data-src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          data-title="Tim Konter Gajah Ponsel dan LPK Quantum"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang
+              menghasilkan tenaga kerja profesional dan kompeten.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Link Cepat</h3>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="tentang.html">Tentang Kami</a></li>
+              <li><a href="#programs">Program Pelatihan</a></li>
+              <li><a href="#gallery">Kerjasama</a></li>
+              <li><a href="#testimonials">Alumni</a></li>
+              <li><a href="#contact">Berita</a></li>
+              <li><a href="#contact">Testimoni</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123,
+              Bandung
+            </p>
+            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 8217 1727 337</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              quantumtelecommunication38@gmail.com
+            </p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7892828312786!2d107.6083944740441!3d-6.917355293083251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62577714b17%3A0x19e1e82b39159f1d!2sBandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1692469959231!5m2!1sen!2sid"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Berlangganan newsletter kami untuk mendapatkan informasi terbaru
+              tentang program pelatihan.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Alamat email Anda" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a
+      href="https://wa.me/6281234567890"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#kerjasama-pemerintah" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
+      const body = document.body;
+      const dropdowns = document.querySelectorAll(".dropdown");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
+
+        // Change icon
+        const icon = mobileMenuBtn.querySelector("i");
+        if (nav.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(
+        "nav ul li a:not(.dropdown > a)"
+      );
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          body.style.overflow = "";
+
+          // Reset icon
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Dropdown toggle for mobile
+      dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+
+        link.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      // Check for saved theme preference or respect OS preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage.getItem("theme"))
+      ) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // Scroll animations
+      function checkScroll() {
+        const sections = document.querySelectorAll("section");
+        const cards = document.querySelectorAll(".kerjasama-card");
+        const backToTop = document.querySelector(".back-to-top");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (sectionTop < triggerHeight) {
+            section.classList.add("visible");
+          }
+        });
+
+        // Animate cards
+        cards.forEach((card, index) => {
+          const cardTop = card.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (cardTop < triggerHeight) {
+            setTimeout(() => {
+              card.classList.add("visible");
+            }, index * 100);
+          }
+        });
+
+        // Show/hide back to top button
+        if (window.scrollY > 500) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+
+      // Lightbox Gallery Functionality
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+      const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+      const lightboxClose = lightbox.querySelector(".lightbox-close");
+      const lightboxPrev = lightbox.querySelector(".lightbox-prev");
+      const lightboxNext = lightbox.querySelector(".lightbox-next");
+
+      let currentGallery = null;
+      let currentIndex = 0;
+
+      // Open lightbox when clicking on gallery items
+      document.querySelectorAll("[data-gallery]").forEach((item) => {
+        item.addEventListener("click", function () {
+          const galleryId = this.getAttribute("data-gallery");
+          openGallery(galleryId, 0);
+        });
+      });
+
+      // Also open when clicking on "Lihat Dokumentasi" text
+      document.querySelectorAll(".kerjasama-cta").forEach((item) => {
+        item.addEventListener("click", function () {
+          const galleryId = this.getAttribute("data-gallery");
+          openGallery(galleryId, 0);
+        });
+      });
+
+      function openGallery(galleryId, index) {
+        const galleryData = document.getElementById(`${galleryId}-data`);
+        if (!galleryData) return;
+
+        const items = galleryData.querySelectorAll("div");
+        if (items.length === 0) return;
+
+        currentGallery = galleryId;
+        currentIndex = index;
+
+        // Show the selected image
+        showImage(items[currentIndex]);
+
+        // Set up navigation
+        lightboxPrev.style.visibility = items.length > 1 ? "visible" : "hidden";
+        lightboxNext.style.visibility = items.length > 1 ? "visible" : "hidden";
+
+        // Show lightbox
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function showImage(item) {
+        const src = item.getAttribute("data-src");
+        const title = item.getAttribute("data-title");
+
+        lightboxImg.src = src;
+        lightboxCaption.textContent = title;
+      }
+
+      function nextImage() {
+        const galleryData = document.getElementById(`${currentGallery}-data`);
+        if (!galleryData) return;
+
+        const items = galleryData.querySelectorAll("div");
+        currentIndex = (currentIndex + 1) % items.length;
+        showImage(items[currentIndex]);
+      }
+
+      function prevImage() {
+        const galleryData = document.getElementById(`${currentGallery}-data`);
+        if (!galleryData) return;
+
+        const items = galleryData.querySelectorAll("div");
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showImage(items[currentIndex]);
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Event listeners for lightbox controls
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxNext.addEventListener("click", nextImage);
+      lightboxPrev.addEventListener("click", prevImage);
+
+      // Close lightbox when clicking on the background
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("active")) {
+          if (e.key === "Escape") {
+            closeLightbox();
+          } else if (e.key === "ArrowRight") {
+            nextImage();
+          } else if (e.key === "ArrowLeft") {
+            prevImage();
+          }
+        }
+      });
+
+      // Newsletter form
+      const newsletterForm = document.querySelector(".newsletter-form");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[type="email"]');
+
+          if (emailInput.value && isValidEmail(emailInput.value)) {
+            alert("Terima kasih telah berlangganan newsletter kami!");
+            emailInput.value = "";
+          } else {
+            alert("Silakan masukkan alamat email yang valid.");
+            emailInput.focus();
+          }
+        });
+      }
+
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    </script>
+  </body>
+</html>

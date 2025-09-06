@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional. Dijamin kerja dengan sertifikasi resmi dan penyaluran kerja.">
     <title>
       LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional
     </title>
@@ -28,7 +30,7 @@
         --blue-medium: #4a90e2;
         --blue-dark: #1a3c6e;
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-        --text-dark: #333;
+        --text-dark: #222; /* Dipergelap untuk kontras lebih baik */
         --text-light: #fff;
         --bg-light: #f9fbff;
         --card-bg: #ffffff;
@@ -39,18 +41,15 @@
         --transition: all 0.3s ease;
       }
 
-      /* Dark Mode Variabel */
+      /* Skema warna dark mode */
       [data-theme="dark"] {
-        --blue-light: #1a3c6e;
-        --blue-medium: #3a7bd5;
-        --blue-dark: #e6f0ff;
-        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
         --text-dark: #f0f0f0;
-        --text-light: #e6e6e6;
+        --text-light: #f0f0f0;
         --bg-light: #121212;
         --card-bg: #1e1e1e;
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --blue-light: #2a4365;
       }
 
       /* Reset & Base Styles */
@@ -81,7 +80,7 @@
         padding: 0 20px;
       }
 
-      /* Header & Navigation */
+      /* Header & Navigation - Perbaikan kontras */
       header {
         background: var(--blue-gradient);
         padding: 12px 0;
@@ -223,10 +222,10 @@
         transform: rotate(30deg);
       }
 
-      /* Hero Section dengan Slideshow */
+      /* Hero Section dengan Slideshow - Responsif ditingkatkan */
       .hero {
         height: 100vh;
-        min-height: 700px;
+        min-height: 600px; /* Diperkecil sedikit */
         position: relative;
         overflow: hidden;
         color: var(--text-light);
@@ -348,17 +347,18 @@
       }
 
       .hero-title {
-        font-size: 1rem; /* Diperkecil */
+        font-size: 1rem;
         font-weight: 700;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease;
         line-height: 1.1;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
       }
 
       .hero-subtitle {
-        font-size: 3.2rem; /* Diperbesar */
+        font-size: 3.2rem;
         font-weight: 800;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease 0.2s forwards;
@@ -366,10 +366,11 @@
         line-height: 1.1;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
       }
 
       .hero-tagline {
-        font-size: 3.5rem; /* Diperbesar */
+        font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 30px;
         animation: fadeInDown 1s ease 0.4s forwards;
@@ -378,6 +379,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #ffd700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
       }
 
       .hero-buttons {
@@ -482,7 +484,7 @@
 
       /* Section Styles */
       section {
-        padding: 90px 0;
+        padding: 80px 0; /* Dikurangi dari 90px */
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
@@ -495,7 +497,7 @@
 
       .section-title {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 40px; /* Dikurangi dari 50px */
       }
 
       .section-title h2 {
@@ -522,12 +524,16 @@
       .section-subtitle {
         text-align: center;
         max-width: 700px;
-        margin: 0 auto 50px;
+        margin: 0 auto 40px; /* Dikurangi dari 50px */
         font-size: 1.1rem;
         color: #666;
       }
 
-      /* About Section */
+      /* About Section - Jarak diperbaiki */
+      #about {
+        padding-top: 60px; /* Ditambahkan untuk mengurangi jarak dari hero */
+      }
+
       .about-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -561,6 +567,7 @@
       .about-text p {
         margin-bottom: 15px;
         font-size: 1.05rem;
+        line-height: 1.7; /* Ditambahkan untuk keterbacaan */
       }
 
       /* Tombol About Section */
@@ -578,7 +585,7 @@
 
       /* Video Profile Section */
       .video-profile {
-        padding: 80px 0;
+        padding: 70px 0; /* Dikurangi dari 80px */
         text-align: center;
       }
 
@@ -671,6 +678,7 @@
 
       .feature-card p {
         color: var(--text-dark);
+        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
       }
 
       /* Program Section dengan Tabs */
@@ -860,6 +868,7 @@
       .instructor-desc {
         font-size: 0.9rem;
         color: #666;
+        line-height: 1.5; /* Ditambahkan untuk keterbacaan */
       }
 
       .instructor-social {
@@ -964,6 +973,7 @@
         font-style: italic;
         color: #666;
         margin-bottom: 15px;
+        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
       }
 
       .alumni-current {
@@ -1027,6 +1037,7 @@
         color: var(--blue-dark);
         margin-bottom: 10px;
         transition: var(--transition);
+        line-height: 1.4; /* Ditambahkan untuk keterbacaan */
       }
 
       .news-card:hover .news-title {
@@ -1037,6 +1048,7 @@
         color: #666;
         margin-bottom: 15px;
         font-size: 0.95rem;
+        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
       }
 
       .news-link {
@@ -1091,6 +1103,10 @@
 
       .collaboration-content {
         padding: 20px;
+        min-height: 220px; /* Ditambahkan untuk konsistensi tinggi kartu */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .collaboration-title {
@@ -1110,6 +1126,7 @@
         color: #666;
         margin-bottom: 15px;
         font-size: 0.95rem;
+        line-height: 1.5; /* Ditambahkan untuk keterbacaan */
       }
 
       .collaboration-date {
@@ -1177,6 +1194,7 @@
         font-style: italic;
         color: #555;
         margin-bottom: 15px;
+        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
       }
 
       .testimonial-author {
@@ -1260,7 +1278,7 @@
 
       /* Partners Carousel Section */
       .partners-section {
-        padding: 80px 0;
+        padding: 70px 0; /* Dikurangi dari 80px */
         background-color: var(--bg-light);
       }
 
@@ -1322,7 +1340,7 @@
         background: var(--blue-gradient);
         color: var(--text-light);
         text-align: center;
-        padding: 80px 0;
+        padding: 70px 0; /* Dikurangi dari 80px */
       }
 
       .cta-section .section-title h2 {
@@ -1333,11 +1351,11 @@
         background: var(--text-light);
       }
 
-      /* Footer */
+      /* Footer - Diperbaiki dengan menghapus newsletter */
       footer {
         background: var(--blue-dark);
         color: var(--text-light);
-        padding: 60px 0 20px;
+        padding: 50px 0 20px; /* Dikurangi dari 60px */
         position: relative;
       }
 
@@ -1390,7 +1408,7 @@
       }
 
       .footer-links h3,
-      .footer-newsletter h3 {
+      .footer-contact h3 {
         font-size: 1.2rem;
         margin-bottom: 20px;
         position: relative;
@@ -1399,7 +1417,7 @@
       }
 
       .footer-links h3::after,
-      .footer-newsletter h3::after {
+      .footer-contact h3::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -1454,38 +1472,10 @@
         border: none;
       }
 
+      /* Menghapus bagian newsletter */
+      .footer-newsletter,
       .newsletter-form {
-        display: flex;
-        margin-top: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .newsletter-form input {
-        flex: 1;
-        padding: 12px;
-        border: none;
-        background: transparent;
-        color: var(--text-light);
-      }
-
-      .newsletter-form input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .newsletter-form button {
-        background: var(--blue-medium);
-        color: var(--text-light);
-        border: none;
-        padding: 0 20px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .newsletter-form button:hover {
-        background: var(--blue-light);
-        color: var(--blue-dark);
+        display: none;
       }
 
       .copyright {
@@ -1595,7 +1585,13 @@
         }
       }
 
-      /* Responsive Styles */
+      /* Responsive Styles - Diperbaiki untuk tampilan mobile */
+      @media (max-width: 1200px) {
+        .container {
+          padding: 0 15px;
+        }
+      }
+
       @media (max-width: 992px) {
         .hero-title {
           font-size: 0.9rem;
@@ -1622,6 +1618,10 @@
         .vm-container {
           grid-template-columns: 1fr;
           gap: 30px;
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
         }
       }
 
@@ -1689,23 +1689,36 @@
         }
 
         .hero {
-          padding: 100px 0 80px;
+          padding: 80px 0 60px;
+          min-height: 500px;
+          height: auto;
         }
 
         .hero-title {
           font-size: 0.8rem;
+          margin-bottom: 10px;
         }
 
         .hero-subtitle {
           font-size: 2rem;
+          margin-bottom: 10px;
         }
 
         .hero-tagline {
           font-size: 2.2rem;
+          margin-bottom: 20px;
+        }
+
+        .hero-content {
+          padding-top: 60px;
         }
 
         .section-title h2 {
           font-size: 1.8rem;
+        }
+
+        .section-title {
+          margin-bottom: 30px;
         }
 
         .program-tabs,
@@ -1733,11 +1746,24 @@
           width: 100%;
           text-align: center;
         }
+
+        #about {
+          padding-top: 40px;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
       }
 
-      @media (max-width: 480px) {
-        .logo h1 {
-          font-size: 1.2rem;
+      @media (max-width: 576px) {
+        .hero {
+          min-height: 450px;
         }
 
         .hero-title {
@@ -1793,6 +1819,38 @@
           max-width: 280px;
           margin-bottom: 10px;
         }
+
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+
+        .hero-indicators {
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .logo h1 {
+          font-size: 1.2rem;
+        }
+
+        .hero-title {
+          font-size: 0.6rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .hero-tagline {
+          font-size: 1.7rem;
+        }
+
+        .program-tab, 
+        .alumni-tab {
+          padding: 8px 16px;
+          font-size: 0.9rem;
+        }
       }
     </style>
   </head>
@@ -1825,8 +1883,9 @@
                 >Kerjasama <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="menu/kerjasama/bamuis1.html">BAMUIS I</a>
-                <a href="menu/kerjasama/bamuis2.htmll">BAMUIS II</a>
+                <a href="menu/kerjasama/bamuis1.html">BAMUIS Angkatan I</a>
+                <a href="menu/kerjasama/bamuis2.htmll">BAMUIS Angkatan II</a>
+                <a href="menu/kerjasama/gajah-ponsel.html">Pembukaan Konter Gajah Ponsel</a>
               </div>
             </li>
             <li><a href="menu/alumni.html">Alumni</a></li>
@@ -1876,7 +1935,7 @@
     <section id="about">
       <div class="container">
         <div class="section-title">
-          <h2>Tentang Kami</h2>
+          <h2>LPK Quantum Telecommunication</h2>
         </div>
         <div class="about-content">
           <div class="about-image">
@@ -1887,7 +1946,6 @@
             />
           </div>
           <div class="about-text">
-            <h3>LPK Quantum Telecommunication</h3>
             <p>
               LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja
               Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi
@@ -2070,7 +2128,7 @@
           <div class="program-card active" data-category="offline">
             <div class="program-image">
               <img
-                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="/menu/programs/offline.jpeg"
                 alt="Teknisi HP"
                 loading="lazy"
               />
@@ -2105,7 +2163,7 @@
           <div class="program-card active" data-category="online">
             <div class="program-image">
               <img
-                src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="/menu/programs/online.jpeg"
                 alt="Kelas Online"
                 loading="lazy"
               />
@@ -2138,7 +2196,7 @@
           <div class="program-card active" data-category="private">
             <div class="program-image">
               <img
-                src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="/menu/programs/private.jpeg"
                 alt="Fiber Optic"
                 loading="lazy"
               />
@@ -2635,7 +2693,7 @@
           <div class="collaboration-card">
             <div class="collaboration-image">
               <img
-                src="assets/photos/kerjasama/bamuis1.jpg"
+                src="assets/photos/kerjasama/bamuis1/bamuis1.jpg"
                 alt="Judul Kerjasama"
                 loading="lazy"
               />
@@ -2656,7 +2714,7 @@
           <div class="collaboration-card">
             <div class="collaboration-image">
               <img
-                src="assets/photos/kerjasama/bamuis2.jpg"
+                src="assets/photos/kerjasama/bamuis2/bamuis2.jpg"
                 alt="Judul Kerjasama"
                 loading="lazy"
               />
@@ -2677,18 +2735,18 @@
           <div class="collaboration-card">
             <div class="collaboration-image">
               <img
-                src="assets/photos/kerjasama/bnsp.jpg"
+                src="assets/photos/kerjasama/gajah-ponsel/gajah-ponsel.jpg"
                 alt="Judul Kerjasama"
                 loading="lazy"
               />
             </div>
             <div class="collaboration-content">
-              <h3 class="collaboration-title">BNSP 2024</h3>
+              <h3 class="collaboration-title">Pembukaan Gajah Ponsel</h3>
               <p class="collaboration-partner">
-                Dengan Badan Nasional Sertifikasi Profesi.
+                Dengan Mitra LPK Quantum
               </p>
               <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan BNSP.
+               Pembukaan Gajah Ponsel Cabang Semarang
               </p>
               <p class="collaboration-date">
                 <i class="far fa-calendar-alt"></i> 2024
@@ -2988,7 +3046,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Diperbaiki dengan menghapus newsletter -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -3045,17 +3103,6 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-          </div>
-          <div class="footer-newsletter">
-            <h3>Newsletter</h3>
-            <p>
-              Berlangganan newsletter kami untuk mendapatkan informasi terbaru
-              tentang program pelatihan.
-            </p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Alamat email Anda" required />
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
-            </form>
           </div>
         </div>
         <div class="copyright">
@@ -3358,23 +3405,6 @@
       function isValidEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
-      }
-
-      // Newsletter form
-      const newsletterForm = document.querySelector(".newsletter-form");
-      if (newsletterForm) {
-        newsletterForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const emailInput = this.querySelector('input[type="email"]');
-
-          if (emailInput.value && isValidEmail(emailInput.value)) {
-            alert("Terima kasih telah berlangganan newsletter kami!");
-            emailInput.value = "";
-          } else {
-            alert("Silakan masukkan alamat email yang valid.");
-            emailInput.focus();
-          }
-        });
       }
     </script>
   </body>
