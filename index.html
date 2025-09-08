@@ -27,79 +27,69 @@
     />
     <style>
       /* PERBAIKAN UNTUK MENGATASI HORIZONTAL SCROLL */
-      html, body {
-        overflow-x: hidden;
-        max-width: 100%;
-        width: 100%;
+      /* Dropdown Menu - Desktop */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--card-bg);
+        min-width: 200px;
+        box-shadow: var(--shadow-hover);
+        border-radius: 8px;
+        z-index: 1000;
       }
-      
-      /* Memastikan semua container tidak melebihi viewport */
-      .container {
-        max-width: 100vw;
-        overflow: hidden;
+
+      .dropdown:hover .dropdown-content {
+        display: block;
       }
-      
-      /* Memperbaiki iframe agar responsif */
-      iframe {
-        max-width: 100%;
+
+      .dropdown-content a {
+        color: var(--text-dark);
+        padding: 12px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+        text-decoration: none;
       }
-      
-      /* Memperbaiki gambar agar tidak melebihi container */
-      img {
-        max-width: 100%;
-        height: auto;
+
+      .dropdown-content a:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
       }
-      
-      /* Memperbaiki carousel mitra untuk mobile */
+
+      /* Dropdown Menu - Mobile */
       @media (max-width: 768px) {
-        .partners-track {
-          width: calc(150px * 14) !important;
-          animation: scrollMobile 25s linear infinite !important;
+        .dropdown-content {
+          display: none;
+          position: static;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
         }
-        
-        .partner-item {
-          width: 150px !important;
-          margin: 0 15px !important;
+
+        /* Tampilkan dropdown content ketika parent active */
+        .dropdown.active .dropdown-content {
+          display: block;
         }
-        
-        @keyframes scrollMobile {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-150px * 7));
-          }
+
+        .dropdown-content a {
+          color: rgba(255, 255, 255, 0.8);
+          padding: 10px 15px;
+          border-bottom: none;
         }
-      }
-      
-      /* Memperbaiki padding pada section untuk mobile */
-      @media (max-width: 576px) {
-        section {
-          padding: 40px 0 !important;
+
+        .dropdown-content a:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: var(--text-light);
         }
-        
-        .container {
-          padding: 0 15px !important;
-        }
-        
-        .hero-content {
-          padding: 0 15px !important;
-        }
-        
-        /* Memperbaiki judul hero untuk mobile sangat kecil */
-        .hero-title {
-          font-size: 0.65rem !important;
-        }
-        
-        .hero-subtitle {
-          font-size: 1.6rem !important;
-        }
-        
-        .hero-tagline {
-          font-size: 1.8rem !important;
+
+        /* Hilangkan chevron down di mobile */
+        .dropdown > a i {
+          display: none;
         }
       }
-      
+
       /* Variabel Warna untuk Light dan Dark Mode */
       :root {
         /* Light Mode */
@@ -229,49 +219,6 @@
 
       nav ul li a:hover::after {
         width: 70%;
-      }
-
-      /* Dropdown Menu */
-      .dropdown {
-        position: relative;
-      }
-
-      .dropdown-content {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--card-bg);
-        min-width: 200px;
-        box-shadow: var(--shadow-hover);
-        border-radius: 8px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: var(--transition);
-        z-index: 1000;
-      }
-
-      .dropdown:hover .dropdown-content {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .dropdown-content a {
-        color: var(--text-dark);
-        padding: 12px 16px;
-        display: block;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        font-size: 0.9rem;
-      }
-
-      .dropdown-content a:hover {
-        background: var(--blue-light);
-        color: var(--blue-dark);
-      }
-
-      .dropdown-content a::after {
-        display: none;
       }
 
       .mobile-menu-btn {
@@ -469,7 +416,7 @@
         position: absolute;
         bottom: 30px;
         left: 50%;
-        transform: translateX(-50%); 
+        transform: translateX(-50%);
         display: flex;
         gap: 10px;
         z-index: 3;
@@ -824,7 +771,6 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
-        max-width: 100%;
       }
 
       .program-card:hover .program-image img {
@@ -920,7 +866,6 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
-        max-width: 100%;
       }
 
       .instructor-card:hover .instructor-image img {
@@ -1029,7 +974,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        max-width: 100%;
       }
 
       .alumni-info {
@@ -1051,7 +995,7 @@
 
       .alumni-testimonial {
         font-style: italic;
-        color: #666;
+        color: 666;
         margin-bottom: 15px;
         line-height: 1.6; /* Ditambahkan untuk keterbacaan */
       }
@@ -1096,7 +1040,6 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
-        max-width: 100%;
       }
 
       .news-card:hover .news-image img {
@@ -1111,6 +1054,9 @@
         font-size: 0.8rem;
         color: #777;
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
       }
 
       .news-title {
@@ -1123,6 +1069,7 @@
 
       .news-card:hover .news-title {
         color: var(--blue-medium);
+        text-decoration: underline;
       }
 
       .news-excerpt {
@@ -1169,6 +1116,7 @@
       .collaboration-image {
         height: 200px;
         overflow: hidden;
+        position: relative;
       }
 
       .collaboration-image img {
@@ -1176,7 +1124,6 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
-        max-width: 100%;
       }
 
       .collaboration-card:hover .collaboration-image img {
@@ -1213,7 +1160,10 @@
 
       .collaboration-date {
         font-size: 0.8rem;
-        color: 777;
+        color: #777;
+        display: flex;
+        align-items: center;
+        gap: 5px;
       }
 
       /* Testimoni Video Section */
@@ -1277,6 +1227,11 @@
         color: #555;
         margin-bottom: 15px;
         line-height: 1.6; /* Ditambahkan untuk keterbacaan */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .testimonial-author {
@@ -1336,6 +1291,7 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 30px;
         text-align: center;
+        margin-top: 50px;
       }
 
       .stat-item {
@@ -1349,6 +1305,7 @@
       .stat-item:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-hover);
+        background: var(--blue-light);
       }
 
       .stat-number {
@@ -1356,6 +1313,11 @@
         font-weight: 700;
         color: var(--blue-medium);
         margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        color: var(--text-dark);
       }
 
       /* Partners Carousel Section */
@@ -1431,6 +1393,12 @@
 
       .cta-section .section-title h2::after {
         background: var(--text-light);
+      }
+
+      .cta-section p {
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
       }
 
       /* Footer - Diperbaiki dengan menghapus newsletter */
@@ -1756,21 +1724,6 @@
           background: rgba(255, 255, 255, 0.1);
         }
 
-        .dropdown-content {
-          position: static;
-          opacity: 1;
-          visibility: visible;
-          transform: none;
-          box-shadow: none;
-          background: transparent;
-          margin-left: 20px;
-          display: none;
-        }
-
-        .dropdown.active .dropdown-content {
-          display: block;
-        }
-
         .mobile-menu-btn {
           position: relative;
           z-index: 1000;
@@ -1968,14 +1921,12 @@
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                >Kerjasama <i class="fas fa-chevron-down"></i
+                >Portofolio <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="menu/kerjasama/bamuis1.html">BAMUIS Angkatan I</a>
-                <a href="menu/kerjasama/bamuis2.htmll">BAMUIS Angkatan II</a>
-                <a href="menu/kerjasama/gajah-ponsel.html"
-                  >Pembukaan Konter Gajah Ponsel</a
-                >
+                <a href="menu/kerjasama/pemerintah.html">Negeri</a>
+                <a href="menu/kerjasama/swasta.html">Swasta</a>
+                <a href="menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
             <li><a href="menu/alumni.html">Alumni</a></li>
@@ -2647,42 +2598,41 @@
     <section id="news" style="background-color: var(--blue-light)">
       <div class="container">
         <div class="section-title">
-          <h2>Berita & Artikel Terbaru</h2>
+          <h2>Berita</h2>
         </div>
         <p class="section-subtitle">
-          Informasi terkini seputar dunia telekomunikasi, teknisi HP, dan
-          kegiatan LPK Quantum
+          LPK Quantum Telecommunication di berbagai media online terpercaya
         </p>
         <div class="news-container">
           <!-- Berita 1 -->
           <div class="news-card">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/Tk8oUcqTSDQ?si=wVViseFbYJ76tj9s"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div class="news-image">
+              <img
+                src="/assets/photos/section/berita1.jpg"
+                alt="Metro Times"
+                loading="lazy"
+              />
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 12 Oktober 2023
+                <i class="far fa-calendar-alt"></i> 8 Agustus 2023
               </p>
-              <h3 class="news-title">PEMBAHASAN UMUM SEPUTAR SERVICE!</h3>
+              <h3 class="news-title">
+                Cetak Pengusaha Muda Mandiri, LPK Quantum Telecommunication
+                Gandeng Bamuis BNI Gelar Pelatihan Teknisi Smartphone
+              </h3>
+              <p class="news-source">
+                <i class="fas fa-newspaper"></i> Metro Times
+              </p>
               <p class="news-excerpt">
-                Pembahasan dalam video ini juga menyoroti berbagai permasalahan
-                umum yang sering terjadi dalam dunia service HP, mulai dari
-                kendala teknis hingga kesalahan pemilihan alat, sehingga isinya
-                benar-benar relevan dengan kondisi nyata yang biasa dihadapi
-                teknisi di lapangan.
+                Lembaga Pelatihan Kerja Quantum Telecommunication berhasil
+                mencetak teknisi handphone profesional yang siap bersaing di
+                dunia kerja.
               </p>
               <a
-                href="https://youtu.be/Tk8oUcqTSDQ?si=DmE3rIs29EZrnAQJ"
+                href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/"
                 class="news-link"
+                target="_blank"
                 >Baca selengkapnya <i class="fas fa-arrow-right"></i
               ></a>
             </div>
@@ -2690,33 +2640,33 @@
 
           <!-- Berita 2 -->
           <div class="news-card">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/U3pUf1KOcek?si=niLszSOorBJDEISv"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div class="news-image">
+              <img
+                src="/assets/photos/section/berita2.jpg"
+                alt="Berita Suara Merdeka"
+                loading="lazy"
+              />
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 5 Oktober 2023
+                <i class="far fa-calendar-alt"></i> 9 Agustus 2023
               </p>
               <h3 class="news-title">
-                "Rahasia Counter Service Sukses! Pilih Alat Analisa HP yang
-                Tepat"
+                Tekan Potensi Pengangguran di Kota Semarang yang Tinggi, Belasan
+                Orang Dibekali Ketrampilan Teknis
               </h3>
-              <p class="news-excerpt">
-                Video ini membahas jenis alat analisa HP yang wajib dimiliki,
-                cara memilih sesuai kebutuhan, tips hemat tapi tetap
-                profesional, serta rahasia meningkatkan kecepatan dan akurasi
-                servis agar counter bisa jadi pilihan utama pelanggan!
+              <p class="news-source">
+                <i class="fas fa-newspaper"></i> Radar Semarang
               </p>
-              <a href="#" class="news-link"
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication menjadi lembaga pelatihan rujukan
+                bagi mereka yang ingin menjadi teknisi handphone profesional di
+                Jawa Tengah.
+              </p>
+              <a
+                href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis"
+                class="news-link"
+                target="_blank"
                 >Baca selengkapnya <i class="fas fa-arrow-right"></i
               ></a>
             </div>
@@ -2724,34 +2674,126 @@
 
           <!-- Berita 3 -->
           <div class="news-card">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/bx7uBHpV-o4?si=QTPlKeCrnfB1-6rX"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div class="news-image">
+              <img
+                src="/assets/photos/section/berita3.jpg"
+                alt="Berita Suara Merdeka"
+                loading="lazy"
+              />
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 28 September 2023
+                <i class="far fa-calendar-alt"></i> 19 Februari 2020
               </p>
               <h3 class="news-title">
-                The Ultimate Guide to Smartphone Repair Tools : Cara Setting
-                Microscope Trinoculer
+                30 Mantan Pecandu Narkoba Dapat Pelatihan Reparasi HP
               </h3>
-              <p class="news-excerpt">
-                Mikroskop trinokuler adalah alat penting bagi teknisi ponsel,
-                karena memberikan presisi tinggi saat menangani komponen kecil.
-                Baik pemula maupun berpengalaman, tutorial ini akan membantu
-                Anda memaksimalkan penggunaannya untuk perbaikan smartphone yang
-                lebih efisien dan akurat.
+              <p class="news-source">
+                <i class="fas fa-newspaper"></i> Ayo Semarang
               </p>
-              <a href="#" class="news-link"
+              <p class="news-excerpt">
+                Sebanyak 30 orang mantan pecandu narkoba mengikuti pelatihan
+                reparasi handphone (HP) di aula Yayasan Rehabilitasi AT-TAUHID
+                Jalan Gayamsari II No 41 A, Rabu (19/2/2020).
+              </p>
+              <a
+                href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP"
+                class="news-link"
+                target="_blank"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 4 -->
+          <div class="news-card">
+            <div class="news-image">
+              <img
+                src="assets/photos/news/kompas.jpg"
+                alt="Berita Kompas"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 5 Mei 2023
+              </p>
+              <h3 class="news-title">
+                Tingkatkan SDM Teknisi Handphone, Quantum Gelar Pelatihan
+              </h3>
+              <p class="news-source"><i class="fas fa-newspaper"></i> Kompas</p>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication menggelar pelatihan teknisi
+                handphone untuk meningkatkan SDM di bidang telekomunikasi.
+              </p>
+              <a
+                href="https://regional.kompas.com/read/2023/05/05/tingkatkan-sdm-teknisi-handphone-quantum-gelar-pelatihan"
+                class="news-link"
+                target="_blank"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 5 -->
+          <div class="news-card">
+            <div class="news-image">
+              <img
+                src="assets/photos/news/detik.jpg"
+                alt="Berita Detik"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 18 Juni 2023
+              </p>
+              <h3 class="news-title">
+                Quantum Telecommunication Buka Kelas Online untuk Teknisi HP
+              </h3>
+              <p class="news-source"><i class="fas fa-newspaper"></i> Detik</p>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication membuka kelas online untuk
+                memudahkan masyarakat belajar menjadi teknisi handphone
+                profesional.
+              </p>
+              <a
+                href="https://www.detik.com/edu/sekolah/d-6739829/quantum-telecommunication-buka-kelas-online-untuk-teknisi-hp"
+                class="news-link"
+                target="_blank"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 6 -->
+          <div class="news-card">
+            <div class="news-image">
+              <img
+                src="assets/photos/news/antara.jpg"
+                alt="Berita Antara"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 30 Juli 2023
+              </p>
+              <h3 class="news-title">
+                Quantum Telecommunication Gandeng Perusahaan untuk Penyaluran
+                Kerja
+              </h3>
+              <p class="news-source">
+                <i class="fas fa-newspaper"></i> Antara News
+              </p>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication menjalin kerjasama dengan berbagai
+                perusahaan untuk penyaluran kerja lulusannya.
+              </p>
+              <a
+                href="https://www.antaranews.com/berita/3678945/quantum-telecommunication-gandeng-perusahaan-untuk-penyaluran-kerja"
+                class="news-link"
+                target="_blank"
                 >Baca selengkapnya <i class="fas fa-arrow-right"></i
               ></a>
             </div>
@@ -3157,7 +3199,7 @@
               <li><a href="#home">Beranda</a></li>
               <li><a href="menu/about.html">Tentang Kami</a></li>
               <li><a href="#programs">Program Pelatihan</a></li>
-              <li><a href="menu/kerjasama/bamuis1.html">Kerjasama</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
               <li><a href="menu/alumni.html">Alumni</a></li>
               <li><a href="menu/news.html">Berita</a></li>
               <li><a href="menu/testimoni.html">Testimoni</a></li>
