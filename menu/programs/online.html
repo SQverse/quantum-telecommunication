@@ -560,265 +560,541 @@
         color: #666;
       }
 
-      /* Program Online Section */
-      .programs-grid {
+      /* Permasalahan Pemula Section */
+      .problems-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
       }
 
-      .program-card {
+      .problem-card {
         background: var(--card-bg);
         border-radius: 15px;
-        overflow: hidden;
+        padding: 30px;
+        text-align: center;
         box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .problem-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 0;
+        background: var(--blue-gradient);
         transition: var(--transition);
       }
 
-      .program-card:hover {
+      .problem-card:hover::before {
+        height: 100%;
+      }
+
+      .problem-card:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-hover);
       }
 
-      .program-image {
-        height: 200px;
+      .problem-image {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
         overflow: hidden;
-        position: relative;
-      }
-
-      .program-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .program-card:hover .program-image img {
-        transform: scale(1.05);
-      }
-
-      .program-content {
-        padding: 25px;
-      }
-
-      .program-title {
-        font-size: 1.4rem;
-        color: var(--blue-dark);
-        margin-bottom: 15px;
-        font-weight: 700;
-      }
-
-      .program-duration {
         display: flex;
         align-items: center;
+        justify-content: center;
+        background: var(--blue-light);
+      }
+
+      .problem-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+
+      .problem-card h3 {
         margin-bottom: 15px;
-        color: var(--blue-medium);
+        color: var(--blue-dark);
+        font-size: 1.1rem;
         font-weight: 600;
       }
 
-      .program-duration i {
-        margin-right: 8px;
-      }
-
-      .program-price {
-        font-size: 1.5rem;
-        color: var(--blue-dark);
-        margin-bottom: 20px;
-        font-weight: 800;
-      }
-
-      .program-benefits {
-        margin-bottom: 20px;
-      }
-
-      .program-benefit {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .program-benefit i {
-        color: var(--blue-medium);
-        margin-right: 10px;
-        font-size: 0.9rem;
-      }
-
-      .program-button {
-        text-align: center;
-      }
-
-      /* Testimoni Section */
-      .testimonials-grid {
+      /* Solusi Section */
+      .solution-cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
+        margin-top: 40px;
       }
 
-      .testimonial-card {
+      .solution-card {
         background: var(--card-bg);
         border-radius: 15px;
         padding: 30px;
+        text-align: center;
         box-shadow: var(--shadow);
         transition: var(--transition);
       }
 
-      .testimonial-card:hover {
-        transform: translateY(-5px);
+      .solution-card:hover {
+        transform: translateY(-10px);
         box-shadow: var(--shadow-hover);
       }
 
-      .testimonial-header {
+      .solution-card h3 {
+        color: var(--blue-medium);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .solution-card p {
+        color: var(--text-dark);
+      }
+
+      /* About LPK Section */
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .stat-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--blue-medium);
+        margin-bottom: 10px;
+      }
+
+      .stat-text {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+      }
+
+      /* Carousel Section */
+      .carousel-container {
+        position: relative;
+        margin: 40px auto;
+        max-width: 1000px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+      }
+
+      .carousel-slide {
+        display: none;
+      }
+
+      .carousel-slide.active {
+        display: block;
+        animation: fadeIn 1s ease;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+      }
+
+      .carousel-control {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
       }
 
-      .testimonial-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        overflow: hidden;
+      .carousel-control:hover {
+        background: var(--blue-dark);
+      }
+
+      /* Facilities List */
+      .facilities-list {
+        margin-top: 40px;
+        text-align: left;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .facility-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding: 15px;
+        background: var(--blue-light);
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+
+      .facility-item:hover {
+        transform: translateX(10px);
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .facility-item i {
         margin-right: 15px;
+        font-size: 1.2rem;
+        color: var(--blue-medium);
+        min-width: 30px;
       }
 
-      .testimonial-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .facility-item:hover i {
+        color: var(--text-light);
       }
 
-      .testimonial-info h3 {
-        font-size: 1.1rem;
-        margin-bottom: 5px;
-        color: var(--blue-dark);
+      /* Materi Accordion */
+      .materi-accordion {
+        max-width: 800px;
+        margin: 40px auto 0;
       }
 
-      .testimonial-rating {
-        color: #ffc107;
+      .accordion-item {
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
       }
 
-      .testimonial-text {
-        font-style: italic;
-        color: #666;
-        line-height: 1.6;
+      .accordion-header {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
       }
 
-      /* Galeri Section */
-      .gallery-grid {
+      .accordion-header:hover {
+        background: var(--blue-dark);
+      }
+
+      .accordion-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .accordion-content {
+        background: var(--card-bg);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .accordion-content.active {
+        max-height: 1000px;
+        padding: 20px;
+      }
+
+      .materi-list {
+        list-style: none;
+      }
+
+      .materi-list li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .materi-list li::before {
+        content: "✓";
+        color: var(--blue-medium);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Benefit Tabs */
+      .benefit-tabs {
+        max-width: 1000px;
+        margin: 40px auto 0;
+      }
+
+      .tabs-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        background: var(--blue-light);
+        border: none;
+        padding: 12px 24px;
+        margin: 0 5px 10px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      .tab-btn.active {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .benefit-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        gap: 30px;
       }
 
-      .gallery-item {
+      .benefit-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
         position: relative;
-        border-radius: 10px;
         overflow: hidden;
-        cursor: pointer;
-        height: 200px;
       }
 
-      .gallery-item img {
+      .benefit-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 0;
+        background: var(--blue-gradient);
+        opacity: 0.1;
+        transition: var(--transition);
+        z-index: 0;
+      }
+
+      .benefit-card:hover::before {
         height: 100%;
-        object-fit: cover;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--blue-medium);
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .benefit-card h3 {
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .benefit-card p {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Testimoni Slider */
+      .testimonial-slider {
+        position: relative;
+        max-width: 1000px;
+        margin: 40px auto 0;
+        overflow: hidden;
+      }
+
+      .testimonial-slides {
+        display: flex;
         transition: transform 0.5s ease;
       }
 
-      .gallery-item:hover img {
-        transform: scale(1.05);
+      .testimonial-slide {
+        min-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
       }
 
-      .gallery-overlay {
+      .testimoni-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        padding: 30px;
+        margin: 0 10px;
+        text-align: center;
+      }
+
+      .testimoni-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+      }
+
+      .testimoni-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimoni-rating {
+        color: #ffc107;
+        margin-bottom: 15px;
+      }
+
+      .testimoni-name {
+        font-size: 1.1rem;
+        color: var(--blue-dark);
+        margin-bottom: 5px;
+      }
+
+      .testimoni-role {
+        color: var(--blue-medium);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .testimoni-text {
+        font-style: italic;
+        color: #666;
+      }
+
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+      }
+
+      .testimonial-control {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .testimonial-control:hover {
+        background: var(--blue-dark);
+      }
+
+      .testimonial-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 8px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--blue-light);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .testimonial-dot.active {
+        background: var(--blue-medium);
+        transform: scale(1.2);
+      }
+
+      /* Price Section */
+      .price-section {
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        text-align: center;
+        padding: 80px 0;
+        border-radius: 15px;
+        margin: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .price-section::before {
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: rotate(30deg);
       }
 
-      .gallery-item:hover .gallery-overlay {
-        opacity: 1;
-      }
-
-      .gallery-overlay i {
-        color: white;
-        font-size: 2rem;
-      }
-
-      /* Lightbox */
-      .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-      }
-
-      .lightbox.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .lightbox-content {
-        max-width: 90%;
-        max-height: 90%;
+      .price-section h2 {
+        color: var(--text-light);
+        margin-bottom: 20px;
         position: relative;
       }
 
-      .lightbox-content img {
-        max-width: 100%;
-        max-height: 90vh;
-        border-radius: 8px;
+      .price-tag {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 30px 0;
+        color: #ffd700;
+        position: relative;
       }
 
-      .lightbox-close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-
-      .lightbox-nav {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        padding: 0 20px;
-      }
-
-      .lightbox-nav button {
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .lightbox-nav button:hover {
-        background: rgba(255, 255, 255, 0.4);
+      .price-description {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        position: relative;
       }
 
       /* Footer */
@@ -1123,10 +1399,11 @@
           font-size: 1.3rem;
         }
 
-        .programs-grid,
-        .testimonials-grid,
-        .gallery-grid {
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .problems-grid,
+        .solution-cards,
+        .about-stats,
+        .benefit-grid {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
       }
 
@@ -1255,10 +1532,26 @@
           font-size: 1rem;
         }
 
-        .programs-grid,
-        .testimonials-grid,
-        .gallery-grid {
+        .problems-grid,
+        .solution-cards,
+        .about-stats,
+        .benefit-grid {
           grid-template-columns: 1fr;
+        }
+
+        .price-tag {
+          font-size: 2.5rem;
+        }
+
+        .tabs-header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .tab-btn {
+          width: 100%;
+          max-width: 250px;
+          margin-bottom: 10px;
         }
       }
     </style>
@@ -1281,7 +1574,7 @@
         <nav>
           <ul>
             <li><a href="/index.html">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="menu/about.html">Tentang Kami</a></li>
             <li class="dropdown">
               <a href="index.html#programs"
                 >Program <i class="fas fa-chevron-down"></i
@@ -1293,7 +1586,7 @@
               </div>
             </li>
             <li class="dropdown">
-              <a href="index.html#collaboration"
+              <a href="#collaboration"
                 >Kerjasama <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
@@ -1325,18 +1618,18 @@
         <div class="hero-slide"></div>
       </div>
       <div class="container hero-content">
-        <h2 class="hero-title">Kursus Online Teknisi Ponsel</h2>
-        <h3 class="hero-subtitle">BELAJAR FLEKSIBEL DARI MANA SAJA</h3>
+        <h2 class="hero-title">TRAINING TEKNISI SMARTPHONE</h2>
+        <h3 class="hero-subtitle">Kelas ONLINE</h3>
         <h3 class="hero-tagline typing-effect">
-          Dibimbing dari NOL sampai Mahir dengan akses materi selamanya.
-          Insyaallah Mudah Dipahami Walau Tidak Pernah Belajar Elektronika
-          Sekalipun
+          Kami bimbing dari NOL sampai benar-benar MAHIR. InsyaAllah Mudah
+          dipahami dan diaplikasikan bahkan oleh orang yang tidak pernah belajar
+          elektronika sekalipun 😍
         </h3>
         <div class="hero-buttons">
-          <a href="https://wa.me/6281234567890" class="btn btn-cta"
+          <a href="https://wa.me/6282171727337" class="btn btn-cta"
             >Daftar Sekarang</a
           >
-          <a href="#programs" class="btn btn-outline">Lihat Program</a>
+          <a href="/menu/materi.html" class="btn btn-outline">Lihat Materi</a>
         </div>
       </div>
       <div class="shape-divider">
@@ -1354,140 +1647,96 @@
       </div>
     </section>
 
-    <!-- Program Online Section -->
-    <section id="programs" class="bg-white section-with-divider">
+    <!-- Permasalahan Pemula Section -->
+    <section id="problems" class="bg-white section-with-divider">
       <div class="container">
         <div class="section-title">
-          <h2>Program Kelas Online</h2>
-          <p class="section-subtitle">
-            Pilih program yang sesuai dengan kebutuhan belajar Anda
-          </p>
+          <h2>
+            Permasalahan yang biasa dialami untuk Anda yang Pemula di Dunia
+            Service Handphone
+          </h2>
         </div>
-        <div class="programs-grid">
-          <div class="program-card animate__animated animate__fadeInUp">
-            <div class="program-image">
-              <img
-                src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Kursus Online Teknisi HP"
-                loading="lazy"
-              />
+        <div class="problems-grid">
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-question-circle"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
             </div>
-            <div class="program-content">
-              <h3 class="program-title">Kursus Online Teknisi HP</h3>
-              <div class="program-duration">
-                <i class="far fa-clock"></i> 6 Minggu
-              </div>
-              <div class="program-price">Rp 1.500.000</div>
-              <div class="program-benefits">
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Akses video materi
-                  selamanya
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Grup diskusi online
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Sertifikat digital
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Modul pembelajaran digital
-                </div>
-              </div>
-              <div class="program-button">
-                <a href="https://wa.me/6281234567890" class="btn btn-cta"
-                  >Daftar Sekarang</a
-                >
-              </div>
-            </div>
+            <h3>Bingung Harus mulai belajar dari mana</h3>
           </div>
-
-          <div
-            class="program-card animate__animated animate__fadeInUp"
-            data-wow-delay="0.2s"
-          >
-            <div class="program-image">
-              <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Belajar Fiber Optic dari Rumah"
-                loading="lazy"
-              />
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-tv"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
             </div>
-            <div class="program-content">
-              <h3 class="program-title">Belajar Fiber Optic dari Rumah</h3>
-              <div class="program-duration">
-                <i class="far fa-clock"></i> 4 Minggu
-              </div>
-              <div class="program-price">Rp 1.200.000</div>
-              <div class="program-benefits">
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Akses video materi
-                  selamanya
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Grup diskusi online
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Sertifikat digital
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Panduan praktik mandiri
-                </div>
-              </div>
-              <div class="program-button">
-                <a href="https://wa.me/6281234567890" class="btn btn-cta"
-                  >Daftar Sekarang</a
-                >
-              </div>
-            </div>
+            <h3>Udah Coba ikuti di YouTube tapi gagal</h3>
           </div>
-
-          <div
-            class="program-card animate__animated animate__fadeInUp"
-            data-wow-delay="0.4s"
-          >
-            <div class="program-image">
-              <img
-                src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Kursus Jaringan Komputer Online"
-                loading="lazy"
-              />
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-search"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
             </div>
-            <div class="program-content">
-              <h3 class="program-title">Kursus Jaringan Komputer Online</h3>
-              <div class="program-duration">
-                <i class="far fa-clock"></i> 8 Minggu
-              </div>
-              <div class="program-price">Rp 2.000.000</div>
-              <div class="program-benefits">
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Akses video materi
-                  selamanya
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Grup diskusi online
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Konsultasi via Zoom
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Sertifikat digital
-                </div>
-                <div class="program-benefit">
-                  <i class="fas fa-check-circle"></i> Simulasi jaringan virtual
-                </div>
-              </div>
-              <div class="program-button">
-                <a href="https://wa.me/6281234567890" class="btn btn-cta"
-                  >Daftar Sekarang</a
-                >
-              </div>
+            <h3>Belum Tahu Pasti analisa kerusakannya</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-bug"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
             </div>
+            <h3>Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-brain"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
+            </div>
+            <h3>Tidak Tahu cara analisa yang mudah dan tepat</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-money-bill-wave"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
+            </div>
+            <h3>Selalu Nombok ketika ada servisan masuk</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-lightbulb"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
+            </div>
+            <h3>Masih Kesulitan menentukan solusi-solusi terbaik</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-book"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
+            </div>
+            <h3>Masih Belum bisa baca skema dan flashing software</h3>
+          </div>
+          <div class="problem-card">
+            <div class="problem-image">
+              <i
+                class="fas fa-chalkboard-teacher"
+                style="font-size: 2.5rem; color: #4a90e2"
+              ></i>
+            </div>
+            <h3>Tidak Punya mentor untuk bertanya ketika kesulitan</h3>
           </div>
         </div>
       </div>
@@ -1506,235 +1755,472 @@
       </div>
     </section>
 
-    <!-- Testimoni Section -->
-    <section id="testimonials" class="bg-blue-light section-with-divider">
+    <!-- Solusi Section -->
+    <section id="solutions" class="bg-blue-light section-with-divider">
       <div class="container">
         <div class="section-title">
-          <h2>Testimoni Peserta Online</h2>
+          <h2>
+            Karena itu kami telah membuat formula yang dapat menjadi SOLUSI Anda
+          </h2>
           <p class="section-subtitle">
-            Apa kata mereka yang telah mengikuti kelas online kami
+            Kami Hadirkan <strong>KELAS ONLINE</strong> <br> Dibimbing dari NOL SAMPAI MAHIR dengan garansi <strong>SAMPAI BISA</strong>
           </p>
         </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card animate__animated animate__fadeInUp">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Ahmad Rizki"
-                  loading="lazy"
-                />
-              </div>
-              <div class="testimonial-info">
-                <h3>Ahmad Rizki</h3>
-                <div class="testimonial-rating">
+        <div class="solution-cards">
+          <div class="solution-card">
+            <h3>Materi disampaikan melalui Live Streaming di grup FB tertutup</h3>
+            <p>Gratis 1 tahun akses materi berupa video di aplikasi VbatPonsel</p>
+          </div>
+          <div class="solution-card">
+            <h3>Diluar Jam belajar bebas konsultasi</h3>
+            <p>Dibimbing oleh instruktur yang berpengalaman</p>
+          </div>
+          <div class="solution-card">
+            <h3>Lokasi</h3>
+            <p>
+              Jl. Bina Remaja No.4, Srondol Wetan, Kec. Banyumanik, Kota
+              Semarang, Jawa Tengah 50263
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Tentang LPK Quantum Section -->
+    <section id="about-lpk" class="bg-white section-with-divider">
+      <div class="container">
+        <div class="section-title">
+          <h2>Siapakah LPK Quantum Telecommunication</h2>
+          <p class="section-subtitle">
+            Kami adalah Lembaga Pelatihan Kerja yang berfokus pada Perbaikan
+            Handphone. Setidaknya kami telah mengadakan...
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-text">Training Teknisi Ponsel Online</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-text">Training Teknisi Ponsel Offline</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">32</div>
+            <div class="stat-text">Roadshow</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5021+</div>
+            <div class="stat-text">Alumni Peserta</div>
+          </div>
+        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Carousel Pelatihan Section -->
+    <section id="training-carousel" class="bg-blue-light section-with-divider">
+      <div class="container">
+        <div class="section-title">
+          <h2>Seperti Apa Pelatihan Ini?</h2>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <img
+              src="/assets/photos/CTA/hero3.jpg"
+              alt="Pelatihan Teknisi HP"
+              loading="lazy"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="/assets/photos/CTA/hero2.jpg"
+              alt="Pelatihan Teknisi HP"
+              loading="lazy"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="/assets/photos/section/tentang-kami.JPG"
+              alt="Pelatihan Teknisi HP"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-control prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-control next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="facilities-list">
+          <h3 style="text-align: center; margin-bottom: 30px">
+            Fasilitas Lengkap Kelas Online
+          </h3>
+          <div class="facility-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Di training instruktur berpengalaman</span>
+          </div>
+          <div class="facility-item">
+            <i class="fas fa-check-circle"></i>
+            <span>GRATIS Borneo Schematic 1 bulan</span>
+          </div>
+          <div class="facility-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Alumni Bebas Konsultasi Selamanya</span>
+          </div>
+          <div class="facility-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Bonus materi Bisnis / Scale Up usaha)</span>
+          </div>
+          <div class="facility-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Mendapatkan E-Sertifikat pelatihan</span>
+          </div>
+        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Cocok untuk Pemula Section -->
+    <section id="for-beginners" class="bg-white section-with-divider">
+      <div class="container">
+        <div class="section-title">
+          <h2>
+            Pelatihan ini COCOK UNTUK PEMULA dari SELURUH INDONESIA karena diselenggarakan secara ONLINE melalui Live Streaming di grup tertutup Facebook.
+          </h2>
+        </div>
+        <p
+          style="
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+          "
+        >
+          Tidak perlu background elektronika sebelumnya. Kami akan mengajarkan
+          dari dasar hingga mahir.
+        </p>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Materi Pelatihan Section -->
+    <section id="materi" class="bg-blue-light section-with-divider">
+      <div class="container">
+        <div class="section-title">
+          <h2>Materi yang akan dipelajari</h2>
+        </div>
+
+        <div class="materi-accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3>Materi Hardware</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              <ul class="materi-list">
+                <li>Dasar-dasar Elektronika</li>
+                <li>Penggunaan Alat Service</li>
+                <li>Belajar Schematic</li>
+                <li>Pengukuran Jalur dan Tegangan</li>
+                <li>* Pemahaman cara Kerja Komponen
+</li>
+                <li>Troubleshoting dan analisa kasus</li>
+                <li>Belajar Angkat dan Cetak IC (ACP)</li>
+                <li>Teknik Jumper Jalur & Komponen</li>
+                <li>Bedah kasus Kerusakan</li>
+                <li>Tips & Trik Repair</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3>Materi Software</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              <ul class="materi-list">
+                <li>Belajar Tool Software</li>
+                <li>Flashing, Unlock</li>
+                <li>Perbaikan Imei handphone</li>
+                <li>Repair kerusakan Software & EMMC</li>
+                <li>Pemahaman Tentang EMMC, EMCP, UFS</li>
+                <li>Perbaikan Software Dengan ISP</li>
+                <li>Cara penggunaan Box Flashing</li>
+                <li>Tips & Trik Analisa Kerusakan Software</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3>Fasilitas</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              <ul class="materi-list">
+                <li>Di training instruktur berpengalaman</li>
+                <li>GRATIS Borneo Schematic 1 bulan</li>
+                <li>Alumni Bebas Konsultasi Selamanya</li>
+                <li>Bonus materi Bisnis / Scale Up usaha</li>
+                <li>Mendapatkan E-Sertifikat pelatihan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center">
+          <h3 style="margin-bottom: 20px">Teknis Pembelajaran</h3>
+          <div class="facilities-list">
+            <div class="facility-item">
+              <i class="fas fa-check"></i>
+              <span>Penyampaian Materi berupa Vidio di aplikasi VbatPonsel (free 1th)</span>
+            </div>
+            <div class="facility-item">
+              <i class="fas fa-check"></i>
+              <span>Bedah kasus Live Streaming Jam  19.30 - 21.30 WIB</span>
+            </div>
+            <div class="facility-item">
+              <i class="fas fa-check"></i>
+              <span>Diluar Jam belajar bebas konsultasi</span>
+            </div>
+            <div class="facility-item">
+              <i class="fas fa-check"></i>
+              <span>Konsultasi dan bedah kasus Via WA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Menang Banyak Gratis Section -->
+    <section id="benefits" class="bg-white section-with-divider">
+      <div class="container">
+        <div class="price-section">
+          <h2>Investasi Pelatihan</h2>
+          <div class="price-tag">Rp 800.000</div>
+          <p class="price-description">
+            HARGA Spesial cukup Rp 800.000 saja. Alhamdulillah sudah ribuan alumni kami yang membuktikan
+            dan berhasil dalam bisnis ini. SEKARANG GILIRAN ANDA!!! BAYAR SEKALI
+            BELAJARNYA SEUMUR HIDUP
+          </p>
+          <a
+            href="https://wa.me/6282171727337"
+            class="btn btn-outline"
+            style="margin-top: 30px"
+            >Daftar Sekarang</a
+          >
+        </div>
+      </div>
+      <div class="shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Testimoni Foto Section -->
+    <section id="testimonials-photo" class="bg-blue-light section-with-divider">
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimoni Peserta</h2>
+        </div>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-slides">
+            <div class="testimonial-slide">
+              <div class="testimoni-card">
+                <div class="testimoni-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Testimoni Peserta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="testimoni-rating">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                 </div>
+                <h3 class="testimoni-name">Ahmad Rizki</h3>
+                <p class="testimoni-role">Lulusan Angkatan 25</p>
+                <p class="testimoni-text">
+                  "Sekarang saya sudah punya service center sendiri, terima
+                  kasih LPK Quantum!"
+                </p>
               </div>
             </div>
-            <div class="testimonial-text">
-              "Materinya sangat lengkap dan mudah dipahami. Saya bisa belajar
-              kapan saja dan di mana saja. Sekarang sudah bisa servis HP
-              sendiri!"
-            </div>
-          </div>
 
-          <div
-            class="testimonial-card animate__animated animate__fadeInUp"
-            data-wow-delay="0.2s"
-          >
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Siti Nurjanah"
-                  loading="lazy"
-                />
-              </div>
-              <div class="testimonial-info">
-                <h3>Siti Nurjanah</h3>
-                <div class="testimonial-rating">
+            <div class="testimonial-slide">
+              <div class="testimoni-card">
+                <div class="testimoni-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Testimoni Peserta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="testimoni-rating">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star-half-alt"></i>
                 </div>
+                <h3 class="testimoni-name">Siti Nurjanah</h3>
+                <p class="testimoni-role">Lulusan Angkatan 30</p>
+                <p class="testimoni-text">
+                  "Diajarkan dari dasar sampai mahir, cocok banget untuk pemula
+                  seperti saya."
+                </p>
               </div>
             </div>
-            <div class="testimonial-text">
-              "Instrukturnya sangat responsif dan sabar menjawab pertanyaan.
-              Grup diskusinya sangat membantu saat saya mengalami kesulitan."
-            </div>
-          </div>
 
-          <div
-            class="testimonial-card animate__animated animate__fadeInUp"
-            data-wow-delay="0.4s"
-          >
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Dewi Anggraeni"
-                  loading="lazy"
-                />
-              </div>
-              <div class="testimonial-info">
-                <h3>Dewi Anggraeni</h3>
-                <div class="testimonial-rating">
+            <div class="testimonial-slide">
+              <div class="testimoni-card">
+                <div class="testimoni-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Testimoni Peserta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="testimoni-rating">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                 </div>
+                <h3 class="testimoni-name">Dewi Anggraeni</h3>
+                <p class="testimoni-role">Lulusan Angkatan 28</p>
+                <p class="testimoni-text">
+                  "Setelah ikut pelatihan, saya langsung bisa membuka usaha
+                  servis HP di rumah."
+                </p>
               </div>
             </div>
-            <div class="testimonial-text">
-              "Akses materi selamanya sangat membantu. Saya bisa mengulang-ulang
-              materi yang sulit sampai benar-benar paham. Terima kasih LPK
-              Quantum!"
+
+            <div class="testimonial-slide">
+              <div class="testimoni-card">
+                <div class="testimoni-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Testimoni Peserta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="testimoni-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h3 class="testimoni-name">Budi Santoso</h3>
+                <p class="testimoni-role">Lulusan Angkatan 22</p>
+                <p class="testimoni-text">
+                  "Instrukturnya sangat berpengalaman dan sabar dalam mengajar."
+                </p>
+              </div>
             </div>
           </div>
+
+          <div class="testimonial-controls">
+            <button class="testimonial-control prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="testimonial-control next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="testimonial-dots">
+            <span class="testimonial-dot active"></span>
+            <span class="testimonial-dot"></span>
+            <span class="testimonial-dot"></span>
+            <span class="testimonial-dot"></span>
+          </div>
         </div>
-      </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
       </div>
     </section>
-
-    <!-- Galeri Section -->
-    <section id="gallery" class="bg-white section-with-divider">
-      <div class="container">
-        <div class="section-title">
-          <h2>Galeri Kelas Online</h2>
-          <p class="section-subtitle">
-            Moment-moment selama proses belajar mengajar online
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item animate__animated animate__fadeInUp">
-            <img
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Sesi Zoom Kelas Online"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div
-            class="gallery-item animate__animated animate__fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Materi Digital"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div
-            class="gallery-item animate__animated animate__fadeInUp"
-            data-wow-delay="0.2s"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Forum Diskusi"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div
-            class="gallery-item animate__animated animate__fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Praktik Mandiri"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div
-            class="gallery-item animate__animated animate__fadeInUp"
-            data-wow-delay="0.4s"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Konsultasi Online"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div
-            class="gallery-item animate__animated animate__fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1581092580896-7d3d7e1dc0f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt="Sertifikat Digital"
-              loading="lazy"
-            />
-            <div class="gallery-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <div class="lightbox-content">
-        <img src="" alt="" id="lightbox-image" />
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-nav">
-          <button id="lightbox-prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button id="lightbox-next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -1743,34 +2229,38 @@
           <div class="footer-about">
             <div class="footer-logo">LPK Quantum</div>
             <p>
-              Lembaga Pelatihan Kerja bidang Telekomunikasi dan Teknisi HP yang
-              menghasilkan tenaga kerja profesional dan kompeten.
+              Lembaga Pelatihan Kerja bidang Teknisi Ponsel yang menghasilkan
+              tenaga kerja profesional dan kompeten.
             </p>
             <div class="footer-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@quantumtelecom41"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
           </div>
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="tentang.html">Tentang Kami</a></li>
+              <li><a href="#home">Beranda</a></li>
+              <li><a href="menu/about.html">Tentang Kami</a></li>
               <li><a href="#programs">Program Pelatihan</a></li>
-              <li><a href="#gallery">Kerjasama</a></li>
-              <li><a href="#testimonials">Alumni</a></li>
-              <li><a href="#contact">Berita</a></li>
-              <li><a href="#contact">Testimoni</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="menu/alumni.html">Alumni</a></li>
+              <li><a href="menu/news.html">Berita</a></li>
+              <li><a href="menu/testimoni.html">Testimoni</a></li>
             </ul>
           </div>
           <div class="footer-contact">
             <h3>Kontak</h3>
             <p>
-              <i class="fas fa-map-marker-alt"></i> Jl. Telekomunikasi No. 123,
-              Bandung
+              <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
+              Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
             </p>
             <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
             <p><i class="fab fa-whatsapp"></i> +62 8217 1727 337</p>
@@ -1781,25 +2271,11 @@
             <div class="map-container">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
-                width="600"
-                height="450"
-                style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-          </div>
-          <div class="footer-newsletter">
-            <h3>Newsletter</h3>
-            <p>
-              Berlangganan newsletter kami untuk mendapatkan informasi terbaru
-              tentang program pelatihan.
-            </p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Alamat email Anda" required />
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
-            </form>
           </div>
         </div>
         <div class="copyright">
@@ -1807,7 +2283,7 @@
         </div>
       </div>
     </footer>
-
+    
     <!-- WhatsApp Float Button -->
     <a
       href="https://wa.me/6281234567890"
@@ -1930,72 +2406,143 @@
       // Change slide every 5 seconds
       setInterval(nextSlide, 5000);
 
-      // Lightbox Functionality
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-image");
-      const lightboxClose = document.querySelector(".lightbox-close");
-      const lightboxPrev = document.getElementById("lightbox-prev");
-      const lightboxNext = document.getElementById("lightbox-next");
-      const galleryItems = document.querySelectorAll(".gallery-item");
-      let currentImageIndex = 0;
+      // Carousel Functionality
+      const carouselSlides = document.querySelectorAll(".carousel-slide");
+      let currentCarouselSlide = 0;
 
-      // Open lightbox
-      galleryItems.forEach((item, index) => {
-        item.addEventListener("click", () => {
-          currentImageIndex = index;
-          const imgSrc = item.querySelector("img").src;
-          lightboxImg.src = imgSrc;
-          lightbox.classList.add("active");
-          body.style.overflow = "hidden";
+      function showCarouselSlide(index) {
+        carouselSlides.forEach((slide) => slide.classList.remove("active"));
+        carouselSlides[index].classList.add("active");
+      }
+
+      document
+        .querySelector(".carousel-control.next")
+        .addEventListener("click", () => {
+          currentCarouselSlide =
+            currentCarouselSlide === carouselSlides.length - 1
+              ? 0
+              : currentCarouselSlide + 1;
+          showCarouselSlide(currentCarouselSlide);
+        });
+
+      document
+        .querySelector(".carousel-control.prev")
+        .addEventListener("click", () => {
+          currentCarouselSlide =
+            currentCarouselSlide === 0
+              ? carouselSlides.length - 1
+              : currentCarouselSlide - 1;
+          showCarouselSlide(currentCarouselSlide);
+        });
+
+      // Auto advance carousel
+      setInterval(() => {
+        currentCarouselSlide =
+          currentCarouselSlide === carouselSlides.length - 1
+            ? 0
+            : currentCarouselSlide + 1;
+        showCarouselSlide(currentCarouselSlide);
+      }, 5000);
+
+      // Accordion Functionality
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const icon = header.querySelector("i");
+
+          // Toggle active class
+          content.classList.toggle("active");
+
+          // Rotate icon
+          if (content.classList.contains("active")) {
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          } else {
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          }
+
+          // Close other accordions
+          accordionHeaders.forEach((otherHeader) => {
+            if (otherHeader !== header) {
+              const otherContent = otherHeader.nextElementSibling;
+              const otherIcon = otherHeader.querySelector("i");
+
+              otherContent.classList.remove("active");
+              otherIcon.classList.remove("fa-chevron-up");
+              otherIcon.classList.add("fa-chevron-down");
+            }
+          });
         });
       });
 
-      // Close lightbox
-      lightboxClose.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-        body.style.overflow = "";
+      // Tab Functionality
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+
+          // Remove active class from all buttons and contents
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked button and corresponding content
+          btn.classList.add("active");
+          document.getElementById(tabId).classList.add("active");
+        });
       });
 
-      // Navigate lightbox
-      lightboxPrev.addEventListener("click", () => {
-        currentImageIndex =
-          currentImageIndex === 0
-            ? galleryItems.length - 1
-            : currentImageIndex - 1;
-        const imgSrc = galleryItems[currentImageIndex].querySelector("img").src;
-        lightboxImg.src = imgSrc;
+      // Testimonial Slider
+      const testimonialSlides = document.querySelector(".testimonial-slides");
+      const testimonialSlideItems =
+        document.querySelectorAll(".testimonial-slide");
+      const testimonialDots = document.querySelectorAll(".testimonial-dot");
+      let currentTestimonialSlide = 0;
+
+      function showTestimonialSlide(index) {
+        testimonialSlides.style.transform = `translateX(-${index * 100}%)`;
+
+        // Update dots
+        testimonialDots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+
+        currentTestimonialSlide = index;
+      }
+
+      document
+        .querySelector(".testimonial-control.next")
+        .addEventListener("click", () => {
+          let nextSlide = currentTestimonialSlide + 1;
+          if (nextSlide >= testimonialSlideItems.length) nextSlide = 0;
+          showTestimonialSlide(nextSlide);
+        });
+
+      document
+        .querySelector(".testimonial-control.prev")
+        .addEventListener("click", () => {
+          let prevSlide = currentTestimonialSlide - 1;
+          if (prevSlide < 0) prevSlide = testimonialSlideItems.length - 1;
+          showTestimonialSlide(prevSlide);
+        });
+
+      // Add click events to dots
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          showTestimonialSlide(index);
+        });
       });
 
-      lightboxNext.addEventListener("click", () => {
-        currentImageIndex =
-          currentImageIndex === galleryItems.length - 1
-            ? 0
-            : currentImageIndex + 1;
-        const imgSrc = galleryItems[currentImageIndex].querySelector("img").src;
-        lightboxImg.src = imgSrc;
-      });
-
-      // Close lightbox when clicking outside
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove("active");
-          body.style.overflow = "";
-        }
-      });
-
-      // Keyboard navigation
-      document.addEventListener("keydown", (e) => {
-        if (lightbox.classList.contains("active")) {
-          if (e.key === "Escape") {
-            lightbox.classList.remove("active");
-            body.style.overflow = "";
-          } else if (e.key === "ArrowLeft") {
-            lightboxPrev.click();
-          } else if (e.key === "ArrowRight") {
-            lightboxNext.click();
-          }
-        }
-      });
+      // Auto advance testimonial slider
+      setInterval(() => {
+        let nextSlide = currentTestimonialSlide + 1;
+        if (nextSlide >= testimonialSlideItems.length) nextSlide = 0;
+        showTestimonialSlide(nextSlide);
+      }, 5000);
 
       // Scroll animations
       function checkScroll() {
