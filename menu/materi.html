@@ -748,6 +748,51 @@
           font-size: 1rem;
         }
       }
+
+      @media (max-width: 768px) {
+    /* Perbaikan untuk map container di footer */
+    .map-container {
+      margin: 0 -20px; /* Menyesuaikan dengan padding container */
+      width: calc(100% + 40px);
+      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
+    }
+    
+    /* Perbaikan untuk konten footer */
+    .footer-contact p {
+      word-break: break-word;
+      hyphens: auto;
+    }
+    
+    /* Memastikan grid footer tidak menyebabkan overflow */
+    .footer-content {
+      gap: 25px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    /* Penyesuaian tambahan untuk layar sangat kecil */
+    .footer-content {
+      gap: 20px;
+    }
+    
+    .footer-contact p {
+      font-size: 0.9rem;
+    }
+    
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+    
+    /* Memastikan iframe peta tidak melebihi viewport */
+    .map-container iframe {
+      max-width: 100%;
+    }
+  }
+
+  /* Memastikan footer tidak melebihi viewport */
+  footer .container {
+    overflow: hidden;
+  }
     </style>
   </head>
   <body>
@@ -762,33 +807,34 @@
         </div>
         <nav>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="menu/about.html">Tentang Kami</a></li>
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
             <li class="dropdown">
               <a href="#programs"
                 >Program <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="menu/programs/offline.html">Kelas Offline</a>
-                <a href="menu/programs/online.html">Kelas Online</a>
-                <a href="menu/programs/private.html">Kelas Private</a>
+                <a href="./programs/offline.html">Kelas Offline</a>
+                <a href="./programs/online.html">Kelas Online</a>
+                <a href="./programs/private.html">Kelas Private</a>
               </div>
             </li>
             <li>
-              <a href="materi-pembelajaran.html" class="active">Materi</a>
+              <a href="#" class="active">Materi</a>
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                >Kerjasama <i class="fas fa-chevron-down"></i
+                >Portofolio <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
-                <a href="menu/kerjasama/swasta.html">Swasta</a>
+                <a href="./kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="./kerjasama/swasta.html">Swasta</a>
+                <a href="./kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="menu/alumni.html">Alumni</a></li>
-            <li><a href="menu/news.html">Berita</a></li>
-            <li><a href="menu/testimoni.html">Testimoni</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="news.html">Berita</a></li>
+            <li><a href="testimoni.html">Testimoni</a></li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -1082,13 +1128,13 @@
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="#home">Beranda</a></li>
-              <li><a href="menu/about.html">Tentang Kami</a></li>
-              <li><a href="#programs">Program Pelatihan</a></li>
-              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
-              <li><a href="menu/alumni.html">Alumni</a></li>
-              <li><a href="menu/news.html">Berita</a></li>
-              <li><a href="menu/testimoni.html">Testimoni</a></li>
+              <li><a href="../index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="../index.html#programs">Program Pelatihan</a></li>
+              <li><a href="./kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="./alumni.html">Alumni</a></li>
+              <li><a href="./news.html">Berita</a></li>
+              <li><a href="./testimoni.html">Testimoni</a></li>
             </ul>
           </div>
           <div class="footer-contact">
