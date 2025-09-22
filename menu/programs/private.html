@@ -1554,6 +1554,51 @@
           margin-bottom: 10px;
         }
       }
+
+      @media (max-width: 768px) {
+    /* Perbaikan untuk map container di footer */
+    .map-container {
+      margin: 0 -20px; /* Menyesuaikan dengan padding container */
+      width: calc(100% + 40px);
+      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
+    }
+    
+    /* Perbaikan untuk konten footer */
+    .footer-contact p {
+      word-break: break-word;
+      hyphens: auto;
+    }
+    
+    /* Memastikan grid footer tidak menyebabkan overflow */
+    .footer-content {
+      gap: 25px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    /* Penyesuaian tambahan untuk layar sangat kecil */
+    .footer-content {
+      gap: 20px;
+    }
+    
+    .footer-contact p {
+      font-size: 0.9rem;
+    }
+    
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+    
+    /* Memastikan iframe peta tidak melebihi viewport */
+    .map-container iframe {
+      max-width: 100%;
+    }
+  }
+
+  /* Memastikan footer tidak melebihi viewport */
+  footer .container {
+    overflow: hidden;
+  }
     </style>
   </head>
   <body>
