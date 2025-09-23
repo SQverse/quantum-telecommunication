@@ -153,10 +153,6 @@
     fill: var(--bg-light);
   }
 
-  .section-with-divider {
-    position: relative;
-  }
-
   /* Reset & Base Styles */
   * {
     margin: 0;
@@ -181,7 +177,7 @@
   .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
     padding: 0 20px;
   }
 
@@ -1069,6 +1065,123 @@
     transform: scale(1.2);
   }
 
+  /* Screenshot Grid Styles */
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.screenshot-item {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  background: var(--card-bg);
+  padding: 15px;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.screenshot-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: var(--transition);
+}
+
+.lightbox-close:hover {
+  color: #bbb;
+  transform: scale(1.1);
+}
+
+.lightbox-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .screenshot-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .screenshot-item img {
+    height: 150px;
+  }
+  
+  .lightbox-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 576px) {
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   /* Price Section */
   .price-section {
     background: var(--blue-gradient);
@@ -1706,10 +1819,10 @@
           elektronika sekalipun 😍
         </h3>
         <div class="hero-buttons">
-          <a href="https://wa.me/6282171727337" class="btn btn-cta"
+          <a href="https://wa.me/6282171727337" target="_blank" class="btn btn-cta"
             >Daftar Sekarang</a
           >
-          <a href="#materi" class="btn btn-outline">Lihat Kurikulum</a>
+          <a href="../materi.html" class="btn btn-outline">Lihat Kurikulum</a>
         </div>
       </div>
       <div class="shape-divider">
@@ -2303,133 +2416,79 @@
       </div>
     </section>
 
-    <!-- Testimoni Foto Section -->
-    <section id="testimonials-photo" class="bg-blue-light section-with-divider">
-      <div class="container">
-        <div class="section-title">
-          <h2>Testimoni Peserta</h2>
-        </div>
-
-        <div class="testimonial-slider">
-          <div class="testimonial-slides">
-            <div class="testimonial-slide">
-              <div class="testimoni-card">
-                <div class="testimoni-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Testimoni Peserta"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="testimoni-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <h3 class="testimoni-name">Ahmad Rizki</h3>
-                <p class="testimoni-role">Lulusan Angkatan 25</p>
-                <p class="testimoni-text">
-                  "Sekarang saya sudah punya service center sendiri, terima
-                  kasih LPK Quantum!"
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-slide">
-              <div class="testimoni-card">
-                <div class="testimoni-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Testimoni Peserta"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="testimoni-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h3 class="testimoni-name">Siti Nurjanah</h3>
-                <p class="testimoni-role">Lulusan Angkatan 30</p>
-                <p class="testimoni-text">
-                  "Diajarkan dari dasar sampai mahir, cocok banget untuk pemula
-                  seperti saya."
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-slide">
-              <div class="testimoni-card">
-                <div class="testimoni-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Testimoni Peserta"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="testimoni-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <h3 class="testimoni-name">Dewi Anggraeni</h3>
-                <p class="testimoni-role">Lulusan Angkatan 28</p>
-                <p class="testimoni-text">
-                  "Setelah ikut pelatihan, saya langsung bisa membuka usaha
-                  servis HP di rumah."
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-slide">
-              <div class="testimoni-card">
-                <div class="testimoni-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Testimoni Peserta"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="testimoni-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <h3 class="testimoni-name">Budi Santoso</h3>
-                <p class="testimoni-role">Lulusan Angkatan 22</p>
-                <p class="testimoni-text">
-                  "Instrukturnya sangat berpengalaman dan sabar dalam mengajar."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-controls">
-            <button class="testimonial-control prev">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="testimonial-control next">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <div class="testimonial-dots">
-            <span class="testimonial-dot active"></span>
-            <span class="testimonial-dot"></span>
-            <span class="testimonial-dot"></span>
-            <span class="testimonial-dot"></span>
-          </div>
-        </div>
+    <!-- Testimoni Foto Section --> 
+     <!-- Testimoni Screenshot Section -->
+<section id="testimonial-screenshots" class="bg-white section-with-divider">
+  <div class="container">
+    <div class="section-title">
+      <h2>Testimoni Screenshot Peserta</h2>
+      <p class="section-subtitle">Bukti nyata kepuasan peserta pelatihan kami</p>
+    </div>
+    
+    <div class="screenshot-grid">
+      <!-- Screenshot 1 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni-alumni/ss1.jpg" alt="Testimoni Peserta 1" loading="lazy">
       </div>
-    </section>
+      
+      <!-- Screenshot 2 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni-alumni/ss2.jpg" alt="Testimoni Peserta 2" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 3 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni-alumni/ss3.jpg" alt="Testimoni Peserta 3" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 4 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni-alumni/ss4.jpg" alt="Testimoni Peserta 4" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 5 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni/testimoni5.jpg" alt="Testimoni Peserta 5" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 6 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni/testimoni6.jpg" alt="Testimoni Peserta 6" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 7 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni/testimoni7.jpg" alt="Testimoni Peserta 7" loading="lazy">
+      </div>
+      
+      <!-- Screenshot 8 -->
+      <div class="screenshot-item">
+        <img src="../../assets/photos/testimoni/testimoni8.jpg" alt="Testimoni Peserta 8" loading="lazy">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption"></div>
+  </div>
+  
+  <div class="shape-divider">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"
+      ></path>
+    </svg>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -2723,22 +2782,6 @@
         currentTestimonialSlide = index;
       }
 
-      document
-        .querySelector(".testimonial-control.next")
-        .addEventListener("click", () => {
-          let nextSlide = currentTestimonialSlide + 1;
-          if (nextSlide >= testimonialSlideItems.length) nextSlide = 0;
-          showTestimonialSlide(nextSlide);
-        });
-
-      document
-        .querySelector(".testimonial-control.prev")
-        .addEventListener("click", () => {
-          let prevSlide = currentTestimonialSlide - 1;
-          if (prevSlide < 0) prevSlide = testimonialSlideItems.length - 1;
-          showTestimonialSlide(prevSlide);
-        });
-
       // Add click events to dots
       testimonialDots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
@@ -2817,6 +2860,45 @@
           }
         });
       });
+
+      // Lightbox functionality
+const screenshotItems = document.querySelectorAll('.screenshot-item');
+const lightboxModal = document.getElementById('lightbox-modal');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxCaption = document.querySelector('.lightbox-caption');
+
+screenshotItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const imgSrc = item.querySelector('img').src;
+    const imgAlt = item.querySelector('img').alt;
+    
+    lightboxImg.src = imgSrc;
+    lightboxCaption.textContent = imgAlt;
+    lightboxModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightboxModal.style.display = 'none';
+  document.body.style.overflow = '';
+});
+
+lightboxModal.addEventListener('click', (e) => {
+  if (e.target === lightboxModal) {
+    lightboxModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+});
+
+// Close lightbox with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightboxModal.style.display === 'block') {
+    lightboxModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+});
     </script>
   </body>
 </html>
