@@ -564,12 +564,12 @@
 
       /* About Section - Jarak diperbaiki */
       #about {
-        padding-top: 60px; /* Ditambahkan untuk mengurangi jarak dari hero */
+        padding-top: 40px; /* Ditambahkan untuk mengurangi jarak dari hero */
       }
 
       .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display:flex;
+        flex-direction: row;
         gap: 40px;
         align-items: center;
       }
@@ -598,6 +598,7 @@
       }
 
       .about-text p {
+        text-align: justify;
         margin-bottom: 15px;
         font-size: 1.05rem;
         line-height: 1.7; /* Ditambahkan untuk keterbacaan */
@@ -647,23 +648,88 @@
         border: none;
       }
 
-      /* Keunggulan Section */
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
-        gap: 30px;
+      /* About Section Improvements */
+        .about-content {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+        /* Features Section Improvements - Horizontal Scroll for Mobile */
+        .features-grid {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blue-medium) transparent;
+        }
+
+        .features-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .features-grid::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+
+        .features-grid::-webkit-scrollbar-thumb {
+            background: var(--blue-medium);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 20px;
+        transition: var(--transition);
       }
 
-      .feature-card {
-        background: var(--card-bg);
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
+        .feature-card {
+            flex: 0 0 260px;
+            scroll-snap-align: start;
+            min-height: 320px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card p {
+            line-height: 1.6;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+
+      /* Keunggulan Section */
+      
+      
 
       .feature-card::before {
         content: "";
@@ -1105,6 +1171,8 @@
       .news-link:hover {
         gap: 10px;
       }
+
+      
 
       /* Kerjasama Section */
       .collaboration-container {
@@ -2254,7 +2322,7 @@
               <img
                 src="./menu/programs/online.jpeg"
                 alt="Kelas Online"
-                loading="lazy"
+                loading="lazy"  
               />
               <div class="program-badge">Online</div>
             </div>
