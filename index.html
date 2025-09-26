@@ -13,8 +13,9 @@
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     Updated font imports to include Poppins and Open Sans with proper weights 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -94,14 +95,21 @@
         }
       }
 
-      /* Variabel Warna untuk Light dan Dark Mode */
+      /* Enhanced color variables with secondary accent color (orange) */
       :root {
         /* Light Mode */
         --blue-light: #e6f0ff;
         --blue-medium: #4a90e2;
         --blue-dark: #1a3c6e;
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-        --text-dark: #222; /* Dipergelap untuk kontras lebih baik */
+        
+        /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        
+        --text-dark: #222;
         --text-light: #fff;
         --bg-light: #f9fbff;
         --card-bg: #ffffff;
@@ -110,6 +118,7 @@
 
         /* Transisi */
         --transition: all 0.3s ease;
+        --transition-slow: all 0.5s ease;
       }
 
       /* Skema warna dark mode */
@@ -123,12 +132,11 @@
         --blue-light: #2a4365;
       }
 
-      /* Reset & Base Styles */
+      /* Updated typography with Poppins for headings and Open Sans for body */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
 
       html {
@@ -137,11 +145,18 @@
       }
 
       body {
+        font-family: "Open Sans", sans-serif;
         color: var(--text-dark);
         line-height: 1.6;
         background-color: var(--bg-light);
         overflow-x: hidden;
         transition: var(--transition);
+      }
+
+      /* Typography hierarchy with proper font families */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
       }
 
       .container {
@@ -186,6 +201,7 @@
         font-weight: 800;
         transition: var(--transition);
         letter-spacing: 0.5px;
+        font-family: "Poppins", sans-serif;
       }
 
       nav ul {
@@ -208,6 +224,7 @@
         position: relative;
         font-size: 0.9rem;
         display: block;
+        font-family: "Open Sans", sans-serif;
       }
 
       nav ul li a::after {
@@ -251,10 +268,10 @@
         transform: rotate(30deg);
       }
 
-      /* Hero Section dengan Slideshow - Responsif ditingkatkan */
+      /* Enhanced Hero Section with improved text shadows and animations */
       .hero {
         height: 100vh;
-        min-height: 600px; /* Diperkecil sedikit */
+        min-height: 600px;
         position: relative;
         overflow: hidden;
         color: var(--text-light);
@@ -375,7 +392,9 @@
         padding: 0 20px;
       }
 
+      /* Enhanced text shadows for better legibility */
       .hero-title {
+        font-family: "Poppins", sans-serif;
         font-size: 1rem;
         font-weight: 700;
         margin-bottom: 15px;
@@ -383,10 +402,11 @@
         line-height: 1.1;
         text-transform: uppercase;
         letter-spacing: 1px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
       }
 
       .hero-subtitle {
+        font-family: "Poppins", sans-serif;
         font-size: 3.2rem;
         font-weight: 800;
         margin-bottom: 15px;
@@ -395,10 +415,11 @@
         line-height: 1.1;
         text-transform: uppercase;
         letter-spacing: 1px;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.6);
       }
 
       .hero-tagline {
+        font-family: "Poppins", sans-serif;
         font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 30px;
@@ -408,12 +429,24 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #ffd700;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Menambah shadow untuk kontras */
+        text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.7);
       }
 
       .hero-buttons {
-        animation: fadeIn 1s ease 0.6s forwards;
+        animation: fadeInUp 1s ease 0.6s forwards;
         opacity: 0;
+      }
+
+      /* Enhanced CTA button with hover effects and animations */
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       /* Hero Slideshow Indicators */
@@ -441,13 +474,15 @@
         transform: scale(1.2);
       }
 
+      /* Enhanced button styles with gradient hover effects */
       .btn {
         display: inline-block;
-        background-color: var(--text-light);
-        color: var(--blue-medium);
-        padding: 16px 40px;
-        border-radius: 30px;
+        background: var(--accent-gradient);
+        color: var(--text-light);
+        padding: 18px 45px;
+        border-radius: 50px;
         text-decoration: none;
+        font-family: "Poppins", sans-serif;
         font-weight: 700;
         transition: var(--transition);
         box-shadow: var(--shadow);
@@ -455,14 +490,32 @@
         font-size: 1.1rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        animation: slideInUp 0.8s ease 0.8s forwards;
+        opacity: 0;
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--blue-medium) 0%, var(--blue-dark) 100%);
+        transition: var(--transition-slow);
+        z-index: -1;
       }
 
       .btn:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px) scale(1.05);
         box-shadow: var(--shadow-hover);
-        background: transparent;
         color: var(--text-light);
-        border-color: var(--text-light);
+      }
+
+      .btn:hover::before {
+        left: 0;
       }
 
       .btn-company {
@@ -472,6 +525,7 @@
         padding: 16px 40px;
         border-radius: 30px;
         text-decoration: none;
+        font-family: "Poppins", sans-serif;
         font-weight: 700;
         transition: var(--transition);
         box-shadow: var(--shadow);
@@ -515,9 +569,9 @@
         text-decoration: none;
       }
 
-      /* Section Styles */
+      /* Increased spacing between sections */
       section {
-        padding: 80px 0; /* Dikurangi dari 90px */
+        padding: 100px 0;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
@@ -530,11 +584,12 @@
 
       .section-title {
         text-align: center;
-        margin-bottom: 40px; /* Dikurangi dari 50px */
+        margin-bottom: 60px;
       }
 
       .section-title h2 {
-        font-size: 2.5rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 2.8rem;
         color: var(--blue-dark);
         position: relative;
         display: inline-block;
@@ -550,58 +605,101 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
         border-radius: 2px;
       }
 
       .section-subtitle {
         text-align: center;
         max-width: 700px;
-        margin: 0 auto 40px; /* Dikurangi dari 50px */
+        margin: 0 auto 60px;
         font-size: 1.1rem;
         color: #666;
+        font-family: "Open Sans", sans-serif;
       }
 
-      /* About Section - Jarak diperbaiki */
+      /* Enhanced About Section with card-style image and bullet points */
       #about {
-        padding-top: 40px; /* Ditambahkan untuk mengurangi jarak dari hero */
+        padding-top: 60px;
       }
 
       .about-content {
-        display:flex;
-        flex-direction: row;
-        gap: 40px;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 50px;
         align-items: center;
       }
 
       .about-image {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
+      /* Enhanced about image with card styling */
       .about-image img {
+        max-width: 480px;
         width: 100%;
         height: auto;
         display: block;
-        transition: transform 0.5s ease;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        transition: var(--transition-slow);
+        border: 3px solid rgba(255, 255, 255, 0.8);
       }
 
       .about-image:hover img {
-        transform: scale(1.05);
+        transform: scale(1.02) translateY(-5px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
       }
 
       .about-text h3 {
+        font-family: "Poppins", sans-serif;
         font-size: 1.8rem;
         margin-bottom: 20px;
         color: var(--blue-dark);
+      }
+
+      /* Convert about text to bullet points for better readability */
+      .about-text {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .about-advantages {
+        margin: 25px 0;
+      }
+
+      .about-advantages ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .about-advantages li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+      }
+
+      .about-advantages li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent-orange);
+        font-weight: bold;
+        font-size: 1.2rem;
       }
 
       .about-text p {
         text-align: justify;
         margin-bottom: 15px;
         font-size: 1.05rem;
-        line-height: 1.7; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.7;
       }
 
       /* Tombol About Section */
@@ -619,7 +717,7 @@
 
       /* Video Profile Section */
       .video-profile {
-        padding: 70px 0; /* Dikurangi dari 80px */
+        padding: 80px 0;
         text-align: center;
       }
 
@@ -648,89 +746,78 @@
         border: none;
       }
 
-      /* About Section Improvements */
-        .about-content {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .about-image img {
-            max-width: 420px;
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 10px;
-        }
-
-        /* Features Section Improvements - Horizontal Scroll for Mobile */
-        .features-grid {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 20px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--blue-medium) transparent;
-        }
-
-        .features-grid::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .features-grid::-webkit-scrollbar-track {
-            background: transparent;
-            border-radius: 10px;
-        }
-
-        .features-grid::-webkit-scrollbar-thumb {
-            background: var(--blue-medium);
-            border-radius: 10px;
-        }
-
-        .feature-icon {
-        width: 80px;
-        height: 80px;
-        background: var(--blue-gradient);
-        color: var(--text-light);
-        border-radius: 50%;
+      /* Enhanced Features Section with scroll indicator and hover effects */
+      .features-grid {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 20px;
-        transition: var(--transition);
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--blue-medium) transparent;
+        position: relative;
       }
 
-        .feature-card {
-            flex: 0 0 260px;
-            scroll-snap-align: start;
-            min-height: 320px;
-            padding: 25px 20px;
-            display: flex;
-            flex-direction: column;
-        }
+      /* Added scroll progress indicator */
+      .features-scroll-indicator {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-        .feature-card p {
-            line-height: 1.6;
-            word-break: break-word;
-            hyphens: auto;
-        }
+      .scroll-hint {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+        font-family: "Open Sans", sans-serif;
+      }
 
+      .scroll-progress {
+        width: 100%;
+        height: 4px;
+        background: rgba(74, 144, 226, 0.2);
+        border-radius: 2px;
+        overflow: hidden;
+      }
 
-      /* Keunggulan Section */
-      
-      
+      .scroll-progress-bar {
+        height: 100%;
+        background: var(--accent-gradient);
+        width: 0%;
+        transition: width 0.3s ease;
+        border-radius: 2px;
+      }
 
+      .features-grid::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .features-grid::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+      }
+
+      .features-grid::-webkit-scrollbar-thumb {
+        background: var(--accent-gradient);
+        border-radius: 10px;
+      }
+
+      .feature-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        min-height: 340px;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        background: var(--card-bg);
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        transition: var(--transition-slow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Enhanced hover effects for feature cards */
       .feature-card::before {
         content: "";
         position: absolute;
@@ -738,8 +825,8 @@
         left: 0;
         width: 5px;
         height: 0;
-        background: var(--blue-gradient);
-        transition: var(--transition);
+        background: var(--accent-gradient);
+        transition: var(--transition-slow);
       }
 
       .feature-card:hover::before {
@@ -751,6 +838,7 @@
         box-shadow: var(--shadow-hover);
       }
 
+      /* Enhanced feature icons with hover effects */
       .feature-icon {
         width: 80px;
         height: 80px;
@@ -762,22 +850,43 @@
         justify-content: center;
         font-size: 2rem;
         margin: 0 auto 20px;
-        transition: var(--transition);
+        transition: var(--transition-slow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--accent-gradient);
+        transition: var(--transition-slow);
       }
 
       .feature-card:hover .feature-icon {
         transform: scale(1.1) rotate(5deg);
       }
 
+      .feature-card:hover .feature-icon::before {
+        left: 0;
+      }
+
       .feature-card h3 {
         margin-bottom: 15px;
         color: var(--blue-dark);
         font-size: 1.3rem;
+        font-family: "Poppins", sans-serif;
       }
 
       .feature-card p {
         color: var(--text-dark);
-        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.6;
+        font-family: "Open Sans", sans-serif;
+        word-break: break-word;
+        hyphens: auto;
       }
 
       /* Program Section dengan Tabs */
@@ -798,6 +907,7 @@
         background: var(--card-bg);
         border: none;
         border-radius: 30px;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
@@ -862,6 +972,7 @@
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 600;
+        font-family: "Poppins", sans-serif;
       }
 
       .program-content {
@@ -872,6 +983,7 @@
         color: var(--blue-dark);
         margin-bottom: 12px;
         font-size: 1.3rem;
+        font-family: "Poppins", sans-serif;
       }
 
       .program-meta {
@@ -880,17 +992,20 @@
         margin-bottom: 15px;
         font-size: 0.9rem;
         color: #777;
+        font-family: "Open Sans", sans-serif;
       }
 
       .program-price {
         color: var(--blue-medium);
         font-weight: 700;
         font-size: 1.3rem;
+        font-family: "Poppins", sans-serif;
       }
 
       .program-benefits {
         margin: 15px 0;
         padding-left: 20px;
+        font-family: "Open Sans", sans-serif;
       }
 
       .program-benefits li {
@@ -910,7 +1025,7 @@
         margin-top: 20px;
       }
 
-      /* Instruktur Section */
+      /* Enhanced Instruktur Section with mobile 3-column grid and hover effects */
       .instructors-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -922,7 +1037,7 @@
         border-radius: 15px;
         overflow: hidden;
         box-shadow: var(--shadow);
-        transition: var(--transition);
+        transition: var(--transition-slow);
         text-align: center;
       }
 
@@ -940,11 +1055,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: var(--transition-slow);
       }
 
+      /* Added hover zoom effect for instructor photos */
       .instructor-card:hover .instructor-image img {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
 
       .instructor-info {
@@ -955,6 +1071,7 @@
         font-size: 1.2rem;
         color: var(--blue-dark);
         margin-bottom: 5px;
+        font-family: "Poppins", sans-serif;
       }
 
       .instructor-role {
@@ -962,12 +1079,14 @@
         font-weight: 600;
         margin-bottom: 10px;
         font-size: 0.9rem;
+        font-family: "Open Sans", sans-serif;
       }
 
       .instructor-desc {
         font-size: 0.9rem;
         color: #666;
-        line-height: 1.5; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.5;
+        font-family: "Open Sans", sans-serif;
       }
 
       .instructor-social {
@@ -1007,6 +1126,7 @@
         background: var(--card-bg);
         border: none;
         border-radius: 30px;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
@@ -1059,6 +1179,7 @@
         font-size: 1.2rem;
         color: var(--blue-dark);
         margin-bottom: 5px;
+        font-family: "Poppins", sans-serif;
       }
 
       .alumni-batch {
@@ -1066,18 +1187,21 @@
         font-weight: 600;
         margin-bottom: 10px;
         font-size: 0.9rem;
+        font-family: "Open Sans", sans-serif;
       }
 
       .alumni-testimonial {
         font-style: italic;
         color: 666;
         margin-bottom: 15px;
-        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.6;
+        font-family: "Open Sans", sans-serif;
       }
 
       .alumni-current {
         font-size: 0.9rem;
         color: #777;
+        font-family: "Open Sans", sans-serif;
       }
 
       .alumni-current span {
@@ -1132,6 +1256,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        font-family: "Open Sans", sans-serif;
       }
 
       .news-title {
@@ -1139,7 +1264,8 @@
         color: var(--blue-dark);
         margin-bottom: 10px;
         transition: var(--transition);
-        line-height: 1.4; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.4;
+        font-family: "Poppins", sans-serif;
       }
 
       .news-card:hover .news-title {
@@ -1151,7 +1277,8 @@
         color: #666;
         margin-bottom: 15px;
         font-size: 0.95rem;
-        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.6;
+        font-family: "Open Sans", sans-serif;
       }
 
       .news-link {
@@ -1166,13 +1293,12 @@
         align-items: center;
         gap: 5px;
         transition: var(--transition);
+        font-family: "Open Sans", sans-serif;
       }
 
       .news-link:hover {
         gap: 10px;
       }
-
-      
 
       /* Kerjasama Section */
       .collaboration-container {
@@ -1213,7 +1339,7 @@
 
       .collaboration-content {
         padding: 20px;
-        min-height: 220px; /* Ditambahkan untuk konsistensi tinggi kartu */
+        min-height: 220px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1223,6 +1349,7 @@
         font-size: 1.2rem;
         color: var(--blue-dark);
         margin-bottom: 10px;
+        font-family: "Poppins", sans-serif;
       }
 
       .collaboration-partner {
@@ -1230,13 +1357,15 @@
         font-weight: 600;
         margin-bottom: 10px;
         font-size: 0.9rem;
+        font-family: "Open Sans", sans-serif;
       }
 
       .collaboration-desc {
         color: #666;
         margin-bottom: 15px;
         font-size: 0.95rem;
-        line-height: 1.5; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.5;
+        font-family: "Open Sans", sans-serif;
       }
 
       .collaboration-date {
@@ -1245,6 +1374,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        font-family: "Open Sans", sans-serif;
       }
 
       /* Testimoni Video Section */
@@ -1294,6 +1424,7 @@
       .testimonial-content h3 {
         margin-bottom: 10px;
         color: var(--blue-dark);
+        font-family: "Poppins", sans-serif;
       }
 
       /* Rating Stars */
@@ -1307,17 +1438,19 @@
         font-style: italic;
         color: #555;
         margin-bottom: 15px;
-        line-height: 1.6; /* Ditambahkan untuk keterbacaan */
+        line-height: 1.6;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        font-family: "Open Sans", sans-serif;
       }
 
       .testimonial-author {
         font-weight: 600;
         color: var(--blue-medium);
+        font-family: "Poppins", sans-serif;
       }
 
       /* FAQ Section */
@@ -1343,6 +1476,7 @@
         align-items: center;
         font-weight: 600;
         color: var(--blue-dark);
+        font-family: "Poppins", sans-serif;
       }
 
       .faq-answer {
@@ -1350,6 +1484,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
+        font-family: "Open Sans", sans-serif;
       }
 
       .faq-item.active .faq-answer {
@@ -1394,16 +1529,18 @@
         font-weight: 700;
         color: var(--blue-medium);
         margin-bottom: 10px;
+        font-family: "Poppins", sans-serif;
       }
 
       .stat-label {
         font-size: 1.1rem;
         color: var(--text-dark);
+        font-family: "Open Sans", sans-serif;
       }
 
       /* Partners Carousel Section */
       .partners-section {
-        padding: 70px 0; /* Dikurangi dari 80px */
+        padding: 80px 0;
         background-color: var(--bg-light);
       }
 
@@ -1465,7 +1602,7 @@
         background: var(--blue-gradient);
         color: var(--text-light);
         text-align: center;
-        padding: 70px 0; /* Dikurangi dari 80px */
+        padding: 80px 0;
       }
 
       .cta-section .section-title h2 {
@@ -1480,13 +1617,14 @@
         max-width: 600px;
         margin: 0 auto;
         font-size: 1.1rem;
+        font-family: "Open Sans", sans-serif;
       }
 
-      /* Footer - Diperbaiki dengan menghapus newsletter */
+      /* Enhanced Footer with larger map and improved Quick Links */
       footer {
         background: var(--blue-dark);
         color: var(--text-light);
-        padding: 50px 0 20px; /* Dikurangi dari 60px */
+        padding: 60px 0 20px;
         position: relative;
       }
 
@@ -1497,12 +1635,12 @@
         left: 0;
         width: 100%;
         height: 10px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
       }
 
       .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 40px;
         margin-bottom: 30px;
       }
@@ -1512,6 +1650,7 @@
         font-size: 1.8rem;
         font-weight: 700;
         color: var(--text-light);
+        font-family: "Poppins", sans-serif;
       }
 
       .footer-social {
@@ -1545,6 +1684,7 @@
         position: relative;
         padding-bottom: 10px;
         color: var(--text-light);
+        font-family: "Poppins", sans-serif;
       }
 
       .footer-links h3::after,
@@ -1555,13 +1695,14 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--blue-medium);
+        background: var(--accent-orange);
       }
 
       .footer-links ul {
         list-style: none;
       }
 
+      /* Enhanced Quick Links with icons */
       .footer-links ul li {
         margin-bottom: 12px;
       }
@@ -1570,7 +1711,16 @@
         color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
         transition: var(--transition);
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .footer-links ul li a i {
+        font-size: 0.9rem;
+        color: var(--accent-orange);
+        width: 16px;
       }
 
       .footer-links ul li a:hover {
@@ -1583,21 +1733,24 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        font-family: "Open Sans", sans-serif;
       }
 
       .footer-contact i {
-        color: var(--blue-medium);
+        color: var(--accent-orange);
         width: 20px;
       }
 
+      /* Enhanced map container with larger size */
       .map-container {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* rasio 16:9 */
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
         height: 0;
         overflow: hidden;
-        border-radius: 12px; /* biar lebih cantik */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
       }
 
       .map-container iframe {
@@ -1607,13 +1760,27 @@
         width: 100%;
         height: 100%;
         border: 0;
-        
       }
 
-      /* Menghapus bagian newsletter */
-      .footer-newsletter,
-      .newsletter-form {
+      /* Added "View on Google Maps" button for mobile */
+      .map-button {
         display: none;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: var(--accent-gradient);
+        color: var(--text-light);
+        border: none;
+        border-radius: 25px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        font-size: 0.9rem;
+      }
+
+      .map-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
       }
 
       .copyright {
@@ -1622,6 +1789,7 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.9rem;
+        font-family: "Open Sans", sans-serif;
       }
 
       /* Floating WhatsApp Button */
@@ -1723,7 +1891,7 @@
         }
       }
 
-      /* Responsive Styles - Diperbaiki untuk tampilan mobile */
+      /* Enhanced responsive styles with mobile 3-column grid for team */
       @media (max-width: 1200px) {
         .container {
           padding: 0 15px;
@@ -1744,7 +1912,6 @@
         }
 
         .programs-container,
-        .instructors-container,
         .alumni-container,
         .news-container,
         .collaboration-container,
@@ -1752,8 +1919,51 @@
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        .about-content,
-        .vm-container {
+        /* Mobile 3-column grid for instructors */
+        .instructors-container {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px;
+        }
+
+        .instructor-card {
+          min-height: auto;
+        }
+
+        .instructor-image {
+          height: 120px;
+        }
+
+        .instructor-info {
+          padding: 15px 10px;
+        }
+
+        .instructor-name {
+          font-size: 0.9rem;
+          margin-bottom: 3px;
+        }
+
+        .instructor-role {
+          font-size: 0.75rem;
+          margin-bottom: 8px;
+        }
+
+        .instructor-desc {
+          font-size: 0.8rem;
+          line-height: 1.3;
+        }
+
+        .instructor-social {
+          margin-top: 10px;
+          gap: 5px;
+        }
+
+        .instructor-social a {
+          width: 28px;
+          height: 28px;
+          font-size: 0.8rem;
+        }
+
+        .about-content {
           grid-template-columns: 1fr;
           gap: 30px;
         }
@@ -1837,11 +2047,28 @@
         }
 
         .section-title h2 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
 
         .section-title {
-          margin-bottom: 30px;
+          margin-bottom: 40px;
+        }
+
+        /* Show scroll indicator on mobile */
+        .features-scroll-indicator {
+          display: block;
+        }
+
+        .scroll-hint {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+
+        .scroll-hint::after {
+          content: "👉";
+          font-size: 1rem;
         }
 
         .program-tabs,
@@ -1871,16 +2098,29 @@
         }
 
         #about {
-          padding-top: 40px;
+          padding-top: 60px;
         }
 
         section {
-          padding: 60px 0;
+          padding: 80px 0;
         }
 
         .footer-content {
           grid-template-columns: 1fr;
           gap: 30px;
+        }
+
+        /* Show map button on mobile */
+        .map-button {
+          display: inline-block;
+        }
+
+        /* Adjust map container for mobile */
+        .map-container {
+          padding-bottom: 60%;
+          margin: 0 -20px 0 -20px;
+          width: calc(100% + 40px);
+          border-radius: 0;
         }
       }
 
@@ -1902,7 +2142,7 @@
         }
 
         .btn {
-          padding: 14px 30px;
+          padding: 16px 35px;
           font-size: 1rem;
         }
 
@@ -1920,7 +2160,6 @@
         }
 
         .programs-container,
-        .instructors-container,
         .alumni-container,
         .news-container,
         .collaboration-container,
@@ -1945,11 +2184,40 @@
         }
 
         .section-title h2 {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
         }
 
         .hero-indicators {
           bottom: 20px;
+        }
+
+        /* Further reduce instructor card sizes on small mobile */
+        .instructors-container {
+          gap: 10px;
+        }
+
+        .instructor-image {
+          height: 100px;
+        }
+
+        .instructor-info {
+          padding: 10px 8px;
+        }
+
+        .instructor-name {
+          font-size: 0.8rem;
+        }
+
+        .instructor-role {
+          font-size: 0.7rem;
+        }
+
+        .instructor-desc {
+          font-size: 0.75rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       }
 
@@ -1975,7 +2243,7 @@
         }
 
         .feature-card {
-          grid-template-columns: minmax(150px, 3fr); 
+          flex: 0 0 250px;
         }
 
         .program-tab,
@@ -1983,56 +2251,66 @@
           padding: 8px 16px;
           font-size: 0.9rem;
         }
+
+        /* Ultra-compact instructor cards for very small screens */
+        .instructor-image {
+          height: 80px;
+        }
+
+        .instructor-name {
+          font-size: 0.75rem;
+        }
+
+        .instructor-role {
+          font-size: 0.65rem;
+        }
+
+        .instructor-desc {
+          display: none; /* Hide description on very small screens */
+        }
+
+        .instructor-social {
+          display: none; /* Hide social links on very small screens */
+        }
+      }
+
+      /* Ensure footer doesn't cause overflow */
+      footer .container {
+        overflow: hidden;
       }
 
       @media (max-width: 768px) {
-    /* Perbaikan untuk map container di footer */
-    .map-container {
-      margin: 0 -20px; /* Menyesuaikan dengan padding container */
-      width: calc(100% + 40px);
-      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
-    }
-    
-    /* Perbaikan untuk konten footer */
-    .footer-contact p {
-      word-break: break-word;
-      hyphens: auto;
-    }
-    
-    /* Memastikan grid footer tidak menyebabkan overflow */
-    .footer-content {
-      gap: 25px;
-    }
-  }
+        .footer-contact p {
+          word-break: break-word;
+          hyphens: auto;
+        }
+        
+        .footer-content {
+          gap: 25px;
+        }
+      }
 
-  @media (max-width: 400px) {
-    /* Penyesuaian tambahan untuk layar sangat kecil */
-    .footer-content {
-      gap: 20px;
-    }
-    
-    .footer-contact p {
-      font-size: 0.9rem;
-    }
-    
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
-    
-    /* Memastikan iframe peta tidak melebihi viewport */
-    .map-container iframe {
-      max-width: 100%;
-    }
-  }
-
-  /* Memastikan footer tidak melebihi viewport */
-  footer .container {
-    overflow: hidden;
-  }
+      @media (max-width: 400px) {
+        .footer-content {
+          gap: 20px;
+        }
+        
+        .footer-contact p {
+          font-size: 0.9rem;
+        }
+        
+        .footer-links ul li {
+          margin-bottom: 8px;
+        }
+        
+        .map-container iframe {
+          max-width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- Header & Navigation -->
+     Header & Navigation 
     <header>
       <div class="container header-content">
         <div class="logo">
@@ -2043,11 +2321,11 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="menu/about.html">Tentang Kami</a></li>
+            <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
             <li class="dropdown">
               <a href="#programs"
-                >Program <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-graduation-cap"></i> Program <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="menu/programs/offline.html">Kelas Offline</a>
@@ -2057,7 +2335,7 @@
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                >Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
@@ -2065,8 +2343,8 @@
                 <a href="menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="menu/alumni.html">Alumni</a></li>
-            <li><a href="menu/news.html">Berita</a></li>
+            <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -2080,7 +2358,7 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
+     Hero Section 
     <section id="home" class="hero">
       <div class="hero-slideshow">
         <div class="hero-slide active"></div>
@@ -2096,13 +2374,11 @@
             href="https://api.whatsapp.com/send/?phone=6282171727337&text&type=phone_number&app_absent=0"
             target="_blank"
             class="btn"
-            >Daftar Kelas Sekarang</a
+            >DAFTAR SEKARANG!</a
           >
         </div>
       </div>
     </section>
-
-    <!-- About Section -->
     <section id="about">
       <div class="container">
         <div class="section-title">
@@ -2121,20 +2397,24 @@
               LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja
               Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi
               tempat pelatihan, kursus, sekaligus sekolah teknisi smartphone
-              terpercaya di Indonesia. <br>
-              Sejak tahun 2012, lembaga ini telah resmi berizin kedinasan dan
-              terakreditasi LA-LPK sebagai pengakuan atas kualitas serta
-              legalitas penyelenggaraan pelatihan. Hingga kini, lebih dari 5.000
-              alumni telah berhasil dicetak dan tersebar di seluruh Indonesia
-              bahkan mancanegara, baik sebagai teknisi handphone yang trampil
-              dan siap kerja, maupun sebagai pengusaha mandiri yang sukses dan
-              profesional. <br>
-              Dengan metode pembelajaran yang efektif, kurikulum terarah, serta
-              penyaluran kerja yang terjamin, LPK Quantum Telecommunication
-              menjadi pilihan tepat bagi siapa saja yang ingin mengembangkan
-              karier, meningkatkan keterampilan, dan merintis usaha di bidang
-              teknisi smartphone.
+              terpercaya di Indonesia.
             </p>
+            <div class="about-advantages">
+              <ul>
+                <li>Resmi berizin kedinasan dan terakreditasi LA-LPK sejak 2012</li>
+                <li>Lebih dari 5.000 alumni tersebar di seluruh Indonesia dan mancanegara</li>
+                <li>Metode pembelajaran efektif dengan kurikulum terarah</li>
+                <li>Penyaluran kerja terjamin untuk semua lulusan</li>
+                <li>Instruktur berpengalaman dan fasilitas modern</li>
+                <li>Sertifikasi resmi yang diakui industri</li>
+              </ul>
+            </div>
+            <p>
+              Dengan komitmen menghasilkan teknisi handphone yang trampil dan siap kerja, 
+              serta pengusaha mandiri yang sukses dan profesional, LPK Quantum Telecommunication 
+              menjadi pilihan tepat untuk mengembangkan karier di bidang teknisi smartphone.
+            </p>
+            
             <div class="about-buttons">
               <a
                 href="assets/photos/pdf/Compro Quantum Telecommunication.pdf"
@@ -2147,8 +2427,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Video Profile Section -->
     <section class="video-profile">
       <div class="container">
         <div class="section-title">
@@ -2173,15 +2451,20 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Keunggulan Section -->
+    </section> 
     <section id="features">
       <div class="container">
         <div class="section-title">
           <h2>Keunggulan LPK Quantum</h2>
         </div>
-        <div class="features-grid">
+        <div class="features-scroll-indicator">
+          <p class="scroll-hint">Geser untuk melihat semua keunggulan</p>
+          <div class="scroll-progress">
+            <div class="scroll-progress-bar" id="featuresProgressBar"></div>
+          </div>
+        </div>
+        
+        <div class="features-grid" id="featuresGrid">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-chalkboard-teacher"></i>
@@ -2389,7 +2672,6 @@
       </div>
     </section>
 
-    <!-- Instruktur Section -->
     <section id="instructors">
       <div class="container">
         <div class="section-title">
@@ -2400,7 +2682,6 @@
           Ponsel
         </p>
         <div class="instructors-container">
-          <!-- Instructor 1 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2422,8 +2703,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructor 2 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2445,8 +2724,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructur 3 -->
            <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2467,9 +2744,7 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
               </div>
             </div>
-          </div>
-
-          <!-- Instructur 4 -->
+          </div> 
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2491,8 +2766,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructur 5 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2514,8 +2787,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructur 6 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2536,9 +2807,7 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
               </div>
             </div>
-          </div>
-
-          <!-- Instructur 7 -->
+          </div> 
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2560,8 +2829,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructur 8 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2583,8 +2850,6 @@
               </div>
             </div>
           </div>
-          
-          <!-- Instructur 9 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -2606,8 +2871,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Instructur 10 -->
           <div class="instructor-card">
             <div class="instructor-image">
               <img
@@ -3346,13 +3609,13 @@
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="#home">Beranda</a></li>
-              <li><a href="menu/about.html">Tentang Kami</a></li>
-              <li><a href="#programs">Program Pelatihan</a></li>
-              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
-              <li><a href="menu/alumni.html">Alumni</a></li>
-              <li><a href="menu/news.html">Berita</a></li>
-              <li><a href="menu/testimoni.html">Testimoni</a></li>
+              <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+              <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+              <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Program Pelatihan</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Kerjasama</a></li>
+              <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+              <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+              <li><a href="menu/testimoni.html"><i class="fas fa-star"></i> Testimoni</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -3375,6 +3638,13 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+            <a 
+              href="https://maps.google.com/maps?q=LPK+QUANTUM+TELECOMMUNICATION+-+Private+Smartphone+Technicians+Training+Institute&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              target="_blank" 
+              class="map-button"
+            >
+              <i class="fas fa-map-marker-alt"></i> Lihat di Google Maps
+            </a>
           </div>
         </div>
         <div class="copyright">
@@ -3382,8 +3652,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- WhatsApp Float Button -->
     <a
       href="https://wa.me/6282171727337"
       class="whatsapp-float"
@@ -3391,8 +3659,6 @@
     >
       <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
       <i class="fas fa-arrow-up"></i>
     </a>
@@ -3506,6 +3772,18 @@
 
       // Change slide every 5 seconds
       setInterval(nextSlide, 5000);
+
+      const featuresGrid = document.getElementById('featuresGrid');
+      const progressBar = document.getElementById('featuresProgressBar');
+
+      if (featuresGrid && progressBar) {
+        featuresGrid.addEventListener('scroll', () => {
+          const scrollLeft = featuresGrid.scrollLeft;
+          const scrollWidth = featuresGrid.scrollWidth - featuresGrid.clientWidth;
+          const progress = (scrollLeft / scrollWidth) * 100;
+          progressBar.style.width = progress + '%';
+        });
+      }
 
       // Program Tabs dengan animasi
       const programTabs = document.querySelectorAll(".program-tab");
