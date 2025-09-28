@@ -520,7 +520,7 @@
       .btn-company {
         display: inline-block;
         background-color: var(--text-light);
-        color: var(--blue-medium);
+        color: var(--bg-light);
         padding: 16px 40px;
         border-radius: 30px;
         text-decoration: none;
@@ -538,7 +538,7 @@
         transform: translateY(-5px);
         box-shadow: var(--shadow-hover);
         background: transparent;
-        color: var(--blue-medium);
+        color: var(--text-light);
         border-color: var(--text-light);
       }
 
@@ -556,7 +556,7 @@
 
       .btn-outline:hover {
         background: var(--text-light);
-        color: var(--blue-medium);
+        color: var(--text-light);
       }
 
       .btn-daftar:hover {
@@ -824,7 +824,7 @@
         left: 0;
         width: 5px;
         height: 0;
-        background: var(--accent-gradient);
+        background: var(--blue-medium);
         transition: var(--transition-slow);
       }
 
@@ -838,7 +838,7 @@
       }
 
       /* Enhanced feature icons with hover effects */
-      .feature-icon {
+        .feature-icon {
         width: 80px;
         height: 80px;
         background: var(--blue-gradient);
@@ -861,7 +861,6 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: var(--accent-gradient);
         transition: var(--transition-slow);
       }
 
@@ -1634,7 +1633,7 @@
         left: 0;
         width: 100%;
         height: 10px;
-        background: var(--accent-gradient);
+        background: var(--blue-gradient);
       }
 
       .footer-content {
@@ -1736,7 +1735,6 @@
       }
 
       .footer-contact i {
-        color: var(--accent-orange);
         width: 20px;
       }
 
@@ -1745,9 +1743,8 @@
         position: relative;
         width: 100%;
         padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
-        height: 0;
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: 50px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         margin-top: 20px;
       }
@@ -2016,27 +2013,30 @@
         }
 
         .mobile-menu-btn {
-          position: relative;
           z-index: 1000;
         }
 
         .hero {
-          padding: 80px 0 60px;
-          min-height: 500px;
+          max-width: 100%;
           height: auto;
         }
 
         .hero-title {
+          text-align: left;
+          margin-right: 190px;
           font-size: 0.8rem;
           margin-bottom: 10px;
         }
 
         .hero-subtitle {
+          text-align: left;
+          margin-left: 20px;
           font-size: 2rem;
           margin-bottom: 10px;
         }
 
         .hero-tagline {
+          margin-right: 165px;
           font-size: 2.2rem;
           margin-bottom: 20px;
         }
@@ -2116,16 +2116,23 @@
 
         /* Adjust map container for mobile */
         .map-container {
-          padding-bottom: 60%;
-          margin: 0 -20px 0 -20px;
-          width: calc(100% + 40px);
-          border-radius: 0;
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
         }
       }
 
       @media (max-width: 576px) {
         .hero {
           min-height: 450px;
+        }
+
+        .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
         }
 
         .hero-title {
@@ -2304,7 +2311,7 @@
         }
         
         .map-container iframe {
-          max-width: 100%;
+          max-width: 50%;
         }
       }
     </style>
@@ -3608,13 +3615,12 @@
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
-              <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-              <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Program Pelatihan</a></li>
-              <li><a href="menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Kerjasama</a></li>
-              <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-              <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
-              <li><a href="menu/testimoni.html"><i class="fas fa-star"></i> Testimoni</a></li>
+              <li><a href="#home"></i> Beranda</a></li>
+              <li><a href="menu/about.html"></i> Tentang Kami</a></li>
+              <li><a href="#programs"> Program Pelatihan</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html"> Kerjasama</a></li>
+              <li><a href="menu/alumni.html"> Alumni</a></li>
+              <li><a href="menu/news.html"> Berita</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -3638,7 +3644,7 @@
               ></iframe>
             </div>
             <a 
-              href="https://maps.google.com/maps?q=LPK+QUANTUM+TELECOMMUNICATION+-+Private+Smartphone+Technicians+Training+Institute&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" 
               target="_blank" 
               class="map-button"
             >
