@@ -33,6 +33,12 @@
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
+         /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+
         /* Transisi */
         --transition: all 0.3s ease;
       }
@@ -303,7 +309,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero1.jpg");
+          url("../../assets/photos/CTA/hero1.jpg");
       }
 
       .hero-slide:nth-child(2) {
@@ -311,7 +317,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero2.jpg");
+          url("../../assets/photos/CTA/hero2.jpg");
       }
 
       .hero-slide:nth-child(3) {
@@ -319,7 +325,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero3.jpg");
+          url("../../assets/photos/CTA/hero3.jpg");
       }
 
       .hero-slide:nth-child(4) {
@@ -327,7 +333,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero4.jpg");
+          url("../../assets/photos/CTA/hero4.jpg");
       }
 
       .hero-slide:nth-child(5) {
@@ -335,7 +341,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero5.jpg");
+          url("../../assets/photos/CTA/hero5.jpg");
       }
 
       .hero-slide:nth-child(6) {
@@ -343,7 +349,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero6.jpg");
+          url("../../assets/photos/CTA/hero6.jpg");
       }
 
       .hero-slide:nth-child(7) {
@@ -351,7 +357,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero7.jpg");
+          url("../../assets/photos/CTA/hero7.jpg");
       }
 
       .hero-slide:nth-child(8) {
@@ -359,7 +365,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero8.jpg");
+          url("../../assets/photos/CTA/hero8.jpg");
       }
 
       .hero-slide:nth-child(9) {
@@ -367,7 +373,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero9.jpg");
+          url("../../assets/photos/CTA/hero9.jpg");
       }
 
       .hero-slide:nth-child(10) {
@@ -375,7 +381,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/CTA/hero10.jpg");
+          url("../../assets/photos/CTA/hero10.jpg");
       }
 
       .hero-content {
@@ -477,7 +483,7 @@
       }
 
       .btn-cta {
-        background: var(--blue-medium);
+        background: var(--accent-gradient);
         color: var(--text-light);
       }
 
@@ -548,7 +554,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
         border-radius: 2px;
       }
 
@@ -1618,11 +1624,11 @@
         </div>
         <nav>
           <ul>
-            <li><a href="../../index.html">Beranda</a></li>
-            <li><a href="../about.html">Tentang Kami</a></li>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="../about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
             <li class="dropdown">
               <a href="#programs"
-                >Program <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-graduation-cap"></i> Program <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="offline.html">Kelas Offline</a>
@@ -1632,7 +1638,7 @@
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                >Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="../kerjasama/pemerintah.html">Pemerintah</a>
@@ -1640,9 +1646,8 @@
                 <a href="../kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../alumni.html">Alumni</a></li>
-            <li><a href="../news.html">Berita</a></li>
-            <li><a href="../testimoni.html">Testimoni</a></li>
+            <li><a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
