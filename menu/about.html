@@ -964,6 +964,9 @@
 
       /* Responsive Styles */
       @media (max-width: 992px) {
+        .gallery-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
         .history-content {
           grid-template-columns: 1fr;
           gap: 30px;
@@ -1022,6 +1025,10 @@
       @media (max-width: 768px) {
         .mobile-menu-btn {
           display: block;
+        }
+
+        .gallery-container {
+          grid-template-columns: repeat(3, 1fr);
         }
 
         nav {
@@ -1122,6 +1129,9 @@
       }
 
       @media (max-width: 576px) {
+        .gallery-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
         .map-container {
           position: relative;
           border-radius: 20px;
@@ -1160,6 +1170,10 @@
       }
 
       @media (max-width: 480px) {
+        .gallery-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
         .logo h1 {
           font-size: 1.2rem;
         }
@@ -1204,7 +1218,9 @@
 
       @media (max-width: 400px) {
         /* Penyesuaian tambahan untuk layar sangat kecil */
-
+        .gallery-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
         .instructor-image {
           height: 80px;
         }
