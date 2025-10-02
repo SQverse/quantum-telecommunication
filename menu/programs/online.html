@@ -1121,6 +1121,26 @@
         background: var(--blue-gradient);
       }
 
+      .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        overflow: hidden;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+
       .footer-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1176,7 +1196,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--blue-medium);
+        background: var(--accent-gradient);
       }
 
       .footer-links ul {
@@ -1209,53 +1229,6 @@
       .footer-contact i {
         color: var(--blue-medium);
         width: 20px;
-      }
-
-      .map-container {
-        height: 200px;
-        border-radius: 8px;
-        overflow: hidden;
-        margin-top: 15px;
-      }
-
-      .map-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      .newsletter-form {
-        display: flex;
-        margin-top: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .newsletter-form input {
-        flex: 1;
-        padding: 12px;
-        border: none;
-        background: transparent;
-        color: var(--text-light);
-      }
-
-      .newsletter-form input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .newsletter-form button {
-        background: var(--blue-medium);
-        color: var(--text-light);
-        border: none;
-        padding: 0 20px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .newsletter-form button:hover {
-        background: var(--blue-light);
-        color: var(--blue-dark);
       }
 
       .copyright {
@@ -1514,6 +1487,12 @@
           max-width: 250px;
           margin-bottom: 10px;
         }
+
+        .btn-cta {
+          border-radius: 50px;
+          height: 70px;
+          max-width: 100%;
+        }
       }
 
       @media (max-width: 480px) {
@@ -1562,12 +1541,6 @@
       }
 
       @media (max-width: 768px) {
-    /* Perbaikan untuk map container di footer */
-    .map-container {
-      margin: 0 -20px; /* Menyesuaikan dengan padding container */
-      width: calc(100% + 40px);
-      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
-    }
     
     /* Perbaikan untuk konten footer */
     .footer-contact p {
@@ -1680,7 +1653,7 @@
           <a href="https://wa.me/6282171727337" class="btn btn-cta"
             >Daftar Sekarang</a
           >
-          <a href="/menu/materi.html" class="btn btn-outline">Lihat Materi</a>
+          <a href="../materi.html" class="btn btn-outline">Lihat Materi</a>
         </div>
       </div>
       <div class="shape-divider">

@@ -923,175 +923,201 @@
 
       /* Lightbox */
       .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    padding: 20px;
-    box-sizing: border-box;
-  }
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-  .lightbox.active {
-    opacity: 1;
-    visibility: visible;
-  }
+      .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+      }
 
-  .lightbox-content {
-    position: relative;
-    max-width: 95%;
-    max-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+      .lightbox-content {
+        position: relative;
+        max-width: 95%;
+        max-height: 95vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .lightbox-content img {
-    max-width: 100%;
-    max-height: 75vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-  }
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 75vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      }
 
-  .lightbox-caption {
-    text-align: center;
-    color: var(--text-light);
-    padding: 15px 10px 5px;
-    font-size: 0.9rem;
-    width: 100%;
-    max-width: 600px;
-  }
+      .lightbox-caption {
+        text-align: center;
+        color: var(--text-light);
+        padding: 15px 10px 5px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 600px;
+      }
 
-  .lightbox-close {
-    position: absolute;
-    top: -50px;
-    right: 0;
-    color: var(--text-light);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10001;
-  }
+      .lightbox-close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        color: var(--text-light);
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10001;
+      }
 
-  .lightbox-close:hover {
-    background: var(--blue-medium);
-    transform: scale(1.1);
-  }
+      .lightbox-close:hover {
+        background: var(--blue-medium);
+        transform: scale(1.1);
+      }
 
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-    pointer-events: none;
-  }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 10px;
+        pointer-events: none;
+      }
 
-  .lightbox-button {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--text-light);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1.3rem;
-    pointer-events: auto;
-    backdrop-filter: blur(5px);
-  }
+      .lightbox-button {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--text-light);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1.3rem;
+        pointer-events: auto;
+        backdrop-filter: blur(5px);
+      }
 
-  .lightbox-button:hover {
-    background: var(--blue-medium);
-    transform: scale(1.1);
-  }
+      .lightbox-button:hover {
+        background: var(--blue-medium);
+        transform: scale(1.1);
+      }
 
-  /* Responsif untuk layar kecil */
-  @media (max-width: 768px) {
-    .lightbox {
-      padding: 10px;
-    }
-    
-    .lightbox-content {
-      max-width: 100%;
-      max-height: 90vh;
-    }
-    
-    .lightbox-content img {
-      max-height: 70vh;
-    }
-    
-    .lightbox-close {
-      top: 10px;
-      right: 10px;
-      width: 35px;
-      height: 35px;
-      font-size: 1.2rem;
-      background: rgba(0, 0, 0, 0.7);
-    }
-    
-    .lightbox-button {
-      width: 40px;
-      height: 40px;
-      font-size: 1.1rem;
-    }
-    
-    .lightbox-nav {
-      padding: 0 5px;
-    }
-    
-    .lightbox-caption {
-      font-size: 0.8rem;
-      padding: 10px 5px 0;
-    }
-  }
+      .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        overflow: hidden;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
 
-  @media (max-width: 480px) {
-    .lightbox-content img {
-      max-height: 65vh;
-    }
-    
-    .lightbox-button {
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
-    }
-    
-    .lightbox-close {
-      width: 30px;
-      height: 30px;
-      font-size: 1rem;
-    }
-  }
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
 
-  /* Gesture untuk mobile - swipe untuk navigasi */
-  .lightbox-content {
-    touch-action: pan-y;
-  }
+      /* Responsif untuk layar kecil */
+      @media (max-width: 768px) {
+        .lightbox {
+          padding: 10px;
+        }
+
+        .lightbox-content {
+          max-width: 100%;
+          max-height: 90vh;
+        }
+
+        .lightbox-content img {
+          max-height: 70vh;
+        }
+
+        .lightbox-close {
+          top: 10px;
+          right: 10px;
+          width: 35px;
+          height: 35px;
+          font-size: 1.2rem;
+          background: rgba(0, 0, 0, 0.7);
+        }
+
+        .lightbox-button {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+
+        .lightbox-nav {
+          padding: 0 5px;
+        }
+
+        .lightbox-caption {
+          font-size: 0.8rem;
+          padding: 10px 5px 0;
+        }
+
+        .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .lightbox-content img {
+          max-height: 65vh;
+        }
+
+        .lightbox-button {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        .lightbox-close {
+          width: 30px;
+          height: 30px;
+          font-size: 1rem;
+        }
+      }
+
+      /* Gesture untuk mobile - swipe untuk navigasi */
+      .lightbox-content {
+        touch-action: pan-y;
+      }
       /* PRICE SECTION - DIPERBAIKI */
       .price-section {
         background: var(--blue-gradient);
@@ -1247,25 +1273,6 @@
       .footer-contact i {
         color: var(--blue-medium);
         width: 20px;
-      }
-
-      .map-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .map-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
       }
 
       .copyright {
@@ -1583,12 +1590,6 @@
           grid-template-columns: 1fr;
           gap: 30px;
         }
-
-        .map-container {
-          margin: 0 -20px;
-          width: calc(100% + 40px);
-          border-radius: 0;
-        }
       }
 
       @media (max-width: 576px) {
@@ -1696,11 +1697,18 @@
         </div>
         <nav>
           <ul>
-            <li><a href="../../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li>
+              <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="../about.html"
+                ><i class="fas fa-info-circle"></i> Tentang Kami</a
+              >
+            </li>
             <li class="dropdown">
               <a href="#programs"
-                ><i class="fas fa-graduation-cap"></i> Program <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-graduation-cap"></i> Program
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="offline.html">Kelas Offline</a>
@@ -1710,7 +1718,8 @@
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="../kerjasama/pemerintah.html">Pemerintah</a>
@@ -1718,8 +1727,12 @@
                 <a href="../kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+            <li>
+              <a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a>
+            </li>
+            <li>
+              <a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a>
+            </li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -2364,7 +2377,6 @@
     <!-- Galeri Dokumentasi -->
     <section id="alumni-galeri">
       <div class="container">
-
         <div class="section-title">
           <h2 id="gallery-title">Testimoni Dari Peserta</h2>
         </div>
@@ -2922,148 +2934,160 @@
       });
 
       // LIGHTBOX FUNCTIONALITY - DIPERBAIKI SECARA SIGNIFIKAN
-       // LIGHTBOX FUNCTIONALITY - DIPERBAIKI UNTUK RESPONSIVITAS
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightbox-image");
-  const lightboxClose = document.getElementById("lightbox-close");
-  const lightboxPrev = document.getElementById("lightbox-prev");
-  const lightboxNext = document.getElementById("lightbox-next");
-  const lightboxCaption = document.getElementById("lightbox-caption");
-  const galleryItems = document.querySelectorAll(".gallery-item");
+      // LIGHTBOX FUNCTIONALITY - DIPERBAIKI UNTUK RESPONSIVITAS
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const lightboxPrev = document.getElementById("lightbox-prev");
+      const lightboxNext = document.getElementById("lightbox-next");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const galleryItems = document.querySelectorAll(".gallery-item");
 
-  let currentImageIndex = 0;
-  const images = [];
-  const captions = [];
+      let currentImageIndex = 0;
+      const images = [];
+      const captions = [];
 
-  // Prepare images and captions for lightbox
-  galleryItems.forEach((item, index) => {
-    const img = item.querySelector("img");
-    const caption = img.getAttribute("alt") || "Testimoni Peserta";
+      // Prepare images and captions for lightbox
+      galleryItems.forEach((item, index) => {
+        const img = item.querySelector("img");
+        const caption = img.getAttribute("alt") || "Testimoni Peserta";
 
-    images.push({
-      src: img.src,
-      caption: caption
-    });
+        images.push({
+          src: img.src,
+          caption: caption,
+        });
 
-    item.addEventListener("click", () => {
-      currentImageIndex = index;
-      openLightbox();
-    });
-  });
+        item.addEventListener("click", () => {
+          currentImageIndex = index;
+          openLightbox();
+        });
+      });
 
-  // Open lightbox with current image
-  function openLightbox() {
-    lightboxImage.src = images[currentImageIndex].src;
-    lightboxCaption.textContent = images[currentImageIndex].caption;
-    lightbox.classList.add("active");
-    document.body.style.overflow = "hidden";
-    
-    // Prevent background scrolling on mobile
-    document.addEventListener('touchmove', preventScroll, { passive: false });
-  }
+      // Open lightbox with current image
+      function openLightbox() {
+        lightboxImage.src = images[currentImageIndex].src;
+        lightboxCaption.textContent = images[currentImageIndex].caption;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
 
-  // Close lightbox
-  function closeLightbox() {
-    lightbox.classList.remove("active");
-    document.body.style.overflow = "";
-    document.removeEventListener('touchmove', preventScroll);
-  }
-
-  function preventScroll(e) {
-    e.preventDefault();
-  }
-
-  // Navigate to previous image
-  function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    updateLightboxImage();
-  }
-
-  // Navigate to next image
-  function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    updateLightboxImage();
-  }
-
-  // Update lightbox with current image
-  function updateLightboxImage() {
-    lightboxImage.style.opacity = "0";
-    
-    setTimeout(() => {
-      lightboxImage.src = images[currentImageIndex].src;
-      lightboxCaption.textContent = images[currentImageIndex].caption;
-      lightboxImage.style.opacity = "1";
-    }, 200);
-  }
-
-  // Event listeners
-  lightboxClose.addEventListener("click", closeLightbox);
-  lightboxPrev.addEventListener("click", showPrevImage);
-  lightboxNext.addEventListener("click", showNextImage);
-
-  // Close lightbox when clicking outside the image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  // Keyboard navigation for lightbox
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.classList.contains("active")) {
-      if (e.key === "Escape") {
-        closeLightbox();
-      } else if (e.key === "ArrowLeft") {
-        showPrevImage();
-      } else if (e.key === "ArrowRight") {
-        showNextImage();
+        // Prevent background scrolling on mobile
+        document.addEventListener("touchmove", preventScroll, {
+          passive: false,
+        });
       }
-    }
-  });
 
-  // Touch gestures for mobile navigation
-  let touchStartX = 0;
-  let touchEndX = 0;
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+        document.removeEventListener("touchmove", preventScroll);
+      }
 
-  lightboxContent.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
+      function preventScroll(e) {
+        e.preventDefault();
+      }
 
-  lightboxContent.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
+      // Navigate to previous image
+      function showPrevImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        updateLightboxImage();
+      }
 
-  function handleSwipe() {
-    const swipeThreshold = 50; // Minimum swipe distance
-    
-    if (touchEndX < touchStartX - swipeThreshold) {
-      // Swipe left - next image
-      showNextImage();
-    } else if (touchEndX > touchStartX + swipeThreshold) {
-      // Swipe right - previous image
-      showPrevImage();
-    }
-  }
+      // Navigate to next image
+      function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateLightboxImage();
+      }
 
-  // Preload adjacent images for smoother transitions
-  function preloadAdjacentImages() {
-    const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
-    const nextIndex = (currentImageIndex + 1) % images.length;
-    
-    const preloadPrev = new Image();
-    preloadPrev.src = images[prevIndex].src;
-    
-    const preloadNext = new Image();
-    preloadNext.src = images[nextIndex].src;
-  }
+      // Update lightbox with current image
+      function updateLightboxImage() {
+        lightboxImage.style.opacity = "0";
 
-  // Call preload when lightbox opens
-  lightbox.addEventListener('transitionend', () => {
-    if (lightbox.classList.contains('active')) {
-      preloadAdjacentImages();
-    }
-  });
+        setTimeout(() => {
+          lightboxImage.src = images[currentImageIndex].src;
+          lightboxCaption.textContent = images[currentImageIndex].caption;
+          lightboxImage.style.opacity = "1";
+        }, 200);
+      }
+
+      // Event listeners
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxPrev.addEventListener("click", showPrevImage);
+      lightboxNext.addEventListener("click", showNextImage);
+
+      // Close lightbox when clicking outside the image
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Keyboard navigation for lightbox
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("active")) {
+          if (e.key === "Escape") {
+            closeLightbox();
+          } else if (e.key === "ArrowLeft") {
+            showPrevImage();
+          } else if (e.key === "ArrowRight") {
+            showNextImage();
+          }
+        }
+      });
+
+      // Touch gestures for mobile navigation
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      lightboxContent.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        },
+        { passive: true }
+      );
+
+      lightboxContent.addEventListener(
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        },
+        { passive: true }
+      );
+
+      function handleSwipe() {
+        const swipeThreshold = 50; // Minimum swipe distance
+
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe left - next image
+          showNextImage();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe right - previous image
+          showPrevImage();
+        }
+      }
+
+      // Preload adjacent images for smoother transitions
+      function preloadAdjacentImages() {
+        const prevIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        const nextIndex = (currentImageIndex + 1) % images.length;
+
+        const preloadPrev = new Image();
+        preloadPrev.src = images[prevIndex].src;
+
+        const preloadNext = new Image();
+        preloadNext.src = images[nextIndex].src;
+      }
+
+      // Call preload when lightbox opens
+      lightbox.addEventListener("transitionend", () => {
+        if (lightbox.classList.contains("active")) {
+          preloadAdjacentImages();
+        }
+      });
     </script>
   </body>
 </html>
