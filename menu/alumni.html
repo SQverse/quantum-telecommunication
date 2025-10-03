@@ -33,6 +33,12 @@
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
+        /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+
         /* Transisi */
         --transition: all 0.3s ease;
       }
@@ -275,7 +281,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
         border-radius: 2px;
       }
 
@@ -373,7 +379,7 @@
       }
 
       .year-content p {
-        color: var(--blue-medium);
+        color: var(--accent-orange);
         font-weight: 600;
         display: flex;
         align-items: center;
@@ -716,7 +722,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--blue-medium);
+        background: var(--accent-gradient);
       }
 
       .footer-links ul {
@@ -752,50 +758,22 @@
       }
 
       .map-container {
-        height: 200px;
-        border-radius: 8px;
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
         overflow: hidden;
-        margin-top: 15px;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
       }
 
       .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        border: none;
-      }
-
-      .newsletter-form {
-        display: flex;
-        margin-top: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .newsletter-form input {
-        flex: 1;
-        padding: 12px;
-        border: none;
-        background: transparent;
-        color: var(--text-light);
-      }
-
-      .newsletter-form input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .newsletter-form button {
-        background: var(--blue-medium);
-        color: var(--text-light);
-        border: none;
-        padding: 0 20px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .newsletter-form button:hover {
-        background: var(--blue-light);
-        color: var(--blue-dark);
+        border: 0;
       }
 
       .copyright {
@@ -994,6 +972,13 @@
 
         .mobile-menu-btn {
           margin-left: 15px;
+        }
+
+        .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
         }
       }
 

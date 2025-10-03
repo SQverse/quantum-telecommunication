@@ -262,7 +262,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
         border-radius: 2px;
       }
 
@@ -448,7 +448,7 @@
       }
 
       .kerjasama-cta {
-        color: var(--blue-medium);
+        color: var(--accent-orange);
         font-weight: 600;
         text-decoration: none;
         display: inline-flex;
@@ -460,7 +460,7 @@
 
       .kerjasama-cta:hover {
         gap: 10px;
-        color: var(--blue-dark);
+        color: var(--accent-orange-dark);
       }
 
       /* Lightbox Gallery */
@@ -651,7 +651,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--blue-medium);
+        background: var(--accent-gradient);
       }
 
       .footer-links ul {
@@ -687,50 +687,22 @@
       }
 
       .map-container {
-        height: 200px;
-        border-radius: 8px;
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
         overflow: hidden;
-        margin-top: 15px;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
       }
 
       .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        border: none;
-      }
-
-      .newsletter-form {
-        display: flex;
-        margin-top: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .newsletter-form input {
-        flex: 1;
-        padding: 12px;
-        border: none;
-        background: transparent;
-        color: var(--text-light);
-      }
-
-      .newsletter-form input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .newsletter-form button {
-        background: var(--blue-medium);
-        color: var(--text-light);
-        border: none;
-        padding: 0 20px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .newsletter-form button:hover {
-        background: var(--blue-light);
-        color: var(--blue-dark);
+        border: 0;
       }
 
       .copyright {
@@ -943,49 +915,50 @@
       }
 
       @media (max-width: 768px) {
-    /* Perbaikan untuk map container di footer */
-    .map-container {
-      margin: 0 -20px; /* Menyesuaikan dengan padding container */
-      width: calc(100% + 40px);
-      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
-    }
-    
-    /* Perbaikan untuk konten footer */
-    .footer-contact p {
-      word-break: break-word;
-      hyphens: auto;
-    }
-    
-    /* Memastikan grid footer tidak menyebabkan overflow */
-    .footer-content {
-      gap: 25px;
-    }
-  }
+        /* Perbaikan untuk map container di footer */
+        .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
 
-  @media (max-width: 400px) {
-    /* Penyesuaian tambahan untuk layar sangat kecil */
-    .footer-content {
-      gap: 20px;
-    }
-    
-    .footer-contact p {
-      font-size: 0.9rem;
-    }
-    
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
-    
-    /* Memastikan iframe peta tidak melebihi viewport */
-    .map-container iframe {
-      max-width: 100%;
-    }
-  }
+        /* Perbaikan untuk konten footer */
+        .footer-contact p {
+          word-break: break-word;
+          hyphens: auto;
+        }
 
-  /* Memastikan footer tidak melebihi viewport */
-  footer .container {
-    overflow: hidden;
-  }
+        /* Memastikan grid footer tidak menyebabkan overflow */
+        .footer-content {
+          gap: 25px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        /* Penyesuaian tambahan untuk layar sangat kecil */
+        .footer-content {
+          gap: 20px;
+        }
+
+        .footer-contact p {
+          font-size: 0.9rem;
+        }
+
+        .footer-links ul li {
+          margin-bottom: 8px;
+        }
+
+        /* Memastikan iframe peta tidak melebihi viewport */
+        .map-container iframe {
+          max-width: 100%;
+        }
+      }
+
+      /* Memastikan footer tidak melebihi viewport */
+      footer .container {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
@@ -1000,11 +973,18 @@
         </div>
         <nav>
           <ul>
-            <li><a href="../../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li>
+              <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="../about.html"
+                ><i class="fas fa-info-circle"></i> Tentang Kami</a
+              >
+            </li>
             <li class="dropdown">
               <a href="/index.html#programs"
-                ><i class="fas fa-graduation-cap"></i> Program <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-graduation-cap"></i> Program
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="../programs/offline.html">Kelas Offline</a>
@@ -1014,7 +994,8 @@
             </li>
             <li class="dropdown">
               <a href="#collaboration"
-                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="pemerintah.html">Pemerintah</a>
@@ -1022,8 +1003,12 @@
                 <a href="#">Internasional</a>
               </div>
             </li>
-            <li><a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+            <li>
+              <a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a>
+            </li>
+            <li>
+              <a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a>
+            </li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
