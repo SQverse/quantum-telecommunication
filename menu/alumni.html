@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alumni - LPK Quantum Telecommunication</title>
+    <title>Dokumentasi Alumni - LPK Quantum Telecommunication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <style>
-      /* Variabel Warna untuk Light dan Dark Mode */
+      /* CSS yang sama seperti sebelumnya */
       :root {
         /* Light Mode */
         --blue-light: #e6f0ff;
@@ -760,7 +760,7 @@
       .map-container {
         position: relative;
         width: 100%;
-        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        padding-bottom: 45%;
         overflow: hidden;
         border-radius: 50px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -1011,52 +1011,52 @@
       }
 
       @media (max-width: 768px) {
-    /* Perbaikan untuk map container di footer */
-    .map-container {
-      margin: 0 -20px; /* Menyesuaikan dengan padding container */
-      width: calc(100% + 40px);
-      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
-    }
-    
-    /* Perbaikan untuk konten footer */
-    .footer-contact p {
-      word-break: break-word;
-      hyphens: auto;
-    }
-    
-    /* Memastikan grid footer tidak menyebabkan overflow */
-    .footer-content {
-      gap: 25px;
-    }
-  }
+        /* Perbaikan untuk map container di footer */
+        .map-container {
+          margin: 0 -20px;
+          width: calc(100% + 40px);
+          border-radius: 0;
+        }
+        
+        /* Perbaikan untuk konten footer */
+        .footer-contact p {
+          word-break: break-word;
+          hyphens: auto;
+        }
+        
+        /* Memastikan grid footer tidak menyebabkan overflow */
+        .footer-content {
+          gap: 25px;
+        }
+      }
 
-  @media (max-width: 400px) {
-    /* Penyesuaian tambahan untuk layar sangat kecil */
-    .footer-content {
-      gap: 20px;
-    }
-    
-    .footer-contact p {
-      font-size: 0.9rem;
-    }
-    
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
-    
-    /* Memastikan iframe peta tidak melebihi viewport */
-    .map-container iframe {
-      max-width: 100%;
-    }
-  }
+      @media (max-width: 400px) {
+        /* Penyesuaian tambahan untuk layar sangat kecil */
+        .footer-content {
+          gap: 20px;
+        }
+        
+        .footer-contact p {
+          font-size: 0.9rem;
+        }
+        
+        .footer-links ul li {
+          margin-bottom: 8px;
+        }
+        
+        /* Memastikan iframe peta tidak melebihi viewport */
+        .map-container iframe {
+          max-width: 100%;
+        }
+      }
 
-  /* Memastikan footer tidak melebihi viewport */
-  footer .container {
-    overflow: hidden;
-  }
+      /* Memastikan footer tidak melebihi viewport */
+      footer .container {
+        overflow: hidden;
+      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Header & Navigation -->
     <header>
       <div class="container header-content">
@@ -1088,8 +1088,9 @@
                 <a href="kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="kerjasama/swasta.html">Swasta</a>
                 <a href="kerjasama/internasional.html">Internasional</a>
+              </div>
             </li>
-            <li><a href="alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="alumni.html" class="active"><i class="fas fa-users"></i> Alumni</a></li>
             <li><a href="news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
           </ul>
         </nav>
@@ -1108,9 +1109,9 @@
     <div class="breadcrumb">
       <div class="container">
         <div class="breadcrumb-content">
-          <a href="/index.html">Beranda</a>
+          <a href="../index.html">Beranda</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Alumni</span>
+          <span>Dokumentasi Alumni</span>
         </div>
       </div>
     </div>
@@ -1127,89 +1128,7 @@
         </p>
 
         <div class="years-grid">
-          <div class="year-card" data-year="2025">
-            <div class="year-image">
-              <img
-                src="../assets/photos/gallery/januari-2025.jpg"
-                alt="Alumni 2025"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2025</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
-
-          <div class="year-card" data-year="2024">
-            <div class="year-image">
-              <img
-                src="../assets/photos/gallery/dokumentasi-2024.jpg"
-                alt="Alumni 2024"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2024</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
-
-          <div class="year-card" data-year="2021">
-            <div class="year-image">
-              <img
-                src="../assets/photos/gallery/januari-2025.jpg"
-                alt="Alumni 2023"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2025</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
-
-          <div class="year-card" data-year="2020">
-            <div class="year-image">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Alumni 2020"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2020</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
-
-          <div class="year-card" data-year="2019">
-            <div class="year-image">
-              <img
-                src="https://images.unsplash.com/photo-1535982337059-51a5b2d3c079?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Alumni 2019"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2019</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
-
-          <div class="year-card" data-year="2018">
-            <div class="year-image">
-              <img
-                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Alumni 2018"
-                loading="lazy"
-              />
-            </div>
-            <div class="year-content">
-              <h3>Alumni 2018</h3>
-              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
-            </div>
-          </div>
+          <!-- Year cards will be generated by JavaScript -->
         </div>
       </div>
     </section>
@@ -1226,63 +1145,7 @@
         </div>
 
         <div class="activities-timeline">
-          <div class="activity-card" data-activity="wisuda">
-            <div class="activity-image">
-              <img
-                src="../assets/photos/alumni-page/Januari 2025/januari6.jpg"
-                alt="Januari 2025"
-                loading="lazy"
-              />
-            </div>
-            <div class="activity-content">
-              <h3>Januari 2025</h3>
-              <a href="#" class="activity-cta" data-gallery="wisuda"
-                >Lihat Foto</a
-              >
-            </div>
-          </div>
-
-          <div class="activity-card" data-activity="workshop">
-            <div class="activity-image">
-              <img
-                src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Workshop"
-                loading="lazy"
-              />
-            </div>
-            <div class="activity-content">
-              <h3>Workshop Fiber Optic</h3>
-              <p>
-                Pelatihan intensif tentang teknologi fiber optic yang diikuti
-                oleh alumni dan teknisi profesional untuk meningkatkan
-                kompetensi di bidang telekomunikasi.
-              </p>
-              <a href="#" class="activity-cta" data-gallery="workshop"
-                >Lihat Foto</a
-              >
-            </div>
-          </div>
-
-          <div class="activity-card" data-activity="reuni">
-            <div class="activity-image">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Reuni Alumni"
-                loading="lazy"
-              />
-            </div>
-            <div class="activity-content">
-              <h3>Reuni Alumni</h3>
-              <p>
-                Acara silaturahmi dan reuni alumni LPK Quantum Telecommunication
-                yang diselenggarakan setiap tahun untuk mempererat jaringan dan
-                kerjasama.
-              </p>
-              <a href="#" class="activity-cta" data-gallery="reuni"
-                >Lihat Foto</a
-              >
-            </div>
-          </div>
+          <!-- Activity cards will be generated by JavaScript -->
         </div>
       </div>
     </section>
@@ -1295,187 +1158,11 @@
         </a>
 
         <div class="section-title">
-          <h2 id="gallery-title">Galeri</h2>
+          <h2 id="gallery-title">Galeri Januari 2025</h2>
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari1.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari2.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari3.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari4.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari5.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari7.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari8.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari9.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari10.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari11.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari12.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari13.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari14.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari15.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari16.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari17.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari18.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-
-          
-          <div class="gallery-item">
-            <img
-              src="../assets/photos/alumni-page/Januari 2025/januari19.jpg"
-              alt="Alumni Januari 2025"
-              loading="lazy"
-            />
-            <div class="gallery-caption">Alumni Januari 2025</div>
-          </div>
-          
-          </div>
+          <!-- Gallery items will be generated by JavaScript -->
         </div>
       </div>
     </section>
@@ -1526,13 +1213,12 @@
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="#home">Beranda</a></li>
-              <li><a href="menu/about.html">Tentang Kami</a></li>
-              <li><a href="#programs">Program Pelatihan</a></li>
-              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
-              <li><a href="menu/alumni.html">Alumni</a></li>
-              <li><a href="menu/news.html">Berita</a></li>
-              <li><a href="menu/testimoni.html">Testimoni</a></li>
+              <li><a href="../index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="../index.html#programs">Program Pelatihan</a></li>
+              <li><a href="kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="alumni.html">Alumni</a></li>
+              <li><a href="news.html">Berita</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -1565,7 +1251,7 @@
 
     <!-- WhatsApp Float Button -->
     <a
-      href="https://wa.me/6281234567890"
+      href="https://wa.me/6282171727337"
       class="whatsapp-float"
       target="_blank"
     >
@@ -1578,94 +1264,596 @@
     </a>
 
     <script>
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-      const nav = document.querySelector("nav");
-      const body = document.body;
-      const dropdowns = document.querySelectorAll(".dropdown");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
-
-        // Change icon
-        const icon = mobileMenuBtn.querySelector("i");
-        if (nav.classList.contains("active")) {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-times");
-        } else {
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        }
-      });
-
-      // Close mobile menu when clicking on a link
-      const navLinks = document.querySelectorAll(
-        "nav ul li a:not(.dropdown > a)"
-      );
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("active");
-          body.style.overflow = "";
-
-          // Reset icon
-          const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
-      });
-
-      // Dropdown toggle for mobile
-      dropdowns.forEach((dropdown) => {
-        const link = dropdown.querySelector("a");
-
-        link.addEventListener("click", (e) => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            dropdown.classList.toggle("active");
+      // Data Alumni (bisa diganti dengan data JSON dari server jika diperlukan)
+      const alumniData = {
+        "2025": {
+          cover: "../assets/photos/gallery/januari-2025.jpg",
+          activities: {
+            "januari": {
+              title: "Januari 2025",
+              thumbnail: "../assets/photos/alumni-page/Januari 2025/januari6.jpg",
+              description: "Kegiatan alumni pada bulan Januari 2025",
+              images: [
+                { src: "../assets/photos/alumni-page/Januari 2025/januari1.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari2.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari3.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari4.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari5.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari6.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari7.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari8.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari9.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari10.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari11.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari12.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari13.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari14.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari15.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari16.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari17.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari18.jpg", caption: "Alumni Januari 2025" },
+                { src: "../assets/photos/alumni-page/Januari 2025/januari19.jpg", caption: "Alumni Januari 2025" }
+              ]
+            },
+            "februari": {
+              title: "Februari 2025",
+              thumbnail: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+              description: "Workshop Fiber Optic: Pelatihan intensif tentang teknologi fiber optic yang diikuti oleh alumni dan teknisi profesional untuk meningkatkan kompetensi di bidang telekomunikasi.",
+              images: [
+                { src: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", caption: "Workshop Fiber Optic" },
+              ]
+            },
+            "maret": {
+              title: "Maret 2025",
+              thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+              description: "Reuni Alumni: Acara silaturahmi dan reuni alumni LPK Quantum Telecommunication yang diselenggarakan setiap tahun untuk mempererat jaringan dan kerjasama.",
+              images: [
+                { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", caption: "Reuni Alumni" },
+              ]
+            }
           }
-        });
-      });
+        },
+        "2024": {
+          cover: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+          activities: {
+            "Januari": {
+              title: "Januari 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus2.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus2.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus3.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus4.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus5.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus6.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus7.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus8.jpeg", caption: "Alumni Agustus 2024" }
+              ]
+            },
 
-      // Dark Mode Toggle
-      const themeToggle = document.getElementById("themeToggle");
-      const themeIcon = themeToggle.querySelector("i");
+            "februari": {
+              title: "Februari 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
 
-      // Check for saved theme preference or respect OS preference
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
-          !localStorage.getItem("theme"))
-      ) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
+            "maret": {
+              title: "Maret 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "april": {
+              title: "April 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "mei": {
+              title: "Mei 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "juni": {
+              title: "Juni 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "juli": {
+              title: "Juli 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "agustus": {
+              title: "Agustus 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus2.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus2.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus3.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus4.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus5.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus6.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus7.jpeg", caption: "Alumni Agustus 2024" },
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus8.jpeg", caption: "Alumni Agustus 2024" }
+              ]
+            },
+
+            "september": {
+              title: "September 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "oktober": {
+              title: "Agustus 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "november": {
+              title: "Agustus 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            },
+
+            "desember": {
+              title: "Agustus 2024",
+              thumbnail: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg",
+              description: "Kegiatan alumni pada bulan Agustus 2024",
+              images: [
+                { src: "../assets/photos/alumni-page/Agustus 2024/agustus1.jpeg", caption: "Alumni Agustus 2024" },
+              ]
+            }
+          }
+        },
+        "2023": {
+          cover: "../assets/photos/gallery/januari-2025.jpg",
+          activities: {
+            "januari": {
+              title: "Januari 2023",
+              thumbnail: "",
+              description: "Kegiatan alumni pada bulan Januari 2023",
+              images: [
+                { src: "", caption: "Alumni Januari 2023" },
+                { src: "", caption: "Alumni Januari 2023" }
+              ]
+            }
+          }
+        },
+        "2022": {
+          cover: "../assets",
+          activities: {
+            "januari": {
+              title: "Januari 2022",
+              thumbnail: "",
+              description: "Kegiatan alumni pada bulan Januari 2022",
+              images: [
+                { src: "", caption: "Alumni Januari 2022" },
+                { src: "", caption: "Alumni Januari 2022" }
+              ]
+            }
+          }
+        },
+        "2021": {
+          cover: "",
+          activities: {
+            "januari": {
+              title: "Januari 2019",
+              thumbnail: "",
+              description: "Kegiatan alumni pada bulan Januari 2021",
+              images: [
+                { src: "", caption: "Alumni Januari 2021" },
+                { src: "", caption: "Alumni Januari 2021" }
+              ]
+            }
+          }
+        },
+        "2020": {
+          cover: "",
+          activities: {
+            "januari": {
+              title: "Januari 2020",
+              thumbnail: "",
+              description: "Kegiatan alumni pada bulan Januari 2020",
+              images: [
+                { src: "", caption: "Alumni Januari 2020" },
+                { src: "", caption: "Alumni Januari 2020" }
+              ]
+            }
+          }
+        }
+      };
+
+      // Current state
+      let currentYear = null;
+      let currentMonth = null;
+
+      // DOM Elements
+      const alumniTahunSection = document.getElementById('alumni-tahun');
+      const alumniDetailSection = document.getElementById('alumni-detail');
+      const alumniGaleriSection = document.getElementById('alumni-galeri');
+      const detailTitle = document.getElementById('detail-title');
+      const galleryTitle = document.getElementById('gallery-title');
+      const backToYearsBtn = document.getElementById('back-to-years');
+      const backToDetailBtn = document.getElementById('back-to-detail');
+      const yearsGrid = document.querySelector('.years-grid');
+      const activitiesTimeline = document.querySelector('.activities-timeline');
+      const galleryGrid = document.querySelector('.gallery-grid');
+
+      // Lightbox elements
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxClose = document.getElementById('lightbox-close');
+      const lightboxPrev = document.getElementById('lightbox-prev');
+      const lightboxNext = document.getElementById('lightbox-next');
+
+      let currentImageIndex = 0;
+      let lightboxImages = [];
+      let lightboxCaptions = [];
+
+      // Initialize the page
+      function init() {
+        generateYearCards();
+        setupEventListeners();
+        checkScroll();
       }
 
-      themeToggle.addEventListener("click", () => {
-        if (document.documentElement.getAttribute("data-theme") === "dark") {
-          document.documentElement.removeAttribute("data-theme");
-          localStorage.setItem("theme", "light");
-          themeIcon.classList.remove("fa-sun");
-          themeIcon.classList.add("fa-moon");
-        } else {
-          document.documentElement.setAttribute("data-theme", "dark");
-          localStorage.setItem("theme", "dark");
+      // Generate year cards from alumniData
+      function generateYearCards() {
+        yearsGrid.innerHTML = '';
+        
+        Object.keys(alumniData).sort((a, b) => b - a).forEach(year => {
+          const yearCard = document.createElement('div');
+          yearCard.className = 'year-card';
+          yearCard.setAttribute('data-year', year);
+          
+          yearCard.innerHTML = `
+            <div class="year-image">
+              <img
+                src="${alumniData[year].cover}"
+                alt="Alumni ${year}"
+                loading="lazy"
+              />
+            </div>
+            <div class="year-content">
+              <h3>Alumni ${year}</h3>
+              <p>Lihat Dokumentasi <i class="fas fa-arrow-right"></i></p>
+            </div>
+          `;
+          
+          yearsGrid.appendChild(yearCard);
+        });
+      }
+
+      // Setup event listeners
+      function setupEventListeners() {
+        // Year card clicks
+        document.addEventListener('click', (e) => {
+          const yearCard = e.target.closest('.year-card');
+          if (yearCard) {
+            const year = yearCard.getAttribute('data-year');
+            showYearDetail(year);
+          }
+        });
+
+        // Activity CTA clicks
+        document.addEventListener('click', (e) => {
+          if (e.target.classList.contains('activity-cta')) {
+            e.preventDefault();
+            const activityCard = e.target.closest('.activity-card');
+            const month = activityCard.getAttribute('data-activity');
+            showGallery(currentYear, month);
+          }
+        });
+
+        // Back buttons
+        backToYearsBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          showYearsList();
+        });
+
+        backToDetailBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          showYearDetail(currentYear);
+        });
+
+        // Lightbox controls
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', showPrevImage);
+        lightboxNext.addEventListener('click', showNextImage);
+        
+        // Lightbox keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+              closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+              showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+              showNextImage();
+            }
+          }
+        });
+
+        // Lightbox click outside to close
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        const body = document.body;
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        mobileMenuBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+
+          // Change icon
+          const icon = mobileMenuBtn.querySelector('i');
+          if (nav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a:not(.dropdown > a)');
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            body.style.overflow = '';
+
+            // Reset icon
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          });
+        });
+
+        // Dropdown toggle for mobile
+        dropdowns.forEach((dropdown) => {
+          const link = dropdown.querySelector('a');
+
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              dropdown.classList.toggle('active');
+            }
+          });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or respect OS preference
+        if (
+          localStorage.getItem('theme') === 'dark' ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches &&
+            !localStorage.getItem('theme'))
+        ) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
         }
-      });
+
+        themeToggle.addEventListener('click', () => {
+          if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+          }
+        });
+
+        // Back to top functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        backToTopBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        });
+      }
+
+      // Show year detail
+      function showYearDetail(year) {
+        currentYear = year;
+        detailTitle.textContent = `Kegiatan Alumni ${year}`;
+        
+        // Generate activity cards
+        activitiesTimeline.innerHTML = '';
+        const activities = alumniData[year].activities;
+        
+        Object.keys(activities).forEach(month => {
+          const activity = activities[month];
+          const activityCard = document.createElement('div');
+          activityCard.className = 'activity-card';
+          activityCard.setAttribute('data-activity', month);
+          
+          activityCard.innerHTML = `
+            <div class="activity-image">
+              <img
+                src="${activity.thumbnail}"
+                alt="${activity.title}"
+                loading="lazy"
+              />
+            </div>
+            <div class="activity-content">
+              <h3>${activity.title}</h3>
+              <p>${activity.description}</p>
+              <a href="#" class="activity-cta" data-gallery="${month}">Lihat Foto</a>
+            </div>
+          `;
+          
+          activitiesTimeline.appendChild(activityCard);
+        });
+        
+        // Show detail section, hide years section
+        alumniTahunSection.style.display = 'none';
+        alumniDetailSection.style.display = 'block';
+        
+        // Scroll to top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        
+        // Trigger animations
+        setTimeout(() => {
+          const activityCards = document.querySelectorAll('.activity-card');
+          activityCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('visible');
+            }, index * 200);
+          });
+        }, 100);
+      }
+
+      // Show gallery for a specific month
+      function showGallery(year, month) {
+        currentMonth = month;
+        const activity = alumniData[year].activities[month];
+        galleryTitle.textContent = `Galeri ${activity.title}`;
+        
+        // Generate gallery items
+        galleryGrid.innerHTML = '';
+        activity.images.forEach((image, index) => {
+          const galleryItem = document.createElement('div');
+          galleryItem.className = 'gallery-item';
+          
+          galleryItem.innerHTML = `
+            <img
+              src="${image.src}"
+              alt="${image.caption}"
+              loading="lazy"
+            />
+            <div class="gallery-caption">${image.caption}</div>
+          `;
+          
+          galleryGrid.appendChild(galleryItem);
+          
+          // Add click event for lightbox
+          galleryItem.addEventListener('click', () => {
+            openLightbox(index, activity.images);
+          });
+        });
+        
+        // Show gallery section, hide detail section
+        alumniDetailSection.style.display = 'none';
+        alumniGaleriSection.style.display = 'block';
+        
+        // Scroll to top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // Show years list
+      function showYearsList() {
+        alumniDetailSection.style.display = 'none';
+        alumniGaleriSection.style.display = 'none';
+        alumniTahunSection.style.display = 'block';
+        
+        // Scroll to top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // Lightbox functions
+      function openLightbox(index, images) {
+        currentImageIndex = index;
+        lightboxImages = images.map(img => img.src);
+        lightboxCaptions = images.map(img => img.caption);
+        
+        lightboxImage.src = lightboxImages[currentImageIndex];
+        lightboxCaption.textContent = lightboxCaptions[currentImageIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+        lightboxImage.src = lightboxImages[currentImageIndex];
+        lightboxCaption.textContent = lightboxCaptions[currentImageIndex];
+      }
+
+      function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+        lightboxImage.src = lightboxImages[currentImageIndex];
+        lightboxCaption.textContent = lightboxCaptions[currentImageIndex];
+      }
 
       // Scroll animations
       function checkScroll() {
-        const sections = document.querySelectorAll("section");
-        const cards = document.querySelectorAll(".year-card, .activity-card");
-        const backToTop = document.querySelector(".back-to-top");
+        const sections = document.querySelectorAll('section');
+        const cards = document.querySelectorAll('.year-card, .activity-card');
+        const backToTop = document.querySelector('.back-to-top');
 
         sections.forEach((section) => {
           const sectionTop = section.getBoundingClientRect().top;
           const triggerHeight = window.innerHeight * 0.8;
 
           if (sectionTop < triggerHeight) {
-            section.classList.add("visible");
+            section.classList.add('visible');
           }
         });
 
@@ -1674,188 +1862,22 @@
           const triggerHeight = window.innerHeight * 0.8;
 
           if (cardTop < triggerHeight) {
-            card.classList.add("visible");
+            card.classList.add('visible');
           }
         });
 
         // Show/hide back to top button
         if (window.scrollY > 500) {
-          backToTop.classList.add("visible");
+          backToTop.classList.add('visible');
         } else {
-          backToTop.classList.remove("visible");
+          backToTop.classList.remove('visible');
         }
       }
 
-      window.addEventListener("scroll", checkScroll);
-      window.addEventListener("load", checkScroll);
-
-      // Back to top functionality
-      const backToTopBtn = document.querySelector(".back-to-top");
-
-      backToTopBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Alumni Page Functionality
-      const yearCards = document.querySelectorAll(".year-card");
-      const alumniTahunSection = document.getElementById("alumni-tahun");
-      const alumniDetailSection = document.getElementById("alumni-detail");
-      const alumniGaleriSection = document.getElementById("alumni-galeri");
-      const detailTitle = document.getElementById("detail-title");
-      const galleryTitle = document.getElementById("gallery-title");
-      const backToYearsBtn = document.getElementById("back-to-years");
-      const backToDetailBtn = document.getElementById("back-to-detail");
-      const activityCtas = document.querySelectorAll(".activity-cta");
-
-      // Show year detail when a year card is clicked
-      yearCards.forEach((card) => {
-        card.addEventListener("click", () => {
-          const year = card.getAttribute("data-year");
-          detailTitle.textContent = `Kegiatan Alumni ${year}`;
-
-          alumniTahunSection.style.display = "none";
-          alumniDetailSection.style.display = "block";
-
-          // Scroll to top of detail section
-          window.scrollTo({
-            top: alumniDetailSection.offsetTop - 100,
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Back to years list
-      backToYearsBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        alumniDetailSection.style.display = "none";
-        alumniTahunSection.style.display = "block";
-
-        // Scroll to top of years section
-        window.scrollTo({
-          top: alumniTahunSection.offsetTop - 100,
-          behavior: "smooth",
-        });
-      });
-
-      // Show gallery when activity CTA is clicked
-      activityCtas.forEach((cta) => {
-        cta.addEventListener("click", (e) => {
-          e.preventDefault();
-          const activity = cta.getAttribute("data-gallery");
-          galleryTitle.textContent = `Galeri ${
-            activity.charAt(0).toUpperCase() + activity.slice(1)
-          }`;
-
-          alumniDetailSection.style.display = "none";
-          alumniGaleriSection.style.display = "block";
-
-          // Scroll to top of gallery section
-          window.scrollTo({
-            top: alumniGaleriSection.offsetTop - 100,
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Back to detail from gallery
-      backToDetailBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        alumniGaleriSection.style.display = "none";
-        alumniDetailSection.style.display = "block";
-
-        // Scroll to top of detail section
-        window.scrollTo({
-          top: alumniDetailSection.offsetTop - 100,
-          behavior: "smooth",
-        });
-      });
-
-      // Lightbox functionality
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-      const lightboxCaption = document.getElementById("lightbox-caption");
-      const lightboxClose = document.getElementById("lightbox-close");
-      const lightboxPrev = document.getElementById("lightbox-prev");
-      const lightboxNext = document.getElementById("lightbox-next");
-      const galleryItems = document.querySelectorAll(".gallery-item");
-
-      let currentImageIndex = 0;
-      const images = [];
-      const captions = [];
-
-      // Prepare images and captions for lightbox
-      galleryItems.forEach((item, index) => {
-        const img = item.querySelector("img");
-        const caption = item.querySelector(".gallery-caption");
-
-        images.push(img.src);
-        captions.push(caption.textContent);
-
-        item.addEventListener("click", () => {
-          currentImageIndex = index;
-          openLightbox();
-        });
-      });
-
-      // Open lightbox with current image
-      function openLightbox() {
-        lightboxImage.src = images[currentImageIndex];
-        lightboxCaption.textContent = captions[currentImageIndex];
-        lightbox.classList.add("active");
-        body.style.overflow = "hidden";
-      }
-
-      // Close lightbox
-      lightboxClose.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-        body.style.overflow = "";
-      });
-
-      // Navigate to previous image
-      lightboxPrev.addEventListener("click", () => {
-        currentImageIndex =
-          (currentImageIndex - 1 + images.length) % images.length;
-        lightboxImage.src = images[currentImageIndex];
-        lightboxCaption.textContent = captions[currentImageIndex];
-      });
-
-      // Navigate to next image
-      lightboxNext.addEventListener("click", () => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        lightboxImage.src = images[currentImageIndex];
-        lightboxCaption.textContent = captions[currentImageIndex];
-      });
-
-      // Close lightbox when clicking outside the image
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove("active");
-          body.style.overflow = "";
-        }
-      });
-
-      // Keyboard navigation for lightbox
-      document.addEventListener("keydown", (e) => {
-        if (lightbox.classList.contains("active")) {
-          if (e.key === "Escape") {
-            lightbox.classList.remove("active");
-            body.style.overflow = "";
-          } else if (e.key === "ArrowLeft") {
-            currentImageIndex =
-              (currentImageIndex - 1 + images.length) % images.length;
-            lightboxImage.src = images[currentImageIndex];
-            lightboxCaption.textContent = captions[currentImageIndex];
-          } else if (e.key === "ArrowRight") {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            lightboxImage.src = images[currentImageIndex];
-            lightboxCaption.textContent = captions[currentImageIndex];
-          }
-        }
-      });
+      // Initialize when DOM is loaded
+      document.addEventListener('DOMContentLoaded', init);
+      window.addEventListener('scroll', checkScroll);
+      window.addEventListener('load', checkScroll);
     </script>
-  </body>
+</body>
 </html>
