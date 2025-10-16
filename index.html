@@ -887,140 +887,307 @@
       }
 
       /* Program Section dengan Tabs */
-      .programs-section {
-        background-color: var(--blue-light);
-      }
+      /* Perbaikan untuk Programs Section */
+.programs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-      .program-tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
+.program-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-      .program-tab {
-        padding: 12px 25px;
-        background: var(--card-bg);
-        border: none;
-        border-radius: 30px;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-      }
+.program-image {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
 
-      .program-tab.active {
-        background: var(--blue-medium);
-        color: var(--text-light);
-      }
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
-      .program-tab:hover:not(.active) {
-        background: rgba(74, 144, 226, 0.1);
-      }
+.program-card:hover .program-image img {
+  transform: scale(1.1);
+}
 
-      .programs-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
+.program-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--blue-medium);
+  color: var(--text-light);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  z-index: 2;
+}
 
-      .program-card {
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
+.program-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-      .program-card.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+.program-content h3 {
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.3;
+}
 
-      .program-image {
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-      }
+.program-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #777;
+  font-family: "Open Sans", sans-serif;
+  flex-wrap: wrap;
+}
 
-      .program-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
+.program-price {
+  color: var(--blue-medium);
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+}
 
-      .program-card:hover .program-image img {
-        transform: scale(1.1);
-      }
+.program-benefits {
+  margin: 15px 0;
+  padding-left: 20px;
+  font-family: "Open Sans", sans-serif;
+  flex-grow: 1;
+}
 
-      .program-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: var(--blue-medium);
-        color: var(--text-light);
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        font-family: "Poppins", sans-serif;
-      }
+.program-benefits li {
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
 
-      .program-content {
-        padding: 25px;
-      }
+.program-benefits li::before {
+  content: "✓";
+  color: var(--blue-medium);
+  font-weight: bold;
+  position: absolute;
+  left: -20px;
+}
 
-      .program-content h3 {
-        color: var(--blue-dark);
-        margin-bottom: 12px;
-        font-size: 1.3rem;
-        font-family: "Poppins", sans-serif;
-      }
+.program-cta {
+  margin-top: auto;
+  padding-top: 15px;
+}
 
-      .program-meta {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-        color: #777;
-        font-family: "Open Sans", sans-serif;
-      }
+.program-cta .btn {
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+}
 
-      .program-price {
-        color: var(--blue-medium);
-        font-weight: 700;
-        font-size: 1.3rem;
-        font-family: "Poppins", sans-serif;
-      }
+/* Responsive adjustments untuk Programs Section */
+@media (max-width: 992px) {
+  .programs-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .program-image {
+    height: 150px;
+  }
+  
+  .program-content {
+    padding: 15px;
+  }
+  
+  .program-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .program-meta {
+    margin-bottom: 10px;
+  }
+  
+  .program-price {
+    font-size: 1.1rem;
+  }
+  
+  .program-benefits li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  
+  .program-cta .btn {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+}
 
-      .program-benefits {
-        margin: 15px 0;
-        padding-left: 20px;
-        font-family: "Open Sans", sans-serif;
-      }
+@media (max-width: 768px) {
+  .programs-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .program-image {
+    height: 130px;
+  }
+  
+  .program-content {
+    padding: 12px;
+  }
+  
+  .program-content h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .program-meta {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .program-price {
+    font-size: 1rem;
+  }
+  
+  .program-benefits {
+    margin: 10px 0;
+    padding-left: 18px;
+  }
+  
+  .program-benefits li {
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+  }
+  
+  .program-cta {
+    padding-top: 10px;
+  }
+  
+  .program-cta .btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .program-badge {
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+}
 
-      .program-benefits li {
-        margin-bottom: 8px;
-        position: relative;
-      }
+@media (max-width: 576px) {
+  .programs-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .program-image {
+    height: 110px;
+  }
+  
+  .program-content {
+    padding: 10px;
+  }
+  
+  .program-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .program-meta {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .program-price {
+    font-size: 0.9rem;
+  }
+  
+  .program-benefits {
+    margin: 8px 0;
+    padding-left: 15px;
+  }
+  
+  .program-benefits li {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+  
+  .program-cta .btn {
+    padding: 7px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .program-badge {
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+}
 
-      .program-benefits li::before {
-        content: "✓";
-        color: var(--blue-medium);
-        font-weight: bold;
-        position: absolute;
-        left: -20px;
-      }
-
-      .program-cta {
-        margin-top: 20px;
-      }
+@media (max-width: 400px) {
+  .programs-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .program-image {
+    height: 90px;
+  }
+  
+  .program-content {
+    padding: 8px;
+  }
+  
+  .program-content h3 {
+    font-size: 0.8rem;
+  }
+  
+  .program-meta {
+    font-size: 0.7rem;
+  }
+  
+  .program-price {
+    font-size: 0.8rem;
+  }
+  
+  .program-benefits {
+    padding-left: 12px;
+  }
+  
+  .program-benefits li {
+    font-size: 0.65rem;
+  }
+  
+  .program-cta .btn {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+}
 
       /* Enhanced Instruktur Section with mobile 3-column grid and hover effects */
       .instructors-container {
@@ -1906,7 +2073,6 @@
           font-size: 2.8rem;
         }
 
-        .programs-container,
         .alumni-container,
         .news-container,
         .collaboration-container,
@@ -2154,7 +2320,6 @@
           font-size: 2.5rem;
         }
 
-        .programs-container,
         .alumni-container,
         .news-container,
         .collaboration-container,
@@ -2654,10 +2819,10 @@
               </ul>
               <div class="program-cta">
                 <a
-                  href="#contact"
+                  href="./menu/programs/private.html"
                   class="btn"
                   style="width: 100%; text-align: center"
-                  >Daftar Sekarang</a
+                  >Selengkapnya</a
                 >
               </div>
             </div>
