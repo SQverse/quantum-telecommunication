@@ -2283,6 +2283,203 @@
         }
       }
 
+      /* ===== STYLING UNTUK HORIZONTAL SCROLL LAYOUT DI MOBILE ===== */
+@media (max-width: 768px) {
+  /* Container untuk horizontal scroll */
+  .alumni-container,
+  .news-container,
+  .collaboration-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0 30px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-overflow-scrolling: touch; /* Untuk scroll halus di iOS */
+  }
+
+  /* Sembunyikan scrollbar */
+  .alumni-container::-webkit-scrollbar,
+  .news-container::-webkit-scrollbar,
+  .collaboration-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .alumni-container,
+  .news-container,
+  .collaboration-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Style untuk setiap card */
+  .alumni-card,
+  .news-card,
+  .collaboration-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: auto;
+    min-height: 400px;
+    margin-bottom: 0;
+  }
+
+  /* Atur tinggi gambar di mobile */
+  .alumni-image,
+  .news-image,
+  .collaboration-image {
+    height: 160px;
+  }
+
+  /* Batasi teks testimoni, excerpt berita, dan deskripsi kerjasama */
+  .alumni-testimonial,
+  .news-excerpt,
+  .collaboration-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Style untuk indikator scroll */
+  .scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: var(--blue-medium);
+    margin-bottom: 15px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .scroll-hint::after {
+    content: "👉";
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(5px);
+    }
+    60% {
+      transform: translateX(3px);
+    }
+  }
+}
+
+/* ===== STYLING UNTUK HORIZONTAL SCROLL LAYOUT DI TESTIMONIALS SECTION ===== */
+@media (max-width: 768px) {
+  /* Container untuk horizontal scroll di testimonials */
+  .testimonials-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0 30px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Sembunyikan scrollbar */
+  .testimonials-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Style untuk setiap testimonial card */
+  .testimonial-video {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: auto;
+    min-height: 450px;
+    margin-bottom: 0;
+  }
+
+  /* Atur tinggi video container di mobile */
+  .testimonial-video .video-container {
+    padding-bottom: 56.25%; /* Tetap pertahankan aspect ratio 16:9 */
+    height: 0;
+  }
+
+  /* Batasi teks testimonial */
+  .testimonial-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Sesuaikan padding content testimonial */
+  .testimonial-content {
+    padding: 15px;
+  }
+
+  .testimonial-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-rating {
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk layar yang sangat kecil */
+@media (max-width: 480px) {
+  .testimonial-video {
+    flex: 0 0 90%;
+    min-height: 420px;
+  }
+
+  .testimonial-content {
+    padding: 12px;
+  }
+
+  .testimonial-content h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk layar yang sangat kecil */
+@media (max-width: 480px) {
+  .alumni-card,
+  .news-card,
+  .collaboration-card {
+    flex: 0 0 90%;
+  }
+  
+  .alumni-image,
+  .news-image,
+  .collaboration-image {
+    height: 140px;
+  }
+}
+
       @media (max-width: 576px) {
         .hero {
           min-height: 450px;
