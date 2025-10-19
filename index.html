@@ -1150,11 +1150,6 @@
 }
 
 @media (max-width: 400px) {
-  .programs-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-  
   .program-image {
     height: 90px;
   }
@@ -1906,7 +1901,7 @@
 
       /* Enhanced map container with larger size */
       .map-container {
-        object-fit: cover;
+        position: relative;
         width: 100%;
         padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
         overflow: hidden;
@@ -2280,6 +2275,10 @@
           border-radius: 20px;
           max-width: 100%;
           margin: 0 auto;
+        }
+
+        .map-container iframe {
+          object-fit: cover;
         }
       }
 
