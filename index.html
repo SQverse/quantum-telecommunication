@@ -1743,7 +1743,6 @@
       }
 
       .partner-item:hover img {
-        filter: grayscale(0%);
         opacity: 1;
       }
 
@@ -3572,7 +3571,7 @@
                 LPK Quantum Bekerjasama dengan BAMUIS.
               </p>
               <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2024
+                <i class="far fa-calendar-alt"></i> 2023
               </p>
             </div>
           </div>
@@ -3761,7 +3760,7 @@
             </div>
             <div class="partner-item">
               <img
-                src="assets/photos/mitra/mitra5.png"
+                src="assets/photos/mitra/mitra7.png"
                 alt="Mitra 5"
                 loading="lazy"
               />
@@ -3775,7 +3774,7 @@
             </div>
             <div class="partner-item">
               <img
-                src="assets/photos/mitra/mitra7.png"
+                src="assets/photos/mitra/mitra5.png"
                 alt="Mitra 7"
                 loading="lazy"
               />
@@ -3840,7 +3839,7 @@
             </div>
             <div class="partner-item">
               <img
-                src="assets/photos/mitra/mitra5.png"
+                src="assets/photos/mitra/mitra7.png"
                 alt="Mitra 5"
                 loading="lazy"
               />
@@ -3854,7 +3853,7 @@
             </div>
             <div class="partner-item">
               <img
-                src="assets/photos/mitra/mitra7.png"
+                src="assets/photos/mitra/mitra5.png12"
                 alt="Mitra 7"
                 loading="lazy"
               />
@@ -4211,66 +4210,6 @@
       window.addEventListener("scroll", checkScroll);
       window.addEventListener("load", checkScroll);
 
-      // Form validation
-      const contactForm = document.getElementById("contactForm");
-      if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Simple validation
-          const name = document.getElementById("name");
-          const email = document.getElementById("email");
-          const phone = document.getElementById("phone");
-          const program = document.getElementById("program");
-          const message = document.getElementById("message");
-
-          let isValid = true;
-
-          if (name.value.trim() === "") {
-            isValid = false;
-            highlightError(name);
-          } else {
-            removeHighlight(name);
-          }
-
-          if (email.value.trim() === "" || !isValidEmail(email.value)) {
-            isValid = false;
-            highlightError(email);
-          } else {
-            removeHighlight(email);
-          }
-
-          if (phone.value.trim() === "") {
-            isValid = false;
-            highlightError(phone);
-          } else {
-            removeHighlight(phone);
-          }
-
-          if (program.value === "") {
-            isValid = false;
-            highlightError(program);
-          } else {
-            removeHighlight(program);
-          }
-
-          if (message.value.trim() === "") {
-            isValid = false;
-            highlightError(message);
-          } else {
-            removeHighlight(message);
-          }
-
-          if (isValid) {
-            // Here you would normally submit the form
-            alert(
-              "Terima kasih! Pendaftaran Anda telah berhasil dikirim. Kami akan menghubungi Anda segera."
-            );
-            contactForm.reset();
-          }
-        });
-      }
-
       function highlightError(field) {
         field.style.borderColor = "#ff3860";
       }
@@ -4279,10 +4218,6 @@
         field.style.borderColor = "#ddd";
       }
 
-      function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
     </script>
   </body>
 </html>
