@@ -864,43 +864,42 @@
       }
 
       @media (max-width: 768px) {
-    
-    /* Perbaikan untuk konten footer */
-    .footer-contact p {
-      word-break: break-word;
-      hyphens: auto;
-    }
-    
-    /* Memastikan grid footer tidak menyebabkan overflow */
-    .footer-content {
-      gap: 25px;
-    }
-  }
+        /* Perbaikan untuk konten footer */
+        .footer-contact p {
+          word-break: break-word;
+          hyphens: auto;
+        }
 
-  @media (max-width: 400px) {
-    /* Penyesuaian tambahan untuk layar sangat kecil */
-    .footer-content {
-      gap: 20px;
-    }
-    
-    .footer-contact p {
-      font-size: 0.9rem;
-    }
-    
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
-    
-    /* Memastikan iframe peta tidak melebihi viewport */
-    .map-container iframe {
-      max-width: 100%;
-    }
-  }
+        /* Memastikan grid footer tidak menyebabkan overflow */
+        .footer-content {
+          gap: 25px;
+        }
+      }
 
-  /* Memastikan footer tidak melebihi viewport */
-  footer .container {
-    overflow: hidden;
-  }
+      @media (max-width: 400px) {
+        /* Penyesuaian tambahan untuk layar sangat kecil */
+        .footer-content {
+          gap: 20px;
+        }
+
+        .footer-contact p {
+          font-size: 0.9rem;
+        }
+
+        .footer-links ul li {
+          margin-bottom: 8px;
+        }
+
+        /* Memastikan iframe peta tidak melebihi viewport */
+        .map-container iframe {
+          max-width: 100%;
+        }
+      }
+
+      /* Memastikan footer tidak melebihi viewport */
+      footer .container {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
@@ -915,11 +914,18 @@
         </div>
         <nav>
           <ul>
-            <li><a href="../../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li>
+              <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="../about.html"
+                ><i class="fas fa-info-circle"></i> Tentang Kami</a
+              >
+            </li>
             <li class="dropdown">
               <a href="index.html#programs"
-                ><i class="fas fa-graduation-cap"></i> Program <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-graduation-cap"></i> Program
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="../programs/offline.html">Kelas Offline</a>
@@ -929,7 +935,8 @@
             </li>
             <li class="dropdown">
               <a href="/index.html#collaboration"
-                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="pemerintah.html">Pemerintah</a>
@@ -937,8 +944,12 @@
                 <a href="internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+            <li>
+              <a href="../alumni.html"><i class="fas fa-users"></i> Alumni</a>
+            </li>
+            <li>
+              <a href="../news.html"><i class="fas fa-newspaper"></i> Berita</a>
+            </li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -1127,7 +1138,7 @@
               Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
             </p>
             <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
-            <p><i class="fab fa-whatsapp"></i> +62 8217 1727 337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 821 7172 7337</p>
             <p>
               <i class="fas fa-envelope"></i>
               quantumtelecommunication38@gmail.com
