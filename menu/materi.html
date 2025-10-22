@@ -26,7 +26,14 @@
         --blue-medium: #4a90e2;
         --blue-dark: #1a3c6e;
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-        --text-dark: #333;
+        
+        /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        
+        --text-dark: #222;
         --text-light: #fff;
         --bg-light: #f9fbff;
         --card-bg: #ffffff;
@@ -35,20 +42,18 @@
 
         /* Transisi */
         --transition: all 0.3s ease;
+        --transition-slow: all 0.5s ease;
       }
 
-      /* Dark Mode Variabel */
+      /* Skema warna dark mode */
       [data-theme="dark"] {
-        --blue-light: #1a3c6e;
-        --blue-medium: #3a7bd5;
-        --blue-dark: #e6f0ff;
-        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
         --text-dark: #f0f0f0;
-        --text-light: #e6e6e6;
+        --text-light: #f0f0f0;
         --bg-light: #121212;
         --card-bg: #1e1e1e;
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --blue-light: #2a4365;
       }
 
       /* Reset & Base Styles */
@@ -284,7 +289,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--blue-gradient);
+        background: var(--accent-gradient);
         border-radius: 2px;
       }
 
@@ -381,8 +386,46 @@
       }
 
       .cta-section .section-title h2::after {
-        background: var(--text-light);
+        background: var(--accent-gradient);
       }
+
+      /* Menambahkan style untuk tombol CTA baru */
+      .btn-cta {
+        display: inline-block;
+        background-color: var(--accent-orange);
+        color: var(--text-light);
+        padding: 16px 50px;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .btn-cta:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-hover);
+        background: var(--accent-gradient);
+        color: var(--text-light);
+      }
+
+      /* Responsif untuk tombol CTA */
+      @media (max-width: 768px) {
+        .btn-cta {
+          padding: 14px 40px;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .btn-cta {
+          padding: 14px 30px;
+          width: 90%;
+          max-width: 280px;
+        }
+      } 
 
       /* Footer */
       footer {
@@ -457,7 +500,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--blue-medium);
+        background: var(--accent-gradient);
       }
 
       .footer-links ul {
@@ -493,16 +536,22 @@
       }
 
       .map-container {
-        height: 200px;
-        border-radius: 8px;
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
         overflow: hidden;
-        margin-top: 15px;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
       }
 
       .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        border: none;
+        border: 0;
       }
 
       .newsletter-form {
@@ -751,11 +800,16 @@
 
       @media (max-width: 768px) {
     /* Perbaikan untuk map container di footer */
-    .map-container {
-      margin: 0 -20px; /* Menyesuaikan dengan padding container */
-      width: calc(100% + 40px);
-      border-radius: 0; /* Menghilangkan border radius untuk tampilan penuh */
-    }
+     .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+
+        .map-container iframe {
+          object-fit: cover;
+        }
     
     /* Perbaikan untuk konten footer */
     .footer-contact p {
@@ -1091,7 +1145,7 @@
         </p>
         <a
           href="https://api.whatsapp.com/send/?phone=6282171727337&text=Halo,%20saya%20ingin%20mendaftar%20pelatihan%20LPK%20Quantum&type=phone_number&app_absent=0"
-          class="btn btn-daftar"
+          class="btn-cta"
           style="margin-top: 30px"
           target="_blank"
           >Daftar Sekarang</a
