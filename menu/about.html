@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang Kami - LPK Quantum Telecommunication</title>
@@ -1126,11 +1126,51 @@
           max-width: 100%;
           margin: 0 auto;
         }
+
+        /* PERBAIKAN UTAMA: Layout horizontal scroll untuk vm-container dan features-grid di mobile */
+        .vm-container, .features-grid {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 20px;
+          padding: 10px 0 20px;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none; /* Firefox */
+        }
+
+        .vm-container::-webkit-scrollbar, .features-grid::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+
+        .vm-card, .feature-card {
+          flex: 0 0 280px;
+          scroll-snap-align: start;
+          margin: 0;
+        }
+
+        /* Perbaikan untuk gallery di mobile */
+        .gallery-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .gallery-item {
+          height: 200px;
+        }
+
+        /* Padding tambahan untuk konten agar tidak mepet ke tepi */
+        section {
+          padding: 60px 0;
+        }
+
+        .container {
+          padding: 0 15px;
+        }
       }
 
       @media (max-width: 576px) {
         .gallery-container {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
         }
         .map-container {
           position: relative;
@@ -1171,7 +1211,7 @@
 
       @media (max-width: 480px) {
         .gallery-container {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .logo h1 {
@@ -1191,11 +1231,13 @@
           font-size: 1rem;
         }
 
-        .vm-container,
-        .features-grid,
-        .instructors-container,
-        .gallery-container {
-          grid-template-columns: 1fr;
+        .vm-container, .features-grid {
+          /* Untuk layar sangat kecil, ukuran card sedikit lebih kecil */
+          gap: 15px;
+        }
+
+        .vm-card, .feature-card {
+          flex: 0 0 260px;
         }
 
         .footer-content {
@@ -1591,7 +1633,7 @@
 
           <div class="instructor-card">
             <div class="instructor-image">
-              <img src="../assets/photos/instruktur/habib1.jpeg" alt="M. Habib
+              <img src="../assets/photos/instruktur/habib-test.jpeg" alt="M. Habib
               Kurniawansya loading="lazy" />
             </div>
             <div class="instructor-info">
@@ -1611,7 +1653,7 @@
           <div class="instructor-card">
             <div class="instructor-image">
               <img
-                src="../assets/photos/instruktur/caca1.jpeg"
+                src="../assets/photos/instruktur/caca-test.jpeg"
                 alt="Salsabila Athira H"
                 loading="lazy"
               />
@@ -1656,7 +1698,7 @@
           <div class="instructor-card">
             <div class="instructor-image">
               <img
-                src="../assets/photos/instruktur/junaidi1.jpeg"
+                src="../assets/photos/instruktur/junaidi-test.jpeg"
                 alt="Ahmad Rohman Juniedi"
                 loading="lazy"
               />
@@ -1678,7 +1720,7 @@
           <div class="instructor-card">
             <div class="instructor-image">
               <img
-                src="../assets/photos/instruktur/cahyo1.jpeg"
+                src="../assets/photos/instruktur/cahyo-test.jpeg"
                 alt="Arif Cahyo Nugroho"
                 loading="lazy"
               />
@@ -1744,7 +1786,7 @@
           <div class="instructor-card">
             <div class="instructor-image">
               <img
-                src="../assets/photos/instruktur/ryan-dhika1.jpeg"
+                src="../assets/photos/instruktur/ryan-dhika-test.jpeg"
                 alt="Ryan Dhika"
                 loading="lazy"
               />
