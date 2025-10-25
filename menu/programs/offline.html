@@ -494,7 +494,7 @@
         color: #666;
       }
 
-      /* PERMASALAHAN PEMULA SECTION - DIPERBAIKI */
+      /* PERMASALAHAN PEMULA SECTION - DIPERBAIKI DENGAN SCROLL HORIZONTAL DI MOBILE */
       .problems-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -510,6 +510,10 @@
         transition: var(--transition);
         position: relative;
         overflow: hidden;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .problem-card::before {
@@ -773,7 +777,7 @@
         left: 0;
       }
 
-      /* BENEFIT TABS - DIPERBAIKI */
+      /* BENEFIT TABS - DIPERBAIKI DENGAN SCROLL HORIZONTAL DI MOBILE */
       .benefit-tabs {
         max-width: 1000px;
         margin: 40px auto 0;
@@ -826,6 +830,10 @@
         transition: var(--transition);
         position: relative;
         overflow: hidden;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .benefit-card::before {
@@ -871,7 +879,6 @@
       }
 
       /* Galeri Dokumentasi */
-
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -1433,7 +1440,70 @@
         }
       }
 
+      /* MOBILE STYLES - OPTIMISASI UNTUK LAYAR KECIL */
       @media (max-width: 768px) {
+        /* PERMASALAHAN SECTION - SCROLL HORIZONTAL */
+        .problems-grid {
+          display: flex;
+          overflow-x: auto;
+          padding-bottom: 20px;
+          gap: 20px;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          grid-template-columns: none;
+        }
+
+        .problems-grid::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .problems-grid::-webkit-scrollbar-track {
+          background: var(--blue-light);
+          border-radius: 10px;
+        }
+
+        .problems-grid::-webkit-scrollbar-thumb {
+          background: var(--blue-medium);
+          border-radius: 10px;
+        }
+
+        .problem-card {
+          min-width: 280px;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+        }
+
+        /* BENEFITS SECTION - SCROLL HORIZONTAL */
+        .benefit-grid {
+          display: flex;
+          overflow-x: auto;
+          padding-bottom: 20px;
+          gap: 20px;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          grid-template-columns: none;
+        }
+
+        .benefit-grid::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .benefit-grid::-webkit-scrollbar-track {
+          background: var(--blue-light);
+          border-radius: 10px;
+        }
+
+        .benefit-grid::-webkit-scrollbar-thumb {
+          background: var(--blue-medium);
+          border-radius: 10px;
+        }
+
+        .benefit-card {
+          min-width: 280px;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+        }
+
         /* MOBILE MENU */
         .mobile-menu-btn {
           display: block;
