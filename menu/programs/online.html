@@ -566,7 +566,7 @@
         color: #666;
       }
 
-      /* Permasalahan Pemula Section */
+      /* Permasalahan Pemula Section - SCROLL HORIZONTAL DI MOBILE */
       .problems-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -845,7 +845,7 @@
         left: 0;
       }
 
-      /* Benefit Tabs */
+      /* Benefit Tabs - SCROLL HORIZONTAL DI MOBILE */
       .benefit-tabs {
         max-width: 1000px;
         margin: 40px auto 0;
@@ -1386,6 +1386,7 @@
       }
 
       @media (max-width: 768px) {
+        /* Mobile Menu */
         .mobile-menu-btn {
           display: block;
         }
@@ -1448,8 +1449,10 @@
           z-index: 1000;
         }
 
+        /* Hero Section */
         .hero {
           padding: 100px 0 80px;
+          min-height: 600px;
         }
 
         .hero-title {
@@ -1479,18 +1482,89 @@
         .hero-buttons {
           flex-direction: column;
           align-items: center;
+          gap: 10px;
         }
 
         .btn {
           width: 100%;
           max-width: 250px;
           margin-bottom: 10px;
+          text-align: center;
         }
 
         .btn-cta {
           border-radius: 50px;
-          height: 70px;
+          height: auto;
           max-width: 100%;
+        }
+
+        /* Section Padding */
+        section {
+          padding: 70px 0;
+        }
+
+        /* Problems Section - Horizontal Scroll */
+        .problems-grid {
+          display: flex;
+          overflow-x: auto;
+          gap: 20px;
+          padding: 20px 10px 30px;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none; /* Firefox */
+        }
+
+        .problems-grid::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+
+        .problem-card {
+          min-width: 280px;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+        }
+
+        /* Benefits Section - Horizontal Scroll */
+        .benefit-grid {
+          display: flex;
+          overflow-x: auto;
+          gap: 20px;
+          padding: 20px 10px 30px;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none; /* Firefox */
+        }
+
+        .benefit-grid::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+
+        .benefit-card {
+          min-width: 280px;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+        }
+
+        /* Price Section */
+        .price-section {
+          padding: 60px 20px;
+          margin: 60px 0;
+        }
+
+        .price-tag {
+          font-size: 2.5rem;
+        }
+
+        /* Tabs */
+        .tabs-header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .tab-btn {
+          width: 100%;
+          max-width: 250px;
+          margin-bottom: 10px;
         }
       }
 
@@ -1516,30 +1590,15 @@
           font-size: 1rem;
         }
 
-        .problems-grid,
         .solution-cards,
-        .about-stats,
-        .benefit-grid {
+        .about-stats {
           grid-template-columns: 1fr;
         }
 
         .price-tag {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
-        .tabs-header {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .tab-btn {
-          width: 100%;
-          max-width: 250px;
-          margin-bottom: 10px;
-        }
-      }
-
-      @media (max-width: 768px) {
         /* Perbaikan untuk konten footer */
         .footer-contact p {
           word-break: break-word;
