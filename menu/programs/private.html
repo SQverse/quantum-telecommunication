@@ -75,33 +75,6 @@
         transition: width 0.3s ease;
       }
 
-      /* Shape Dividers */
-      .shape-divider {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-        z-index: 1;
-      }
-
-      .shape-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 60px;
-      }
-
-      .shape-divider .shape-fill {
-        fill: var(--bg-light);
-      }
-
-      .section-with-divider {
-        position: relative;
-      }
-
       /* Reset & Base Styles */
       * {
         margin: 0;
@@ -397,7 +370,7 @@
       }
 
       .hero-title {
-        font-size: 1rem; /* Diperkecil */
+        font-size: 1rem;
         font-weight: 700;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease;
@@ -407,7 +380,7 @@
       }
 
       .hero-subtitle {
-        font-size: 3.2rem; /* Diperbesar */
+        font-size: 3.2rem;
         font-weight: 800;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease 0.2s forwards;
@@ -418,7 +391,7 @@
       }
 
       .hero-tagline {
-        font-size: 1.5rem; /* Diperbesar */
+        font-size: 1.5rem;
         font-weight: 500;
         margin-bottom: 30px;
         animation: fadeInDown 1s ease 0.4s forwards;
@@ -1228,7 +1201,7 @@
       .map-container {
         position: relative;
         width: 100%;
-        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        padding-bottom: 45%;
         overflow: hidden;
         border-radius: 50px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -1788,23 +1761,10 @@
           <a href="#materi" class="btn btn-outline">Lihat Kurikulum</a>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Permasalahan Pemula Section -->
-    <section id="problems" class="bg-white section-with-divider">
+    <section id="problems" class="bg-white">
       <div class="container">
         <div class="section-title">
           <h2>
@@ -1898,23 +1858,10 @@
           </div>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Solusi Section -->
-    <section id="solutions" class="bg-blue-light section-with-divider">
+    <section id="solutions" class="bg-blue-light">
       <div class="container">
         <div class="section-title">
           <h2>
@@ -1943,23 +1890,10 @@
           </div>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Tentang LPK Quantum Section -->
-    <section id="about-lpk" class="bg-white section-with-divider">
+    <section id="about-lpk" class="bg-white">
       <div class="container">
         <div class="section-title">
           <h2>Siapakah LPK Quantum Telecommunication</h2>
@@ -1987,23 +1921,10 @@
           </div>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Carousel Pelatihan Section -->
-    <section id="training-carousel" class="bg-blue-light section-with-divider">
+    <section id="training-carousel" class="bg-blue-light">
       <div class="container">
         <div class="section-title">
           <h2>Seperti Apa Pelatihan Ini?</h2>
@@ -2081,23 +2002,10 @@
           </div>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Cocok untuk Pemula Section -->
-    <section id="for-beginners" class="bg-white section-with-divider">
+    <section id="for-beginners" class="bg-white">
       <div class="container">
         <div class="section-title">
           <h2>
@@ -2118,23 +2026,10 @@
           dari dasar hingga mahir.
         </p>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Materi Pelatihan Section -->
-    <section id="materi" class="bg-blue-light section-with-divider">
+    <section id="materi" class="bg-blue-light">
       <div class="container">
         <div class="section-title">
           <h2>Materi yang akan dipelajari</h2>
@@ -2239,23 +2134,10 @@
           </div>
         </div>
       </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
 
     <!-- Menang Banyak Gratis Section -->
-    <section id="benefits" class="bg-white section-with-divider">
+    <section id="benefits" class="bg-white">
       <div class="container">
         <div class="section-title">
           <h2>Menang Banyak Gratisnya</h2>
@@ -2370,19 +2252,6 @@
             >Daftar Sekarang</a
           >
         </div>
-      </div>
-      <div class="shape-divider">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
       </div>
     </section>
 
