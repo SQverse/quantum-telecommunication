@@ -1477,25 +1477,96 @@
       }
 
       /* Problems Section - Horizontal Scroll */
-      .problems-grid {
-        display: flex;
-        overflow-x: auto;
-        gap: 20px;
-        padding: 20px 10px 30px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
+      /* MOBILE STYLES - OPTIMISASI UNTUK LAYAR KECIL */
+@media (max-width: 768px) {
+  /* PERMASALAHAN SECTION - SCROLL HORIZONTAL YANG DIPERBAIKI */
+  .problems-grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    gap: 15px; /* Mengurangi gap agar lebih compact */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: none;
+    margin: 0 -10px; /* Memberikan sedikit margin negatif untuk estetika */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-      .problems-grid::-webkit-scrollbar {
-        display: none;
-      }
+  .problems-grid::-webkit-scrollbar {
+    height: 4px; /* Scrollbar lebih tipis */
+  }
 
-      .problem-card {
-        min-width: 280px;
-        scroll-snap-align: start;
-        flex-shrink: 0;
-      }
+  .problems-grid::-webkit-scrollbar-track {
+    background: var(--blue-light);
+    border-radius: 10px;
+  }
+
+  .problems-grid::-webkit-scrollbar-thumb {
+    background: var(--blue-medium);
+    border-radius: 10px;
+  }
+
+  .problem-card {
+    min-width: 200px; /* Ukuran lebih compact */
+    max-width: 200px; /* Membatasi ukuran maksimum */
+    padding: 20px 15px; /* Padding lebih kecil */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    min-height: 220px; /* Tinggi lebih rendah */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Konten rata atas */
+    transition: var(--transition);
+    border-radius: 10px; /* Border radius sedikit dikurangi */
+  }
+
+  .problem-image {
+    width: 60px; /* Ukuran icon lebih kecil */
+    height: 60px;
+    margin: 0 auto 15px;
+  }
+
+  .problem-image i {
+    font-size: 1.8rem !important; /* Ukuran icon lebih kecil */
+  }
+
+  .problem-card h3 {
+    font-size: 0.95rem; /* Font size lebih kecil */
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* Efek hover yang lebih halus untuk mobile */
+  .problem-card:hover {
+    transform: translateY(-5px); /* Efek angkat lebih kecil */
+  }
+}
+
+/* Untuk layar sangat kecil (≤ 480px) */
+@media (max-width: 480px) {
+  .problem-card {
+    min-width: 180px; /* Sedikit lebih kecil di layar sangat kecil */
+    max-width:  180px;
+    padding: 18px 12px;
+    min-height: 200px;
+  }
+
+  .problem-image {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 12px;
+  }
+
+  .problem-image i {
+    font-size: 1.6rem !important;
+  }
+
+  .problem-card h3 {
+    font-size: 0.9rem;
+  }
+}   
 
       /* Benefits Section - Horizontal Scroll */
       .benefit-grid {
