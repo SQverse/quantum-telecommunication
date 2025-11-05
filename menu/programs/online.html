@@ -264,9 +264,87 @@
     .program-hero p {
       font-size: 1.2rem;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0 auto 30px;
       animation: fadeInUp 1s ease 0.3s forwards;
       opacity: 0;
+    }
+
+    /* Hero Buttons - Ditambahkan sesuai halaman sebelumnya */
+    .hero-buttons {
+      animation: fadeIn 1s ease 0.6s forwards;
+      opacity: 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--text-light);
+      color: var(--blue-medium);
+      padding: 16px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+
+    .btn-cta {
+      background: var(--accent-gradient);
+      color: var(--text-light);
+    }
+
+    .btn-cta:hover {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+
+    .btn-outline:hover {
+      background: var(--text-light);
+      color: var(--blue-medium);
     }
 
     /* Section Styles */
@@ -890,41 +968,6 @@
       flex-wrap: wrap;
     }
 
-    .btn {
-      display: inline-block;
-      background-color: var(--accent-orange);
-      color: var(--text-light);
-      padding: 16px 40px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-      border: 2px solid transparent;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      background: transparent;
-      color: var(--text-light);
-      border-color: var(--text-light);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-light);
-      border-color: var(--text-light);
-    }
-
-    .btn-outline:hover {
-      background: var(--text-light);
-      color: var(--blue-medium);
-    }
-
     /* Footer */
     footer {
       background: var(--blue-dark);
@@ -1247,6 +1290,19 @@
         margin-left: 15px;
       }
 
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
       .cta-buttons {
         flex-direction: column;
         align-items: center;
@@ -1501,6 +1557,11 @@
         dipahami dan diaplikasikan bahkan oleh orang yang tidak pernah belajar
         elektronika sekalipun
       </p>
+      <!-- Tombol Hero Section - Ditambahkan sesuai halaman sebelumnya -->
+      <div class="hero-buttons">
+        <a href="https://wa.me/6282171727337" class="btn btn-cta">Daftar Sekarang</a>
+        <a href="../materi.html" class="btn btn-outline">Lihat Materi</a>
+      </div>
     </div>
   </section>
 
