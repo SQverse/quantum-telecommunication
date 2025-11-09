@@ -850,52 +850,88 @@
 
       /* Lightbox Modal */
       .lightbox-modal {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        padding-top: 50px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.9);
-      }
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-      .lightbox-content {
-        position: relative;
-        margin: auto;
-        padding: 0;
-        width: 90%;
-        max-width: 1000px;
-      }
+  .lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-      .lightbox-content img {
-        width: 100%;
-        border-radius: 8px;
-      }
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  }
 
-      .close-lightbox {
-        color: white;
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: var(--transition);
-      }
+  .close-lightbox {
+    color: white;
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+  }
 
-      .close-lightbox:hover {
-        color: #ccc;
-      }
+  .close-lightbox:hover {
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.7);
+  }
 
-      .lightbox-caption {
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        font-size: 1.1rem;
-      }
+  .lightbox-caption {
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+
+  /* Untuk layar kecil, sesuaikan ukuran */
+  @media (max-width: 768px) {
+    .lightbox-content {
+      max-width: 95%;
+    }
+    
+    .lightbox-content img {
+      max-height: 70vh;
+    }
+    
+    .close-lightbox {
+      top: -50px;
+      right: 0;
+    }
+  }
 
       /* CTA Section */
       .cta-section {
@@ -2596,31 +2632,45 @@
       });
 
       // Lightbox functionality
-      function openLightbox(imageSrc, caption) {
-        const lightboxModal = document.getElementById("lightboxModal");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const lightboxCaption = document.getElementById("lightboxCaption");
+       // Lightbox functionality - PERBAIKAN
+  function openLightbox(imageSrc, caption) {
+    const lightboxModal = document.getElementById("lightboxModal");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
 
-        lightboxImage.src = imageSrc;
-        lightboxCaption.innerHTML = caption;
-        lightboxModal.style.display = "block";
-        body.style.overflow = "hidden";
-      }
+    lightboxImage.src = imageSrc;
+    lightboxCaption.innerHTML = caption;
+    lightboxModal.style.display = "flex"; // Ganti ke flex untuk centering
+    body.style.overflow = "hidden";
+    
+    // Tambahkan event listener untuk ESC key
+    document.addEventListener('keydown', handleEscKey);
+  }
 
-      function closeLightbox() {
-        const lightboxModal = document.getElementById("lightboxModal");
-        lightboxModal.style.display = "none";
-        body.style.overflow = "";
-      }
+  function closeLightbox() {
+    const lightboxModal = document.getElementById("lightboxModal");
+    lightboxModal.style.display = "none";
+    body.style.overflow = "";
+    
+    // Hapus event listener untuk ESC key
+    document.removeEventListener('keydown', handleEscKey);
+  }
 
-      // Close lightbox when clicking outside the image
-      window.addEventListener("click", (e) => {
-        const lightboxModal = document.getElementById("lightboxModal");
-        if (e.target === lightboxModal) {
-          closeLightbox();
-        }
-      });
+  // Fungsi untuk menangani tombol ESC
+  function handleEscKey(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  }
 
+  // Close lightbox ketika klik di luar gambar
+  window.addEventListener("click", (e) => {
+    const lightboxModal = document.getElementById("lightboxModal");
+    if (e.target === lightboxModal) {
+      closeLightbox();
+    }
+  });
+      
       // Scroll animations
       function checkScroll() {
         const sections = document.querySelectorAll("section");
