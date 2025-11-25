@@ -6,7 +6,7 @@
     <title>Kelas Offline Teknisi Ponsel - LPK Quantum Telecommunication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -82,6 +82,21 @@
         margin: 0 auto;
         padding: 0 20px;
       }
+
+      .problem-card {
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-track {
+            transition: transform 0.5s ease;
+        }
+        
+        /* Efek bayangan untuk card yang tidak aktif */
+        .shadow-card {
+            filter: blur(2px);
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
 
       /* Progress Bar */
       .progress-container {
@@ -1502,7 +1517,7 @@
     <!-- Hero Section untuk Halaman Offline -->
     <section class="offline-hero">
       <div class="container offline-hero-content">
-        <h1>Kelas Offline Teknisi Ponsel</h1>
+        <h1 class="font-[Poppins]">Kelas Offline Teknisi Ponsel</h1>
         <p>
           Kami bimbing dari NOL sampai benar-benar MAHIR. InsyaAllah Mudah
           dipahami dan diaplikasikan bahkan oleh orang yang tidak pernah belajar
@@ -1521,68 +1536,120 @@
     </section>
 
     <!-- Permasalahan Pemula Section -->
-    <section id="problems" class="problems-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Permasalahan yang Biasa Dialami Pemula di Dunia Service Handphone</h2>
+    <section id="problems" class="problems-section py-16">
+        <div class="container mx-auto px-4">
+            <div class="section-title text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Permasalahan yang Biasa Dialami Pemula di Dunia Service Handphone</h2>
+            </div>
+            
+            <div class="carousel-container relative max-w-4xl mx-auto">
+                <!-- Carousel Track -->
+                <div class="carousel-track flex" id="carouselTrack">
+                    <!-- Card 1 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Bingung Harus mulai belajar dari mana</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Udah Coba ikuti di YouTube tapi gagal</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Belum Tahu Pasti analisa kerusakannya</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Tidak Tahu cara analisa yang mudah dan tepat</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Selalu Nombok ketika ada servisan masuk</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 7 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Masih Kesulitan menentukan solusi-solusi terbaik</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 8 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Masih Belum bisa baca skema dan flashing software</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 9 -->
+                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
+                            <div class="problem-icon text-primary text-4xl mb-4">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Tidak Punya mentor untuk bertanya ketika kesulitan</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-lg p-3 z-10 hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-left text-primary text-xl"></i>
+                </button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-lg p-3 z-10 hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-right text-primary text-xl"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="flex justify-center mt-6 space-x-2" id="indicators">
+                    <!-- Indicators akan di-generate oleh JavaScript -->
+                </div>
+            </div>
         </div>
-        <div class="problems-grid">
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-question-circle"></i>
-            </div>
-            <h3>Bingung Harus mulai belajar dari mana</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-tv"></i>
-            </div>
-            <h3>Udah Coba ikuti di YouTube tapi gagal</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <h3>Belum Tahu Pasti analisa kerusakannya</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-bug"></i>
-            </div>
-            <h3>Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h3>Tidak Tahu cara analisa yang mudah dan tepat</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <h3>Selalu Nombok ketika ada servisan masuk</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Masih Kesulitan menentukan solusi-solusi terbaik</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <h3>Masih Belum bisa baca skema dan flashing software</h3>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <h3>Tidak Punya mentor untuk bertanya ketika kesulitan</h3>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Solusi Section -->
@@ -2544,6 +2611,118 @@
     </a>
 
     <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('carouselTrack');
+            const cards = document.querySelectorAll('.problem-card');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicatorsContainer = document.getElementById('indicators');
+            
+            let currentIndex = 0;
+            const cardsPerView = window.innerWidth < 768 ? 1 : 3;
+            
+            // Buat indicators
+            cards.forEach((_, index) => {
+                const indicator = document.createElement('button');
+                indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-primary' : 'bg-gray-300'}`;
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            const indicators = document.querySelectorAll('#indicators button');
+            
+            // Fungsi untuk update carousel
+            function updateCarousel() {
+                const containerWidth = track.parentElement.offsetWidth;
+                const cardWidth = containerWidth / cardsPerView;
+                
+                // Hitung offset untuk menempatkan card aktif di tengah
+                let offset;
+                if (window.innerWidth < 768) {
+                    // Untuk mobile: card aktif di tengah
+                    offset = -currentIndex * cardWidth;
+                } else {
+                    // Untuk desktop: card aktif di tengah dari 3 card yang terlihat
+                    offset = -currentIndex * cardWidth + (containerWidth - cardWidth) / 2;
+                }
+                
+                track.style.transform = `translateX(${offset}px)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-primary' : 'bg-gray-300'}`;
+                });
+                
+                // Update efek bayangan pada card
+                cards.forEach((card, index) => {
+                    if (window.innerWidth < 768) {
+                        // Untuk mobile: hanya card aktif yang tidak ada bayangan
+                        if (index === currentIndex) {
+                            card.classList.remove('shadow-card');
+                        } else {
+                            card.classList.add('shadow-card');
+                        }
+                    } else {
+                        // Untuk desktop: card aktif di tengah dan dua card di sampingnya tanpa bayangan
+                        if (index >= currentIndex && index < currentIndex + cardsPerView) {
+                            card.classList.remove('shadow-card');
+                        } else {
+                            card.classList.add('shadow-card');
+                        }
+                    }
+                });
+            }
+            
+            // Fungsi untuk pergi ke slide tertentu
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+            
+            // Fungsi untuk slide berikutnya
+            function nextSlide() {
+                if (currentIndex < cards.length - cardsPerView) {
+                    currentIndex++;
+                    updateCarousel();
+                } else {
+                    // Kembali ke awal jika sudah di akhir
+                    currentIndex = 0;
+                    updateCarousel();
+                }
+            }
+            
+            // Fungsi untuk slide sebelumnya
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                } else {
+                    // Pergi ke akhir jika sudah di awal
+                    currentIndex = cards.length - cardsPerView;
+                    updateCarousel();
+                }
+            }
+            
+            // Event listeners untuk tombol
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Responsif saat ukuran layar berubah
+            window.addEventListener('resize', function() {
+                const newCardsPerView = window.innerWidth < 768 ? 1 : 3;
+                if (newCardsPerView !== cardsPerView) {
+                    // Reset ke slide pertama saat berubah dari mobile ke desktop atau sebaliknya
+                    currentIndex = 0;
+                    updateCarousel();
+                } else {
+                    updateCarousel();
+                }
+            });
+            
+            // Inisialisasi carousel
+            updateCarousel();
+        });
       // Progress Bar
       window.onscroll = function () {
         var winScroll =
