@@ -83,21 +83,6 @@
         padding: 0 20px;
       }
 
-      .problem-card {
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-track {
-            transition: transform 0.5s ease;
-        }
-        
-        /* Efek bayangan untuk card yang tidak aktif */
-        .shadow-card {
-            filter: blur(2px);
-            opacity: 0.7;
-            transform: scale(0.9);
-        }
-
       /* Progress Bar */
       .progress-container {
         position: fixed;
@@ -375,70 +360,125 @@
         color: #666;
       }
 
-      /* Permasalahan Pemula Section */
+      /* PERMASALAHAN PEMULA SECTION - FULL SCREEN */
       .problems-section {
-        background-color: var(--blue-light);
-      }
-
-      .problems-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-      }
-
-      .problem-card {
-        background: var(--card-bg);
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
+        height: 100vh;
         position: relative;
         overflow: hidden;
       }
 
-      .problem-card::before {
+      .problems-carousel {
+        height: 100%;
+        position: relative;
+      }
+
+      .problems-track {
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .problem-slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .problem-slide::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 5px;
-        height: 0;
-        background: var(--blue-gradient);
-        transition: var(--transition);
-      }
-
-      .problem-card:hover::before {
+        width: 100%;
         height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
       }
 
-      .problem-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
+      .problem-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
-      .problem-icon {
-        width: 80px;
-        height: 80px;
-        background: var(--blue-gradient);
+      .problem-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
         color: var(--text-light);
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .problem-content h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .problems-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        z-index: 3;
+        transform: translateY(-50%);
+      }
+
+      .problems-controls button {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 20px;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        backdrop-filter: blur(5px);
+      }
+
+      .problems-controls button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+      }
+
+      .problems-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 3;
+      }
+
+      .problems-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
         transition: var(--transition);
       }
 
-      .problem-card:hover .problem-icon {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      .problem-card h3 {
-        margin-bottom: 15px;
-        color: var(--blue-dark);
-        font-size: 1.3rem;
+      .problems-indicators button.active {
+        background: var(--text-light);
+        transform: scale(1.2);
       }
 
       /* Solusi Section */
@@ -866,88 +906,72 @@
 
       /* Lightbox Modal */
       .lightbox-modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.95);
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-  .lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .lightbox-content img {
-    max-width: 100%;
-    max-height: 80vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-  }
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      }
 
-  .close-lightbox {
-    color: white;
-    position: absolute;
-    top: -40px;
-    right: -10px;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transition);
-    background: rgba(0, 0, 0, 0.5);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2001;
-  }
+      .close-lightbox {
+        color: white;
+        position: absolute;
+        top: -40px;
+        right: -10px;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: var(--transition);
+        background: rgba(0, 0, 0, 0.5);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2001;
+      }
 
-  .close-lightbox:hover {
-    color: #ccc;
-    background: rgba(0, 0, 0, 0.7);
-  }
+      .close-lightbox:hover {
+        color: #ccc;
+        background: rgba(0, 0, 0, 0.7);
+      }
 
-  .lightbox-caption {
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 1.1rem;
-    margin-top: 10px;
-  }
-
-  /* Untuk layar kecil, sesuaikan ukuran */
-  @media (max-width: 768px) {
-    .lightbox-content {
-      max-width: 95%;
-    }
-    
-    .lightbox-content img {
-      max-height: 70vh;
-    }
-    
-    .close-lightbox {
-      top: -50px;
-      right: 0;
-    }
-  }
+      .lightbox-caption {
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        margin-top: 10px;
+      }
 
       /* CTA Section */
       .cta-section {
@@ -1233,7 +1257,6 @@
 
       /* Responsive Styles */
       @media (max-width: 992px) {
-        .problems-grid,
         .solution-cards,
         .about-stats,
         .benefit-grid {
@@ -1345,7 +1368,7 @@
         }
 
         /* PERBAIKAN UTAMA: Layout horizontal scroll untuk grid di mobile */
-        .problems-grid, .benefit-grid {
+        .benefit-grid {
           display: flex;
           overflow-x: auto;
           scroll-snap-type: x mandatory;
@@ -1355,11 +1378,11 @@
           scrollbar-width: none; /* Firefox */
         }
 
-        .problems-grid::-webkit-scrollbar, .benefit-grid::-webkit-scrollbar {
+        .benefit-grid::-webkit-scrollbar {
           display: none; /* Chrome, Safari, Opera */
         }
 
-        .problem-card, .benefit-card {
+        .benefit-card {
           flex: 0 0 280px;
           scroll-snap-align: start;
           margin: 0;
@@ -1383,6 +1406,16 @@
         .container {
           padding: 0 15px;
         }
+
+        /* Responsive untuk problems section */
+        .problem-content h3 {
+          font-size: 1.8rem;
+        }
+
+        .problems-controls button {
+          width: 40px;
+          height: 40px;
+        }
       }
 
       @media (max-width: 576px) {
@@ -1392,6 +1425,10 @@
 
         .footer-content {
           grid-template-columns: 1fr;
+        }
+
+        .problem-content h3 {
+          font-size: 1.5rem;
         }
       }
 
@@ -1417,17 +1454,20 @@
           font-size: 1rem;
         }
 
-        .problems-grid, .benefit-grid {
-          /* Untuk layar sangat kecil, ukuran card sedikit lebih kecil */
+        .benefit-grid {
           gap: 15px;
         }
 
-        .problem-card, .benefit-card {
+        .benefit-card {
           flex: 0 0 260px;
         }
 
         .footer-content {
           grid-template-columns: 1fr;
+        }
+
+        .problem-content h3 {
+          font-size: 1.3rem;
         }
       }
 
@@ -1464,7 +1504,7 @@
           <img
             src="../../assets/photos/logo/quantum-logo-color.png"
             alt="Quantum Telecommunication Logo"
-          />
+          />git ad
         </div>
         <nav>
           <ul>
@@ -1535,121 +1575,98 @@
       </div>
     </section>
 
-    <!-- Permasalahan Pemula Section -->
-    <section id="problems" class="problems-section py-16">
-        <div class="container mx-auto px-4">
-            <div class="section-title text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Permasalahan yang Biasa Dialami Pemula di Dunia Service Handphone</h2>
+    <!-- Permasalahan Pemula Section - FULL SCREEN -->
+    <section id="problems" class="problems-section">
+      <div class="problems-carousel">
+        <div class="problems-track" id="problemsTrack">
+          <!-- Slide 1 -->
+          <div class="problem-slide active">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus1.jpeg" alt="Bingung harus mulai belajar dari mana">
+            <div class="problem-content">
+              <h3>Bingung harus mulai belajar dari mana</h3>
             </div>
-            
-            <div class="carousel-container relative max-w-4xl mx-auto">
-                <!-- Carousel Track -->
-                <div class="carousel-track flex" id="carouselTrack">
-                    <!-- Card 1 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Bingung Harus mulai belajar dari mana</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 2 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-tv"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Udah Coba ikuti di YouTube tapi gagal</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 3 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Belum Tahu Pasti analisa kerusakannya</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 4 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-bug"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 5 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Tidak Tahu cara analisa yang mudah dan tepat</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 6 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Selalu Nombok ketika ada servisan masuk</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 7 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Masih Kesulitan menentukan solusi-solusi terbaik</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 8 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Masih Belum bisa baca skema dan flashing software</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 9 -->
-                    <div class="problem-card flex-shrink-0 w-full md:w-1/3 p-4">
-                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col items-center text-center">
-                            <div class="problem-icon text-primary text-4xl mb-4">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800">Tidak Punya mentor untuk bertanya ketika kesulitan</h3>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Navigation Buttons -->
-                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-lg p-3 z-10 hover:bg-gray-100 transition-colors">
-                    <i class="fas fa-chevron-left text-primary text-xl"></i>
-                </button>
-                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-lg p-3 z-10 hover:bg-gray-100 transition-colors">
-                    <i class="fas fa-chevron-right text-primary text-xl"></i>
-                </button>
-                
-                <!-- Indicators -->
-                <div class="flex justify-center mt-6 space-x-2" id="indicators">
-                    <!-- Indicators akan di-generate oleh JavaScript -->
-                </div>
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus2.jpeg" alt="Udah coba ikuti di YouTube tapi gagal">
+            <div class="problem-content">
+              <h3>Udah coba ikuti di YouTube tapi gagal</h3>
             </div>
+          </div>
+          
+          <!-- Slide 3 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus3.jpeg" alt="Belum tahu pasti analisa kerusakannya">
+            <div class="problem-content">
+              <h3>Belum tahu pasti analisa kerusakannya</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 4 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus4.jpeg" alt="Masih kesulitan menentukan penyebab kerusakan yang pasti">
+            <div class="problem-content">
+              <h3>Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 5 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus5.jpeg" alt="Tidak tahu cara analisa yang mudah dan tepat">
+            <div class="problem-content">
+              <h3>Tidak tahu cara analisa yang mudah dan tepat</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 6 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus6.jpeg" alt="Selalu nombok ketika ada servisan masuk">
+            <div class="problem-content">
+              <h3>Selalu nombok ketika ada servisan masuk</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 7 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus7.jpeg" alt="Masih kesulitan menentukan solusi-solusi terbaik">
+            <div class="problem-content">
+              <h3>Masih kesulitan menentukan solusi-solusi terbaik</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 8 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/Agustus 2024/agustus8.jpeg" alt="Masih belum bisa baca skema dan flashing software">
+            <div class="problem-content">
+              <h3>Masih belum bisa baca skema dan flashing software</h3>
+            </div>
+          </div>
+          
+          <!-- Slide 9 -->
+          <div class="problem-slide">
+            <img src="../../assets/photos/alumni-page/2024/April 2024/april241.jpeg" alt="Tidak punya mentor untuk bertanya ketika kesulitan">
+            <div class="problem-content">
+              <h3>Tidak punya mentor untuk bertanya ketika kesulitan</h3>
+            </div>
+          </div>
         </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="problems-controls">
+          <button id="problemsPrevBtn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="problemsNextBtn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <!-- Indicators -->
+        <div class="problems-indicators" id="problemsIndicators">
+          <!-- Indicators will be generated by JavaScript -->
+        </div>
+      </div>
     </section>
 
     <!-- Solusi Section -->
@@ -1849,7 +1866,7 @@
                 <li>Pemahaman cara Kerja Komponen</li>
                 <li>Troubleshoting dan analisa kasus</li>
                 <li>Belajar Angkat dan Cetak IC (ACP)</li>
-                <li>Teknik Jumper Jalur & Komponen</li>
+                <li>Teknik Jumper Jalur & Komponent</li>
                 <li>Bedah kasus Kerusakan</li>
                 <li>Tips & Trik Repair</li>
               </ul>
@@ -2008,95 +2025,95 @@
         </div>
 
         <!-- FAQ Section -->
-<section id="faq" class="faq-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Hal yang Sering Ditanyakan Calon Peserta Teknisi Handphone</h2>
-    </div>
+        <section id="faq" class="faq-section">
+          <div class="container">
+            <div class="section-title">
+              <h2>Hal yang Sering Ditanyakan Calon Peserta Teknisi Handphone</h2>
+            </div>
 
-    <div class="materi-accordion">
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Saya tidak ada dasar sama sekali, apakah mungkin saya bisa menerima materi dan mempraktikkannya?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Ya, tentu saja! Materi pelatihan kami dirancang khusus untuk pemula tanpa latar belakang elektronika sekalipun. Kami akan membimbing Anda dari dasar hingga mahir dengan metode pembelajaran yang mudah dipahami dan diaplikasikan.</p>
-        </div>
-      </div>
+            <div class="materi-accordion">
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Saya tidak ada dasar sama sekali, apakah mungkin saya bisa menerima materi dan mempraktikkannya?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Ya, tentu saja! Materi pelatihan kami dirancang khusus untuk pemula tanpa latar belakang elektronika sekalipun. Kami akan membimbing Anda dari dasar hingga mahir dengan metode pembelajaran yang mudah dipahami dan diaplikasikan.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Apakah ada fasilitas mess gratis?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Ya, kami menyediakan mess gratis (kamar AC) bagi peserta dari luar kota Semarang. Fasilitas ini khusus untuk peserta laki-laki dan tersedia selama masa pelatihan berlangsung.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Apakah ada fasilitas mess gratis?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Ya, kami menyediakan mess gratis (kamar AC) bagi peserta dari luar kota Semarang. Fasilitas ini khusus untuk peserta laki-laki dan tersedia selama masa pelatihan berlangsung.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Untuk makannya apakah juga disediakan?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Kami menyediakan dapur umum lengkap dengan peralatan masak dan beras. Peserta dapat memasak sendiri sesuai kebutuhan. Selain itu, kami juga menyediakan makan siang dan coffee break selama sesi pelatihan berlangsung.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Untuk makannya apakah juga disediakan?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Kami menyediakan dapur umum lengkap dengan peralatan masak dan beras. Peserta dapat memasak sendiri sesuai kebutuhan. Selain itu, kami juga menyediakan makan siang dan coffee break selama sesi pelatihan berlangsung.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Untuk peserta luar kota, dimanakah kami akan dijemput?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Kami menyediakan fasilitas antar jemput gratis dari Bandara, Stasiun, atau terminal terdekat di Semarang. Silakan hubungi kami sebelumnya untuk mengatur jadwal penjemputan.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Untuk peserta luar kota, dimanakah kami akan dijemput?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Kami menyediakan fasilitas antar jemput gratis dari Bandara, Stasiun, atau terminal terdekat di Semarang. Silakan hubungi kami sebelumnya untuk mengatur jadwal penjemputan.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Apa yang saya lakukan jika saya ingin mendaftar?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Anda dapat mendaftar dengan menghubungi kami melalui WhatsApp di nomor 0821-7172-7337 atau mengklik tombol "Daftar Sekarang" yang tersedia di halaman ini. Tim kami akan memandu proses pendaftaran selanjutnya.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Apa yang saya lakukan jika saya ingin mendaftar?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Anda dapat mendaftar dengan menghubungi kami melalui WhatsApp di nomor 0821-7172-7337 atau mengklik tombol "Daftar Sekarang" yang tersedia di halaman ini. Tim kami akan memandu proses pendaftaran selanjutnya.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Apa saja yang harus kami bawa jika kami mengikuti kelas di LPK Quantum?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Peserta cukup membawa pakaian pribadi dan keperluan sehari-hari. Semua peralatan praktik, modul pembelajaran, dan bahan ajar lainnya sudah kami sediakan. Anda juga diperbolehkan membawa bahan bedah kasus sendiri jika ingin.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Apa saja yang harus kami bawa jika kami mengikuti kelas di LPK Quantum?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Peserta cukup membawa pakaian pribadi dan keperluan sehari-hari. Semua peralatan praktik, modul pembelajaran, dan bahan ajar lainnya sudah kami sediakan. Anda juga diperbolehkan membawa bahan bedah kasus sendiri jika ingin.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Jika telah selesai apakah mendapatkan sertifikat?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Ya, setiap peserta yang telah menyelesaikan pelatihan akan mendapatkan sertifikat resmi dari LPK Quantum Telecommunication yang dapat digunakan untuk keperluan pekerjaan atau pengembangan karier lebih lanjut.</p>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Jika telah selesai apakah mendapatkan sertifikat?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Ya, setiap peserta yang telah menyelesaikan pelatihan akan mendapatkan sertifikat resmi dari LPK Quantum Telecommunication yang dapat digunakan untuk keperluan pekerjaan atau pengembangan karier lebih lanjut.</p>
+                </div>
+              </div>
 
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>Kalau dalam waktu yang ditentukan siswa belum mahir, apakah boleh ulang kelas lagi?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="accordion-content">
-          <p>Ya, kami memberikan fasilitas mengulang di kelas berikutnya secara GRATIS bagi peserta yang merasa belum cukup mahir. Kami berkomitmen untuk memastikan setiap peserta benar-benar memahami materi sebelum menyelesaikan pelatihan.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h3>Kalau dalam waktu yang ditentukan siswa belum mahir, apakah boleh ulang kelas lagi?</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                  <p>Ya, kami memberikan fasilitas mengulang di kelas berikutnya secara GRATIS bagi peserta yang merasa belum cukup mahir. Kami berkomitmen untuk memastikan setiap peserta benar-benar memahami materi sebelum menyelesaikan pelatihan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div class="price-section">
           <h2>Investasi Pelatihan</h2>
@@ -2323,18 +2340,6 @@
           >
             <img
               src="../../assets/photos/testimoni-alumni/ss17.jpg"
-              alt="Testimoni Peserta"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- Testimoni 19 -->
-          <div
-            class="gallery-item"
-            onclick="openLightbox('../../assets/photos/testimoni-alumni/ss6.jpg', 'Testimoni Peserta')"
-          >
-            <img
-              src="../../assets/photos/testimoni-alumni/ss18.jpg"
               alt="Testimoni Peserta"
               loading="lazy"
             />
@@ -2611,118 +2616,6 @@
     </a>
 
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-            const track = document.getElementById('carouselTrack');
-            const cards = document.querySelectorAll('.problem-card');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const indicatorsContainer = document.getElementById('indicators');
-            
-            let currentIndex = 0;
-            const cardsPerView = window.innerWidth < 768 ? 1 : 3;
-            
-            // Buat indicators
-            cards.forEach((_, index) => {
-                const indicator = document.createElement('button');
-                indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-primary' : 'bg-gray-300'}`;
-                indicator.addEventListener('click', () => goToSlide(index));
-                indicatorsContainer.appendChild(indicator);
-            });
-            
-            const indicators = document.querySelectorAll('#indicators button');
-            
-            // Fungsi untuk update carousel
-            function updateCarousel() {
-                const containerWidth = track.parentElement.offsetWidth;
-                const cardWidth = containerWidth / cardsPerView;
-                
-                // Hitung offset untuk menempatkan card aktif di tengah
-                let offset;
-                if (window.innerWidth < 768) {
-                    // Untuk mobile: card aktif di tengah
-                    offset = -currentIndex * cardWidth;
-                } else {
-                    // Untuk desktop: card aktif di tengah dari 3 card yang terlihat
-                    offset = -currentIndex * cardWidth + (containerWidth - cardWidth) / 2;
-                }
-                
-                track.style.transform = `translateX(${offset}px)`;
-                
-                // Update indicators
-                indicators.forEach((indicator, index) => {
-                    indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-primary' : 'bg-gray-300'}`;
-                });
-                
-                // Update efek bayangan pada card
-                cards.forEach((card, index) => {
-                    if (window.innerWidth < 768) {
-                        // Untuk mobile: hanya card aktif yang tidak ada bayangan
-                        if (index === currentIndex) {
-                            card.classList.remove('shadow-card');
-                        } else {
-                            card.classList.add('shadow-card');
-                        }
-                    } else {
-                        // Untuk desktop: card aktif di tengah dan dua card di sampingnya tanpa bayangan
-                        if (index >= currentIndex && index < currentIndex + cardsPerView) {
-                            card.classList.remove('shadow-card');
-                        } else {
-                            card.classList.add('shadow-card');
-                        }
-                    }
-                });
-            }
-            
-            // Fungsi untuk pergi ke slide tertentu
-            function goToSlide(index) {
-                currentIndex = index;
-                updateCarousel();
-            }
-            
-            // Fungsi untuk slide berikutnya
-            function nextSlide() {
-                if (currentIndex < cards.length - cardsPerView) {
-                    currentIndex++;
-                    updateCarousel();
-                } else {
-                    // Kembali ke awal jika sudah di akhir
-                    currentIndex = 0;
-                    updateCarousel();
-                }
-            }
-            
-            // Fungsi untuk slide sebelumnya
-            function prevSlide() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                } else {
-                    // Pergi ke akhir jika sudah di awal
-                    currentIndex = cards.length - cardsPerView;
-                    updateCarousel();
-                }
-            }
-            
-            // Event listeners untuk tombol
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // Responsif saat ukuran layar berubah
-            window.addEventListener('resize', function() {
-                const newCardsPerView = window.innerWidth < 768 ? 1 : 3;
-                if (newCardsPerView !== cardsPerView) {
-                    // Reset ke slide pertama saat berubah dari mobile ke desktop atau sebaliknya
-                    currentIndex = 0;
-                    updateCarousel();
-                } else {
-                    updateCarousel();
-                }
-            });
-            
-            // Inisialisasi carousel
-            updateCarousel();
-        });
       // Progress Bar
       window.onscroll = function () {
         var winScroll =
@@ -2812,7 +2705,99 @@
         }
       });
 
-      // Carousel Functionality
+      // Problems Section Carousel
+      const problemsTrack = document.getElementById("problemsTrack");
+      const problemsSlides = document.querySelectorAll(".problem-slide");
+      const problemsPrevBtn = document.getElementById("problemsPrevBtn");
+      const problemsNextBtn = document.getElementById("problemsNextBtn");
+      const problemsIndicators = document.getElementById("problemsIndicators");
+
+      let currentProblemsSlide = 0;
+
+      // Create indicators
+      problemsSlides.forEach((_, index) => {
+        const indicator = document.createElement("button");
+        indicator.className = index === 0 ? "active" : "";
+        indicator.addEventListener("click", () => goToProblemsSlide(index));
+        problemsIndicators.appendChild(indicator);
+      });
+
+      const indicatorButtons = document.querySelectorAll("#problemsIndicators button");
+
+      function updateProblemsCarousel() {
+        problemsTrack.style.transform = `translateX(-${currentProblemsSlide * 100}%)`;
+        
+        // Update indicators
+        indicatorButtons.forEach((button, index) => {
+          button.className = index === currentProblemsSlide ? "active" : "";
+        });
+      }
+
+      function goToProblemsSlide(index) {
+        currentProblemsSlide = index;
+        updateProblemsCarousel();
+      }
+
+      function nextProblemsSlide() {
+        if (currentProblemsSlide < problemsSlides.length - 1) {
+          currentProblemsSlide++;
+        } else {
+          currentProblemsSlide = 0;
+        }
+        updateProblemsCarousel();
+      }
+
+      function prevProblemsSlide() {
+        if (currentProblemsSlide > 0) {
+          currentProblemsSlide--;
+        } else {
+          currentProblemsSlide = problemsSlides.length - 1;
+        }
+        updateProblemsCarousel();
+      }
+
+      problemsNextBtn.addEventListener("click", nextProblemsSlide);
+      problemsPrevBtn.addEventListener("click", prevProblemsSlide);
+
+      // Auto advance problems carousel
+      let problemsInterval = setInterval(nextProblemsSlide, 5000);
+
+      // Pause auto advance on hover
+      const problemsCarousel = document.querySelector(".problems-carousel");
+      problemsCarousel.addEventListener("mouseenter", () => {
+        clearInterval(problemsInterval);
+      });
+
+      problemsCarousel.addEventListener("mouseleave", () => {
+        problemsInterval = setInterval(nextProblemsSlide, 5000);
+      });
+
+      // Touch swipe for mobile
+      let startX = 0;
+      let endX = 0;
+
+      problemsTrack.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      problemsTrack.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleProblemsSwipe();
+      });
+
+      function handleProblemsSwipe() {
+        const swipeThreshold = 50;
+        
+        if (startX - endX > swipeThreshold) {
+          // Swipe left - next slide
+          nextProblemsSlide();
+        } else if (endX - startX > swipeThreshold) {
+          // Swipe right - previous slide
+          prevProblemsSlide();
+        }
+      }
+
+      // Training Carousel Functionality
       const carouselSlides = document.querySelectorAll(".carousel-slide");
       let currentCarouselSlide = 0;
 
@@ -2841,7 +2826,7 @@
           showCarouselSlide(currentCarouselSlide);
         });
 
-      // Auto advance carousel
+      // Auto advance training carousel
       setInterval(() => {
         currentCarouselSlide =
           currentCarouselSlide === carouselSlides.length - 1
@@ -2903,45 +2888,44 @@
       });
 
       // Lightbox functionality
-       // Lightbox functionality - PERBAIKAN
-  function openLightbox(imageSrc, caption) {
-    const lightboxModal = document.getElementById("lightboxModal");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
+      function openLightbox(imageSrc, caption) {
+        const lightboxModal = document.getElementById("lightboxModal");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const lightboxCaption = document.getElementById("lightboxCaption");
 
-    lightboxImage.src = imageSrc;
-    lightboxCaption.innerHTML = caption;
-    lightboxModal.style.display = "flex"; // Ganti ke flex untuk centering
-    body.style.overflow = "hidden";
-    
-    // Tambahkan event listener untuk ESC key
-    document.addEventListener('keydown', handleEscKey);
-  }
+        lightboxImage.src = imageSrc;
+        lightboxCaption.innerHTML = caption;
+        lightboxModal.style.display = "flex";
+        body.style.overflow = "hidden";
+        
+        // Tambahkan event listener untuk ESC key
+        document.addEventListener('keydown', handleEscKey);
+      }
 
-  function closeLightbox() {
-    const lightboxModal = document.getElementById("lightboxModal");
-    lightboxModal.style.display = "none";
-    body.style.overflow = "";
-    
-    // Hapus event listener untuk ESC key
-    document.removeEventListener('keydown', handleEscKey);
-  }
+      function closeLightbox() {
+        const lightboxModal = document.getElementById("lightboxModal");
+        lightboxModal.style.display = "none";
+        body.style.overflow = "";
+        
+        // Hapus event listener untuk ESC key
+        document.removeEventListener('keydown', handleEscKey);
+      }
 
-  // Fungsi untuk menangani tombol ESC
-  function handleEscKey(e) {
-    if (e.key === 'Escape') {
-      closeLightbox();
-    }
-  }
+      // Fungsi untuk menangani tombol ESC
+      function handleEscKey(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      }
 
-  // Close lightbox ketika klik di luar gambar
-  window.addEventListener("click", (e) => {
-    const lightboxModal = document.getElementById("lightboxModal");
-    if (e.target === lightboxModal) {
-      closeLightbox();
-    }
-  });
-      
+      // Close lightbox ketika klik di luar gambar
+      window.addEventListener("click", (e) => {
+        const lightboxModal = document.getElementById("lightboxModal");
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+          
       // Scroll animations
       function checkScroll() {
         const sections = document.querySelectorAll("section");
