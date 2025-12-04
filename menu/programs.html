@@ -966,7 +966,7 @@
         box-shadow: var(--shadow-hover);
       }
 
-      /* Teknis Pembelajaran Section */
+      /* Teknis Pembelajaran Section - Desktop Grid, Mobile Carousel */
       .teknis-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -979,6 +979,7 @@
         padding: 30px;
         box-shadow: var(--shadow);
         transition: var(--transition);
+        height: 100%;
       }
 
       .teknis-card:hover {
@@ -1020,7 +1021,63 @@
         font-size: 0.9rem;
       }
 
-      /* Kenapa Harus LPK Quantum Section */
+      /* Teknis Carousel - Mobile Only */
+      .teknis-carousel-container {
+        position: relative;
+        margin: 0 auto 40px;
+        padding: 0 50px;
+        display: none;
+      }
+
+      .teknis-carousel {
+        display: flex;
+        gap: 25px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        padding: 20px 10px 30px;
+        margin-bottom: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--blue-medium) transparent;
+      }
+
+      .teknis-carousel::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .teknis-carousel::-webkit-scrollbar-track {
+        background: var(--blue-light);
+        border-radius: 10px;
+      }
+
+      .teknis-carousel::-webkit-scrollbar-thumb {
+        background: var(--blue-medium);
+        border-radius: 10px;
+      }
+
+      .teknis-carousel::-webkit-scrollbar-thumb:hover {
+        background: var(--blue-dark);
+      }
+
+      .teknis-carousel-card {
+        flex: 0 0 auto;
+        width: 300px;
+        scroll-snap-align: start;
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        padding: 30px;
+        height: 100%;
+      }
+
+      .teknis-carousel-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Kenapa Harus LPK Quantum Section - Improved */
       .why-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1033,6 +1090,7 @@
         border-radius: 15px;
         overflow: hidden;
         box-shadow: var(--shadow);
+        height: 100%;
       }
 
       .why-slideshow {
@@ -1070,17 +1128,23 @@
         background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/photos/gallery/agustus-2025.jpg");
       }
 
+      .why-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
       .why-content h3 {
         font-size: 1.8rem;
         color: var(--blue-dark);
-        margin-bottom: 20px;
+        line-height: 1.3;
       }
 
       .why-stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        margin-top: 30px;
+        margin-top: 10px;
       }
 
       .stat-box {
@@ -1103,16 +1167,56 @@
         color: var(--accent-orange);
         margin-bottom: 5px;
         font-family: "Poppins", sans-serif;
+        display: block;
       }
 
       .stat-label {
         font-size: 0.9rem;
         color: #666;
+        line-height: 1.4;
+      }
+
+      .why-features {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: var(--shadow);
+        margin-top: 10px;
+      }
+
+      .why-features h4 {
+        font-size: 1.3rem;
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .why-features ul {
+        padding-left: 20px;
+      }
+
+      .why-features li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 5px;
+      }
+
+      .why-features li::before {
+        content: "✓";
+        color: var(--accent-orange);
+        font-weight: bold;
+        position: absolute;
+        left: -20px;
       }
 
       /* Dark mode stat label */
       [data-theme="dark"] .stat-label {
         color: #aaa;
+      }
+
+      [data-theme="dark"] .why-features li {
+        color: var(--text-dark);
       }
 
       /* Footer */
@@ -1365,6 +1469,14 @@
         .class-card {
           width: 320px;
         }
+
+        .why-slideshow {
+          height: 350px;
+        }
+
+        .why-content h3 {
+          font-size: 1.6rem;
+        }
       }
 
       @media (max-width: 768px) {
@@ -1433,9 +1545,13 @@
           display: block;
         }
 
-        .teknis-container,
-        .materi-container {
-          grid-template-columns: 1fr;
+        /* Hide desktop grid teknis and show carousel */
+        .teknis-container {
+          display: none;
+        }
+        
+        .teknis-carousel-container {
+          display: block;
         }
 
         .program-hero {
@@ -1479,8 +1595,17 @@
         }
 
         .solutions-carousel-container,
-        .materi-carousel-container {
+        .materi-carousel-container,
+        .teknis-carousel-container {
           padding: 0 45px;
+        }
+
+        .why-content h3 {
+          font-size: 1.4rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
         }
       }
 
@@ -1502,7 +1627,7 @@
         }
 
         .stat-number {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
 
         .classes-carousel-container {
@@ -1545,14 +1670,28 @@
         }
 
         .solutions-carousel-container,
-        .materi-carousel-container {
+        .materi-carousel-container,
+        .teknis-carousel-container {
           padding: 0 40px;
         }
 
         .solution-carousel-card,
-        .materi-carousel-card {
+        .materi-carousel-card,
+        .teknis-carousel-card {
           width: 280px;
           padding: 25px;
+        }
+
+        .why-content h3 {
+          font-size: 1.2rem;
+        }
+
+        .why-features {
+          padding: 20px;
+        }
+
+        .why-features h4 {
+          font-size: 1.1rem;
         }
       }
 
@@ -2075,6 +2214,8 @@
         <div class="section-subtitle">
           <p>Metode pembelajaran yang kami terapkan untuk setiap jenis kelas</p>
         </div>
+        
+        <!-- Desktop Grid View -->
         <div class="teknis-container">
           <!-- Teknis Kelas Offline -->
           <div class="teknis-card">
@@ -2135,6 +2276,85 @@
             </ul>
           </div>
         </div>
+        
+        <!-- Mobile Carousel View -->
+        <div class="teknis-carousel-container">
+          <button class="carousel-btn prev-btn" id="teknisPrevBtn" aria-label="Slide sebelumnya">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="teknis-carousel" id="teknisCarousel">
+            <!-- Teknis Kelas Offline Card -->
+            <div class="teknis-carousel-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="teknis-title">Kelas Offline</h3>
+              </div>
+              <ul class="teknis-list">
+                <li>Materi disampaikan dalam kelas tatap muka</li>
+                <li>Belajar materi selama 10x pertemuan</li>
+                <li>Durasi Belajar 8 jam per hari</li>
+                <li>Teori 30% Praktik 70%</li>
+                <li>Jam Belajar 09.00 WIB - 17.00 WIB</li>
+                <li>Masuk Senin s/d Sabtu</li>
+                <li>Selesai pembelajaran bebas praktik</li>
+                <li>Magang di service center terafiliasi</li>
+              </ul>
+            </div>
+            
+            <!-- Teknis Kelas Online Card -->
+            <div class="teknis-carousel-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="teknis-title">Kelas Online</h3>
+              </div>
+              <ul class="teknis-list">
+                <li>Penyampaian Materi berupa Video di aplikasi VbatPonsel</li>
+                <li>Akses video materi 24/7</li>
+                <li>Bedah kasus Live Streaming Jam 19.30 - 21.30 WIB</li>
+                <li>Diluar jam belajar bebas konsultasi</li>
+                <li>Konsultasi dan bedah kasus Via WA Group</li>
+                <li>Materi update berkala</li>
+                <li>Kuis dan evaluasi online</li>
+              </ul>
+            </div>
+            
+            <!-- Teknis Kelas Private Card -->
+            <div class="teknis-carousel-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="teknis-title">Kelas Private</h3>
+              </div>
+              <ul class="teknis-list">
+                <li>Materi disampaikan dalam kelas intensif tatap muka</li>
+                <li>Belajar materi selama 10x pertemuan</li>
+                <li>Durasi Belajar 8 jam per hari</li>
+                <li>One-on-one dengan instruktur</li>
+                <li>Jam Belajar menyesuaikan peserta</li>
+                <li>Materi bisa disesuaikan kebutuhan</li>
+                <li>Selesai pembelajaran bebas praktik</li>
+                <li>Personal coaching dan mentoring</li>
+              </ul>
+            </div>
+          </div>
+          
+          <button class="carousel-btn next-btn" id="teknisNextBtn" aria-label="Slide berikutnya">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators" id="teknisIndicators">
+          <span class="indicator active" data-index="0"></span>
+          <span class="indicator" data-index="1"></span>
+          <span class="indicator" data-index="2"></span>
+        </div>
       </div>
     </section>
 
@@ -2169,22 +2389,24 @@
               </div>
               <div class="stat-box">
                 <div class="stat-number">32</div>
-                <div class="stat-label">Roadshow</div>
+                <div class="stat-label">Roadshow di Berbagai Kota</div>
               </div>
               <div class="stat-box">
                 <div class="stat-number">5021+</div>
                 <div class="stat-label">Alumni Peserta</div>
               </div>
             </div>
-            <div class="why-content">
+            <div class="why-features">
               <h4>Keunggulan LPK Quantum:</h4>
-              <ul class="materi-list">
+              <ul>
                 <li>Instruktur berpengalaman lebih dari 10 tahun</li>
                 <li>Fasilitas lengkap dan modern</li>
                 <li>Kurikulum terupdate sesuai perkembangan teknologi</li>
                 <li>Support pasca pelatihan seumur hidup</li>
                 <li>Jaringan alumni yang luas</li>
                 <li>Bimbingan bisnis untuk yang ingin membuka usaha</li>
+                <li>Sertifikat resmi yang diakui industri</li>
+                <li>Garansi mengulang gratis jika belum mahir</li>
               </ul>
             </div>
           </div>
@@ -2806,6 +3028,113 @@
         window.addEventListener('resize', () => {
           updateMateriCardWidth();
           updateMateriCarousel();
+        });
+      }
+
+      // Teknis Carousel Functionality (Mobile Only)
+      const teknisCarousel = document.getElementById('teknisCarousel');
+      const teknisPrevBtn = document.getElementById('teknisPrevBtn');
+      const teknisNextBtn = document.getElementById('teknisNextBtn');
+      const teknisIndicators = document.querySelectorAll('#teknisIndicators .indicator');
+      const teknisCards = teknisCarousel ? teknisCarousel.querySelectorAll('.teknis-carousel-card') : [];
+
+      let teknisCurrentIndex = 0;
+      let teknisCardWidth = 300;
+
+      if (teknisCarousel) {
+        // Function to update teknis carousel position
+        function updateTeknisCarousel() {
+          const scrollPosition = teknisCurrentIndex * (teknisCardWidth + 25);
+          teknisCarousel.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update indicators
+          teknisIndicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === teknisCurrentIndex);
+          });
+        }
+
+        // Next button click
+        teknisNextBtn.addEventListener('click', () => {
+          teknisCurrentIndex = (teknisCurrentIndex + 1) % teknisCards.length;
+          updateTeknisCarousel();
+        });
+
+        // Previous button click
+        teknisPrevBtn.addEventListener('click', () => {
+          teknisCurrentIndex = (teknisCurrentIndex - 1 + teknisCards.length) % teknisCards.length;
+          updateTeknisCarousel();
+        });
+
+        // Indicator click
+        teknisIndicators.forEach(indicator => {
+          indicator.addEventListener('click', () => {
+            teknisCurrentIndex = parseInt(indicator.getAttribute('data-index'));
+            updateTeknisCarousel();
+          });
+        });
+
+        // Update teknis card width based on screen size
+        function updateTeknisCardWidth() {
+          if (window.innerWidth <= 576) {
+            teknisCardWidth = 280;
+          } else if (window.innerWidth <= 768) {
+            teknisCardWidth = 300;
+          }
+        }
+
+        // Auto-scroll for teknis
+        let teknisAutoScrollInterval;
+        
+        function startTeknisAutoScroll() {
+          teknisAutoScrollInterval = setInterval(() => {
+            teknisCurrentIndex = (teknisCurrentIndex + 1) % teknisCards.length;
+            updateTeknisCarousel();
+          }, 5000);
+        }
+
+        function stopTeknisAutoScroll() {
+          clearInterval(teknisAutoScrollInterval);
+        }
+
+        // Start auto-scroll on load
+        updateTeknisCardWidth();
+        startTeknisAutoScroll();
+
+        // Pause auto-scroll on hover
+        teknisCarousel.addEventListener('mouseenter', stopTeknisAutoScroll);
+        teknisCarousel.addEventListener('mouseleave', startTeknisAutoScroll);
+
+        // Touch/swipe support for mobile
+        let teknisStartX = 0;
+        let teknisScrollLeft = 0;
+
+        teknisCarousel.addEventListener('touchstart', (e) => {
+          teknisStartX = e.touches[0].pageX - teknisCarousel.offsetLeft;
+          teknisScrollLeft = teknisCarousel.scrollLeft;
+          stopTeknisAutoScroll();
+        });
+
+        teknisCarousel.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+          const x = e.touches[0].pageX - teknisCarousel.offsetLeft;
+          const walk = (x - teknisStartX) * 2;
+          teknisCarousel.scrollLeft = teknisScrollLeft - walk;
+        });
+
+        teknisCarousel.addEventListener('touchend', () => {
+          const scrollPos = teknisCarousel.scrollLeft;
+          teknisCurrentIndex = Math.round(scrollPos / (teknisCardWidth + 25));
+          updateTeknisCarousel();
+          startTeknisAutoScroll();
+        });
+
+        // Update card width on resize
+        window.addEventListener('resize', () => {
+          updateTeknisCardWidth();
+          updateTeknisCarousel();
         });
       }
     </script>
