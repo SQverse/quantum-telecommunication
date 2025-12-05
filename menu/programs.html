@@ -443,6 +443,12 @@
         margin-bottom: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
+        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+        cursor: grab;
+      }
+
+      .classes-carousel:active {
+        cursor: grabbing;
       }
 
       /* Custom scrollbar */
@@ -475,6 +481,7 @@
         transition: var(--transition);
         display: flex;
         flex-direction: column;
+        user-select: none;
       }
 
       .class-card:hover {
@@ -805,6 +812,12 @@
         margin-bottom: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
+        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+        cursor: grab;
+      }
+
+      .solutions-carousel:active {
+        cursor: grabbing;
       }
 
       .solutions-carousel::-webkit-scrollbar {
@@ -837,6 +850,7 @@
         padding: 30px;
         text-align: center;
         height: 100%;
+        user-select: none;
       }
 
       .solution-carousel-card:hover {
@@ -929,6 +943,12 @@
         margin-bottom: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
+        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+        cursor: grab;
+      }
+
+      .materi-carousel:active {
+        cursor: grabbing;
       }
 
       .materi-carousel::-webkit-scrollbar {
@@ -959,6 +979,7 @@
         box-shadow: var(--shadow);
         transition: var(--transition);
         padding: 30px;
+        user-select: none;
       }
 
       .materi-carousel-card:hover {
@@ -1039,6 +1060,12 @@
         margin-bottom: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
+        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+        cursor: grab;
+      }
+
+      .teknis-carousel:active {
+        cursor: grabbing;
       }
 
       .teknis-carousel::-webkit-scrollbar {
@@ -1070,6 +1097,7 @@
         transition: var(--transition);
         padding: 30px;
         height: 100%;
+        user-select: none;
       }
 
       .teknis-carousel-card:hover {
@@ -1708,6 +1736,20 @@
 
       @keyframes spin {
         to { transform: rotate(360deg); }
+      }
+
+      /* Improved touch experience for mobile */
+      .classes-carousel,
+      .solutions-carousel,
+      .materi-carousel,
+      .teknis-carousel {
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        touch-action: pan-y; /* Better touch control */
+      }
+
+      /* Visual feedback for touch interaction */
+      .carousel-touch-active {
+        cursor: grabbing !important;
       }
     </style>
   </head>
@@ -2533,7 +2575,7 @@
         }
       });
 
-      // Horizontal Carousel Functionality
+      // Horizontal Carousel Functionality dengan perbaikan touch
       const carousel = document.querySelector('.classes-carousel');
       const prevBtn = document.querySelector('.prev-btn');
       const nextBtn = document.querySelector('.next-btn');
@@ -2613,17 +2655,21 @@
       carousel.addEventListener('mouseenter', stopAutoScroll);
       carousel.addEventListener('mouseleave', startAutoScroll);
 
-      // Touch/swipe support for mobile
+      // Improved touch/swipe support for mobile
       let startX = 0;
       let scrollLeft = 0;
+      let isDragging = false;
 
       carousel.addEventListener('touchstart', (e) => {
         startX = e.touches[0].pageX - carousel.offsetLeft;
         scrollLeft = carousel.scrollLeft;
         stopAutoScroll();
+        isDragging = true;
+        carousel.classList.add('carousel-touch-active');
       });
 
       carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
         e.preventDefault();
         const x = e.touches[0].pageX - carousel.offsetLeft;
         const walk = (x - startX) * 2;
@@ -2631,10 +2677,69 @@
       });
 
       carousel.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        carousel.classList.remove('carousel-touch-active');
+        
         const scrollPos = carousel.scrollLeft;
         currentIndex = Math.round(scrollPos / (cardWidth + 25));
+        
+        // Ensure index is within bounds
+        currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+        
         updateCarousel();
         startAutoScroll();
+      });
+
+      // Mouse drag support for desktop touch devices
+      carousel.addEventListener('mousedown', (e) => {
+        if (window.innerWidth <= 768) {
+          startX = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+          stopAutoScroll();
+          isDragging = true;
+          carousel.classList.add('carousel-touch-active');
+          e.preventDefault();
+        }
+      });
+
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging || window.innerWidth > 768) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      carousel.addEventListener('mouseup', () => {
+        if (!isDragging || window.innerWidth > 768) return;
+        isDragging = false;
+        carousel.classList.remove('carousel-touch-active');
+        
+        const scrollPos = carousel.scrollLeft;
+        currentIndex = Math.round(scrollPos / (cardWidth + 25));
+        
+        // Ensure index is within bounds
+        currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+        
+        updateCarousel();
+        startAutoScroll();
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        if (isDragging) {
+          isDragging = false;
+          carousel.classList.remove('carousel-touch-active');
+          
+          const scrollPos = carousel.scrollLeft;
+          currentIndex = Math.round(scrollPos / (cardWidth + 25));
+          
+          // Ensure index is within bounds
+          currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+          
+          updateCarousel();
+          startAutoScroll();
+        }
       });
 
       // Keyboard navigation support
@@ -2817,7 +2922,7 @@
         });
       });
 
-      // Solutions Carousel Functionality (Mobile Only)
+      // Solutions Carousel Functionality (Mobile Only) dengan perbaikan touch
       const solutionsCarousel = document.getElementById('solutionsCarousel');
       const solutionsPrevBtn = document.getElementById('solutionsPrevBtn');
       const solutionsNextBtn = document.getElementById('solutionsNextBtn');
@@ -2893,17 +2998,21 @@
         solutionsCarousel.addEventListener('mouseenter', stopSolutionsAutoScroll);
         solutionsCarousel.addEventListener('mouseleave', startSolutionsAutoScroll);
 
-        // Touch/swipe support for mobile
+        // Touch/swipe support for mobile - improved
         let solutionsStartX = 0;
         let solutionsScrollLeft = 0;
+        let solutionsIsDragging = false;
 
         solutionsCarousel.addEventListener('touchstart', (e) => {
           solutionsStartX = e.touches[0].pageX - solutionsCarousel.offsetLeft;
           solutionsScrollLeft = solutionsCarousel.scrollLeft;
           stopSolutionsAutoScroll();
+          solutionsIsDragging = true;
+          solutionsCarousel.classList.add('carousel-touch-active');
         });
 
         solutionsCarousel.addEventListener('touchmove', (e) => {
+          if (!solutionsIsDragging) return;
           e.preventDefault();
           const x = e.touches[0].pageX - solutionsCarousel.offsetLeft;
           const walk = (x - solutionsStartX) * 2;
@@ -2911,8 +3020,16 @@
         });
 
         solutionsCarousel.addEventListener('touchend', () => {
+          if (!solutionsIsDragging) return;
+          solutionsIsDragging = false;
+          solutionsCarousel.classList.remove('carousel-touch-active');
+          
           const scrollPos = solutionsCarousel.scrollLeft;
           solutionsCurrentIndex = Math.round(scrollPos / (solutionsCardWidth + 25));
+          
+          // Ensure index is within bounds
+          solutionsCurrentIndex = Math.max(0, Math.min(solutionsCurrentIndex, solutionCards.length - 1));
+          
           updateSolutionsCarousel();
           startSolutionsAutoScroll();
         });
@@ -2924,7 +3041,7 @@
         });
       }
 
-      // Materi Carousel Functionality (Mobile Only)
+      // Materi Carousel Functionality (Mobile Only) dengan perbaikan touch
       const materiCarousel = document.getElementById('materiCarousel');
       const materiPrevBtn = document.getElementById('materiPrevBtn');
       const materiNextBtn = document.getElementById('materiNextBtn');
@@ -3000,17 +3117,21 @@
         materiCarousel.addEventListener('mouseenter', stopMateriAutoScroll);
         materiCarousel.addEventListener('mouseleave', startMateriAutoScroll);
 
-        // Touch/swipe support for mobile
+        // Touch/swipe support for mobile - improved
         let materiStartX = 0;
         let materiScrollLeft = 0;
+        let materiIsDragging = false;
 
         materiCarousel.addEventListener('touchstart', (e) => {
           materiStartX = e.touches[0].pageX - materiCarousel.offsetLeft;
           materiScrollLeft = materiCarousel.scrollLeft;
           stopMateriAutoScroll();
+          materiIsDragging = true;
+          materiCarousel.classList.add('carousel-touch-active');
         });
 
         materiCarousel.addEventListener('touchmove', (e) => {
+          if (!materiIsDragging) return;
           e.preventDefault();
           const x = e.touches[0].pageX - materiCarousel.offsetLeft;
           const walk = (x - materiStartX) * 2;
@@ -3018,8 +3139,16 @@
         });
 
         materiCarousel.addEventListener('touchend', () => {
+          if (!materiIsDragging) return;
+          materiIsDragging = false;
+          materiCarousel.classList.remove('carousel-touch-active');
+          
           const scrollPos = materiCarousel.scrollLeft;
           materiCurrentIndex = Math.round(scrollPos / (materiCardWidth + 25));
+          
+          // Ensure index is within bounds
+          materiCurrentIndex = Math.max(0, Math.min(materiCurrentIndex, materiCards.length - 1));
+          
           updateMateriCarousel();
           startMateriAutoScroll();
         });
@@ -3031,7 +3160,7 @@
         });
       }
 
-      // Teknis Carousel Functionality (Mobile Only)
+      // Teknis Carousel Functionality (Mobile Only) dengan perbaikan touch
       const teknisCarousel = document.getElementById('teknisCarousel');
       const teknisPrevBtn = document.getElementById('teknisPrevBtn');
       const teknisNextBtn = document.getElementById('teknisNextBtn');
@@ -3107,17 +3236,21 @@
         teknisCarousel.addEventListener('mouseenter', stopTeknisAutoScroll);
         teknisCarousel.addEventListener('mouseleave', startTeknisAutoScroll);
 
-        // Touch/swipe support for mobile
+        // Touch/swipe support for mobile - improved
         let teknisStartX = 0;
         let teknisScrollLeft = 0;
+        let teknisIsDragging = false;
 
         teknisCarousel.addEventListener('touchstart', (e) => {
           teknisStartX = e.touches[0].pageX - teknisCarousel.offsetLeft;
           teknisScrollLeft = teknisCarousel.scrollLeft;
           stopTeknisAutoScroll();
+          teknisIsDragging = true;
+          teknisCarousel.classList.add('carousel-touch-active');
         });
 
         teknisCarousel.addEventListener('touchmove', (e) => {
+          if (!teknisIsDragging) return;
           e.preventDefault();
           const x = e.touches[0].pageX - teknisCarousel.offsetLeft;
           const walk = (x - teknisStartX) * 2;
@@ -3125,8 +3258,16 @@
         });
 
         teknisCarousel.addEventListener('touchend', () => {
+          if (!teknisIsDragging) return;
+          teknisIsDragging = false;
+          teknisCarousel.classList.remove('carousel-touch-active');
+          
           const scrollPos = teknisCarousel.scrollLeft;
           teknisCurrentIndex = Math.round(scrollPos / (teknisCardWidth + 25));
+          
+          // Ensure index is within bounds
+          teknisCurrentIndex = Math.max(0, Math.min(teknisCurrentIndex, teknisCards.length - 1));
+          
           updateTeknisCarousel();
           startTeknisAutoScroll();
         });
