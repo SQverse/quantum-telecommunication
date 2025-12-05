@@ -443,7 +443,7 @@
         margin-bottom: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
-        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+        -webkit-overflow-scrolling: touch;
         cursor: grab;
       }
 
@@ -1743,8 +1743,8 @@
       .solutions-carousel,
       .materi-carousel,
       .teknis-carousel {
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        touch-action: pan-y; /* Better touch control */
+        -webkit-overflow-scrolling: touch;
+        touch-action: none;
       }
 
       /* Visual feedback for touch interaction */
