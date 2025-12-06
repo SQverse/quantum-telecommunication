@@ -24,7 +24,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <style>
-      /* Mengimpor semua variabel CSS dan styling dasar dari index.html */
+      /* Variabel CSS dan styling dasar */
       :root {
         /* Light Mode */
         --blue-light: #e6f0ff;
@@ -32,7 +32,6 @@
         --blue-dark: #1a3c6e;
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
         
-        /* Added secondary accent color - orange/amber */
         --accent-orange: #ff8c42;
         --accent-orange-light: #ffb366;
         --accent-orange-dark: #e67429;
@@ -93,7 +92,7 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 clamp(15px, 3vw, 30px);
       }
 
       /* Header & Navigation */
@@ -112,32 +111,35 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 15px;
       } 
 
       .logo {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
       }
 
       .logo img {
-        height: 55px;
-        margin-right: 15px;
+        height: clamp(40px, 5vw, 55px);
+        margin-right: 10px;
         transition: var(--transition);
       }
 
       .logo h1 {
         color: var(--text-light);
-        font-size: 1.6rem;
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
         font-weight: 800;
         transition: var(--transition);
         letter-spacing: 0.5px;
         font-family: "Poppins", sans-serif;
+        white-space: nowrap;
       }
 
       nav ul {
         display: flex;
         list-style: none;
-        gap: 8px;
+        gap: clamp(5px, 1vw, 10px);
       }
 
       nav ul li {
@@ -149,12 +151,13 @@
         text-decoration: none;
         font-weight: 600;
         transition: var(--transition);
-        padding: 10px 18px;
+        padding: 10px clamp(10px, 1.5vw, 18px);
         border-radius: 4px;
         position: relative;
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
         display: block;
         font-family: "Open Sans", sans-serif;
+        white-space: nowrap;
       }
 
       nav ul li a::after {
@@ -181,7 +184,8 @@
         border: none;
         cursor: pointer;
         z-index: 1001;
-        margin-left: 15px;
+        margin-left: 10px;
+        padding: 5px;
       }
 
       .theme-toggle {
@@ -190,15 +194,16 @@
         color: var(--text-light);
         font-size: 1.3rem;
         cursor: pointer;
-        margin-left: 15px;
+        margin-left: 10px;
         transition: var(--transition);
+        padding: 5px;
       }
 
       .theme-toggle:hover {
         transform: rotate(30deg);
       }
 
-      /* Dropdown Menu - Desktop */
+      /* Dropdown Menu */
       .dropdown-content {
         display: none;
         position: absolute;
@@ -243,42 +248,10 @@
         color: var(--text-light);
       }
 
-      /* Dropdown Menu - Mobile */
-      @media (max-width: 768px) {
-        .dropdown-content {
-          display: none;
-          position: static;
-          box-shadow: none;
-          background: transparent;
-          margin-left: 20px;
-          animation: none;
-        }
-
-        .dropdown.active .dropdown-content {
-          display: block;
-        }
-
-        .dropdown-content a {
-          color: rgba(255, 255, 255, 0.8);
-          padding: 10px 15px;
-          border-bottom: none;
-          font-size: 0.9rem;
-        }
-
-        .dropdown-content a:hover {
-          background: rgba(255, 255, 255, 0.1);
-          color: var(--text-light);
-        }
-
-        .dropdown > a i.fa-chevron-down {
-          display: none;
-        }
-      }
-
-      /* Hero Section */
+      /* Hero Section - Responsive */
       .program-hero {
-        height: 70vh;
-        min-height: 500px;
+        height: clamp(350px, 60vh, 600px);
+        min-height: 350px;
         position: relative;
         overflow: hidden;
         color: var(--text-light);
@@ -299,9 +272,10 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 1.2s ease-in-out;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
       }
 
       .program-hero-slide.active {
@@ -341,12 +315,12 @@
         align-items: center;
         height: 100%;
         text-align: center;
-        padding: 0 20px;
+        padding: 0 clamp(15px, 5vw, 40px);
       }
 
       .program-hero-title {
         font-family: "Poppins", sans-serif;
-        font-size: 3.5rem;
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
         font-weight: 800;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease;
@@ -358,13 +332,13 @@
 
       .program-hero-subtitle {
         font-family: "Poppins", sans-serif;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 2vw, 1.5rem);
         font-weight: 500;
-        margin-bottom: 30px;
+        margin-bottom: clamp(20px, 4vh, 30px);
         animation: fadeInDown 1s ease 0.2s forwards;
         opacity: 0;
         line-height: 1.4;
-        max-width: 800px;
+        max-width: min(800px, 90vw);
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       }
 
@@ -378,7 +352,7 @@
         display: inline-block;
         background: var(--accent-gradient);
         color: var(--text-light);
-        padding: 18px 45px;
+        padding: clamp(12px, 2.5vw, 18px) clamp(25px, 5vw, 45px);
         border-radius: 50px;
         text-decoration: none;
         font-family: "Poppins", sans-serif;
@@ -386,7 +360,7 @@
         transition: var(--transition);
         box-shadow: var(--shadow);
         border: 2px solid transparent;
-        font-size: 1.1rem;
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         position: relative;
@@ -426,53 +400,52 @@
         color: var(--text-light);
       }
 
-      /* Pilihan Kelas - Horizontal Scroll Carousel */
-      .classes-carousel-container {
+      /* Carousel Styles - Reusable */
+      .carousel-container {
         position: relative;
         margin: 0 auto 40px;
-        padding: 0 60px;
+        padding: 0 clamp(40px, 8vw, 80px);
+        width: 100%;
       }
 
-      .classes-carousel {
+      .carousel {
         display: flex;
-        gap: 25px;
+        gap: clamp(15px, 3vw, 25px);
         overflow-x: auto;
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
         padding: 20px 10px 30px;
         margin-bottom: 10px;
-        scrollbar-width: thin;
-        scrollbar-color: var(--blue-medium) transparent;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
         -webkit-overflow-scrolling: touch;
         cursor: grab;
+        scrollbar-color: var(--blue-medium) transparent;
       }
 
-      .classes-carousel:active {
-        cursor: grabbing;
-      }
-
-      /* Custom scrollbar */
-      .classes-carousel::-webkit-scrollbar {
+      .carousel::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
         height: 6px;
       }
 
-      .classes-carousel::-webkit-scrollbar-track {
+      .carousel::-webkit-scrollbar-track {
         background: var(--blue-light);
         border-radius: 10px;
       }
 
-      .classes-carousel::-webkit-scrollbar-thumb {
+      .carousel::-webkit-scrollbar-thumb {
         background: var(--blue-medium);
         border-radius: 10px;
       }
 
-      .classes-carousel::-webkit-scrollbar-thumb:hover {
-        background: var(--blue-dark);
+      .carousel:active {
+        cursor: grabbing;
       }
 
-      .class-card {
+      /* Carousel Cards - Responsive Width */
+      .carousel-card {
         flex: 0 0 auto;
-        width: 350px;
+        width: clamp(260px, 80vw, 350px);
         scroll-snap-align: start;
         background: var(--card-bg);
         border-radius: 15px;
@@ -484,98 +457,9 @@
         user-select: none;
       }
 
-      .class-card:hover {
+      .carousel-card:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-hover);
-      }
-
-      .class-image {
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-        flex-shrink: 0;
-      }
-
-      .class-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .class-card:hover .class-image img {
-        transform: scale(1.1);
-      }
-
-      .class-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: var(--blue-medium);
-        color: var(--text-light);
-        padding: 6px 15px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        font-family: "Poppins", sans-serif;
-        z-index: 2;
-      }
-
-      .class-content {
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
-
-      .class-content h3 {
-        color: var(--blue-dark);
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-        line-height: 1.3;
-      }
-
-      .class-price {
-        color: var(--accent-orange);
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .class-features {
-        margin: 20px 0;
-        padding-left: 20px;
-        flex-grow: 1;
-      }
-
-      .class-features li {
-        margin-bottom: 10px;
-        position: relative;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        padding-right: 10px;
-      }
-
-      .class-features li::before {
-        content: "✓";
-        color: var(--accent-orange);
-        font-weight: bold;
-        position: absolute;
-        left: -20px;
-      }
-
-      .class-cta {
-        margin-top: auto;
-        padding-top: 15px;
-      }
-
-      .class-cta .btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
-        font-size: 1rem;
-        font-weight: 600;
       }
 
       /* Carousel Navigation Buttons */
@@ -583,13 +467,13 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 50px;
-        height: 50px;
+        width: clamp(35px, 6vw, 50px);
+        height: clamp(35px, 6vw, 50px);
         background: var(--blue-gradient);
         color: var(--text-light);
         border: none;
         border-radius: 50%;
-        font-size: 1.2rem;
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -597,24 +481,31 @@
         transition: var(--transition);
         z-index: 10;
         box-shadow: var(--shadow);
+        opacity: 0.9;
       }
 
       .carousel-btn:hover {
         background: var(--blue-dark);
         transform: translateY(-50%) scale(1.1);
         box-shadow: var(--shadow-hover);
+        opacity: 1;
       }
 
       .carousel-btn:active {
         transform: translateY(-50%) scale(0.95);
       }
 
+      .carousel-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
       .prev-btn {
-        left: 10px;
+        left: clamp(5px, 2vw, 15px);
       }
 
       .next-btn {
-        right: 10px;
+        right: clamp(5px, 2vw, 15px);
       }
 
       /* Carousel Indicators */
@@ -645,7 +536,7 @@
 
       /* Section Styling */
       section {
-        padding: 80px 0;
+        padding: clamp(40px, 8vw, 80px) 0;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
@@ -658,12 +549,12 @@
 
       .section-title {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: clamp(30px, 6vw, 60px);
       }
 
       .section-title h2 {
         font-family: "Poppins", sans-serif;
-        font-size: 2.8rem;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
         color: var(--blue-dark);
         position: relative;
         display: inline-block;
@@ -685,9 +576,9 @@
 
       .section-subtitle {
         text-align: center;
-        max-width: 700px;
-        margin: 0 auto 60px;
-        font-size: 1.1rem;
+        max-width: min(700px, 90vw);
+        margin: 0 auto clamp(30px, 6vw, 60px);
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
         color: #666;
         font-family: "Open Sans", sans-serif;
       }
@@ -697,17 +588,17 @@
         color: #aaa;
       }
 
-      /* Permasalahan Pemula Section */
+      /* Permasalahan Pemula Section - Responsive Grid */
       .problems-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+        gap: clamp(15px, 3vw, 20px);
       }
 
       .problem-card {
         background: var(--card-bg);
         border-radius: 15px;
-        padding: 25px;
+        padding: clamp(20px, 3vw, 25px);
         box-shadow: var(--shadow);
         transition: var(--transition);
         display: flex;
@@ -721,15 +612,15 @@
       }
 
       .problem-icon {
-        width: 50px;
-        height: 50px;
+        width: clamp(40px, 6vw, 50px);
+        height: clamp(40px, 6vw, 50px);
         background: var(--blue-light);
         color: var(--blue-medium);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
         flex-shrink: 0;
       }
 
@@ -738,22 +629,23 @@
       }
 
       .problem-text h3 {
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
         margin-bottom: 8px;
         color: var(--blue-dark);
+        line-height: 1.4;
       }
 
-      /* Solusi Section - Desktop Grid, Mobile Carousel */
+      /* Solusi Section - Responsive Grid */
       .solutions-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 30px);
       }
 
       .solution-card {
         background: var(--card-bg);
         border-radius: 15px;
-        padding: 30px;
+        padding: clamp(25px, 3vw, 30px);
         box-shadow: var(--shadow);
         transition: var(--transition);
         text-align: center;
@@ -766,16 +658,16 @@
       }
 
       .solution-icon {
-        width: 80px;
-        height: 80px;
+        width: clamp(60px, 10vw, 80px);
+        height: clamp(60px, 10vw, 80px);
         background: var(--blue-gradient);
         color: var(--text-light);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 20px;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin: 0 auto clamp(15px, 2vw, 20px);
         transition: var(--transition);
       }
 
@@ -784,78 +676,25 @@
       }
 
       .solution-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        margin-bottom: clamp(10px, 2vw, 15px);
         color: var(--blue-dark);
+        line-height: 1.3;
       }
 
       .solution-card p {
         color: #666;
         line-height: 1.6;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
       }
 
-      /* Solusi Carousel - Mobile Only */
-      .solutions-carousel-container {
-        position: relative;
-        margin: 0 auto 40px;
-        padding: 0 50px;
+      /* Hide desktop grid on mobile, show carousel */
+      .desktop-grid {
+        display: grid;
+      }
+
+      .mobile-carousel {
         display: none;
-      }
-
-      .solutions-carousel {
-        display: flex;
-        gap: 25px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        padding: 20px 10px 30px;
-        margin-bottom: 10px;
-        scrollbar-width: thin;
-        scrollbar-color: var(--blue-medium) transparent;
-        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
-        cursor: grab;
-      }
-
-      .solutions-carousel:active {
-        cursor: grabbing;
-      }
-
-      .solutions-carousel::-webkit-scrollbar {
-        height: 6px;
-      }
-
-      .solutions-carousel::-webkit-scrollbar-track {
-        background: var(--blue-light);
-        border-radius: 10px;
-      }
-
-      .solutions-carousel::-webkit-scrollbar-thumb {
-        background: var(--blue-medium);
-        border-radius: 10px;
-      }
-
-      .solutions-carousel::-webkit-scrollbar-thumb:hover {
-        background: var(--blue-dark);
-      }
-
-      .solution-carousel-card {
-        flex: 0 0 auto;
-        width: 300px;
-        scroll-snap-align: start;
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        padding: 30px;
-        text-align: center;
-        height: 100%;
-        user-select: none;
-      }
-
-      .solution-carousel-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
       }
 
       /* Dark mode solution card text */
@@ -863,17 +702,17 @@
         color: #aaa;
       }
 
-      /* Materi Pembelajaran Section - Desktop Grid, Mobile Carousel */
+      /* Materi Pembelajaran Section - Responsive Grid */
       .materi-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(25px, 4vw, 40px);
       }
 
       .materi-card {
         background: var(--card-bg);
         border-radius: 15px;
-        padding: 30px;
+        padding: clamp(25px, 3vw, 30px);
         box-shadow: var(--shadow);
         transition: var(--transition);
       }
@@ -886,24 +725,25 @@
       .materi-header {
         display: flex;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
+        gap: clamp(10px, 2vw, 15px);
+        margin-bottom: clamp(15px, 3vw, 20px);
       }
 
       .materi-icon {
-        width: 60px;
-        height: 60px;
+        width: clamp(50px, 8vw, 60px);
+        height: clamp(50px, 8vw, 60px);
         background: var(--blue-gradient);
         color: var(--text-light);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        flex-shrink: 0;
       }
 
       .materi-title {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
         color: var(--blue-dark);
       }
 
@@ -915,6 +755,7 @@
         margin-bottom: 10px;
         position: relative;
         line-height: 1.6;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
       }
 
       .materi-list li::before {
@@ -925,79 +766,17 @@
         left: -15px;
       }
 
-      /* Materi Carousel - Mobile Only */
-      .materi-carousel-container {
-        position: relative;
-        margin: 0 auto 40px;
-        padding: 0 50px;
-        display: none;
-      }
-
-      .materi-carousel {
-        display: flex;
-        gap: 25px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        padding: 20px 10px 30px;
-        margin-bottom: 10px;
-        scrollbar-width: thin;
-        scrollbar-color: var(--blue-medium) transparent;
-        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
-        cursor: grab;
-      }
-
-      .materi-carousel:active {
-        cursor: grabbing;
-      }
-
-      .materi-carousel::-webkit-scrollbar {
-        height: 6px;
-      }
-
-      .materi-carousel::-webkit-scrollbar-track {
-        background: var(--blue-light);
-        border-radius: 10px;
-      }
-
-      .materi-carousel::-webkit-scrollbar-thumb {
-        background: var(--blue-medium);
-        border-radius: 10px;
-      }
-
-      .materi-carousel::-webkit-scrollbar-thumb:hover {
-        background: var(--blue-dark);
-      }
-
-      .materi-carousel-card {
-        flex: 0 0 auto;
-        width: 300px;
-        scroll-snap-align: start;
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        padding: 30px;
-        user-select: none;
-      }
-
-      .materi-carousel-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      /* Teknis Pembelajaran Section - Desktop Grid, Mobile Carousel */
+      /* Teknis Pembelajaran Section - Responsive Grid */
       .teknis-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 30px);
       }
 
       .teknis-card {
         background: var(--card-bg);
         border-radius: 15px;
-        padding: 30px;
+        padding: clamp(25px, 3vw, 30px);
         box-shadow: var(--shadow);
         transition: var(--transition);
         height: 100%;
@@ -1011,24 +790,25 @@
       .teknis-header {
         display: flex;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
+        gap: clamp(10px, 2vw, 15px);
+        margin-bottom: clamp(15px, 3vw, 20px);
       }
 
       .teknis-icon {
-        width: 50px;
-        height: 50px;
+        width: clamp(40px, 6vw, 50px);
+        height: clamp(40px, 6vw, 50px);
         background: var(--blue-light);
         color: var(--blue-medium);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        flex-shrink: 0;
       }
 
       .teknis-title {
-        font-size: 1.3rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
         color: var(--blue-dark);
       }
 
@@ -1039,78 +819,21 @@
       .teknis-list li {
         margin-bottom: 8px;
         line-height: 1.5;
-        font-size: 0.9rem;
+        font-size: clamp(0.85rem, 1vw, 0.9rem);
       }
 
-      /* Teknis Carousel - Mobile Only */
-      .teknis-carousel-container {
-        position: relative;
-        margin: 0 auto 40px;
-        padding: 0 50px;
-        display: none;
-      }
-
-      .teknis-carousel {
-        display: flex;
-        gap: 25px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        padding: 20px 10px 30px;
-        margin-bottom: 10px;
-        scrollbar-width: thin;
-        scrollbar-color: var(--blue-medium) transparent;
-        -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
-        cursor: grab;
-      }
-
-      .teknis-carousel:active {
-        cursor: grabbing;
-      }
-
-      .teknis-carousel::-webkit-scrollbar {
-        height: 6px;
-      }
-
-      .teknis-carousel::-webkit-scrollbar-track {
-        background: var(--blue-light);
-        border-radius: 10px;
-      }
-
-      .teknis-carousel::-webkit-scrollbar-thumb {
-        background: var(--blue-medium);
-        border-radius: 10px;
-      }
-
-      .teknis-carousel::-webkit-scrollbar-thumb:hover {
-        background: var(--blue-dark);
-      }
-
-      .teknis-carousel-card {
-        flex: 0 0 auto;
-        width: 300px;
-        scroll-snap-align: start;
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        padding: 30px;
-        height: 100%;
-        user-select: none;
-      }
-
-      .teknis-carousel-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      /* Kenapa Harus LPK Quantum Section - Improved */
+      /* Kenapa Harus LPK Quantum Section - Responsive */
       .why-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+        grid-template-columns: 1fr;
+        gap: clamp(30px, 5vw, 50px);
         align-items: center;
+      }
+
+      @media (min-width: 992px) {
+        .why-container {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       .why-carousel {
@@ -1119,11 +842,12 @@
         overflow: hidden;
         box-shadow: var(--shadow);
         height: 100%;
+        min-height: 300px;
       }
 
       .why-slideshow {
         position: relative;
-        height: 400px;
+        height: clamp(300px, 40vh, 400px);
       }
 
       .why-slide {
@@ -1131,9 +855,10 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 1.2s ease-in-out;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
       }
 
       .why-slide.active {
@@ -1159,11 +884,11 @@
       .why-content {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: clamp(15px, 3vw, 25px);
       }
 
       .why-content h3 {
-        font-size: 1.8rem;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
         color: var(--blue-dark);
         line-height: 1.3;
       }
@@ -1171,13 +896,25 @@
       .why-stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: clamp(15px, 3vw, 20px);
         margin-top: 10px;
+      }
+
+      @media (min-width: 576px) {
+        .why-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 575px) {
+        .why-stats {
+          grid-template-columns: 1fr;
+        }
       }
 
       .stat-box {
         text-align: center;
-        padding: 20px;
+        padding: clamp(15px, 3vw, 20px);
         background: var(--card-bg);
         border-radius: 10px;
         box-shadow: var(--shadow);
@@ -1190,7 +927,7 @@
       }
 
       .stat-number {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
         font-weight: 700;
         color: var(--accent-orange);
         margin-bottom: 5px;
@@ -1199,7 +936,7 @@
       }
 
       .stat-label {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
         color: #666;
         line-height: 1.4;
       }
@@ -1207,13 +944,13 @@
       .why-features {
         background: var(--card-bg);
         border-radius: 15px;
-        padding: 25px;
+        padding: clamp(20px, 3vw, 25px);
         box-shadow: var(--shadow);
         margin-top: 10px;
       }
 
       .why-features h4 {
-        font-size: 1.3rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
         color: var(--blue-dark);
         margin-bottom: 15px;
         font-family: "Poppins", sans-serif;
@@ -1228,6 +965,7 @@
         line-height: 1.6;
         position: relative;
         padding-left: 5px;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
       }
 
       .why-features li::before {
@@ -1251,7 +989,7 @@
       footer {
         background: var(--blue-dark);
         color: var(--text-light);
-        padding: 60px 0 20px;
+        padding: clamp(40px, 8vw, 60px) 0 20px;
         position: relative;
       }
 
@@ -1267,14 +1005,14 @@
 
       .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+        gap: clamp(25px, 5vw, 40px);
         margin-bottom: 30px;
       }
 
       .footer-logo {
         margin-bottom: 15px;
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
         font-weight: 700;
         color: var(--text-light);
         font-family: "Poppins", sans-serif;
@@ -1290,11 +1028,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: clamp(35px, 5vw, 40px);
+        height: clamp(35px, 5vw, 40px);
         background: rgba(255, 255, 255, 0.1);
         color: var(--text-light);
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
         border-radius: 50%;
         transition: var(--transition);
       }
@@ -1306,7 +1044,7 @@
 
       .footer-links h3,
       .footer-contact h3 {
-        font-size: 1.2rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.2rem);
         margin-bottom: 20px;
         position: relative;
         padding-bottom: 10px;
@@ -1341,6 +1079,7 @@
         align-items: center;
         gap: 8px;
         font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
       }
 
       .footer-links ul li a i {
@@ -1360,6 +1099,7 @@
         align-items: center;
         gap: 10px;
         font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
       }
 
       .footer-contact i {
@@ -1378,15 +1118,15 @@
       /* Floating WhatsApp Button */
       .whatsapp-float {
         position: fixed;
-        width: 60px;
-        height: 60px;
+        width: clamp(50px, 8vw, 60px);
+        height: clamp(50px, 8vw, 60px);
         bottom: 25px;
         right: 25px;
         background-color: #25d366;
         color: #fff;
         border-radius: 50px;
         text-align: center;
-        font-size: 30px;
+        font-size: clamp(25px, 4vw, 30px);
         box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
         z-index: 100;
         display: flex;
@@ -1465,45 +1205,13 @@
       }
 
       /* Responsive Styles */
-      @media (max-width: 1200px) {
-        .container {
-          max-width: 960px;
-        }
-      }
-
       @media (max-width: 992px) {
-        .solutions-container,
-        .teknis-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .why-container {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-
         .program-hero-title {
-          font-size: 2.8rem;
+          font-size: clamp(1.8rem, 4vw, 2.8rem);
         }
 
         .program-hero-subtitle {
-          font-size: 1.3rem;
-        }
-
-        .classes-carousel-container {
-          padding: 0 50px;
-        }
-
-        .class-card {
-          width: 320px;
-        }
-
-        .why-slideshow {
-          height: 350px;
-        }
-
-        .why-content h3 {
-          font-size: 1.6rem;
+          font-size: clamp(1rem, 1.8vw, 1.3rem);
         }
       }
 
@@ -1555,171 +1263,90 @@
           z-index: 1000;
         }
 
-        /* Hide desktop grid solutions and show carousel */
-        .solutions-container {
+        /* Mobile Dropdown */
+        .dropdown-content {
           display: none;
+          position: static;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
+          animation: none;
         }
-        
-        .solutions-carousel-container {
+
+        .dropdown.active .dropdown-content {
           display: block;
         }
 
-        /* Hide desktop grid materi and show carousel */
-        .materi-container {
-          display: none;
-        }
-        
-        .materi-carousel-container {
-          display: block;
+        .dropdown-content a {
+          color: rgba(255, 255, 255, 0.8);
+          padding: 10px 15px;
+          border-bottom: none;
+          font-size: 0.9rem;
         }
 
-        /* Hide desktop grid teknis and show carousel */
-        .teknis-container {
+        .dropdown-content a:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: var(--text-light);
+        }
+
+        .dropdown > a i.fa-chevron-down {
+          display: none;
+        }
+
+        /* Hide desktop grid and show carousel on mobile */
+        .desktop-grid {
           display: none;
         }
         
-        .teknis-carousel-container {
+        .mobile-carousel {
           display: block;
         }
 
         .program-hero {
-          height: 60vh;
-          min-height: 400px;
-          margin-top: 90px;
+          height: clamp(300px, 50vh, 400px);
         }
 
-        .program-hero-title {
-          font-size: 2.2rem;
-        }
-
-        .program-hero-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .section-title h2 {
-          font-size: 2rem;
-        }
-
-        .why-slideshow {
-          height: 300px;
-        }
-
-        .why-stats {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .classes-carousel-container {
-          padding: 0 45px;
-        }
-
-        .class-card {
-          width: 300px;
+        .carousel-container {
+          padding: 0 clamp(35px, 8vw, 50px);
         }
 
         .carousel-btn {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
-        }
-
-        .solutions-carousel-container,
-        .materi-carousel-container,
-        .teknis-carousel-container {
-          padding: 0 45px;
-        }
-
-        .why-content h3 {
-          font-size: 1.4rem;
-        }
-
-        .stat-number {
-          font-size: 2rem;
+          width: clamp(30px, 6vw, 40px);
+          height: clamp(30px, 6vw, 40px);
+          font-size: clamp(0.8rem, 1.2vw, 1rem);
         }
       }
 
       @media (max-width: 576px) {
         .program-hero-title {
-          font-size: 1.8rem;
+          font-size: clamp(1.5rem, 6vw, 1.8rem);
         }
 
         .program-hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .problems-container {
-          grid-template-columns: 1fr;
-        }
-
-        .why-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .stat-number {
-          font-size: 1.8rem;
-        }
-
-        .classes-carousel-container {
-          padding: 0 40px;
-        }
-
-        .class-card {
-          width: 280px;
-        }
-
-        .carousel-btn {
-          width: 35px;
-          height: 35px;
-          font-size: 0.9rem;
-        }
-
-        .class-image {
-          height: 160px;
-        }
-
-        .class-content h3 {
-          font-size: 1.2rem;
-        }
-
-        .class-price {
-          font-size: 1.3rem;
-        }
-
-        .class-features li {
-          font-size: 0.85rem;
+          font-size: clamp(0.9rem, 3vw, 1rem);
         }
 
         .section-title h2 {
-          font-size: 1.8rem;
+          font-size: clamp(1.5rem, 5vw, 1.8rem);
         }
 
         .section-subtitle {
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 3vw, 1rem);
           margin-bottom: 40px;
         }
 
-        .solutions-carousel-container,
-        .materi-carousel-container,
-        .teknis-carousel-container {
-          padding: 0 40px;
+        .carousel-container {
+          padding: 0 clamp(30px, 8vw, 45px);
         }
 
-        .solution-carousel-card,
-        .materi-carousel-card,
-        .teknis-carousel-card {
-          width: 280px;
-          padding: 25px;
+        .carousel-card {
+          width: clamp(240px, 75vw, 280px);
         }
 
-        .why-content h3 {
-          font-size: 1.2rem;
-        }
-
-        .why-features {
-          padding: 20px;
-        }
-
-        .why-features h4 {
-          font-size: 1.1rem;
+        .carousel-btn {
+          width: clamp(25px, 6vw, 35px);
+          height: clamp(25px, 6vw, 35px);
+          font-size: clamp(0.7rem, 1.2vw, 0.9rem);
         }
       }
 
@@ -1739,17 +1366,104 @@
       }
 
       /* Improved touch experience for mobile */
-      .classes-carousel,
-      .solutions-carousel,
-      .materi-carousel,
-      .teknis-carousel {
+      .carousel {
         -webkit-overflow-scrolling: touch;
-        touch-action: none;
+        touch-action: pan-y pinch-zoom;
       }
 
       /* Visual feedback for touch interaction */
       .carousel-touch-active {
         cursor: grabbing !important;
+      }
+
+      /* Class-specific styles */
+      .class-image {
+        height: clamp(160px, 25vw, 200px);
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .class-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-card:hover .class-image img {
+        transform: scale(1.1);
+      }
+
+      .class-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--blue-medium);
+        color: var(--text-light);
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        z-index: 2;
+      }
+
+      .class-content {
+        padding: clamp(20px, 3vw, 25px);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .class-content h3 {
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        line-height: 1.3;
+      }
+
+      .class-price {
+        color: var(--accent-orange);
+        font-weight: 700;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .class-features {
+        margin: 20px 0;
+        padding-left: 20px;
+        flex-grow: 1;
+      }
+
+      .class-features li {
+        margin-bottom: 10px;
+        position: relative;
+        font-size: clamp(0.85rem, 1.1vw, 0.9rem);
+        line-height: 1.5;
+        padding-right: 10px;
+      }
+
+      .class-features li::before {
+        content: "✓";
+        color: var(--accent-orange);
+        font-weight: bold;
+        position: absolute;
+        left: -20px;
+      }
+
+      .class-cta {
+        margin-top: auto;
+        padding-top: 15px;
+      }
+
+      .class-cta .btn {
+        width: 100%;
+        text-align: center;
+        padding: clamp(12px, 2vw, 14px) 20px;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        font-weight: 600;
       }
     </style>
   </head>
@@ -1916,7 +1630,7 @@
         </div>
         
         <!-- Desktop Grid View -->
-        <div class="solutions-container">
+        <div class="solutions-container desktop-grid">
           <div class="solution-card">
             <div class="solution-icon">
               <i class="fas fa-calendar-alt"></i>
@@ -1941,27 +1655,27 @@
         </div>
         
         <!-- Mobile Carousel View -->
-        <div class="solutions-carousel-container">
+        <div class="carousel-container mobile-carousel">
           <button class="carousel-btn prev-btn" id="solutionsPrevBtn" aria-label="Slide sebelumnya">
             <i class="fas fa-chevron-left"></i>
           </button>
           
-          <div class="solutions-carousel" id="solutionsCarousel">
-            <div class="solution-carousel-card">
+          <div class="carousel" id="solutionsCarousel">
+            <div class="carousel-card">
               <div class="solution-icon">
                 <i class="fas fa-calendar-alt"></i>
               </div>
               <h3>10 Hari pertemuan + Magang di Service Center</h3>
               <p>Belajar intensif selama 10 hari dengan praktik langsung di service center untuk pengalaman nyata.</p>
             </div>
-            <div class="solution-carousel-card">
+            <div class="carousel-card">
               <div class="solution-icon">
                 <i class="fas fa-bed"></i>
               </div>
               <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
               <p>Kami menyediakan akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
             </div>
-            <div class="solution-carousel-card">
+            <div class="carousel-card">
               <div class="solution-icon">
                 <i class="fas fa-redo"></i>
               </div>
@@ -1995,14 +1709,14 @@
         </div>
         
         <!-- Carousel Container -->
-        <div class="classes-carousel-container">
-          <button class="carousel-btn prev-btn" aria-label="Slide sebelumnya">
+        <div class="carousel-container">
+          <button class="carousel-btn prev-btn" id="classesPrevBtn" aria-label="Slide sebelumnya">
             <i class="fas fa-chevron-left"></i>
           </button>
           
-          <div class="classes-carousel">
+          <div class="carousel" id="classesCarousel">
             <!-- Kelas Offline -->
-            <div class="class-card">
+            <div class="carousel-card">
               <div class="class-image">
                 <img
                   src="offline.jpeg"
@@ -2039,7 +1753,7 @@
             </div>
 
             <!-- Kelas Online -->
-            <div class="class-card">
+            <div class="carousel-card">
               <div class="class-image">
                 <img
                   src="online.jpeg"
@@ -2074,7 +1788,7 @@
             </div>
 
             <!-- Kelas Private -->
-            <div class="class-card">
+            <div class="carousel-card">
               <div class="class-image">
                 <img
                   src="private.jpeg"
@@ -2111,13 +1825,13 @@
             </div>
           </div>
           
-          <button class="carousel-btn next-btn" aria-label="Slide berikutnya">
+          <button class="carousel-btn next-btn" id="classesNextBtn" aria-label="Slide berikutnya">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
         
         <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
+        <div class="carousel-indicators" id="classesIndicators">
           <span class="indicator active" data-index="0"></span>
           <span class="indicator" data-index="1"></span>
           <span class="indicator" data-index="2"></span>
@@ -2136,7 +1850,7 @@
         </div>
         
         <!-- Desktop Grid View -->
-        <div class="materi-container">
+        <div class="materi-container desktop-grid">
           <!-- Materi Hardware -->
           <div class="materi-card">
             <div class="materi-header">
@@ -2183,14 +1897,14 @@
         </div>
         
         <!-- Mobile Carousel View -->
-        <div class="materi-carousel-container">
+        <div class="carousel-container mobile-carousel">
           <button class="carousel-btn prev-btn" id="materiPrevBtn" aria-label="Slide sebelumnya">
             <i class="fas fa-chevron-left"></i>
           </button>
           
-          <div class="materi-carousel" id="materiCarousel">
+          <div class="carousel" id="materiCarousel">
             <!-- Materi Hardware Card -->
-            <div class="materi-carousel-card">
+            <div class="carousel-card">
               <div class="materi-header">
                 <div class="materi-icon">
                   <i class="fas fa-microchip"></i>
@@ -2212,7 +1926,7 @@
             </div>
             
             <!-- Materi Software Card -->
-            <div class="materi-carousel-card">
+            <div class="carousel-card">
               <div class="materi-header">
                 <div class="materi-icon">
                   <i class="fas fa-code"></i>
@@ -2258,7 +1972,7 @@
         </div>
         
         <!-- Desktop Grid View -->
-        <div class="teknis-container">
+        <div class="teknis-container desktop-grid">
           <!-- Teknis Kelas Offline -->
           <div class="teknis-card">
             <div class="teknis-header">
@@ -2320,14 +2034,14 @@
         </div>
         
         <!-- Mobile Carousel View -->
-        <div class="teknis-carousel-container">
+        <div class="carousel-container mobile-carousel">
           <button class="carousel-btn prev-btn" id="teknisPrevBtn" aria-label="Slide sebelumnya">
             <i class="fas fa-chevron-left"></i>
           </button>
           
-          <div class="teknis-carousel" id="teknisCarousel">
+          <div class="carousel" id="teknisCarousel">
             <!-- Teknis Kelas Offline Card -->
-            <div class="teknis-carousel-card">
+            <div class="carousel-card">
               <div class="teknis-header">
                 <div class="teknis-icon">
                   <i class="fas fa-users"></i>
@@ -2347,7 +2061,7 @@
             </div>
             
             <!-- Teknis Kelas Online Card -->
-            <div class="teknis-carousel-card">
+            <div class="carousel-card">
               <div class="teknis-header">
                 <div class="teknis-icon">
                   <i class="fas fa-laptop"></i>
@@ -2366,7 +2080,7 @@
             </div>
             
             <!-- Teknis Kelas Private Card -->
-            <div class="teknis-carousel-card">
+            <div class="carousel-card">
               <div class="teknis-header">
                 <div class="teknis-icon">
                   <i class="fas fa-user-graduate"></i>
@@ -2459,15 +2173,15 @@
     <!-- Call to Action Section -->
     <section id="cta" style="background: var(--blue-gradient); color: var(--text-light); text-align: center;">
       <div class="container">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Siap Mengubah Masa Depan Anda?</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 20px;">Siap Mengubah Masa Depan Anda?</h2>
+        <p style="font-size: clamp(1rem, 2vw, 1.2rem); max-width: min(800px, 90vw); margin: 0 auto 30px;">
           Bergabunglah dengan ribuan alumni yang telah sukses menjadi teknisi HP profesional. Waktu Anda untuk berinvestasi pada skill yang dicari pasar adalah SEKARANG!
         </p>
         <a
           href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20konsultasi%20tentang%20program%20pelatihan%20LPK%20Quantum"
           target="_blank"
           class="btn"
-          style="background: var(--accent-orange); font-size: 1.2rem; padding: 20px 50px;"
+          style="background: var(--accent-orange); font-size: clamp(1rem, 1.5vw, 1.2rem); padding: clamp(15px, 3vw, 20px) clamp(30px, 5vw, 50px);"
         >
           KONSULTASI GRATIS SEKARANG!
         </a>
@@ -2545,739 +2259,412 @@
     </a>
 
     <script>
-      // Theme Toggle
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = themeToggle.querySelector('i');
+      // =================== REUSABLE FUNCTIONS ===================
       
-      // Check for saved theme or prefer-color-scheme
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const savedTheme = localStorage.getItem('theme');
-      
-      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
+      // Slideshow function
+      function createSlideshow(slideshowClass, interval = 5000) {
+        const slides = document.querySelectorAll(`.${slideshowClass}`);
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+          slides.forEach((slide) => slide.classList.remove("active"));
+          slides[index].classList.add("active");
+          currentSlide = index;
+        }
+        
+        function nextSlide() {
+          let next = currentSlide + 1;
+          if (next >= slides.length) next = 0;
+          showSlide(next);
+        }
+        
+        // Auto-advance slides
+        const slideInterval = setInterval(nextSlide, interval);
+        
+        // Pause on hover
+        slides.forEach(slide => {
+          slide.addEventListener('mouseenter', () => clearInterval(slideInterval));
+          slide.addEventListener('mouseleave', () => setInterval(nextSlide, interval));
+        });
+        
+        return {
+          showSlide,
+          nextSlide
+        };
       }
       
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+      // Carousel function - reusable for all carousels
+      function createCarousel(carouselId, options = {}) {
+        const {
+          autoScrollInterval = 5000,
+          snapThreshold = 0.1,
+          dragSensitivity = 1.5
+        } = options;
         
-        if (currentTheme === 'dark') {
-          document.documentElement.removeAttribute('data-theme');
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-          localStorage.setItem('theme', 'light');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-          localStorage.setItem('theme', 'dark');
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return null;
+        
+        const container = carousel.closest('.carousel-container');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        const indicators = document.querySelectorAll(`#${carouselId.replace('Carousel', 'Indicators')} .indicator`);
+        
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const cardCount = cards.length;
+        
+        let currentIndex = 0;
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let autoScrollTimer = null;
+        let cardWidth = cards[0] ? cards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap) : 350;
+        
+        // Update card width on resize
+        function updateCardWidth() {
+          if (cards[0]) {
+            const cardStyle = getComputedStyle(cards[0]);
+            const gap = parseInt(getComputedStyle(carousel).gap) || 25;
+            cardWidth = cards[0].offsetWidth + gap;
+          }
         }
-      });
-
-      // Horizontal Carousel Functionality dengan perbaikan touch
-      const carousel = document.querySelector('.classes-carousel');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      const indicators = document.querySelectorAll('.indicator');
-      const classCards = document.querySelectorAll('.class-card');
-
-      let currentIndex = 0;
-      let cardWidth = 350;
-      const totalCards = classCards.length;
-
-      // Function to update carousel position
-      function updateCarousel() {
-        const scrollPosition = currentIndex * (cardWidth + 25);
-        carousel.scrollTo({
-          left: scrollPosition,
-          behavior: 'smooth'
-        });
         
         // Update indicators
-        indicators.forEach((indicator, index) => {
-          indicator.classList.toggle('active', index === currentIndex);
-        });
-      }
-
-      // Next button click
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalCards;
-        updateCarousel();
-      });
-
-      // Previous button click
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-        updateCarousel();
-      });
-
-      // Indicator click
-      indicators.forEach(indicator => {
-        indicator.addEventListener('click', () => {
-          currentIndex = parseInt(indicator.getAttribute('data-index'));
-          updateCarousel();
-        });
-      });
-
-      // Update card width based on screen size
-      function updateCardWidth() {
-        if (window.innerWidth <= 576) {
-          cardWidth = 280;
-        } else if (window.innerWidth <= 768) {
-          cardWidth = 300;
-        } else if (window.innerWidth <= 992) {
-          cardWidth = 320;
-        } else {
-          cardWidth = 350;
+        function updateIndicators() {
+          if (!indicators.length) return;
+          
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+          });
         }
-      }
-
-      // Auto-scroll
-      let autoScrollInterval;
-      
-      function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
-          currentIndex = (currentIndex + 1) % totalCards;
-          updateCarousel();
-        }, 5000);
-      }
-
-      function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-      }
-
-      // Start auto-scroll on load
-      updateCardWidth();
-      startAutoScroll();
-
-      // Pause auto-scroll on hover
-      carousel.addEventListener('mouseenter', stopAutoScroll);
-      carousel.addEventListener('mouseleave', startAutoScroll);
-
-      // Improved touch/swipe support for mobile
-      let startX = 0;
-      let scrollLeft = 0;
-      let isDragging = false;
-
-      carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-        stopAutoScroll();
-        isDragging = true;
-        carousel.classList.add('carousel-touch-active');
-      });
-
-      carousel.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.touches[0].pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
-      });
-
-      carousel.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        carousel.classList.remove('carousel-touch-active');
         
-        const scrollPos = carousel.scrollLeft;
-        currentIndex = Math.round(scrollPos / (cardWidth + 25));
+        // Scroll to specific index
+        function scrollToIndex(index, smooth = true) {
+          if (index < 0 || index >= cardCount) return;
+          
+          currentIndex = index;
+          const scrollPosition = currentIndex * cardWidth;
+          
+          carousel.scrollTo({
+            left: scrollPosition,
+            behavior: smooth ? 'smooth' : 'auto'
+          });
+          
+          updateIndicators();
+          updateButtons();
+        }
         
-        // Ensure index is within bounds
-        currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+        // Update button states
+        function updateButtons() {
+          if (prevBtn) prevBtn.disabled = currentIndex === 0;
+          if (nextBtn) nextBtn.disabled = currentIndex >= cardCount - 1;
+        }
         
-        updateCarousel();
-        startAutoScroll();
-      });
-
-      // Mouse drag support for desktop touch devices
-      carousel.addEventListener('mousedown', (e) => {
-        if (window.innerWidth <= 768) {
-          startX = e.pageX - carousel.offsetLeft;
-          scrollLeft = carousel.scrollLeft;
+        // Next slide
+        function nextSlide() {
+          if (currentIndex < cardCount - 1) {
+            scrollToIndex(currentIndex + 1);
+          } else {
+            scrollToIndex(0);
+          }
+        }
+        
+        // Previous slide
+        function prevSlide() {
+          if (currentIndex > 0) {
+            scrollToIndex(currentIndex - 1);
+          } else {
+            scrollToIndex(cardCount - 1);
+          }
+        }
+        
+        // Auto scroll
+        function startAutoScroll() {
+          if (autoScrollInterval <= 0) return;
+          
           stopAutoScroll();
-          isDragging = true;
-          carousel.classList.add('carousel-touch-active');
-          e.preventDefault();
+          autoScrollTimer = setInterval(nextSlide, autoScrollInterval);
         }
-      });
-
-      carousel.addEventListener('mousemove', (e) => {
-        if (!isDragging || window.innerWidth > 768) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
-      });
-
-      carousel.addEventListener('mouseup', () => {
-        if (!isDragging || window.innerWidth > 768) return;
-        isDragging = false;
-        carousel.classList.remove('carousel-touch-active');
         
-        const scrollPos = carousel.scrollLeft;
-        currentIndex = Math.round(scrollPos / (cardWidth + 25));
+        function stopAutoScroll() {
+          if (autoScrollTimer) {
+            clearInterval(autoScrollTimer);
+            autoScrollTimer = null;
+          }
+        }
         
-        // Ensure index is within bounds
-        currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+        // Handle drag/swipe
+        function handleDragStart(e) {
+          isDragging = true;
+          startX = (e.pageX || e.touches[0].pageX) - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+          carousel.classList.add('carousel-touch-active');
+          stopAutoScroll();
+        }
         
-        updateCarousel();
-        startAutoScroll();
-      });
-
-      carousel.addEventListener('mouseleave', () => {
-        if (isDragging) {
+        function handleDragMove(e) {
+          if (!isDragging) return;
+          
+          e.preventDefault();
+          const x = (e.pageX || e.touches[0].pageX) - carousel.offsetLeft;
+          const walk = (x - startX) * dragSensitivity;
+          carousel.scrollLeft = scrollLeft - walk;
+        }
+        
+        function handleDragEnd() {
+          if (!isDragging) return;
+          
           isDragging = false;
           carousel.classList.remove('carousel-touch-active');
           
+          // Calculate closest slide
           const scrollPos = carousel.scrollLeft;
-          currentIndex = Math.round(scrollPos / (cardWidth + 25));
+          const newIndex = Math.round(scrollPos / cardWidth);
           
           // Ensure index is within bounds
-          currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+          const clampedIndex = Math.max(0, Math.min(newIndex, cardCount - 1));
+          scrollToIndex(clampedIndex);
           
-          updateCarousel();
           startAutoScroll();
         }
-      });
-
-      // Keyboard navigation support
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-          updateCarousel();
-        } else if (e.key === 'ArrowRight') {
-          currentIndex = (currentIndex + 1) % totalCards;
-          updateCarousel();
+        
+        // Initialize
+        function init() {
+          updateCardWidth();
+          updateIndicators();
+          updateButtons();
+          
+          // Event listeners for buttons
+          if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+          if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+          
+          // Event listeners for indicators
+          indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => scrollToIndex(index));
+          });
+          
+          // Mouse/touch events for dragging
+          carousel.addEventListener('mousedown', handleDragStart);
+          carousel.addEventListener('touchstart', handleDragStart);
+          
+          carousel.addEventListener('mousemove', handleDragMove);
+          carousel.addEventListener('touchmove', handleDragMove);
+          
+          carousel.addEventListener('mouseup', handleDragEnd);
+          carousel.addEventListener('touchend', handleDragEnd);
+          carousel.addEventListener('mouseleave', handleDragEnd);
+          
+          // Pause auto-scroll on hover
+          carousel.addEventListener('mouseenter', stopAutoScroll);
+          carousel.addEventListener('mouseleave', startAutoScroll);
+          
+          // Start auto-scroll
+          startAutoScroll();
+          
+          // Update on resize
+          window.addEventListener('resize', () => {
+            updateCardWidth();
+            scrollToIndex(currentIndex, false);
+          });
         }
-      });
-
-      // Update card width on resize
-      window.addEventListener('resize', () => {
-        updateCardWidth();
-        updateCarousel();
-      });
-
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-      const nav = document.querySelector("nav");
-      const body = document.body;
-
-      mobileMenuBtn.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
-
-        // Change icon
-        const icon = mobileMenuBtn.querySelector("i");
-        if (nav.classList.contains("active")) {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-times");
-        } else {
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        }
-      });
-
-      // Close mobile menu when clicking on a link
-      const navLinks = document.querySelectorAll("nav ul li a");
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("active");
-          body.style.overflow = "";
-
-          // Reset icon
-          const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
-      });
-
-      // Mobile dropdown toggle
-      const dropdowns = document.querySelectorAll('.dropdown > a');
-      dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            parent.classList.toggle('active');
-            
-            // Close other dropdowns
-            dropdowns.forEach(otherDropdown => {
-              if (otherDropdown !== this) {
-                otherDropdown.parentElement.classList.remove('active');
-              }
-            });
-          }
-        });
-      });
-
-      // Hero Slideshow
-      const programHeroSlides = document.querySelectorAll(".program-hero-slide");
-      let currentProgramSlide = 0;
-
-      function showProgramSlide(index) {
-        programHeroSlides.forEach((slide) => slide.classList.remove("active"));
-        programHeroSlides[index].classList.add("active");
-        currentProgramSlide = index;
+        
+        // Initialize the carousel
+        init();
+        
+        return {
+          nextSlide,
+          prevSlide,
+          scrollToIndex,
+          startAutoScroll,
+          stopAutoScroll
+        };
       }
-
-      function nextProgramSlide() {
-        let next = currentProgramSlide + 1;
-        if (next >= programHeroSlides.length) next = 0;
-        showProgramSlide(next);
-      }
-
-      // Change slide every 5 seconds
-      setInterval(nextProgramSlide, 5000);
-
-      // Why Slideshow
-      const whySlides = document.querySelectorAll(".why-slide");
-      let currentWhySlide = 0;
-
-      function showWhySlide(index) {
-        whySlides.forEach((slide) => slide.classList.remove("active"));
-        whySlides[index].classList.add("active");
-        currentWhySlide = index;
-      }
-
-      function nextWhySlide() {
-        let next = currentWhySlide + 1;
-        if (next >= whySlides.length) next = 0;
-        showWhySlide(next);
-      }
-
-      // Change slide every 4 seconds
-      setInterval(nextWhySlide, 4000);
       
-      // Scroll animations
-      function checkScroll() {
+      // Scroll animation
+      function initScrollAnimations() {
         const sections = document.querySelectorAll("section");
         const backToTop = document.querySelector(".back-to-top");
-
-        sections.forEach((section) => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const triggerHeight = window.innerHeight * 0.8;
-
-          if (sectionTop < triggerHeight) {
-            section.classList.add("visible");
-          }
-        });
-
-        // Show/hide back to top button
-        if (window.scrollY > 500) {
-          backToTop.classList.add("visible");
-        } else {
-          backToTop.classList.remove("visible");
-        }
-      }
-
-      window.addEventListener("scroll", checkScroll);
-      window.addEventListener("load", checkScroll);
-
-      // Button loading animation
-      const daftarBtn = document.getElementById('daftarBtn');
-      const btnText = document.getElementById('btnText');
-      const btnLoading = document.getElementById('btnLoading');
-      
-      if (daftarBtn) {
-        daftarBtn.addEventListener('click', function(e) {
-          // Only show loading for external links
-          if (this.href.includes('whatsapp')) {
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline-block';
+        
+        function checkScroll() {
+          sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerHeight = window.innerHeight * 0.8;
             
-            // Reset after 3 seconds if still on page
-            setTimeout(() => {
-              btnText.style.display = 'inline';
-              btnLoading.style.display = 'none';
-            }, 3000);
-          }
-        });
-      }
-
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 90,
-              behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            if (nav.classList.contains('active')) {
-              nav.classList.remove('active');
-              body.style.overflow = '';
-              mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-              mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            if (sectionTop < triggerHeight) {
+              section.classList.add("visible");
             }
+          });
+          
+          // Show/hide back to top button
+          if (window.scrollY > 500) {
+            backToTop.classList.add("visible");
+          } else {
+            backToTop.classList.remove("visible");
+          }
+        }
+        
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("load", checkScroll);
+      }
+      
+      // =================== INITIALIZATION ===================
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme or prefer-color-scheme
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          
+          if (currentTheme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const nav = document.querySelector("nav");
+        const body = document.body;
+        
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector("i");
+            if (nav.classList.contains("active")) {
+              icon.classList.remove("fa-bars");
+              icon.classList.add("fa-times");
+            } else {
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        }
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll("nav ul li a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            if (nav.classList.contains("active")) {
+              nav.classList.remove("active");
+              body.style.overflow = "";
+              
+              // Reset icon
+              const icon = mobileMenuBtn.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+        
+        // Mobile dropdown toggle
+        const dropdowns = document.querySelectorAll('.dropdown > a');
+        dropdowns.forEach(dropdown => {
+          dropdown.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const parent = this.parentElement;
+              parent.classList.toggle('active');
+              
+              // Close other dropdowns
+              dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== this) {
+                  otherDropdown.parentElement.classList.remove('active');
+                }
+              });
+            }
+          });
+        });
+        
+        // Initialize slideshows
+        createSlideshow('program-hero-slide', 5000);
+        createSlideshow('why-slide', 4000);
+        
+        // Initialize carousels
+        const classesCarousel = createCarousel('classesCarousel', { autoScrollInterval: 5000 });
+        const solutionsCarousel = createCarousel('solutionsCarousel', { autoScrollInterval: 5000 });
+        const materiCarousel = createCarousel('materiCarousel', { autoScrollInterval: 5000 });
+        const teknisCarousel = createCarousel('teknisCarousel', { autoScrollInterval: 5000 });
+        
+        // Initialize scroll animations
+        initScrollAnimations();
+        
+        // Button loading animation
+        const daftarBtn = document.getElementById('daftarBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoading = document.getElementById('btnLoading');
+        
+        if (daftarBtn) {
+          daftarBtn.addEventListener('click', function(e) {
+            // Only show loading for external links
+            if (this.href.includes('whatsapp')) {
+              btnText.style.display = 'none';
+              btnLoading.style.display = 'inline-block';
+              
+              // Reset after 3 seconds if still on page
+              setTimeout(() => {
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+              }, 3000);
+            }
+          });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 90,
+                behavior: 'smooth'
+              });
+              
+              // Close mobile menu if open
+              if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                body.style.overflow = '';
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+              }
+            }
+          });
+        });
+        
+        // Keyboard navigation for carousels
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            if (classesCarousel) classesCarousel.prevSlide();
+          } else if (e.key === 'ArrowRight') {
+            if (classesCarousel) classesCarousel.nextSlide();
           }
         });
       });
-
-      // Solutions Carousel Functionality (Mobile Only) dengan perbaikan touch
-      const solutionsCarousel = document.getElementById('solutionsCarousel');
-      const solutionsPrevBtn = document.getElementById('solutionsPrevBtn');
-      const solutionsNextBtn = document.getElementById('solutionsNextBtn');
-      const solutionsIndicators = document.querySelectorAll('#solutionsIndicators .indicator');
-      const solutionCards = solutionsCarousel ? solutionsCarousel.querySelectorAll('.solution-carousel-card') : [];
-
-      let solutionsCurrentIndex = 0;
-      let solutionsCardWidth = 300;
-
-      if (solutionsCarousel) {
-        // Function to update solutions carousel position
-        function updateSolutionsCarousel() {
-          const scrollPosition = solutionsCurrentIndex * (solutionsCardWidth + 25);
-          solutionsCarousel.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-          });
-          
-          // Update indicators
-          solutionsIndicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === solutionsCurrentIndex);
-          });
-        }
-
-        // Next button click
-        solutionsNextBtn.addEventListener('click', () => {
-          solutionsCurrentIndex = (solutionsCurrentIndex + 1) % solutionCards.length;
-          updateSolutionsCarousel();
-        });
-
-        // Previous button click
-        solutionsPrevBtn.addEventListener('click', () => {
-          solutionsCurrentIndex = (solutionsCurrentIndex - 1 + solutionCards.length) % solutionCards.length;
-          updateSolutionsCarousel();
-        });
-
-        // Indicator click
-        solutionsIndicators.forEach(indicator => {
-          indicator.addEventListener('click', () => {
-            solutionsCurrentIndex = parseInt(indicator.getAttribute('data-index'));
-            updateSolutionsCarousel();
-          });
-        });
-
-        // Update solutions card width based on screen size
-        function updateSolutionsCardWidth() {
-          if (window.innerWidth <= 576) {
-            solutionsCardWidth = 280;
-          } else if (window.innerWidth <= 768) {
-            solutionsCardWidth = 300;
-          }
-        }
-
-        // Auto-scroll for solutions
-        let solutionsAutoScrollInterval;
-        
-        function startSolutionsAutoScroll() {
-          solutionsAutoScrollInterval = setInterval(() => {
-            solutionsCurrentIndex = (solutionsCurrentIndex + 1) % solutionCards.length;
-            updateSolutionsCarousel();
-          }, 5000);
-        }
-
-        function stopSolutionsAutoScroll() {
-          clearInterval(solutionsAutoScrollInterval);
-        }
-
-        // Start auto-scroll on load
-        updateSolutionsCardWidth();
-        startSolutionsAutoScroll();
-
-        // Pause auto-scroll on hover
-        solutionsCarousel.addEventListener('mouseenter', stopSolutionsAutoScroll);
-        solutionsCarousel.addEventListener('mouseleave', startSolutionsAutoScroll);
-
-        // Touch/swipe support for mobile - improved
-        let solutionsStartX = 0;
-        let solutionsScrollLeft = 0;
-        let solutionsIsDragging = false;
-
-        solutionsCarousel.addEventListener('touchstart', (e) => {
-          solutionsStartX = e.touches[0].pageX - solutionsCarousel.offsetLeft;
-          solutionsScrollLeft = solutionsCarousel.scrollLeft;
-          stopSolutionsAutoScroll();
-          solutionsIsDragging = true;
-          solutionsCarousel.classList.add('carousel-touch-active');
-        });
-
-        solutionsCarousel.addEventListener('touchmove', (e) => {
-          if (!solutionsIsDragging) return;
-          e.preventDefault();
-          const x = e.touches[0].pageX - solutionsCarousel.offsetLeft;
-          const walk = (x - solutionsStartX) * 2;
-          solutionsCarousel.scrollLeft = solutionsScrollLeft - walk;
-        });
-
-        solutionsCarousel.addEventListener('touchend', () => {
-          if (!solutionsIsDragging) return;
-          solutionsIsDragging = false;
-          solutionsCarousel.classList.remove('carousel-touch-active');
-          
-          const scrollPos = solutionsCarousel.scrollLeft;
-          solutionsCurrentIndex = Math.round(scrollPos / (solutionsCardWidth + 25));
-          
-          // Ensure index is within bounds
-          solutionsCurrentIndex = Math.max(0, Math.min(solutionsCurrentIndex, solutionCards.length - 1));
-          
-          updateSolutionsCarousel();
-          startSolutionsAutoScroll();
-        });
-
-        // Update card width on resize
-        window.addEventListener('resize', () => {
-          updateSolutionsCardWidth();
-          updateSolutionsCarousel();
-        });
-      }
-
-      // Materi Carousel Functionality (Mobile Only) dengan perbaikan touch
-      const materiCarousel = document.getElementById('materiCarousel');
-      const materiPrevBtn = document.getElementById('materiPrevBtn');
-      const materiNextBtn = document.getElementById('materiNextBtn');
-      const materiIndicators = document.querySelectorAll('#materiIndicators .indicator');
-      const materiCards = materiCarousel ? materiCarousel.querySelectorAll('.materi-carousel-card') : [];
-
-      let materiCurrentIndex = 0;
-      let materiCardWidth = 300;
-
-      if (materiCarousel) {
-        // Function to update materi carousel position
-        function updateMateriCarousel() {
-          const scrollPosition = materiCurrentIndex * (materiCardWidth + 25);
-          materiCarousel.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-          });
-          
-          // Update indicators
-          materiIndicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === materiCurrentIndex);
-          });
-        }
-
-        // Next button click
-        materiNextBtn.addEventListener('click', () => {
-          materiCurrentIndex = (materiCurrentIndex + 1) % materiCards.length;
-          updateMateriCarousel();
-        });
-
-        // Previous button click
-        materiPrevBtn.addEventListener('click', () => {
-          materiCurrentIndex = (materiCurrentIndex - 1 + materiCards.length) % materiCards.length;
-          updateMateriCarousel();
-        });
-
-        // Indicator click
-        materiIndicators.forEach(indicator => {
-          indicator.addEventListener('click', () => {
-            materiCurrentIndex = parseInt(indicator.getAttribute('data-index'));
-            updateMateriCarousel();
-          });
-        });
-
-        // Update materi card width based on screen size
-        function updateMateriCardWidth() {
-          if (window.innerWidth <= 576) {
-            materiCardWidth = 280;
-          } else if (window.innerWidth <= 768) {
-            materiCardWidth = 300;
-          }
-        }
-
-        // Auto-scroll for materi
-        let materiAutoScrollInterval;
-        
-        function startMateriAutoScroll() {
-          materiAutoScrollInterval = setInterval(() => {
-            materiCurrentIndex = (materiCurrentIndex + 1) % materiCards.length;
-            updateMateriCarousel();
-          }, 5000);
-        }
-
-        function stopMateriAutoScroll() {
-          clearInterval(materiAutoScrollInterval);
-        }
-
-        // Start auto-scroll on load
-        updateMateriCardWidth();
-        startMateriAutoScroll();
-
-        // Pause auto-scroll on hover
-        materiCarousel.addEventListener('mouseenter', stopMateriAutoScroll);
-        materiCarousel.addEventListener('mouseleave', startMateriAutoScroll);
-
-        // Touch/swipe support for mobile - improved
-        let materiStartX = 0;
-        let materiScrollLeft = 0;
-        let materiIsDragging = false;
-
-        materiCarousel.addEventListener('touchstart', (e) => {
-          materiStartX = e.touches[0].pageX - materiCarousel.offsetLeft;
-          materiScrollLeft = materiCarousel.scrollLeft;
-          stopMateriAutoScroll();
-          materiIsDragging = true;
-          materiCarousel.classList.add('carousel-touch-active');
-        });
-
-        materiCarousel.addEventListener('touchmove', (e) => {
-          if (!materiIsDragging) return;
-          e.preventDefault();
-          const x = e.touches[0].pageX - materiCarousel.offsetLeft;
-          const walk = (x - materiStartX) * 2;
-          materiCarousel.scrollLeft = materiScrollLeft - walk;
-        });
-
-        materiCarousel.addEventListener('touchend', () => {
-          if (!materiIsDragging) return;
-          materiIsDragging = false;
-          materiCarousel.classList.remove('carousel-touch-active');
-          
-          const scrollPos = materiCarousel.scrollLeft;
-          materiCurrentIndex = Math.round(scrollPos / (materiCardWidth + 25));
-          
-          // Ensure index is within bounds
-          materiCurrentIndex = Math.max(0, Math.min(materiCurrentIndex, materiCards.length - 1));
-          
-          updateMateriCarousel();
-          startMateriAutoScroll();
-        });
-
-        // Update card width on resize
-        window.addEventListener('resize', () => {
-          updateMateriCardWidth();
-          updateMateriCarousel();
-        });
-      }
-
-      // Teknis Carousel Functionality (Mobile Only) dengan perbaikan touch
-      const teknisCarousel = document.getElementById('teknisCarousel');
-      const teknisPrevBtn = document.getElementById('teknisPrevBtn');
-      const teknisNextBtn = document.getElementById('teknisNextBtn');
-      const teknisIndicators = document.querySelectorAll('#teknisIndicators .indicator');
-      const teknisCards = teknisCarousel ? teknisCarousel.querySelectorAll('.teknis-carousel-card') : [];
-
-      let teknisCurrentIndex = 0;
-      let teknisCardWidth = 300;
-
-      if (teknisCarousel) {
-        // Function to update teknis carousel position
-        function updateTeknisCarousel() {
-          const scrollPosition = teknisCurrentIndex * (teknisCardWidth + 25);
-          teknisCarousel.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-          });
-          
-          // Update indicators
-          teknisIndicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === teknisCurrentIndex);
-          });
-        }
-
-        // Next button click
-        teknisNextBtn.addEventListener('click', () => {
-          teknisCurrentIndex = (teknisCurrentIndex + 1) % teknisCards.length;
-          updateTeknisCarousel();
-        });
-
-        // Previous button click
-        teknisPrevBtn.addEventListener('click', () => {
-          teknisCurrentIndex = (teknisCurrentIndex - 1 + teknisCards.length) % teknisCards.length;
-          updateTeknisCarousel();
-        });
-
-        // Indicator click
-        teknisIndicators.forEach(indicator => {
-          indicator.addEventListener('click', () => {
-            teknisCurrentIndex = parseInt(indicator.getAttribute('data-index'));
-            updateTeknisCarousel();
-          });
-        });
-
-        // Update teknis card width based on screen size
-        function updateTeknisCardWidth() {
-          if (window.innerWidth <= 576) {
-            teknisCardWidth = 280;
-          } else if (window.innerWidth <= 768) {
-            teknisCardWidth = 300;
-          }
-        }
-
-        // Auto-scroll for teknis
-        let teknisAutoScrollInterval;
-        
-        function startTeknisAutoScroll() {
-          teknisAutoScrollInterval = setInterval(() => {
-            teknisCurrentIndex = (teknisCurrentIndex + 1) % teknisCards.length;
-            updateTeknisCarousel();
-          }, 5000);
-        }
-
-        function stopTeknisAutoScroll() {
-          clearInterval(teknisAutoScrollInterval);
-        }
-
-        // Start auto-scroll on load
-        updateTeknisCardWidth();
-        startTeknisAutoScroll();
-
-        // Pause auto-scroll on hover
-        teknisCarousel.addEventListener('mouseenter', stopTeknisAutoScroll);
-        teknisCarousel.addEventListener('mouseleave', startTeknisAutoScroll);
-
-        // Touch/swipe support for mobile - improved
-        let teknisStartX = 0;
-        let teknisScrollLeft = 0;
-        let teknisIsDragging = false;
-
-        teknisCarousel.addEventListener('touchstart', (e) => {
-          teknisStartX = e.touches[0].pageX - teknisCarousel.offsetLeft;
-          teknisScrollLeft = teknisCarousel.scrollLeft;
-          stopTeknisAutoScroll();
-          teknisIsDragging = true;
-          teknisCarousel.classList.add('carousel-touch-active');
-        });
-
-        teknisCarousel.addEventListener('touchmove', (e) => {
-          if (!teknisIsDragging) return;
-          e.preventDefault();
-          const x = e.touches[0].pageX - teknisCarousel.offsetLeft;
-          const walk = (x - teknisStartX) * 2;
-          teknisCarousel.scrollLeft = teknisScrollLeft - walk;
-        });
-
-        teknisCarousel.addEventListener('touchend', () => {
-          if (!teknisIsDragging) return;
-          teknisIsDragging = false;
-          teknisCarousel.classList.remove('carousel-touch-active');
-          
-          const scrollPos = teknisCarousel.scrollLeft;
-          teknisCurrentIndex = Math.round(scrollPos / (teknisCardWidth + 25));
-          
-          // Ensure index is within bounds
-          teknisCurrentIndex = Math.max(0, Math.min(teknisCurrentIndex, teknisCards.length - 1));
-          
-          updateTeknisCarousel();
-          startTeknisAutoScroll();
-        });
-
-        // Update card width on resize
-        window.addEventListener('resize', () => {
-          updateTeknisCardWidth();
-          updateTeknisCarousel();
-        });
-      }
     </script>
   </body>
 </html>
