@@ -3863,7 +3863,8 @@
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
       const nav = document.querySelector("nav");
       const body = document.body;
-      const dropdowns = document.querySelectorAll(".dropdown");
+      const dropdowns = document.querySelectorAll("nav ul li.dropdown");
+
 
       mobileMenuBtn.addEventListener("click", () => {
         nav.classList.toggle("active");
