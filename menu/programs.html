@@ -605,13 +605,96 @@
         margin-bottom: 0;
       }
 
-      /* Hide desktop grid on mobile, show carousel */
+      /* HORIZONTAL SCROLL CONTAINER - NEW STYLES */
+      .horizontal-scroll-section {
+        position: relative;
+        padding: 0;
+        margin: 0 -20px;
+      }
+
+      @media (min-width: 768px) {
+        .horizontal-scroll-section {
+          margin: 0 -40px;
+        }
+      }
+
+      .horizontal-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: clamp(20px, 3vw, 30px);
+        padding: 20px clamp(20px, 4vw, 40px) 40px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--blue-medium) transparent;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        cursor: grab;
+      }
+
+      .horizontal-scroll-container:active {
+        cursor: grabbing;
+      }
+
+      .horizontal-scroll-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .horizontal-scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 4px;
+      }
+
+      .horizontal-scroll-container::-webkit-scrollbar-thumb {
+        background: var(--blue-medium);
+        border-radius: 4px;
+      }
+
+      .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: var(--blue-dark);
+      }
+
+      /* Horizontal Scroll Cards */
+      .scroll-card {
+        flex: 0 0 auto;
+        width: clamp(300px, 85vw, 380px);
+        scroll-snap-align: start;
+        background: var(--card-bg);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+        border: 1px solid transparent;
+      }
+
+      .scroll-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--blue-light);
+      }
+
+      /* Desktop Grid tetap ada untuk beberapa section */
       .desktop-grid {
         display: grid;
       }
 
-      .mobile-carousel {
-        display: none;
+      /* Hide horizontal scroll on desktop for certain sections */
+      @media (min-width: 992px) {
+        .horizontal-scroll-section.mobile-only {
+          display: none;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .desktop-grid {
+          display: none;
+        }
+        
+        .horizontal-scroll-section.mobile-only {
+          display: block;
+        }
       }
 
       /* Materi Pembelajaran Section */
@@ -768,6 +851,101 @@
         font-size: 1.5rem;
       }
 
+      /* Class-specific styles untuk horizontal scroll */
+      .class-image {
+        height: clamp(200px, 30vw, 240px);
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .class-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .scroll-card:hover .class-image img {
+        transform: scale(1.15);
+      }
+
+      .class-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--blue-medium);
+        color: var(--text-light);
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        z-index: 2;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .class-content {
+        padding: clamp(25px, 4vw, 35px);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-height: 420px;
+      }
+
+      .class-content h3 {
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      .class-price {
+        color: var(--accent-orange);
+        font-weight: 800;
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        margin-bottom: 20px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .class-features {
+        margin: 20px 0 25px;
+        padding-left: 20px;
+        flex-grow: 1;
+      }
+
+      .class-features li {
+        margin-bottom: 12px;
+        position: relative;
+        font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+        line-height: 1.6;
+        padding-left: 8px;
+        color: var(--text-muted);
+      }
+
+      .class-features li::before {
+        content: "✓";
+        color: var(--accent-orange);
+        font-weight: bold;
+        position: absolute;
+        left: -20px;
+        font-size: 1.1rem;
+      }
+
+      .class-cta {
+        margin-top: auto;
+        padding-top: 20px;
+      }
+
+      .class-cta .btn {
+        width: 100%;
+        text-align: center;
+        padding: clamp(14px, 2.5vw, 16px) 20px;
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        font-weight: 600;
+      }
+
       /* Kenapa Harus LPK Quantum Section */
       .why-container {
         display: grid;
@@ -919,227 +1097,6 @@
         position: absolute;
         left: -20px;
         font-size: 1.2rem;
-      }
-
-      /* Carousel Styles */
-      .carousel-section {
-        position: relative;
-        padding: 0 clamp(30px, 8vw, 80px);
-      }
-
-      .carousel-container {
-        position: relative;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .carousel {
-        display: flex;
-        gap: clamp(20px, 3vw, 30px);
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        padding: 20px 10px 40px;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        -webkit-overflow-scrolling: touch;
-        cursor: grab;
-      }
-
-      .carousel::-webkit-scrollbar {
-        display: none;
-      }
-
-      .carousel:active {
-        cursor: grabbing;
-      }
-
-      /* Carousel Cards */
-      .carousel-card {
-        flex: 0 0 auto;
-        width: clamp(280px, 85vw, 380px);
-        scroll-snap-align: start;
-        background: var(--card-bg);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        user-select: none;
-        border: 1px solid transparent;
-      }
-
-      .carousel-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--blue-light);
-      }
-
-      /* Carousel Navigation Buttons */
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: clamp(45px, 7vw, 60px);
-        height: clamp(45px, 7vw, 60px);
-        background: var(--blue-gradient);
-        color: var(--text-light);
-        border: none;
-        border-radius: 50%;
-        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        z-index: 10;
-        box-shadow: var(--shadow);
-        opacity: 0.9;
-      }
-
-      .carousel-btn:hover {
-        background: var(--blue-dark);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: var(--shadow-hover);
-        opacity: 1;
-      }
-
-      .carousel-btn:active {
-        transform: translateY(-50%) scale(0.95);
-      }
-
-      .carousel-btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-      }
-
-      .prev-btn {
-        left: clamp(-10px, -2vw, 0);
-      }
-
-      .next-btn {
-        right: clamp(-10px, -2vw, 0);
-      }
-
-      /* Carousel Indicators */
-      .carousel-indicators {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 30px;
-      }
-
-      .indicator {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: var(--blue-light);
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .indicator.active {
-        background: var(--blue-medium);
-        transform: scale(1.3);
-      }
-
-      .indicator:hover {
-        background: var(--blue-dark);
-      }
-
-      /* Class-specific styles */
-      .class-image {
-        height: clamp(180px, 30vw, 220px);
-        overflow: hidden;
-        position: relative;
-        flex-shrink: 0;
-      }
-
-      .class-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-      }
-
-      .carousel-card:hover .class-image img {
-        transform: scale(1.15);
-      }
-
-      .class-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: var(--blue-medium);
-        color: var(--text-light);
-        padding: 8px 18px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        z-index: 2;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .class-content {
-        padding: clamp(25px, 4vw, 35px);
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
-
-      .class-content h3 {
-        color: var(--blue-dark);
-        margin-bottom: 15px;
-        font-size: clamp(1.3rem, 2vw, 1.6rem);
-        line-height: 1.3;
-        font-weight: 700;
-      }
-
-      .class-price {
-        color: var(--accent-orange);
-        font-weight: 800;
-        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-        margin-bottom: 20px;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .class-features {
-        margin: 20px 0 25px;
-        padding-left: 20px;
-        flex-grow: 1;
-      }
-
-      .class-features li {
-        margin-bottom: 12px;
-        position: relative;
-        font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-        line-height: 1.6;
-        padding-left: 8px;
-        color: var(--text-muted);
-      }
-
-      .class-features li::before {
-        content: "✓";
-        color: var(--accent-orange);
-        font-weight: bold;
-        position: absolute;
-        left: -20px;
-        font-size: 1.1rem;
-      }
-
-      .class-cta {
-        margin-top: auto;
-        padding-top: 20px;
-      }
-
-      .class-cta .btn {
-        width: 100%;
-        text-align: center;
-        padding: clamp(14px, 2.5vw, 16px) 20px;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
-        font-weight: 600;
       }
 
       /* Footer */
@@ -1429,22 +1386,36 @@
       }
 
       /* Improved touch experience for mobile */
-      .carousel {
+      .horizontal-scroll-container {
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y pinch-zoom;
       }
 
       /* Visual feedback for touch interaction */
-      .carousel-touch-active {
+      .scroll-touch-active {
         cursor: grabbing !important;
+      }
+
+      /* Scroll hint for mobile */
+      .scroll-hint {
+        display: none;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 10px;
+        font-style: italic;
+      }
+
+      @media (max-width: 768px) {
+        .scroll-hint {
+          display: block;
+        }
       }
 
       /* Responsive Styles */
       @media (max-width: 1200px) {
-        .carousel-btn {
-          width: 45px;
-          height: 45px;
-          font-size: 1.2rem;
+        .class-content {
+          min-height: 400px;
         }
       }
 
@@ -1466,8 +1437,12 @@
           margin-bottom: 50px;
         }
 
-        .carousel-card {
-          width: clamp(280px, 80vw, 350px);
+        .scroll-card {
+          width: clamp(300px, 80vw, 350px);
+        }
+        
+        .class-content {
+          min-height: 380px;
         }
       }
 
@@ -1553,36 +1528,21 @@
           display: none;
         }
 
-        /* Hide desktop grid and show carousel on mobile */
-        .desktop-grid {
-          display: none;
+        /* Horizontal scroll untuk mobile */
+        .horizontal-scroll-section {
+          margin: 0 -20px;
         }
 
-        .mobile-carousel {
-          display: block;
+        .horizontal-scroll-container {
+          padding: 20px 20px 40px;
         }
 
-        .program-hero {
-          height: clamp(380px, 65vh, 500px);
-          margin-top: 80px;
+        .scroll-card {
+          width: calc(85vw - 40px);
         }
 
-        .carousel-section {
-          padding: 0 clamp(20px, 6vw, 40px);
-        }
-
-        .carousel-btn {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
-        }
-
-        .prev-btn {
-          left: -5px;
-        }
-
-        .next-btn {
-          right: -5px;
+        .class-content {
+          min-height: 360px;
         }
 
         .footer-content {
@@ -1654,27 +1614,21 @@
           font-size: 1.2rem;
         }
 
-        .carousel-section {
-          padding: 0 15px;
+        .horizontal-scroll-container {
+          padding: 20px 15px 40px;
         }
 
-        .carousel-card {
-          width: calc(100vw - 60px);
-          max-width: 320px;
+        .scroll-card {
+          width: calc(90vw - 30px);
         }
 
-        .carousel-btn {
-          width: 35px;
-          height: 35px;
-          font-size: 0.9rem;
+        .class-content {
+          min-height: 340px;
+          padding: 20px;
         }
 
-        .prev-btn {
-          left: 0;
-        }
-
-        .next-btn {
-          right: 0;
+        .class-image {
+          height: 180px;
         }
 
         .why-stats {
@@ -1716,13 +1670,17 @@
           font-size: 0.95rem;
         }
 
-        .carousel-card {
-          width: calc(100vw - 40px);
+        .scroll-card {
+          width: calc(95vw - 20px);
         }
 
         .footer-links ul li a,
         .footer-contact p {
           font-size: 0.95rem;
+        }
+        
+        .class-content {
+          min-height: 320px;
         }
       }
 
@@ -1796,13 +1754,13 @@
           transform: none !important;
         }
 
-        .carousel {
+        .horizontal-scroll-container {
           overflow: visible;
           flex-wrap: wrap;
           gap: 20px;
         }
 
-        .carousel-card {
+        .scroll-card {
           width: 100% !important;
           margin-bottom: 20px;
           break-inside: avoid;
@@ -1995,53 +1953,37 @@
           </div>
         </div>
 
-        <!-- Mobile Carousel View -->
-        <div class="carousel-section mobile-carousel">
-          <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="solutionsPrevBtn" aria-label="Slide sebelumnya">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="carousel" id="solutionsCarousel">
-              <div class="carousel-card">
-                <div class="solution-icon">
-                  <i class="fas fa-calendar-alt"></i>
-                </div>
-                <h3>10 Hari pertemuan + Magang di Service Center</h3>
-                <p>Belajar intensif selama 10 hari dengan praktik langsung di service center untuk pengalaman nyata.</p>
+        <!-- Mobile Horizontal Scroll View -->
+        <div class="horizontal-scroll-section mobile-only">
+          <div class="horizontal-scroll-container">
+            <div class="scroll-card">
+              <div class="solution-icon">
+                <i class="fas fa-calendar-alt"></i>
               </div>
-              <div class="carousel-card">
-                <div class="solution-icon">
-                  <i class="fas fa-bed"></i>
-                </div>
-                <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
-                <p>Kami menyediakan akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
-              </div>
-              <div class="carousel-card">
-                <div class="solution-icon">
-                  <i class="fas fa-redo"></i>
-                </div>
-                <h3>Gratis Mengulang di Kelas Berikutnya</h3>
-                <p>Jika belum merasa cukup mahir, peserta bisa mengulang kelas berikutnya tanpa biaya tambahan.</p>
-              </div>
+              <h3>10 Hari pertemuan + Magang di Service Center</h3>
+              <p>Belajar intensif selama 10 hari dengan praktik langsung di service center untuk pengalaman nyata.</p>
             </div>
-
-            <button class="carousel-btn next-btn" id="solutionsNextBtn" aria-label="Slide berikutnya">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="scroll-card">
+              <div class="solution-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
+              <p>Kami menyediakan akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
+            </div>
+            <div class="scroll-card">
+              <div class="solution-icon">
+                <i class="fas fa-redo"></i>
+              </div>
+              <h3>Gratis Mengulang di Kelas Berikutnya</h3>
+              <p>Jika belum merasa cukup mahir, peserta bisa mengulang kelas berikutnya tanpa biaya tambahan.</p>
+            </div>
           </div>
-
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" id="solutionsIndicators">
-            <span class="indicator active" data-index="0"></span>
-            <span class="indicator" data-index="1"></span>
-            <span class="indicator" data-index="2"></span>
-          </div>
+          <div class="scroll-hint">Geser untuk melihat lebih banyak →</div>
         </div>
       </div>
     </section>
 
-    <!-- Pilihan Kelas Section -->
+    <!-- Pilihan Kelas Section - SEMUA UKURAN HORIZONTAL SCROLL -->
     <section id="classes">
       <div class="container">
         <div class="section-title">
@@ -2051,135 +1993,119 @@
           <p class="text-balance">Geser ke samping untuk melihat semua pilihan kelas yang tersedia</p>
         </div>
 
-        <!-- Carousel Section -->
-        <div class="carousel-section">
-          <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="classesPrevBtn" aria-label="Slide sebelumnya">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="carousel" id="classesCarousel">
-              <!-- Kelas Offline -->
-              <div class="carousel-card card-hover">
-                <div class="class-image">
-                  <img
-                    src="offline.jpeg"
-                    alt="Kelas Offline"
-                    loading="lazy"
-                    onerror="this.src='https://via.placeholder.com/380x220/1a3c6e/ffffff?text=Kelas+Offline'"
-                  />
-                  <div class="class-badge">Offline</div>
-                </div>
-                <div class="class-content">
-                  <h3>Kelas Offline</h3>
-                  <div class="class-price">Rp 4.000.000</div>
-                  <ul class="class-features">
-                    <li>GRATIS Borneo Schematic 1 bulan</li>
-                    <li>GRATIS Kaos Official Quantum</li>
-                    <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
-                    <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
-                    <li>Dapur Umum dan peralatan masak disediakan</li>
-                    <li>GRATIS Wifi 24 JAM</li>
-                    <li>GRATIS Mengulang di Kelas Berikutnya</li>
-                    <li>Boleh baya bahan Bedah kasus sendiri</li>
-                    <li>Sertifikat Training Resmi</li>
-                    <li>Video Materi Bisa Didownload</li>
-                  </ul>
-                  <div class="class-cta">
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Offline%20LPK%20Quantum"
-                      target="_blank"
-                      class="btn btn-daftar"
-                      >Daftar Kelas Offline</a
-                    >
-                  </div>
-                </div>
+        <!-- Horizontal Scroll Section -->
+        <div class="horizontal-scroll-section">
+          <div class="horizontal-scroll-container">
+            <!-- Kelas Offline -->
+            <div class="scroll-card card-hover">
+              <div class="class-image">
+                <img
+                  src="offline.jpeg"
+                  alt="Kelas Offline"
+                  loading="lazy"
+                  onerror="this.src='https://via.placeholder.com/380x220/1a3c6e/ffffff?text=Kelas+Offline'"
+                />
+                <div class="class-badge">Offline</div>
               </div>
-
-              <!-- Kelas Online -->
-              <div class="carousel-card card-hover">
-                <div class="class-image">
-                  <img
-                    src="online.jpeg"
-                    alt="Kelas Online"
-                    loading="lazy"
-                    onerror="this.src='https://via.placeholder.com/380x220/4a90e2/ffffff?text=Kelas+Online'"
-                  />
-                  <div class="class-badge">Online</div>
-                </div>
-                <div class="class-content">
-                  <h3>Kelas Online</h3>
-                  <div class="class-price">Rp 800.000</div>
-                  <ul class="class-features">
-                    <li>Di training instruktur berpengalaman</li>
-                    <li>GRATIS Borneo Schematic 1 bulan</li>
-                    <li>Alumni Bebas Konsultasi Selamanya</li>
-                    <li>Bonus materi Bisnis / Scale Up usaha</li>
-                    <li>Mendapatkan E-Sertifikat pelatihan</li>
-                    <li>Akses video materi seumur hidup</li>
-                    <li>Konsultasi via WhatsApp Group</li>
-                    <li>Live session tanya jawab mingguan</li>
-                  </ul>
-                  <div class="class-cta">
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Online%20LPK%20Quantum"
-                      target="_blank"
-                      class="btn btn-daftar"
-                      >Daftar Kelas Online</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kelas Private -->
-              <div class="carousel-card card-hover">
-                <div class="class-image">
-                  <img
-                    src="private.jpeg"
-                    alt="Kelas Private"
-                    loading="lazy"
-                    onerror="this.src='https://via.placeholder.com/380x220/ff8c42/ffffff?text=Kelas+Private'"
-                  />
-                  <div class="class-badge">Private</div>
-                </div>
-                <div class="class-content">
-                  <h3>Kelas Private</h3>
-                  <div class="class-price">Rp 10.000.000</div>
-                  <ul class="class-features">
-                    <li>GRATIS Borneo Schematic 3 bulan</li>
-                    <li>GRATIS Kaos Official Quantum</li>
-                    <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
-                    <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
-                    <li>Dapur Umum dan peralatan masak disediakan</li>
-                    <li>GRATIS Wifi 24 JAM</li>
-                    <li>GRATIS Mengulang di Kelas Berikutnya</li>
-                    <li>One-on-one training dengan instruktur</li>
-                    <li>Sertifikat Training Resmi</li>
-                    <li>Video Materi Bisa Didownload</li>
-                  </ul>
-                  <div class="class-cta">
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Private%20LPK%20Quantum"
-                      target="_blank"
-                      class="btn btn-daftar"
-                      >Daftar Kelas Private</a
-                    >
-                  </div>
+              <div class="class-content">
+                <h3>Kelas Offline</h3>
+                <div class="class-price">Rp 4.000.000</div>
+                <ul class="class-features">
+                  <li>GRATIS Borneo Schematic 1 bulan</li>
+                  <li>GRATIS Kaos Official Quantum</li>
+                  <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
+                  <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
+                  <li>Dapur Umum dan peralatan masak disediakan</li>
+                  <li>GRATIS Wifi 24 JAM</li>
+                  <li>GRATIS Mengulang di Kelas Berikutnya</li>
+                  <li>Boleh baya bahan Bedah kasus sendiri</li>
+                  <li>Sertifikat Training Resmi</li>
+                  <li>Video Materi Bisa Didownload</li>
+                </ul>
+                <div class="class-cta">
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Offline%20LPK%20Quantum"
+                    target="_blank"
+                    class="btn btn-daftar"
+                    >Daftar Kelas Offline</a
+                  >
                 </div>
               </div>
             </div>
 
-            <button class="carousel-btn next-btn" id="classesNextBtn" aria-label="Slide berikutnya">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
+            <!-- Kelas Online -->
+            <div class="scroll-card card-hover">
+              <div class="class-image">
+                <img
+                  src="online.jpeg"
+                  alt="Kelas Online"
+                  loading="lazy"
+                  onerror="this.src='https://via.placeholder.com/380x220/4a90e2/ffffff?text=Kelas+Online'"
+                />
+                <div class="class-badge">Online</div>
+              </div>
+              <div class="class-content">
+                <h3>Kelas Online</h3>
+                <div class="class-price">Rp 800.000</div>
+                <ul class="class-features">
+                  <li>Di training instruktur berpengalaman</li>
+                  <li>GRATIS Borneo Schematic 1 bulan</li>
+                  <li>Alumni Bebas Konsultasi Selamanya</li>
+                  <li>Bonus materi Bisnis / Scale Up usaha</li>
+                  <li>Mendapatkan E-Sertifikat pelatihan</li>
+                  <li>Akses video materi seumur hidup</li>
+                  <li>Konsultasi via WhatsApp Group</li>
+                  <li>Live session tanya jawab mingguan</li>
+                </ul>
+                <div class="class-cta">
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Online%20LPK%20Quantum"
+                    target="_blank"
+                    class="btn btn-daftar"
+                    >Daftar Kelas Online</a
+                  >
+                </div>
+              </div>
+            </div>
 
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" id="classesIndicators">
-            <span class="indicator active" data-index="0"></span>
-            <span class="indicator" data-index="1"></span>
-            <span class="indicator" data-index="2"></span>
+            <!-- Kelas Private -->
+            <div class="scroll-card card-hover">
+              <div class="class-image">
+                <img
+                  src="private.jpeg"
+                  alt="Kelas Private"
+                  loading="lazy"
+                  onerror="this.src='https://via.placeholder.com/380x220/ff8c42/ffffff?text=Kelas+Private'"
+                />
+                <div class="class-badge">Private</div>
+              </div>
+              <div class="class-content">
+                <h3>Kelas Private</h3>
+                <div class="class-price">Rp 10.000.000</div>
+                <ul class="class-features">
+                  <li>GRATIS Borneo Schematic 3 bulan</li>
+                  <li>GRATIS Kaos Official Quantum</li>
+                  <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
+                  <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
+                  <li>Dapur Umum dan peralatan masak disediakan</li>
+                  <li>GRATIS Wifi 24 JAM</li>
+                  <li>GRATIS Mengulang di Kelas Berikutnya</li>
+                  <li>One-on-one training dengan instruktur</li>
+                  <li>Sertifikat Training Resmi</li>
+                  <li>Video Materi Bisa Didownload</li>
+                </ul>
+                <div class="class-cta">
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Private%20LPK%20Quantum"
+                    target="_blank"
+                    class="btn btn-daftar"
+                    >Daftar Kelas Private</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="scroll-hint">Geser untuk melihat semua kelas →</div>
         </div>
       </div>
     </section>
@@ -2212,7 +2138,7 @@
               <li>Pemahaman cara Kerja Komponen</li>
               <li>Troubleshooting dan analisa kasus</li>
               <li>Teknik Angkat dan Pasang IC (ACP)</li>
-              <li>Teknik Jumper Jalur & Komponen</li>
+              <li>Teknik Jumper Jalur & Komponent</li>
               <li>Bedah kasus Kerusakan Hardware</li>
               <li>Tips & Trik Repair Cepat</li>
             </ul>
@@ -2241,69 +2167,54 @@
           </div>
         </div>
 
-        <!-- Mobile Carousel View -->
-        <div class="carousel-section mobile-carousel">
-          <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="materiPrevBtn" aria-label="Slide sebelumnya">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="carousel" id="materiCarousel">
-              <!-- Materi Hardware Card -->
-              <div class="carousel-card">
-                <div class="materi-header">
-                  <div class="materi-icon">
-                    <i class="fas fa-microchip"></i>
-                  </div>
-                  <h3 class="materi-title">Materi Hardware</h3>
+        <!-- Mobile Horizontal Scroll View -->
+        <div class="horizontal-scroll-section mobile-only">
+          <div class="horizontal-scroll-container">
+            <!-- Materi Hardware Card -->
+            <div class="scroll-card">
+              <div class="materi-header">
+                <div class="materi-icon">
+                  <i class="fas fa-microchip"></i>
                 </div>
-                <ul class="materi-list">
-                  <li>Dasar-dasar Elektronika</li>
-                  <li>Penggunaan Alat Service (multimeter, hot air, dll)</li>
-                  <li>Belajar Schematic dan Diagram Blok</li>
-                  <li>Pengukuran Jalur dan Tegangan</li>
-                  <li>Pemahaman cara Kerja Komponen</li>
-                  <li>Troubleshooting dan analisa kasus</li>
-                  <li>Teknik Angkat dan Pasang IC (ACP)</li>
-                  <li>Teknik Jumper Jalur & Komponen</li>
-                  <li>Bedah kasus Kerusakan Hardware</li>
-                  <li>Tips & Trik Repair Cepat</li>
-                </ul>
+                <h3 class="materi-title">Materi Hardware</h3>
               </div>
-
-              <!-- Materi Software Card -->
-              <div class="carousel-card">
-                <div class="materi-header">
-                  <div class="materi-icon">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <h3 class="materi-title">Materi Software</h3>
-                </div>
-                <ul class="materi-list">
-                  <li>Pengenalan Tool Software Flashing</li>
-                  <li>Flashing, Unlock, dan FRP Removal</li>
-                  <li>Perbaikan IMEI Handphone</li>
-                  <li>Repair kerusakan Software & EMMC</li>
-                  <li>Pemahaman Tentang EMMC, EMCP, UFS</li>
-                  <li>Perbaikan Software Dengan ISP</li>
-                  <li>Cara penggunaan Box Flashing</li>
-                  <li>Tips & Trik Analisa Kerusakan Software</li>
-                  <li>Custom ROM dan Firmware</li>
-                  <li>Backup dan Restore Data</li>
-                </ul>
-              </div>
+              <ul class="materi-list">
+                <li>Dasar-dasar Elektronika</li>
+                <li>Penggunaan Alat Service (multimeter, hot air, dll)</li>
+                <li>Belajar Schematic dan Diagram Blok</li>
+                <li>Pengukuran Jalur dan Tegangan</li>
+                <li>Pemahaman cara Kerja Komponen</li>
+                <li>Troubleshooting dan analisa kasus</li>
+                <li>Teknik Angkat dan Pasang IC (ACP)</li>
+                <li>Teknik Jumper Jalur & Komponen</li>
+                <li>Bedah kasus Kerusakan Hardware</li>
+                <li>Tips & Trik Repair Cepat</li>
+              </ul>
             </div>
 
-            <button class="carousel-btn next-btn" id="materiNextBtn" aria-label="Slide berikutnya">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+            <!-- Materi Software Card -->
+            <div class="scroll-card">
+              <div class="materi-header">
+                <div class="materi-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="materi-title">Materi Software</h3>
+              </div>
+              <ul class="materi-list">
+                <li>Pengenalan Tool Software Flashing</li>
+                <li>Flashing, Unlock, dan FRP Removal</li>
+                <li>Perbaikan IMEI Handphone</li>
+                <li>Repair kerusakan Software & EMMC</li>
+                <li>Pemahaman Tentang EMMC, EMCP, UFS</li>
+                <li>Perbaikan Software Dengan ISP</li>
+                <li>Cara penggunaan Box Flashing</li>
+                <li>Tips & Trik Analisa Kerusakan Software</li>
+                <li>Custom ROM dan Firmware</li>
+                <li>Backup dan Restore Data</li>
+              </ul>
+            </div>
           </div>
-
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" id="materiIndicators">
-            <span class="indicator active" data-index="0"></span>
-            <span class="indicator" data-index="1"></span>
-          </div>
+          <div class="scroll-hint">Geser untuk melihat semua materi →</div>
         </div>
       </div>
     </section>
@@ -2380,85 +2291,69 @@
           </div>
         </div>
 
-        <!-- Mobile Carousel View -->
-        <div class="carousel-section mobile-carousel">
-          <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="teknisPrevBtn" aria-label="Slide sebelumnya">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="carousel" id="teknisCarousel">
-              <!-- Teknis Kelas Offline Card -->
-              <div class="carousel-card">
-                <div class="teknis-header">
-                  <div class="teknis-icon">
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <h3 class="teknis-title">Kelas Offline</h3>
+        <!-- Mobile Horizontal Scroll View -->
+        <div class="horizontal-scroll-section mobile-only">
+          <div class="horizontal-scroll-container">
+            <!-- Teknis Kelas Offline Card -->
+            <div class="scroll-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-users"></i>
                 </div>
-                <ul class="teknis-list">
-                  <li>Materi disampaikan dalam kelas tatap muka</li>
-                  <li>Belajar materi selama 10x pertemuan</li>
-                  <li>Durasi Belajar 8 jam per hari</li>
-                  <li>Teori 30% Praktik 70%</li>
-                  <li>Jam Belajar 09.00 WIB - 17.00 WIB</li>
-                  <li>Masuk Senin s/d Sabtu</li>
-                  <li>Selesai pembelajaran bebas praktik</li>
-                  <li>Magang di service center terafiliasi</li>
-                </ul>
+                <h3 class="teknis-title">Kelas Offline</h3>
               </div>
-
-              <!-- Teknis Kelas Online Card -->
-              <div class="carousel-card">
-                <div class="teknis-header">
-                  <div class="teknis-icon">
-                    <i class="fas fa-laptop"></i>
-                  </div>
-                  <h3 class="teknis-title">Kelas Online</h3>
-                </div>
-                <ul class="teknis-list">
-                  <li>Penyampaian Materi berupa Video di aplikasi VbatPonsel</li>
-                  <li>Akses video materi 24/7</li>
-                  <li>Bedah kasus Live Streaming Jam 19.30 - 21.30 WIB</li>
-                  <li>Diluar jam belajar bebas konsultasi</li>
-                  <li>Konsultasi dan bedah kasus Via WA Group</li>
-                  <li>Materi update berkala</li>
-                  <li>Kuis dan evaluasi online</li>
-                </ul>
-              </div>
-
-              <!-- Teknis Kelas Private Card -->
-              <div class="carousel-card">
-                <div class="teknis-header">
-                  <div class="teknis-icon">
-                    <i class="fas fa-user-graduate"></i>
-                  </div>
-                  <h3 class="teknis-title">Kelas Private</h3>
-                </div>
-                <ul class="teknis-list">
-                  <li>Materi disampaikan dalam kelas intensif tatap muka</li>
-                  <li>Belajar materi selama 10x pertemuan</li>
-                  <li>Durasi Belajar 8 jam per hari</li>
-                  <li>One-on-one dengan instruktur</li>
-                  <li>Jam Belajar menyesuaikan peserta</li>
-                  <li>Materi bisa disesuaikan kebutuhan</li>
-                  <li>Selesai pembelajaran bebas praktik</li>
-                  <li>Personal coaching dan mentoring</li>
-                </ul>
-              </div>
+              <ul class="teknis-list">
+                <li>Materi disampaikan dalam kelas tatap muka</li>
+                <li>Belajar materi selama 10x pertemuan</li>
+                <li>Durasi Belajar 8 jam per hari</li>
+                <li>Teori 30% Praktik 70%</li>
+                <li>Jam Belajar 09.00 WIB - 17.00 WIB</li>
+                <li>Masuk Senin s/d Sabtu</li>
+                <li>Selesai pembelajaran bebas praktik</li>
+                <li>Magang di service center terafiliasi</li>
+              </ul>
             </div>
 
-            <button class="carousel-btn next-btn" id="teknisNextBtn" aria-label="Slide berikutnya">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
+            <!-- Teknis Kelas Online Card -->
+            <div class="scroll-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="teknis-title">Kelas Online</h3>
+              </div>
+              <ul class="teknis-list">
+                <li>Penyampaian Materi berupa Video di aplikasi VbatPonsel</li>
+                <li>Akses video materi 24/7</li>
+                <li>Bedah kasus Live Streaming Jam 19.30 - 21.30 WIB</li>
+                <li>Diluar jam belajar bebas konsultasi</li>
+                <li>Konsultasi dan bedah kasus Via WA Group</li>
+                <li>Materi update berkala</li>
+                <li>Kuis dan evaluasi online</li>
+              </ul>
+            </div>
 
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" id="teknisIndicators">
-            <span class="indicator active" data-index="0"></span>
-            <span class="indicator" data-index="1"></span>
-            <span class="indicator" data-index="2"></span>
+            <!-- Teknis Kelas Private Card -->
+            <div class="scroll-card">
+              <div class="teknis-header">
+                <div class="teknis-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="teknis-title">Kelas Private</h3>
+              </div>
+              <ul class="teknis-list">
+                <li>Materi disampaikan dalam kelas intensif tatap muka</li>
+                <li>Belajar materi selama 10x pertemuan</li>
+                <li>Durasi Belajar 8 jam per hari</li>
+                <li>One-on-one dengan instruktur</li>
+                <li>Jam Belajar menyesuaikan peserta</li>
+                <li>Materi bisa disesuaikan kebutuhan</li>
+                <li>Selesai pembelajaran bebas praktik</li>
+                <li>Personal coaching dan mentoring</li>
+              </ul>
+            </div>
           </div>
+          <div class="scroll-hint">Geser untuk melihat semua metode →</div>
         </div>
       </div>
     </section>
@@ -2669,208 +2564,6 @@
         };
       }
 
-      // Carousel function - reusable for all carousels
-      function createCarousel(carouselId, options = {}) {
-        const {
-          autoScrollInterval = 5000,
-          snapThreshold = 0.1,
-          dragSensitivity = 1.5
-        } = options;
-
-        const carousel = document.getElementById(carouselId);
-        if (!carousel) return null;
-
-        const container = carousel.closest('.carousel-container');
-        const prevBtn = container?.querySelector('.prev-btn');
-        const nextBtn = container?.querySelector('.next-btn');
-        const indicators = document.querySelectorAll(`#${carouselId.replace('Carousel', 'Indicators')} .indicator`);
-
-        const cards = carousel.querySelectorAll('.carousel-card');
-        const cardCount = cards.length;
-
-        if (cardCount === 0) return null;
-
-        let currentIndex = 0;
-        let isDragging = false;
-        let startX = 0;
-        let scrollLeft = 0;
-        let autoScrollTimer = null;
-        let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
-
-        // Update card width on resize
-        function updateCardWidth() {
-          if (cards[0]) {
-            const gap = parseInt(getComputedStyle(carousel).gap) || 30;
-            cardWidth = cards[0].offsetWidth + gap;
-          }
-        }
-
-        // Update indicators
-        function updateIndicators() {
-          if (!indicators.length) return;
-
-          indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
-          });
-        }
-
-        // Scroll to specific index
-        function scrollToIndex(index, smooth = true) {
-          if (index < 0 || index >= cardCount) return;
-
-          currentIndex = index;
-          const scrollPosition = currentIndex * cardWidth;
-
-          carousel.scrollTo({
-            left: scrollPosition,
-            behavior: smooth ? 'smooth' : 'auto'
-          });
-
-          updateIndicators();
-          updateButtons();
-        }
-
-        // Update button states
-        function updateButtons() {
-          if (prevBtn) prevBtn.disabled = currentIndex === 0;
-          if (nextBtn) nextBtn.disabled = currentIndex >= cardCount - 1;
-        }
-
-        // Next slide
-        function nextSlide() {
-          if (currentIndex < cardCount - 1) {
-            scrollToIndex(currentIndex + 1);
-          } else {
-            scrollToIndex(0);
-          }
-        }
-
-        // Previous slide
-        function prevSlide() {
-          if (currentIndex > 0) {
-            scrollToIndex(currentIndex - 1);
-          } else {
-            scrollToIndex(cardCount - 1);
-          }
-        }
-
-        // Auto scroll
-        function startAutoScroll() {
-          if (autoScrollInterval <= 0) return;
-
-          stopAutoScroll();
-          autoScrollTimer = setInterval(nextSlide, autoScrollInterval);
-        }
-
-        function stopAutoScroll() {
-          if (autoScrollTimer) {
-            clearInterval(autoScrollTimer);
-            autoScrollTimer = null;
-          }
-        }
-
-        // Handle drag/swipe
-        function handleDragStart(e) {
-          isDragging = true;
-          startX = (e.pageX || e.touches[0].pageX) - carousel.offsetLeft;
-          scrollLeft = carousel.scrollLeft;
-          carousel.classList.add('carousel-touch-active');
-          stopAutoScroll();
-        }
-
-        function handleDragMove(e) {
-          if (!isDragging) return;
-
-          e.preventDefault();
-          const x = (e.pageX || e.touches[0].pageX) - carousel.offsetLeft;
-          const walk = (x - startX) * dragSensitivity;
-          carousel.scrollLeft = scrollLeft - walk;
-        }
-
-        function handleDragEnd() {
-          if (!isDragging) return;
-
-          isDragging = false;
-          carousel.classList.remove('carousel-touch-active');
-
-          // Calculate closest slide
-          const scrollPos = carousel.scrollLeft;
-          const newIndex = Math.round(scrollPos / cardWidth);
-
-          // Ensure index is within bounds
-          const clampedIndex = Math.max(0, Math.min(newIndex, cardCount - 1));
-          scrollToIndex(clampedIndex);
-
-          startAutoScroll();
-        }
-
-        // Handle scroll event
-        function handleScroll() {
-          const scrollPos = carousel.scrollLeft;
-          const newIndex = Math.round(scrollPos / cardWidth);
-
-          if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cardCount) {
-            currentIndex = newIndex;
-            updateIndicators();
-            updateButtons();
-          }
-        }
-
-        // Initialize
-        function init() {
-          updateCardWidth();
-          updateIndicators();
-          updateButtons();
-
-          // Event listeners for buttons
-          if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-          if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-
-          // Event listeners for indicators
-          indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => scrollToIndex(index));
-          });
-
-          // Mouse/touch events for dragging
-          carousel.addEventListener('mousedown', handleDragStart);
-          carousel.addEventListener('touchstart', handleDragStart);
-
-          carousel.addEventListener('mousemove', handleDragMove);
-          carousel.addEventListener('touchmove', handleDragMove);
-
-          carousel.addEventListener('mouseup', handleDragEnd);
-          carousel.addEventListener('touchend', handleDragEnd);
-          carousel.addEventListener('mouseleave', handleDragEnd);
-
-          // Handle scroll events
-          carousel.addEventListener('scroll', handleScroll);
-
-          // Pause auto-scroll on hover
-          carousel.addEventListener('mouseenter', stopAutoScroll);
-          carousel.addEventListener('mouseleave', startAutoScroll);
-
-          // Start auto-scroll
-          startAutoScroll();
-
-          // Update on resize
-          window.addEventListener('resize', () => {
-            updateCardWidth();
-            scrollToIndex(currentIndex, false);
-          });
-        }
-
-        // Initialize the carousel
-        init();
-
-        return {
-          nextSlide,
-          prevSlide,
-          scrollToIndex,
-          startAutoScroll,
-          stopAutoScroll
-        };
-      }
-
       // Scroll animation
       function initScrollAnimations() {
         const sections = document.querySelectorAll("section");
@@ -2898,6 +2591,63 @@
         window.addEventListener("scroll", checkScroll);
         window.addEventListener("load", checkScroll);
         checkScroll(); // Initial check
+      }
+
+      // Horizontal scroll touch enhancement
+      function initHorizontalScroll() {
+        const scrollContainers = document.querySelectorAll('.horizontal-scroll-container');
+        
+        scrollContainers.forEach(container => {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+          
+          container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.classList.add('scroll-touch-active');
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+          });
+          
+          container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.classList.remove('scroll-touch-active');
+          });
+          
+          container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.classList.remove('scroll-touch-active');
+          });
+          
+          container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll multiplier
+            container.scrollLeft = scrollLeft - walk;
+          });
+          
+          // Touch events for mobile
+          container.addEventListener('touchstart', (e) => {
+            isDown = true;
+            container.classList.add('scroll-touch-active');
+            startX = e.touches[0].pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+          });
+          
+          container.addEventListener('touchend', () => {
+            isDown = false;
+            container.classList.remove('scroll-touch-active');
+          });
+          
+          container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+          });
+        });
       }
 
       // =================== INITIALIZATION ===================
@@ -3020,14 +2770,11 @@
         createSlideshow('program-hero-slide', 5000);
         createSlideshow('why-slide', 4000);
 
-        // Initialize carousels
-        const classesCarousel = createCarousel('classesCarousel', { autoScrollInterval: 5000 });
-        const solutionsCarousel = createCarousel('solutionsCarousel', { autoScrollInterval: 5000 });
-        const materiCarousel = createCarousel('materiCarousel', { autoScrollInterval: 5000 });
-        const teknisCarousel = createCarousel('teknisCarousel', { autoScrollInterval: 5000 });
-
         // Initialize scroll animations
         initScrollAnimations();
+        
+        // Initialize horizontal scroll touch
+        initHorizontalScroll();
 
         // Button loading animation
         const daftarBtn = document.getElementById('daftarBtn');
@@ -3090,15 +2837,6 @@
             });
           });
         }
-
-        // Keyboard navigation for carousels
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') {
-            if (classesCarousel) classesCarousel.prevSlide();
-          } else if (e.key === 'ArrowRight') {
-            if (classesCarousel) classesCarousel.nextSlide();
-          }
-        });
 
         // Add active class to current section in navigation
         function highlightCurrentSection() {
@@ -3178,7 +2916,7 @@
               icon.classList.add('fa-bars');
             }
           }
-        }
+        }git 
       });
     </script>
   </body>
