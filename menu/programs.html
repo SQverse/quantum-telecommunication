@@ -31,12 +31,12 @@
         --blue-medium: #4a90e2;
         --blue-dark: #1a3c6e;
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
-        
+
         --accent-orange: #ff8c42;
         --accent-orange-light: #ffb366;
         --accent-orange-dark: #e67429;
         --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
-        
+
         --text-dark: #222;
         --text-muted: #555;
         --text-light: #fff;
@@ -48,9 +48,9 @@
 
         /* Border Radius */
         --radius-sm: 8px;
-        --radius-md: 15px;
-        --radius-lg: 20px;
-        --radius-xl: 25px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 20px;
 
         /* Transisi */
         --transition: all 0.3s ease;
@@ -81,36 +81,42 @@
 
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 90px;
+        scroll-padding-top: 70px;
         overflow-x: hidden;
       }
 
       body {
         font-family: "Open Sans", sans-serif;
         color: var(--text-dark);
-        line-height: 1.7;
+        line-height: 1.6;
         background-color: var(--bg-light);
         overflow-x: hidden;
         transition: var(--transition);
+        font-size: 14px;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: "Poppins", sans-serif;
         font-weight: 700;
-        line-height: 1.3;
+        line-height: 1.2;
       }
 
       .container {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 clamp(20px, 4vw, 40px);
+        padding: 0 clamp(15px, 3vw, 30px);
       }
 
-      /* Header & Navigation */
+      /* Header & Navigation - DIKECILKAN */
       header {
         background: var(--blue-gradient);
-        padding: 15px 0;
+        padding: 10px 0;
         position: fixed;
         top: 0;
         width: 100%;
@@ -118,33 +124,34 @@
         box-shadow: var(--shadow);
         transition: var(--transition);
         backdrop-filter: blur(10px);
+        height: 70px;
       }
 
       .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
       }
 
       .logo {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
         flex-shrink: 0;
         text-decoration: none;
       }
 
       .logo img {
-        height: clamp(45px, 5vw, 60px);
+        height: 40px;
         width: auto;
         transition: var(--transition);
-        border-radius: 10px;
+        border-radius: 8px;
       }
 
       .logo h1 {
         color: var(--text-light);
-        font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+        font-size: 1.2rem;
         font-weight: 800;
         transition: var(--transition);
         letter-spacing: 0.5px;
@@ -154,7 +161,7 @@
       nav ul {
         display: flex;
         list-style: none;
-        gap: clamp(8px, 1.2vw, 15px);
+        gap: 5px;
       }
 
       nav ul li {
@@ -166,13 +173,13 @@
         text-decoration: none;
         font-weight: 600;
         transition: var(--transition);
-        padding: 12px clamp(12px, 1.5vw, 20px);
+        padding: 8px 12px;
         border-radius: var(--radius-sm);
         position: relative;
-        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        font-size: 0.85rem;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 5px;
         white-space: nowrap;
       }
 
@@ -189,13 +196,13 @@
       .mobile-menu-btn {
         display: none;
         color: var(--text-light);
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         background: none;
         border: none;
         cursor: pointer;
         z-index: 1001;
-        padding: 8px;
-        border-radius: 8px;
+        padding: 6px;
+        border-radius: 6px;
         transition: var(--transition);
       }
 
@@ -207,10 +214,10 @@
         background: rgba(255, 255, 255, 0.1);
         border: none;
         color: var(--text-light);
-        font-size: 1.2rem;
+        font-size: 1rem;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -230,7 +237,7 @@
         top: 100%;
         left: 0;
         background: var(--card-bg);
-        min-width: 220px;
+        min-width: 180px;
         box-shadow: var(--shadow-hover);
         border-radius: var(--radius-md);
         z-index: 1000;
@@ -249,10 +256,10 @@
 
       .dropdown-content a {
         color: var(--text-dark);
-        padding: 14px 20px;
+        padding: 10px 16px;
         display: block;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         text-decoration: none;
         transition: var(--transition);
       }
@@ -260,7 +267,7 @@
       .dropdown-content a:hover {
         background: var(--blue-light);
         color: var(--blue-dark);
-        padding-left: 25px;
+        padding-left: 20px;
       }
 
       /* Dark mode dropdown */
@@ -274,14 +281,14 @@
         color: var(--text-light);
       }
 
-      /* Hero Section - Responsive */
+      /* Hero Section - Responsive dan DIKECILKAN */
       .program-hero {
-        height: clamp(400px, 70vh, 700px);
-        min-height: 400px;
+        height: clamp(300px, 50vh, 500px);
+        min-height: 300px;
         position: relative;
         overflow: hidden;
         color: var(--text-light);
-        margin-top: 90px;
+        margin-top: 70px;
         display: flex;
         align-items: center;
       }
@@ -339,13 +346,13 @@
         z-index: 2;
         width: 100%;
         text-align: center;
-        padding: 0 clamp(20px, 5vw, 60px);
+        padding: 0 clamp(15px, 4vw, 40px);
       }
 
       .program-hero-title {
-        font-size: clamp(2rem, 5vw, 3.8rem);
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
         font-weight: 800;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         animation: fadeInDown 1s ease;
         line-height: 1.1;
         text-transform: uppercase;
@@ -354,13 +361,13 @@
       }
 
       .program-hero-subtitle {
-        font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+        font-size: clamp(0.9rem, 1.8vw, 1.2rem);
         font-weight: 500;
-        margin-bottom: clamp(25px, 5vh, 40px);
+        margin-bottom: clamp(20px, 4vh, 30px);
         animation: fadeInDown 1s ease 0.2s forwards;
         opacity: 0;
-        line-height: 1.5;
-        max-width: min(900px, 90vw);
+        line-height: 1.4;
+        max-width: min(800px, 90vw);
         margin-left: auto;
         margin-right: auto;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
@@ -371,46 +378,48 @@
         opacity: 0;
       }
 
-      /* Enhanced button styles */
+      /* Enhanced button styles - DIKECILKAN */
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         background: var(--accent-gradient);
         color: var(--text-light);
-        padding: clamp(14px, 2.5vw, 20px) clamp(30px, 5vw, 50px);
-        border-radius: 50px;
-        text-decoration: none;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        min-height: 40px;
+        border-radius: 30px;
+        font-weight: 600;
         transition: var(--transition);
         box-shadow: var(--shadow);
         border: 2px solid transparent;
-        font-size: clamp(1rem, 1.3vw, 1.2rem);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         position: relative;
         overflow: hidden;
         cursor: pointer;
         text-align: center;
-        min-height: 56px;
       }
 
       .btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, var(--blue-medium) 0%, var(--blue-dark) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--blue-medium) 0%,
+          var(--blue-dark) 100%
+        );
         transition: var(--transition-slow);
         z-index: -1;
       }
 
       .btn:hover {
-        transform: translateY(-5px) scale(1.05);
+        transform: translateY(-3px) scale(1.05);
         box-shadow: var(--shadow-hover);
         color: var(--text-light);
       }
@@ -420,7 +429,7 @@
       }
 
       .btn:active {
-        transform: translateY(-2px) scale(1.02);
+        transform: translateY(-1px) scale(1.02);
       }
 
       .btn-daftar {
@@ -433,11 +442,11 @@
         color: var(--text-light);
       }
 
-      /* Section Styling */
+      /* Section Styling - DIKECILKAN */
       section {
-        padding: clamp(60px, 10vw, 100px) 0;
+        padding: clamp(40px, 6vw, 60px) 0;
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
       }
 
@@ -448,15 +457,15 @@
 
       .section-title {
         text-align: center;
-        margin-bottom: clamp(40px, 6vw, 70px);
+        margin-bottom: clamp(25px, 4vw, 40px);
       }
 
       .section-title h2 {
-        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
         color: var(--blue-dark);
         position: relative;
         display: inline-block;
-        padding-bottom: 20px;
+        padding-bottom: 12px;
         font-weight: 800;
       }
 
@@ -466,19 +475,19 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 100px;
-        height: 5px;
+        width: 80px;
+        height: 4px;
         background: var(--accent-gradient);
-        border-radius: 3px;
+        border-radius: 2px;
       }
 
       .section-subtitle {
         text-align: center;
-        max-width: min(800px, 90vw);
-        margin: 0 auto clamp(40px, 6vw, 70px);
-        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        max-width: min(700px, 90vw);
+        margin: 0 auto clamp(25px, 4vw, 40px);
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
         color: var(--text-muted);
-        line-height: 1.7;
+        line-height: 1.6;
         font-family: "Open Sans", sans-serif;
       }
 
@@ -487,42 +496,42 @@
         color: #cbd5e1;
       }
 
-      /* Permasalahan Pemula Section - Responsive Grid */
+      /* Permasalahan Pemula Section - Responsive Grid dan DIKECILKAN */
       .problems-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-        gap: clamp(20px, 3vw, 30px);
+        grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+        gap: clamp(15px, 2vw, 20px);
       }
 
       .problem-card {
         background: var(--card-bg);
         border-radius: var(--radius-lg);
-        padding: clamp(25px, 3vw, 30px);
+        padding: clamp(18px, 2.5vw, 22px);
         box-shadow: var(--shadow-card);
         transition: var(--transition);
         display: flex;
         align-items: flex-start;
-        gap: 20px;
+        gap: 15px;
         border: 1px solid transparent;
         height: 100%;
       }
 
       .problem-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-5px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
 
       .problem-icon {
-        width: clamp(50px, 7vw, 60px);
-        height: clamp(50px, 7vw, 60px);
+        width: 40px;
+        height: 40px;
         background: var(--blue-light);
         color: var(--blue-medium);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        font-size: 1.1rem;
         flex-shrink: 0;
         transition: var(--transition);
       }
@@ -538,24 +547,24 @@
       }
 
       .problem-text h3 {
-        font-size: clamp(1.1rem, 1.4vw, 1.3rem);
-        margin-bottom: 8px;
+        font-size: 0.95rem;
+        margin-bottom: 5px;
         color: var(--blue-dark);
-        line-height: 1.4;
+        line-height: 1.3;
         font-weight: 600;
       }
 
-      /* Solusi Section */
+      /* Solusi Section - DIKECILKAN */
       .solutions-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-        gap: clamp(25px, 4vw, 40px);
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 30px);
       }
 
       .solution-card {
         background: var(--card-bg);
         border-radius: var(--radius-lg);
-        padding: clamp(30px, 4vw, 40px);
+        padding: clamp(22px, 3vw, 28px);
         box-shadow: var(--shadow-card);
         transition: var(--transition);
         text-align: center;
@@ -567,54 +576,54 @@
       }
 
       .solution-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-6px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
 
       .solution-icon {
-        width: clamp(70px, 10vw, 90px);
-        height: clamp(70px, 10vw, 90px);
+        width: 60px;
+        height: 60px;
         background: var(--blue-gradient);
         color: var(--text-light);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        margin: 0 auto clamp(20px, 3vw, 25px);
+        font-size: 1.5rem;
+        margin: 0 auto clamp(15px, 2.5vw, 20px);
         transition: var(--transition);
       }
 
       .solution-card:hover .solution-icon {
-        transform: scale(1.15) rotate(5deg);
+        transform: scale(1.1) rotate(5deg);
       }
 
       .solution-card h3 {
-        font-size: clamp(1.2rem, 1.7vw, 1.5rem);
-        margin-bottom: clamp(15px, 2.5vw, 20px);
+        font-size: 1.1rem;
+        margin-bottom: clamp(12px, 2vw, 16px);
         color: var(--blue-dark);
-        line-height: 1.4;
+        line-height: 1.3;
         font-weight: 700;
       }
 
       .solution-card p {
         color: var(--text-muted);
-        line-height: 1.7;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        line-height: 1.6;
+        font-size: 0.9rem;
         margin-bottom: 0;
       }
 
-      /* HORIZONTAL SCROLL CONTAINER - NEW STYLES */
+      /* HORIZONTAL SCROLL CONTAINER - DIKECILKAN */
       .horizontal-scroll-section {
         position: relative;
         padding: 0;
-        margin: 0 -20px;
+        margin: 0 -10px;
       }
 
       @media (min-width: 768px) {
         .horizontal-scroll-section {
-          margin: 0 -40px;
+          margin: 0 -20px;
         }
       }
 
@@ -622,8 +631,8 @@
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
-        gap: clamp(20px, 3vw, 30px);
-        padding: 20px clamp(20px, 4vw, 40px) 40px;
+        gap: clamp(15px, 2.5vw, 20px);
+        padding: 15px clamp(15px, 3vw, 25px) 30px;
         scrollbar-width: thin;
         scrollbar-color: var(--blue-medium) transparent;
         -webkit-overflow-scrolling: touch;
@@ -636,27 +645,27 @@
       }
 
       .horizontal-scroll-container::-webkit-scrollbar {
-        height: 8px;
+        height: 6px;
       }
 
       .horizontal-scroll-container::-webkit-scrollbar-track {
         background: transparent;
-        border-radius: 4px;
+        border-radius: 3px;
       }
 
       .horizontal-scroll-container::-webkit-scrollbar-thumb {
         background: var(--blue-medium);
-        border-radius: 4px;
+        border-radius: 3px;
       }
 
       .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
         background: var(--blue-dark);
       }
 
-      /* Horizontal Scroll Cards */
+      /* Horizontal Scroll Cards - DIKECILKAN */
       .scroll-card {
         flex: 0 0 auto;
-        width: clamp(300px, 85vw, 380px);
+        width: clamp(260px, 80vw, 320px);
         scroll-snap-align: start;
         background: var(--card-bg);
         border-radius: var(--radius-lg);
@@ -670,7 +679,7 @@
       }
 
       .scroll-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-6px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
@@ -691,23 +700,23 @@
         .desktop-grid {
           display: none;
         }
-        
+
         .horizontal-scroll-section.mobile-only {
           display: block;
         }
       }
 
-      /* Materi Pembelajaran Section */
+      /* Materi Pembelajaran Section - DIKECILKAN dan DIPERBAIKI */
       .materi-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-        gap: clamp(30px, 5vw, 50px);
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        gap: clamp(20px, 4vw, 30px);
       }
 
       .materi-card {
         background: var(--card-bg);
         border-radius: var(--radius-lg);
-        padding: clamp(30px, 4vw, 40px);
+        padding: clamp(22px, 3vw, 28px);
         box-shadow: var(--shadow-card);
         transition: var(--transition);
         height: 100%;
@@ -715,7 +724,7 @@
       }
 
       .materi-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-6px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
@@ -723,20 +732,20 @@
       .materi-header {
         display: flex;
         align-items: center;
-        gap: clamp(15px, 2.5vw, 20px);
-        margin-bottom: clamp(25px, 4vw, 35px);
+        gap: clamp(12px, 2vw, 16px);
+        margin-bottom: clamp(18px, 3vw, 25px);
       }
 
       .materi-icon {
-        width: clamp(60px, 8vw, 70px);
-        height: clamp(60px, 8vw, 70px);
+        width: 50px;
+        height: 50px;
         background: var(--blue-gradient);
         color: var(--text-light);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+        font-size: 1.3rem;
         flex-shrink: 0;
         transition: var(--transition);
       }
@@ -746,21 +755,21 @@
       }
 
       .materi-title {
-        font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+        font-size: 1.2rem;
         color: var(--blue-dark);
         font-weight: 700;
       }
 
       .materi-list {
-        padding-left: 20px;
+        padding-left: 16px;
       }
 
       .materi-list li {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         position: relative;
-        line-height: 1.7;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
-        padding-left: 10px;
+        line-height: 1.5;
+        font-size: 0.9rem;
+        padding-left: 8px;
         color: var(--text-muted);
       }
 
@@ -769,21 +778,21 @@
         color: var(--accent-orange);
         font-weight: bold;
         position: absolute;
-        left: -20px;
-        font-size: 1.2rem;
+        left: -16px;
+        font-size: 1rem;
       }
 
-      /* Teknis Pembelajaran Section */
+      /* Teknis Pembelajaran Section - DIKECILKAN */
       .teknis-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-        gap: clamp(25px, 4vw, 40px);
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 30px);
       }
 
       .teknis-card {
         background: var(--card-bg);
         border-radius: var(--radius-lg);
-        padding: clamp(30px, 4vw, 40px);
+        padding: clamp(22px, 3vw, 28px);
         box-shadow: var(--shadow-card);
         transition: var(--transition);
         height: 100%;
@@ -791,7 +800,7 @@
       }
 
       .teknis-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-6px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
@@ -799,20 +808,20 @@
       .teknis-header {
         display: flex;
         align-items: center;
-        gap: clamp(15px, 2.5vw, 20px);
-        margin-bottom: clamp(25px, 4vw, 35px);
+        gap: clamp(12px, 2vw, 16px);
+        margin-bottom: clamp(18px, 3vw, 25px);
       }
 
       .teknis-icon {
-        width: clamp(50px, 7vw, 60px);
-        height: clamp(50px, 7vw, 60px);
+        width: 45px;
+        height: 45px;
         background: var(--blue-light);
         color: var(--blue-medium);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-size: 1.1rem;
         flex-shrink: 0;
         transition: var(--transition);
       }
@@ -824,20 +833,20 @@
       }
 
       .teknis-title {
-        font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+        font-size: 1.1rem;
         color: var(--blue-dark);
         font-weight: 700;
       }
 
       .teknis-list {
-        padding-left: 20px;
+        padding-left: 16px;
       }
 
       .teknis-list li {
-        margin-bottom: 12px;
-        line-height: 1.7;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
-        padding-left: 8px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 0.9rem;
+        padding-left: 6px;
         color: var(--text-muted);
         position: relative;
       }
@@ -847,13 +856,13 @@
         color: var(--blue-medium);
         font-weight: bold;
         position: absolute;
-        left: -15px;
-        font-size: 1.5rem;
+        left: -12px;
+        font-size: 1.2rem;
       }
 
-      /* Class-specific styles untuk horizontal scroll */
+      /* Class-specific styles untuk horizontal scroll - DIKECILKAN */
       .class-image {
-        height: clamp(200px, 30vw, 240px);
+        height: clamp(160px, 25vw, 180px);
         overflow: hidden;
         position: relative;
         flex-shrink: 0;
@@ -867,18 +876,18 @@
       }
 
       .scroll-card:hover .class-image img {
-        transform: scale(1.15);
+        transform: scale(1.1);
       }
 
       .class-badge {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 10px;
+        right: 10px;
         background: var(--blue-medium);
         color: var(--text-light);
-        padding: 8px 18px;
-        border-radius: 20px;
-        font-size: 0.9rem;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
         font-weight: 700;
         font-family: "Poppins", sans-serif;
         z-index: 2;
@@ -886,41 +895,41 @@
       }
 
       .class-content {
-        padding: clamp(25px, 4vw, 35px);
+        padding: clamp(18px, 3vw, 22px);
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        min-height: 420px;
+        min-height: 350px;
       }
 
       .class-content h3 {
         color: var(--blue-dark);
-        margin-bottom: 15px;
-        font-size: clamp(1.3rem, 2vw, 1.6rem);
-        line-height: 1.3;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+        line-height: 1.2;
         font-weight: 700;
       }
 
       .class-price {
         color: var(--accent-orange);
         font-weight: 800;
-        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
         font-family: "Poppins", sans-serif;
       }
 
       .class-features {
-        margin: 20px 0 25px;
-        padding-left: 20px;
+        margin: 15px 0 20px;
+        padding-left: 16px;
         flex-grow: 1;
       }
 
       .class-features li {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         position: relative;
-        font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-        line-height: 1.6;
-        padding-left: 8px;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding-left: 6px;
         color: var(--text-muted);
       }
 
@@ -929,28 +938,28 @@
         color: var(--accent-orange);
         font-weight: bold;
         position: absolute;
-        left: -20px;
-        font-size: 1.1rem;
+        left: -16px;
+        font-size: 0.9rem;
       }
 
       .class-cta {
         margin-top: auto;
-        padding-top: 20px;
+        padding-top: 15px;
       }
 
       .class-cta .btn {
         width: 100%;
         text-align: center;
-        padding: clamp(14px, 2.5vw, 16px) 20px;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        padding: 10px 16px;
+        font-size: 0.9rem;
         font-weight: 600;
       }
 
-      /* Kenapa Harus LPK Quantum Section */
+      /* Kenapa Harus LPK Quantum Section - DIKECILKAN */
       .why-container {
         display: grid;
         grid-template-columns: 1fr;
-        gap: clamp(40px, 6vw, 60px);
+        gap: clamp(25px, 4vw, 35px);
         align-items: center;
       }
 
@@ -962,16 +971,16 @@
 
       .why-carousel {
         position: relative;
-        border-radius: var(--radius-xl);
+        border-radius: var(--radius-lg);
         overflow: hidden;
         box-shadow: var(--shadow-card);
         height: 100%;
-        min-height: 350px;
+        min-height: 250px;
       }
 
       .why-slideshow {
         position: relative;
-        height: clamp(350px, 45vh, 450px);
+        height: clamp(250px, 35vh, 300px);
       }
 
       .why-slide {
@@ -990,43 +999,59 @@
       }
 
       .why-slide:nth-child(1) {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/photos/gallery/IOM-2023.jpg");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("../assets/photos/gallery/IOM-2023.jpg");
       }
 
       .why-slide:nth-child(2) {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/photos/gallery/dokumentasi-2024.jpg");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("../assets/photos/gallery/dokumentasi-2024.jpg");
       }
 
       .why-slide:nth-child(3) {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/photos/gallery/januari-2025.jpg");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("../assets/photos/gallery/januari-2025.jpg");
       }
 
       .why-slide:nth-child(4) {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/photos/gallery/agustus-2025.jpg");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("../assets/photos/gallery/agustus-2025.jpg");
       }
 
       .why-content {
         display: flex;
         flex-direction: column;
-        gap: clamp(25px, 4vw, 35px);
+        gap: clamp(18px, 3vw, 25px);
       }
 
       .why-content h3 {
-        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        font-size: 1.2rem;
         color: var(--blue-dark);
-        line-height: 1.4;
+        line-height: 1.3;
         font-weight: 700;
       }
 
       .why-stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: clamp(20px, 3vw, 25px);
+        gap: clamp(15px, 2.5vw, 20px);
       }
 
       .stat-box {
         text-align: center;
-        padding: clamp(20px, 3vw, 25px);
+        padding: clamp(15px, 2.5vw, 18px);
         background: var(--card-bg);
         border-radius: var(--radius-md);
         box-shadow: var(--shadow-card);
@@ -1035,32 +1060,32 @@
       }
 
       .stat-box:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
         box-shadow: var(--shadow-hover);
         border-color: var(--blue-light);
       }
 
       .stat-number {
-        font-size: clamp(2.2rem, 4.5vw, 3rem);
+        font-size: clamp(1.8rem, 3.5vw, 2.2rem);
         font-weight: 800;
         color: var(--accent-orange);
-        margin-bottom: 8px;
+        margin-bottom: 5px;
         font-family: "Poppins", sans-serif;
         display: block;
         line-height: 1;
       }
 
       .stat-label {
-        font-size: clamp(0.9rem, 1.2vw, 1rem);
+        font-size: 0.8rem;
         color: var(--text-muted);
-        line-height: 1.5;
+        line-height: 1.3;
         font-weight: 500;
       }
 
       .why-features {
         background: var(--card-bg);
         border-radius: var(--radius-lg);
-        padding: clamp(25px, 4vw, 35px);
+        padding: clamp(18px, 3vw, 22px);
         box-shadow: var(--shadow-card);
         border: 1px solid transparent;
       }
@@ -1070,23 +1095,23 @@
       }
 
       .why-features h4 {
-        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+        font-size: 1.1rem;
         color: var(--blue-dark);
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         font-family: "Poppins", sans-serif;
         font-weight: 700;
       }
 
       .why-features ul {
-        padding-left: 20px;
+        padding-left: 16px;
       }
 
       .why-features li {
-        margin-bottom: 12px;
-        line-height: 1.7;
+        margin-bottom: 10px;
+        line-height: 1.5;
         position: relative;
-        padding-left: 10px;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        padding-left: 8px;
+        font-size: 0.9rem;
         color: var(--text-muted);
       }
 
@@ -1095,17 +1120,18 @@
         color: var(--accent-orange);
         font-weight: bold;
         position: absolute;
-        left: -20px;
-        font-size: 1.2rem;
+        left: -16px;
+        font-size: 1rem;
       }
 
-      /* Footer */
+      /* Footer - DIKECILKAN */
       footer {
         background: var(--blue-dark);
         color: var(--text-light);
-        padding: clamp(50px, 10vw, 80px) 0 30px;
+        padding: clamp(35px, 6vw, 50px) 0 20px;
         position: relative;
-        margin-top: 60px;
+        margin-top: 40px;
+        font-size: 0.9rem;
       }
 
       footer::before {
@@ -1114,20 +1140,20 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 10px;
+        height: 6px;
         background: var(--blue-gradient);
       }
 
       .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-        gap: clamp(30px, 5vw, 50px);
-        margin-bottom: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+        gap: clamp(20px, 4vw, 30px);
+        margin-bottom: 25px;
       }
 
       .footer-logo {
-        margin-bottom: 20px;
-        font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
         font-weight: 800;
         color: var(--text-light);
         font-family: "Poppins", sans-serif;
@@ -1135,26 +1161,26 @@
 
       .footer-about p {
         color: rgba(255, 255, 255, 0.85);
-        line-height: 1.7;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
-        margin-bottom: 25px;
+        line-height: 1.6;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
       }
 
       .footer-social {
         display: flex;
-        gap: 15px;
-        margin-top: 20px;
+        gap: 10px;
+        margin-top: 15px;
       }
 
       .footer-social a {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: clamp(40px, 6vw, 45px);
-        height: clamp(40px, 6vw, 45px);
+        width: 36px;
+        height: 36px;
         background: rgba(255, 255, 255, 0.1);
         color: var(--text-light);
-        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        font-size: 1rem;
         border-radius: 50%;
         transition: var(--transition);
       }
@@ -1167,10 +1193,10 @@
 
       .footer-links h3,
       .footer-contact h3 {
-        font-size: clamp(1.2rem, 1.8vw, 1.4rem);
-        margin-bottom: 25px;
+        font-size: 1.1rem;
+        margin-bottom: 18px;
         position: relative;
-        padding-bottom: 12px;
+        padding-bottom: 8px;
         color: var(--text-light);
         font-family: "Poppins", sans-serif;
         font-weight: 700;
@@ -1182,8 +1208,8 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 50px;
-        height: 3px;
+        width: 40px;
+        height: 2px;
         background: var(--accent-orange);
       }
 
@@ -1192,7 +1218,7 @@
       }
 
       .footer-links ul li {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       .footer-links ul li a {
@@ -1201,15 +1227,15 @@
         transition: var(--transition);
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         font-family: "Open Sans", sans-serif;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        font-size: 0.9rem;
       }
 
       .footer-links ul li a i {
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: var(--accent-orange);
-        width: 20px;
+        width: 16px;
       }
 
       .footer-links ul li a:hover {
@@ -1218,44 +1244,44 @@
       }
 
       .footer-contact p {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         display: flex;
         align-items: flex-start;
-        gap: 12px;
+        gap: 10px;
         font-family: "Open Sans", sans-serif;
-        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.85);
-        line-height: 1.6;
+        line-height: 1.5;
       }
 
       .footer-contact i {
-        width: 20px;
+        width: 16px;
         color: var(--accent-orange);
-        margin-top: 3px;
+        margin-top: 2px;
       }
 
       .copyright {
         text-align: center;
-        padding-top: 30px;
+        padding-top: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.15);
         color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         font-family: "Open Sans", sans-serif;
       }
 
-      /* Floating WhatsApp Button */
+      /* Floating WhatsApp Button - DIKECILKAN */
       .whatsapp-float {
         position: fixed;
-        width: clamp(55px, 9vw, 65px);
-        height: clamp(55px, 9vw, 65px);
-        bottom: 30px;
-        right: 30px;
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
         background-color: #25d366;
         color: #fff;
         border-radius: 50%;
         text-align: center;
-        font-size: clamp(28px, 4.5vw, 32px);
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        font-size: 24px;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         z-index: 100;
         display: flex;
         align-items: center;
@@ -1266,9 +1292,9 @@
       }
 
       .whatsapp-float:hover {
-        transform: scale(1.15);
+        transform: scale(1.1);
         background-color: #128c7e;
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
       }
 
       @keyframes pulse {
@@ -1276,20 +1302,20 @@
           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
         }
         70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
         }
         100% {
           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
         }
       }
 
-      /* Back to Top Button */
+      /* Back to Top Button - DIKECILKAN */
       .back-to-top {
         position: fixed;
-        bottom: 110px;
-        right: 30px;
-        width: 55px;
-        height: 55px;
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
         background: var(--blue-gradient);
         color: var(--text-light);
         border-radius: 50%;
@@ -1301,7 +1327,8 @@
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
-        z-index: 999;
+        z-index: 99;
+        font-size: 1rem;
       }
 
       .back-to-top.visible {
@@ -1310,7 +1337,7 @@
       }
 
       .back-to-top:hover {
-        transform: translateY(-5px) scale(1.1);
+        transform: translateY(-3px) scale(1.1);
         box-shadow: var(--shadow-hover);
       }
 
@@ -1327,7 +1354,7 @@
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(20px);
         }
         to {
           opacity: 1;
@@ -1338,7 +1365,7 @@
       @keyframes fadeInDown {
         from {
           opacity: 0;
-          transform: translateY(-30px);
+          transform: translateY(-20px);
         }
         to {
           opacity: 1;
@@ -1349,7 +1376,7 @@
       @keyframes slideInLeft {
         from {
           opacity: 0;
-          transform: translateX(-30px);
+          transform: translateX(-20px);
         }
         to {
           opacity: 1;
@@ -1360,7 +1387,7 @@
       @keyframes slideInRight {
         from {
           opacity: 0;
-          transform: translateX(30px);
+          transform: translateX(20px);
         }
         to {
           opacity: 1;
@@ -1371,9 +1398,9 @@
       /* Loading animation */
       .loading {
         display: inline-block;
-        width: 22px;
-        height: 22px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
+        width: 18px;
+        height: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
         border-radius: 50%;
         border-top-color: var(--text-light);
         animation: spin 1s ease-in-out infinite;
@@ -1401,8 +1428,8 @@
         display: none;
         text-align: center;
         color: var(--text-muted);
-        font-size: 0.9rem;
-        margin-top: 10px;
+        font-size: 0.8rem;
+        margin-top: 8px;
         font-style: italic;
       }
 
@@ -1412,37 +1439,37 @@
         }
       }
 
-      /* Responsive Styles */
+      /* Responsive Styles - DIKECILKAN */
       @media (max-width: 1200px) {
         .class-content {
-          min-height: 400px;
+          min-height: 320px;
         }
       }
 
       @media (max-width: 992px) {
         .program-hero-title {
-          font-size: clamp(2rem, 5vw, 3rem);
+          font-size: clamp(1.5rem, 4vw, 2rem);
         }
 
         .program-hero-subtitle {
-          font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+          font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
 
         .section-title h2 {
-          font-size: clamp(1.8rem, 4vw, 2.5rem);
+          font-size: clamp(1.3rem, 3vw, 1.8rem);
         }
 
         .section-subtitle {
-          font-size: clamp(1rem, 1.8vw, 1.2rem);
-          margin-bottom: 50px;
+          font-size: clamp(0.9rem, 1.5vw, 1rem);
+          margin-bottom: 30px;
         }
 
         .scroll-card {
-          width: clamp(300px, 80vw, 350px);
+          width: clamp(260px, 75vw, 300px);
         }
-        
+
         .class-content {
-          min-height: 380px;
+          min-height: 300px;
         }
       }
 
@@ -1455,14 +1482,14 @@
           position: fixed;
           top: 0;
           left: -100%;
-          width: 85%;
-          max-width: 320px;
+          width: 80%;
+          max-width: 280px;
           height: 100vh;
           background: var(--blue-dark);
-          padding: 100px 25px 30px;
+          padding: 80px 20px 20px;
           transition: left 0.4s ease;
           z-index: 999;
-          box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
           overflow-y: auto;
           backdrop-filter: blur(10px);
         }
@@ -1473,18 +1500,18 @@
 
         nav ul {
           flex-direction: column;
-          gap: 5px;
+          gap: 3px;
         }
 
         nav ul li {
-          margin: 5px 0;
+          margin: 3px 0;
         }
 
         nav ul li a {
           display: flex;
-          padding: 15px 20px;
+          padding: 12px 16px;
           border-radius: var(--radius-sm);
-          font-size: 1.05rem;
+          font-size: 0.95rem;
           width: 100%;
         }
 
@@ -1502,7 +1529,7 @@
           position: static;
           box-shadow: none;
           background: transparent;
-          margin-left: 20px;
+          margin-left: 16px;
           animation: none;
           border: none;
         }
@@ -1513,15 +1540,15 @@
 
         .dropdown-content a {
           color: rgba(255, 255, 255, 0.85);
-          padding: 12px 20px;
+          padding: 10px 16px;
           border-bottom: none;
-          font-size: 0.95rem;
+          font-size: 0.85rem;
         }
 
         .dropdown-content a:hover {
           background: rgba(255, 255, 255, 0.1);
           color: var(--text-light);
-          padding-left: 25px;
+          padding-left: 20px;
         }
 
         .dropdown > a i.fa-chevron-down {
@@ -1530,157 +1557,160 @@
 
         /* Horizontal scroll untuk mobile */
         .horizontal-scroll-section {
-          margin: 0 -20px;
+          margin: 0 -10px;
         }
 
         .horizontal-scroll-container {
-          padding: 20px 20px 40px;
+          padding: 15px 15px 25px;
         }
 
         .scroll-card {
-          width: calc(85vw - 40px);
+          width: calc(80vw - 30px);
         }
 
         .class-content {
-          min-height: 360px;
+          min-height: 280px;
         }
 
         .footer-content {
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 25px;
         }
 
         .whatsapp-float {
-          bottom: 25px;
-          right: 25px;
+          bottom: 15px;
+          right: 15px;
+          width: 45px;
+          height: 45px;
+          font-size: 20px;
         }
 
         .back-to-top {
-          bottom: 100px;
-          right: 25px;
-          width: 50px;
-          height: 50px;
+          bottom: 70px;
+          right: 15px;
+          width: 40px;
+          height: 40px;
         }
 
         /* Adjust section padding for mobile */
         section {
-          padding: clamp(50px, 8vw, 80px) 0;
+          padding: clamp(30px, 6vw, 50px) 0;
         }
       }
 
       @media (max-width: 576px) {
         .program-hero-title {
-          font-size: clamp(1.8rem, 6vw, 2.2rem);
+          font-size: clamp(1.3rem, 5vw, 1.6rem);
         }
 
         .program-hero-subtitle {
-          font-size: clamp(1rem, 3.5vw, 1.2rem);
-          margin-bottom: 30px;
+          font-size: clamp(0.85rem, 3vw, 1rem);
+          margin-bottom: 20px;
         }
 
         .btn {
-          padding: 16px 35px;
-          font-size: 1rem;
-          min-height: 52px;
+          padding: 10px 20px;
+          font-size: 0.85rem;
+          min-height: 40px;
         }
 
         .section-title h2 {
-          font-size: clamp(1.6rem, 6vw, 2rem);
-          padding-bottom: 15px;
+          font-size: clamp(1.2rem, 5vw, 1.5rem);
+          padding-bottom: 10px;
         }
 
         .section-title h2::after {
-          width: 80px;
-          height: 4px;
+          width: 60px;
+          height: 3px;
         }
 
         .section-subtitle {
-          font-size: clamp(1rem, 4vw, 1.1rem);
-          margin-bottom: 40px;
+          font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+          margin-bottom: 25px;
         }
 
         .problems-container {
           grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 15px;
         }
 
         .problem-card {
-          padding: 20px;
+          padding: 15px;
         }
 
         .problem-icon {
-          width: 45px;
-          height: 45px;
-          font-size: 1.2rem;
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
         }
 
         .horizontal-scroll-container {
-          padding: 20px 15px 40px;
+          padding: 15px 12px 25px;
         }
 
         .scroll-card {
-          width: calc(90vw - 30px);
+          width: calc(85vw - 24px);
         }
 
         .class-content {
-          min-height: 340px;
-          padding: 20px;
+          min-height: 260px;
+          padding: 15px;
         }
 
         .class-image {
-          height: 180px;
+          height: 140px;
         }
 
         .why-stats {
           grid-template-columns: 1fr;
-          gap: 15px;
+          gap: 12px;
         }
 
         .stat-box {
-          padding: 18px;
+          padding: 15px;
         }
 
         .whatsapp-float {
-          width: 55px;
-          height: 55px;
-          font-size: 26px;
-          bottom: 20px;
-          right: 20px;
+          width: 45px;
+          height: 45px;
+          font-size: 20px;
+          bottom: 15px;
+          right: 15px;
         }
 
         .back-to-top {
-          bottom: 90px;
-          right: 20px;
-          width: 45px;
-          height: 45px;
+          bottom: 65px;
+          right: 15px;
+          width: 38px;
+          height: 38px;
         }
       }
 
       @media (max-width: 375px) {
         .program-hero-title {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
 
         .program-hero-subtitle {
-          font-size: 1rem;
+          font-size: 0.85rem;
         }
 
         .btn {
-          padding: 14px 30px;
-          font-size: 0.95rem;
+          padding: 8px 16px;
+          font-size: 0.8rem;
         }
 
         .scroll-card {
-          width: calc(95vw - 20px);
+          width: calc(90vw - 20px);
         }
 
         .footer-links ul li a,
         .footer-contact p {
-          font-size: 0.95rem;
+          font-size: 0.85rem;
         }
-        
+
         .class-content {
-          min-height: 320px;
+          min-height: 240px;
         }
       }
 
@@ -1699,11 +1729,12 @@
 
       /* Card hover effects */
       .card-hover {
-        transition: transform 0.3s var(--transition-bounce), box-shadow 0.3s ease;
+        transition: transform 0.3s var(--transition-bounce),
+          box-shadow 0.3s ease;
       }
 
       .card-hover:hover {
-        transform: translateY(-10px);
+        transform: translateY(-6px);
         box-shadow: var(--shadow-hover);
       }
 
@@ -1725,7 +1756,7 @@
       a:focus,
       input:focus {
         outline: 2px solid var(--accent-orange);
-        outline-offset: 3px;
+        outline-offset: 2px;
       }
 
       /* Print styles */
@@ -1749,7 +1780,7 @@
         }
 
         section {
-          padding: 40px 0 !important;
+          padding: 25px 0 !important;
           opacity: 1 !important;
           transform: none !important;
         }
@@ -1757,14 +1788,58 @@
         .horizontal-scroll-container {
           overflow: visible;
           flex-wrap: wrap;
-          gap: 20px;
+          gap: 15px;
         }
 
         .scroll-card {
           width: 100% !important;
-          margin-bottom: 20px;
-          break-inside: avoid;
+          margin-bottom: 15px;
         }
+      }
+
+      /* PERBAIKAN KHUSUS UNTUK SECTION MATERI PEMBELAJARAN */
+      /* Desktop: tampilkan grid, sembunyikan horizontal scroll */
+      @media (min-width: 992px) {
+        #materi .desktop-grid {
+          display: grid;
+        }
+        
+        #materi .mobile-only {
+          display: none;
+        }
+      }
+
+      /* Mobile: sembunyikan grid, tampilkan horizontal scroll */
+      @media (max-width: 991px) {
+        #materi .desktop-grid {
+          display: none;
+        }
+        
+        #materi .mobile-only {
+          display: block;
+        }
+      }
+
+      /* Atur scroll card untuk materi di mobile */
+      #materi .scroll-card {
+        width: clamp(280px, 80vw, 340px);
+        scroll-snap-align: start;
+        background: var(--card-bg);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: clamp(20px, 3vw, 25px);
+      }
+
+      #materi .scroll-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--blue-light);
       }
     </style>
   </head>
@@ -1780,24 +1855,41 @@
         </a>
         <nav>
           <ul>
-            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li><a href="#" class="active"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li>
+              <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fas fa-info-circle"></i> Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-graduation-cap"></i> Program</a
+              >
+            </li>
             <li class="dropdown">
               <a href="#"
-                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+                ><i class="fas fa-handshake"></i> Portofolio
+                <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
                 <a href="../../menu/kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="../../menu/kerjasama/swasta.html">Swasta</a>
-                <a href="../../menu/kerjasama/internasional.html">Internasional</a>
+                <a href="../../menu/kerjasama/internasional.html"
+                  >Internasional</a
+                >
               </div>
             </li>
-            <li><a href="alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+            <li>
+              <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+            </li>
+            <li>
+              <a href="news.html"><i class="fas fa-newspaper"></i> Berita</a>
+            </li>
           </ul>
         </nav>
-        <div style="display: flex; align-items: center; gap: 10px">
+        <div style="display: flex; align-items: center; gap: 8px">
           <button class="theme-toggle" id="themeToggle" aria-label="Ubah tema">
             <i class="fas fa-moon"></i>
           </button>
@@ -1817,16 +1909,19 @@
       </div>
       <div class="container program-hero-content">
         <h1 class="program-hero-title text-balance">Kelas Teknisi Handphone</h1>
-        <p class="program-hero-subtitle text-balance">Bosen belajar dari YouTube tapi hasilnya nihil? Sini, kami ajarin yang beneran bisa dipakai di medan perang.</p>
+        <p class="program-hero-subtitle text-balance">
+          Bosen belajar dari YouTube tapi hasilnya nihil? Sini, kami ajarin yang
+          beneran bisa dipakai di medan perang.
+        </p>
         <div class="program-hero-buttons">
           <a
             href="https://api.whatsapp.com/send/?phone=6282171727337&text=Halo%20LPK%20Quantum,%20saya%20ingin%20bertanya%20tentang%20program%20pelatihan%20teknisi%20HP"
             target="_blank"
             class="btn btn-daftar"
             id="daftarBtn"
-            >
+          >
             <span id="btnText">DAFTAR SEKARANG!</span>
-            <span id="btnLoading" class="loading" style="display: none;"></span>
+            <span id="btnLoading" class="loading" style="display: none"></span>
           </a>
         </div>
       </div>
@@ -1839,7 +1934,10 @@
           <h2>Permasalahan Pemula</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Masalah umum yang sering dihadapi oleh pemula yang ingin belajar menjadi teknisi HP</p>
+          <p class="text-balance">
+            Masalah umum yang sering dihadapi oleh pemula yang ingin belajar
+            menjadi teknisi HP
+          </p>
         </div>
         <div class="problems-container">
           <div class="problem-card card-hover">
@@ -1925,7 +2023,10 @@
           <h2>Belajar di LPK Quantum Solusinya!</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Kami memberikan solusi komprehensif untuk mengatasi semua masalah pemula</p>
+          <p class="text-balance">
+            Kami memberikan solusi komprehensif untuk mengatasi semua masalah
+            pemula
+          </p>
         </div>
 
         <!-- Desktop Grid View -->
@@ -1935,21 +2036,30 @@
               <i class="fas fa-calendar-alt"></i>
             </div>
             <h3>10 Hari pertemuan + Magang di Service Center</h3>
-            <p>Belajar intensif selama 10 hari dengan praktik langsung di service center untuk pengalaman nyata.</p>
+            <p>
+              Belajar intensif selama 10 hari dengan praktik langsung di service
+              center untuk pengalaman nyata.
+            </p>
           </div>
           <div class="solution-card card-hover">
             <div class="solution-icon">
               <i class="fas fa-bed"></i>
             </div>
             <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
-            <p>Kami menyediakan akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
+            <p>
+              Kami menyediakan akomodasi gratis untuk memudahkan peserta dari
+              luar kota Semarang.
+            </p>
           </div>
           <div class="solution-card card-hover">
             <div class="solution-icon">
               <i class="fas fa-redo"></i>
             </div>
             <h3>Gratis Mengulang di Kelas Berikutnya</h3>
-            <p>Jika belum merasa cukup mahir, peserta bisa mengulang kelas berikutnya tanpa biaya tambahan.</p>
+            <p>
+              Jika belum merasa cukup mahir, peserta bisa mengulang kelas
+              berikutnya tanpa biaya tambahan.
+            </p>
           </div>
         </div>
 
@@ -1961,21 +2071,30 @@
                 <i class="fas fa-calendar-alt"></i>
               </div>
               <h3>10 Hari pertemuan + Magang di Service Center</h3>
-              <p>Belajar intensif selama 10 hari dengan praktik langsung di service center untuk pengalaman nyata.</p>
+              <p>
+                Belajar intensif selama 10 hari dengan praktik langsung di
+                service center untuk pengalaman nyata.
+              </p>
             </div>
             <div class="scroll-card">
               <div class="solution-icon">
                 <i class="fas fa-bed"></i>
               </div>
               <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
-              <p>Kami menyediakan akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
+              <p>
+                Kami menyediakan akomodasi gratis untuk memudahkan peserta dari
+                luar kota Semarang.
+              </p>
             </div>
             <div class="scroll-card">
               <div class="solution-icon">
                 <i class="fas fa-redo"></i>
               </div>
               <h3>Gratis Mengulang di Kelas Berikutnya</h3>
-              <p>Jika belum merasa cukup mahir, peserta bisa mengulang kelas berikutnya tanpa biaya tambahan.</p>
+              <p>
+                Jika belum merasa cukup mahir, peserta bisa mengulang kelas
+                berikutnya tanpa biaya tambahan.
+              </p>
             </div>
           </div>
           <div class="scroll-hint">Geser untuk melihat lebih banyak →</div>
@@ -1990,7 +2109,9 @@
           <h2>Pilihan Kelas</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Geser ke samping untuk melihat semua pilihan kelas yang tersedia</p>
+          <p class="text-balance">
+            Geser ke samping untuk melihat semua pilihan kelas yang tersedia
+          </p>
         </div>
 
         <!-- Horizontal Scroll Section -->
@@ -2014,7 +2135,9 @@
                   <li>GRATIS Borneo Schematic 1 bulan</li>
                   <li>GRATIS Kaos Official Quantum</li>
                   <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
-                  <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
+                  <li>
+                    GRATIS Mess (kamar AC) bagi peserta luar kota Semarang
+                  </li>
                   <li>Dapur Umum dan peralatan masak disediakan</li>
                   <li>GRATIS Wifi 24 JAM</li>
                   <li>GRATIS Mengulang di Kelas Berikutnya</li>
@@ -2086,7 +2209,9 @@
                   <li>GRATIS Borneo Schematic 3 bulan</li>
                   <li>GRATIS Kaos Official Quantum</li>
                   <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
-                  <li>GRATIS Mess (kamar AC) bagi peserta luar kota Semarang</li>
+                  <li>
+                    GRATIS Mess (kamar AC) bagi peserta luar kota Semarang
+                  </li>
                   <li>Dapur Umum dan peralatan masak disediakan</li>
                   <li>GRATIS Wifi 24 JAM</li>
                   <li>GRATIS Mengulang di Kelas Berikutnya</li>
@@ -2110,19 +2235,21 @@
       </div>
     </section>
 
-    <!-- Materi Pembelajaran Section -->
+    <!-- Materi Pembelajaran Section - DIPERBAIKI -->
     <section id="materi" style="background-color: var(--blue-light)">
       <div class="container">
         <div class="section-title">
           <h2>Materi Pembelajaran</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Materi lengkap yang akan dipelajari dalam program pelatihan kami</p>
+          <p class="text-balance">
+            Materi lengkap yang akan dipelajari dalam program pelatihan kami
+          </p>
         </div>
 
-        <!-- Desktop Grid View -->
+        <!-- Desktop Version (992px+) -->
         <div class="materi-container desktop-grid">
-          <!-- Materi Hardware -->
+          <!-- Materi Hardware Desktop -->
           <div class="materi-card card-hover">
             <div class="materi-header">
               <div class="materi-icon">
@@ -2138,13 +2265,13 @@
               <li>Pemahaman cara Kerja Komponen</li>
               <li>Troubleshooting dan analisa kasus</li>
               <li>Teknik Angkat dan Pasang IC (ACP)</li>
-              <li>Teknik Jumper Jalur & Komponent</li>
+              <li>Teknik Jumper Jalur & Komponen</li>
               <li>Bedah kasus Kerusakan Hardware</li>
               <li>Tips & Trik Repair Cepat</li>
             </ul>
           </div>
 
-          <!-- Materi Software -->
+          <!-- Materi Software Desktop -->
           <div class="materi-card card-hover">
             <div class="materi-header">
               <div class="materi-icon">
@@ -2167,10 +2294,10 @@
           </div>
         </div>
 
-        <!-- Mobile Horizontal Scroll View -->
+        <!-- Mobile Version (≤991px) -->
         <div class="horizontal-scroll-section mobile-only">
           <div class="horizontal-scroll-container">
-            <!-- Materi Hardware Card -->
+            <!-- Materi Hardware Mobile Card -->
             <div class="scroll-card">
               <div class="materi-header">
                 <div class="materi-icon">
@@ -2192,7 +2319,7 @@
               </ul>
             </div>
 
-            <!-- Materi Software Card -->
+            <!-- Materi Software Mobile Card -->
             <div class="scroll-card">
               <div class="materi-header">
                 <div class="materi-icon">
@@ -2226,7 +2353,9 @@
           <h2>Teknis Pembelajaran</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Metode pembelajaran yang kami terapkan untuk setiap jenis kelas</p>
+          <p class="text-balance">
+            Metode pembelajaran yang kami terapkan untuk setiap jenis kelas
+          </p>
         </div>
 
         <!-- Desktop Grid View -->
@@ -2290,73 +2419,8 @@
             </ul>
           </div>
         </div>
-
-        <!-- Mobile Horizontal Scroll View -->
-        <div class="horizontal-scroll-section mobile-only">
-          <div class="horizontal-scroll-container">
-            <!-- Teknis Kelas Offline Card -->
-            <div class="scroll-card">
-              <div class="teknis-header">
-                <div class="teknis-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h3 class="teknis-title">Kelas Offline</h3>
-              </div>
-              <ul class="teknis-list">
-                <li>Materi disampaikan dalam kelas tatap muka</li>
-                <li>Belajar materi selama 10x pertemuan</li>
-                <li>Durasi Belajar 8 jam per hari</li>
-                <li>Teori 30% Praktik 70%</li>
-                <li>Jam Belajar 09.00 WIB - 17.00 WIB</li>
-                <li>Masuk Senin s/d Sabtu</li>
-                <li>Selesai pembelajaran bebas praktik</li>
-                <li>Magang di service center terafiliasi</li>
-              </ul>
-            </div>
-
-            <!-- Teknis Kelas Online Card -->
-            <div class="scroll-card">
-              <div class="teknis-header">
-                <div class="teknis-icon">
-                  <i class="fas fa-laptop"></i>
-                </div>
-                <h3 class="teknis-title">Kelas Online</h3>
-              </div>
-              <ul class="teknis-list">
-                <li>Penyampaian Materi berupa Video di aplikasi VbatPonsel</li>
-                <li>Akses video materi 24/7</li>
-                <li>Bedah kasus Live Streaming Jam 19.30 - 21.30 WIB</li>
-                <li>Diluar jam belajar bebas konsultasi</li>
-                <li>Konsultasi dan bedah kasus Via WA Group</li>
-                <li>Materi update berkala</li>
-                <li>Kuis dan evaluasi online</li>
-              </ul>
-            </div>
-
-            <!-- Teknis Kelas Private Card -->
-            <div class="scroll-card">
-              <div class="teknis-header">
-                <div class="teknis-icon">
-                  <i class="fas fa-user-graduate"></i>
-                </div>
-                <h3 class="teknis-title">Kelas Private</h3>
-              </div>
-              <ul class="teknis-list">
-                <li>Materi disampaikan dalam kelas intensif tatap muka</li>
-                <li>Belajar materi selama 10x pertemuan</li>
-                <li>Durasi Belajar 8 jam per hari</li>
-                <li>One-on-one dengan instruktur</li>
-                <li>Jam Belajar menyesuaikan peserta</li>
-                <li>Materi bisa disesuaikan kebutuhan</li>
-                <li>Selesai pembelajaran bebas praktik</li>
-                <li>Personal coaching dan mentoring</li>
-              </ul>
-            </div>
-          </div>
-          <div class="scroll-hint">Geser untuk melihat semua metode →</div>
-        </div>
-      </div>
-    </section>
+        </section>git
+      
 
     <!-- Kenapa Harus LPK Quantum Section -->
     <section id="why" style="background-color: var(--blue-light)">
@@ -2365,7 +2429,9 @@
           <h2>Kenapa Harus di LPK Quantum?</h2>
         </div>
         <div class="section-subtitle">
-          <p class="text-balance">Alasan kuat memilih kami sebagai mitra pembelajaran Anda</p>
+          <p class="text-balance">
+            Alasan kuat memilih kami sebagai mitra pembelajaran Anda
+          </p>
         </div>
         <div class="why-container">
           <div class="why-carousel card-hover">
@@ -2377,7 +2443,10 @@
             </div>
           </div>
           <div class="why-content">
-            <h3 class="text-balance">Kami adalah Lembaga Pelatihan Kerja yang berfokus pada Perbaikan Handphone. Setidaknya kami telah mengadakan...</h3>
+            <h3 class="text-balance">
+              Kami adalah Lembaga Pelatihan Kerja yang berfokus pada Perbaikan
+              Handphone. Setidaknya kami telah mengadakan...
+            </h3>
             <div class="why-stats">
               <div class="stat-box card-hover">
                 <div class="stat-number">50+</div>
@@ -2415,17 +2484,49 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section id="cta" style="background: var(--blue-gradient); color: var(--text-light); text-align: center;">
+    <section
+      id="cta"
+      style="
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        text-align: center;
+      "
+    >
       <div class="container">
-        <h2 style="font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 25px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);" class="text-balance">Siap Mengubah Masa Depan Anda?</h2>
-        <p style="font-size: clamp(1.1rem, 2.2vw, 1.4rem); max-width: min(850px, 90vw); margin: 0 auto 40px; line-height: 1.7; opacity: 0.95;" class="text-balance">
-          Bergabunglah dengan ribuan alumni yang telah sukses menjadi teknisi HP profesional. Waktu Anda untuk berinvestasi pada skill yang dicari pasar adalah SEKARANG!
+        <h2
+          style="
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          "
+          class="text-balance"
+        >
+          Siap Mengubah Masa Depan Anda?
+        </h2>
+        <p
+          style="
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            max-width: min(700px, 90vw);
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            opacity: 0.95;
+          "
+          class="text-balance"
+        >
+          Bergabunglah dengan ribuan alumni yang telah sukses menjadi teknisi HP
+          profesional. Waktu Anda untuk berinvestasi pada skill yang dicari
+          pasar adalah SEKARANG!
         </p>
         <a
           href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20konsultasi%20tentang%20program%20pelatihan%20LPK%20Quantum"
           target="_blank"
           class="btn"
-          style="background: var(--accent-gradient); font-size: clamp(1.1rem, 1.8vw, 1.3rem); padding: clamp(16px, 3vw, 22px) clamp(35px, 6vw, 55px); min-height: 60px;"
+          style="
+            background: var(--accent-gradient);
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            padding: 12px 30px;
+            min-height: 45px;
+          "
         >
           <i class="fab fa-whatsapp"></i> KONSULTASI GRATIS SEKARANG!
         </a>
@@ -2443,16 +2544,28 @@
               tenaga kerja profesional dan kompeten.
             </p>
             <div class="footer-social">
-              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/LPKQuantumtelecommunication/"
+                aria-label="Facebook"
+              >
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="https://www.instagram.com/quantum.telecommunication/" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/quantum.telecommunication/"
+                aria-label="Instagram"
+              >
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="https://www.youtube.com/@quantumtelecom41" aria-label="YouTube">
+              <a
+                href="https://www.youtube.com/@quantumtelecom41"
+                aria-label="YouTube"
+              >
                 <i class="fab fa-youtube"></i>
               </a>
-              <a href="https://www.tiktok.com/@quantum.telecom" aria-label="TikTok">
+              <a
+                href="https://www.tiktok.com/@quantum.telecom"
+                aria-label="TikTok"
+              >
                 <i class="fab fa-tiktok"></i>
               </a>
             </div>
@@ -2460,12 +2573,30 @@
           <div class="footer-links">
             <h3>Link Cepat</h3>
             <ul>
-              <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-              <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-              <li><a href="#"><i class="fas fa-graduation-cap"></i> Program Pelatihan</a></li>
-              <li><a href="../../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Kerjasama</a></li>
-              <li><a href="alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-              <li><a href="news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+              <li>
+                <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="fas fa-info-circle"></i> Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-graduation-cap"></i> Program Pelatihan</a
+                >
+              </li>
+              <li>
+                <a href="../../menu/kerjasama/pemerintah.html"
+                  ><i class="fas fa-handshake"></i> Kerjasama</a
+                >
+              </li>
+              <li>
+                <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+              </li>
+              <li>
+                <a href="news.html"><i class="fas fa-newspaper"></i> Berita</a>
+              </li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -2550,9 +2681,9 @@
         startAutoScroll();
 
         // Pause on hover
-        slides.forEach(slide => {
-          slide.addEventListener('mouseenter', stopAutoScroll);
-          slide.addEventListener('mouseleave', startAutoScroll);
+        slides.forEach((slide) => {
+          slide.addEventListener("mouseenter", stopAutoScroll);
+          slide.addEventListener("mouseleave", startAutoScroll);
         });
 
         return {
@@ -2560,7 +2691,7 @@
           nextSlide,
           prevSlide,
           startAutoScroll,
-          stopAutoScroll
+          stopAutoScroll,
         };
       }
 
@@ -2595,52 +2726,54 @@
 
       // Horizontal scroll touch enhancement
       function initHorizontalScroll() {
-        const scrollContainers = document.querySelectorAll('.horizontal-scroll-container');
-        
-        scrollContainers.forEach(container => {
+        const scrollContainers = document.querySelectorAll(
+          ".horizontal-scroll-container"
+        );
+
+        scrollContainers.forEach((container) => {
           let isDown = false;
           let startX;
           let scrollLeft;
-          
-          container.addEventListener('mousedown', (e) => {
+
+          container.addEventListener("mousedown", (e) => {
             isDown = true;
-            container.classList.add('scroll-touch-active');
+            container.classList.add("scroll-touch-active");
             startX = e.pageX - container.offsetLeft;
             scrollLeft = container.scrollLeft;
           });
-          
-          container.addEventListener('mouseleave', () => {
+
+          container.addEventListener("mouseleave", () => {
             isDown = false;
-            container.classList.remove('scroll-touch-active');
+            container.classList.remove("scroll-touch-active");
           });
-          
-          container.addEventListener('mouseup', () => {
+
+          container.addEventListener("mouseup", () => {
             isDown = false;
-            container.classList.remove('scroll-touch-active');
+            container.classList.remove("scroll-touch-active");
           });
-          
-          container.addEventListener('mousemove', (e) => {
+
+          container.addEventListener("mousemove", (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - container.offsetLeft;
             const walk = (x - startX) * 2; // Scroll multiplier
             container.scrollLeft = scrollLeft - walk;
           });
-          
+
           // Touch events for mobile
-          container.addEventListener('touchstart', (e) => {
+          container.addEventListener("touchstart", (e) => {
             isDown = true;
-            container.classList.add('scroll-touch-active');
+            container.classList.add("scroll-touch-active");
             startX = e.touches[0].pageX - container.offsetLeft;
             scrollLeft = container.scrollLeft;
           });
-          
-          container.addEventListener('touchend', () => {
+
+          container.addEventListener("touchend", () => {
             isDown = false;
-            container.classList.remove('scroll-touch-active');
+            container.classList.remove("scroll-touch-active");
           });
-          
-          container.addEventListener('touchmove', (e) => {
+
+          container.addEventListener("touchmove", (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.touches[0].pageX - container.offsetLeft;
@@ -2652,40 +2785,43 @@
 
       // =================== INITIALIZATION ===================
 
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = themeToggle.querySelector("i");
 
         function initTheme() {
           // Check for saved theme or prefer-color-scheme
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          const savedTheme = localStorage.getItem("theme");
 
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+          if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
           } else {
-            document.documentElement.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
+            document.documentElement.removeAttribute("data-theme");
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
           }
         }
 
-        themeToggle.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme');
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
 
-          if (currentTheme === 'dark') {
-            document.documentElement.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
+          if (currentTheme === "dark") {
+            document.documentElement.removeAttribute("data-theme");
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light");
           } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
+            document.documentElement.setAttribute("data-theme", "dark");
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark");
           }
         });
 
@@ -2700,7 +2836,9 @@
         if (mobileMenuBtn) {
           mobileMenuBtn.addEventListener("click", () => {
             nav.classList.toggle("active");
-            body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
+            body.style.overflow = nav.classList.contains("active")
+              ? "hidden"
+              : "";
 
             // Change icon
             const icon = mobileMenuBtn.querySelector("i");
@@ -2733,18 +2871,18 @@
         });
 
         // Mobile dropdown toggle
-        const dropdowns = document.querySelectorAll('.dropdown > a');
-        dropdowns.forEach(dropdown => {
-          dropdown.addEventListener('click', function(e) {
+        const dropdowns = document.querySelectorAll(".dropdown > a");
+        dropdowns.forEach((dropdown) => {
+          dropdown.addEventListener("click", function (e) {
             if (window.innerWidth <= 768) {
               e.preventDefault();
               const parent = this.parentElement;
-              parent.classList.toggle('active');
+              parent.classList.toggle("active");
 
               // Close other dropdowns
-              dropdowns.forEach(otherDropdown => {
+              dropdowns.forEach((otherDropdown) => {
                 if (otherDropdown !== this) {
-                  otherDropdown.parentElement.classList.remove('active');
+                  otherDropdown.parentElement.classList.remove("active");
                 }
               });
             }
@@ -2752,10 +2890,10 @@
         });
 
         // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-          if (window.innerWidth <= 768 && nav.classList.contains('active')) {
+        document.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768 && nav.classList.contains("active")) {
             if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-              nav.classList.remove('active');
+              nav.classList.remove("active");
               body.style.overflow = "";
               if (mobileMenuBtn) {
                 const icon = mobileMenuBtn.querySelector("i");
@@ -2767,59 +2905,59 @@
         });
 
         // Initialize slideshows
-        createSlideshow('program-hero-slide', 5000);
-        createSlideshow('why-slide', 4000);
+        createSlideshow("program-hero-slide", 5000);
+        createSlideshow("why-slide", 4000);
 
         // Initialize scroll animations
         initScrollAnimations();
-        
+
         // Initialize horizontal scroll touch
         initHorizontalScroll();
 
         // Button loading animation
-        const daftarBtn = document.getElementById('daftarBtn');
-        const btnText = document.getElementById('btnText');
-        const btnLoading = document.getElementById('btnLoading');
+        const daftarBtn = document.getElementById("daftarBtn");
+        const btnText = document.getElementById("btnText");
+        const btnLoading = document.getElementById("btnLoading");
 
         if (daftarBtn) {
-          daftarBtn.addEventListener('click', function(e) {
+          daftarBtn.addEventListener("click", function (e) {
             // Only show loading for external links
-            if (this.href.includes('whatsapp')) {
-              btnText.style.display = 'none';
-              btnLoading.style.display = 'inline-block';
+            if (this.href.includes("whatsapp")) {
+              btnText.style.display = "none";
+              btnLoading.style.display = "inline-block";
 
               // Reset after 3 seconds if still on page
               setTimeout(() => {
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
+                btnText.style.display = "inline";
+                btnLoading.style.display = "none";
               }, 3000);
             }
           });
         }
 
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
               e.preventDefault();
 
               window.scrollTo({
-                top: targetElement.offsetTop - 90,
-                behavior: 'smooth'
+                top: targetElement.offsetTop - 70,
+                behavior: "smooth",
               });
 
               // Close mobile menu if open
-              if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                body.style.overflow = '';
+              if (nav.classList.contains("active")) {
+                nav.classList.remove("active");
+                body.style.overflow = "";
                 if (mobileMenuBtn) {
-                  const icon = mobileMenuBtn.querySelector('i');
-                  icon.classList.remove('fa-times');
-                  icon.classList.add('fa-bars');
+                  const icon = mobileMenuBtn.querySelector("i");
+                  icon.classList.remove("fa-times");
+                  icon.classList.add("fa-bars");
                 }
               }
             }
@@ -2827,71 +2965,74 @@
         });
 
         // Back to top button functionality
-        const backToTopBtn = document.querySelector('.back-to-top');
+        const backToTopBtn = document.querySelector(".back-to-top");
         if (backToTopBtn) {
-          backToTopBtn.addEventListener('click', (e) => {
+          backToTopBtn.addEventListener("click", (e) => {
             e.preventDefault();
             window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           });
         }
 
         // Add active class to current section in navigation
         function highlightCurrentSection() {
-          const sections = document.querySelectorAll('section[id]');
-          const navLinks = document.querySelectorAll('nav ul li a');
+          const sections = document.querySelectorAll("section[id]");
+          const navLinks = document.querySelectorAll("nav ul li a");
 
-          let currentSection = '';
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
+          let currentSection = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 90;
             const sectionHeight = section.clientHeight;
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-              currentSection = section.getAttribute('id');
+              currentSection = section.getAttribute("id");
             }
           });
 
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-              link.classList.add('active');
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${currentSection}`) {
+              link.classList.add("active");
             }
           });
         }
 
-        window.addEventListener('scroll', highlightCurrentSection);
+        window.addEventListener("scroll", highlightCurrentSection);
         highlightCurrentSection();
 
         // Lazy load images
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src || img.src;
-              img.classList.add('loaded');
-              observer.unobserve(img);
-            }
-          });
-        }, {
-          rootMargin: '50px 0px',
-          threshold: 0.1
-        });
+        const imageObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.add("loaded");
+                observer.unobserve(img);
+              }
+            });
+          },
+          {
+            rootMargin: "50px 0px",
+            threshold: 0.1,
+          }
+        );
 
-        lazyImages.forEach(img => imageObserver.observe(img));
+        lazyImages.forEach((img) => imageObserver.observe(img));
 
         // Add loading state to all buttons with href
-        document.querySelectorAll('.btn[href]').forEach(button => {
-          button.addEventListener('click', function(e) {
-            if (this.href.includes('whatsapp')) {
+        document.querySelectorAll(".btn[href]").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            if (this.href.includes("whatsapp")) {
               const originalText = this.innerHTML;
               this.innerHTML = '<span class="loading"></span>';
-              this.style.pointerEvents = 'none';
+              this.style.pointerEvents = "none";
 
               setTimeout(() => {
                 this.innerHTML = originalText;
-                this.style.pointerEvents = 'auto';
+                this.style.pointerEvents = "auto";
               }, 2000);
             }
           });
@@ -2899,21 +3040,21 @@
       });
 
       // Handle window resize
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         // Close mobile menu on resize to desktop
         if (window.innerWidth > 768) {
-          const nav = document.querySelector('nav');
+          const nav = document.querySelector("nav");
           const body = document.body;
-          const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+          const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
 
-          if (nav && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            body.style.overflow = '';
+          if (nav && nav.classList.contains("active")) {
+            nav.classList.remove("active");
+            body.style.overflow = "";
 
             if (mobileMenuBtn) {
-              const icon = mobileMenuBtn.querySelector('i');
-              icon.classList.remove('fa-times');
-              icon.classList.add('fa-bars');
+              const icon = mobileMenuBtn.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
             }
           }
         }
