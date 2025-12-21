@@ -484,6 +484,9 @@
         overflow: hidden;
         box-shadow: var(--shadow);
         transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
 
       .class-card:hover {
@@ -494,6 +497,7 @@
       .class-image {
         height: 220px;
         overflow: hidden;
+        position: relative;
       }
 
       .class-image img {
@@ -522,6 +526,9 @@
 
       .class-content {
         padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       .class-content h3 {
@@ -542,6 +549,7 @@
       .class-features {
         margin: 20px 0;
         padding-left: 20px;
+        flex: 1;
       }
 
       .class-features li {
@@ -563,7 +571,7 @@
       }
 
       .class-cta {
-        margin-top: 25px;
+        margin-top: auto;
       }
 
       .class-cta .btn {
