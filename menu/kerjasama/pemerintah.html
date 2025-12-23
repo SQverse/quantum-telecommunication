@@ -1615,15 +1615,16 @@
 
       // Dropdown toggle for mobile
       dropdowns.forEach((dropdown) => {
-        const link = dropdown.querySelector("a");
+  const link = dropdown.querySelector("a");
+  const dropdownContent = dropdown.querySelector(".dropdown-content");
 
-        link.addEventListener("click", (e) => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            dropdown.classList.toggle("active");
-          }
-        });
-      });
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768 && dropdownContent) {
+      e.preventDefault();
+      dropdown.classList.toggle("active");
+    }
+  });
+});
 
       // Dark Mode Toggle
       const themeToggle = document.getElementById("themeToggle");
