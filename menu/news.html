@@ -364,6 +364,8 @@
         transition: var(--transition);
         opacity: 0;
         transform: translateY(20px);
+        display: flex;
+        flex-direction: column;
       }
 
       .news-item.visible {
@@ -394,6 +396,10 @@
 
       .news-content {
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex: 1;
       }
 
       .news-date {
@@ -422,6 +428,10 @@
         margin-bottom: 15px;
         font-size: 0.95rem;
         line-height: 1.6;
+      }
+
+      .news-link {
+        margin-top: auto;
       }
 
       .news-link {
@@ -988,25 +998,48 @@
     <section id="news-list">
       <div class="container">
         <div class="news-categories">
-          <button class="news-category" data-category="all">
+          <button class="news-category" data-category="berita">
             Semua Berita
           </button>
-          <button class="news-category active" data-category="berita">Berita</button>
           <button class="news-category" data-category="artikel">Artikel</button>
-          <!-- <button class="news-category" data-category="artikel">Artikel</button>
-          <button class="news-category" data-category="tips">Tips</button> -->
-        </div>  
-
-        <!-- Artikel Section -->
-         
-
+        </div>           
         <div class="news-grid">
           <!-- Berita 1 -->
+          <!-- Berita Kompas TV -->
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://youtu.be/uufiGFswFKk?si=0qXcqWkopjgNbvqf" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/uufiGFswFKk/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 19 Desember 2025
+              </p>
+              <h3 class="news-title">
+                LPK Swasta di Semarang Latih Disabilitas Tunadaksa Jadi Teknisi Gratis | KOMPAS SIANG
+              </h3>
+              <p class="news-excerpt">
+                JAWA TENGAH, KOMPAS.TV - Untuk mengentaskan kemiskinan sekaligus memberdayakan penyandang disabilitas, sebuah Lembaga Pelatihan Kerja (LPK) swasta di Kota Semarang memberikan pelatihan teknisi secara gratis kepada 10 penyandang disabilitas tunadaksa selama satu minggu penuh.
+                Sebanyak 10 penyandang disabilitas tunadaksa dari berbagai kota di Jawa Tengah mengikuti pelatihan teknisi yang digelar selama satu pekan.
+                Pelatihan ini merupakan program perdana yang diselenggarakan secara gratis tanpa dipungut biaya apa pun.
+                Program ini bertujuan mengentaskan kemiskinan serta membekali keterampilan baru bagi penyandang disabilitas agar tetap produktif dan mampu menghasilkan pendapatan meski memiliki keterbatasan fisik.
+              </p>
+              <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
           <div class="news-item visible" data-category="artikel">
             <div class="news-image">
               <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank">
               <img
-                src="../assets/photos/section/berita11.jpeg"
+                src="https://img.youtube.com/vi/hYbwad_sjE8/maxresdefault.jpg"
                 alt="Berita Youtube"
                 loading="lazy"
               />
@@ -1020,30 +1053,27 @@
               </h3>
               <p class="news-excerpt">
                 🔧 ALAT & BAHAN WAJIB TEKNISI PEMULA | WAJIB PUNYA! 🔧
-
-Buat kamu yang baru terjun ke dunia teknisi, jangan sampai salah persiapan!
-Di video ini kita bahas alat dan bahan yang WAJIB dimiliki oleh teknisi pemula, baik teknisi listrik, elektronik, maupun servis umum.
-
-📌 Alat Wajib Teknisi Pemula:
-✔ Obeng set (+ dan -)
-✔ Tang kombinasi, tang potong, tang lancip
-✔ Multimeter / Avometer
-✔ Tespen
-✔ Solder & timah
-✔ Kunci pas / kunci Inggris
-✔ Cutter & isolasi listrik
-
-📌 Bahan Pendukung:
-✔ Kabel berbagai ukuran
-✔ Sekrup & baut
-✔ Isolasi listrik
-✔ Lem tembak
-✔ Heat shrink
-✔ Cairan pembersih (contact cleaner)
-
-Dengan alat yang tepat, pekerjaan jadi lebih aman, cepat, dan profesional 💪
-Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
-
+                Buat kamu yang baru terjun ke dunia teknisi, jangan sampai salah persiapan!
+                Di video ini kita bahas alat dan bahan yang WAJIB dimiliki oleh teknisi pemula, baik teknisi listrik, elektronik, maupun servis umum.
+                📌 Alat Wajib Teknisi Pemula:
+                ✔ Obeng set (+ dan -)
+                ✔ Tang kombinasi, tang potong, tang lancip
+                ✔ Multimeter / Avometer
+                ✔ Tespen
+                ✔ Solder & timah
+                ✔ Kunci pas / kunci Inggris
+                ✔ Cutter & isolasi listrik
+                
+                📌 Bahan Pendukung:
+                ✔ Kabel berbagai ukuran
+                ✔ Sekrup & baut
+                ✔ Isolasi listrik
+                ✔ Lem tembak
+                ✔ Heat shrink
+                ✔ Cairan pembersih (contact cleaner)
+                
+                Dengan alat yang tepat, pekerjaan jadi lebih aman, cepat, dan profesional 💪
+                Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
               </p>
               <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank" class="news-link"
                 >Tonton selengkapnya <i class="fas fa-arrow-right"></i
@@ -1056,7 +1086,7 @@ Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
             <div class="news-image">
               <a href="https://youtu.be/-7YMfkMhd08?si=N2dadMUv8QYVXJWI" target="_blank">
               <img
-                src="../assets/photos/section/berita10.jpeg"
+                src="https://img.youtube.com/vi/-7YMfkMhd08/maxresdefault.jpg"
                 alt="Berita Youtube"
                 loading="lazy"
               />
@@ -1070,19 +1100,19 @@ Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
               </h3>
               <p class="news-excerpt">
                 HP mati total emang bikin pusing, tapi tenang bro, semua ada solusinya 💪
-Di video kali ini, gue bakal tunjukin step-by-step cara diagnosa dan perbaikan HP mati total langsung dari meja servis Quantum Telecommunication 🔧📱
-
-Mulai dari:
-
-Cek awal pakai multitester
-
-Analisa jalur tegangan
-
-Identifikasi IC bermasalah
-
-Tips biar gak salah bongkar atau salah ukur
-
-Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal troubleshooting hardware, atau buat lo yang penasaran kenapa HP bisa tiba-tiba mati total tanpa sebab.
+                Di video kali ini, gue bakal tunjukin step-by-step cara diagnosa dan perbaikan HP mati total langsung dari meja servis Quantum Telecommunication 🔧📱
+                
+                Mulai dari:
+                
+                Cek awal pakai multitester
+                
+                Analisa jalur tegangan
+                
+                Identifikasi IC bermasalah
+                
+                Tips biar gak salah bongkar atau salah ukur
+                
+                Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal troubleshooting hardware, atau buat lo yang penasaran kenapa HP bisa tiba-tiba mati total tanpa sebab.
               </p>
               <a href="https://youtu.be/-7YMfkMhd08?si=N2dadMUv8QYVXJWI" target="_blank" class="news-link"
                 >Tonton selengkapnya <i class="fas fa-arrow-right"></i
@@ -1091,11 +1121,12 @@ Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal
             </div>
           </div>
 
+          <!-- Berita Kompas TV -->
           <div class="news-item visible" data-category="berita">
             <div class="news-image">
               <a href="https://youtu.be/9hcUKRBAl60?si=_Mvs1gp8wq1FLgN_" target="_blank">
               <img
-                src="../assets/photos/section/berita9.jpeg"
+                src="https://img.youtube.com/vi/9hcUKRBAl60/maxresdefault.jpg"
                 alt="Berita Youtube"
                 loading="lazy"
               />
@@ -1108,7 +1139,8 @@ Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal
                 Berdayakan Penyandang Disabilitas Melalui Pelatihan Teknisi
               </h3>
               <p class="news-excerpt">
-                LPK Quantum Telecommunication memberikan pelatihan teknisi ponsel gratis kepada para penyandang disabilitas kota sSemarang, Jawa Tengah.
+                Sebanyak 10 penyandang disabilitas tunadaksa dari berbagai wilayah di Jawa Tengah mengikuti pelatihan teknisi handphone secara gratis selama satu minggu penuh. Program yang diselenggarakan oleh sebuah Lembaga Pelatihan Kerja (LPK) swasta ini bertujuan untuk memberikan keterampilan baru agar para peserta tetap produktif dan mandiri secara ekonomi meskipun memiliki keterbatasan fisik.
+                Selama pelatihan, para peserta diajarkan berbagai keahlian teknis, mulai dari dasar-dasar ilmu kelistrikan hingga praktik langsung seperti mengganti LCD, memperbaiki konektor pengisi daya, serta menangani ponsel yang mati total.
               </p>
               <a href="https://youtu.be/9hcUKRBAl60?si=_Mvs1gp8wq1FLgN_" target="_blank" class="news-link"
                 >Tonton selengkapnya <i class="fas fa-arrow-right"></i
@@ -1116,11 +1148,13 @@ Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal
               </a>
             </div>
           </div>
+
+          <!-- Artikel -->
           <div class="news-item visible" data-category="artikel">
             <div class="news-image">
               <a href="https://youtu.be/ioz2LuYQXFU?si=-VtNif-F1aB49SMP" target="_blank">
               <img
-                src="../assets/photos/section/berita13.jpeg"
+                src="https://img.youtube.com/vi/ioz2LuYQXFU/maxresdefault.jpg"
                 alt="Materi Belajar youtube"
                 loading="lazy"
               />
@@ -1134,11 +1168,11 @@ Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal
               </h3>
               <p class="news-excerpt">
                 Nah, kita udah sampai di Part 3 nih! 🔥
-Kalau di Part 1 dan 2 kamu udah kenalan sama alat dasar dan alat lanjutan, di video kali ini kita bakal bahas alat-alat khusus yang sering dipakai teknisi profesional buat ngerjain kasus berat — kayak HP kena air, short, atau mati total 😎
-
-Kamu bakal tahu fungsi alat-alat penting seperti DC Power Supply, Microscope, Solder Uap, sampai alat bantu reballing dan jumper line.
-
-🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
+                Kalau di Part 1 dan 2 kamu udah kenalan sama alat dasar dan alat lanjutan, di video kali ini kita bakal bahas alat-alat khusus yang sering dipakai teknisi profesional buat ngerjain kasus berat — kayak HP kena air, short, atau mati total 😎
+                
+                Kamu bakal tahu fungsi alat-alat penting seperti DC Power Supply, Microscope, Solder Uap, sampai alat bantu reballing dan jumper line.
+                
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
               </p>
               <a href="https://youtu.be/nEMbG8exgRw?si=NEhNBu-ZMfZtYAPy" target="_blank" class="news-link"
                 >Tonton selengkapnya <i class="fas fa-arrow-right"></i
@@ -1149,9 +1183,9 @@ Kamu bakal tahu fungsi alat-alat penting seperti DC Power Supply, Microscope, So
 
           <div class="news-item visible" data-category="artikel">
             <div class="news-image">
-              <a href="https://youtu.be/ioz2LuYQXFU?si=-VtNif-F1aB49SMP" target="_blank">
+              <a href="https://youtu.be/nEMbG8exgRw?si=-r7KXbgND5NelQ3L" target="_blank">
               <img
-                src="../assets/photos/section/berita12.jpeg"
+                src="https://img.youtube.com/vi/nEMbG8exgRw/maxresdefault.jpg"
                 alt="Materi Belajar youtube"
                 loading="lazy"
               />
@@ -1165,15 +1199,15 @@ Kamu bakal tahu fungsi alat-alat penting seperti DC Power Supply, Microscope, So
               </h3>
               <p class="news-excerpt">
                 Masih lanjutan dari video sebelumnya nih! 😎
-Kalau di Part 1 kita udah bahas alat dasar buat servis HP, di video kali ini aku bakal tunjukin alat lanjutan yang biasa dipakai teknisi profesional — biar kamu makin jago dan siap praktek ke level berikutnya! 💪
-
-Kita bakal bahas alat-alat penting kayak power supply, blower, multimeter, sampai alat pendukung lain yang bikin kerjaan kamu jadi lebih rapi dan cepat 🔧
-
-Jadi buat kamu yang pengen serius belajar servis HP, video ini wajib banget kamu tonton sampai habis — biar gak salah pilih alat dan makin paham cara penggunaannya!
-
-🎯 Jadi, tonton video ini sampai habis biar kamu ngerti alat-alatnya, dan siap mulai langkah pertama jadi teknisi ponsel profesional!
-
-🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
+                Kalau di Part 1 kita udah bahas alat dasar buat servis HP, di video kali ini aku bakal tunjukin alat lanjutan yang biasa dipakai teknisi profesional — biar kamu makin jago dan siap praktek ke level berikutnya! 💪
+                
+                Kita bakal bahas alat-alat penting kayak power supply, blower, multimeter, sampai alat pendukung lain yang bikin kerjaan kamu jadi lebih rapi dan cepat 🔧
+                
+                Jadi buat kamu yang pengen serius belajar servis HP, video ini wajib banget kamu tonton sampai habis — biar gak salah pilih alat dan makin paham cara penggunaannya!
+                
+                🎯 Jadi, tonton video ini sampai habis biar kamu ngerti alat-alatnya, dan siap mulai langkah pertama jadi teknisi ponsel profesional!
+                
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
 
               </p>
               <a href="https://youtu.be/nEMbG8exgRw?si=NEhNBu-ZMfZtYAPy" target="_blank" class="news-link"
@@ -1187,7 +1221,7 @@ Jadi buat kamu yang pengen serius belajar servis HP, video ini wajib banget kamu
             <div class="news-image">
               <a href="https://youtu.be/evLHe6mgqb4?si=kE9Vv0lRDFpHtgsQ" target="_blank">
               <img
-                src="../assets/photos/section/berita8.jpeg"
+                src="https://img.youtube.com/vi/evLHe6mgqb4/maxresdefault.jpg"
                 alt="Materi Belajar youtube"
                 loading="lazy"
               />
@@ -1201,9 +1235,9 @@ Jadi buat kamu yang pengen serius belajar servis HP, video ini wajib banget kamu
               </h3>
               <p class="news-excerpt">
                 Kamu pengen bisa servis HP sendiri tapi masih bingung mulai dari mana? 😅
-Tenang, di video ini aku bakal tunjukin alat dan bahan reparasi smartphone yang wajib kamu punya kalau mau belajar servis HP, entah buat hobi, nambah skill, atau bahkan buka usaha sendiri! 💪
-
-Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua bakal aku jelasin satu per satu biar kamu paham fungsinya dan bisa mulai praktek dari rumah.
+                Tenang, di video ini aku bakal tunjukin alat dan bahan reparasi smartphone yang wajib kamu punya kalau mau belajar servis HP, entah buat hobi, nambah skill, atau bahkan buka usaha sendiri! 💪
+                
+                Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua bakal aku jelasin satu per satu biar kamu paham fungsinya dan bisa mulai praktek dari rumah.
               </p>
               <a href="https://youtu.be/evLHe6mgqb4?si=kE9Vv0lRDFpHtgsQ" target="_blank" class="news-link"
                 >Tonton selengkapnya <i class="fas fa-arrow-right"></i
@@ -1414,11 +1448,11 @@ Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua b
 
         <!-- Pagination -->
         <!-- <div class="news-pagination">
-          <a href="#" class="pagination-item active">1</a>
+          <a href="#" class="pagination-item">1</a>
           <a href="#" class="pagination-item">2</a>
           <a href="#" class="pagination-item">3</a>
-          <a href="#" class="pagination-item">></a> -->
-        </div>
+          <a href="#" class="pagination-item">></a>
+        </div> -->
       </div>
     </section>
 
@@ -1569,16 +1603,39 @@ Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua b
 });
 
       const themeToggle = document.getElementById('themeToggle');
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-}
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    }
 
       // News Category Filter
       const categoryButtons = document.querySelectorAll(".news-category");
-  const newsItems = document.querySelectorAll(".news-item");
+      const newsItems = document.querySelectorAll(".news-item");
+
+      function applyFilter(category) {
+  categoryButtons.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === category);
+  });
+
+  newsItems.forEach(item => {
+    item.style.display =
+      item.dataset.category === category ? "flex" : "none";
+  });
+}
+
+// klik tab
+categoryButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    applyFilter(btn.dataset.category);
+  });
+});
+
+// default saat load
+window.addEventListener("load", () => {
+  applyFilter("berita");
+});
+
 
   categoryButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -1590,13 +1647,29 @@ if (themeToggle) {
 
       newsItems.forEach(item => {
         if (category === "all" || item.dataset.category === category) {
-          item.style.display = "block";
+          item.style.display = "flex";
         } else {
           item.style.display = "none";
         }
       });
     });
   });
+
+  window.addEventListener("load", () => {
+  const defaultCategory = "berita";
+
+  categoryButtons.forEach(b => {
+    b.classList.toggle("active", b.dataset.category === defaultCategory);
+  });
+
+  newsItems.forEach(item => {
+    if (item.dataset.category === defaultCategory) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
 
       
       // Scroll animations
