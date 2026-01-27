@@ -2164,24 +2164,27 @@
         }
 
         .hero {
-    height: 50vh; /* Sesuaikan tinggi pas di HP */
-    margin-top: 80px; /* Jarak dari header agak dipendekin dikit buat HP */
-    border-radius: 15px; /* Radiusnya kecilin dikit biar proporsional */
+    /* Kurangi tinggi sesuai kenyamanan Adek, misalnya jadi 35vh atau 40vh */
+    height: 35vh; 
+    min-height: 280px; /* Batas minimum supaya teks di dalamnya ga tumpuk-tumpukan */
+    
+    margin-top: 75px; /* Sesuaikan jarak dari header agar pas */
+    width: 92%; /* Jarak kiri-kanan sedikit lebih lebar di HP */
+    border-radius: 15px; 
+  }
+
+  /* Opsional: Kecilkan sedikit ukuran teks agar proporsional dengan kotak yang lebih pendek */
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-tagline {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
   }
 
         .hero-title {
           font-size: 1rem;
           margin-bottom: 10px;
-        }
-
-        .hero-subtitle {
-          font-size: 2rem;
-          margin-bottom: 10px;
-        }
-
-        .hero-tagline {
-          font-size: 2.2rem;
-          margin-bottom: 20px;
         }
 
         .hero-content {
