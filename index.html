@@ -2700,6 +2700,167 @@
           margin-bottom: 8px;
         }
       }
+
+/* Container utama supaya tombol selalu di tengah */
+.button-wrapper-center {
+  display: flex;
+  justify-content: center; /* Menengahkan tombol secara horizontal */
+  align-items: center;
+  gap: 20px;               /* Jarak antar tombol */
+  margin-top: 30px;
+  width: 100%;
+  flex-wrap: wrap;         /* Otomatis susun atas-bawah di HP */
+}
+
+/* Standarisasi agar ukuran tombol kembar identik */
+.btn-company-compro, .btn-outline-compro {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;            /* Lebar pasti agar ukuran sama besar */
+  height: 55px;            /* Tinggi pasti */
+  padding: 0 !important;   /* Hapus padding manual agar tidak menceng */
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 576px) {
+  .btn-company-compro, .btn-outline-compro {
+    width: 90%;            /* Di HP tombol melebar hampir satu layar */
+    margin-bottom: 10px;
+  }
+}
+
+/* Container Utama */
+.depth-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  perspective: 1000px; /* Memberikan ilusi ruang 3D */
+  padding: 40px 0;
+}
+
+/* State Awal Card (Hidden & Background State) */
+.feature-depth-card {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  
+  /* Animasi Properti */
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.9) translateY(20px) translateZ(-50px);
+  transition: 
+    opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 600ms ease-out;
+    
+  pointer-events: none; /* Nonaktifkan klik sebelum muncul */
+}
+
+/* State Saat Muncul (Staggered Animation) */
+.feature-depth-card.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0) translateZ(0);
+  pointer-events: auto;
+}
+
+/* Efek Hover untuk Menegaskan Focus */
+.feature-depth-card:hover {
+  transform: translateY(-10px) scale(1.05) translateZ(20px);
+  box-shadow: var(--shadow-hover);
+  z-index: 10;
+}
+
+/* Styling Icon */
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--blue-medium);
+  margin-bottom: 20px;
+}
+
+.feature-image {
+  width: 100%;
+  height: 180px; /* Atur tinggi foto agar seragam */
+  overflow: hidden;
+  border-radius: 15px 15px 0 0; /* Lengkung hanya di bagian atas */
+  margin-bottom: 20px;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Foto otomatis terpotong rapi di tengah */
+  transition: transform 0.5s ease;
+}
+
+/* Efek zoom saat card di-hover */
+.feature-depth-card:hover .feature-image img {
+  transform: scale(1.1);
+}
+
+/* Update padding card agar teks tidak terlalu mepet ke pinggir */
+.feature-depth-card {
+  padding: 0 0 30px 0; /* Hapus padding atas karena sudah ada gambar */
+  background: #fff;
+  overflow: hidden; /* Penting agar gambar tidak keluar dari radius card */
+}
+
+.feature-content {
+  padding: 0 25px; /* Kasih jarak buat teks di dalam card */
+}
+
+/* Styling khusus card program agar senada dengan keunggulan */
+.program-depth-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.9) translateY(20px) translateZ(-50px);
+  transition: all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.program-depth-card.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0) translateZ(0);
+}
+
+.program-price {
+  color: var(--blue-medium);
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin: 10px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Tombol kecil di dalam card */
+.btn-sm {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  transition: var(--transition);
+}
+
+.btn-sm:hover {
+  background: var(--blue-medium);
+  color: white;
+}
+
     </style>
   </head>
   <body>
@@ -2769,7 +2930,7 @@
     <section id="about">
       <div class="container">
         <div class="section-title">
-          <h2>LPK Quantum Telecommunication Semarang</h2>
+          <h2>LPK QUANTUM TELECOMMUNICATION SEMARANG</h2>
         </div>
         <div class="about-content">
           <div class="about-image">
@@ -2780,23 +2941,22 @@
             />
           </div>
           <div class="about-text">
-            <div class="about-advantages">
-              <ul>
-                <li>Menyelenggarakan Pelatihan Teknisi Ponsel Berbasis Kompetensi dan Praktik</li>
-                <li>Menanamkan Nilai Amanah, Jujur, dan Profesional dalam Setiap Lulusan</li>
-                <li>Memberikan Pendampingan Berkelanjutan Agar Teknisi Handal dan Siap Kerja</li>
-              </ul>
-            </div>
-          </div>
-          <a
-                href="menu/about.html"
-                target="_blank"
-                class="btn btn-company-about"
-                >Selengkapnya Tentang Kami</a
-              >
+  <div class="about-advantages">
+    <ul>
+      <li>Menyelenggarakan Pelatihan Teknisi Ponsel Berbasis Kompetensi dan Praktik</li>
+      <li>Menanamkan Nilai Amanah, Jujur, dan Profesional dalam Setiap Lulusan</li>
+      <li>Memberikan Pendampingan Berkelanjutan Agar Teknisi Handal dan Siap Kerja</li>
+    </ul>
+  </div>
+  
+  <div class="button-wrapper-center">
+    <a href="menu/about.html" class="btn btn-company-about">Selengkapnya Tentang Kami</a>
+  </div>
+</div>
         </div>
       </div>
     </section>
+
     <section class="video-profile">
       <div class="container">
         <div class="section-title">
@@ -2816,310 +2976,111 @@
             ></iframe>
           </div>
         </div>
-        <div class="about-buttons">
-              <a
-                href="assets/photos/pdf/Compro Quantum Telecommunication.pdf"
-                target="_blank"
-                class="btn btn-company-compro"
-                >COMPANY PROFILE</a
-              >
-              <a href="menu/materi.html" class="btn btn-outline-compro">CEK MATERI</a>
-            </div>
+        <div class="button-wrapper-center">
+      <a href="assets/photos/pdf/Compro Quantum Telecommunication.pdf" target="_blank" class="btn btn-company-compro">COMPANY PROFILE</a>
+      <a href="menu/materi.html" class="btn btn-outline-compro">CEK MATERI</a>
+    </div>
       </div>
     </section> 
-    <section id="features">
-      <div class="container">
-        <div class="section-title">
-          <h2>Keunggulan LPK Quantum</h2>
-        </div>
-        <div class="features-scroll-indicator">
-          <p class="scroll-hint">Geser untuk melihat semua keunggulan</p>
-          <div class="scroll-progress">
-            <div class="scroll-progress-bar" id="featuresProgressBar"></div>
-          </div>
-        </div>
-        
-        <div class="features-grid" id="featuresGrid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <h3>Terakreditasi</h3>
-            <p>
-              Program pendidikan telah terakreditasi resmi, menjamin mutu pembelajaran
-              sesuai standar nasional.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>Fasilitas Modern</h3>
-            <p>
-              Peralatan praktik terkini dan lengkap untuk menunjang proses
-              belajar mengajar
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <h3>Sertifikasi Resmi</h3>
-            <p>
-              Lulusan mendapatkan sertifikat kompetensi yang diakui oleh
-              industri dan pemerintah
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <h3>Penyaluran Kerja</h3>
-            <p>
-              Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service
-              center terkemuka
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-building"></i>
-            </div>
-            <h3>Kelas Offline</h3>
-            <p>
-              Belajar secara tatap muka di Semarang dengan fasilitas mess AC,
-              WiFi, transport antar-jemput, dan lainnya
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-hand-holding-usd"></i>
-            </div>
-            <h3>Kelas Beasiswa</h3>
-            <p>
-              Program pelatihan dengan program Beasiswa
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Ribuan Alumni</h3>
-            <p>
-              Lebih dari 5000++ alumni tersebar dan sukses menjadi teknisi
-              ponsel
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-laptop"></i>
-            </div>
-            <h3>Kelas Online</h3>
-            <p>
-              Materi disampaikan LIVE STREAMING di group FB tertutup Dibimbing
-              DARI NOL SAMPAI MAHIR GARANSI sampai BISA!
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-file-contract"></i>
-            </div>
-            <h3>Legalitas Lengkap</h3>
-            <p>
-              Lembaga terdaftar resmi dengan izin operasional dari instansi
-              terkait
-            </p>
-          </div>
-        </div>
+
+    <!-- SECTION KEUNGGULAN -->
+
+    <section id="features" class="features-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Keunggulan LPK Quantum</h2>
+    </div>
+
+    <div class="depth-container" id="featuresDepth">
+      <div class="feature-depth-card">
+        <div class="feature-image">
+    <img src="assets/photos/CTA/hero12.jpeg" alt="Kegiatan Pelatihan">
+  </div>
+        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+        <h3>Terakreditasi</h3>
+        <p>Program pendidikan resmi dengan mutu pembelajaran standar nasional.</p>
       </div>
-    </section>
+
+      <div class="feature-depth-card">
+        <div class="feature-image">
+    <img src="assets/photos/alumni-page/2024/Desember 2024/desember243.jpeg" alt="Kegiatan Pelatihan">
+  </div>
+        <div class="feature-icon"><i class="fas fa-tools"></i></div>
+        <h3>Fasilitas Modern</h3>
+        <p>Peralatan praktik lengkap untuk menunjang proses belajar mengajar.</p>
+      </div>
+
+      <div class="feature-depth-card">
+        <div class="feature-image">
+    <img src="assets/photos/alumni-page/2024/Konter Sendiri/ks4.jpeg" alt="Kegiatan Pelatihan">
+  </div>
+        <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Penyaluran Kerja</h3>
+        <p>Bantuan penyaluran kerja ke service center terkemuka setelah lulus.</p>
+      </div>
+
+      <div class="feature-depth-card">
+        <div class="feature-image">
+    <img src="assets/photos/alumni-page/2025/Februari 2025/feb3.jpg" alt="Kegiatan Pelatihan">
+  </div>
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3>5000+ Alumni</h3>
+        <p>Ribuan alumni sukses menjadi teknisi ponsel profesional di seluruh Indonesia.</p>
+      </div>
+    </div>
+
+    <div class="button-wrapper-center">
+      <a href="menu/about.html" class="btn">Selengkapnya Tentang Kami</a>
+    </div>
+  </div>
+</section>
 
     <!-- Programs Section -->
     <section id="programs" class="programs-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Program Pelatihan</h2>
+  <div class="container">
+    <div class="section-title">
+      <h2>Program Pelatihan</h2>
+    </div>
+
+    <div class="depth-container" id="programsDepth">
+      
+      <div class="program-depth-card">
+        <div class="feature-image">
+          <img src="./assets/photos/CTA/hero1.jpg" alt="Kelas Offline LPK Quantum">
+          <div class="program-badge">Offline</div>
         </div>
-        <div class="programs-container">
-          <div class="program-card active" data-category="offline">
-            <div class="program-image">
-              <img
-                src="./menu/offline.jpeg"
-                alt="Kelas Offline"
-                loading="lazy"
-              />
-              <div class="program-badge">Offline</div>
-            </div>
-            <div class="program-content">
-              <h3>Kelas Offline</h3>
-              <div class="program-meta">
-                <span><i class="far fa-clock"></i> 10 Hari</span>
-                <span class="program-price">Rp 4.000.000</span>
-              </div>
-              <ul class="program-benefits">
-                <li>Tatap muka di Semarang</li>
-                <li>Belajar Hardware & Software dari Nol</li>
-                <li>
-                  Full Fasilitas: Mess AC, WiFi, Kaos, Transport antar-jemput
-                </li>
-                <li>70% Praktik, 30% Teori dengan studi kasus nyata</li>
-                <li>Video materi bisa didownload + Gratis mengulang kelas</li>
-                <li>Selesai pelatihan → MAGANG langsung + peluang kerja</li>
-              </ul>
-              <div class="program-cta">
-                <a
-                  href="./menu/programs.html"
-                  class="btn"
-                  style="width: 100%; text-align: center"
-                  >Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="program-card active" data-category="online">
-            <div class="program-image">
-              <img
-                src="./menu/online.jpeg"
-                alt="Kelas Online"
-                loading="lazy"  
-              />
-              <div class="program-badge">Online</div>
-            </div>
-            <div class="program-content">
-              <h3>Kelas Online</h3>
-              <div class="program-meta">
-                <span><i class="far fa-clock"></i> Sampai Bisa!</span>
-                <span class="program-price">Rp 800.000</span>
-              </div>
-              <ul class="program-benefits">
-                <li>Belajar lewat Live Streaming FB (Group FB Tertutup)</li>
-                <li>Garansi sampai bisa!</li>
-                <li>Gratis Borneo Schematic 1 bulan</li>
-                <li>Bonus materi Bisnis & Scale Up Usaha</li>
-                <li>E-Sertifikat Resmi</li>
-                <li>Bebas konsultasi via WA & Bedah Kasus Live</li>
-              </ul>
-              <div class="program-cta">
-                <a
-                  href="./menu/programs.html"
-                  class="btn"
-                  style="width: 100%; text-align: center"
-                  >Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="program-card active" data-category="private">
-            <div class="program-image">
-              <img
-                src="./menu/private.jpeg"
-                alt="Kelas Private"
-                loading="lazy"
-              />
-              <div class="program-badge">Private</div>
-            </div>
-            <div class="program-content">
-              <h3>Kelas Private</h3>
-              <div class="program-meta">
-                <span><i class="far fa-clock"></i> Sampai Bisa!</span>
-                <span class="program-price">Rp 10.000.000</span>
-              </div>
-              <ul class="program-benefits">
-                <li>Tatap muka di Semarang</li>
-                <li>Belajar Hardware & Software dari Nol</li>
-                <li>
-                  Full Fasilitas: Mess AC, WiFi, Kaos, Transport antar-jemput
-                </li>
-                <li>70% Praktik, 30% Teori dengan studi kasus nyata</li>
-                <li>Video materi bisa didownload + Gratis mengulang kelas</li>
-                <li>Selesai pelatihan → MAGANG langsung + peluang kerja</li>
-              </ul>
-              <div class="program-cta">
-                <a
-                  href="./menu/programs.html"
-                  class="btn"
-                  style="width: 100%; text-align: center"
-                  >Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="program-card active" data-category="online">
-            <div class="program-image">
-              <img
-                src="./menu/online-iPhone.jpeg"
-                alt="Kelas Online"
-                loading="lazy"  
-              />
-              <div class="program-badge">Online</div>
-            </div>
-            <div class="program-content">
-              <h3>Kelas Online Teknisi iPhone</h3>
-              <div class="program-meta">
-                <span><i class="far fa-clock"></i> Sampai Bisa!</span>
-                <span class="program-price">Rp 2.500.000</span>
-              </div>
-              <ul class="program-benefits">
-                <li>30x Live Streaming (interaktif, bukan rekaman)!</li>
-                <li>3x per minggu | 1,5 jam / pertemuan</li>
-                <li>Rekaman kelas (bisa diulang)!</li>
-                <li>Grup diskusi teknisi WhatsApp</li>
-                <li>Bimbingan kasus real peserta</li>
-                <li>File schematic & boardview iPhone</li>
-                <li>Sertifikat Pelatihan</li>
-                <li>Bebas konsultasi setelah kelas selesai</li>
-
-              </ul>
-              <div class="program-cta">
-                <a
-                  href="./menu/programs.html"
-                  class="btn"
-                  style="width: 100%; text-align: center"
-                  >Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="program-card active" data-category="private">
-            <div class="program-image">
-              <img
-                src="./menu/private-iPhone.jpeg"
-                alt="Kelas Private iPhone"
-                loading="lazy"
-              />
-              <div class="program-badge">Private</div>
-            </div>
-            <div class="program-content">
-              <h3>Kelas Private Teknisi iPhone</h3>
-              <div class="program-meta">
-                <span><i class="far fa-clock"></i> Sampai Bisa!</span>
-                <span class="program-price">Rp 15.000.000</span>
-              </div>
-              <ul class="program-benefits">
-                <li>Tatap muka di Semarang</li>
-                <li>Belajar Hardware & Software dari Nol</li>
-                <li>
-                  Full Fasilitas: Mess AC, WiFi, Kaos, Transport antar-jemput
-                </li>
-                <li>70% Praktik, 30% Teori dengan studi kasus nyata</li>
-                <li>Video materi bisa didownload + Gratis mengulang kelas</li>
-                <li>Selesai pelatihan → MAGANG langsung + peluang kerja</li>
-              </ul>
-              <div class="program-cta">
-                <a
-                  href="./menu/programs.html"
-                  class="btn"
-                  style="width: 100%; text-align: center"
-                  >Selengkapnya</a
-                >
-              </div>
-            </div>
+        <div class="feature-content">
+          <h3>Kelas Offline</h3>
+          <p class="program-price">Rp 4.000.000</p>
+          <p>Belajar tatap muka langsung di Semarang dengan fasilitas lengkap dari nol sampai mahir.</p>
+          <div class="program-cta">
+            <a href="./menu/programs.html" class="btn-sm">Detail Kelas</a>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="program-depth-card">
+        <div class="feature-image">
+          <img src="./assets/photos/CTA/hero6.jpeg" alt="Kelas Online LPK Quantum">
+          <div class="program-badge">Online</div>
+        </div>
+        <div class="feature-content">
+          <h3>Kelas Online</h3>
+          <p class="program-price">Rp 800.000</p>
+          <p>Belajar intensif via Live Streaming dengan garansi sampai bisa dan konsultasi seumur hidup.</p>
+          <div class="program-cta">
+            <a href="./menu/programs.html" class="btn-sm">Detail Kelas</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="button-wrapper-center">
+      <a href="menu/programs.html" class="btn btn-company-about">LIHAT SEMUA PROGRAM</a>
+    </div>
+  </div>
+</section>
 
     <section id="instructors">
       <div class="container">
@@ -4059,6 +4020,78 @@ setInterval(nextSlide, 5000);
       function removeHighlight(field) {
         field.style.borderColor = "#ddd";
       }
+
+      document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll(".feature-depth-card");
+  
+  const observerOptions = {
+    threshold: 0.2 // Animasi jalan kalau 20% section sudah kelihatan
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Memicu staggered delay untuk tiap card
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("is-visible");
+          }, index * 200); // Delay 200ms antar card
+        });
+        
+        // Berhenti mengamati setelah animasi selesai
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(document.querySelector(".depth-container"));
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // 1. Inisialisasi Intersection Observer
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Cari semua card di dalam container yang sedang terlihat
+        const cards = entry.target.querySelectorAll('.feature-card, .feature-depth-card, .program-depth-card');
+        
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("is-visible");
+            // Tambahan: pastikan opacity jadi 1
+            card.style.opacity = "1"; 
+          }, index * 150);
+        });
+
+        // Berhenti mengamati jika sudah muncul
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // 2. Daftar container yang mau dikasih animasi (Cek satu-satu biar ga eror)
+  const targets = [
+    document.querySelector("#featuresGrid"), // ID lama Adek
+    document.querySelector("#featuresDepth"), // ID baru buat depth
+    document.querySelector("#programsDepth")  // ID buat section program
+  ];
+
+  // 3. Jalankan observer hanya jika elemennya MEMANG ADA di HTML
+  targets.forEach(target => {
+    if (target) {
+      observer.observe(target);
+    }
+  });
+
+  // --- SCRIPT LAIN (Menu Mobile & Slideshow) TETAP DI BAWAH SINI ---
+  // (Pastikan script menu mobile adek tidak terhapus ya!)
+});
 
     </script>
   </body>
