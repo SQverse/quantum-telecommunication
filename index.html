@@ -366,8 +366,8 @@
       }
 
       .hero-tagline {
-        font-family: "Poppins", sans-serif;
-        font-size: 2.5rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 1.2rem;
         font-weight: 800;
         margin-bottom: 30px;
         animation: fadeInDown 1s ease 0.4s forwards;
@@ -490,7 +490,57 @@
         border-color: var(--text-light);
       }
 
-      .btn-outline {
+      .btn-company-about {
+        background-color: var(--text-light);
+        color: var(--bg-light);
+        padding: 16px 90px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-company-about:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-company-compro {
+        display: inline-block;
+        position: inherit;
+        background-color: var(--text-light);
+        color: var(--bg-light);
+        padding: 16px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-company-compro:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline-compro {
         background: transparent;
         color: var(--blue-medium);
         border-color: var(--text-light);
@@ -990,6 +1040,10 @@
   /* ===== PERBAIKAN UNTUK PROGRAM SECTION DI MOBILE ===== */
 @media (max-width: 768px) {
   /* Container untuk horizontal scroll */
+  .btn-company-about {
+    padding: 12px 170px;
+    font-size: 0.9rem;
+  }
   .programs-container {
     display: flex;
     overflow-x: auto;
@@ -2051,10 +2105,6 @@
           font-size: 2.5rem;
         }
 
-        .hero-tagline {
-          font-size: 2.8rem;
-        }
-
         .alumni-container,
         .news-container,
         .collaboration-container,
@@ -2177,9 +2227,9 @@
   .hero-subtitle {
     font-size: 1.5rem;
   }
+
   .hero-tagline {
-    font-size: 1.7rem;
-    margin-bottom: 15px;
+    font-size: 0.8rem;
   }
 
         .hero-title {
@@ -2474,21 +2524,28 @@
         
 
         .hero-title {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
 
         .hero-subtitle {
-          font-size: 1.8rem;
+          font-size: 1.3rem;
         }
 
         .hero-tagline {
-          font-size: 2rem;
+          font-size: 0.6rem;
         }
 
         .btn {
           padding: 16px 35px;
           font-size: 1rem;
         }
+
+        .btn-company-about {
+    padding-top: 10px;
+    padding-left: 100px;
+    font-weight: 660;
+    font-size: 0.8rem;
+  }
 
         .features-grid {
           grid-template-columns: 1fr;
@@ -2576,10 +2633,6 @@
 
         .hero-subtitle {
           font-size: 1.5rem;
-        }
-
-        .hero-tagline {
-          font-size: 1.7rem;
         }
 
         .footer-content {
@@ -2697,7 +2750,7 @@
       <div class="container hero-content">
         <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
         <h3 class="hero-subtitle">PELATIHAN - MAGANG - KERJA</h3>
-        <h3 class="hero-tagline">DIJAMIN KERJA</h3>
+        <h3 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah, Jujur, Handal dan Profesional</h3>
         <div class="hero-buttons">
           <a
             href="https://api.whatsapp.com/send/?phone=6282171727337&text&type=phone_number&app_absent=0"
@@ -2727,38 +2780,20 @@
             />
           </div>
           <div class="about-text">
-            <p>
-              LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja
-              Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi
-              tempat pelatihan, kursus, sekaligus sekolah teknisi smartphone
-              terpercaya di Indonesia.
-            </p>
             <div class="about-advantages">
               <ul>
-                <li>Resmi berizin kedinasan dan terakreditasi LA-LPK sejak 2012</li>
-                <li>Lebih dari 5.000 alumni tersebar di seluruh Indonesia dan mancanegara</li>
-                <li>Metode pembelajaran efektif dengan kurikulum terarah</li>
-                <li>Penyaluran kerja terjamin untuk semua lulusan</li>
-                <li>Instruktur berpengalaman dan fasilitas modern</li>
-                <li>Sertifikasi resmi yang diakui industri</li>
+                <li>Menyelenggarakan Pelatihan Teknisi Ponsel Berbasis Kompetensi dan Praktik</li>
+                <li>Menanamkan Nilai Amanah, Jujur, dan Profesional dalam Setiap Lulusan</li>
+                <li>Memberikan Pendampingan Berkelanjutan Agar Teknisi Handal dan Siap Kerja</li>
               </ul>
             </div>
-            <p>
-              Dengan komitmen menghasilkan teknisi handphone yang trampil dan siap kerja, 
-              serta pengusaha mandiri yang sukses dan profesional, LPK Quantum Telecommunication 
-              menjadi pilihan tepat untuk mengembangkan karier di bidang teknisi smartphone.
-            </p>
-            
-            <div class="about-buttons">
-              <a
-                href="assets/photos/pdf/Compro Quantum Telecommunication.pdf"
-                target="_blank"
-                class="btn btn-company"
-                >COMPANY PROFILE</a
-              >
-              <a href="menu/materi.html" class="btn btn-outline">CEK MATERI</a>
-            </div>
           </div>
+          <a
+                href="menu/about.html"
+                target="_blank"
+                class="btn btn-company-about"
+                >Selengkapnya Tentang Kami</a
+              >
         </div>
       </div>
     </section>
@@ -2781,6 +2816,15 @@
             ></iframe>
           </div>
         </div>
+        <div class="about-buttons">
+              <a
+                href="assets/photos/pdf/Compro Quantum Telecommunication.pdf"
+                target="_blank"
+                class="btn btn-company-compro"
+                >COMPANY PROFILE</a
+              >
+              <a href="menu/materi.html" class="btn btn-outline-compro">CEK MATERI</a>
+            </div>
       </div>
     </section> 
     <section id="features">
@@ -2802,7 +2846,8 @@
             </div>
             <h3>Terakreditasi</h3>
             <p>
-              
+              Program pendidikan telah terakreditasi resmi, menjamin mutu pembelajaran
+              sesuai standar nasional.
             </p>
           </div>
           <div class="feature-card">
@@ -3521,99 +3566,6 @@
     </section>
 
     <!-- Testimoni Video Section -->
-    <section id="testimonials" class="testimonials-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Testimoni Peserta & Alumni</h2>
-        </div>
-        <div class="testimonials-container">
-          <div class="testimonial-video">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/ySjxQHP5vJU?si=ftFgKq7s8pCnp0CO&amp;start=10"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="testimonial-content">
-              <h3>Testimoni Kelas Offline</h3>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-              <p class="testimonial-text">
-                Dengarkan testimoni peserta kelas offline di video ini.
-              </p>
-              <p class="testimonial-author">Peserta Kelas Offline</p>
-            </div>
-          </div>
-          <div class="testimonial-video">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/bGI5joet5wM?si=mxJaxgD5PVY7l9Yy&amp;start=10"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="testimonial-content">
-              <h3>Testimoni Kelas Online</h3>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              <p class="testimonial-text">
-                Dengarkan pengalaman dari alumni langsung
-              </p>
-              <p class="testimonial-author">Alumni Kelas Online</p>
-            </div>
-          </div>
-          <div class="testimonial-video">
-            <div class="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/iu6lvrXriNo?si=A5uDZr3YcQyG1Fd1&amp;start=10"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="testimonial-content">
-              <h3>Testimoni Kelas Offline</h3>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">
-                Dengarkan pengalaman dari alumni langsung.
-              </p>
-              <p class="testimonial-author">Alumni Kelas Offline</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Partners Carousel Section -->
     <section class="partners-section">
