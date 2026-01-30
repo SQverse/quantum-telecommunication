@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -25,6 +26,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
       
       html, body {
@@ -61,6 +63,16 @@
         background: var(--blue-light);
         color: var(--blue-dark);
       }
+
+.hero-subtitle {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Pakai 'vw' biar otomatis sebaris di HP */
+  font-size: 5.5vw; 
+  white-space: nowrap;
+  color: #ffffff; /* Warna oranye biar stand out */
+}
 
       /* Dropdown Menu - Mobile */
       @media (max-width: 768px) {
@@ -341,27 +353,35 @@
 
       /* Enhanced text shadows for better legibility */
       .hero-title {
-        font-family: "Poppins", sans-serif;
+        font-family: 'Montserrat', sans-serif !important;
+         font-weight: 800;
+         letter-spacing: 6px;
+      /* Tambahkan gradasi halus biar ga monoton */
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         font-size: 1.5rem;
         font-weight: 700;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease;
-        line-height: 1.1;
+        line-height: 1.5;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
       }
 
       .hero-subtitle {
-        font-family: "Poppins", sans-serif;
-        font-size: 2rem;
+        font-family: 'Roboto Condensed', sans-serif !important;
+        font-weight: 700;
+        text-transform: uppercase;
+  /* Pakai 'vw' biar otomatis sebaris di HP */
+  font-size: 5.5vw; 
+  white-space: nowrap;
+  color: #ffffff;
         font-weight: 800;
         margin-bottom: 15px;
         animation: fadeInDown 1s ease 0.2s forwards;
         opacity: 0;
         line-height: 1.1;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 3px;
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.6);
       }
 
@@ -373,7 +393,7 @@
         margin-bottom: 30px;
         animation: fadeInDown 1s ease 0.4s forwards;
         opacity: 0;
-        line-height: 1.1;
+        line-height: 1.2;
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #ffd700;
@@ -424,25 +444,56 @@
 
       /* Enhanced button styles with gradient hover effects */
       .btn {
-        display: inline-block;
-        background: var(--accent-gradient);
-        color: var(--text-light);
-        padding: 18px 45px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-        border: 2px solid transparent;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        position: relative;
-        overflow: hidden;
-        animation: slideInUp 0.8s ease 0.8s forwards;
-        opacity: 0;
-      }
+  display: inline-block;
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  /* Padding dikurangi agar tidak terlalu raksasa */
+  padding: 12px 35px; 
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  /* Font size dibuat lebih manusiawi */
+  font-size: 0.95rem; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.8s ease 0.8s forwards;
+  opacity: 0;
+}
+
+/* --- RESPONSIVE BUTTON HERO --- */
+
+/* 1. Untuk Layar HP Standar (di bawah 576px) */
+@media (max-width: 576px) {
+  .btn {
+    padding: 12px 30px !important; /* Ukuran pas, tidak terlalu gemuk */
+    font-size: 0.9rem !important;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* 2. Untuk Layar HP Sedang (di bawah 480px) */
+@media (max-width: 480px) {
+  .btn {
+    padding: 10px 25px !important; /* Makin ramping */
+    font-size: 0.85rem !important;
+    border-radius: 25px; /* Radius sedikit dikecilkan biar proporsional */
+  }
+}
+
+/* 3. Untuk Layar HP Mungil (di bawah 400px) */
+@media (max-width: 400px) {
+  .btn {
+    padding: 8px 20px !important; /* Ukuran ekonomis tapi tetap mudah dipencet */
+    font-size: 0.8rem !important;
+    font-weight: 600; /* Sedikit dikurangi ketebalannya biar nggak berat */
+    letter-spacing: 0;
+  }
+}
 
       .btn::before {
         content: '';
@@ -2886,6 +2937,283 @@
   color: white;
 }
 
+/* Container Utama Ticker */
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden; /* Menyembunyikan teks yang keluar kotak */
+  padding: 10px 0;
+  margin: 15px 0;
+  white-space: nowrap;
+}
+
+/* Track yang bergerak */
+.hero-subtitle-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%; /* Mulai dari luar layar */
+  animation: ticker-animation 70s linear infinite; /* Kecepatan jalan */
+}
+
+.hero-subtitle-ticker span {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 1.8rem; /* Ukuran pas untuk Desktop */
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 350px; /* Jarak antar pengulangan teks */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-indicators {
+  display: none !important;
+}
+
+/* Animasi Jalannya */
+@keyframes ticker-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive: Ukuran teks di Mobile */
+@media (max-width: 576px) {
+  .hero-subtitle-ticker span {
+    font-size: 1.2rem; /* Lebih kecil di HP agar tidak terlalu penuh */
+    letter-spacing: 3px;
+  }
+  .ticker-wrapper {
+    padding: 8px 0;
+  }
+}
+
+/* Container Foto Minimalis */
+.instructor-card-minimal {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  margin: 10px;
+}
+
+.instructor-card-minimal img {
+  width: 100%;
+  height: 250px; /* Ukuran pas biar ga terlalu panjang */
+  object-fit: cover;
+}
+
+.instructor-info-simple {
+  padding: 15px;
+}
+
+.instructor-info-simple h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.instructor-info-simple span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Button Selengkapnya */
+.btn-selengkapnya {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid #1a237e;
+  color: #1a237e;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-selengkapnya:hover {
+  background: #1a237e;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Container slider agar tidak terlalu lebar di desktop */
+.instructor-slider {
+  max-width: 1000px; /* Batasi lebar agar foto jadi "sepetak" cakep */
+  margin: 0 auto;    /* Menengahkan container slider */
+  padding-bottom: 40px;
+}
+
+.instructor-card-minimal {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin: 10px auto; /* Margin auto agar card di dalam slide tetap di tengah */
+  max-width: 320px;  /* Batasi lebar card foto */
+}
+
+/* Penyelaras teks header */
+.section-header p {
+  max-width: 600px;
+  margin: 0 auto 30px; /* Tengahkan teks paragraf */
+}
+
+/* Button style */
+.btn-selengkapnya {
+  display: inline-block; /* Agar bisa pakai margin/padding tapi tetep sebaris */
+  padding: 12px 35px;
+  border: 2px solid #1a237e;
+  color: #1a237e;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* --- JURUS HELPER BIAR TULISAN KE TENGAH --- */
+.text-center { 
+  text-align: center !important; 
+}
+
+/* Mengatur jarak atas bawah (padding) */
+.py-5 { 
+  padding-top: 3rem !important; 
+  padding-bottom: 3rem !important; 
+}
+
+/* Mengatur jarak bawah (margin bottom) */
+.mb-4 { 
+  margin-bottom: 1.5rem !important; 
+}
+
+/* Mengatur jarak atas (margin top) */
+.mt-5 { 
+  margin-top: 3rem !important; 
+}
+
+/* --- PERBAIKAN KHUSUS TIM SOLID --- */
+.instructor-slider {
+  max-width: 1100px;
+  margin: 0 auto; /* Menengahkan container slider */
+  padding-bottom: 50px;
+}
+
+.instructor-card-minimal {
+  max-width: 320px; /* Kunci biar fotonya "sepetak" dan ga melebar */
+  margin: 0 auto;   /* Menengahkan kartu di dalam slide */
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.instructor-card-minimal img {
+  width: 100%;
+  height: 300px; /* Tinggi foto dibuat pas sepetak */
+  object-fit: cover;
+}
+
+/* Container pembungkus biar ada jarak dari pinggir layar */
+.alumni-single-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px; /* Ini biar di HP nggak nempel kiri-kanan */
+}
+
+.alumni-card-single {
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.alumni-img-box {
+  flex: 0 0 40%;
+  height: 350px;
+}
+
+.alumni-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alumni-text-box {
+  padding: 40px;
+  flex: 1;
+}
+
+/* --- JURUS KHUSUS MOBILE (HP) --- */
+@media (max-width: 768px) {
+  .alumni-card-single {
+    flex-direction: column; /* Foto di atas, teks di bawah */
+    text-align: center;
+    max-width: 320px; /* Ukuran sepetak biar pas di tengah HP */
+    margin: 0 auto;   /* Tengahkan kartu di layar */
+  }
+  
+  .alumni-img-box {
+    flex: 0 0 250px; /* Tinggi foto di HP */
+    width: 100%;
+  }
+
+  .alumni-text-box {
+    padding: 25px 20px;
+  }
+}
+
+/* Container Berita */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+}
+
+.news-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 25px;
+  text-align: left;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #1a3c6e;
+  line-height: 1.4;
+}
+
+.news-direct {
+  color: #4a90e2;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
     </style>
   </head>
   <body>
@@ -2935,7 +3263,17 @@
       </div>
       <div class="container hero-content">
         <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
-        <h3 class="hero-subtitle">PELATIHAN - MAGANG - KERJA</h3>
+        <div class="ticker-wrapper">
+  <div class="hero-subtitle-ticker">
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+    <span>PELATIHAN - MAGANG - KERJA </span>
+  </div>
+</div>
         <h3 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah <br> Jujur, Handal dan Profesional</h3>
         <div class="hero-buttons">
           <a
@@ -3107,308 +3445,139 @@
   </div>
 </section>
 
-    <section id="instructors">
-      <div class="container">
-        <div class="section-title">
-          <h2>TIM SOLID</h2>
-        </div>
-        <p class="section-subtitle">
-          Belajar langsung dari para praktisi berpengalaman di bidang Teknisi
-          Ponsel
-        </p>
-        <div class="instructors-container">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="assets/photos/instruktur/tomi1.JPG"
-                alt="Tomie Sudiarno"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Tomie Sudiarno</h3>
-              <p class="instructor-role">Owner & Leader Instructor</p>
-              <p class="instructor-desc">
-                Berpengalaman 25 tahun di bidang reparasi handphone
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="assets/photos/instruktur/jun.jpeg"
-                alt="Djunaedi Sammad"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Djunaedi Sammad</h3>
-              <p class="instructor-role">Senior Instructor</p>
-              <p class="instructor-desc">
-                Handal dalam bidang Repair Hardware
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-        
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="assets/photos/instruktur/nandieni-hisma.jpeg"
-                alt="Nandieni Hisma"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Nandieni Hisma</h3>
-              <p class="instructor-role">Instruktur Repair Software</p>
-              <p class="instructor-desc">
-                Handal dalam bidang repair software
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="assets/photos/instruktur/ika.jpeg"
-                alt="Ika Fitrianingsih"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Ika Fitrianingsih</h3>
-              <p class="instructor-role">Instruktur Materi Bisnis</p>
-              <p class="instructor-desc">
-                Praktisi Bisnis Reparasi Handphone
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Alumni Section -->
-<section id="alumni">
-  <div class="container">
-    <div class="section-title">
-      <h2>Kisah Sukses Alumni</h2>
+    <section id="instructors" class="py-5" style="background-color: #f8f9fa;">
+  <div class="container text-center"> 
+    <div class="container"> <div class="section-title">
+      <h2>TIM SOLID</h2>
     </div>
-    <div class="alumni-container">
-      <!-- Alumni 1 -->
-      <div class="alumni-card active" data-category="offline">
-        <div class="alumni-image">
-          <img
-            src="assets/photos/alumni/alumni1.JPG"
-            alt="Alumni 1"
-            loading="lazy"
-          />
-        </div>
-        <div class="alumni-info">
-          <h3 class="alumni-name">Khoirul Hidayat</h3>
-          <p class="alumni-batch">Alumni Kelas Offline 2023</p>
-          <p class="alumni-testimonial">
-            "Setelah lulus dari LPK Quantum, saya membuka service center
-            sendiri dan sekarang dipercaya untuk service iphone."
-          </p>
-          <p class="alumni-current">
-            Kini: <span>Punya Konter HP Sendiri</span>
-          </p>
-        </div>
-      </div>
+    <p class="section-subtitle">Belajar langsung dari para praktisi ahli di LPK Quantum.</p>
+    </div>
 
-      <!-- Alumni 2 -->
-      <div class="alumni-card active" data-category="offline">
-        <div class="alumni-image">
-          <img
-            src="assets/photos/alumni/alumni3.JPG"
-            alt="Alumni 2"
-            loading="lazy"
-          />
+    <div class="swiper instructor-slider">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="instructor-card-minimal">
+            <img src="assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno">
+            <div class="instructor-info-simple">
+              <h5>Tomie Sudiarno</h5>
+              <span>Owner & Leader</span>
+            </div>
+          </div>
         </div>
-        <div class="alumni-info">
-          <h3 class="alumni-name">Abdul Rohman</h3>
-          <p class="alumni-batch">Alumni Kelas Offline 2024</p>
-          <p class="alumni-testimonial">
-            "Pelatihan di LPK Quantum sangat lengkap dan instruktur sangat
-            berpengalaman. Cara penyampaiannya mudah dipahami dan sangat
-            jelas."
-          </p>
-          <p class="alumni-current">
-            Kini: <span>Sudah Buka Konter HP Sendiri.</span>
-          </p>
-        </div>
-      </div>
 
-      <!-- Alumni 3 -->
-      <div class="alumni-card active" data-category="online">
-        <div class="alumni-image">
-          <img
-            src="assets/photos/alumni/alumni2.JPG"
-            alt="Alumni 3"
-            loading="lazy"
-          />
+        <div class="swiper-slide">
+          <div class="instructor-card-minimal">
+            <img src="assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma">
+            <div class="instructor-info-simple">
+              <h5>Nandieni Hisma</h5>
+              <span>Repair Software</span>
+            </div>
+          </div>
         </div>
-        <div class="alumni-info">
-          <h3 class="alumni-name">Zulian Tunjung Sidartak</h3>
-          <p class="alumni-batch">Alumni Kelas Offline 2024</p>
-          <p class="alumni-testimonial">
-            "Meski saya sangat sangat pemula, materi yang disampaikan sangat
-            detail dan mudah dipahami. Sekarang saya bisa servis HP sendiri
-            dan buka usaha sampingan."
-          </p>
-          <p class="alumni-current">
-            Kini: <span>Buka Konter HP Sendiri</span>
-          </p>
+
+        <div class="swiper-slide">
+          <div class="instructor-card-minimal">
+            <img src="assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad">
+            <div class="instructor-info-simple">
+              <h5>Djunaedi Sammad</h5>
+              <span>Senior Instructor</span>
+            </div>
+          </div>
         </div>
+
+        <div class="swiper-slide">
+          <div class="instructor-card-minimal">
+            <img src="assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih">
+            <div class="instructor-info-simple">
+              <h5>Ika Fitrianingsih</h5>
+              <span>Materi Bisnis</span>
+            </div>
+          </div>
+        </div>
+
       </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="mt-5">
+      <a href="menu/about.html" class="btn-selengkapnya">
+        Selengkapnya <i class="fas fa-arrow-right ms-2"></i>
+      </a>
     </div>
   </div>
 </section>
-    <!-- Berita Section -->
-    <section id="news" style="background-color: var(--blue-light)">
-      <div class="container">
-        <div class="section-title">
-          <h2>Berita</h2>
+
+    <!-- Alumni Section -->
+<section id="alumni" class="py-5">
+  <div class="container">
+    <div class="section-title">
+      <h2>KISAH SUKSES ALUMNI</h2>
+    </div>
+    
+    <div class="alumni-single-container">
+      <div class="alumni-card-single">
+        <div class="alumni-img-box">
+          <img src="assets/photos/alumni/alumni1.JPG" alt="Khoirul Hidayat">
         </div>
-        <p class="section-subtitle">
-          LPK Quantum Telecommunication di berbagai media online terpercaya
-        </p>
-        <div class="news-container">
-          <!-- Berita 1 -->
-          <div class="news-card">
-            <div class="news-image">
-              <a href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/" target="_blank">
-              <img
-                src="./assets/photos/section/berita1.jpg"
-                alt="Metro Times"
-                loading="lazy"
-              />
-            </div>
-            <div class="news-content">
-              <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 8 Agustus 2023
-              </p>
-              <h3 class="news-title">
-                Cetak Pengusaha Muda Mandiri, LPK Quantum Telecommunication
-                Gandeng Bamuis BNI Gelar Pelatihan Teknisi Smartphone
-              </h3>
-              <p class="news-source">
-                <i class="fas fa-newspaper"></i> Metro Times
-              </p>
-              <p class="news-excerpt">
-                Lembaga Pelatihan Kerja Quantum Telecommunication berhasil
-                mencetak teknisi handphone profesional yang siap bersaing di
-                dunia kerja.
-              </p>
-              <a
-                href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/"
-                class="news-link"
-                target="_blank"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-              </a>
-            </div>
-          </div>
-
-          <!-- Berita 2 -->
-          <div class="news-card">
-            <div class="news-image">
-              <a href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis" target="_blank">
-              <img
-                src="./assets/photos/section/berita2.jpg"
-                alt="Berita Suara Merdeka"
-                loading="lazy"
-              />
-            </div>
-            <div class="news-content">
-              <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 9 Agustus 2023
-              </p>
-              <h3 class="news-title">
-                Tekan Potensi Pengangguran di Kota Semarang yang Tinggi, Belasan
-                Orang Dibekali Ketrampilan Teknis
-              </h3>
-              <p class="news-source">
-                <i class="fas fa-newspaper"></i> Radar Semarang
-              </p>
-              <p class="news-excerpt">
-                LPK Quantum Telecommunication menjadi lembaga pelatihan rujukan
-                bagi mereka yang ingin menjadi teknisi handphone profesional di
-                Jawa Tengah.
-              </p>
-              <a
-                href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis"
-                class="news-link"
-                target="_blank"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-              </a>
-            </div>
-          </div>
-
-          <!-- Berita 3 -->
-          <div class="news-card">
-            <div class="news-image">
-              <a href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP">
-              <img
-                src="./assets/photos/section/berita3.jpg"
-                alt="Berita Suara Merdeka"
-                loading="lazy"
-              />
-            </div>
-            <div class="news-content">
-              <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 19 Februari 2020
-              </p>
-              <h3 class="news-title">
-                30 Mantan Pecandu Narkoba Dapat Pelatihan Reparasi HP
-              </h3>
-              <p class="news-source">
-                <i class="fas fa-newspaper"></i> Ayo Semarang
-              </p>
-              <p class="news-excerpt">
-                Sebanyak 30 orang mantan pecandu narkoba mengikuti pelatihan
-                reparasi handphone (HP) di aula Yayasan Rehabilitasi AT-TAUHID
-                Jalan Gayamsari II No 41 A, Rabu (19/2/2020).
-              </p>
-              <a
-                href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP"
-                class="news-link"
-                target="_blank"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-              </a>
-            </div>
-          </div>
-
-          <!-- Berita 4 -->
-        </div>
-        <div style="text-align: center; margin-top: 40px">
-          <a href="menu/news.html" class="btn">Lihat Semua Berita</a>
+        <div class="alumni-text-box">
+          <h3 class="alumni-name">Khoirul Hidayat</h3>
+          <p class="alumni-batch">Alumni Kelas Offline 2023</p>
+          <p class="alumni-quote">
+            "Setelah lulus dari LPK Quantum, saya membuka service center sendiri dan sekarang dipercaya untuk menangani perbaikan berbagai seri iPhone."
+          </p>
+          <p class="alumni-status">Kini: <span>Owner Service Center Mandiri</span></p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="menu/alumni.html" class="btn-selengkapnya">
+        Lihat Alumni Lainnya <i class="fas fa-users ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Berita Section -->
+    <section id="news" class="py-5" style="background-color: #f0f7ff;">
+  <div class="container">
+    <div class="section-title">
+      <h2>BERITA TERKINI</h2>
+    </div>
+    <p class="section-subtitle">Aktivitas LPK Quantum yang diliput oleh berbagai media terpercaya.</p>
+
+    <div class="news-container">
+      <div class="news-card">
+        <div class="news-image">
+          <img src="./assets/photos/section/berita1.jpg" alt="Liputan Metro Times" loading="lazy">
+        </div>
+        <div class="news-content">
+          <p class="news-date"><i class="far fa-calendar-alt"></i> 8 Agustus 2023</p>
+          <h3 class="news-title">Cetak Pengusaha Muda Mandiri Bersama Bamuis BNI</h3>
+          <p class="news-excerpt">LPK Quantum berhasil mencetak teknisi handphone profesional yang siap bersaing di dunia kerja.</p>
+          <a href="https://metrotimes.news/..." class="news-direct" target="_blank">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-image">
+          <img src="./assets/photos/section/berita2.jpg" alt="Liputan Suara Merdeka" loading="lazy">
+        </div>
+        <div class="news-content">
+          <p class="news-date"><i class="far fa-calendar-alt"></i> 9 Agustus 2023</p>
+          <h3 class="news-title">Tekan Pengangguran di Semarang Melalui Pelatihan Teknis</h3>
+          <p class="news-excerpt">Belasan orang dibekali keterampilan teknis untuk mengurangi angka pengangguran di Kota Semarang.</p>
+          <a href="https://www.suaramerdeka.com/..." class="news-direct" target="_blank">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="menu/news.html" class="btn-selengkapnya">Lihat Berita Lainnya</a>
+    </div>
+  </div>
+</section>
 
     <!-- Kerjasama Section -->
     <section id="collaboration">
@@ -3816,6 +3985,7 @@
     <a href="#home" class="back-to-top">
       <i class="fas fa-arrow-up"></i>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
       // Mobile Menu Toggle
@@ -4116,6 +4286,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // --- SCRIPT LAIN (Menu Mobile & Slideshow) TETAP DI BAWAH SINI ---
   // (Pastikan script menu mobile adek tidak terhapus ya!)
+});
+
+var swiper = new Swiper(".instructor-slider", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  centeredSlides: true, // JURUS BIAR FOTO SELALU DI TENGAH
+  loop: true,
+  autoplay: {
+  delay: 3000, // Dia bakal geser tiap 3 detik
+  disableOnInteraction: false, // Biar tetep jalan meski abis dipencet-pencet
+},
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    768: { 
+      slidesPerView: 2,
+      centeredSlides: false 
+    },
+    1024: { 
+      slidesPerView: 3, // Di desktop muncul 3, jadi ukurannya "sepetak" cakep
+      centeredSlides: false 
+    },
+  },
 });
 
     </script>
