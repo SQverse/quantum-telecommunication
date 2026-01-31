@@ -3214,6 +3214,88 @@
   margin-top: 15px;
 }
 
+/* Container Slider Kerjasama */
+.cooperation-slider {
+  width: 100%;
+  padding-bottom: 50px !important;
+  overflow: hidden;
+}
+
+.coop-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.coop-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(26, 35, 126, 0.15);
+}
+
+.coop-img-box {
+  position: relative;
+  height: 220px;
+}
+
+.coop-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coop-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--blue-dark, #1a237e);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.coop-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.coop-info h3 {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.coop-info p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.btn-coop {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid #1a237e;
+  color: #1a237e;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-coop:hover {
+  background: #1a237e;
+  color: #fff;
+}
+
     </style>
   </head>
   <body>
@@ -3580,145 +3662,63 @@
 </section>
 
     <!-- Kerjasama Section -->
-    <section id="collaboration">
-      <div class="container">
-        <div class="section-title">
-          <h2>Dokumentasi Kerjasama</h2>
-        </div>
-        <p class="section-subtitle">
-          Kegiatan kerjasama LPK Quantum dengan berbagai instansi pemerintah dan
-          swasta
-        </p>
-        <div class="collaboration-container">
+    <section id="cooperation" class="py-5" style="background-color: #ffffff;">
+  <div class="container">
+    <div class="section-title">
+      <h2>DOKUMENTASI KERJASAMA</h2>
+    </div>
+    <p class="section-subtitle">LPK Quantum menjalin sinergi kuat dengan berbagai instansi untuk penyaluran kerja dan pengembangan kurikulum.</p>
 
-          <!-- Kerjasama 1 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/Internasional/IOM 2023/IOM-11.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
+    <div class="swiper cooperation-slider">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="coop-card">
+            <div class="coop-img-box">
+              <img src="assets/photos/kerjasama/negeri/BNSP 2024/bnsp-01.jpg" alt="Kerjasama Instansi Negeri">
+              <div class="coop-badge">Negeri</div>
             </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">IOM 2023</h3>
-              <p class="collaboration-partner">International Organization for Migration</p>
-              <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan IOM pada tahun 2023, diselenggarakan di Tanjung Pinang.
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2023
-              </p>
-            </div>
-          </div>
-
-          <!-- Kerjasama 1 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/negeri/Bimtek Semarang 2018/bimtek-semarang-01.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
-            </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">BIMTEK SEMARANG 2018</h3>
-              <p class="collaboration-partner">Kementerian Perindustrian RI</p>
-              <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan Kementerian Perindustrian RI pada tahun 2018, diselenggarakan di Semarang.
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2018
-              </p>
-            </div>
-          </div>
-
-          <!-- Kerjasama 1 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/negeri/Bimtek Tanjung Pinang 2019/bimtek-tanjungpinang-01.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
-            </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">BIMTEK TANJUNG PINANG 2019</h3>
-              <p class="collaboration-partner">Kementerian Perindustrian RI</p>
-              <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan IOM pada tahun 2023, diselenggarakan di Tanjung Pinang.
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2023
-              </p>
-            </div>
-          </div>
-
-          <!-- Kerjasama 1 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/Swasta/BAMUIS I/bamuis1.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
-            </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">BAMUIS I</h3>
-              <p class="collaboration-partner">Bersama BAMUIS</p>
-              <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan BAMUIS.
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2023
-              </p>
-            </div>
-          </div>
-
-          <!-- Kerjasama 2 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/Swasta/BAMUIS II/bamuis2.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
-            </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">BAMUIS II</h3>
-              <p class="collaboration-partner">Dengan BAMUIS</p>
-              <p class="collaboration-desc">
-                LPK Quantum Bekerjasama dengan BAMUIS.
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2024
-              </p>
-            </div>
-          </div>
-
-          <!-- Kerjasama 3 -->
-          <div class="collaboration-card">
-            <div class="collaboration-image">
-              <img
-                src="assets/photos/kerjasama/Swasta/Gajah Ponsel/gajah-ponsel.jpg"
-                alt="Judul Kerjasama"
-                loading="lazy"
-              />
-            </div>
-            <div class="collaboration-content">
-              <h3 class="collaboration-title">Pembukaan Gajah Ponsel</h3>
-              <p class="collaboration-partner">Dengan Mitra LPK Quantum</p>
-              <p class="collaboration-desc">
-                Pembukaan Gajah Ponsel Cabang Semarang
-              </p>
-              <p class="collaboration-date">
-                <i class="far fa-calendar-alt"></i> 2024
-              </p>
+            <div class="coop-info">
+              <h3>Sinergi Instansi Negeri</h3>
+              <p>Kerjasama strategis dengan dinas terkait dan lembaga pemerintahan dalam sertifikasi kompetensi.</p>
+              <a href="menu/kerjasama/pemerintah.html" class="btn-coop">Lihat Selengkapnya</a>
             </div>
           </div>
         </div>
+
+        <div class="swiper-slide">
+          <div class="coop-card">
+            <div class="coop-img-box">
+              <img src="assets/photos/kerjasama/Swasta/BAMUIS I/bamuis1.jpg" alt="Kerjasama Swasta">
+              <div class="coop-badge">Swasta</div>
+            </div>
+            <div class="coop-info">
+              <h3>Kemitraan Swasta</h3>
+              <p>Penyaluran lulusan ke berbagai service center dan perusahaan teknologi swasta di seluruh Indonesia.</p>
+              <a href="menu/kerjasama/swasta.html" class="btn-coop">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="coop-card">
+            <div class="coop-img-box">
+              <img src="assets/photos/kerjasama/Internasional/IOM 2023/IOM-11.jpg" alt="Kerjasama Internasional">
+              <div class="coop-badge">Internasional</div>
+            </div>
+            <div class="coop-info">
+              <h3>Jejaring Internasional</h3>
+              <p>Adopsi kurikulum global dan persiapan tenaga kerja untuk memenuhi standar pasar internasional.</p>
+              <a href="menu/kerjasama-intl.html" class="btn-coop">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- Testimoni Video Section -->
 
@@ -4243,76 +4243,61 @@ setInterval(nextSlide, 5000);
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  // 1. Inisialisasi Intersection Observer
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Script Animasi Muncul (Intersection Observer) - TETAP ADA
+  const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Cari semua card di dalam container yang sedang terlihat
         const cards = entry.target.querySelectorAll('.feature-card, .feature-depth-card, .program-depth-card');
-        
         cards.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("is-visible");
-            // Tambahan: pastikan opacity jadi 1
             card.style.opacity = "1"; 
           }, index * 150);
         });
-
-        // Berhenti mengamati jika sudah muncul
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // 2. Daftar container yang mau dikasih animasi (Cek satu-satu biar ga eror)
   const targets = [
-    document.querySelector("#featuresGrid"), // ID lama Adek
-    document.querySelector("#featuresDepth"), // ID baru buat depth
-    document.querySelector("#programsDepth")  // ID buat section program
+    document.querySelector("#featuresGrid"),
+    document.querySelector("#featuresDepth"),
+    document.querySelector("#programsDepth")
   ];
+  targets.forEach(target => { if (target) observer.observe(target); });
 
-  // 3. Jalankan observer hanya jika elemennya MEMANG ADA di HTML
-  targets.forEach(target => {
-    if (target) {
-      observer.observe(target);
+  // 2. JURUS SAKTI: PINDAHKAN SWIPER KE DALAM SINI BIAR JALAN DI MOBILE
+  
+  // Slider Instruktur
+  var swiperInstruktur = new Swiper(".instructor-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 2, centeredSlides: false },
+      1024: { slidesPerView: 3, centeredSlides: false }
     }
   });
 
-  // --- SCRIPT LAIN (Menu Mobile & Slideshow) TETAP DI BAWAH SINI ---
-  // (Pastikan script menu mobile adek tidak terhapus ya!)
+  // Slider Kerjasama
+  var swiperCooperation = new Swiper(".cooperation-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 2, centeredSlides: false },
+      1024: { slidesPerView: 3, centeredSlides: false }
+    }
+  });
 });
-
-var swiper = new Swiper(".instructor-slider", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  centeredSlides: true, // JURUS BIAR FOTO SELALU DI TENGAH
-  loop: true,
-  autoplay: {
-  delay: 3000, // Dia bakal geser tiap 3 detik
-  disableOnInteraction: false, // Biar tetep jalan meski abis dipencet-pencet
-},
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    768: { 
-      slidesPerView: 2,
-      centeredSlides: false 
-    },
-    1024: { 
-      slidesPerView: 3, // Di desktop muncul 3, jadi ukurannya "sepetak" cakep
-      centeredSlides: false 
-    },
-  },
-});
-
     </script>
   </body>
 </html>
