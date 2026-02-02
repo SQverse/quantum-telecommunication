@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@800;900&display=swap"
+  rel="stylesheet"
+/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
@@ -251,28 +256,13 @@
         width: 100%;
         height: 100%;
         background: url("../assets/photos/CTA/hero11.jpeg") center/cover no-repeat;
-        opacity: 0.2;
+        opacity: 1;
         z-index: 1;
       }
 
       .about-hero-content {
         position: relative;
         z-index: 2;
-      }
-
-      .about-hero h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 20px;
-        animation: fadeInDown 1s ease;
-      }
-
-      .about-hero p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        animation: fadeInUp 1s ease 0.3s forwards;
-        opacity: 0;
       }
 
       /* Section Styles */
@@ -1090,18 +1080,6 @@
           z-index: 1000;
         }
 
-        .about-hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .about-hero p {
-          font-size: 1rem;
-        }
-
-        .section-title h2 {
-          font-size: 1.8rem;
-        }
-
         .cta-buttons {
           flex-direction: column;
           align-items: center;
@@ -1213,14 +1191,6 @@
           font-size: 1.2rem;
         }
 
-        .about-hero h1 {
-          font-size: 1.8rem;
-        }
-
-        .about-hero p {
-          font-size: 0.9rem;
-        }
-
         .btn {
           padding: 14px 30px;
           font-size: 1rem;
@@ -1294,7 +1264,419 @@
       footer .container {
         overflow: hidden;
       }
-    </style>
+
+      /* Styling Hero Section */
+.hero {
+  padding: 130px 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, #2c5282 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Judul: Pakai font-weight maksimal agar berkarakter */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900; /* Super Bold */
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Kasih warna beda di bagian Telecommunication agar tidak monoton */
+.hero-title .highlight {
+  display: block; /* Buat baris baru untuk penekanan */
+  background: linear-gradient(to right, #ffffff, #90cdf4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Deskripsi: Dibuat lebih proporsional dan nyaman dibaca */
+.hero-text {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 750px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  font-weight: 400;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis tipis di atas teks */
+  padding-top: 20px;
+}
+
+/* Button: Dikasih efek transisi halus */
+.btn-primary {
+  background-color: var(--blue-medium);
+  color: white;
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Container Hero Slider */
+.hero-slider {
+  height: 85vh; /* Tinggi hero */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Penempatan Teks di Tengah */
+.hero-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+/* Sembunyikan breakline di desktop, tampilkan di mobile */
+.mobile-only { display: none; }
+
+.hero-slider {
+  height: 85vh; /* Tinggi pas untuk laptop */
+  min-height: 500px;
+}
+
+.hero-inner {
+  padding: 0 20px;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .mobile-only { display: block; } /* Judul jadi turun di kata 'Quantum' */
+
+  .hero-slider {
+    height: 90vh; /* Lebih tinggi di mobile biar lega */
+  }
+
+  .hero-text {
+    font-size: 0.95rem; /* Paragraf lebih kecil biar gak menenuhi layar */
+    line-height: 1.5;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  .btn-primary {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    width: 80%; /* Tombol gak full banget tapi pas */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. Pastikan pembungkus tombolnya punya text-align center */
+  .hero-btns {
+    display: flex;
+    justify-content: center; /* Mengetengahkan isi di dalam flex */
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* 2. Atur ukuran tombolnya */
+  .btn-primary {
+    display: inline-block; /* Tetap inline-block agar lebarnya sesuai padding */
+    width: auto;           /* Atau ganti 80% kalau Adek mau tombolnya panjang */
+    min-width: 200px;      /* Biar gak terlalu kecil di layar HP */
+    text-align: center;    /* Tulisan di dalam tombol jadi di tengah */
+    padding: 12px 30px;
+    margin: 0 auto;        /* Jurus sakti buat ngetengahin elemen block */
+  }
+}
+
+/* Styling Section Sejarah */
+.sejarah-text {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+/* Styling Card Visi Misi */
+.info-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: transform 0.3s ease;
+  border-bottom: 4px solid var(--blue-medium);
+}
+
+.info-card:hover { transform: translateY(-10px); }
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: var(--blue-light);
+  color: var(--blue-medium);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 20px;
+}
+
+/* Responsif Mobile Slider */
+@media (max-width: 768px) {
+  .vision-mission-slider {
+    padding: 20px 0 50px;
+  }
+  .info-card {
+    margin: 10px;
+  }
+}
+
+/* Desktop: Tetap Grid (Bukan Slider) */
+@media (min-width: 769px) {
+  .vision-mission-slider .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .vision-mission-slider .swiper-pagination {
+    display: none; /* Sembunyikan titik di desktop */
+  }
+}
+
+/* Container utama Vision Mission */
+.vision-mission-slider {
+  padding: 20px 0 50px;
+  overflow: visible; /* Biar shadow kartu gak kepotong */
+}
+
+/* Tampilan Desktop (Layar Lebar) */
+@media (min-width: 769px) {
+  .vision-mission-slider .swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .vision-mission-slider .swiper-slide {
+    width: calc(33.333% - 20px);
+    height: auto;
+  }
+  .vision-mission-slider .swiper-pagination {
+    display: none; /* Sembunyikan titik navigasi di laptop */
+  }
+}
+
+/* Card Styling */
+.info-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-bottom: 5px solid #4a90e2; /* Warna khas Quantum */
+  transition: 0.3s;
+}
+
+.info-card:hover { transform: translateY(-10px); }
+
+.icon-box {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* Container Utama */
+.sejarah-section {
+  background-color: #f8fbff; /* Biru sangat muda biar bersih */
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.sejarah-content p {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Card Styling */
+.info-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-bottom: 5px solid var(--blue-medium);
+  transition: 0.3s ease;
+}
+
+.info-card:hover { transform: translateY(-10px); }
+
+.icon-box {
+  font-size: 2.5rem;
+  color: var(--blue-medium);
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* --- LOGIKA DESKTOP (GRID) --- */
+@media (min-width: 992px) {
+  #visionGrid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    transform: none !important; /* Matikan efek geser swiper */
+  }
+  .vision-mission-slider .swiper-pagination {
+    display: none;
+  }
+}
+
+/* --- LOGIKA MOBILE (SLIDER) --- */
+@media (max-width: 991px) {
+  .vision-mission-slider {
+    padding-bottom: 50px;
+    overflow: visible;
+  }
+}
+
+/* Styling Frame Foto Sejarah */
+.sejarah-img-card {
+  position: relative;
+  padding: 15px;
+  background: #fff; /* Efek bingkai putih */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Bayangan lembut */
+  transition: transform 0.3s ease;
+}
+
+.sejarah-img-card:hover {
+  transform: translateY(-5px); /* Efek melayang saat di-hover */
+}
+
+.sejarah-img-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Biar ujung fotonya melengkung rapi */
+  object-fit: cover;
+  display: block;
+}
+
+/* Dekorasi Tambahan (Aksen di belakang foto) */
+.sejarah-img-card::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: var(--blue-light);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.instructor-slider {
+  padding: 40px 0 60px; /* Jarak untuk pagination di bawah */
+  overflow: visible; /* Biar shadow kartu nggak kepotong */
+}
+
+.instructor-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: 0.3s;
+}
+
+.instructor-image {
+  height: 350px;
+  overflow: hidden;
+}
+
+.instructor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.instructor-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.instructor-role {
+  color: #4a90e2;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.instructor-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.instructor-social a {
+  color: #4a90e2;
+  font-size: 1.1rem;
+}
+  </style>
   </head>
   <body>
     <!-- Header & Navigation -->
@@ -1346,94 +1728,87 @@
     </header>
 
     <!-- Hero Section untuk Halaman Tentang -->
-    <section class="about-hero">
-      <div class="container about-hero-content">
-        <h1>Tentang LPK Quantum Telecommunication</h1>
-        <p>
-          Membentuk teknisi handal dengan pengalaman nyata dan bimbingan
-          berkelanjutan sejak tahun 2008 hingga kini.
-        </p>
+    <section class="hero swiper hero-slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/photos/CTA/hero11.jpeg');"></div>
+    <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/photos/CTA/hero12.jpeg');"></div>
+    <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/photos/CTA/hero13.jpeg');"></div>
+  </div>
+
+  <div class="hero-overlay-content">
+    <div class="container hero-inner">
+      <h2 class="hero-title animate__animated animate__fadeInDown">
+        <span class="highlight">LPK Quantum Telecommunication Semarang</span>
+      </h2>
+      <p class="hero-text animate__animated animate__fadeInUp">
+        Membentuk teknisi handal dengan pengalaman nyata dan bimbingan berkelanjutan sejak tahun 2008 hingga kini.
+      </p>
+      <div class="hero-btns animate__animated animate__zoomIn">
+        <a href="#sejarah" class="btn-primary">Selengkapnya</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Sejarah & Profil Section -->
-    <section id="sejarah">
-      <div class="container">
-        <div class="section-title">
-          <h2>Sejarah & Profil</h2>
+    <section id="sejarah" class="sejarah-section py-5">
+  <div class="container">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 animate__animated animate__fadeInLeft">
+        <h2 class="section-title">Sejarah LPK <span class="text-blue">Quantum</span></h2>
+        
+      <div class="col-lg-6 animate__animated animate__fadeInRight">
+        <div class="sejarah-img-card">
+          <img src="../assets/photos/CTA/hero11.jpeg" alt="Sejarah LPK" class="img-fluid rounded-4 shadow">
         </div>
-        <div class="history-content">
-          <div class="history-image">
-            <img
-              src="../assets/photos/section/tentang-kami.jpg"
-              alt="Sejarah LPK Quantum"
-              loading="lazy"
-            />
-          </div>
-          <div class="history-text">
-            <p>
-              LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja
-              Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi
-              tempat pelatihan, kursus, sekaligus sekolah teknisi smartphone
-              terpercaya di Indonesia.
-            </p>
-            <p>
-              Sejak tahun 2012, lembaga ini telah resmi berizin kedinasan dan
-              terakreditasi LA-LPK sebagai pengakuan atas kualitas serta
-              legalitas penyelenggaraan pelatihan. Hingga kini, lebih dari 5.000
-              alumni telah berhasil dicetak dan tersebar di seluruh Indonesia
-              bahkan mancanegara, baik sebagai teknisi handphone yang trampil
-              dan siap kerja, maupun sebagai pengusaha mandiri yang sukses dan
-              profesional.
-            </p>
-            <p>
-              Dengan metode pembelajaran yang efektif, kurikulum terarah, serta
-              penyaluran kerja yang terjamin, LPK Quantum Telecommunication
-              menjadi pilihan tepat bagi siapa saja yang ingin mengembangkan
-              karier, meningkatkan keterampilan, dan merintis usaha di bidang
-              teknisi smartphone.
-            </p>
-          </div>
-        </div>
+      </div>
+        <p class="sejarah-text">
+          LPK Quantum Telecommunication adalah Lembaga Pelatihan Kerja Swasta (LPKS) yang berdiri sejak tahun 2008 dan telah menjadi tempat pelatihan, kursus, sekaligus sekolah teknisi smartphone terpercaya di Indonesia. <br> <br>
+          
+          Sejak tahun 2012, lembaga ini telah resmi berizin kedinasan dan terakreditasi LA-LPK sebagai pengakuan atas kualitas serta legalitas penyelenggaraan pelatihan. Hingga kini, lebih dari 5.000 alumni telah berhasil dicetak dan tersebar di seluruh Indonesia bahkan mancanegara, baik sebagai teknisi handphone yang trampil dan siap kerja, maupun sebagai pengusaha mandiri yang sukses dan profesional. <br> <br>
+          
+          Dengan metode pembelajaran yang efektif, kurikulum terarah, serta penyaluran kerja yang terjamin, LPK Quantum Telecommunication menjadi pilihan tepat bagi siapa saja yang ingin mengembangkan karier, meningkatkan keterampilan, dan merintis usaha di bidang teknisi smartphone.
+          </p>
+      </div>
+    </div>
 
-        <div class="vm-container">
-          <div class="vm-card">
-            <div class="vm-icon">
-              <i class="fas fa-eye"></i>
-            </div>
+    <div class="swiper vision-mission-slider pb-5">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fas fa-eye"></i></div>
             <h3>Visi</h3>
-            <p>
-              Melatih Teknisi Ponsel Yang Amanah, Jujur, Handal dan Profesional.
-            </p>
+            <p>Melatih Teknisi Ponsel Yang Amanah, Jujur, Handal dan Profesional</p>
           </div>
-
-          <div class="vm-card">
-            <div class="vm-icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
             <h3>Misi</h3>
             <ul>
-              <li>Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik.</li>
-              <li>Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan.</li>
-              <li>Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja.</li>
+            <li>Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik.</li>
+            <li>Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan.</li>
+            <li>Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja.</li>
             </ul>
           </div>
-
-          <div class="vm-card">
-            <div class="vm-icon">
-              <i class="fas fa-gem"></i>
-            </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fas fa-star"></i></div>
             <h3>Nilai Inti</h3>
             <ul>
-              <li>Profesionalisme dalam setiap aspek pelayanan</li>
-              <li>Inovasi terus-menerus dalam metode pengajaran</li>
-              <li>Integritas dalam menjalankan kegiatan pelatihan</li>
-              <li>Komitmen terhadap keberhasilan peserta didik</li>
-            </ul>
+            <li>Profesionalisme dalam setiap aspek pelayanan</li>
+            <li>Inovasi terus-menerus dalam metode pengajaran</li>
+            <li>Integritas dalam menjalankan kegiatan pelatihan</li>
+            <li>Komitmen terhadap keberhasilan peserta didik.</li>
+          </ul>
           </div>
         </div>
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- Mengapa Memilih Kami Section -->
     <section id="why-us" class="why-us-section">
@@ -1532,108 +1907,95 @@
     </section>
 
     <!-- Tim & Instruktur Section -->
-    <section id="instructors">
-      <div class="container">
-        <div class="section-title">
-          <h2>TIM INSTRUKTUR</h2>
-        </div>
-        <p class="section-subtitle">
-          Belajar langsung dari para praktisi berpengalaman di bidang
-          telekomunikasi dan teknisi HP
-        </p>
+    <section id="instructors" class="py-5">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>TIM INSTRUKTUR</h2>
+    </div>
+    <p class="section-subtitle text-center">
+      Belajar langsung dari para praktisi berpengalaman di bidang telekomunikasi dan teknisi HP
+    </p>
 
-        <div class="instructors-container">
-          <!-- Instructor 1 -->
+    <div class="swiper instructor-slider">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
           <div class="instructor-card">
             <div class="instructor-image">
-              <img
-                src="../assets/photos/instruktur/tomi1.JPG"
-                alt="Tomie Sudiarno"
-                loading="lazy"
-              />
+              <img src="../assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno" loading="lazy" />
             </div>
             <div class="instructor-info">
               <h3 class="instructor-name">Tomie Sudiarno</h3>
               <p class="instructor-role">Owner & Leader Instructor</p>
-              <p class="instructor-desc">
-                Berpengalaman 25 tahun di bidang reparasi handphone
-              </p>
+              <p class="instructor-desc">Berpengalaman 25 tahun di bidang reparasi handphone</p>
               <div class="instructor-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Instructor 2 -->
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="../assets/photos/instruktur/jun.jpeg"
-                alt="Djunaedi Sammad"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Djunaedi Sammad</h3>
-              <p class="instructor-role">Senior Instructor</p>
-              <p class="instructor-desc">
-                Handal dalam bidang Repair Hardware
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Instructor 3 -->
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img
-                src="../assets/photos/instruktur/nandieni-hisma.jpeg"
-                alt="Nandieni Hisma"
-                loading="lazy"
-              />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Nandieni Hisma</h3>
-              <p class="instructor-role">Instruktur Repair Software</p>
-              <p class="instructor-desc">
-                Handal dalam bidang repair Software
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Instructor 4 -->
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/ika.jpeg" alt="Ika
-              Fitrianingsih loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Ika Fitrianingsih</h3>
-              <p class="instructor-role">Instruktur Materi Bisnis</p>
-              <p class="instructor-desc">
-                Praktisi Bisnis Reparasi Handphone
-              </p>
-              <div class="instructor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="swiper-slide">
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img src="../assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad" loading="lazy" />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Djunaedi Sammad</h3>
+              <p class="instructor-role">Senior Instructor</p>
+              <p class="instructor-desc">Handal dalam bidang Repair Hardware</p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img src="../assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma" loading="lazy" />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Nandieni Hisma</h3>
+              <p class="instructor-role">Instruktur Repair Software</p>
+              <p class="instructor-desc">Handal dalam bidang repair Software</p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="instructor-card">
+            <div class="instructor-image">
+              <img src="../assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih" loading="lazy" />
+            </div>
+            <div class="instructor-info">
+              <h3 class="instructor-name">Ika Fitrianingsih</h3>
+              <p class="instructor-role">Instruktur Materi Bisnis</p>
+              <p class="instructor-desc">Praktisi Bisnis Reparasi Handphone</p>
+              <div class="instructor-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- Lightbox Modal -->
     <div id="lightboxModal" class="lightbox-modal">
@@ -1747,6 +2109,7 @@
       <i class="fas fa-arrow-up"></i>
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
       // Mobile Menu Toggle
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
@@ -1876,6 +2239,56 @@ if (themeToggle) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
       }
+
+      var swiperHero = new Swiper(".hero-slider", {
+  effect: "fade", // Efek transisi halus
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+});
+
+var swiperVision = new Swiper(".vision-mission-slider", {
+  slidesPerView: 1.1,
+  spaceBetween: 20,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    // Ketika layar lebih besar dari 768px (Desktop)
+    769: {
+      enabled: false, // MATIKAN SLIDER
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides: false,
+    }
+  }
+});
+
+var swiperInstructors = new Swiper(".instructor-slider", {
+  slidesPerView: 1.1, // Biar di HP kelihatan kartu selanjutnya ngintip
+  spaceBetween: 20,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    // Di layar komputer (Desktop), tunjukkan 3 atau 4 kartu langsung
+    992: {
+      slidesPerView: 4,
+      centeredSlides: false,
+      spaceBetween: 30
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: false
+    }
+  }
+});
     </script>
   </body>
 </html>
