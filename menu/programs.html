@@ -305,15 +305,14 @@
         display: inline-block;
         background-color: var(--accent-orange);
         color: var(--text-light);
-        padding: 16px 40px;
+        padding: 16px 20px;
         border-radius: 30px;
         text-decoration: none;
-        font-weight: 700;
+        font-weight: 600;
         transition: var(--transition);
         box-shadow: var(--shadow);
         border: 2px solid transparent;
         font-size: 1.1rem;
-        text-transform: uppercase;
         letter-spacing: 0.5px;
       }
 
@@ -330,12 +329,12 @@
         transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
         width: 100%;
-        overflow: hidden;
+        overflow: visible !important;
       }
 
       section.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: none !important; /* Ganti dari translateY(0) jadi none */
       }
 
       .section-title {
@@ -441,7 +440,7 @@
       .solution-card {
         background: var(--card-bg);
         border-radius: 15px;
-        overflow: hidden;
+        overflow: visible;
         box-shadow: var(--shadow);
         transition: var(--transition);
         padding: 30px;
@@ -485,77 +484,7 @@
         font-size: 1rem;
       }
 
-      /* Pilihan Kelas Section - DISESUAIKAN */
-      .classes-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-      }
-
-      .class-card {
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-      }
-
-      .class-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .class-image {
-        height: 220px;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-
-      .class-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .class-card:hover .class-image img {
-        transform: scale(1.1);
-      }
-
-      .class-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: var(--blue-medium);
-        color: var(--text-light);
-        padding: 6px 15px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .class-content {
-        padding: 25px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .class-content h3 {
-        color: var(--blue-dark);
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-        line-height: 1.2;
-        font-weight: 700;
-      }
-
+/* Kepake */
       .class-price {
         color: var(--accent-orange);
         font-weight: 800;
@@ -563,44 +492,41 @@
         margin-bottom: 20px;
       }
 
-      .class-features {
-        margin: 20px 0;
-        padding-left: 20px;
-        flex: 1;
-        width: 100%;
-      }
-
-      .class-features li {
-        margin-bottom: 12px;
-        position: relative;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        padding-left: 8px;
-        color: #666;
-        word-wrap: break-word;
-      }
-
-      .class-features li::before {
-        content: "✓";
-        color: var(--accent-orange);
-        font-weight: bold;
-        position: absolute;
-        left: -20px;
-        font-size: 1rem;
-      }
-
       .class-cta {
         margin-top: auto;
         width: 100%;
       }
 
-      .class-cta .btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
-        font-size: 0.89rem;
-      }
+     /* --- KECILIN KARTU KELAS DI MOBILE --- */
+@media (max-width: 576px) {
+  /* 1. Atur lebar slide supaya nggak terlalu mepet layar */
+  .card-slide {
+    min-width: 100px;
+    height: 100px;
+  }
+  
+  .class-price {
+    font-size: 1.3rem; /* Ukuran harga disesuaikan */
+    margin: 10px 0;
+  }
 
+  .class-info h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .class-list {
+    font-size: 0.9rem; /* Teks deskripsi lebih mungil */
+    line-height: 1.4;
+  }
+
+  .btn {
+    padding: 9px 10px; /* Tombol lebih kecil */
+    font-size: 0.8rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
       /* Materi Pembelajaran Section - DISESUAIKAN */
       .materi-container {
         display: grid;
@@ -1143,7 +1069,6 @@
 
         .problems-container,
         .solutions-container,
-        .classes-container,
         .materi-container,
         .teknis-container {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1260,14 +1185,8 @@
           font-size: 0.9rem;
         }
 
-        .btn {
-          padding: 14px 30px;
-          font-size: 1rem;
-        }
-
         .problems-container,
         .solutions-container,
-        .classes-container,
         .materi-container,
         .teknis-container {
           grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1303,6 +1222,352 @@
       .grid-item {
         max-width: 100%;
       }
+
+      /* Tampilan Desktop */
+.problem-slider-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Tampilan Mobile (Max-width 768px) */
+@media (max-width: 768px) {
+  .problem-slider-wrapper {
+    display: flex; /* Ubah grid jadi flex untuk slider horizontal */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    scroll-snap-type: x mandatory; /* Biar slider berhenti tepat di tengah kartu */
+    gap: 15px;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch; /* Scroll halus di iOS */
+  }
+
+  /* Hilangkan scrollbar agar lebih rapi */
+  .problem-slider-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .problem-card {
+    min-width: 85%; /* Kartu memenuhi sebagian besar layar */
+    scroll-snap-align: center; /* Kartu berhenti di tengah saat di-scroll */
+    flex-shrink: 0; /* Mencegah kartu mengecil */
+  }
+}
+
+/* Default: Desktop pakai Grid */
+.problems-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  transition: var(--transition);
+}
+
+/* KHUSUS MOBILE (Range 400px - 568px dan sekitarnya) */
+@media (max-width: 600px) {
+  .problems-container {
+    display: flex; /* Ubah grid jadi flex untuk horizontal scroll */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Biar kartu "magnetis" pas di-scroll */
+    gap: 15px;
+    padding: 10px 10px 30px 10px; /* Padding bawah lebih buat kasih ruang shadow */
+    -webkit-overflow-scrolling: touch; /* Scroll halus di iPhone */
+    scrollbar-width: none; /* Hilangkan scrollbar di Firefox */
+  }
+
+  .problems-container::-webkit-scrollbar {
+    display: none; /* Hilangkan scrollbar di Chrome/Safari */
+  }
+
+  .problem-card {
+    /* Lebar kartu pas untuk layar 400px-568px */
+    min-width: 270px; 
+    max-width: 80%; 
+    flex-shrink: 0;
+    scroll-snap-align: center; /* Kartu bakal otomatis ke tengah saat dilepas */
+    margin-bottom: 0;
+    height: auto;
+    /* Efek visual tambahan biar ga boring */
+    border-left: 4px solid var(--accent-orange); 
+    background: var(--card-bg);
+  }
+
+  .problem-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .problem-text h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .problems-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 15px; /* Beri ruang untuk shadow agar tidak terpotong */
+    scrollbar-width: none;
+  }
+
+  .problem-card {
+    /* Bikin lebih besar dan cenderung persegi */
+    min-width: 280px; 
+    min-height: 280px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    border-radius: 20px; /* Lebih rounded biar modern */
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow);
+  }
+
+  .problem-icon {
+    width: 70px; /* Icon lebih besar */
+    height: 70px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    background: var(--blue-light);
+    color: var(--blue-medium);
+  }
+
+  .problem-text h3 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  /* Indikator Slide */
+  .slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+
+  .dot.active {
+    width: 20px; /* Efek memanjang untuk yang aktif */
+    border-radius: 10px;
+    background-color: var(--accent-orange);
+  }
+}
+
+/* Sembunyikan indikator di desktop */
+@media (min-width: 601px) {
+  .slider-indicators {
+    display: none;
+  }
+}
+
+/* --- SIMPLE AUTO SLIDER MOBILE --- */
+.solutions-auto-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+}
+
+.solutions-auto-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.solution-card-slide {
+  min-width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.solution-card-inner {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px 25px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-bottom: 5px solid var(--blue-medium);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.s-dot {
+  width: 8px;
+  height: 8px;
+  background: #cbd5e0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.s-dot.active {
+  background: var(--blue-medium);
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Biar di Desktop tetap jadi 3 kolom */
+@media (min-width: 769px) {
+  .solutions-auto-track {
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .solution-card-slide {
+    min-width: auto;
+    padding: 0;
+  }
+  .slider-dots {
+    display: none;
+  }
+}
+
+.classes-auto-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.class-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.class-card-inner {
+  background: var(--card-bg);
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;            /* Aktifkan mode flex */
+  flex-direction: column;   /* Susun isi kartu dari atas ke bawah */
+  height: 100%;             /* Pastikan tinggi kartu penuh */
+  background: var(--card-bg);
+  border-radius: 25px;
+}
+
+.class-list {
+  text-align: left;
+  display: inline-block;
+  flex: 1;         /* INI KUNCINYA! Mengambil sisa ruang agar tombol terdorong ke bawah */
+  list-style: none;
+  margin: 20px 0;
+}
+
+.class-list li::before {
+  content: '✓';
+  color: var(--accent-orange);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.class-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.c-dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.c-dot.active {
+  background: var(--blue-medium);
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Biar Desktop tetep Grid (Jajar Samping) */
+@media (min-width: 769px) {
+  .classes-auto-track {
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr); /* Atur jadi 3 kolom di desktop */
+    gap: 20px;
+  }
+  .class-slide { min-width: auto; }
+  .class-dots { display: none; }
+}
+
+/* --- CSS FOTO KELAS JADI GEDE --- */
+.class-image-slider {
+  width: 100%;
+  height: 280px; /* KITA NAIKKAN JADI 280px BIAR GEDE! */
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0; /* Lengkungan di atas saja */
+}
+
+.class-image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Foto nggak bakal gepeng, tetap proporsional */
+  object-position: center; /* Fokus di tengah foto */
+  transition: transform 0.5s ease;
+}
+
+/* Efek zoom dikit pas disentuh (opsional, biar keren) */
+.class-card-inner:hover .class-image-slider img {
+  transform: scale(1.1);
+}
+
+.class-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--accent-orange);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.class-card-inner {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Shadow lebih tebal biar "pop up" */
+  margin: 10px 5px 30px 5px; /* Kasih jarak bawah buat shadow */
+  border: none;
+}
+
+.class-info {
+  padding: 25px; /* Ruang tulisan lebih lega */
+}
+
+.class-info h3 {  
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+
     </style>
   </head>
   <body>
@@ -1391,6 +1656,7 @@
             menjadi teknisi HP
           </p>
         </div>
+      <div class="problem-slider-wrapper">
         <div class="problems-container">
           <div class="problem-card">
             <div class="problem-icon">
@@ -1466,84 +1732,81 @@
           </div>
         </div>
       </div>
+      <div class="slider-indicators">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+      </div>
     </section>
 
     <!-- Solusi Section -->
     <section id="solutions" style="background-color: var(--blue-light)">
-      <div class="container">
-        <div class="section-title">
-          <h2>Belajar di LPK Quantum Solusinya!</h2>
-        </div>
-        <div class="section-subtitle">
-          <p>
-            Kami memberikan solusi komprehensif untuk mengatasi semua masalah
-            pemula
-          </p>
-        </div>
-
-        <div class="solutions-container">
-          <div class="solution-card">
-            <div class="solution-icon">
-              <i class="fas fa-calendar-alt"></i>
-            </div>
-            <h3>10 Hari pertemuan + Magang di Service Center</h3>
-            <p>
-              Belajar intensif selama 10 hari dengan praktik langsung di service
-              center untuk pengalaman nyata.
-            </p>
+  <div class="container">
+    <div class="section-title">
+      <h2>Belajar di LPK Quantum Solusinya!</h2>
+    </div>
+    
+    <div class="solutions-auto-slider">
+      <div class="solutions-auto-track">
+        <div class="solution-card-slide">
+          <div class="solution-card-inner">
+            <div class="solution-icon"><i class="fas fa-calendar-alt"></i></div>
+            <h3>10 Hari Pertemuan + Magang</h3>
+            <p>Belajar intensif selama 10 hari dengan praktik langsung di service center.</p>
           </div>
-          <div class="solution-card">
-            <div class="solution-icon">
-              <i class="fas fa-bed"></i>
-            </div>
-            <h3>Gratis Mess dengan kamar AC bagi peserta luar Semarang</h3>
-            <p>
-              Kami menyediakan akomodasi gratis untuk memudahkan peserta dari
-              luar kota Semarang.
-            </p>
+        </div>
+        <div class="solution-card-slide">
+          <div class="solution-card-inner">
+            <div class="solution-icon"><i class="fas fa-bed"></i></div>
+            <h3>Gratis Mess dengan Kamar AC</h3>
+            <p>Akomodasi gratis untuk memudahkan peserta dari luar kota Semarang.</p>
           </div>
-          <div class="solution-card">
-            <div class="solution-icon">
-              <i class="fas fa-redo"></i>
-            </div>
-            <h3>Gratis Mengulang di Kelas Berikutnya</h3>
-            <p>
-              Jika belum merasa cukup mahir, peserta bisa mengulang kelas
-              berikutnya tanpa biaya tambahan.
-            </p>
+        </div>
+        <div class="solution-card-slide">
+          <div class="solution-card-inner">
+            <div class="solution-icon"><i class="fas fa-redo"></i></div>
+            <h3>Gratis Mengulang Kelas</h3>
+            <p>Belum mahir? Boleh mengulang sampai bisa tanpa biaya tambahan!</p>
           </div>
         </div>
       </div>
-    </section>
+      
+      <div class="slider-dots">
+        <span class="s-dot active"></span>
+        <span class="s-dot"></span>
+        <span class="s-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Pilihan Kelas Section -->
-    <section id="classes">
-      <div class="container">
-        <div class="section-title">
-          <h2>Pilihan Kelas</h2>
-        </div>
-        <div class="section-subtitle">
-          <p>
-            Pilih kelas yang sesuai dengan kebutuhan dan budget Anda
-          </p>
-        </div>
 
-        <div class="classes-container">
-          <!-- Kelas Offline -->
-          <div class="class-card">
-            <div class="class-image">
-              <img
-                src="offline.jpeg"
-                alt="Kelas Offline"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/380x220/1a3c6e/ffffff?text=Kelas+Offline'"
-              />
+    <section id="classes">
+  <div class="container">
+    <div class="section-title">
+      <h2>Pilihan Kelas</h2>
+    </div>
+    
+    <div class="classes-auto-slider">
+      <div class="classes-auto-track">
+        <div class="class-slide">
+          <div class="class-card-inner">
+            <div class="class-image-slider">
+              <img src="offline.jpeg" alt="Kelas Offline" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Offline'">
               <div class="class-badge">Offline</div>
             </div>
-            <div class="class-content">
+            <div class="class-info">
               <h3>Kelas Offline</h3>
-              <div class="class-price">Rp 4.000.000</div>
-              <ul class="class-features">
+              <p class="class-price">Rp 4.000.000</p>
+              <ul class="class-list">
                 <li>GRATIS Borneo Schematic 1 bulan</li>
                 <li>GRATIS Kaos Official Quantum</li>
                 <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
@@ -1557,32 +1820,21 @@
                 <li>Sertifikat Training Resmi</li>
                 <li>Video Materi Bisa Didownload</li>
               </ul>
-              <div class="class-cta">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Offline%20LPK%20Quantum"
-                  target="_blank"
-                  class="btn"
-                  >Daftar Kelas Offline</a
-                >
-              </div>
+              <a href="https://wa.me/6282171727337" class="btn">Daftar Offline</a>
             </div>
           </div>
+        </div>
 
-          <!-- Kelas Online -->
-          <div class="class-card">
-            <div class="class-image">
-              <img
-                src="online.jpeg"
-                alt="Kelas Online"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/380x220/4a90e2/ffffff?text=Kelas+Online'"
-              />
+        <div class="class-slide">
+          <div class="class-card-inner">
+            <div class="class-image-slider">
+              <img src="online.jpeg" alt="Kelas Online" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Online'">
               <div class="class-badge">Online</div>
             </div>
-            <div class="class-content">
+            <div class="class-info">
               <h3>Kelas Online</h3>
-              <div class="class-price">Rp 800.000</div>
-              <ul class="class-features">
+              <p class="class-price">Rp 800.000</p>
+              <ul class="class-list">
                 <li>Di training instruktur berpengalaman</li>
                 <li>GRATIS Borneo Schematic 1 bulan</li>
                 <li>Alumni Bebas Konsultasi Selamanya</li>
@@ -1592,32 +1844,21 @@
                 <li>Konsultasi via WhatsApp Group</li>
                 <li>Live session tanya jawab mingguan</li>
               </ul>
-              <div class="class-cta">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Online%20LPK%20Quantum"
-                  target="_blank"
-                  class="btn"
-                  >Daftar Kelas Online</a
-                >
-              </div>
+              <a href="https://wa.me/6282171727337" class="btn">Daftar Online</a>
             </div>
           </div>
+        </div>
 
-          <!-- Kelas Private -->
-          <div class="class-card">
-            <div class="class-image">
-              <img
-                src="private.jpeg"
-                alt="Kelas Private"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/380x220/ff8c42/ffffff?text=Kelas+Private'"
-              />
+        <div class="class-slide">
+          <div class="class-card-inner">
+            <div class="class-image-slider">
+              <img src="private.jpeg" alt="Kelas Private" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Private'">
               <div class="class-badge">Private</div>
             </div>
-            <div class="class-content">
+            <div class="class-info">
               <h3>Kelas Private</h3>
-              <div class="class-price">Rp 10.000.000</div>
-              <ul class="class-features">
+              <p class="class-price">Rp 10.000.000</p>
+              <ul class="class-list">
                 <li>GRATIS Borneo Schematic 3 bulan</li>
                 <li>GRATIS Kaos Official Quantum</li>
                 <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
@@ -1631,32 +1872,21 @@
                 <li>Sertifikat Training Resmi</li>
                 <li>Video Materi Bisa Didownload</li>
               </ul>
-              <div class="class-cta">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Private%20LPK%20Quantum"
-                  target="_blank"
-                  class="btn"
-                  >Daftar Kelas Private</a
-                >
-              </div>
+              <a href="https://wa.me/6282171727337" class="btn">Daftar Private</a>
             </div>
           </div>
+        </div>
 
-          <!-- Kelas Online iPhone -->
-          <div class="class-card">
-            <div class="class-image">
-              <img
-                src="online-iPhone.jpeg"
-                alt="Kelas Online"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/380x220/4a90e2/ffffff?text=Kelas+Online'"
-              />
-              <div class="class-badge">Online</div>
+        <div class="class-slide">
+          <div class="class-card-inner">
+            <div class="class-image-slider">
+              <img src="online-iPhone.jpeg" alt="Online iPhone" onerror="this.src='https://via.placeholder.com/380x220?text=Online+iPhone'">
+              <div class="class-badge">iPhone</div>
             </div>
-            <div class="class-content">
-              <h3>Kelas Online Teknisi iPhone</h3>
-              <div class="class-price">Rp 2.500.000</div>
-              <ul class="class-features">
+            <div class="class-info">
+              <h3>Online iPhone</h3>
+              <p class="class-price">Rp 2.500.000</p>
+              <ul class="class-list">
                 <li>30x Live Streaming (interaktif, bukan rekaman)!</li>
                 <li>3x per minggu | 1,5 jam / pertemuan</li>
                 <li>Rekaman kelas (bisa diulang)!</li>
@@ -1666,31 +1896,21 @@
                 <li>Sertifikat Pelatihan</li>
                 <li>Bebas konsultasi setelah kelas selesai</li>
               </ul>
-              <div class="class-cta">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Online%20LPK%20Quantum"
-                  target="_blank"
-                  class="btn"
-                  >Daftar Kelas Online Teknisi iPhone</a
-                >
-              </div>
+              <a href="https://wa.me/6282171727337" class="btn">Daftar iPhone</a>
             </div>
           </div>
+        </div>
 
-          <div class="class-card">
-            <div class="class-image">
-              <img
-                src="private-iPhone.jpeg"
-                alt="Kelas Private"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/380x220/ff8c42/ffffff?text=Kelas+Private'"
-              />
-              <div class="class-badge">Private</div>
+        <div class="class-slide">
+          <div class="class-card-inner">
+            <div class="class-image-slider">
+              <img src="private-iPhone.jpeg" alt="Private iPhone" onerror="this.src='https://via.placeholder.com/380x220?text=Private+iPhone'">
+              <div class="class-badge">iPhone Private</div>
             </div>
-            <div class="class-content">
-              <h3>Kelas Private iPhone</h3>
-              <div class="class-price">Rp 15.000.000</div>
-              <ul class="class-features">
+            <div class="class-info">
+              <h3>Private iPhone</h3>
+              <p class="class-price">Rp 15.000.000</p>
+              <ul class="class-list">
                 <li>GRATIS Borneo Schematic 3 bulan</li>
                 <li>GRATIS Kaos Official Quantum</li>
                 <li>GRATIS Antar jemput dari Bandara/Stasiun/Terminal</li>
@@ -1704,19 +1924,22 @@
                 <li>Sertifikat Training Resmi</li>
                 <li>Video Materi Bisa Didownload</li>
               </ul>
-              <div class="class-cta">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6282171727337&text=Saya%20ingin%20mendaftar%20Kelas%20Private%20LPK%20Quantum"
-                  target="_blank"
-                  class="btn"
-                  >Daftar Kelas Private Teknisi iPhone</a
-                >
-              </div>
+              <a href="https://wa.me/6282171727337" class="btn">Daftar Private iPhone</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="class-dots">
+        <span class="c-dot active"></span>
+        <span class="c-dot"></span>
+        <span class="c-dot"></span>
+        <span class="c-dot"></span>
+        <span class="c-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Materi Pembelajaran Section -->
     <section id="materi" style="background-color: var(--blue-light)">
@@ -2208,6 +2431,91 @@ if (themeToggle) {
           }
         }
       });
+
+      // Script untuk indikator slider otomatis
+const problemContainer = document.querySelector('.problems-container');
+const dots = document.querySelectorAll('.dot');
+
+if (problemContainer && dots.length > 0) {
+  problemContainer.addEventListener('scroll', () => {
+    // Hitung index kartu berdasarkan posisi scroll
+    const scrollLeft = problemContainer.scrollLeft;
+    const cardWidth = problemContainer.querySelector('.problem-card').offsetWidth + 20; // 20 adalah gap
+    const index = Math.round(scrollLeft / cardWidth);
+
+    // Update class active pada dot
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  });
+}
+
+// Fungsi Helper untuk Slider
+function initSlider(containerSelector, dotSelector) {
+  const container = document.querySelector(containerSelector);
+  const dots = document.querySelectorAll(dotSelector);
+
+  if (container && dots.length > 0) {
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = container.querySelector('div').offsetWidth + 20; // 20 adalah gap
+      const index = Math.round(scrollLeft / cardWidth);
+
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    });
+  }
+}
+
+let currentSolIdx = 0;
+const solTrack = document.querySelector('.solutions-auto-track');
+const solSlides = document.querySelectorAll('.solution-card-slide');
+const solDots = document.querySelectorAll('.s-dot');
+
+function updateSolSlider() {
+    if (window.innerWidth <= 768) {
+        solTrack.style.transform = `translateX(-${currentSolIdx * 100}%)`;
+        solDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSolIdx);
+        });
+    } else {
+        solTrack.style.transform = 'none';
+    }
+}
+
+function nextSolSlide() {
+    currentSolIdx = (currentSolIdx + 1) % solSlides.length;
+    updateSolSlider();
+}
+
+// Jalankan otomatis setiap 3 detik
+let solInterval = setInterval(nextSolSlide, 3000);
+
+// Reset timer kalau layar di-resize
+window.addEventListener('resize', updateSolSlider);
+
+let classIdx = 0;
+const classTrack = document.querySelector('.classes-auto-track');
+const classDots = document.querySelectorAll('.c-dot');
+
+function nextClassSlide() {
+    if (window.innerWidth <= 768) {
+        classIdx = (classIdx + 1) % 5; // Karena ada 5 kartu
+        classTrack.style.transform = `translateX(-${classIdx * 100}%)`;
+        classDots.forEach((dot, i) => dot.classList.toggle('active', i === classIdx));
+    }
+}
+
+setInterval(nextClassSlide, 4000); // Geser tiap 4 detik
     </script>
   </body>
 </html>
