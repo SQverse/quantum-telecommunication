@@ -1567,7 +1567,295 @@
   margin-bottom: 10px;
 }
 
+@media (max-width: 576px) {
+  .class-slide {
+    margin-left: 30px;
+}
+}
 
+/* Layout & Grid Desktop */
+.class-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* Card Style v2 */
+.class-card-v2 {
+  background: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.class-card-v2:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Premium Highlight (iPhone) */
+.class-card-v2.premium {
+  border: 2px solid #fbbf24;
+}
+
+/* Media/Image */
+.card-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.class-card-v2:hover .card-image img {
+  transform: scale(1.1);
+}
+
+/* Badge Style */
+.card-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  background: var(--accent-orange, #f59e0b);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Body Content */
+.card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Mendorong footer ke paling bawah */
+}
+
+.card-features li {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.card-features i {
+  color: #10b981; /* Warna hijau sukses */
+  margin-right: 12px;
+  font-size: 1rem;
+}
+
+/* Footer & Price (Fixed Bottom) */
+.card-footer-price {
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-tag .label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.price-tag .amount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f59e0b;
+}
+
+.btn-daftar {
+  background: #1e3a8a;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-daftar:hover {
+  background: #f59e0b;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE: SLIDER DI MOBILE */
+@media (max-width: 768px) {
+  .class-cards-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 10px 40px;
+    scrollbar-width: none; /* Hilangkan scrollbar Firefox */
+  }
+
+  .class-cards-wrapper::-webkit-scrollbar {
+    display: none; /* Hilangkan scrollbar Chrome/Safari */
+  }
+
+  .class-card-v2 {
+    min-width: 85%; /* Kartu lebar di HP agar kartu selanjutnya ngintip */
+    scroll-snap-align: center;
+  }
+}
+
+/* Container Harga Ganda */
+.price-container-double {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(245, 158, 11, 0.05); /* Warna oranye sangat muda */
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+.price-box {
+  flex: 1;
+  text-align: center;
+}
+
+.price-label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.price-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f59e0b;
+}
+
+.price-divider {
+  width: 1px;
+  height: 30px;
+  background: #e2e8f0;
+  margin: 0 10px;
+}
+
+/* Penyesuaian Footer Tombol */
+.card-footer-action {
+  margin-top: auto;
+}
+
+.w-100 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsif Mobile untuk Harga Ganda */
+@media (max-width: 380px) {
+  .price-container-double {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .price-divider {
+    width: 80%;
+    height: 1px;
+    margin: 5px auto;
+  }
+}
+
+/* Style Judul Section Pilihan Kelas */
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b; /* Warna gelap navy */
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+}
+
+/* Efek garis bawah kecil biar manis */
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-orange, #f59e0b);
+  border-radius: 10px;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+/* Khusus Mobile biar gak kegedean */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  .section-header p {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-tag .amount {
+    font-size: 1rem;
+  }
+}
     </style>
   </head>
   <body>
@@ -1789,7 +2077,141 @@
 
     <!-- Pilihan Kelas Section -->
 
-    <section id="classes">
+    <section id="pilihan-kelas" class="py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="fw-bold">Pilihan <span class="text-gradient">Kelas Pelatihan</span></h2>
+      <p class="text-muted">Gunakan data terbaru untuk memilih program teknisi ponsel terbaik Anda.</p>
+    </div>
+
+    <div class="class-slider-container">
+      <div class="class-cards-wrapper">
+        
+        <div class="class-card-v2">
+          <div class="card-badge">Offline</div>
+          <div class="card-image">
+            <img src="offline.jpeg" alt="Kelas Offline" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Offline'">
+          </div>
+          <div class="card-body">
+            <h3>Kelas Offline</h3>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> GRATIS Mess (AC) & Wifi 24 Jam</li>
+              <li><i class="fas fa-check-circle"></i> Antar Jemput Bandara/Stasiun</li>
+              <li><i class="fas fa-check-circle"></i> Sertifikat & Boleh Mengulang</li>
+            </ul>
+            <div class="card-footer-price">
+              <div class="price-tag">
+                <span class="label">Investasi</span>
+                <span class="amount">Rp 4.000.000</span>
+              </div>
+              <a href="https://wa.me/6282171727337" class="btn-daftar">Daftar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-card-v2">
+          <div class="card-badge">Online</div>
+          <div class="card-image">
+            <img src="online.jpeg" alt="Kelas Online" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Online'">
+          </div>
+          <div class="card-body">
+            <h3>Kelas Online</h3>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> Akses Video Seumur Hidup</li>
+              <li><i class="fas fa-check-circle"></i> Live Session Mingguan</li>
+              <li><i class="fas fa-check-circle"></i> Konsultasi Selamanya</li>
+            </ul>
+            <div class="card-footer-price">
+              <div class="price-tag">
+                <span class="label">Investasi</span>
+                <span class="amount">Rp 800.000</span>
+              </div>
+              <a href="https://wa.me/6282171727337" class="btn-daftar">Daftar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-card-v2 premium">
+  <div class="card-badge">iPhone</div>
+  <div class="card-image">
+    <img src="online-iPhone.jpeg" alt="Online iPhone" onerror="this.src='https://via.placeholder.com/380x220?text=Online+iPhone'">
+  </div>
+  <div class="card-body">
+    <h3>Online iPhone</h3>
+    <ul class="card-features">
+      <li><i class="fas fa-video"></i> 30x Live Streaming Interaktif</li>
+      <li><i class="fas fa-redo"></i> Rekaman Kelas (Bisa diulang)</li>
+      <li><i class="fas fa-file-invoice"></i> File Schematic & Boardview</li>
+    </ul>
+
+    <div class="price-container-double">
+      <div class="price-box">
+        <span class="price-label">Khusus Alumni</span>
+        <span class="price-value">Rp 2.000.000</span>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-box">
+        <span class="price-label">Untuk Umum</span>
+        <span class="price-value">Rp 2.500.000</span>
+      </div>
+    </div>
+
+    <div class="card-footer-action">
+      <a href="https://wa.me/6282171727337" class="btn-daftar w-100">Daftar iPhone</a>
+    </div>
+  </div>
+</div>
+
+        <div class="class-card-v2">
+          <div class="card-badge">Private</div>
+          <div class="card-image">
+            <img src="private.jpeg" alt="Kelas Private" onerror="this.src='https://via.placeholder.com/380x220?text=Kelas+Private'">
+          </div>
+          <div class="card-body">
+            <h3>Kelas Private</h3>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> One-on-one Training</li>
+              <li><i class="fas fa-check-circle"></i> Borneo Schematic 3 Bulan</li>
+              <li><i class="fas fa-check-circle"></i> Fasilitas Mess Lengkap</li>
+            </ul>
+            <div class="card-footer-price">
+              <div class="price-tag">
+                <span class="label">Investasi</span>
+                <span class="amount">Rp 10.000.000</span>
+              </div>
+              <a href="https://wa.me/6282171727337" class="btn-daftar">Daftar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-card-v2 premium">
+          <div class="card-badge">iPhone Private</div>
+          <div class="card-image">
+            <img src="private-iPhone.jpeg" alt="Private iPhone" onerror="this.src='https://via.placeholder.com/380x220?text=Private+iPhone'">
+          </div>
+          <div class="card-body">
+            <h3>Private iPhone</h3>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> Eksklusif Hardware & Software</li>
+              <li><i class="fas fa-check-circle"></i> Full Support Instruktur</li>
+              <li><i class="fas fa-check-circle"></i> Video Materi Downloadable</li>
+            </ul>
+            <div class="card-footer-price">
+              <div class="price-tag">
+                <span class="label">Investasi</span>
+                <span class="amount">Rp 15.000.000</span>
+              </div>
+              <a href="https://wa.me/6282171727337" class="btn-daftar">Daftar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- <section id="classes">
   <div class="container">
     <div class="section-title">
       <h2>Pilihan Kelas</h2>
@@ -1942,7 +2364,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
     <!-- Materi Pembelajaran Section -->
     <section id="materi" style="background-color: var(--blue-light)">
