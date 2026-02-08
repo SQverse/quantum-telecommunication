@@ -256,50 +256,6 @@
         transform: rotate(30deg);
       }
 
-      /* Hero Section - DISESUAIKAN dengan news.html */
-      .program-hero {
-        height: 60vh;
-        min-height: 400px;
-        position: relative;
-        overflow: hidden;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-        background: linear-gradient(
-            rgba(26, 60, 110, 0.8),
-            rgba(26, 60, 110, 0.8)
-          ),
-          url("../assets/photos/CTA/hero11.jpeg") center/cover no-repeat;
-        margin-top: 0;
-        width: 100%;
-      }
-
-      .program-hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-        width: 100%;
-      }
-
-      .program-hero-title {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 15px;
-        animation: fadeInDown 1s ease;
-        line-height: 1.1;
-      }
-
-      .program-hero-subtitle {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-bottom: 30px;
-        animation: fadeInDown 1s ease 0.2s forwards;
-        opacity: 0;
-      }
-
       /* Button Styles - DISESUAIKAN */
       .btn {
         display: inline-block;
@@ -1983,6 +1939,164 @@
 .materi-expandable.active .materi-content {
   display: block;
 }
+
+/* --- FIX HERO PROGRAMS V2 --- */
+.hero-programs-v2 {
+  position: relative;
+  height: 100vh; /* Tinggi satu layar penuh */
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Overlay - Kita buat lebih transparan (0.6) supaya foto lebih terlihat */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.3) 100%);
+  z-index: 1;
+}
+
+/* Glassmorphism Box */
+.hero-content-glass {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 50px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+}
+
+/* Style Judul & Teks (Mengganti class Bootstrap yang mati) */
+.hero-content-glass h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.text-warning {
+  color: #ffb366 !important; /* Warna kuning orange biar cerah */
+}
+
+/* Teks Deskripsi (Tadi yang warnanya abu-abu) */
+.hero-content-glass .lead {
+  font-size: 1.2rem;
+  color: #ffffff !important; /* Paksa jadi putih bersih */
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Button Modern */
+.hero-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary-modern {
+  background: #ff8c42; /* Orange cerah */
+  color: white !important;
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-primary-modern:hover {
+  background: #e67429;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 140, 66, 0.4);
+}
+
+.btn-outline-light-modern {
+  border: 2px solid white;
+  color: white !important;
+  padding: 13px 35px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-outline-light-modern:hover {
+  background: white;
+  color: #1a3c6e !important;
+}
+
+/* Statistik */
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.stat-item h4 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Slider Background */
+.hero-slider, .hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-content-glass h1 { font-size: 2.2rem; }
+  .hero-content-glass { padding: 30px; margin: 0 15px; text-align: center; }
+  .hero-btns { flex-direction: column; }
+  .hero-stats { justify-content: center; gap: 15px; }
+}
+
+.badge-premium {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+@media (max-width: 576px) {
+  .stat-item {
+    font-size: 13px;
+  }
+}
+
     </style>
   </head> 
   <body>
@@ -2038,26 +2152,51 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="program-hero">
-      <div class="container program-hero-content">
-        <h1 class="program-hero-title">Kelas Teknisi Handphone</h1>
-        <p class="program-hero-subtitle">
-          Bosen belajar dari YouTube tapi hasilnya nihil? Sini, kami ajarin yang
-          beneran bisa dipakai di medan perang.
-        </p>
-        <div class="program-hero-buttons">
-          <a
-            href="https://api.whatsapp.com/send/?phone=6282171727337&text=Halo%20LPK%20Quantum,%20saya%20ingin%20bertanya%20tentang%20program%20pelatihan%20teknisi%20HP"
-            target="_blank"
-            class="btn"
-            id="daftarBtn"
-          >
-            <span id="btnText">DAFTAR SEKARANG!</span>
-            <span id="btnLoading" class="loading" style="display: none"></span>
-          </a>
+      <section class="hero-programs-v2">
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
+      <div class="hero-slide" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
+      <div class="hero-slide" style="background-image: url('../assets/photos/CTA/hero13.jpeg');"></div>
+    </div>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-content-glass animate__animated animate__fadeInLeft">
+            <span class="badge-premium mb-3"><i class="fas fa-star me-2"></i>Terakreditasi & Terpercaya</span>
+            <h1 class="display-4 fw-bold text-white mb-3">
+              Kuasai Skill <span class="text-warning">Teknisi Ponsel</span> Masa Kini
+            </h1>
+            <p class="lead text-white-50 mb-4">
+              Kurikulum berbasis industri yang dirancang khusus untuk mencetak teknisi profesional. Dari dasar hingga tingkat ahli.
+            </p>
+            
+            <div class="hero-stats d-flex mb-4">
+              <div class="stat-item me-4">
+                <h4 class="fw-bold text-white mb-0">5000+</h4>
+                <small class="text-white-50">Alumni</small>
+              </div>
+              <div class="stat-item me-4">
+                <h4 class="fw-bold text-white mb-0">15+</h4>
+                <small class="text-white-50">Tahun Pengalaman</small>
+              </div>
+              <div class="stat-item">
+                <h4 class="fw-bold text-white mb-0">100%</h4>
+                <small class="text-white-50">Praktik Real</small>
+              </div>
+            </div>
+
+            <div class="hero-btns">
+              <a href="#pilihan-kelas" class="btn-primary-modern me-3">Lihat Pilihan Kelas</a>
+              <a href="https://wa.me/6282171727337" class="btn-outline-light-modern">Konsultasi Gratis</a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Permasalahan Pemula Section -->
     <section id="problems">
@@ -2358,6 +2497,17 @@
       
       <p><b>💼 LEVEL 6 – BISNIS</b><br>
       <small>Penentuan Harga Servis, SOP Terima Unit, Strategi Omset, Cara Menghindari Komplain.</small></p>
+
+      <hr>
+<p><b>🎁 FASILITAS PESERTA:</b></p>
+<ul style="list-style: none; padding-left: 0; font-size: 0.85rem;">
+  <li>✅ 30x Live Streaming (Interaktif)</li>
+  <li>✅ Rekaman Kelas (Bisa diulang)</li>
+  <li>✅ Grup Diskusi WhatsApp</li>
+  <li>✅ File Schematic & Boardview</li>
+  <li>✅ Sertifikat Pelatihan Resmi</li>
+  <li>✅ Konsultasi Seumur Hidup</li>
+</ul>
     </div>
   </div>
 </div>
@@ -2420,6 +2570,17 @@
       
       <p><b>💼 LEVEL 6 – BISNIS</b><br>
       <small>Penentuan Harga Servis, SOP Terima Unit, Strategi Omset, Cara Menghindari Komplain.</small></p>
+
+      <hr>
+<p><b>🎁 FASILITAS PESERTA:</b></p>
+<ul style="list-style: none; padding-left: 0; font-size: 0.85rem;">
+  <li>✅ 30x Live Streaming (Interaktif)</li>
+  <li>✅ Rekaman Kelas (Bisa diulang)</li>
+  <li>✅ Grup Diskusi WhatsApp</li>
+  <li>✅ File Schematic & Boardview</li>
+  <li>✅ Sertifikat Pelatihan Resmi</li>
+  <li>✅ Konsultasi Seumur Hidup</li>
+</ul>
     </div>
   </div>
 </div>
@@ -3179,6 +3340,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Script Hero Background Slider
+function startHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000); // Ganti foto setiap 5 detik
+}
+document.addEventListener('DOMContentLoaded', startHeroSlider);
     </script>
   </body>
 </html>
