@@ -2008,7 +2008,7 @@
   background: #ff8c42; /* Orange cerah */
   color: white !important;
   padding: 15px 35px;
-  border-radius: 12px;
+  border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s;
@@ -2025,7 +2025,7 @@
   border: 2px solid white;
   color: white !important;
   padding: 13px 35px;
-  border-radius: 12px;
+  border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s;
@@ -2097,6 +2097,72 @@
   }
 }
 
+/* --- FIX MOBILE SINGLE FRAME --- */
+@media (max-width: 768px) {
+  .hero-programs-v2 {
+    height: 100vh; /* Paksa tinggi setinggi layar HP */
+    height: -webkit-fill-available; /* Fix untuk browser Safari/Chrome di HP */
+    min-height: auto; /* Hapus batasan minimal yang bikin memanjang */
+    padding: 0;
+    display: flex;
+    align-items: center; /* Teks tetap di tengah layar */
+  }
+
+  .hero-content-glass {
+    padding: 30px; /* Perkecil padding biar gak makan tempat */
+    margin: 60px 15px;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  /* Perkecil ukuran teks supaya tidak menumpuk */
+  .hero-content-glass h1 {
+    font-size: 1.3rem; /* Ukuran pas untuk judul di HP */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-content-glass .lead {
+    font-size: 0.75rem; /* Deskripsi diperkecil */
+    margin-bottom: 20px;
+  }
+
+  /* Statistik dibuat lebih ringkas */
+  .hero-stats {
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+  }
+
+  .stat-item h4 {
+    font-size: 1.2rem;
+  }
+  
+  .stat-item small {
+    font-size: 0.7rem;
+  }
+
+  /* Tombol dibuat berdampingan atau atas-bawah yang compact */
+  .hero-btns {
+    display: flex;
+    flex-direction: column; /* Atas-bawah di HP */
+    gap: 10px;
+  }
+
+  .btn-primary-modern, .btn-outline-light-modern {
+    padding: 12px 20px; /* Tombol lebih slim */
+    font-size: 0.9rem;
+    width: 100%; /* Tombol memenuhi lebar box */
+  }
+
+  /* Sembunyikan aksesoris yang kurang penting di HP (Opsional) */
+  .badge-premium {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+}
+
     </style>
   </head> 
   <body>
@@ -2165,7 +2231,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-lg-7">
           <div class="hero-content-glass animate__animated animate__fadeInLeft">
-            <span class="badge-premium mb-3"><i class="fas fa-star me-2"></i>Terakreditasi & Terpercaya</span>
+            <span class="badge-premium mb-3"><i class="fas fa-star me-2"></i>Terakreditasi & Terpercaya!</span>
             <h1 class="display-4 fw-bold text-white mb-3">
               Kuasai Skill <span class="text-warning">Teknisi Ponsel</span> Masa Kini
             </h1>

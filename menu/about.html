@@ -1533,620 +1533,102 @@
   font-size: 1.1rem;
 }
 
-/* Judul biar Gak Boring */
-.program-hero-title {
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 900;
-  font-size: 1.8rem;
-  color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.highlight-text {
-  color: #4a90e2; /* Biru Quantum */
-  display: block;
-  text-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
-}
-
-/* Garis Pemanis */
-.title-separator {
-  width: 80px;
-  height: 4px;
-  background: #4a90e2;
-  margin: 0 auto 25px;
-  border-radius: 2px;
-}
-
-/* Teks Deskripsi */
-.hero-text {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
-  margin: 0 auto 35px;
-}
-
-/* Tombol */
-.btn-primary {
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-weight: 700;
-  background: #4a90e2;
-  border: none;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
-}
-
-/* KHUSUS MOBILE */
-@media (max-width: 768px) {
-  .hero-card {
-    padding: 40px 20px;
-    margin: 0 15px; /* Biar gak nempel pinggir HP */
-    border-radius: 20px;
-  }
-}
-
-/* Wrapper Section */
-.hero-boxed-wrapper {
-  background-color: #f8fbff; /* Warna background luar kotak */
-}
-
-/* KOTAK UTAMA */
-.hero-main-card {
+/* --- FIX TOTAL HERO ABOUT V2 --- */
+.hero-about-v2 {
   position: relative;
-  height: 70vh; /* Tinggi kotak hero */
-  min-height: 500px;
-  border-radius: 30px; /* Bikin pojokan foto jadi tumpul/ngotak cantik */
-  overflow: hidden; /* WAJIB: Biar foto slider gak keluar jalur */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* Fotonya sekarang ngikutin tinggi kotak */
-.hero-slider, .hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 100vh;
   width: 100%;
-  height: 100%;
-}
-
-.hero-bg {
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.1); /* Sedikit zoom buat efek sinematik */
-}
-
-/* Gaya Teks (Gak Boring) */
-.highlight-text {
-  color: #4a90e2;
-  font-weight: 900;
-}
-
-.title-separator {
-  width: 60px;
-  height: 4px;
-  background: #4a90e2;
-  margin: 15px auto;
-  border-radius: 2px;
-}
-
-
-/* Container Luar */
-.hero-boxed-section {
-  background-color: #f0f4f8; /* Warna dasar biar kotaknya kelihatan menonjol */
-}
-
-
-.highlight-blue {
-  color: #4a90e2;
-}
-
-.hero-line {
-  width: 60px;
-  height: 4px;
-  background: #4a90e2;
-  margin: 20px auto;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
-  margin: 0 auto 30px;
-}
-
-/* Tombol */
-.btn-hero {
-  display: inline-block;
-  padding: 14px 35px;
-  background: #4a90e2;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.btn-hero:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
-}
-
-/* Perbaikan Teks Highlight biar Gak Boring */
-.text-blue-highlight {
-    background: linear-gradient(45deg, #4a90e2, #2a5a92);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-}
-
-/* Biar Kotak Hero pas di Tengah dan Gak Nempel ke Atas */
-#hero-new {
-    padding-top: 100px; /* Sesuaikan dengan tinggi navbar Adek */
-    background-color: #f8faff;
-}
-
-/* Overlay Gelap: Tambahkan ini kalau teks masih susah dibaca */
-
-
-.text-glow {
-  color: #4a90e2;
-  text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
-}
-
-/* Tombol Kelompok */
-.hero-action-group {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.btn-main {
-  background: #4a90e2;
-  color: white;
-  padding: 15px 35px;
-  border-radius: 15px;
-  font-weight: 700;
-  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
-}
-
-.btn-outline-white {
-  background: transparent;
-  color: white;
-  padding: 15px 35px;
-  border-radius: 15px;
-  border: 2px solid rgba(255,255,255,0.2);
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.btn-outline-white:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #fff;
-  color: #fff;
-}
-
-.hero-slider-fixed {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-content-box {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 60px; /* Jarak teks dari pinggir kotak */
-    color: white;
-}
-
-.text-blue-highlight {
-    color: #4a90e2;
-    text-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
-}
-
-.hero-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    max-width: 500px;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    opacity: 0.9;
-}
-
-/* Tombol Modern */
-.btn-custom-hero {
-    background: #4a90e2;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-    display: inline-block;
-    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
-}
-
-.btn-custom-hero:hover {
-    transform: translateY(-5px);
-    background: #357abd;
-    color: white;
-}
-
-/* CSS HERO BOXED ALA INDEX */
-.hero-boxed-section {
-    padding: 40px 0;
-    background-color: #f8f9fa;
-}
-
-.hero-card-wrapper {
-    position: relative;
-    height: 550px;
-    border-radius: 40px; /* Melengkung seperti index */
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15); /* Efek bayangan ngambang */
-}
-
-.hero-slider-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.hero-glass-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    /* Efek Kaca Transparan Gelap */
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
-    backdrop-filter: blur(2px); 
-}
-
-.hero-content-box {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    color: white;
-}
-
-.blue-glow {
-    color: #4a90e2;
-    text-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
-}
-
-/* Hero Section Modern */
-.about-hero {
-  position: relative;
-  min-height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #0f172a; /* Base color untuk dark mode */
+  background: #0f172a;
 }
 
-/* Background Animasi Bergerak */
-.hero-animated-bg {
+/* Pastikan Swiper nutupin satu layar */
+.hero-about-v2 .hero-slider {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, #1e3a8a, #1e40af, #3b82f6, #1d4ed8);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  top: 0; left: 0; width: 100%; height: 100%;
   z-index: 1;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
-.hero-badge {
-  background: var(--accent-orange);
-  color: white;
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.text-gradient {
-  background: linear-gradient(to right, #fbbf24, #f59e0b);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-}
-
-/* Kontrol Teks di Dark Mode */
-[data-theme="dark"] .hero-glass-card {
-  background: rgba(15, 23, 42, 0.6); /* Lebih gelap pas dark mode */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.hero-actions a {
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .hero-glass-card {
-    padding: 30px 20px;
-    margin: 0 10px;
-    text-align: center;
-  }
-  .hero-actions {
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
-.about-hero .container {
-    display: flex;
-    justify-content: flex-end; /* Dorong konten ke kanan */
-  }
-
-  .hero-content {
-    text-align: right; /* Buat tulisan jadi rata kanan biar rapi */
-    margin-right: 0;
-    margin-left: auto; /* Memastikan dia nempel ke kanan container */
-  }
-
-  .hero-actions {
-    justify-content: flex-end; /* Dorong tombol-tombol ke kanan juga */
-  }
-
-.about-hero {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-color: #000; /* Dasar hitam biar smooth saat loading */
-}
-
-/* Konten Teks */
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 700px;
-  color: #fff; /* Teks Hero selalu putih biar kontras */
-}
-
-.hero-badge {
-  background: var(--accent-orange);
-  color: white;
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.text-gradient {
-  color: #fbbf24; /* Warna kuning emas biar elegan */
-  font-weight: 800;
-}
-
-/* Pengaturan Default (Mobile First) */
-.hero-content {
-  text-align: center;      /* Teks jadi rata tengah */
-  margin: 0 auto;          /* Container teks di tengah */
-  position: relative;
-  z-index: 3;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 15px;
-  justify-content: center; /* Tombol jadi di tengah */
-  margin-top: 30px;
-}
-
-/* Pengaturan Desktop (Yang sudah kita buat tadi) */
-@media (min-width: 769px) {
-  .about-hero .container {
-    display: flex;
-    justify-content: flex-end; /* Di desktop tetep di kanan */
-  }
-
-  .hero-content {
-    text-align: right;        /* Di desktop tetep rata kanan */
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .hero-actions {
-    justify-content: flex-end; /* Tombol di desktop tetep di kanan */
-  }
-}
-
-@media (max-width: 576px) {
-    .program-hero-title {
-        font-size: 1.4rem;
-    }
-}
-
-/* Update bagian konten hero */
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 600px;
-  padding: 40px;
-  /* EFEK GLASSMORPHISM */
-  background: rgba(255, 255, 255, 0.1); /* Putih sangat transparan */
-  backdrop-filter: blur(1px);          /* Ini yang bikin efek blur kaca */
-  -webkit-backdrop-filter: blur(15px);  /* Support Safari */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis biar tegas */
-  border-radius: 30px;                  /* Sudut membulat estetik */
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-/* Penyesuaian di Dark Mode agar lebih pekat sedikit */
-[data-theme="dark"] .hero-content {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Biar gak terlalu mepet ke kanan banget di desktop */
-@media (min-width: 769px) {
-  .hero-content {
-    margin-right: 5%; 
-  }
-}
-
-/* Di Mobile, jangan terlalu lebar kacanya biar gak nutupin semua foto */
-@media (max-width: 768px) {
-  .hero-content {
-    margin: 0 15px;
-    padding: 30px 20px;
-    background: rgba(15, 23, 42, 0.7); /* Lebih gelap di mobile biar fokus ke teks */
-  }
-}
-
-/* Container Utama Hero */
-.about-hero {
-  position: relative;
-  height: 85vh; /* Sesuaikan tinggi */
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-color: #000;
-}
-
-/* Swiper Slider Background */
-.hero-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-bg-image {
-  width: 100%;
-  height: 100%;
+.hero-about-v2 .swiper-slide {
   background-size: cover;
   background-position: center;
 }
 
-/* Overlay Tetap di Atas Slider */
 .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to left, rgba(15, 23, 42, 0.9) 30%, rgba(15, 23, 42, 0.3) 100%);
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 100%);
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .hero-overlay {
-    /* Gradasi dari bawah ke atas supaya teks di bawah tetap jelas di HP */
-    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 40%, rgba(15, 23, 42, 0.2) 100%);
-  }
-}
-
-/* Update class button umum */
-.hero-actions .btn {
-  /* 1. Atur Ukuran */
-  min-width: 180px;      /* Bikin lebar tombol sama (Sejarah & Program) */
-  padding: 12px 25px;    /* Atur ketebalan tombol */
-  
-  /* 2. Bikin Teks Center Sempurna */
-  display: inline-flex;  /* Pakai flexbox */
-  align-items: center;   /* Center vertikal */
-  justify-content: center; /* Center horizontal */
-  text-align: center;
-  
-  /* 3. Estetika Tambahan */
-  font-weight: 600;
-  border-radius: 50px;   /* Biar bentuknya kapsul modern */
-  transition: all 0.3s ease;
-}
-
-.hero-actions .btn:hover {
-  transform: translateY(-3px); /* Tombol agak naik dikit */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Khusus Mobile biar gak kegedean */
-@media (max-width: 576px) {
-  .hero-actions .btn {
-    margin:auto;
-    min-width: 150px;    /* Kecilin dikit di HP */
-    width: 100%;         /* Atau kalau mau full lebar layar HP */
-    max-width: 250px;
-  }
-}
-
-/* Konten Teks */
-.hero-content {
+.hero-container-fixed {
   position: relative;
   z-index: 3;
-  max-width: 650px;
-  /* Atur ke kanan sesuai request sebelumnya di Desktop */
 }
 
-@media (min-width: 769px) {
-  .about-hero .container {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .hero-content {
-    text-align: right;
-  }
-  .hero-actions {
-    justify-content: flex-end;
-  }
+/* Kotak Glassmorphism */
+.hero-content-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 45px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography Fix */
+.hero-content-glass h1 {
+  font-size: 2rem;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.hero-content-glass .lead {
+  color: #ffffff !important;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.text-warning { color: #ffb366 !important; }
+
+.badge-premium {
+  display: inline-block;
+  background: rgba(255, 140, 66, 0.2);
+  color: #ffb366;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 140, 66, 0.3);
+}
+
+.hero-stats-about h4 { font-size: 1.8rem; color: #fff; margin: 0; }
+.hero-stats-about small { color: rgba(255,255,255,0.6); }
+
+/* Tombol */
+.btn-primary-modern {
+  display: inline-block;
+  background: #ff8c42;
+  color: #fff !important;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    text-align: center;
-    margin: 0 auto;
-  }
-  .hero-actions {
-    justify-content: center;
+  .hero-about-v2 { height: 100vh; }
+  .hero-content-glass { padding: 30px 20px; margin: 0 15px; text-align: center; }
+  .hero-stats-about { justify-content: center; }
+}
+
+@media (max-width: 576px) {
+  .hero-content-glass h1 {
+    font-size: 1.2rem;
   }
 }
   </style>
@@ -2202,33 +1684,43 @@
 
     <!-- Hero Section untuk Halaman Tentang -->
 
-    <section class="about-hero">
+    <section class="hero-about-v2">
   <div class="swiper hero-slider">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="hero-bg-image" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-bg-image" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-bg-image" style="background-image: url('../assets/photos/CTA/hero13.jpeg');"></div>
-      </div>
+      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
+      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
     </div>
   </div>
 
   <div class="hero-overlay"></div>
-  
-  <div class="container">
-    <div class="hero-content animate__animated animate__fadeInUp">
-      <span class="hero-badge">Tentang LPK Quantum</span>
-      <h1 class="program-hero-title">Membangun Karir <br><span class="text-gradient">Teknisi Ponsel Profesional</span></h1>
-      <p class="program-hero-subtitle">
-        Lebih dari sekadar tempat belajar, kami adalah jembatan menuju masa depan industri teknisi ponsel yang lebih cerah.
-      </p>
-      <div class="hero-actions">
-        <a href="#sejarah" class="btn btn-primary">Sejarah Kami</a>
-        <a href="programs.html" class="btn btn-outline-light">Lihat Program</a>
+
+  <div class="container hero-container-fixed">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="hero-content-glass animate__animated animate__fadeInLeft">
+          <span class="badge-premium mb-3"><i class="fas fa-history me-2"></i>Sejak Tahun 2008</span>
+          <h1 class="display-4 fw-bold text-white mb-3">
+            Teknisi HP Profesional <br> <span class="text-warning">DIMULAI DARI SINI!</span>
+          </h1>
+          <p class="lead text-white mb-4">
+            LPK Quantum telah dipercaya selama lebih dari 20 tahun sebagai pusat pelatihan teknisi ponsel yang mencetak lulusan siap kerja dan siap usaha.
+          </p>
+          
+          <div class="hero-stats-about d-flex mb-4">
+            <div class="stat-item me-4">
+              <h4 class="fw-bold text-white mb-0">20+</h4>
+              <small>Tahun Pengalaman</small>
+            </div>
+            <div class="stat-item">
+              <h4 class="fw-bold text-white mb-0">5000+</h4>
+              <small>Lulusan Sukses</small>
+            </div>
+          </div>
+
+          <div class="hero-btns">
+            <a href="#sejarah" class="btn-primary-modern">Sejarah Kami</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
