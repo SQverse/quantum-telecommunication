@@ -1533,102 +1533,159 @@
   font-size: 1.1rem;
 }
 
-/* --- FIX TOTAL HERO ABOUT V2 --- */
-.hero-about-v2 {
+/* --- HERO ABOUT PRO STYLE --- */
+.hero-about-pro {
   position: relative;
   height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
   overflow: hidden;
   background: #0f172a;
+  display: flex;
+  align-items: center;
 }
 
-/* Pastikan Swiper nutupin satu layar */
-.hero-about-v2 .hero-slider {
+.hero-about-pro .hero-slider {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   z-index: 1;
 }
 
-.hero-about-v2 .swiper-slide {
+.hero-about-pro .swiper-slide {
   background-size: cover;
   background-position: center;
+  filter: scale(1.1); /* Sedikit zoom agar sinematik */
 }
 
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);
   z-index: 2;
 }
 
 .hero-container-fixed {
   position: relative;
-  z-index: 3;
+  z-index: 10;
 }
 
-/* Kotak Glassmorphism */
-.hero-content-glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 45px;
-  border-radius: 30px;
+/* Glass Card Refinement */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 
-/* Typography Fix */
-.hero-content-glass h1 {
-  font-size: 2rem;
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
   color: #ffffff !important;
-  font-weight: 800 !important;
+  line-height: 1.1;
+  margin: 20px 0;
 }
 
-.hero-content-glass .lead {
-  color: #ffffff !important;
-  opacity: 0.9;
+.text-orange {
+  color: #ff8c42 !important;
+}
+
+.hero-desc {
   font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-bottom: 35px;
+  max-width: 90%;
 }
 
-.text-warning { color: #ffb366 !important; }
-
-.badge-premium {
-  display: inline-block;
+/* Badge & Stats */
+.badge-history {
   background: rgba(255, 140, 66, 0.2);
   color: #ffb366;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: 50px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.8rem;
-  border: 1px solid rgba(255, 140, 66, 0.3);
+  text-transform: uppercase;
 }
 
-.hero-stats-about h4 { font-size: 1.8rem; color: #fff; margin: 0; }
-.hero-stats-about small { color: rgba(255,255,255,0.6); }
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
 
-/* Tombol */
-.btn-primary-modern {
-  display: inline-block;
+.stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.cta-group { display: flex; gap: 15px; }
+
+.btn-main {
   background: #ff8c42;
   color: #fff !important;
-  padding: 14px 30px;
-  border-radius: 12px;
+  padding: 15px 35px;
+  border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s;
 }
 
+.btn-wa {
+  background: rgba(255,255,255,0.1);
+  color: #fff !important;
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Mobile Fix */
 @media (max-width: 768px) {
-  .hero-about-v2 { height: 100vh; }
-  .hero-content-glass { padding: 30px 20px; margin: 0 15px; text-align: center; }
-  .hero-stats-about { justify-content: center; }
+  .hero-title { font-size: 2.2rem; }
+  .glass-card { padding: 30px 20px; border-radius: 25px; text-align: center; }
+  .stats-row { justify-content: center; }
+  .cta-group { flex-direction: column; }
 }
 
 @media (max-width: 576px) {
-  .hero-content-glass h1 {
-    font-size: 1.2rem;
+  .hero-title {
+    font-size: 23px;
+    text-align: left;
+  }
+
+  .hero-desc {
+    font-size: small;
+    text-align: justify;
+  }
+
+  .stat-box .stat-num {
+    font-size: 25px;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-main, .btn-wa {
+    font-size: 14px;
+    width: 50vw;
   }
 }
   </style>
@@ -1683,8 +1740,54 @@
     </header>
 
     <!-- Hero Section untuk Halaman Tentang -->
+  <section class="hero-about-pro">
+  <div class="swiper hero-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
+      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
+    </div>
+  </div>
 
-    <section class="hero-about-v2">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-container-fixed">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-7">
+        <div class="glass-card animate__animated animate__fadeInLeft">
+          <span class="badge-history"><i class="fas fa-award me-2"></i>Terpercaya Sejak 2008</span>
+          
+          <h1 class="hero-title">
+            Membangun <span class="text-orange">Keahlian</span>, Mewujudkan <span class="text-orange">Masa Depan</span>
+          </h1>
+          
+          <p class="hero-desc">
+            Lebih dari 15 tahun LPK Quantum mendidik ribuan teknisi ponsel profesional. Kami bukan sekadar tempat kursus, tapi partner perjalanan karier Anda.
+          </p>
+          
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Tahun</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-num">5000+</span>
+              <span class="stat-label">Alumni</span>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#cerita" class="btn-main">Sejarah Kami</a>
+            <a href="https://wa.me/628123456789" class="btn-wa">
+              <i class="fab fa-whatsapp"></i> Chat Admin
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- <section class="hero-about-v2">
   <div class="swiper hero-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
@@ -1724,7 +1827,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
     <!-- Sejarah & Profil Section -->
     <section id="sejarah" class="sejarah-section py-5">
