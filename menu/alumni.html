@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -1042,6 +1043,156 @@
       footer .container {
         overflow: hidden;
       }
+
+      .success-stories {
+  background: #f8fbff;
+}
+
+.alumni-success-swiper {
+  padding: 20px 0 60px !important;
+  width: 100%;
+  overflow: hidden; /* Tambahkan ini agar tidak meluber ke samping */
+}
+
+.success-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  text-align: center;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.success-card:hover {
+  transform: translateY(-10px);
+}
+
+.alumni-photo {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.alumni-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.badge-status {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-gradient);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.alumni-info h4 {
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-meta {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Biar rapi di HP */
+@media (max-width: 576px) {
+  .success-card {
+    margin: 0 10px;
+    padding: 20px;
+  }
+}
+
+.video-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Rasio 16:9 */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.video-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.badge-success-tag {
+  background: var(--blue-light);
+  color: var(--blue-medium);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.video-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 8px;
+}
+
+.video-info p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* --- FIX POSISI INDIKATOR SLIDER --- */
+.alumni-video-swiper {
+  padding-bottom: 60px !important; /* Tambah ruang di bawah kartu untuk titik navigasi */
+  overflow: visible !important;   /* Biar bayangan kartu tidak terpotong */
+}
+
+.swiper-pagination {
+  bottom: 0 !important; /* Pastikan dia duduk paling bawah di area padding */
+}
+
+/* Warna titik agar lebih kontras */
+.swiper-pagination-bullet-active {
+  background: var(--accent-orange) !important;
+  width: 20px !important;
+  border-radius: 10px !important;
+}
     </style>
   </head>
   <body>
@@ -1108,6 +1259,112 @@
         </div>
       </div>
     </div>
+
+    <!-- KISAH SUKSES ALUMNI SECTION -->
+     <section class="success-stories py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Kisah Sukses <span class="text-orange">Video Alumni</span></h2>
+      <p class="text-muted">Dengarkan langsung perjalanan mereka bertransformasi di LPK Quantum.</p>
+    </div>
+
+    <div class="swiper alumni-video-swiper">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/iu6lvrXriNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <span class="badge-success-tag">Success Story</span>
+              <h4>Dulu Menganggur, Kini Teknisi iPhone</h4>
+              <p>Kisah inspiratif alumni yang kini dipercaya menangani mesin iPhone di service center rekanan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/7DsbZUgp2Ao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <span class="badge-success-tag">Testimoni Pelatihan</span>
+              <h4>Dengar Langsung dari Peserta</h4>
+              <p>Apa kata mereka setelah mengikuti pelatihan intensif dengan kurikulum industri di LPK Quantum?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/UmTkRTxZJZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <span class="badge-success-tag">Vibe Belajar</span>
+              <h4>Suasana Kursus Teknisi</h4>
+              <p>Melihat keseruan dan keseriusan alumni saat praktik bongkar pasang smartphone.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+    <!-- <section class="success-stories py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Kisah <span class="text-orange">Sukses Alumni</span></h2>
+      <p class="text-muted">Dari nol hingga menjadi ahli, mereka telah membuktikannya.</p>
+    </div>
+
+    <div class="swiper alumni-success-swiper">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="success-card">
+            <div class="card-glass-blur"></div>
+            <div class="alumni-photo">
+              <img src="../assets/photos/alumni/alumni1.jpg" alt="Alumni Sukses" onerror="this.src='https://via.placeholder.com/150'">
+              <div class="badge-status">Owner Cell</div>
+            </div>
+            <div class="alumni-info">
+              <h4>Andi Pratama</h4>
+              <p class="quote">"Dulu bingung mau kerja apa, setelah kursus di LPK Quantum, sekarang sudah punya toko service sendiri di rumah."</p>
+              <div class="success-meta">
+                <span><i class="fas fa-calendar-alt"></i> Angkatan 2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="success-card">
+            <div class="card-glass-blur"></div>
+            <div class="alumni-photo">
+              <img src="../assets/photos/alumni/alumni2.jpg" alt="Alumni Sukses" onerror="this.src='https://via.placeholder.com/150'">
+              <div class="badge-status">Senior Technician</div>
+            </div>
+            <div class="alumni-info">
+              <h4>Siti Aminah</h4>
+              <p class="quote">"Materi software-nya daging banget! Langsung bisa dipraktikkan dan sekarang dipercaya jadi kepala teknisi."</p>
+              <div class="success-meta">
+                <span><i class="fas fa-calendar-alt"></i> Angkatan 2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section> -->
 
     <!-- Daftar Tahun Angkatan -->
     <section id="alumni-tahun">
@@ -1255,6 +1512,7 @@
     <a href="#" class="back-to-top">
       <i class="fas fa-arrow-up"></i>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script>
       // Data Alumni (bisa diganti dengan data JSON dari server jika diperlukan)
@@ -3195,6 +3453,64 @@ if (themeToggle) {
       document.addEventListener("DOMContentLoaded", init);
       window.addEventListener("scroll", checkScroll);
       window.addEventListener("load", checkScroll);
+
+
+// // Pastikan script ini ada di bawah swiper-bundle.min.js
+// var swiperAlumni = new Swiper(".alumni-success-swiper", {
+//   slidesPerView: 1, // Biar kartu sebelah kelihatan ngintip dikit di HP
+//   spaceBetween: 15,
+//   centeredSlides: true,
+//   loop: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   breakpoints: {
+//     768: { slidesPerView: 2, centeredSlides: false },
+//     1024: { slidesPerView: 3, centeredSlides: false }
+//   }
+// });
+
+// Pastikan ini diletakkan setelah library swiper-bundle.min.js
+var swiperVideoAlumni = new Swiper(".alumni-video-swiper", {
+  slidesPerView: 1.2, // Di HP kartu sebelah ngintip lebih banyak
+  spaceBetween: 20,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 5000, // Slider jalan otomatis tiap 5 detik
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true, // Titik-titik jadi lebih dinamis ukurannya
+  },
+  breakpoints: {
+    768: { 
+      slidesPerView: 2, 
+      centeredSlides: false 
+    },
+    1024: { 
+      slidesPerView: 3, 
+      centeredSlides: false 
+    }
+  }
+});
+
+var swiperVideoAlumni = new Swiper(".alumni-video-swiper", {
+  slidesPerView: 1.1,
+  spaceBetween: 20,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    768: { slidesPerView: 2, centeredSlides: false },
+    1024: { slidesPerView: 3, centeredSlides: false }
+  }
+});
     </script>
   </body>
 </html>
