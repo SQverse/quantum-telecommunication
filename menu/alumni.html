@@ -3469,23 +3469,17 @@ if (themeToggle) {
 //     768: { slidesPerView: 2, centeredSlides: false },
 //     1024: { slidesPerView: 3, centeredSlides: false }
 //   }
-// });
-
-
-// Hapus yang lama, ganti dengan satu blok ini saja
+// });// Hapus yang lama, ganti dengan satu blok ini saja
 var swiperVideoAlumni = new Swiper(".alumni-video-swiper", {
-  slidesPerView: 1.1,        // Di HP, kartu sebelah ngintip dikit agar user tahu bisa digeser
+  slidesPerView: 1.2,        
   spaceBetween: 20,
   centeredSlides: true,
-  loop: true,
-  autoplay: {
-    delay: 5000,             // Slider geser otomatis tiap 5 detik
-    disableOnInteraction: false,
-  },
+  loop: false,               // Kakak ubah jadi false agar user tahu kapan video berakhir
+  // Bagian AUTOPLAY DIHAPUS agar tidak geser sendiri
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-    dynamicBullets: true,    // Indikator jadi lebih cantik dan dinamis
+    dynamicBullets: true,    
   },
   breakpoints: {
     768: { 
@@ -3498,7 +3492,6 @@ var swiperVideoAlumni = new Swiper(".alumni-video-swiper", {
     }
   }
 });
-
     </script>
   </body>
 </html>
