@@ -3316,11 +3316,11 @@ if (themeToggle) {
         alumniTahunSection.style.display = "none";
         alumniDetailSection.style.display = "block";
 
-        // Scroll to top
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
+        // Ganti window.scrollTo({ top: 0 }) dengan ini:
+  document.getElementById("alumni-detail").scrollIntoView({ 
+    behavior: "smooth", 
+    block: "start" 
+  });
 
         // Trigger animations
         setTimeout(() => {
@@ -3366,11 +3366,11 @@ if (themeToggle) {
         alumniDetailSection.style.display = "none";
         alumniGaleriSection.style.display = "block";
 
-        // Scroll to top
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
+        // Ganti window.scrollTo({ top: 0 }) dengan ini:
+  document.getElementById("alumni-galeri").scrollIntoView({ 
+    behavior: "smooth", 
+    block: "start" 
+  });
       }
 
       // Show years list
@@ -3379,11 +3379,15 @@ if (themeToggle) {
         alumniGaleriSection.style.display = "none";
         alumniTahunSection.style.display = "block";
 
-        // Scroll to top
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
+        alumniDetailSection.style.display = "none";
+  alumniGaleriSection.style.display = "none";
+  alumniTahunSection.style.display = "block";
+
+  // Ganti window.scrollTo({ top: 0 }) dengan ini:
+  alumniTahunSection.scrollIntoView({ 
+    behavior: "smooth", 
+    block: "start" 
+  });
       }
 
       // Lightbox functions

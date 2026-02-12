@@ -1704,6 +1704,97 @@
     width: 50vw;
   }
 }
+
+/* Styling Kartu Visual Why Us */
+.feature-card-visual {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  transition: 0.4s;
+}
+
+.feature-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.feature-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(26, 60, 110, 0.9), rgba(0,0,0,0.1));
+  z-index: 2;
+}
+
+.feature-content-inner {
+  position: relative;
+  z-index: 3;
+}
+
+.feature-card-visual:hover .feature-bg { transform: scale(1.1); }
+
+/* Styling Galeri Modern */
+.gallery-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item-pro {
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item-pro img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: 0.5s;
+}
+
+.gallery-item-pro:hover img { transform: scale(1.1); filter: brightness(0.8); }
+
+@media (max-width: 768px) {
+  .feature-card-visual { height: 250px; }
+  .gallery-grid-modern { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Paksa grid jadi satu kolom saja di layar kecil */
+  .features-grid {
+    display: grid !important; /* Paksa balik ke grid */
+    grid-template-columns: 1fr !important; /* Satu kolom penuh */
+    gap: 20px !important;
+    padding: 10px 0 !important;
+    overflow-x: visible !important; /* Matikan scroll samping yang bikin penyet */
+  }
+
+  /* Atur ulang ukuran kartu visualnya */
+  .feature-card-visual {
+    flex: none !important; /* Matikan fungsi flex biar nggak rebutan ruang */
+    width: 100% !important; /* Lebar penuh layar */
+    height: 200px !important; /* Tinggi kita pendekin dikit biar nggak menuhi layar */
+    margin-bottom: 10px;
+  }
+  
+  /* Pastikan teks di dalamnya nggak kepotong */
+  .feature-content-inner h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  .feature-content-inner p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+}
   </style>
   </head>
   <body>
@@ -1906,7 +1997,99 @@
 </section>
 
     <!-- Mengapa Memilih Kami Section -->
-    <section id="why-us" class="why-us-section">
+     <section id="why-us" class="why-us-section py-5">
+  <div class="container">
+    <div class="section-title text-center mb-4">
+      <h2 class="fw-bold">Mengapa Memilih <span class="text-orange">Kami</span></h2>
+    </div>
+    <p class="section-subtitle text-center mb-5">
+      Berbagai keunggulan yang membuat LPK Quantum menjadi pilihan tepat untuk pelatihan teknisi HP.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/instruktur/tomi1.JPG');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Instruktur Berpengalaman</h3>
+          <p>Diajar praktisi senior yang telah berkecimpung di industri lebih dari 10 tahun.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Desember 2024/desember242.jpeg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-book"></i></div>
+          <h3>Kurikulum Sesuai Industri</h3>
+          <p>Materi selalu diperbarui mengikuti perkembangan teknologi dan kebutuhan industri terbaru.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-tools"></i></div>
+          <h3>Fasilitas Lengkap</h3>
+          <p>Peralatan praktik terkini dan lengkap untuk menunjang proses belajar mengajar.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2025/Oktober 2025/okt259.jpeg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-certificate"></i></div>
+          <h3>Sertifikasi Resmi</h3>
+          <p>Lulusan mendapatkan sertifikat kompetensi yang diakui oleh industri dan pemerintah.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Konter Sendiri/ks1.jpeg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-briefcase"></i></div>
+          <h3>Penyaluran Kerja</h3>
+          <p>Bantuan penyaluran kerja ke service center terkemuka.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2025/Februari 2025/feb7.jpg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3>Biaya Terjangkau</h3>
+          <p>Program pelatihan harga bersahabat dengan berbagai pilihan paket sesuai kebutuhan.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2025/Agustus 2025/agustus18.jpg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-users"></i></div>
+          <h3>Komunitas Alumni</h3>
+          <p>Jaringan alumni luas se-Indonesia untuk berbagi pengalaman dan peluang bisnis.</p>
+        </div>
+      </div>
+
+      <div class="feature-card-visual">
+        <div class="feature-bg" style="background-image: url('../assets/photos/kerjasama/Swasta/Gajah Ponsel/gajah-ponsel.jpg');"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-content-inner">
+          <div class="feature-icon-small"><i class="fas fa-building"></i></div>
+          <h3>Legalitas Lengkap</h3>
+          <p>Lembaga terdaftar resmi dengan izin operasional dari instansi pemerintah terkait.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- <section id="why-us" class="why-us-section">
       <div class="container">
         <div class="section-title">
           <h2>Mengapa Memilih Kami</h2>
@@ -1999,7 +2182,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Tim & Instruktur Section -->
     <section id="instructors" class="py-5">
