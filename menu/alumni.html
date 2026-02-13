@@ -79,6 +79,27 @@
         transition: var(--transition);
       }
 
+      /* Tambahkan ini di bagian paling atas <style> */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Perbaiki section slider video */
+.alumni-video-swiper {
+  padding-bottom: 60px !important;
+  width: 100%;
+  overflow: hidden !important; /* WAJIB: biar slide yang ngantre nggak bikin meluber */
+}
+
+/* Biar kartu nggak 'nendang' keluar layar di HP */
+@media (max-width: 576px) {
+  .video-card {
+    margin: 0 5px; /* Kasih sedikit ruang biar bayangannya aman */
+  }
+}
+
       .container {
         width: 100%;
         max-width: 1200px;
