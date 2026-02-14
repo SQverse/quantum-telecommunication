@@ -2162,6 +2162,243 @@
   }
 }
 
+/* --- CHAT BUBBLE STYLE --- */
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat-bubble {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.chat-bubble.left { align-self: flex-start; }
+.chat-bubble.right { align-self: flex-end; flex-direction: row-reverse; }
+
+.chat-avatar {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.chat-content {
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.left .chat-content {
+  background: white;
+  color: var(--text-dark);
+  border-bottom-left-radius: 2px;
+}
+
+.right .chat-content {
+  background: var(--blue-gradient);
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-name {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.chat-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .chat-bubble { max-width: 95%; }
+  .chat-content p { font-size: 0.85rem; }
+}
+
+/* --- THE CALM HERO BOX STYLE --- */
+.solution-hero-box {
+  margin-top: 60px;
+  padding: 80px 20px;
+  background: #ffffff; /* Putih bersih */
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aksen Background Halus */
+.solution-hero-box::before {
+  content: 'Q';
+  position: absolute;
+  font-size: 25rem;
+  font-weight: 900;
+  color: #f8fafc;
+  top: -50px;
+  right: -50px;
+  z-index: 0;
+  line-height: 1;
+}
+
+.hero-box-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-box-label {
+  color: var(--blue-medium);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.hero-box-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-bottom: 25px;
+  letter-spacing: -1.5px;
+}
+
+.hero-box-text {
+  font-size: 1.15rem;
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 45px;
+}
+
+.hero-box-guide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: var(--accent-orange);
+}
+
+.guide-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--accent-orange), transparent);
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .solution-hero-box { padding: 60px 20px; }
+  .hero-box-title { font-size: 2rem; letter-spacing: -1px; }
+  .hero-box-text { font-size: 1rem; }
+  .guide-line { height: 40px; }
+}
+
+/* --- STEP-BY-STEP SUCCESS PATH --- */
+.success-path-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 40px 0;
+}
+
+.path-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.path-number {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-orange);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.4);
+}
+
+.path-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 100%;
+}
+
+.path-card.highlight {
+  border: 2px solid var(--blue-medium);
+  transform: translateY(-10px);
+}
+
+.path-icon {
+  font-size: 2.5rem;
+  color: var(--blue-medium);
+  margin-bottom: 20px;
+}
+
+.path-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--blue-dark);
+}
+
+.path-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Garis Penghubung Desktop */
+.path-connector {
+  flex: 0.5;
+  height: 2px;
+  background: dashed #cbd5e1;
+  border-top: 2px dashed #cbd5e1;
+  margin-top: 60px;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .success-path-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .path-connector {
+    display: none; /* Sembunyikan garis di HP biar gak berantakan */
+  }
+  .path-card.highlight {
+    transform: none;
+  }
+}
+
     </style>
   </head> 
   <body>
@@ -2264,109 +2501,107 @@
   </section>
 
     <!-- Permasalahan Pemula Section -->
-    <section id="problems">
-      <div class="container">
-        <div class="section-title">
-          <h2>Permasalahan Pemula</h2>
-        </div>
-        <div class="section-subtitle">
-          <p>
-            Masalah umum yang sering dihadapi oleh pemula yang ingin belajar
-            menjadi teknisi HP
-          </p>
-        </div>
-      <div class="problem-slider-wrapper">
-        <div class="problems-container">
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-question"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Bingung harus mulai belajar dari mana</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fab fa-youtube"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Udah coba ikuti di YouTube tapi gagal</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Belum tahu pasti analisa kerusakannya</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-diagnoses"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Masih kesulitan menentukan penyebab kerusakan yang pasti</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Tidak tahu cara analisa yang mudah dan tepat</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Selalu nombok ketika ada servisan masuk</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Masih kesulitan menentukan solusi-solusi terbaik</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Masih belum bisa baca skema dan flashing software</h3>
-            </div>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">
-              <i class="fas fa-user-friends"></i>
-            </div>
-            <div class="problem-text">
-              <h3>Tidak punya mentor untuk bertanya ketika kesulitan</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slider-indicators">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+     <section id="problems" class="py-5 bg-light">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Curhatan <span class="text-orange">Calon Teknisi</span></h2>
+      <p class="text-muted">Kamu ngerasa gini juga gak? Banyak pemula yang awalnya bingung kayak gini...</p>
     </div>
+
+    <div class="chat-container">
+      <div class="chat-bubble left animate__animated animate__fadeInLeft">
+        <div class="chat-avatar">🤔</div>
+        <div class="chat-content">
+          <span class="chat-name">Si Pemula</span>
+          <p>Duh, pengen banget jadi teknisi HP tapi bingung harus mulai belajar dari mana dulu ya? 😭</p>
+        </div>
       </div>
-    </section>
+
+      <div class="chat-bubble right animate__animated animate__fadeInRight">
+        <div class="chat-avatar">📹</div>
+        <div class="chat-content">
+          <span class="chat-name">Pejuang Otodidak</span>
+          <p>Udah coba ikuti tutorial di YouTube berkali-kali tapi tetep aja gagal, malah HP-nya jadi mati total! 😵‍💫</p>
+        </div>
+      </div>
+
+      <div class="chat-bubble left animate__animated animate__fadeInLeft">
+        <div class="chat-avatar">💸</div>
+        <div class="chat-content">
+          <span class="chat-name">Teknisi "Nombok"</span>
+          <p>Sering banget nombok pas dapet servisan karena salah analisa kerusakan. Bukannya untung malah buntung... 📉</p>
+        </div>
+      </div>
+
+      <div class="chat-bubble right animate__animated animate__fadeInRight">
+        <div class="chat-avatar">🙋‍♂️</div>
+        <div class="chat-content">
+          <span class="chat-name">Si Butuh Mentor</span>
+          <p>Gak punya temen buat nanya pas lagi stuck. Andai ada mentor yang bisa bimbing step-by-step sampe bisa. 💎</p>
+        </div>
+      </div>
+      
+      </div>
+    
+   <div class="solution-hero-box animate__animated animate__fadeIn">
+  <div class="hero-box-inner">
+    <div class="hero-box-label">SOLUSI TERBAIK!</div>
+    <h2 class="hero-box-title">Tenang, kamu gak Sendirian...</h2>
+    <p class="hero-box-text">
+      Gak perlu pusing sendirian. <strong>LPK Quantum Telecommunication Semarang</strong> hadir sebagai mentor pribadi yang siap membimbing kamu dari nol sampai mahir dan punya penghasilan sendiri!
+    </p>
+    <div class="hero-box-guide">
+      <div class="guide-line"></div>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
 
     <!-- Solusi Section -->
-    <section id="solutions" style="background-color: var(--blue-light)">
+     <section id="solutions" class="py-5" style="background-color: #f8fafc;">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Langkah Pasti <br> <span class="text-orange">Jadi Teknisi Ahli!</span></h2>
+      <p class="text-muted">Di LPK Quantum, kamu bakal didampingi lewat jalur pembelajaran yang terarah!</p>
+    </div>
+    
+    <div class="success-path-container">
+      <div class="path-item animate__animated animate__fadeInUp">
+        <div class="path-number">1</div>
+        <div class="path-card">
+          <div class="path-icon"><i class="fas fa-university"></i></div>
+          <h3>Belajar Intensif 10 Hari</h3>
+          <p>Materi padat praktik langsung di service center agar kamu cepat paham dunia kerja nyata.</p>
+        </div>
+      </div>
+
+      <div class="path-connector"></div>
+
+      <div class="path-item animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+        <div class="path-number">2</div>
+        <div class="path-card highlight">
+          <div class="path-icon"><i class="fas fa-couch"></i></div>
+          <h3>Fasilitas Mess Nyaman</h3>
+          <p>Khusus peserta luar kota, tersedia Mess AC & dapur umum gratis biar kamu fokus belajar saja!</p>
+        </div>
+      </div>
+
+      <div class="path-connector"></div>
+
+      <div class="path-item animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+        <div class="path-number">3</div>
+        <div class="path-card">
+          <div class="path-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Jaminan Sampai Bisa</h3>
+          <p>Belum mahir? Gratis mengulang kelas di angkatan berikutnya sampai kamu benar-benar siap mandiri!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- <section id="solutions" style="background-color: var(--blue-light)">
   <div class="container">
     <div class="section-title">
       <h2>Belajar di LPK Quantum Solusinya!</h2>
@@ -2404,7 +2639,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
     <!-- Pilihan Kelas Section -->
 
