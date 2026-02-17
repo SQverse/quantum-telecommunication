@@ -1908,6 +1908,82 @@
     height: 150px;
   }
 }
+
+/* --- BENTO VISION MISSION STYLE --- */
+.bento-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 25px;
+}
+
+.bento-vision-item {
+  background: #f8fafc;
+  border-radius: 35px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bento-vision-item:hover {
+  transform: translateY(-10px);
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(26, 60, 110, 0.08);
+  border-color: var(--accent-orange);
+}
+
+.v-icon-circle {
+  width: 60px; height: 60px;
+  background: var(--blue-gradient);
+  color: white;
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 25px;
+  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+}
+
+.v-label {
+  display: block;
+  font-size: 0.75rem; font-weight: 800;
+  color: var(--accent-orange);
+  letter-spacing: 2px; margin-bottom: 10px;
+}
+
+.bento-vision-item h3 {
+  font-size: 1.5rem; font-weight: 800;
+  line-height: 1.4; color: var(--blue-dark);
+}
+
+/* Specific Grid Layout */
+.bento-visi { grid-column: span 2; grid-row: span 1; }
+.bento-misi { grid-column: span 1; grid-row: span 2; }
+.bento-values { grid-column: span 2; }
+
+/* List Modern */
+.v-list-modern {
+  list-style: none; padding: 0; margin-top: 15px;
+}
+
+.v-list-modern li {
+  font-size: 0.95rem; color: #64748b;
+  margin-bottom: 15px; display: flex; align-items: center; gap: 12px;
+}
+
+.v-list-modern i { color: var(--accent-orange); font-size: 1.1rem; }
+
+/* Desktop Grid for Values */
+.v-list-modern.grid-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+
+/* Responsif Mobile */
+@media (max-width: 992px) {
+  .bento-vision-grid { grid-template-columns: 1fr; }
+  .bento-visi, .bento-misi, .bento-values { grid-column: span 1; grid-row: auto; }
+  .v-list-modern.grid-2 { grid-template-columns: 1fr; }
+}
   </style>
   </head>
   <body>
@@ -1997,8 +2073,8 @@
           </div>
 
           <div class="cta-group">
-            <a href="#cerita" class="btn-main">Sejarah Kami</a>
-            <a href="https://wa.me/628123456789" class="btn-wa">
+            <a href="#sejarah" class="btn-main">Sejarah Kami</a>
+            <a href="https://wa.me/6282171727337" class="btn-wa" target="_blank">
               <i class="fab fa-whatsapp"></i> Chat Admin
             </a>
           </div>
@@ -2007,47 +2083,6 @@
     </div>
   </div>
 </section>
-    <!-- <section class="hero-about-v2">
-  <div class="swiper hero-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
-      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
-    </div>
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-container-fixed">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <div class="hero-content-glass animate__animated animate__fadeInLeft">
-          <span class="badge-premium mb-3"><i class="fas fa-history me-2"></i>Sejak Tahun 2008</span>
-          <h1 class="display-4 fw-bold text-white mb-3">
-            Teknisi HP Profesional <br> <span class="text-warning">DIMULAI DARI SINI!</span>
-          </h1>
-          <p class="lead text-white mb-4">
-            LPK Quantum telah dipercaya selama lebih dari 20 tahun sebagai pusat pelatihan teknisi ponsel yang mencetak lulusan siap kerja dan siap usaha.
-          </p>
-          
-          <div class="hero-stats-about d-flex mb-4">
-            <div class="stat-item me-4">
-              <h4 class="fw-bold text-white mb-0">20+</h4>
-              <small>Tahun Pengalaman</small>
-            </div>
-            <div class="stat-item">
-              <h4 class="fw-bold text-white mb-0">5000+</h4>
-              <small>Lulusan Sukses</small>
-            </div>
-          </div>
-
-          <div class="hero-btns">
-            <a href="#sejarah" class="btn-primary-modern">Sejarah Kami</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
     <!-- Sejarah & Profil Section -->
     <section id="sejarah" class="sejarah-section py-5">
@@ -2202,100 +2237,51 @@
     </div>
   </div>
 </section>
-    <!-- <section id="why-us" class="why-us-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Mengapa Memilih Kami</h2>
-        </div>
-        <p class="section-subtitle">
-          Berbagai keunggulan yang membuat LPK Quantum menjadi pilihan tepat
-          untuk pelatihan teknisi HP dan telekomunikasi
-        </p>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <h3>Instruktur Berpengalaman</h3>
-            <p>
-              Diajar oleh praktisi yang telah berkecimpung di industri
-              telekomunikasi selama lebih dari 10 tahun
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <h3>Kurikulum Sesuai Industri</h3>
-            <p>
-              Materi pelatihan selalu diperbarui mengikuti perkembangan
-              teknologi dan kebutuhan industri terbaru
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>Fasilitas Lengkap</h3>
-            <p>
-              Peralatan praktik terkini dan lengkap untuk menunjang proses
-              belajar mengajar
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <h3>Sertifikasi Resmi</h3>
-            <p>
-              Lulusan mendapatkan sertifikat kompetensi yang diakui oleh
-              industri dan pemerintah
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <h3>Penyaluran Kerja</h3>
-            <p>
-              Bantuan penyaluran kerja ke perusahaan telekomunikasi dan service
-              center terkemuka
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-hand-holding-usd"></i>
-            </div>
-            <h3>Biaya Terjangkau</h3>
-            <p>
-              Program pelatihan dengan harga terjangkau dan berbagai pilihan
-              paket sesuai kebutuhan
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Komunitas Alumni</h3>
-            <p>
-              Jaringan alumni yang luas untuk berbagi pengalaman dan peluang
-              bisnis
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-building"></i>
-            </div>
-            <h3>Legalitas Lengkap</h3>
-            <p>
-              Lembaga terdaftar resmi dengan izin operasional dari instansi
-              terkait
-            </p>
-          </div>
+<!-- Section Visi Misi -->
+ <section id="vision-mission" class="py-5 bg-white">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Komitmen <span class="text-orange">Masa Depan</span></h2>
+      <p class="text-muted">Inilah pondasi utama kami dalam mencetak teknisi ponsel profesional sejak 2008.</p>
+    </div>
+
+    <div class="bento-vision-grid">
+      <div class="bento-vision-item bento-visi animate__animated animate__fadeInUp">
+        <div class="bento-vision-content">
+          <div class="v-icon-circle"><i class="fas fa-eye"></i></div>
+          <span class="v-label">VISI KAMI</span>
+          <h3>Melatih Teknisi Ponsel Yang <span class="text-orange">Amanah, Jujur, Handal dan Profesional.</span></h3>
         </div>
       </div>
-    </section> -->
+
+      <div class="bento-vision-item bento-misi animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+        <div class="bento-vision-content">
+          <div class="v-icon-circle"><i class="fas fa-bullseye"></i></div>
+          <span class="v-label">MISI UTAMA</span>
+          <ul class="v-list-modern">
+            <li><i class="fas fa-check-circle"></i> Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik</li>
+            <li><i class="fas fa-check-circle"></i> Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan</li>
+            <li><i class="fas fa-check-circle"></i> Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bento-vision-item bento-values animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+        <div class="bento-vision-content">
+          <div class="v-icon-circle"><i class="fas fa-gem"></i></div>
+          <span class="v-label">NILAI INTI</span>
+          <ul class="v-list-modern grid-2">
+            <li><i class="fas fa-star"></i> Profesionalisme</li>
+            <li><i class="fas fa-lightbulb"></i> Inovasi Pengajaran</li>
+            <li><i class="fas fa-handshake"></i> Integritas</li>
+            <li><i class="fas fa-user-graduate"></i> Fokus Keberhasilan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Tim & Instruktur Section -->
     <section id="instructors" class="py-5">
@@ -2387,6 +2373,8 @@
     </div>
   </div>
 </section>
+
+<!-- why -->
 
     <!-- Lightbox Modal -->
     <div id="lightboxModal" class="lightbox-modal">
