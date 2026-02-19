@@ -942,6 +942,248 @@
   footer .container {
     overflow: hidden;
   }
+
+  /* --- HERO MODERN GLASS PRISM --- */
+.hero-prism {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #050810; /* Dasar gelap banget biar glassmorphism-nya pop up */
+  overflow: hidden;
+}
+
+.prism-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('../assets/photos/section/berita1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) saturate(1.2); /* Bikin foto latar lebih dramatis */
+  transform: scale(1.1);
+}
+
+.glass-prism-card {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4px; /* Untuk efek border gradasi */
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.01));
+  border-radius: 35px;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+}
+
+.glass-inner {
+  background: rgba(15, 23, 42, 0.6); /* Warna navy transparan */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 60px;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.prism-subtitle {
+  color: var(--accent-orange);
+  letter-spacing: 5px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.prism-title {
+  font-family: 'Poppins', sans-serif; /* Pakai Poppins Adek */
+  font-weight: 900;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.prism-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Tombol Premium */
+.prism-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-prism-primary {
+  background: var(--accent-gradient);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+  transition: 0.3s;
+}
+
+.btn-prism-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-prism-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+  color: white;
+}
+
+.btn-prism-link:hover {
+  color: var(--accent-orange);
+}
+
+/* Efek Cahaya Tambahan */
+.hero-prism::after {
+  content: '';
+  position: absolute;
+  top: 10%; right: 10%;
+  width: 300px; height: 300px;
+  background: var(--accent-orange);
+  filter: blur(150px);
+  opacity: 0.15;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .prism-title { font-size: 2.5rem; }
+  .glass-inner { padding: 40px 20px; }
+  .prism-actions { flex-direction: column; }
+}
+
+@media (max-width: 576px) {
+ .prism-title {
+ font-size: 1.6rem;
+ }
+
+ .prism-desc {
+ font-size: 0.9rem;
+ }
+}
+
+/* --- CTA QUANTUM LIGHT STYLE --- */
+.cta-quantum-light {
+  padding: 120px 0;
+  background: #f0f4f8; /* Abu-abu kebiruan sangat muda */
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card-light {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid #ffffff;
+  border-radius: 40px;
+  padding: 70px 40px;
+  max-width: 850px;
+  margin: 0 auto;
+  z-index: 5;
+  box-shadow: 0 30px 60px rgba(74, 144, 226, 0.1); /* Shadow biru tipis */
+  transition: all 0.4s ease;
+}
+
+.cta-badge {
+  background: rgba(255, 107, 0, 0.1);
+  color: #ff6b00; /* Oranye Quantum */
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.cta-title-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #1a3c6e; /* Biru Gelap Quantum */
+  margin-bottom: 20px;
+}
+
+.text-blue {
+  color: #4a90e2; /* Biru Terang Quantum */
+}
+
+.cta-desc-light {
+  color: #5c728e;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* Button WhatsApp Custom */
+.btn-quantum-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-quantum-wa:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.4);
+  color: white;
+  filter: brightness(1.1);
+}
+
+.cta-subtext {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Dekorasi Lingkaran */
+.circle-deco {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 250px;
+  height: 250px;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .cta-title-light { font-size: 2.2rem; }
+  .glass-card-light { padding: 40px 20px; margin: 0 15px; }
+  .btn-quantum-wa { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 576px) {
+  .cta-title-light { font-size: 20px; }
+  .cta-desc-light { font-size: 14px; }
+  .glass-card-light { padding: 40px 20px; margin: 0 15px; }
+  .btn-quantum-wa { 
+  font-size: 12px;
+  padding: 10px 10px;
+  justify-content: center; }
+}
     </style>
   </head>
   <body>
@@ -985,14 +1227,25 @@
     </header>
 
     <!-- Hero News Section -->
-    <section class="news-hero">
-      <div class="container news-hero-content">
-        <h1 class="news-hero-title">Berita & Artikel LPK Quantum</h1>
-        <p class="news-hero-subtitle">
-          Update terbaru seputar kegiatan, tips, dan dunia telekomunikasi
+    <section class="hero-prism">
+  <div class="prism-bg"></div>
+  <div class="container">
+    <div class="glass-prism-card animate__animated animate__zoomIn">
+      <div class="glass-inner">
+        <span class="prism-subtitle">OFFICIAL NEWSROOM</span>
+        <h1 class="prism-title">Berita <span class="text-orange"> & Update</span></h1>
+        <p class="prism-desc">
+          Update harian mengenai teknologi, inovasi kurikulum, dan kegiatan 
+          pusat pelatihan teknisi smartphone terbaik di Semarang.
         </p>
+        <div class="prism-actions">
+          <a href="#news-list" class="btn-prism-primary">Mulai Membaca</a>
+          <a href="#news-list" class="btn-prism-link">Video Tutorial <i class="fas fa-play-circle"></i></a>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- News Section -->
     <section id="news-list">
@@ -2184,23 +2437,29 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Ikuti Informasi Terbaru Kami</h2>
-        </div>
-        <p>
-          Dapatkan update terbaru seputar program pelatihan, tips teknisi, dan
-          berita terbaru dari LPK Quantum
+    <section class="cta-quantum-light">
+  <div class="container">
+    <div class="glass-card-light animate__animated animate__fadeInUp">
+      <div class="circle-deco"></div>
+      
+      <div class="cta-content-light text-center">
+        <span class="cta-badge">KONSULTASI GRATIS</span>
+        <h2 class="cta-title-light">Siap Jadi Teknisi <span class="text-blue">Handal?</span></h2>
+        <p class="cta-desc-light">
+          Jangan cuma baca beritanya, jadilah bagian dari sejarah LPK Quantum. 
+          Hubungi admin kami sekarang untuk info pendaftaran dan promo bulan ini.
         </p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/6282171727337" target="_blank" class="btn btn-outline"
-            >Hubungi Kami</a
-          >
-          <a href="https://wa.me/6282171727337" class="btn">Daftar Sekarang</a>
+
+        <div class="cta-action-wrapper">
+          <a href="https://wa.me/6281234567890" target="_blank" class="btn-quantum-wa">
+            <i class="fab fa-whatsapp"></i> Daftar Sekarang via WhatsApp
+          </a>
+          <p class="cta-subtext">Respon cepat di jam kerja (08.00 - 16.00 WIB)</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer>
