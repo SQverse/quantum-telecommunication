@@ -1431,13 +1431,6 @@
         font-weight: 600;
       }
 
-      /* Berita Section */
-      .news-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 30px;
-      }
-
       .news-card {
         background: var(--card-bg);
         border-radius: 15px;
@@ -2126,7 +2119,6 @@
         }
 
         .alumni-container,
-        .news-container,
         .collaboration-container,
         .testimonials-container {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2343,7 +2335,6 @@
 @media (max-width: 768px) {
   /* Container untuk horizontal scroll */
   .alumni-container,
-  .news-container,
   .collaboration-container {
     display: flex;
     overflow-x: auto;
@@ -2595,7 +2586,6 @@
         }
 
         .alumni-container,
-        .news-container,
         .collaboration-container,
         .testimonials-container {
           grid-template-columns: 1fr;
@@ -2765,9 +2755,20 @@
   padding: 40px 0;
 }
 
+.btn-compro-primary {
+  background: var(--blue-dark);
+  color: var(--text-light);
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
 /* State Awal Card (Hidden & Background State) */
 .feature-depth-card {
   background: var(--card-bg);
+  margin: 0 12px;
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -3112,8 +3113,8 @@
 .news-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 20px;
+  margin: 0 10px;
 }
 
 .news-card {
@@ -4108,6 +4109,8 @@
   </div>
 </section>
 
+<!-- Section Instruktur -->
+
     <section id="instructors" class="py-5" style="background-color: #f8f9fa;">
   <div class="container text-center"> 
     <div class="container"> <div class="section-title">
@@ -4300,8 +4303,6 @@
     </div>
   </div>
 </section>
-
-    <!-- Testimoni Video Section -->
 
     <!-- Partners Carousel Section -->
     <section class="partners-section">
