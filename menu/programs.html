@@ -73,7 +73,6 @@
       html {
         scroll-behavior: smooth;
         scroll-padding-top: 80px;
-        overflow-x: hidden;
       }
 
       body {
@@ -82,9 +81,13 @@
         background-color: var(--bg-light);
         overflow-x: hidden;
         transition: var(--transition);
-        width: 100%;
-        max-width: 100vw;
       }
+
+      html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Ini kunci utamanya! */
+  position: relative;
+}
 
       .container {
         width: 100%;
@@ -386,60 +389,6 @@
         font-weight: 600;
       }
 
-      /* Solusi Section - DISESUAIKAN */
-      .solutions-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-
-      .solution-card {
-        background: var(--card-bg);
-        border-radius: 15px;
-        overflow: visible;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        padding: 30px;
-        text-align: center;
-      }
-
-      .solution-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .solution-icon {
-        width: 70px;
-        height: 70px;
-        background: var(--blue-gradient);
-        color: var(--text-light);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        margin: 0 auto 20px;
-        transition: var(--transition);
-      }
-
-      .solution-card:hover .solution-icon {
-        transform: scale(1.1);
-      }
-
-      .solution-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        color: var(--blue-dark);
-        line-height: 1.3;
-        font-weight: 700;
-      }
-
-      .solution-card p {
-        color: #666;
-        line-height: 1.6;
-        font-size: 1rem;
-      }
-
 /* Kepake */
       .class-price {
         color: var(--accent-orange);
@@ -626,12 +575,12 @@
       }
 
       /* Footer - DISESUAIKAN dengan news.html */
+      /* Footer */
       footer {
         background: var(--blue-dark);
         color: var(--text-light);
         padding: 60px 0 20px;
         position: relative;
-        width: 100%;
       }
 
       footer::before {
@@ -649,7 +598,6 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 40px;
         margin-bottom: 30px;
-        width: 100%;
       }
 
       .footer-logo {
@@ -657,13 +605,6 @@
         font-size: 1.8rem;
         font-weight: 700;
         color: var(--text-light);
-      }
-
-      .footer-about p {
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.6;
-        font-size: 1rem;
-        margin-bottom: 20px;
       }
 
       .footer-social {
@@ -691,7 +632,7 @@
       }
 
       .footer-links h3,
-      .footer-contact h3 {
+      .footer-newsletter h3 {
         font-size: 1.2rem;
         margin-bottom: 20px;
         position: relative;
@@ -700,7 +641,7 @@
       }
 
       .footer-links h3::after,
-      .footer-contact h3::after {
+      .footer-newsletter h3::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -735,12 +676,30 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        word-wrap: break-word;
       }
 
       .footer-contact i {
         color: var(--blue-medium);
         width: 20px;
+      }
+
+      .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        overflow: hidden;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
       }
 
       .copyright {
@@ -751,7 +710,7 @@
         font-size: 0.9rem;
       }
 
-      /* Floating WhatsApp Button - DISESUAIKAN */
+      /* Floating WhatsApp Button */
       .whatsapp-float {
         position: fixed;
         width: 60px;
@@ -776,7 +735,7 @@
         background-color: #128c7e;
       }
 
-      /* Back to Top Button - DISESUAIKAN */
+      /* Back to Top Button */
       .back-to-top {
         position: fixed;
         bottom: 90px;
@@ -846,7 +805,6 @@
         }
 
         .problems-container,
-        .solutions-container,
         .materi-container,
         .teknis-container {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -960,7 +918,6 @@
         }
 
         .problems-container,
-        .solutions-container,
         .materi-container,
         .teknis-container {
           grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1211,6 +1168,15 @@
   }
   .slider-dots {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .success-path-container {
+    margin: 4px 13px;
+  }
+  .btn-whatsapp-pulse {
+    padding: 3px 4px;
   }
 }
 
@@ -2678,7 +2644,7 @@
   border-radius: 50px;
   font-weight: 800;
   text-decoration: none !important;
-  font-size: 1.1rem;
+  font-size: 1rem;
   box-shadow: 0 0 0 0 rgba(255, 140, 66, 0.7);
   animation: pulse-orange 2s infinite;
   transition: 0.3s;
@@ -2726,12 +2692,15 @@
 }
 
 @media (max-width: 576px) {
+  .cta-exclusive-box { padding: 60px 20px; border-radius: 30px; }
+  .cta-title { font-size: 1.2rem; }
+  .cta-description { font-size: 0.8rem; }
+  .btn-whatsapp-pulse { width: 70%; padding: 10px 13px; font-size: 10px; }
+}
+
+@media (max-width: 576px) {
   .cta-exclusive-box {
     margin: 0 10px;
-  }
-  .btn-whatsapp-pulse {
-    width: 70%;
-    font-size: 11px;
   }
 }
 
@@ -3708,12 +3677,6 @@
               >
                 <i class="fab fa-youtube"></i>
               </a>
-              <a
-                href="https://www.tiktok.com/@quantum.telecom"
-                aria-label="TikTok"
-              >
-                <i class="fab fa-tiktok"></i>
-              </a>
             </div>
           </div>
           <div class="footer-links">
@@ -3757,7 +3720,15 @@
               <i class="fas fa-envelope"></i>
               quantumtelecommunication38@gmail.com
             </p>
-          </div>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>        
         </div>
         <div class="copyright">
           <p>&copy; 2025 LPK Quantum Telecommunication. All Rights Reserved.</p>
