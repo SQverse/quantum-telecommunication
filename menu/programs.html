@@ -609,6 +609,7 @@
 
       .footer-social {
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
         margin-top: 20px;
       }
@@ -683,6 +684,35 @@
         width: 20px;
       }
 
+      @media (max-width: 576px) {
+        .footer-logo {
+          font-size: 1.8rem;
+        }
+
+        .footer-content p{
+          font-size: 0.9rem;
+          text-align: justify;
+          margin: 0 7px;
+        }
+
+        .footer-links {
+          font-size: 0.9rem;
+        }
+
+        .footer-contact {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .footer-contact p {
+          flex-direction: column;
+          font-size: 0.85rem;
+        }
+      }
+
       .map-container {
         position: relative;
         width: 100%;
@@ -690,7 +720,7 @@
         overflow: hidden;
         border-radius: 50px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        margin-top: 20px;
+        margin: 20px 20px;
       }
 
       .map-container iframe {
