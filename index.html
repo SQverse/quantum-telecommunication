@@ -1955,6 +1955,8 @@
 
       /* Enhanced map container with larger size */
       .map-container {
+        display: flex;
+        justify-content: center;
         position: relative;
         width: 100%;
         padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
@@ -2763,6 +2765,15 @@
   font-weight: 600;
   font-size: 1rem;
   transition: var(--transition);
+}
+
+@media (max-width: 576px) {
+  .btn-compro-primary {
+    padding: 14px 14px;
+    font-size: 0.8rem;
+  }
+
+
 }
 
 /* State Awal Card (Hidden & Background State) */
