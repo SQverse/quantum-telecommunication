@@ -1009,6 +1009,72 @@
     border-radius: 15px;
     width: 100%;
 }
+
+/* --- SIMPLE & CLEAN BUTTONS --- */
+.simple-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-simple-primary {
+    background-color: #1a3c6e; /* Biru Gelap Quantum */
+    color: #ffffff !important;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 12px rgba(26, 60, 110, 0.2);
+}
+
+.btn-simple-primary:hover {
+    background-color: #ff6b00; /* Berubah jadi Oranye pas di-hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-simple-link {
+    color: #1a3c6e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-simple-link i {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-simple-link:hover {
+    color: #ff6b00;
+}
+
+.btn-simple-link:hover i {
+    transform: translate(3px, -3px); /* Efek panah ngangkat dikit */
+}
+
+/* Biar rapi di HP */
+@media (max-width: 576px) {
+    .simple-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .btn-simple-primary {
+        width: 100%;
+        text-align: center;
+    }
+}
     </style>
   </head>
   <body>
