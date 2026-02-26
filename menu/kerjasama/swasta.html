@@ -275,10 +275,9 @@
       }
 
       /* Breadcrumb */
-      .breadcrumb {
+      .breadcrumb { 
         padding: 20px 0;
         background-color: var(--blue-light);
-        margin-bottom: 40px;
       }
 
       .breadcrumb-content {
@@ -286,6 +285,7 @@
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
+        font-size: 0.9rem;
       }
 
       .breadcrumb-content a {
@@ -900,9 +900,152 @@
       footer .container {
         overflow: hidden;
       }
+
+      /* --- SIMPLE PRIVATE/SWASTA HERO --- */
+.hero-simple-gov {
+    position: relative;
+    background-color: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Dekorasi Dot Pattern */
+.hero-simple-gov::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(#e0e6ed 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Lingkaran Gradasi Halus */
+.hero-simple-gov::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hero-simple-gov .container {
+    position: relative;
+    z-index: 2;
+}
+
+.simple-title {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 800;
+    color: #1a3c6e;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.simple-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: #ff6b00; /* Tetap oranye biar Quantum banget */
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .simple-title {
+    text-align: left;
+    font-size: 2.5rem;
+  }
+}
+
+.simple-text {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 520px;
+}
+
+@media (max-width: 576px) {
+  .simple-text {
+    font-size: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Button Style */
+.simple-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-simple-primary {
+    background-color: #1a3c6e;
+    color: #ffffff !important;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(26, 60, 110, 0.2);
+}
+
+.btn-simple-primary:hover {
+    background-color: #ff6b00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-simple-link {
+    color: #1a3c6e;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-simple-link:hover {
+    color: #ff6b00;
+}
+
+/* Image Wrapper */
+.simple-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.simple-image-wrapper img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .hero-simple-gov { text-align: center; padding: 60px 0; }
+    .simple-title::after { margin: 15px auto; }
+    .simple-text { margin: 0 auto 30px; }
+    .simple-actions { justify-content: center; flex-direction: column; }
+    .btn-simple-primary { width: 100%; }
+}
     </style>
   </head>
   <body>
+
     <!-- Header & Navigation -->
     <header>
       <div class="container header-content">
@@ -964,16 +1107,35 @@
       </div>
     </div>
 
+    <!-- Hero Section -->
+     <section class="hero-simple-gov">
+  <div class="container">
+    <div class="row min-vh-100 align-items-center">
+      
+      <div class="col-lg-6 animate__animated animate__fadeIn">
+        <h1 class="simple-title">Kerjasama Dengan <br>Lembaga Swasta</h1>
+        <p class="simple-text">
+          Menjadi mitra penyedia tenaga kerja ahli dan pelatihan kustom untuk kebutuhan industri teknisi ponsel.
+        </p>
+        <div class="simple-actions">
+          <a href="#kerjasama" class="btn-simple-primary">Lihat Kemitraan</a>
+          <a href="#" class="btn-simple-link">Company Profile <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <!-- Kerjasama Swasta Section -->
     <section id="kerjasama-swasta">
       <div class="container">
         <div class="section-title">
-          <h2>Kerjasama dengan Swasta</h2>
+          <h2>Dokumentasi Kegiatan</h2>
         </div>
         <p class="section-subtitle">
           LPK Quantum telah berkolaborasi dengan berbagai perusahaan swasta
-          dalam bidang telekomunikasi dan pelatihan kerja untuk meningkatkan
-          kualitas pendidikan dan penyaluran kerja lulusan
+          dalam bidang teknisi ponsel
         </p>
 
         <div class="collaboration-container">
