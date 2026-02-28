@@ -2083,6 +2083,201 @@
   .roadmap-connector { width: 2px; height: 30px; border-left: 2px dashed rgba(255, 255, 255, 0.2); }
   .btn-cta-primary { width: 50%; font-size: 0.8rem; padding: 15px; }
 }
+
+/* --- ORG STRUCTURE REVISED --- */
+.org-structure {
+    background-color: #f4f7fa;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.org-tree-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.org-node {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+    border: 1px solid rgba(0,0,0,0.02);
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.node-photo {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #e6f0ff;
+}
+
+.node-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.node-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a3c6e;
+    margin: 0;
+}
+
+.node-info span {
+    font-size: 0.75rem;
+    color: #ff6b00;
+    font-weight: 600;
+    display: block;
+}
+
+.org-connector-v {
+    width: 2px;
+    height: 40px;
+    background: #cbd5e1;
+}
+
+.sub-level {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+}
+
+/* Garis horizontal desktop */
+.sub-level::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 2px;
+    background: #cbd5e1;
+}
+
+/* --- MOBILE VERSION (576px kebawah) --- */
+@media (max-width: 576px) {
+    .org-level {
+        flex-direction: column;
+        align-items: flex-start; /* Rata kiri supaya garis kelihatan */
+        padding-left: 40px;
+        gap: 30px;
+    }
+
+    .org-tree-wrapper {
+        align-items: flex-start;
+    }
+
+    /* Garis utama dari atas ke bawah di sisi kiri */
+    .org-tree-wrapper::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        bottom: 30px;
+        width: 2px;
+        background: #cbd5e1;
+        z-index: 1;
+    }
+
+    /* Cabang garis kecil ke setiap card */
+    .org-node::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        width: 20px;
+        height: 2px;
+        background: #cbd5e1;
+        top: 50%;
+    }
+
+    .org-node {
+        width: calc(100% - 20px);
+        max-width: 320px;
+        position: relative;
+    }
+
+    .sub-level::before, .org-connector-v {
+        display: none; /* Matikan garis desktop */
+    }
+
+    .sub-level {
+        padding-top: 0;
+    }
+}
+
+/* --- ORG STRUCTURE VERTICAL STYLE --- */
+.org-node {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column; /* Mengatur arah jadi vertikal */
+    align-items: center;    /* Mengetengahkan konten */
+    text-align: center;
+    gap: 20px;
+    width: 280px;
+    transition: 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+    z-index: 2;
+}
+
+.node-photo {
+    width: 120px; /* Ukuran foto lebih besar */
+    height: 120px;
+    border-radius: 20px; /* Sudut foto sedikit tumpul agar elegan */
+    overflow: hidden;
+    border: 4px solid var(--blue-light);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.node-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.node-info h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 5px;
+}
+
+.node-info span {
+    font-size: 0.85rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Penyesuaian garis untuk mobile tetap aman */
+@media (max-width: 576px) {
+    .org-node {
+        width: calc(100% - 40px);
+        max-width: 300px;
+        padding: 20px;
+    }
+    
+    .node-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
   </style>
   </head>
   <body>
@@ -2376,6 +2571,64 @@
             <li><i class="fas fa-handshake"></i> Integritas</li>
             <li><i class="fas fa-user-graduate"></i> Fokus Keberhasilan</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Struktur Organisasi -->
+     <section class="org-structure">
+  <div class="container">
+    <div class="section-title text-center animate__animated animate__fadeIn">
+      <h2>Struktur Organisasi</h2>
+      <p class="section-subtitle">Manajemen profesional di balik kesuksesan LPK Quantum.</p>
+    </div>
+
+    <div class="org-tree-wrapper animate__animated animate__fadeInUp">
+      <div class="org-level main-level">
+        <div class="org-node">
+          <div class="node-photo">
+            <img src="../assets/photos/instruktur/tomi1.JPG" alt="Direktur Utama">
+          </div>
+          <div class="node-info">
+            <h4>Tomie Sudiarno</h4>
+            <span>Owner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+
+      <div class="org-level sub-level">
+        <div class="org-node">
+          <div class="node-photo">
+            <img src="../assets/photos/instruktur/jun.jpeg" alt="Manajer Operasional">
+          </div>
+          <div class="node-info">
+            <h4>Djunaedi Sammad</h4>
+            <span>Senior Instructor</span>
+          </div>
+        </div>
+        
+        <div class="org-node">
+          <div class="node-photo">
+            <img src="../assets/photos/instruktur/nandieni-hisma.jpeg" alt="Kepala Akademik">
+          </div>
+          <div class="node-info">
+            <h4>Nandieni Hisma</h4>
+            <span>Software Specialist Instructor</span>
+          </div>
+        </div>
+
+        <div class="org-node">
+          <div class="node-photo">
+            <img src="../assets/photos/instruktur/ika.jpeg" alt="Kepala Akademik">
+          </div>
+          <div class="node-info">
+            <h4>Ika Fitrianingsih</h4>
+            <span>Business Specialist</span>
+          </div>
         </div>
       </div>
     </div>
