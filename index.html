@@ -3897,6 +3897,71 @@
     }
 }
 
+/* --- SPONSOR SLIDER STYLE --- */
+.sponsor-slider-section {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.section-header-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.section-header-mini .text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #1a3c6e;
+    letter-spacing: 2px;
+}
+
+.section-header-mini .line {
+    flex: 1;
+    height: 1px;
+    background: #e6f0ff;
+    max-width: 100px;
+}
+
+.sponsor-banner-box {
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(26, 60, 110, 0.05);
+    border: 1px solid #f0f4f8;
+    aspect-ratio: 16 / 9; /* Tetap proporsional landscape */
+}
+
+.sponsor-banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sponsor-tag {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(26, 60, 110, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Style buat slider navigasi */
+.sponsor-swiper {
+    padding-bottom: 50px !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #1a3c6e !important;
+    transform: scale(0.6);
+}
     </style>
   </head>
   <body>
@@ -3967,6 +4032,54 @@
 </div>
       </div>
     </section>
+
+    <section class="sponsor-slider-section">
+  <div class="container">
+    <div class="section-header-mini">
+      <span class="line"></span>
+      <span class="text">OFFICIAL PARTNERSHIP & SPONSORSHIP</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="swiper sponsor-swiper">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <a href="https://braderparts.info.braderparts.com/" target="_blank" class="sponsor-banner-box">
+            <div class="sponsor-tag">Braderparts</div>
+            <img src="assets/photos/mitra/braderpart-landscape.jpeg" alt="Braderparts">
+          </a>
+        </div>
+
+          <div class="swiper-slide">
+    <a href="https://bt-acc.com/en/" target="_blank" class="sponsor-banner-box">
+      <div class="sponsor-tag">BT ACC</div>
+      <img src="assets/photos/mitra/mitra7.png" alt="BT ACC">
+    </a>
+  </div>
+
+        <div class="swiper-slide">
+    <a href="https://ogsupershinestar.com/" target="_blank" class="sponsor-banner-box">
+      <div class="sponsor-tag">OG Super Shinestar</div>
+      <img src="assets/photos/mitra/mitra5-landscape.png" alt="OG Super Shinestar">
+    </a>
+  </div>
+
+  <div class="swiper-slide">
+    <a href="https://www.instagram.com/meetoosunshine.official/" target="_blank" class="sponsor-banner-box">
+      <div class="sponsor-tag">Meetoo</div>
+      <img src="assets/photos/mitra/mitra6-landscape.png" alt="Meeto">
+    </a>
+  </div>
+
+      </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- ABOUT SECTION -->
     <!-- assets/photos/section/tentang-kami.jpg -->
@@ -5005,6 +5118,24 @@ document.addEventListener("DOMContentLoaded", function () {
       1024: { slidesPerView: 3, centeredSlides: false }
     }
   });
+});
+
+var swiperSponsor = new Swiper(".sponsor-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: false, // Karena baru satu banner, loop dimatikan dulu
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 1.2 } // Di desktop kelihatan sedikit potongan slide berikutnya
+    }
 });
     </script>
   </body>
