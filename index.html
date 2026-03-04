@@ -64,16 +64,6 @@
         color: var(--blue-dark);
       }
 
-.hero-subtitle {
-  font-family: 'Roboto Condensed', sans-serif !important;
-  font-weight: 700;
-  text-transform: uppercase;
-  /* Pakai 'vw' biar otomatis sebaris di HP */
-  font-size: 5.5vw; 
-  white-space: nowrap;
-  color: #ffffff; /* Warna oranye biar stand out */
-}
-
       /* Dropdown Menu - Mobile */
       @media (max-width: 768px) {
         .dropdown-content {
@@ -316,7 +306,7 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/mitra/mitra7-potret.png");
+          url("assets/photos/mitra/braderpart-potrait.jpeg");
       }
 
       .hero-slide:nth-child(2) {
@@ -324,10 +314,18 @@
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
           ),
-          url("assets/photos/mitra/mitra6-potret.png");
+          url("assets/photos/mitra/mitra7-potret.png");
       }
 
       .hero-slide:nth-child(3) {
+        background-image: linear-gradient(
+            rgba(26, 60, 110, 0.7),
+            rgba(26, 60, 110, 0.7)
+          ),
+          url("assets/photos/mitra/mitra6-potret.png");
+      }
+
+      .hero-slide:nth-child(4) {
         background-image: linear-gradient(
             rgba(26, 60, 110, 0.7),
             rgba(26, 60, 110, 0.7)
@@ -386,7 +384,6 @@
         font-size: 1.2rem;
         font-weight: 500;
         font-style: italic;
-        margin-bottom: 30px;
         animation: fadeInDown 1s ease 0.4s forwards;
         opacity: 0;
         line-height: 1.2;
@@ -2503,7 +2500,7 @@
 
 .hero-content {
   background: rgba(255, 255, 255, 0.1); /* Kotak putih transparan */
-  backdrop-filter: blur(5px); /* Efek kaca buram */
+  backdrop-filter: blur(3.5px); /* Efek kaca buram */
   border-radius: 20px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3879,6 +3876,27 @@
         width: 100%;
     }
 }
+
+@media (max-width: 576px) {
+    /* 1. Atur Container Glassmorphism */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        /* Dorong konten ke arah bawah (flex-end) atau tengah (center) */
+        justify-content: center !important;
+    }
+
+    /* 2. Atur Jarak Teks */
+    .hero-content h1 {
+        font-size: 1.8rem !important; /* Ukuran pas buat HP */
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle-ticker {
+      margin-bottom: 16px;
+    }
+}
+
     </style>
   </head>
   <body>
@@ -3941,18 +3959,11 @@
   </div>
 </div>
         <h3 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah <br> Jujur, Handal dan Profesional</h3>
-        <div class="hero-buttons">
-          <a
-            href="https://api.whatsapp.com/send/?phone=6282171727337&text&type=phone_number&app_absent=0"
-            target="_blank"
-            class="btn"
-            >DAFTAR SEKARANG!</a
-          >
-        </div>
         <div class="hero-indicators">
   <div class="indicator active" data-slide="0"></div>
   <div class="indicator" data-slide="1"></div>
   <div class="indicator" data-slide="2"></div>
+  <div class="indicator" data-slide="3"></div>
 </div>
       </div>
     </section>
@@ -4367,6 +4378,14 @@
             <!-- Partner Items (duplicated for seamless loop) -->
             <div class="partner-item">
               <img
+                src="assets/photos/mitra/braderpart-landscape.jpeg"
+                alt="Mitra 1"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="partner-item">
+              <img
                 src="assets/photos/mitra/mitra1.png"
                 alt="Mitra 1"
                 loading="lazy"
@@ -4466,6 +4485,14 @@
             </a>
 
             <!-- Duplicated items for seamless loop -->
+            <div class="partner-item">
+              <img
+                src="assets/photos/mitra/braderpart-landscape.jpeg"
+                alt="Mitra 1"
+                loading="lazy"
+              />
+            </div>
+
             <div class="partner-item">
               <img
                 src="assets/photos/mitra/mitra1.png"
