@@ -301,38 +301,6 @@
   z-index: 1; /* Pastikan dia di atas slide yang lain */
 }
 
-      .hero-slide:nth-child(1) {
-        background-image: linear-gradient(
-            rgba(26, 60, 110, 0.7),
-            rgba(26, 60, 110, 0.7)
-          ),
-          url("assets/photos/mitra/braderpart-potrait.jpeg");
-      }
-
-      .hero-slide:nth-child(2) {
-        background-image: linear-gradient(
-            rgba(26, 60, 110, 0.7),
-            rgba(26, 60, 110, 0.7)
-          ),
-          url("assets/photos/mitra/mitra7-potret.png");
-      }
-
-      .hero-slide:nth-child(3) {
-        background-image: linear-gradient(
-            rgba(26, 60, 110, 0.7),
-            rgba(26, 60, 110, 0.7)
-          ),
-          url("assets/photos/mitra/mitra6-potret.png");
-      }
-
-      .hero-slide:nth-child(4) {
-        background-image: linear-gradient(
-            rgba(26, 60, 110, 0.7),
-            rgba(26, 60, 110, 0.7)
-          ),
-          url("assets/photos/mitra/mitra5-potret.png");
-      }
-
       .hero-content {
         position: relative;
         z-index: 2;
@@ -398,6 +366,40 @@
         opacity: 0;
       }
 
+.hero-slide-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Di depan slider */
+    pointer-events: none; /* Agar klik tetap tembus ke tombol navigasi slider */
+}
+
+.hero-content h2, .hero-content h3, .hero-content .ticker-wrapper {
+    pointer-events: auto; /* Agar teks tetap bisa diinteraksi jika perlu */
+}
+
+/* Navigasi Panah */
+.hero-nav {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.3);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+.hero-nav:after {
+    font-size: 1.2rem !important;
+}
+
+.hero-nav:hover {
+    background: var(--accent-orange);
+}
       /* Enhanced CTA button with hover effects and animations */
       @keyframes slideInUp {
         from {
@@ -3816,7 +3818,7 @@
 }
 
 .cta-card-wrapper {
-    background: var(--blue-dark); /* Biru Quantum Adek */
+    background: var(--blue-dark);
     padding: 50px;
     border-radius: 30px;
     box-shadow: 0 20px 50px rgba(26, 60, 110, 0.2);
@@ -3963,6 +3965,46 @@
     color: #1a3c6e !important;
     transform: scale(0.6);
 }
+
+/* --- HERO REFINEMENT (BACK TO DOC STYLE) --- */
+.hero {
+    position: relative;
+    height: 100vh; /* Samakan dengan doc.md */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+/* INDIKATOR & NAVIGASI: WAJIB DI DEPAN */
+.hero-nav, .swiper-pagination {
+    z-index: 100 !important; /* Nilai tinggi agar tidak tertutup elemen lain */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    pointer-events: none; /* Biar tetap bisa klik navigasi di belakangnya */
+}
+
+.hero-content > * {
+    pointer-events: auto; /* Biar teks tetap interaktif */
+}
+
+/* Responsivitas sesuai doc.md */
+@media (max-width: 576px) {
+    .hero { height: 80vh; }
+    .hero-title { font-size: 1.5rem; }
+    .hero-tagline { font-size: 0.9rem; }
+}
+
     </style>
   </head>
   <body>
@@ -4004,35 +4046,47 @@
       </div>
     </header>
 
-    <!-- hero section -->
-    <section id="home" class="hero">
-      <div class="hero-slideshow">
-        <div class="hero-slide active"></div>
-        <div class="hero-slide"></div>
-        <div class="hero-slide"></div>
+<section id="home" class="hero">
+  
+    <div class="swiper-button-next hero-nav"></div>
+    <div class="swiper-button-prev hero-nav"></div>
+    <div class="swiper-pagination"></div>
+
+  <div class="swiper hero-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/braderpart-potrait.jpeg');"></div>
       </div>
-      <div class="container hero-content">
-        <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
-        <div class="ticker-wrapper">
-  <div class="hero-subtitle-ticker">
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
-    <span>PELATIHAN - MAGANG - KERJA </span>
+      <div class="swiper-slide">
+        <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra7-potret.png');"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra6-potret.png');"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra5-potret.png');"></div>
+      </div>
+    </div>
   </div>
-</div>
-        <h3 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah <br> Jujur, Handal dan Profesional</h3>
-        <div class="hero-indicators">
-  <div class="indicator active" data-slide="0"></div>
-  <div class="indicator" data-slide="1"></div>
-  <div class="indicator" data-slide="2"></div>
-  <div class="indicator" data-slide="3"></div>
-</div>
+
+  <div class="container hero-content">
+    <h2 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h2>
+    <div class="ticker-wrapper">
+      <div class="hero-subtitle-ticker">
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
+        <span>PELATIHAN - MAGANG - KERJA </span>
       </div>
-    </section>
+    </div>
+    <h3 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah <br> Jujur, Handal dan Profesional</h3>
+    
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 <!-- 
     <section class="sponsor-slider-section">
   <div class="container">
@@ -4869,55 +4923,6 @@ if (themeToggle) {
   });
 }
       // Hero Slideshow dengan Indikator
-const heroSlides = document.querySelectorAll(".hero-slide");
-const indicators = document.querySelectorAll(".hero-indicators .indicator");
-let currentSlide = 0;
-
-function showSlide(index) {
-  // 1. Hilangkan kelas 'active' dari semua slide dan indikator
-  heroSlides.forEach((slide) => slide.classList.remove("active"));
-  indicators.forEach((indicator) => indicator.classList.remove("active"));
-
-  // 2. Pastikan index selalu valid (nge-loop)
-  // Jika index lebih besar dari jumlah slide, balik ke 0
-  if (index >= heroSlides.length) {
-    currentSlide = 0;
-  } 
-  // Jika index kurang dari 0, pergi ke slide terakhir
-  else if (index < 0) {
-    currentSlide = heroSlides.length - 1;
-  } 
-  else {
-    currentSlide = index;
-  }
-
-  // 3. Tambahkan kelas 'active' ke slide yang dipilih
-  heroSlides[currentSlide].classList.add("active");
-  
-  // Pastikan indikator ada sebelum ditambah kelas active (mencegah error kalau indikator ga ada di HTML)
-  if (indicators[currentSlide]) {
-    indicators[currentSlide].classList.add("active");
-  }
-}
-
-function nextSlide() {
-  // Tambah index slide, fungsi showSlide akan mengurus loop-nya
-  showSlide(currentSlide + 1);
-}
-
-// Jalankan otomatis setiap 5 detik (5000ms)
-setInterval(nextSlide, 5000);
-
-      // Event listener untuk indikator
-      indicators.forEach((indicator) => {
-        indicator.addEventListener("click", function () {
-          let slideIndex = parseInt(this.getAttribute("data-slide"));
-          showSlide(slideIndex);
-        });
-      });
-
-      // Change slide every 5 seconds
-      setInterval(nextSlide, 5000);
 
       const featuresGrid = document.getElementById('featuresGrid');
       const progressBar = document.getElementById('featuresProgressBar');
@@ -5066,6 +5071,22 @@ setInterval(nextSlide, 5000);
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  var swiperHero = new Swiper(".hero-slider", {
+    effect: "fade",              // Efek memudar mewah sesuai request
+    fadeEffect: { crossFade: true },
+    loop: true,                  // Bisa geser balik ke awal tanpa macet
+    autoplay: false,             // DIMATIKAN sesuai request Pak Tomi (Manual)
+    speed: 1000,                 // Kecepatan transisi yang smooth
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,           // Titik-titik indikator bisa diklik
+    },
+  });
   // 1. Script Animasi Muncul (Intersection Observer) - TETAP ADA
   const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
   const observer = new IntersectionObserver((entries) => {
