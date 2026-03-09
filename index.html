@@ -263,9 +263,8 @@
   
   /* --- Kuncinya di sini --- */
   width: 90%; /* Di layar kecil, dia bakal ambil 90% lebar layar (ada sisa 5% kiri & 5% kanan) */
-  max-width: 1000px; /* Di layar besar, dia nggak akan lebih dari 1000px */
-  margin: 100px auto 20px; /* 'auto' di kanan-kiri bakal naruh kotaknya tepat di tengah */
-  /* ------------------------ */
+  max-width: 1000px;
+  margin: 100px auto 20px;
   
   position: relative;
   overflow: hidden;
@@ -2198,16 +2197,6 @@
           z-index: 1000;
         }
 
-        .hero {
-    /* Kurangi tinggi sesuai kenyamanan Adek, misalnya jadi 35vh atau 40vh */
-    height: 35vh; 
-    min-height: 280px; /* Batas minimum supaya teks di dalamnya ga tumpuk-tumpukan */
-    
-    margin-top: 110px; /* Sesuaikan jarak dari header agar pas */
-    width: 92%; /* Jarak kiri-kanan sedikit lebih lebar di HP */
-    border-radius: 40px; 
-  }
-
   /* Opsional: Kecilkan sedikit ukuran teks agar proporsional dengan kotak yang lebih pendek */
   .hero-subtitle {
     font-size: 1rem;
@@ -3964,16 +3953,6 @@
 .swiper-button-next, .swiper-button-prev {
     color: #1a3c6e !important;
     transform: scale(0.6);
-}
-
-/* --- HERO REFINEMENT (BACK TO DOC STYLE) --- */
-.hero {
-    position: relative;
-    height: 100vh; /* Samakan dengan doc.md */
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
 }
 
 .hero-slider {

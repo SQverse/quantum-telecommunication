@@ -1,0 +1,52 @@
+[debug] [2026-03-07T05:10:46.009Z] ----------------------------------------------------------------------
+[debug] [2026-03-07T05:10:46.038Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2026-03-07T05:10:46.039Z] CLI Version:   15.8.0
+[debug] [2026-03-07T05:10:46.039Z] Platform:      win32
+[debug] [2026-03-07T05:10:46.039Z] Node Version:  v22.18.0
+[debug] [2026-03-07T05:10:46.040Z] Time:          Sat Mar 07 2026 12:10:46 GMT+0700 (Western Indonesia Time)
+[debug] [2026-03-07T05:10:46.040Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-07T05:10:46.046Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-03-07T05:10:58.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-07T05:10:58.904Z] > authorizing via signed-in user (abidsyauqirabbani@gmail.com)
+[debug] [2026-03-07T05:10:58.904Z] [iam] checking project quantum-cms for permissions ["firebase.projects.get"]
+[debug] [2026-03-07T05:10:58.906Z] Checked if tokens are valid: false, expires at: 1772697499642
+[debug] [2026-03-07T05:10:58.906Z] Checked if tokens are valid: false, expires at: 1772697499642
+[debug] [2026-03-07T05:10:58.907Z] > refreshing access token with scopes: []
+[debug] [2026-03-07T05:10:58.915Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-07T05:10:58.915Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-07T05:11:00.178Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-03-07T05:11:00.180Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-03-07T05:11:12.890Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-07T05:11:12.891Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-07T05:11:12.927Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms:testIamPermissions [none]
+[debug] [2026-03-07T05:11:12.927Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms:testIamPermissions  x-goog-user-project=quantum-cms
+[debug] [2026-03-07T05:11:12.928Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-07T05:11:14.861Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms:testIamPermissions 200
+[debug] [2026-03-07T05:11:14.862Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-07T05:11:14.865Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:14.865Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:14.865Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms [none]
+[debug] [2026-03-07T05:11:15.333Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms 200
+[debug] [2026-03-07T05:11:15.334Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/quantum-cms {"projectNumber":"401114727758","projectId":"quantum-cms","lifecycleState":"ACTIVE","name":"Quantum CMS","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-03T09:21:48.727574Z"}
+[info] 
+[info] === Serving from 'C:\Users\HP\Desktop\quantum-telecommunication\quantum-lab'...
+[info] 
+[debug] [2026-03-07T05:11:15.354Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:15.356Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:15.360Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/quantum-cms/sites 
+[debug] [2026-03-07T05:11:17.781Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/quantum-cms/sites 200
+[debug] [2026-03-07T05:11:17.782Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/quantum-cms/sites {"sites":[{"name":"projects/quantum-cms/sites/quantum-cms","defaultUrl":"https://quantum-cms.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2026-03-07T05:11:17.782Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:17.783Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:17.783Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms/webApps/-/config [none]
+[debug] [2026-03-07T05:11:21.560Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms/webApps/-/config 200
+[debug] [2026-03-07T05:11:21.560Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms/webApps/-/config {"projectId":"quantum-cms","appId":"1:401114727758:web:dc4dc3a557803d8840ca1f","storageBucket":"quantum-cms.firebasestorage.app","apiKey":"AIzaSyAfWFjqS5NFXSkWqdxzQUHnPaNj2eXQO3U","authDomain":"quantum-cms.firebaseapp.com","messagingSenderId":"401114727758","measurementId":"G-RCG1242DXN","projectNumber":"401114727758","version":"2"}
+[debug] [2026-03-07T05:11:21.595Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:21.596Z] Checked if tokens are valid: true, expires at: 1772863871892
+[debug] [2026-03-07T05:11:21.599Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms [none]
+[debug] [2026-03-07T05:11:22.541Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms 200
+[debug] [2026-03-07T05:11:22.542Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quantum-cms {"projectId":"quantum-cms","projectNumber":"401114727758","displayName":"Quantum CMS","name":"projects/quantum-cms","resources":{"hostingSite":"quantum-cms"},"state":"ACTIVE","etag":"1_136d6866-e23e-4b38-8365-8cb5de38a33f"}
+[debug] [2026-03-07T05:11:22.546Z] Specified "public" directory "n" does not exist; Deploy to Hosting site "quantum-cms" may fail or be empty.
+[info] i  hosting[quantum-cms]: Serving hosting files from: n {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mn\u001b[22m"}}
+[info] +  hosting[quantum-cms]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
