@@ -295,6 +295,7 @@
   background-repeat: no-repeat;
   /* ------------------------ */
 }
+
 .hero-slide.active {
   opacity: 1; /* Hanya yang aktif yang muncul */
   z-index: 1; /* Pastikan dia di atas slide yang lain */
@@ -328,33 +329,15 @@
         text-transform: uppercase;
       }
 
-      .hero-subtitle {
-        font-family: 'Roboto Condensed', sans-serif !important;
-        font-weight: 700;
-        text-transform: uppercase;
-  /* Pakai 'vw' biar otomatis sebaris di HP */
-  font-size: 5.5vw; 
-  white-space: nowrap;
-  color: #ffffff;
-        font-weight: 800;
-        margin-bottom: 15px;
-        animation: fadeInDown 1s ease 0.2s forwards;
-        opacity: 0;
-        line-height: 1.1;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.6);
-      }
 
       .hero-tagline {
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         font-weight: 500;
         font-style: italic;
         animation: fadeInDown 1s ease 0.4s forwards;
         opacity: 0;
         line-height: 1.2;
-        text-transform: uppercase;
         letter-spacing: 1px;
         color: #ffd700;
         text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.7);
@@ -2086,10 +2069,6 @@
           font-size: 0.9rem;
         }
 
-        .hero-subtitle {
-          font-size: 2rem;
-        }
-
         .alumni-container,
         .collaboration-container,
         .testimonials-container {
@@ -2196,16 +2175,7 @@
         .mobile-menu-btn {
           z-index: 1000;
         }
-
-  /* Opsional: Kecilkan sedikit ukuran teks agar proporsional dengan kotak yang lebih pendek */
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-tagline {
-    font-size: 0.8rem;
-  }
-
+        
         .hero-title {
           font-size: 1rem;
           margin-bottom: 10px;
@@ -2491,12 +2461,13 @@
 
 .hero-content {
   background: rgba(255, 255, 255, 0.1); /* Kotak putih transparan */
-  backdrop-filter: blur(3.5px); /* Efek kaca buram */
+  backdrop-filter: blur(5px); /* Efek kaca buram */
   border-radius: 20px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: inline-block; /* Biar kotaknya ngikutin lebar teks */
   margin: 0 auto;
+  gap: 50px;
 }
 
 .hero-tagline {
@@ -2514,14 +2485,6 @@
 
         .hero-title {
           font-size: 1rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.4rem;
-        }
-
-        .hero-tagline {
-          font-size: 0.8rem;
         }
 
         .btn {
@@ -2621,14 +2584,6 @@
 
         .hero-title {
           font-size: 0.8rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .hero-tagline {
-          font-size: 0.7rem;
         }
 
         .footer-content {
@@ -2897,11 +2852,15 @@
 /* Responsive: Ukuran teks di Mobile */
 @media (max-width: 576px) {
   .hero-subtitle-ticker span {
-    font-size: 1.2rem; /* Lebih kecil di HP agar tidak terlalu penuh */
+    font-size: 2.2rem; /* Lebih kecil di HP agar tidak terlalu penuh */
     letter-spacing: 3px;
   }
   .ticker-wrapper {
     padding: 8px 0;
+  }
+
+  .hero-tagline {
+    font-size: 5rem;
   }
 }
 
@@ -3984,6 +3943,11 @@
     .hero-tagline { font-size: 0.9rem; }
 }
 
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1rem;
+  }
+}
     </style>
   </head>
   <body>

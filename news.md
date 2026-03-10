@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita & Artikel - LPK Quantum Telecommunication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* Variabel Warna untuk Light dan Dark Mode */
+      :root {
+        /* Light Mode */
+        --blue-light: #e6f0ff;
+        --blue-medium: #4a90e2;
+        --blue-dark: #1a3c6e;
+        --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+        --text-dark: #333;
+        --text-light: #fff;
+        --bg-light: #f9fbff;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+
+        /* Transisi */
+        --transition: all 0.3s ease;
+      }
+
+      /* Dark Mode Variabel */
+      [data-theme="dark"] {
+        --blue-light: #1a3c6e;
+        --blue-medium: #3a7bd5;
+        --blue-dark: #e6f0ff;
+        --blue-gradient: linear-gradient(135deg, #3a7bd5 0%, #0d2b56 100%);
+        --text-dark: #f0f0f0;
+        --text-light: #e6e6e6;
+        --bg-light: #121212;
+        --card-bg: #1e1e1e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+        transition: var(--transition);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header & Navigation */
+      header {
+        background: var(--blue-gradient);
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 45px;
+        margin-right: 12px;
+        transition: var(--transition);
+      }
+
+      .logo h1 {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        font-weight: 800;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+        font-size: 0.9rem;
+        display: block;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--text-light);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      nav ul li a:hover::after {
+        width: 70%;
+      }
+
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--card-bg);
+        min-width: 200px;
+        box-shadow: var(--shadow-hover);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 1000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-content a {
+        color: var(--text-dark);
+        padding: 12px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+      }
+
+      .dropdown-content a:hover {
+        background: var(--blue-light);
+        color: var(--blue-dark);
+      }
+
+      .dropdown-content a::after {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        margin-left: 15px;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: var(--transition);
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(30deg);
+      }
+
+      /* Hero News Section */
+      a {
+        text-decoration: none;
+      }
+      
+      .news-hero {
+        height: 60vh;
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+            rgba(26, 60, 110, 0.8),
+            rgba(26, 60, 110, 0.8)
+          ),
+          url("../assets/photos/CTA/hero11.jpeg") center/cover no-repeat;
+      }
+
+      .news-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .news-hero-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        animation: fadeInDown 1s ease;
+        line-height: 1.1;
+      }
+
+      .news-hero-subtitle {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        animation: fadeInDown 1s ease 0.2s forwards;
+        opacity: 0;
+      }
+
+      /* Section Styles */
+      section {
+        padding: 90px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--blue-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        font-weight: 800;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--accent-gradient);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* News Category Tabs */
+      .news-categories {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .news-category {
+        padding: 12px 25px;
+        background: var(--card-bg);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .news-category.active {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      .news-category:hover:not(.active) {
+        background: rgba(74, 144, 226, 0.1);
+      }
+
+      /* News Grid */
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .news-item {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translateY(20px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .news-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .news-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .news-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .news-item:hover .news-image img {
+        transform: scale(1.1);
+      }
+
+      .news-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex: 1;
+      }
+
+      .news-date {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .news-title {
+        font-size: 1.2rem;
+        color: var(--blue-dark);
+        margin-bottom: 10px;
+        transition: var(--transition);
+        line-height: 1.4;
+      }
+
+      .news-item:hover .news-title {
+        color: var(--blue-medium);
+      }
+
+      .news-excerpt {
+        color: #666;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .news-link {
+        margin-top: auto;
+      }
+
+      .news-link {
+        color: var(--accent-orange);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: var(--transition);
+      }
+
+      .news-link:hover {
+        gap: 10px;
+        color: var(--accent-orange-dark);
+      }
+
+      /* Pagination */
+      .news-pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 10px;
+      }
+
+      .pagination-item {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: var(--card-bg);
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .pagination-item.active,
+      .pagination-item:hover {
+        background: var(--blue-medium);
+        color: var(--text-light);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        text-align: center;
+        padding: 80px 0;
+      }
+
+      .cta-section .section-title h2 {
+        color: var(--text-light);
+      }
+
+      .cta-section .section-title h2::after {
+        background: var(--text-light);
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--text-light);
+        color: var(--blue-medium);
+        padding: 16px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      .btn-outline:hover {
+        background: var(--text-light);
+        color: var(--blue-medium);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--blue-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--blue-gradient);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+        font-size: 1.2rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        background: var(--blue-medium);
+        transform: translateY(-3px);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .footer-links h3::after,
+      .footer-newsletter h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent-gradient);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--text-light);
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-contact i {
+        color: var(--blue-medium);
+        width: 20px;
+      }
+
+      /* Enhanced map container with larger size */
+      .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 45%; /* Reduced from 56.25% for wider aspect ratio */
+        overflow: hidden;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--blue-gradient);
+        color: var(--text-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Animasi */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .news-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .news-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: var(--blue-dark);
+          padding: 80px 20px 20px;
+          transition: left 0.3s ease;
+          z-index: 999;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+          overflow-y: auto;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 12px;
+          border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: transparent;
+          margin-left: 20px;
+          display: none;
+        }
+
+        .dropdown.active .dropdown-content {
+          display: block;
+        }
+
+        .mobile-menu-btn {
+          position: relative;
+          z-index: 1000;
+        }
+
+        .news-hero {
+          height: 50vh;
+          min-height: 350px;
+        }
+
+        .news-hero-title {
+          font-size: 2rem;
+        }
+
+        .news-hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .news-categories {
+          flex-wrap: wrap;
+        }
+
+        .theme-toggle {
+          margin-left: 15px;
+        }
+
+        .mobile-menu-btn {
+          margin-left: 15px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .map-container {
+          position: relative;
+          border-radius: 20px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo h1 {
+          font-size: 1.2rem;
+        }
+
+        .news-hero-title {
+          font-size: 1.8rem;
+        }
+
+        .news-hero-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          padding: 14px 30px;
+          font-size: 1rem;
+        }
+
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+    
+    /* Perbaikan untuk konten footer */
+    .footer-contact p {
+      word-break: break-word;
+      hyphens: auto;
+    }
+    
+    /* Memastikan grid footer tidak menyebabkan overflow */
+    .footer-content {
+      gap: 25px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    /* Penyesuaian tambahan untuk layar sangat kecil */
+    .footer-content {
+      gap: 20px;
+    }
+    
+    .footer-contact p {
+      font-size: 0.9rem;
+    }
+    
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+    
+    /* Memastikan iframe peta tidak melebihi viewport */
+    .map-container iframe {
+      max-width: 100%;
+    }
+  }
+
+  /* Memastikan footer tidak melebihi viewport */
+  footer .container {
+    overflow: hidden;
+  }
+
+  /* --- HERO MODERN GLASS PRISM --- */
+.hero-prism {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #050810; /* Dasar gelap banget biar glassmorphism-nya pop up */
+  overflow: hidden;
+}
+
+.prism-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('../assets/photos/CTA/hero11.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) saturate(1.2); /* Bikin foto latar lebih dramatis */
+  transform: scale(1);
+}
+
+.glass-prism-card {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4px; /* Untuk efek border gradasi */
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.01));
+  border-radius: 35px;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+}
+
+.glass-inner {
+  background: rgba(15, 23, 42, 0.6); /* Warna navy transparan */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 60px;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.prism-subtitle {
+  color: var(--accent-orange);
+  letter-spacing: 5px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.prism-title {
+  font-family: 'Poppins', sans-serif; /* Pakai Poppins Adek */
+  font-weight: 900;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.prism-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Tombol Premium */
+.prism-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-prism-primary {
+  background: var(--accent-gradient);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+  transition: 0.3s;
+}
+
+.btn-prism-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-prism-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+  color: white;
+}
+
+.btn-prism-link:hover {
+  color: var(--accent-orange);
+}
+
+/* Efek Cahaya Tambahan */
+.hero-prism::after {
+  content: '';
+  position: absolute;
+  top: 10%; right: 10%;
+  width: 300px; height: 300px;
+  background: var(--accent-orange);
+  filter: blur(150px);
+  opacity: 0.15;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .prism-title { font-size: 2.5rem; }
+  .glass-inner { padding: 40px 20px; }
+  .prism-actions { flex-direction: column; }
+}
+
+@media (max-width: 576px) {
+ .prism-title {
+ font-size: 1.6rem;
+ }
+
+ .prism-desc {
+ font-size: 0.9rem;
+ }
+}
+
+/* --- CTA QUANTUM LIGHT STYLE --- */
+.cta-quantum-light {
+  padding: 120px 0;
+  background: #f0f4f8; /* Abu-abu kebiruan sangat muda */
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card-light {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid #ffffff;
+  border-radius: 40px;
+  padding: 70px 40px;
+  max-width: 850px;
+  margin: 0 auto;
+  z-index: 5;
+  box-shadow: 0 30px 60px rgba(74, 144, 226, 0.1); /* Shadow biru tipis */
+  transition: all 0.4s ease;
+}
+
+.cta-badge {
+  background: rgba(255, 107, 0, 0.1);
+  color: #ff6b00; /* Oranye Quantum */
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.cta-title-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #1a3c6e; /* Biru Gelap Quantum */
+  margin-bottom: 20px;
+}
+
+.text-blue {
+  color: #4a90e2; /* Biru Terang Quantum */
+}
+
+.cta-desc-light {
+  color: #5c728e;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* Button WhatsApp Custom */
+.btn-quantum-wa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-quantum-wa:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.4);
+  color: white;
+  filter: brightness(1.1);
+}
+
+.cta-subtext {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Dekorasi Lingkaran */
+.circle-deco {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 250px;
+  height: 250px;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .cta-title-light { font-size: 2.2rem; }
+  .glass-card-light { padding: 40px 20px; margin: 0 15px; }
+  .btn-quantum-wa { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 576px) {
+  .cta-title-light { font-size: 20px; }
+  .cta-desc-light { font-size: 14px; }
+  .glass-card-light { padding: 40px 20px; margin: 0 15px; }
+  .btn-quantum-wa { 
+  font-size: 10px;
+  padding: 10px 21px;
+  justify-content: center; 
+}
+.cta-subtext {
+  font-size: 0.6rem;
+}
+}
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-content">
+        <div class="logo">
+          <img
+            src="../assets/photos/logo/quantum-logo-color.png"
+            alt="Quantum Telecommunication Logo"
+          />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li class="dropdown">
+              <a href="programs.html"
+                ><i class="fas fa-graduation-cap"></i> Program</a>
+            </li>
+            <li class="dropdown">
+              <a href="#collaboration"
+                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="./kerjasama/swasta.html">Swasta</a>
+                <a href="./kerjasama/internasional.html">Internasional</a>
+              </div>
+            </li>
+            <li><a href="alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="#" class="active"><i class="fas fa-newspaper"></i> Berita</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center">
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero News Section -->
+    <section class="hero-prism">
+  <div class="prism-bg"></div>
+  <div class="container">
+    <div class="glass-prism-card animate__animated animate__zoomIn">
+      <div class="glass-inner">
+        <span class="prism-subtitle">OFFICIAL NEWSROOM</span>
+        <h1 class="prism-title">Berita <span class="text-orange"> & Update</span></h1>
+        <p class="prism-desc">
+          Update harian mengenai teknologi, inovasi kurikulum, dan kegiatan 
+          pusat pelatihan teknisi smartphone terbaik di Semarang.
+        </p>
+        <div class="prism-actions">
+          <a href="#news-list" class="btn-prism-primary">Mulai Membaca</a>
+          <a href="#news-list" class="btn-prism-link">Video Tutorial <i class="fas fa-play-circle"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- News Section -->
+    <section id="news-list">
+      <div class="container">
+        <div class="news-categories">
+          <button class="news-category" data-category="berita">
+            Semua Berita
+          </button>
+          <button class="news-category" data-category="artikel">Artikel</button>
+        </div>           
+        <div class="news-grid">
+          <!-- Berita 1 -->
+          <!-- Berita Kompas TV -->
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://youtu.be/uufiGFswFKk?si=0qXcqWkopjgNbvqf" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/uufiGFswFKk/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 19 Desember 2025
+              </p>
+              <h3 class="news-title">
+                LPK Swasta di Semarang Latih Disabilitas Tunadaksa Jadi Teknisi Gratis | KOMPAS SIANG
+              </h3>
+              <p class="news-excerpt">
+                JAWA TENGAH, KOMPAS.TV - Untuk mengentaskan kemiskinan sekaligus memberdayakan penyandang disabilitas, sebuah Lembaga Pelatihan Kerja (LPK) swasta di Kota Semarang memberikan pelatihan teknisi secara gratis kepada 10 penyandang disabilitas tunadaksa selama satu minggu penuh.
+                Sebanyak 10 penyandang disabilitas tunadaksa dari berbagai kota di Jawa Tengah mengikuti pelatihan teknisi yang digelar selama satu pekan.
+                Pelatihan ini merupakan program perdana yang diselenggarakan secara gratis tanpa dipungut biaya apa pun.
+                Program ini bertujuan mengentaskan kemiskinan serta membekali keterampilan baru bagi penyandang disabilitas agar tetap produktif dan mampu menghasilkan pendapatan meski memiliki keterbatasan fisik.
+              </p>
+              <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/R3mOb2yEhOs?si=fimmRBuBko680tl9" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/R3mOb2yEhOs/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>     
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 11 Januari 2026
+              </p>
+              <h3 class="news-title">
+                Teknisi Wajib Tahu! Pengenalan UFI BOX untuk Software HP | PART 1
+              </h3>
+              <p class="news-excerpt">
+                Di video ini kita kupas pengenalan UFI BOX sebagai tools software penting di dunia servis HP.
+                Bukan cuma kenal nama, tapi paham fungsi dan kapan tools ini benar-benar dipakai.
+                
+                Materi yang dibahas:
+                Pengertian UFI BOX dan perannya di servis HP
+                Jenis pekerjaan software yang bisa ditangani UFI BOX
+                Perbedaan UFI BOX dengan tools software lainnya
+                Kapan UFI BOX jadi solusi dan kapan bukan
+                Tips dasar penggunaan agar aman dan minim risiko
+                
+                Konten ini cocok buat teknisi pemula sampai intermediate yang pengen kerja lebih cepat, rapi, dan tepat keputusan.
+                Intinya, paham tools = minim trial error = servis makin profesional ⚡
+                
+                👉 Subscribe dan share ke rekan teknisi biar sama-sama upgrade skill.
+              </p>
+              <a href="https://youtu.be/R3mOb2yEhOs?si=fimmRBuBko680tl9" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/AzPDyJBzUvk?si=XRHtl0mZDdJgFz6K" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/AzPDyJBzUvk/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>     
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 26 Januari 2026
+              </p>
+              <h3 class="news-title">
+                HP Mati Total? Jangan Panik! Ini Urutan Cek yang Benar | Part 2
+              </h3>
+              <p class="news-excerpt">
+                Di video Part 2 ini, kita lanjutkan pembahasan langkah-langkah pengecekan HP mati total yang sering bikin panik, tapi sebenarnya bisa dianalisis dengan urutan yang tepat 🛠️
+                
+                Video ini cocok untuk:
+                ✅ Teknisi pemula
+                ✅ Peserta kursus teknisi HP
+                ✅ Kamu yang ingin belajar servis HP dari dasar
+                ✅ Atau sekadar ingin tahu penyebab HP mati total
+                
+                📌 Di video ini kamu akan belajar:
+                ✔️ Urutan cek lanjutan HP mati total
+                ✔️ Kesalahan umum saat menganalisa kerusakan
+                ✔️ Tips teknisi agar tidak salah diagnosa
+                ✔️ Dasar logika servis HP yang benar
+                
+                ⚠️ Ingat! Salah urutan cek bisa bikin:
+                ❌ Waktu terbuang
+                ❌ Salah ganti komponen
+                ❌ Kerusakan makin parah
+                
+                🎯 Tonton sampai habis supaya kamu paham alur servis yang benar seperti teknisi profesional!
+                
+                🔥 Ingin belajar langsung praktik servis HP & perangkat telekomunikasi?
+                Yuk gabung kursus teknisi offline di:
+                
+                🏫 LPK Quantum Telecommunication
+                📍 Jl. Bina Remaja No.4, Srondol Wetan,
+                Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
+                
+                📞 Info & Pendaftaran:
+                0821 71 72 73 37
+                
+                👉 Upgrade skillmu sekarang, jadi teknisi handal bersama LPK Quantum Telecommunication!
+                
+                🔔 Jangan lupa Like, Comment, dan Subscribe untuk Part selanjutnya & tips teknisi lainnya!
+              </p>
+              <a href="https://youtu.be/AzPDyJBzUvk?si=XRHtl0mZDdJgFz6K" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/k-mS4pRcFDY?si=cgsSzIQQubFkALml" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/k-mS4pRcFDY/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>     
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 24 Januari 2026
+              </p>
+              <h3 class="news-title">
+                HP Mati Total? Jangan Panik! Ini Urutan Cek yang Benar | Part 1
+              </h3>
+              <p class="news-excerpt">
+                HP Mati Total? Jangan Panik! Ini Urutan Cek yang Benar 🔧📱
+                
+                Di video membahasan langkah-langkah pengecekan HP mati total yang sering bikin panik, tapi sebenarnya bisa dianalisis dengan urutan yang tepat 🛠️
+                
+                Video ini cocok untuk:
+                ✅ Teknisi pemula
+                ✅ Peserta kursus teknisi HP
+                ✅ Kamu yang ingin belajar servis HP dari dasar
+                ✅ Atau sekadar ingin tahu penyebab HP mati total
+                
+                📌 Di video ini kamu akan belajar:
+                ✔️ Urutan cek lanjutan HP mati total
+                ✔️ Kesalahan umum saat menganalisa kerusakan
+                ✔️ Tips teknisi agar tidak salah diagnosa
+                ✔️ Dasar logika servis HP yang benar
+                
+                ⚠️ Ingat! Salah urutan cek bisa bikin:
+                ❌ Waktu terbuang
+                ❌ Salah ganti komponen
+                ❌ Kerusakan makin parah
+                
+                🎯 Tonton sampai habis supaya kamu paham alur servis yang benar seperti teknisi profesional!
+                
+                🔥 Ingin belajar langsung praktik servis HP & perangkat telekomunikasi?
+                Yuk gabung kursus teknisi offline di:
+                
+                🏫 LPK Quantum Telecommunication
+                📍 Jl. Bina Remaja No.4, Srondol Wetan,
+                Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
+                
+                📞 Info & Pendaftaran:
+                0821 71 72 73 37
+                
+                👉 Upgrade skillmu sekarang, jadi teknisi handal bersama LPK Quantum Telecommunication!
+                
+                🔔 Jangan lupa Like, Comment, dan Subscribe untuk Part selanjutnya & tips teknisi lainnya!
+              </p>
+              <a href="https://youtu.be/k-mS4pRcFDY?si=cgsSzIQQubFkALml" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/bdd3fTJaxno?si=0i8ZjJZzDAR5nPT9" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/bdd3fTJaxno/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>     
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 11 Januari 2026
+              </p>
+              <h3 class="news-title">
+                Dasar-Dasar Software HP yang Wajib Dipahami | PART 2
+              </h3>
+              <p class="news-excerpt">
+                Di video ini kita bahas dasar-dasar software HP yang wajib dipahami teknisi, khususnya buat lo yang masih pemula tapi pengen kerja lebih rapi dan efisien.
+                Tanpa ribet, tanpa asumsi—full konsep yang kepake di lapangan.
+                
+                Yang dibahas di video ini:
+                -Pengertian software HP & fungsinya
+                -Perbedaan kerusakan software vs hardware
+                -Jenis error software yang sering kejadian
+                -Kapan cukup reset, kapan wajib flashing
+                -Mindset teknisi biar gak salah ambil keputusan
+                -Materi ini cocok buat teknisi pemula, peserta pelatihan, sampai yang mau naik level di dunia servis HP.
+                Ingat, kuat di software = diagnosa makin cepat, risiko salah servis makin kecil ⚡
+                
+                👉 Jangan lupa subscribe & share ke circle teknisi lo biar sama-sama upgrade skill.
+              </p>
+              <a href="https://youtu.be/bdd3fTJaxno?si=0i8ZjJZzDAR5nPT9" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/Co6w51TSQIo?si=gdIdhRq2fMkIbgAj" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/Co6w51TSQIo/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 10 Januari 2026
+              </p>
+              <h3 class="news-title">
+                Dasar-Dasar Software HP yang Wajib Dipahami | PART 1
+              </h3>
+              <p class="news-excerpt">
+                Di video ini kita bahas dasar-dasar software HP yang wajib dipahami teknisi, khususnya buat lo yang masih pemula tapi pengen kerja lebih rapi dan efisien.
+                Tanpa ribet, tanpa asumsi—full konsep yang kepake di lapangan.
+                
+                Yang dibahas di video ini:
+                -Pengertian software HP & fungsinya
+                -Perbedaan kerusakan software vs hardware
+                -Jenis error software yang sering kejadian
+                -Kapan cukup reset, kapan wajib flashing
+                -Mindset teknisi biar gak salah ambil keputusan
+                -Materi ini cocok buat teknisi pemula, peserta pelatihan, sampai yang mau naik level di dunia servis HP.
+                Ingat, kuat di software = diagnosa makin cepat, risiko salah servis makin kecil ⚡
+                
+                👉 Jangan lupa subscribe & share ke circle teknisi lo biar sama-sama upgrade skill.
+              </p>
+              <a href="https://youtu.be/Co6w51TSQIo?si=gdIdhRq2fMkIbgAj" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/79_X_L4E7JE?si=w1tUezkyE9JwY0ur" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/79_X_L4E7JE/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 6 November 2025
+              </p>
+              <h3 class="news-title">
+                HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 3
+              </h3>
+              <p class="news-excerpt">
+                🔧 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng
+                
+                Pernah ngalamin HP yang cuma nyala logo tapi layarnya gelap? Tenang, jangan langsung vonis eMMC rusak! Di video ini, kita bakal bahas analisa dasar langkah demi langkah — mulai dari penyebab umum, cara deteksi awal, sampai pola pikir teknisi saat troubleshooting.
+                
+                Cocok banget buat kamu yang baru belajar servis HP atau lagi ngembangin skill analisa biar makin tajam.
+                
+                🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
+              </p>
+              <a href="https://youtu.be/79_X_L4E7JE?si=w1tUezkyE9JwY0ur" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/OZVgJWY3GRM?si=9drTLsawT6Lm2cXL" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/OZVgJWY3GRM/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 3 November 2025
+              </p>
+              <h3 class="news-title">
+                HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 2
+              </h3>
+              <p class="news-excerpt">
+                🔧 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng
+                
+                Pernah ngalamin HP yang cuma nyala logo tapi layarnya gelap? Tenang, jangan langsung vonis eMMC rusak! Di video ini, kita bakal bahas analisa dasar langkah demi langkah — mulai dari penyebab umum, cara deteksi awal, sampai pola pikir teknisi saat troubleshooting.
+                
+                Cocok banget buat kamu yang baru belajar servis HP atau lagi ngembangin skill analisa biar makin tajam.
+                
+                🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
+              </p>
+              <a href="https://youtu.be/OZVgJWY3GRM?si=9drTLsawT6Lm2cXL" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/NJxex-2gUTw?si=z8GEzEQeF26tqkNR" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/NJxex-2gUTw/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 1 November 2025
+              </p>
+              <h3 class="news-title">
+                HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 1
+              </h3>
+              <p class="news-excerpt">
+                🔧 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng
+                
+                Pernah ngalamin HP yang cuma nyala logo tapi layarnya gelap? Tenang, jangan langsung vonis eMMC rusak! Di video ini, kita bakal bahas analisa dasar langkah demi langkah — mulai dari penyebab umum, cara deteksi awal, sampai pola pikir teknisi saat troubleshooting.
+                
+                Cocok banget buat kamu yang baru belajar servis HP atau lagi ngembangin skill analisa biar makin tajam.
+                
+                🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
+              </p>
+              <a href="https://youtu.be/NJxex-2gUTw?si=z8GEzEQeF26tqkNR" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/5Tv-_EBQbPo?si=NHt8HZGHdXsFjryC" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/5Tv-_EBQbPo/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 12 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 3
+              </h3>
+              <p class="news-excerpt">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 3
+                
+                Kamu pengen bisa servis HP sendiri tapi masih bingung gimana cara pakai alat-alat teknisi seperti multimeter, power supply, atau alat uji lainnya? 😅
+                Tenang, di video kali ini kita bakal bahas dasar penggunaan alat ukur dan alat uji telepon yang wajib banget kamu pahami sebelum mulai perbaikan HP! 🔧📱
+                
+                Video ini cocok banget buat kamu yang baru mulai belajar servis HP dari nol, ataupun buat yang pengen upgrade skill biar makin profesional 💪
+                
+                🎥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE
+                biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
+              </p>
+              <a href="https://youtu.be/5Tv-_EBQbPo?si=NHt8HZGHdXsFjryC" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/XzvXQh3WxpY?si=lDkRGpE4yx5W1x7h" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/XzvXQh3WxpY/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 16 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 2
+              </h3>
+              <p class="news-excerpt">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 2
+                
+                Kamu pengen bisa servis HP sendiri tapi masih bingung gimana cara pakai alat-alat teknisi seperti multimeter, power supply, atau alat uji lainnya? 😅
+                Tenang, di video kali ini kita bakal bahas dasar penggunaan alat ukur dan alat uji telepon yang wajib banget kamu pahami sebelum mulai perbaikan HP! 🔧📱
+                
+                Video ini cocok banget buat kamu yang baru mulai belajar servis HP dari nol, ataupun buat yang pengen upgrade skill biar makin profesional 💪
+                
+                🎥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE
+                biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
+              </p>
+              <a href="https://youtu.be/XzvXQh3WxpY?si=lDkRGpE4yx5W1x7h" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/VgGktIz0kH0?si=ELz21GDXEvngRZMX" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/VgGktIz0kH0/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 12 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 1
+              </h3>
+              <p class="news-excerpt">
+                🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 1
+                
+                Kamu pengen bisa servis HP sendiri tapi masih bingung gimana cara pakai alat-alat teknisi seperti multimeter, power supply, atau alat uji lainnya? 😅
+                Tenang, di video kali ini kita bakal bahas dasar penggunaan alat ukur dan alat uji telepon yang wajib banget kamu pahami sebelum mulai perbaikan HP! 🔧📱
+                
+                Video ini cocok banget buat kamu yang baru mulai belajar servis HP dari nol, ataupun buat yang pengen upgrade skill biar makin profesional 💪
+                
+                🎥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE
+                biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
+              </p>
+              <a href="https://youtu.be/VgGktIz0kH0?si=ELz21GDXEvngRZMX" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/tn7mj6mItvg?si=BIOa6qkPTw25c4Qp" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/tn7mj6mItvg/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 29 Agustus 2025
+              </p>
+              <h3 class="news-title">
+                Rahasia Service HP: Teknik Angkat Pasang Komponen yang Benar - Part 2
+              </h3>
+              <p class="news-excerpt">
+                Hai Sobat Teknisi! 👋
+                Dalam video kali ini, kita akan membahas teknik-teknik profesional untuk angkat pasang komponen smartphone yang sering jadi rahasia para teknisi berpengalaman. Tutorial ini cocok banget buat kalian yang ingin:
+                ✅ Belajar service HP dari nol
+                ✅ Meningkatkan skill teknisi
+                ✅ Menghindari kesalahan fatal saat bongkar HP
+                ✅ Memahami teknik yang benar dan aman
+                
+                🎯 Yang Akan Kamu Pelajari:
+                
+                Persiapan tools dan workspace yang tepat
+                Teknik heating yang benar untuk berbagai komponen
+                Cara angkat IC BGA, QFN, dan komponen kecil
+                Tips pasang komponen tanpa merusak PCB
+                Troubleshooting masalah umum saat instalasi
+                Rahasia finishing yang rapi dan profesional
+                
+                ⚠️ PENTING: Video ini khusus untuk pembelajaran. Selalu gunakan ESD protection dan lakukan di area yang aman!
+                🔥 Jangan Lupa:
+                👍 LIKE jika video ini bermanfaat
+                🔔 SUBSCRIBE & nyalakan notifikasi untuk tutorial terbaru
+                💬 COMMENT pengalaman atau pertanyaan kalian
+                📤 SHARE ke teman-teman teknisi lainnya
+                📱 Ingin Konsultasi Lebih Lanjut?
+                0821 71 72 73 37
+              </p>
+              <a href="https://youtu.be/tn7mj6mItvg?si=BIOa6qkPTw25c4Qp" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/OoX5BgBI74g?si=ejEL3XjBr-cLcCMm" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/OoX5BgBI74g/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 28 Agustus 2025
+              </p>
+              <h3 class="news-title">
+                Rahasia Service HP: Teknik Angkat Pasang Komponen yang Benar - Part 1
+              </h3>
+              <p class="news-excerpt">
+                Hai Sobat Teknisi! 👋
+                Dalam video kali ini, kita akan membahas teknik-teknik profesional untuk angkat pasang komponen smartphone yang sering jadi rahasia para teknisi berpengalaman. Tutorial ini cocok banget buat kalian yang ingin:
+                ✅ Belajar service HP dari nol
+                ✅ Meningkatkan skill teknisi
+                ✅ Menghindari kesalahan fatal saat bongkar HP
+                ✅ Memahami teknik yang benar dan aman
+                
+                🎯 Yang Akan Kamu Pelajari:
+                
+                Persiapan tools dan workspace yang tepat
+                Teknik heating yang benar untuk berbagai komponen
+                Cara angkat IC BGA, QFN, dan komponen kecil
+                Tips pasang komponen tanpa merusak PCB
+                Troubleshooting masalah umum saat instalasi
+                Rahasia finishing yang rapi dan profesional
+                
+                ⚠️ PENTING: Video ini khusus untuk pembelajaran. Selalu gunakan ESD protection dan lakukan di area yang aman!
+                🔥 Jangan Lupa:
+                👍 LIKE jika video ini bermanfaat
+                🔔 SUBSCRIBE & nyalakan notifikasi untuk tutorial terbaru
+                💬 COMMENT pengalaman atau pertanyaan kalian
+                📤 SHARE ke teman-teman teknisi lainnya
+                📱 Ingin Konsultasi Lebih Lanjut?
+                0821 71 72 73 37
+              </p>
+              <a href="https://youtu.be/OoX5BgBI74g?si=ejEL3XjBr-cLcCMm" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/AgSVWJ5qiIQ?si=7eiOJBDChPEweHf0" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/AgSVWJ5qiIQ/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 17 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                HP Mati Total, Arus Masuk Tapi Drop — Ini Penyebab & Solusinya - Part 2
+              </h3>
+              <p class="news-excerpt">
+                Pernah ngalamin HP yang udah dikasih tegangan, arusnya muncul tapi langsung drop dan gak mau nyala sama sekali? 🤔
+                Masalah ini sering banget terjadi di dunia servis HP, terutama karena:
+                ⚙️ Jalur short di area power
+                ⚙️ IC utama (Power/CPU) bermasalah
+                ⚙️ Kapasitor short di jalur utama
+                ⚙️ Atau ada beban berat di jalur VBat
+                
+                Di video ini kita bahas cara analisa arus drop step-by-step, mulai dari pengecekan jalur, pengukuran komponen, sampai cara menentukan bagian mana yang rusak 💡
+                
+                📍 Cocok banget buat kamu yang lagi belajar analisa kerusakan HP mati total
+                💬 Tonton sampai habis biar gak salah diagnosa!
+              </p>
+              <a href="https://youtu.be/AgSVWJ5qiIQ?si=7eiOJBDChPEweHf0" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/N3Mdbr5-ZRU?si=O7kG380ALRxJbwuV" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/N3Mdbr5-ZRU/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 17 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                HP Mati Total, Arus Masuk Tapi Drop — Ini Penyebab & Solusinya - Part 1
+              </h3>
+              <p class="news-excerpt">
+                Pernah ngalamin HP yang udah dikasih tegangan, arusnya muncul tapi langsung drop dan gak mau nyala sama sekali? 🤔
+                Masalah ini sering banget terjadi di dunia servis HP, terutama karena:
+                ⚙️ Jalur short di area power
+                ⚙️ IC utama (Power/CPU) bermasalah
+                ⚙️ Kapasitor short di jalur utama
+                ⚙️ Atau ada beban berat di jalur VBat
+                
+                Di video ini kita bahas cara analisa arus drop step-by-step, mulai dari pengecekan jalur, pengukuran komponen, sampai cara menentukan bagian mana yang rusak 💡
+                
+                📍 Cocok banget buat kamu yang lagi belajar analisa kerusakan HP mati total
+                💬 Tonton sampai habis biar gak salah diagnosa!
+              </p>
+              <a href="https://youtu.be/N3Mdbr5-ZRU?si=O7kG380ALRxJbwuV" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/3iLMkpyEFhA?si=yVIL_8hRDh2cIxSu" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/3iLMkpyEFhA/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                📱🔧 MARI BELAJAR!!! KOMPONEN DASAR PADA SMARTPHONE – PART 2
+              </h3>
+              <p class="news-excerpt">
+                📱🔧 MARI BELAJAR!!! KOMPONEN DASAR PADA SMARTPHONE – PART 2
+                
+                Kamu penasaran gimana sih cara kerja komponen di dalam HP kamu? 🤔
+                Nah, di video kali ini kita bakal bahas komponen dasar pada smartphone yang wajib banget kamu pahami kalau mau belajar servis HP dari nol!
+                
+                Kita bakal kenalan satu per satu dengan komponen penting seperti resistor, kapasitor, dioda, IC, dan banyak lagi.
+                Biar kamu gak cuma tahu bentuknya, tapi juga ngerti fungsi dan cara mengukurnya pakai multitester. ⚡
+                
+                Video ini cocok banget buat kamu yang:
+                ✅ Pengen belajar servis HP tapi masih pemula
+                ✅ Pengen tahu fungsi tiap komponen di papan HP
+                ✅ Pengen mulai karier sebagai teknisi ponsel
+                
+                🎯 Jadi, tonton video ini sampai habis biar kamu makin paham dasar-dasarnya dan siap lanjut ke Part 2 yang lebih seru!
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan video belajar servis HP lainnya!
+              </p>
+              <a href="https://youtu.be/3iLMkpyEFhA?si=yVIL_8hRDh2cIxSu" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/vI7eztNd5WY?si=oNKYfWHfZSkqKWd2" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/vI7eztNd5WY/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                📱🔧 MARI BELAJAR!!! KOMPONEN DASAR PADA SMARTPHONE – PART 1
+              </h3>
+              <p class="news-excerpt">
+                Kamu penasaran gimana sih cara kerja komponen di dalam HP kamu? 🤔
+                Nah, di video kali ini kita bakal bahas komponen dasar pada smartphone yang wajib banget kamu pahami kalau mau belajar servis HP dari nol!
+                
+                Kita bakal kenalan satu per satu dengan komponen penting seperti resistor, kapasitor, dioda, IC, dan banyak lagi.
+                Biar kamu gak cuma tahu bentuknya, tapi juga ngerti fungsi dan cara mengukurnya pakai multitester. ⚡
+                
+                Video ini cocok banget buat kamu yang:
+                ✅ Pengen belajar servis HP tapi masih pemula
+                ✅ Pengen tahu fungsi tiap komponen di papan HP
+                ✅ Pengen mulai karier sebagai teknisi ponsel
+                
+                🎯 Jadi, tonton video ini sampai habis biar kamu makin paham dasar-dasarnya dan siap lanjut ke Part 2 yang lebih seru!
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan video belajar servis HP lainnya!
+              </p>
+              <a href="https://youtu.be/vI7eztNd5WY?si=oNKYfWHfZSkqKWd2" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/hYbwad_sjE8/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 19 Desember 2025
+              </p>
+              <h3 class="news-title">
+                ALAT DAN BAHAN YANG WAJIB DI MILIKI PARA TEKNISI PEMULA
+              </h3>
+              <p class="news-excerpt">
+                🔧 ALAT & BAHAN WAJIB TEKNISI PEMULA | WAJIB PUNYA! 🔧
+                Buat kamu yang baru terjun ke dunia teknisi, jangan sampai salah persiapan!
+                
+                Di video ini kita bahas alat dan bahan yang WAJIB dimiliki oleh teknisi pemula, baik teknisi listrik, elektronik, maupun servis umum.
+                📌 Alat Wajib Teknisi Pemula:
+                ✔ Obeng set (+ dan -)
+                ✔ Tang kombinasi, tang potong, tang lancip
+                ✔ Multimeter / Avometer
+                ✔ Tespen
+                ✔ Solder & timah
+                ✔ Kunci pas / kunci Inggris
+                ✔ Cutter & isolasi listrik
+                
+                📌 Bahan Pendukung:
+                ✔ Kabel berbagai ukuran
+                ✔ Sekrup & baut
+                ✔ Isolasi listrik
+                ✔ Lem tembak
+                ✔ Heat shrink
+                ✔ Cairan pembersih (contact cleaner)
+                
+                Dengan alat yang tepat, pekerjaan jadi lebih aman, cepat, dan profesional 💪
+                Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
+              </p>
+              <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/SDATqyfZMoU?si=RWSEYEksA59vaE5a" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/SDATqyfZMoU/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 15 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                Teknisi Pemula Wajib Tahu! Cara Cek HP Mati Total dari Nol - Part 2
+              </h3>
+              <p class="news-excerpt">
+                HP mati total emang bikin pusing, tapi tenang bro, semua ada solusinya 💪
+                
+                Di video kali ini, gue bakal tunjukin step-by-step cara diagnosa dan perbaikan HP mati total langsung dari meja servis Quantum Telecommunication 🔧📱
+                
+                Mulai dari:
+                
+                Cek awal pakai multitester
+                
+                Analisa jalur tegangan
+                
+                Identifikasi IC bermasalah
+                
+                Tips biar gak salah bongkar atau salah ukur
+                
+                Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal troubleshooting hardware, atau buat lo yang penasaran kenapa HP bisa tiba-tiba mati total tanpa sebab.
+                
+                🔥 Jangan lupa:
+                👉 Like biar makin semangat bikin konten edukatif
+                👉 Subscribe biar gak ketinggalan video belajar servis HP berikutnya
+                👉 Share ke sesama teknisi biar makin banyak yang upgrade skill!
+              </p>
+              <a href="https://youtu.be/SDATqyfZMoU?si=RWSEYEksA59vaE5a" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/-7YMfkMhd08?si=N2dadMUv8QYVXJWI" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/-7YMfkMhd08/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 15 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                Teknisi Pemula Wajib Tahu! Cara Cek HP Mati Total dari No - Part 1
+              </h3>
+              <p class="news-excerpt">
+                HP mati total emang bikin pusing, tapi tenang bro, semua ada solusinya 💪
+                Di video kali ini, gue bakal tunjukin step-by-step cara diagnosa dan perbaikan HP mati total langsung dari meja servis Quantum Telecommunication 🔧📱
+                
+                Mulai dari:
+                
+                Cek awal pakai multitester
+                
+                Analisa jalur tegangan
+                
+                Identifikasi IC bermasalah
+                
+                Tips biar gak salah bongkar atau salah ukur
+                
+                Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal troubleshooting hardware, atau buat lo yang penasaran kenapa HP bisa tiba-tiba mati total tanpa sebab.
+              </p>
+              <a href="https://youtu.be/-7YMfkMhd08?si=N2dadMUv8QYVXJWI" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita Kompas TV -->
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://youtu.be/9hcUKRBAl60?si=_Mvs1gp8wq1FLgN_" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/9hcUKRBAl60/maxresdefault.jpg"
+                alt="Berita Youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 29 Desember 2025
+              </p>
+              <h3 class="news-title">
+                Berdayakan Penyandang Disabilitas Melalui Pelatihan Teknisi
+              </h3>
+              <p class="news-excerpt">
+                Sebanyak 10 penyandang disabilitas tunadaksa dari berbagai wilayah di Jawa Tengah mengikuti pelatihan teknisi handphone secara gratis selama satu minggu penuh. Program yang diselenggarakan oleh sebuah Lembaga Pelatihan Kerja (LPK) swasta ini bertujuan untuk memberikan keterampilan baru agar para peserta tetap produktif dan mandiri secara ekonomi meskipun memiliki keterbatasan fisik.
+                Selama pelatihan, para peserta diajarkan berbagai keahlian teknis, mulai dari dasar-dasar ilmu kelistrikan hingga praktik langsung seperti mengganti LCD, memperbaiki konektor pengisi daya, serta menangani ponsel yang mati total.
+              </p>
+              <a href="https://youtu.be/9hcUKRBAl60?si=_Mvs1gp8wq1FLgN_" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Artikel -->
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/ioz2LuYQXFU?si=-VtNif-F1aB49SMP" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/ioz2LuYQXFU/maxresdefault.jpg"
+                alt="Materi Belajar youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 11 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 3
+              </h3>
+              <p class="news-excerpt">
+                Nah, kita udah sampai di Part 3 nih! 🔥
+                Kalau di Part 1 dan 2 kamu udah kenalan sama alat dasar dan alat lanjutan, di video kali ini kita bakal bahas alat-alat khusus yang sering dipakai teknisi profesional buat ngerjain kasus berat — kayak HP kena air, short, atau mati total 😎
+                
+                Kamu bakal tahu fungsi alat-alat penting seperti DC Power Supply, Microscope, Solder Uap, sampai alat bantu reballing dan jumper line.
+                
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
+              </p>
+              <a href="https://youtu.be/nEMbG8exgRw?si=NEhNBu-ZMfZtYAPy" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/nEMbG8exgRw?si=-r7KXbgND5NelQ3L" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/nEMbG8exgRw/maxresdefault.jpg"
+                alt="Materi Belajar youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 2
+              </h3>
+              <p class="news-excerpt">
+                Masih lanjutan dari video sebelumnya nih! 😎
+                Kalau di Part 1 kita udah bahas alat dasar buat servis HP, di video kali ini aku bakal tunjukin alat lanjutan yang biasa dipakai teknisi profesional — biar kamu makin jago dan siap praktek ke level berikutnya! 💪
+                
+                Kita bakal bahas alat-alat penting kayak power supply, blower, multimeter, sampai alat pendukung lain yang bikin kerjaan kamu jadi lebih rapi dan cepat 🔧
+                
+                Jadi buat kamu yang pengen serius belajar servis HP, video ini wajib banget kamu tonton sampai habis — biar gak salah pilih alat dan makin paham cara penggunaannya!
+                
+                🎯 Jadi, tonton video ini sampai habis biar kamu ngerti alat-alatnya, dan siap mulai langkah pertama jadi teknisi ponsel profesional!
+                
+                🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
+
+              </p>
+              <a href="https://youtu.be/nEMbG8exgRw?si=NEhNBu-ZMfZtYAPy" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="artikel">
+            <div class="news-image">
+              <a href="https://youtu.be/evLHe6mgqb4?si=kE9Vv0lRDFpHtgsQ" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/evLHe6mgqb4/maxresdefault.jpg"
+                alt="Materi Belajar youtube"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 9 Oktober 2025
+              </p>
+              <h3 class="news-title">
+                📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 1
+              </h3>
+              <p class="news-excerpt">
+                Kamu pengen bisa servis HP sendiri tapi masih bingung mulai dari mana? 😅
+                Tenang, di video ini aku bakal tunjukin alat dan bahan reparasi smartphone yang wajib kamu punya kalau mau belajar servis HP, entah buat hobi, nambah skill, atau bahkan buka usaha sendiri! 💪
+                
+                Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua bakal aku jelasin satu per satu biar kamu paham fungsinya dan bisa mulai praktek dari rumah.
+              </p>
+              <a href="https://youtu.be/evLHe6mgqb4?si=kE9Vv0lRDFpHtgsQ" target="_blank" class="news-link"
+                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://www.digtara.com/berita/210094/keterbatasan-fisik-bukan-penghalang-lpk-quantum-telecommunication-persembahkan-pelatihan-teknisi-handphone-gratis-bagi-penyandang-disabilitas/" target="_blank">
+              <img
+                src="../assets/photos/section/berita7.jpeg"
+                alt="Digtara"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 24 Desember 2025
+              </p>
+              <h3 class="news-title">
+                Keterbatasan Fisik Bukan Penghalang. LPK Quantum Telecommunication Persembahkan Pelatihan Teknisi Handphone Gratis Bagi Penyandang Disabilitas
+              </h3>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication Semarang menggelar pelatihan teknisi handphone bagi penyandang disabilitas untuk mendorong kemandirian ekonomi, membuka akses kerja, dan menegaskan bahwa keterbatasan fisik bukan penghalang untuk berkarya dan sukses.
+
+              </p>
+              <a href="https://www.digtara.com/berita/210094/keterbatasan-fisik-bukan-penghalang-lpk-quantum-telecommunication-persembahkan-pelatihan-teknisi-handphone-gratis-bagi-penyandang-disabilitas/" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://beritajateng.tv/lpk-quantum-telecommunication-buka-pelatihan-gratis-teknisi-hp-untuk-disabilitas/" target="_blank">
+              <img
+                src="../assets/photos/section/berita6.jpeg"
+                alt="Berita Jateng TV"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 17 Desember 2025
+              </p>
+              <h3 class="news-title">
+                LPK Quantum Telecommunication Buka Pelatihan Gratis Teknisi HP untuk Disabilitas
+              </h3>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication Semarang menggelar pelatihan teknisi handphone gratis bagi 10 penyandang disabilitas dari Semarang, Salatiga, dan Kabupaten Semarang untuk meningkatkan keterampilan sekaligus mendorong kemandirian ekonomi, dengan dukungan mitra industri hingga pendampingan pembukaan usaha.
+              </p>
+              <a href="https://jateng.pikiran-rakyat.com/jawa-tengah/pr-3739870364/pelatihan-teknisi-handphone-gratis-untuk-disabilitas-digelar-di-semarang-dorong-kemandirian-ekonomi?page=all" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://jateng.pikiran-rakyat.com/jawa-tengah/pr-3739870364/pelatihan-teknisi-handphone-gratis-untuk-disabilitas-digelar-di-semarang-dorong-kemandirian-ekonomi?page=all" target="_blank">
+              <img
+                src="../assets/photos/section/berita5.jpeg"
+                alt="Jateng Pikiran Rakyat"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 18 Desember 2025
+              </p>
+              <h3 class="news-title">
+                Pelatihan Teknisi Handphone Gratis untuk Disabilitas Digelar di Semarang, Dorong Kemandirian Ekonomi
+              </h3>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication Semarang menggelar pelatihan teknisi handphone gratis bagi penyandang disabilitas dengan dukungan mitra industri sebagai upaya mendorong kemandirian ekonomi, inklusivitas, dan pembukaan usaha mandiri di Kota Semarang.
+              </p>
+              <a href="https://jateng.pikiran-rakyat.com/jawa-tengah/pr-3739870364/pelatihan-teknisi-handphone-gratis-untuk-disabilitas-digelar-di-semarang-dorong-kemandirian-ekonomi?page=all" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div> 
+
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://www.suaramerdeka.com/ekonomi/0416430662/merakit-harapan-dari-ponsel-rusak-jalan-baru-kemandirian-disabilitas-di-semarang" target="_blank">
+              <img
+                src="../assets/photos/section/berita4.jpg"
+                alt="Suara Merdeka"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 17 Desember 2025
+              </p>
+              <h3 class="news-title">
+                Merakit Harapan dari Ponsel Rusak, Jalan Baru Kemandirian Disabilitas di Semarang
+              </h3>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication memberikan pelatihan reparasi
+                ponsel kepada penyandang disabilitas di Semarang, membuka
+                pelu  ang kemandirian ekonomi melalui keterampilan teknis.
+              </p>
+              <a href="https://www.suaramerdeka.com/ekonomi/0416430662/merakit-harapan-dari-ponsel-rusak-jalan-baru-kemandirian-disabilitas-di-semarang" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/" target="_blank">
+              <img
+                src="../assets/photos/section/berita1.jpg"
+                alt="Metro Times"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 8 Agustus 2023
+              </p>
+              <h3 class="news-title">
+                Cetak Pengusaha Muda Mandiri, LPK Quantum Telecommunication
+                Gandeng Bamuis BNI Gelar Pelatihan Teknisi Smartphone
+              </h3>
+              <p class="news-excerpt">
+                Lembaga Pelatihan Kerja Quantum Telecommunication berhasil
+                mencetak teknisi handphone profesional yang siap bersaing di
+                dunia kerja.
+              </p>
+              <a href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis" target="_blank">
+              <img
+                src="../assets/photos/section/berita2.jpg"
+                alt="Berita Suara Merdeka"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 9 Agustus 2023
+              </p>
+              <h3 class="news-title">
+                Tekan Potensi Pengangguran di Kota Semarang yang Tinggi, Belasan
+                Orang Dibekali Ketrampilan Teknis
+              </h3>
+              <p class="news-excerpt">
+                LPK Quantum Telecommunication menjadi lembaga pelatihan rujukan
+                bagi mereka yang ingin menjadi teknisi handphone profesional di
+                Jawa Tengah.
+              </p>
+              <a href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 3 -->
+          <div class="news-item visible" data-category="berita">
+            <div class="news-image">
+              <a href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP">
+              <img
+                src="../assets/photos/section/berita3.jpg"
+                alt="Berita Suara Merdeka"
+                loading="lazy"
+              />
+            </div>
+            <div class="news-content">
+              <p class="news-date">
+                <i class="far fa-calendar-alt"></i> 19 Februari 2020
+              </p>
+              <h3 class="news-title">
+                30 Mantan Pecandu Narkoba Dapat Pelatihan Reparasi HP
+              </h3>
+              <p class="news-excerpt">
+                Sebanyak 30 orang mantan pecandu narkoba mengikuti pelatihan
+                reparasi handphone (HP) di aula Yayasan Rehabilitasi AT-TAUHID
+                Jalan Gayamsari II No 41 A, Rabu (19/2/2020).
+              </p>
+              <a href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP" target="_blank" class="news-link"
+                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+              ></a>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 4 -->
+        </div>
+
+        <!-- Pagination -->
+        <!-- <div class="news-pagination">
+          <a href="#" class="pagination-item">1</a>
+          <a href="#" class="pagination-item">2</a>
+          <a href="#" class="pagination-item">3</a>
+          <a href="#" class="pagination-item">></a>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-quantum-light">
+  <div class="container">
+    <div class="glass-card-light animate__animated animate__fadeInUp">
+      <div class="circle-deco"></div>
+      
+      <div class="cta-content-light text-center">
+        <span class="cta-badge">KONSULTASI GRATIS</span>
+        <h2 class="cta-title-light">Siap Jadi Teknisi <span class="text-blue">Handal?</span></h2>
+        <p class="cta-desc-light">
+          Jangan cuma baca beritanya, jadilah bagian dari sejarah LPK Quantum. 
+          Hubungi admin kami sekarang untuk info pendaftaran dan promo bulan ini.
+        </p>
+
+        <div class="cta-action-wrapper">
+          <a href="https://wa.me/6281234567890" target="_blank" class="btn-quantum-wa">
+            <i class="fab fa-whatsapp"></i> Daftar Sekarang via WhatsApp
+          </a>
+          <p class="cta-subtext">Respon cepat di jam kerja (08.00 - 16.00 WIB)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang Teknisi Ponsel yang menghasilkan
+              tenaga kerja profesional dan kompeten.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@quantumtelecom41"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Link Cepat</h3>
+            <ul>
+              <li><a href="../index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="../index.html#programs">Program Pelatihan</a></li>
+              <li><a href="./kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="alumni.html">Alumni</a></li>
+              <li><a href="#">Berita</a></li>
+              <li><a href="testimoni.html">Testimoni</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
+              Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
+            </p>
+            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 821 7172 7337</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              quantumtelecommunication38@gmail.com
+            </p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- WhatsApp Float Button -->
+    <a
+      href="https://wa.me/6282171727337"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
+      const body = document.body;
+      const dropdowns = document.querySelectorAll(".dropdown");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        body.style.overflow = nav.classList.contains("active") ? "hidden" : "";
+
+        // Change icon
+        const icon = mobileMenuBtn.querySelector("i");
+        if (nav.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(
+        "nav ul li a:not(.dropdown > a)"
+      );
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          body.style.overflow = "";
+
+          // Reset icon
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Dropdown toggle for mobile
+      dropdowns.forEach((dropdown) => {
+  const link = dropdown.querySelector("a");
+  const dropdownContent = dropdown.querySelector(".dropdown-content");
+
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768 && dropdownContent) {
+      e.preventDefault();
+      dropdown.classList.toggle("active");
+    }
+  });
+});
+
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    }
+
+      // News Category Filter
+      const categoryButtons = document.querySelectorAll(".news-category");
+      const newsItems = document.querySelectorAll(".news-item");
+
+      function applyFilter(category) {
+  categoryButtons.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === category);
+  });
+
+  newsItems.forEach(item => {
+    item.style.display =
+      item.dataset.category === category ? "flex" : "none";
+  });
+}
+
+// klik tab
+categoryButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    applyFilter(btn.dataset.category);
+  });
+});
+
+// default saat load
+window.addEventListener("load", () => {
+  applyFilter("berita");
+});
+
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // aktifkan tombol
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.category;
+
+      newsItems.forEach(item => {
+        if (category === "all" || item.dataset.category === category) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  window.addEventListener("load", () => {
+  const defaultCategory = "berita";
+
+  categoryButtons.forEach(b => {
+    b.classList.toggle("active", b.dataset.category === defaultCategory);
+  });
+
+  newsItems.forEach(item => {
+    if (item.dataset.category === defaultCategory) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
+
+      
+      // Scroll animations
+      function checkScroll() {
+        const sections = document.querySelectorAll("section");
+        const backToTop = document.querySelector(".back-to-top");
+        const newsItems = document.querySelectorAll(".news-item");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (sectionTop < triggerHeight) {
+            section.classList.add("visible");
+          }
+        });
+
+        // Animate news items with staggered delay
+        newsItems.forEach((item, index) => {
+          const itemTop = item.getBoundingClientRect().top;
+          const triggerHeight = window.innerHeight * 0.8;
+
+          if (itemTop < triggerHeight) {
+            setTimeout(() => {
+              item.classList.add("visible");
+            }, index * 100);
+          }
+        });
+
+        // Show/hide back to top button
+        if (window.scrollY > 500) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+
+      // Newsletter form
+      const newsletterForm = document.querySelector(".newsletter-form");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[type="email"]');
+
+          if (emailInput.value && isValidEmail(emailInput.value)) {
+            alert("Terima kasih telah berlangganan newsletter kami!");
+            emailInput.value = "";
+          } else {
+            alert("Silakan masukkan alamat email yang valid.");
+            emailInput.focus();
+          }
+        });
+      }
+
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    </script>
+  </body>
+</html>
