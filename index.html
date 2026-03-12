@@ -307,7 +307,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: center;  
         height: 100%;
         text-align: center;
         padding: 0 20px;
@@ -327,8 +327,7 @@
         animation: fadeInDown 1s ease;
         line-height: 1.5;
         text-transform: uppercase;
-      }
-
+      } 
 
       .hero-tagline {
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -2065,9 +2064,6 @@
       }
 
       @media (max-width: 992px) {
-        .hero-title {
-          font-size: 0.9rem;
-        }
 
         .alumni-container,
         .collaboration-container,
@@ -2459,6 +2455,7 @@
   }
 }
 
+/* GLASSMORPHISM */
 .hero-content {
   background: rgba(255, 255, 255, 0.1); /* Kotak putih transparan */
   backdrop-filter: blur(5px); /* Efek kaca buram */
@@ -2481,10 +2478,6 @@
       @media (max-width: 576px) {
         .hero {
           min-height: 450px;
-        }
-
-        .hero-title {
-          font-size: 1rem;
         }
 
         .btn {
@@ -3781,6 +3774,12 @@
     margin-bottom: 15px;
 }
 
+@media (max-width: 576px) {
+  .cta-title {
+    font-size: 21px;
+  }
+}
+
 .cta-title span {
     color: var(--accent-orange); /* Aksen Oranye Quantum */
 }
@@ -3819,9 +3818,6 @@
     .cta-card-wrapper {
         padding: 30px;
         text-align: center;
-    }
-    .cta-title {
-        font-size: 1.8rem;
     }
     .btn-cta-main {
         width: 100%;
@@ -3939,13 +3935,12 @@
 /* Responsivitas sesuai doc.md */
 @media (max-width: 576px) {
     .hero { height: 80vh; }
-    .hero-title { font-size: 1.5rem; }
     .hero-tagline { font-size: 0.9rem; }
 }
 
 @media (max-width: 576px) {
   .hero-title {
-    font-size: 1rem;
+    font-size: 18px;
   }
 }
     </style>
