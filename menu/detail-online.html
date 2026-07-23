@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pelatihan Teknisi Handphone Android Online — 25 Pertemuan Live | Quantum Telecommunication</title>
+<meta name="description" content="Kelas teknisi handphone Android online 25 pertemuan live streaming, 50 jam, dari nol sampai bisa terima order. Rekaman bisa diulang. Rp800.000.">
+
+<meta property="og:title" content="Belajar Teknisi HP Android — 25 Pertemuan Live Streaming">
+<meta property="og:description" content="50 jam kelas live, job praktik tiap pertemuan, rekaman bisa diulang. Rp800.000.">
+<meta property="og:type" content="website">
+
+<!--
+==========================================================================
+  YANG PERLU DIGANTI SEBELUM TAYANG  (cari tanda [ ] )
+  1. [NOMOR-WA]  : nomor WhatsApp, format 62xxxxxxxxxx   (muncul 5 tempat)
+  2. [TANGGAL]   : tanggal mulai angkatan berikutnya
+  3. [JADWAL]    : hari & jam siaran, mis. "Selasa & Jumat, 19.30–21.30 WIB"
+  4. [PLATFORM]  : Zoom / Google Meet / grup tertutup — sebut yang dipakai
+  5. Foto        : ganti --foto-* di blok :root dengan foto asli
+  6. og:image    : siapkan gambar 1200x630 px untuk tautan WhatsApp/FB
+==========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy-950:#04101f;
+  --navy-900:#061733;
+  --navy-800:#0b2a5b;
+  --navy-600:#1b4f9c;
+
+  --gold-700:#9c7415;
+  --gold-500:#c9a227;
+  --gold-300:#e8c766;
+  --gold-100:#f6e6b8;
+
+  --live:#e0453c;
+
+  --cream:#fbf6ea;
+  --cream-2:#f4ecd9;
+  --ink:#101a2c;
+  --ink-soft:#41506b;
+
+  --foto-hero:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=2000&q=70');
+  --foto-alat:url('https://images.unsplash.com/photo-1746005718004-1f992c399428?auto=format&fit=crop&w=1800&q=70');
+  --foto-cta:url('https://images.unsplash.com/photo-1550041473-d296a3a8a18a?auto=format&fit=crop&w=1800&q=70');
+
+  --shell:min(1180px,100% - 2.6rem);
+  --r:18px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:var(--navy-900);color:var(--ink);line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.shell{width:var(--shell);margin-inline:auto}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
+.mono{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-300);display:flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold-500);flex:none}
+.eyebrow.dark{color:var(--gold-700)}
+.eyebrow.dark::before{background:var(--gold-700)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;
+  padding:1rem 1.7rem;border-radius:999px;text-decoration:none;border:1px solid transparent;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn-emas{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#2a1e00;
+  box-shadow:0 10px 34px -12px rgba(201,162,39,.85)}
+.btn-emas:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(201,162,39,.95)}
+.btn-garis{border-color:rgba(232,199,102,.45);color:var(--gold-100);background:rgba(255,255,255,.03)}
+.btn-garis:hover{background:rgba(232,199,102,.12);transform:translateY(-2px)}
+
+/* ================= HERO ================= */
+.hero{position:relative;isolation:isolate;padding:clamp(3.6rem,8vw,6.4rem) 0 clamp(3.4rem,6vw,5.4rem);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:var(--foto-hero);
+  background-size:cover;background-position:center;filter:saturate(.45)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(120% 90% at 12% 8%,rgba(27,79,156,.5),transparent 62%),
+  linear-gradient(180deg,rgba(4,16,31,.94),rgba(6,23,51,.9) 46%,rgba(6,23,51,.97))}
+.glow{position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);pointer-events:none}
+.glow-a{width:420px;height:420px;background:rgba(201,162,39,.2);top:-130px;right:-70px}
+.glow-b{width:520px;height:520px;background:rgba(27,79,156,.33);bottom:-230px;left:-150px}
+
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
+.hero h1{font-size:clamp(2.05rem,5.2vw,3.7rem);font-weight:800;color:#fff;margin:1.05rem 0 1.05rem}
+.hero h1 .emas{background:linear-gradient(100deg,var(--gold-100),var(--gold-300) 40%,var(--gold-500));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#c6d6ef;font-size:clamp(1rem,1.5vw,1.13rem);max-width:52ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.9rem}
+.hero-note{margin-top:1.35rem;font-size:.86rem;color:#8fa9cd;display:flex;flex-wrap:wrap;gap:.4rem 1.3rem}
+.hero-note span{display:flex;align-items:center;gap:.45rem}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold-300);flex:none}
+
+/* --- panel siaran: elemen tanda tangan --- */
+.siaran{background:linear-gradient(165deg,rgba(9,30,64,.93),rgba(4,16,31,.97));
+  border:1px solid rgba(232,199,102,.28);border-radius:var(--r);padding:1.4rem;
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+.siaran-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
+.badge-live{display:inline-flex;align-items:center;gap:.45rem;background:rgba(224,69,60,.14);
+  border:1px solid rgba(224,69,60,.5);color:#ff8a83;font-family:'JetBrains Mono',monospace;
+  font-size:.66rem;letter-spacing:.16em;padding:.32rem .6rem;border-radius:6px}
+.badge-live i{width:7px;height:7px;border-radius:50%;background:var(--live);
+  box-shadow:0 0 9px var(--live);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.siaran-jam{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:#7f9bc4;letter-spacing:.12em}
+
+.layar{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08);border-radius:12px;
+  padding:1.15rem 1.1rem;min-height:132px;display:flex;flex-direction:column;justify-content:center}
+.layar small{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.18em;
+  color:var(--gold-300);text-transform:uppercase}
+.layar h3{font-size:1.1rem;color:#eaf1fb;margin:.4rem 0 .45rem;font-weight:700}
+.layar p{font-size:.85rem;color:#9db6d8;line-height:1.5}
+
+.grid25{display:grid;grid-template-columns:repeat(13,1fr);gap:5px;margin-top:1.1rem}
+.grid25 i{aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.05);transition:background .35s ease,transform .35s ease}
+.grid25 i.aktif{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));transform:scale(1.18)}
+.grid25 i.lewat{background:rgba(232,199,102,.34)}
+.siaran-foot{margin-top:1rem;font-size:.75rem;color:#7f9bc4;line-height:1.5}
+
+/* ================= BAR ANGKA ================= */
+.bar{background:var(--navy-950);border-block:1px solid rgba(232,199,102,.16);padding:2.3rem 0}
+.bar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;text-align:center}
+.bar-grid b{display:block;font-family:'JetBrains Mono',monospace;font-size:clamp(1.6rem,3.3vw,2.4rem);font-weight:700;
+  background:linear-gradient(120deg,var(--gold-100),var(--gold-500));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.bar-grid span{display:block;font-size:.8rem;color:#93aacd;margin-top:.3rem}
+
+/* ================= TERANG ================= */
+.terang{background:linear-gradient(180deg,var(--navy-900) 0%,#26406e 7%,var(--cream) 24%,var(--cream) 100%);
+  padding:clamp(3.6rem,7vw,5.6rem) 0 0}
+.sec{padding-block:clamp(3rem,5.5vw,4.6rem)}
+.sec-head{max-width:62ch;margin-bottom:2.4rem}
+.sec-head h2{font-size:clamp(1.6rem,3.3vw,2.4rem);font-weight:700;color:var(--navy-900);margin:.85rem 0 .75rem}
+.sec-head p{color:var(--ink-soft);font-size:1.01rem}
+
+.siapa{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+.kartu{background:#fff;border:1px solid rgba(11,42,91,.1);border-radius:var(--r);padding:1.6rem;
+  box-shadow:0 18px 40px -30px rgba(6,23,51,.55);transition:transform .25s ease,box-shadow .25s ease}
+.kartu:hover{transform:translateY(-4px);box-shadow:0 26px 54px -30px rgba(6,23,51,.6)}
+.kartu .no{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold-700);letter-spacing:.18em}
+.kartu h3{font-size:1.1rem;margin:.5rem 0 .5rem;color:var(--navy-900)}
+.kartu p{font-size:.92rem;color:var(--ink-soft)}
+
+/* --- cara kelas berjalan --- */
+.alur{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.alur-item{background:#fff;border:1px solid rgba(11,42,91,.1);border-radius:14px;padding:1.4rem 1.3rem;position:relative}
+.alur-item .step{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;
+  color:var(--gold-500);line-height:1;margin-bottom:.6rem}
+.alur-item h3{font-size:1rem;color:var(--navy-900);margin-bottom:.4rem}
+.alur-item p{font-size:.88rem;color:var(--ink-soft)}
+
+/* --- pola 2 jam --- */
+.pola{background:var(--cream-2);border:1px solid rgba(156,116,21,.2);border-radius:var(--r);
+  padding:clamp(1.4rem,3vw,2.2rem);margin-top:1.6rem}
+.pola h3{font-size:1.05rem;color:var(--navy-900);margin-bottom:1rem}
+.pola-baris{display:grid;grid-template-columns:78px 1fr;gap:1rem;align-items:baseline;
+  padding:.6rem 0;border-bottom:1px dashed rgba(11,42,91,.16)}
+.pola-baris:last-child{border-bottom:0}
+.pola-baris b{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--gold-700)}
+.pola-baris span{font-size:.93rem;color:var(--ink-soft)}
+.pola-baris span i{font-style:normal;font-weight:600;color:var(--navy-900)}
+
+/* --- silabus 25 --- */
+.silabus{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+.blok{background:#fff;border:1px solid rgba(11,42,91,.11);border-radius:var(--r);overflow:hidden;
+  box-shadow:0 18px 40px -32px rgba(6,23,51,.5)}
+.blok-head{background:linear-gradient(135deg,var(--navy-900),var(--navy-800));color:#fff;padding:1.1rem 1.3rem}
+.blok-head span{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;color:var(--gold-300)}
+.blok-head h3{font-size:1.06rem;margin-top:.28rem}
+.blok ol{list-style:none;counter-reset:m;padding:.5rem .4rem .9rem}
+.blok li{counter-increment:m;display:grid;grid-template-columns:30px 1fr;gap:.5rem;
+  padding:.48rem .9rem;font-size:.9rem;color:var(--ink-soft);align-items:start}
+.blok li::before{content:counter(m,decimal-leading-zero);font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;color:var(--gold-700);font-weight:700;padding-top:.18rem}
+.blok li.kunci{background:rgba(201,162,39,.1);border-radius:8px}
+.blok li.kunci b{color:var(--navy-900)}
+
+/* --- alat yang disiapkan --- */
+.gelap{position:relative;isolation:isolate;color:#fff;padding-block:clamp(3.4rem,6.5vw,5.2rem)}
+.gelap::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--foto-alat);
+  background-size:cover;background-position:center;filter:saturate(.4)}
+.gelap::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(4,16,31,.96),rgba(6,23,51,.94))}
+.gelap h2{font-size:clamp(1.6rem,3.3vw,2.3rem);color:#fff;margin:.85rem 0 .75rem}
+.gelap .sec-head p{color:#b8caea}
+.tahap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tahap-kartu{background:rgba(255,255,255,.045);border:1px solid rgba(232,199,102,.2);border-radius:14px;padding:1.4rem}
+.tahap-kartu .lab{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--gold-300)}
+.tahap-kartu h3{font-size:1.02rem;color:#fff;margin:.35rem 0 .6rem}
+.tahap-kartu ul{list-style:none;font-size:.87rem;color:#b3c6e4}
+.tahap-kartu li{padding-left:1rem;position:relative;margin-bottom:.2rem}
+.tahap-kartu li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
+  border-radius:50%;background:var(--gold-500)}
+.catatan-alat{margin-top:1.4rem;background:rgba(232,199,102,.09);border-left:3px solid var(--gold-500);
+  border-radius:0 10px 10px 0;padding:1.1rem 1.3rem;font-size:.92rem;color:#dbe6f7}
+.catatan-alat b{color:var(--gold-100)}
+
+/* --- yang didapat --- */
+.hasil{background:linear-gradient(180deg,var(--cream) 0%,#fff 100%);padding-block:clamp(3.2rem,6vw,4.8rem)}
+.hasil-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem 2rem}
+.h-item{display:flex;gap:.85rem;align-items:flex-start;padding:.72rem 0;border-bottom:1px dashed rgba(11,42,91,.14)}
+.check{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-top:.15rem;
+  background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#2a1e00;font-size:.72rem;font-weight:700}
+.h-item p{font-size:.94rem;color:var(--ink-soft)}
+.h-item p b{color:var(--navy-900)}
+
+/* --- perbandingan --- */
+.banding-sec{background:#fff;padding-block:clamp(3.2rem,6vw,4.8rem)}
+.banding{border:1px solid rgba(11,42,91,.14);border-radius:var(--r);overflow:hidden;
+  box-shadow:0 30px 70px -50px rgba(6,23,51,.6)}
+.banding table{width:100%;border-collapse:collapse}
+.banding th,.banding td{padding:.9rem 1.1rem;text-align:left;font-size:.92rem;
+  border-bottom:1px solid rgba(11,42,91,.1)}
+.banding thead th{background:var(--navy-900);color:#fff;font-family:'Sora',sans-serif;
+  font-size:.86rem;font-weight:700}
+.banding thead th:nth-child(2){background:var(--navy-800);color:var(--gold-100)}
+.banding td:first-child{font-weight:600;color:var(--navy-900);width:30%}
+.banding td:nth-child(2){background:rgba(201,162,39,.07);color:var(--ink-soft)}
+.banding td:nth-child(3){color:var(--ink-soft)}
+.banding tr:last-child td{border-bottom:0}
+.banding-note{margin-top:1.1rem;font-size:.9rem;color:var(--ink-soft);font-style:italic}
+
+/* --- harga --- */
+.harga-sec{background:var(--cream);padding-block:clamp(3.2rem,6vw,5rem)}
+.harga{display:grid;grid-template-columns:1.05fr .95fr;border-radius:22px;overflow:hidden;
+  border:1px solid rgba(11,42,91,.14);box-shadow:0 40px 90px -50px rgba(6,23,51,.7)}
+.harga-kiri{background:linear-gradient(160deg,var(--navy-900),var(--navy-800) 70%,#16305f);color:#fff;
+  padding:clamp(1.8rem,3.4vw,2.7rem);position:relative;overflow:hidden}
+.harga-kiri::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;
+  background:rgba(201,162,39,.18);filter:blur(70px);bottom:-140px;right:-100px}
+.harga-kiri h3{font-size:1.3rem;color:#fff;margin-bottom:.35rem}
+.harga-kiri .sub{color:#a9c1e6;font-size:.9rem}
+.nominal{margin:1.4rem 0 .4rem}
+.nominal small{display:block;font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  letter-spacing:.18em;color:var(--gold-300);text-transform:uppercase}
+.nominal b{font-family:'Sora',sans-serif;font-size:clamp(2.2rem,5vw,3.1rem);font-weight:800;
+  background:linear-gradient(110deg,var(--gold-100),var(--gold-300) 45%,var(--gold-500));
+  -webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.03em}
+.hitung{margin-top:1rem;background:rgba(255,255,255,.06);border:1px solid rgba(232,199,102,.22);
+  border-radius:12px;padding:.9rem 1.1rem;position:relative;z-index:1}
+.hitung span{display:block;font-size:.86rem;color:#c6d6ef;margin-bottom:.2rem}
+.hitung b{font-family:'JetBrains Mono',monospace;font-size:1.35rem;color:var(--gold-300)}
+.harga-kiri .btn{margin-top:1.4rem;position:relative;z-index:1}
+.cicil{margin-top:.9rem;font-size:.82rem;color:#93aacd;position:relative;z-index:1}
+
+.harga-kanan{background:#fff;padding:clamp(1.8rem,3.4vw,2.7rem)}
+.harga-kanan h4{font-family:'Sora',sans-serif;font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold-700);margin-bottom:.9rem}
+.harga-kanan ul{list-style:none}
+.harga-kanan li{font-size:.92rem;color:var(--ink-soft);padding:.5rem 0 .5rem 1.6rem;position:relative;
+  border-bottom:1px dashed rgba(11,42,91,.12)}
+.harga-kanan li:last-child{border-bottom:0}
+.harga-kanan li::before{content:"\2713";position:absolute;left:0;top:.5rem;color:var(--gold-700);
+  font-weight:700;font-size:.86rem}
+.harga-kanan li b{color:var(--navy-900)}
+
+/* --- faq --- */
+.faq-sec{background:var(--cream-2);padding-block:clamp(3rem,5.5vw,4.4rem)}
+details{background:#fff;border:1px solid rgba(11,42,91,.12);border-radius:13px;margin-bottom:.65rem;overflow:hidden}
+summary{cursor:pointer;padding:1rem 1.3rem;font-weight:600;color:var(--navy-900);font-size:.97rem;
+  list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--gold-700);
+  font-size:1.25rem;flex:none;transition:transform .25s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 1.3rem 1.1rem;color:var(--ink-soft);font-size:.92rem}
+
+/* --- cta --- */
+.cta{position:relative;isolation:isolate;color:#fff;text-align:center;padding-block:clamp(3.8rem,7.5vw,6rem)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--foto-cta);
+  background-size:cover;background-position:center;filter:saturate(.35)}
+.cta::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(6,23,51,.93),rgba(4,16,31,.97))}
+.cta h2{font-size:clamp(1.75rem,4vw,2.9rem);color:#fff;margin:.9rem auto .85rem;max-width:21ch}
+.cta p{color:#bed0ec;max-width:56ch;margin-inline:auto}
+.cta .eyebrow{justify-content:center}
+.cta-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-top:1.9rem}
+.kontak{margin-top:2rem;font-size:.86rem;color:#8fa9cd;display:flex;gap:.5rem 1.6rem;
+  justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--navy-950);color:#7f9bc4;padding:2.1rem 0;font-size:.83rem;
+  text-align:center;border-top:1px solid rgba(232,199,102,.14)}
+footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
+
+/* --- tombol wa mengambang --- */
+.wa-float{position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;display:flex;align-items:center;gap:.55rem;
+  background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#2a1e00;
+  font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;padding:.85rem 1.3rem;border-radius:999px;
+  text-decoration:none;box-shadow:0 14px 36px -12px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.wa-float.on{opacity:1;transform:none;pointer-events:auto}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero-grid,.silabus,.harga,.hasil-grid{grid-template-columns:1fr}
+  .siapa,.tahap{grid-template-columns:1fr 1fr}
+  .alur{grid-template-columns:1fr 1fr}
+  .bar-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .banding{overflow-x:auto}
+}
+@media(max-width:620px){
+  .siapa,.tahap,.alur{grid-template-columns:1fr}
+  .btn{width:100%}
+  .hero-cta{flex-direction:column}
+  .grid25{grid-template-columns:repeat(9,1fr)}
+  .banding table{min-width:560px}
+  .wa-float{left:1.1rem;right:1.1rem;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .wa-float{opacity:1;transform:none;pointer-events:auto}
+}
+:focus-visible{outline:2px solid var(--gold-300);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow">Kelas Online Live \u00B7 LPK Quantum Telecommunication</p>
+      <h1>Belajar teknisi HP dari rumah — <span class="emas">25 pertemuan, bukan 25 video</span></h1>
+      <p class="lead">Kelas live streaming bersama instruktur, dari nol sampai bisa menerima order. Setiap pertemuan ada job praktik yang wajib Anda kerjakan di meja sendiri dan disetorkan hasilnya. Rekamannya bisa diulang sampai bisa.</p>
+
+      <div class="hero-cta">
+        <a class="btn btn-emas" href="https://wa.me/[NOMOR-WA]?text=Halo%20Quantum%2C%20saya%20mau%20daftar%20kelas%20online%2025%20pertemuan">Daftar lewat WhatsApp →</a>
+        <a class="btn btn-garis" href="#silabus">Lihat 25 materinya</a>
+      </div>
+
+      <div class="hero-note">
+        <span><i class="dot"></i>Mulai [TANGGAL]</span>
+        <span><i class="dot"></i>[JADWAL]</span>
+        <span><i class="dot"></i>Rekaman bisa diulang</span>
+      </div>
+    </div>
+
+    <!-- elemen tanda tangan: panel siaran + peta 25 pertemuan -->
+    <aside class="siaran" aria-label="Gambaran jalannya kelas live">
+      <div class="siaran-top">
+        <span class="badge-live"><i></i>SIARAN LANGSUNG</span>
+        <span class="siaran-jam">2 JAM \u00B7 TANYA JAWAB</span>
+      </div>
+      <div class="layar">
+        <small id="lb">Pertemuan 07</small>
+        <h3 id="lj">SOP Pengerjaan Mati Total</h3>
+        <p id="lp">Alur baku dari cek short sampai cek CPU. Job praktik: jalankan SOP pada board mati total, isi lembar kerja tiap tahap.</p>
+      </div>
+      <div class="grid25" id="peta" aria-hidden="true"></div>
+      <p class="siaran-foot">Dua puluh lima pertemuan yang bertumpuk. Tidak ada yang boleh diloncati \u2014 keterampilan teknisi dibangun bertingkat.</p>
+    </aside>
+  </div>
+</header>
+
+<!-- ============ BAR ANGKA ============ -->
+<section class="bar">
+  <div class="shell bar-grid">
+    <div><b>25</b><span>pertemuan live streaming</span></div>
+    <div><b>50</b><span>jam total belajar</span></div>
+    <div><b>25</b><span>job praktik wajib setor</span></div>
+    <div><b>Rp32rb</b><span>per pertemuan</span></div>
+  </div>
+</section>
+
+<div class="terang">
+  <!-- ============ UNTUK SIAPA ============ -->
+  <section class="sec shell reveal">
+    <div class="sec-head">
+      <p class="eyebrow dark">Untuk siapa kelas ini</p>
+      <h2>Tidak perlu latar belakang elektronika. Perlu meja, alat dasar, dan kemauan.</h2>
+      <p>Kami mulai dari cara memegang obeng dan membaca multimeter. Pertemuan pertama justru membahas alat apa yang harus dibeli lebih dahulu dan berapa modalnya.</p>
+    </div>
+    <div class="siapa">
+      <div class="kartu">
+        <span class="no">01</span>
+        <h3>Belum pernah menyentuh board</h3>
+        <p>Ingin punya keterampilan yang dibayar, tapi belum tahu mulai dari mana. Pertemuan 1 dimulai dari pengenalan alat, bukan dari teori elektronika.</p>
+      </div>
+      <div class="kartu">
+        <span class="no">02</span>
+        <h3>Sudah bisa ganti LCD, mentok di board</h3>
+        <p>Order harian jalan, tapi unit mati total, short, dan no service selalu ditolak. Blok SOP di pertemuan 7\u201314 menutup jarak itu.</p>
+      </div>
+      <div class="kartu">
+        <span class="no">03</span>
+        <h3>Jauh dari Semarang</h3>
+        <p>Ingin belajar terstruktur tapi tidak bisa meninggalkan pekerjaan atau keluarga selama sepuluh hari. Kelas ini masuk ke rumah Anda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARA KELAS BERJALAN ============ -->
+  <section class="sec shell reveal" id="cara">
+    <div class="sec-head">
+      <p class="eyebrow dark">Cara kelas berjalan</p>
+      <h2>Bukan menonton video. Ini kelas yang mengoreksi pekerjaan Anda.</h2>
+      <p>Perbedaan kelas ini dengan tutorial gratis bukan pada isinya, melainkan pada adanya orang yang memeriksa hasil kerja Anda dan memberi tahu bagian mana yang salah.</p>
+    </div>
+    <div class="alur">
+      <div class="alur-item">
+        <div class="step">1</div>
+        <h3>Ikut siaran langsung</h3>
+        <p>Dua jam bersama instruktur lewat [PLATFORM]. Kamera diarahkan dekat ke board, sehingga gerakan tangan terlihat jelas.</p>
+      </div>
+      <div class="alur-item">
+        <div class="step">2</div>
+        <h3>Kerjakan job praktik</h3>
+        <p>Setiap pertemuan menutup dengan satu job yang Anda kerjakan sendiri di meja \u2014 bukan tugas tulis, tapi pekerjaan tangan.</p>
+      </div>
+      <div class="alur-item">
+        <div class="step">3</div>
+        <h3>Setor foto atau video</h3>
+        <p>Hasil kerja dikirim ke grup kelas. Instruktur memeriksa dan menunjukkan yang perlu diperbaiki.</p>
+      </div>
+      <div class="alur-item">
+        <div class="step">4</div>
+        <h3>Ulang rekamannya</h3>
+        <p>Gerakan menyolder dan reball tidak bisa dikuasai sekali lihat. Rekaman tiap sesi bisa diputar berkali-kali.</p>
+      </div>
+    </div>
+
+    <div class="pola">
+      <h3>Pola baku setiap pertemuan \u2014 2 jam</h3>
+      <div class="pola-baris"><b>00\u201310</b><span><i>Review &amp; setoran.</i> Membahas hasil job pertemuan sebelumnya dan kendala yang dialami peserta.</span></div>
+      <div class="pola-baris"><b>10\u201340</b><span><i>Materi inti + demo.</i> Instruktur menerangkan sambil memperagakan langsung dengan kamera dekat ke board.</span></div>
+      <div class="pola-baris"><b>40\u2013100</b><span><i>Praktik terbimbing.</i> Peserta mengerjakan di meja masing-masing, instruktur memantau lewat kamera.</span></div>
+      <div class="pola-baris"><b>100\u2013115</b><span><i>Studi kasus.</i> Membedah satu kasus nyata dari counter, dilanjutkan tanya jawab.</span></div>
+      <div class="pola-baris"><b>115\u2013120</b><span><i>Job &amp; penutup.</i> Pemberian job rumah dan target setoran untuk pertemuan berikutnya.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SILABUS 25 ============ -->
+  <section class="sec shell reveal" id="silabus">
+    <div class="sec-head">
+      <p class="eyebrow dark">Silabus lengkap</p>
+      <h2>Dua puluh lima pertemuan, disusun bertingkat</h2>
+      <p>Peta dan alat ukur diajarkan lebih dahulu, baru kasus kerusakan. Materi bertanda emas adalah materi kunci \u2014 yang paling menentukan apakah Anda bisa naik ke tahap berikutnya.</p>
+    </div>
+    <div class="silabus">
+      <div class="blok">
+        <div class="blok-head">
+          <span>PERTEMUAN 1\u20136</span>
+          <h3>Fondasi: alat, komponen, skema &amp; tangan</h3>
+        </div>
+        <ol>
+          <li>Peralatan servis wajib, fungsi, harga &amp; setup meja kerja</li>
+          <li>Anatomi smartphone Android: pengenalan komponen</li>
+          <li class="kunci"><b>Penggunaan aplikasi skematik (Borneo / Orion)</b></li>
+          <li class="kunci"><b>Dasar kelistrikan &amp; cara pakai multimeter dan power supply</b></li>
+          <li>Skill solder &amp; rework: blower, solder station, mikroskop</li>
+          <li class="kunci"><b>Cara kerja smartphone: power sequence &amp; distribusi tegangan</b></li>
+        </ol>
+      </div>
+
+      <div class="blok">
+        <div class="blok-head">
+          <span>PERTEMUAN 7\u201314</span>
+          <h3>SOP diagnosa &amp; perbaikan level board</h3>
+        </div>
+        <ol style="counter-reset:m 6">
+          <li class="kunci"><b>SOP pengerjaan mati total (dead)</b></li>
+          <li class="kunci"><b>Teknik berburu short circuit</b></li>
+          <li>SOP kerusakan charging: tidak mengisi, lambat, panas</li>
+          <li>SOP baterai, boros &amp; panas berlebih</li>
+          <li class="kunci"><b>Micro-soldering lanjutan: jumper jalur putus &amp; perbaikan pad</b></li>
+          <li>SOP kerusakan LCD &amp; touchscreen (modul atau board)</li>
+          <li>SOP kerusakan sinyal (no service)</li>
+          <li>SOP audio, getar, kamera, sensor &amp; tombol</li>
+        </ol>
+      </div>
+
+      <div class="blok">
+        <div class="blok-head">
+          <span>PERTEMUAN 15\u201320</span>
+          <h3>Software, flashing &amp; eMMC/UFS</h3>
+        </div>
+        <ol style="counter-reset:m 14">
+          <li>Dasar software Android &amp; identifikasi chipset</li>
+          <li>Flashing MediaTek &amp; Qualcomm</li>
+          <li>Flashing Samsung (Odin) &amp; platform lain</li>
+          <li class="kunci"><b>SOP bootloop: memisahkan masalah software dengan hardware</b></li>
+          <li>FRP, lupa pola &amp; akun \u2014 teknik beserta etikanya</li>
+          <li class="kunci"><b>eMMC / UFS: diagnosa, reball, penggantian &amp; programming</b></li>
+        </ol>
+      </div>
+
+      <div class="blok">
+        <div class="blok-head">
+          <span>PERTEMUAN 21\u201325</span>
+          <h3>Penyelesaian, bisnis &amp; uji kompetensi</h3>
+        </div>
+        <ol style="counter-reset:m 20">
+          <li>SOP handphone kena air &amp; korosi</li>
+          <li>SOP IMEI, baseband &amp; perbaikan sisi software</li>
+          <li>Perakitan akhir, quality control &amp; uji fungsi menyeluruh</li>
+          <li class="kunci"><b>Manajemen counter &amp; bisnis servis: harga, garansi, nota</b></li>
+          <li class="kunci"><b>Ujian praktik &amp; uji kompetensi</b></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ALAT YANG DISIAPKAN ============ -->
+<section class="gelap">
+  <div class="shell reveal">
+    <div class="sec-head">
+      <p class="eyebrow">Yang perlu Anda siapkan</p>
+      <h2>Terus terang: alat dan bahan praktik disiapkan sendiri</h2>
+      <p>Ini konsekuensi belajar dari rumah, dan kami sampaikan di depan supaya tidak ada kekecewaan. Kabar baiknya, pertemuan pertama justru membahas cara membeli alat secara bertahap sesuai kemampuan modal.</p>
+    </div>
+    <div class="tahap">
+      <div class="tahap-kartu">
+        <span class="lab">TAHAP 1 \u00B7 SEBELUM MULAI</span>
+        <h3>Alat dasar</h3>
+        <ul>
+          <li>Obeng presisi set, pick, tweezer</li>
+          <li>Multimeter digital (ada mode dioda)</li>
+          <li>Solder station + timah, flux, wick</li>
+          <li>2\u20133 HP donor / board bekas</li>
+          <li>Laptop untuk sesi software &amp; skema</li>
+        </ul>
+      </div>
+      <div class="tahap-kartu">
+        <span class="lab">TAHAP 2 \u00B7 SEBELUM PERTEMUAN 7</span>
+        <h3>Alat diagnosa</h3>
+        <ul>
+          <li>DC Power Supply \u2014 alat diagnosa utama</li>
+          <li>Blower / solder uap</li>
+          <li>Kaca pembesar atau mikroskop</li>
+          <li>Tambahan board donor</li>
+        </ul>
+      </div>
+      <div class="tahap-kartu">
+        <span class="lab">TAHAP 3 \u00B7 MENJELANG BLOK LANJUT</span>
+        <h3>Alat lanjutan</h3>
+        <ul>
+          <li>Mikroskop (bila belum ada)</li>
+          <li>Stencil BGA untuk reball</li>
+          <li>Box programmer eMMC/UFS</li>
+          <li>Ultrasonic cleaner</li>
+        </ul>
+      </div>
+    </div>
+    <div class="catatan-alat">
+      <b>Tidak harus punya semuanya sejak hari pertama.</b> Daftar ini dibagi bertahap justru supaya Anda bisa mencicil sambil jalan. Di pertemuan 1 Anda akan menyusun daftar belanja sendiri lengkap dengan kisaran harga dan urutan prioritasnya \u2014 alat tahap 3 baru dibutuhkan menjelang pertemuan 20.
+    </div>
+  </div>
+</section>
+
+<!-- ============ YANG DIDAPAT ============ -->
+<section class="hasil">
+  <div class="shell reveal">
+    <div class="sec-head">
+      <p class="eyebrow dark">Setelah 25 pertemuan</p>
+      <h2>Yang bisa Anda kerjakan sendiri</h2>
+    </div>
+    <div class="hasil-grid">
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menyimpulkan kondisi board dari angka.</b> Konsumsi arus di power supply menjadi bahasa yang Anda mengerti.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Membaca skema Borneo/Orion</b> dan menelusuri jalur sebelum menyentuh solder.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menangani mati total dengan alur runut,</b> bukan membongkar sambil berharap.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menemukan dan mengangkat komponen short</b> \u2014 pekerjaan yang paling sering ditolak counter lain.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menjumper jalur putus dan menyelamatkan pad</b> yang terkelupas.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Flashing MediaTek, Qualcomm, dan Samsung,</b> termasuk memperbaiki saat prosesnya gagal.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Memisahkan masalah software dengan hardware</b> \u2014 penentu efisiensi dan keuntungan.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Reball dan menulis firmware ke eMMC/UFS,</b> pekerjaan dengan nilai jasa tertinggi.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menentukan harga jasa dengan dasar yang jelas</b> \u2014 sparepart, kesulitan, dan risiko.</p></div>
+      <div class="h-item"><span class="check">\u2713</span><p><b>Menerima order seperti counter profesional:</b> cek kondisi, nota, QC, serah terima.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERBANDINGAN ============ -->
+<section class="banding-sec">
+  <div class="shell reveal">
+    <div class="sec-head">
+      <p class="eyebrow dark">Online atau tatap muka?</p>
+      <h2>Kami sampaikan apa adanya, supaya Anda memilih yang tepat</h2>
+      <p>Kami menyelenggarakan keduanya, jadi tidak ada gunanya melebih-lebihkan salah satunya. Materinya sama persis \u2014 yang berbeda cara belajar dan siapa yang menyiapkan alat.</p>
+    </div>
+    <div class="banding">
+      <table>
+        <thead>
+          <tr><th>Aspek</th><th>Kelas Online (halaman ini)</th><th>Kelas Basecamp Semarang</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Materi</td><td>25 materi lengkap, sama persis</td><td>25 materi lengkap, sama persis</td></tr>
+          <tr><td>Lama belajar</td><td>50 jam, tersebar sepanjang beberapa minggu</td><td>10 hari berturut-turut, 09.30\u201317.00</td></tr>
+          <tr><td>Alat praktik</td><td>Disiapkan sendiri, bertahap</td><td>Disediakan lengkap di meja masing-masing</td></tr>
+          <tr><td>Bahan praktik</td><td>HP donor sendiri</td><td>5\u20136 board donor per peserta, disediakan</td></tr>
+          <tr><td>Pendampingan</td><td>Lewat kamera dan koreksi setoran</td><td>Instruktur menghampiri meja Anda langsung</td></tr>
+          <tr><td>Unit pelanggan asli</td><td>Tidak ada</td><td>Ada, tiga sesi dari counter</td></tr>
+          <tr><td>Rekaman</td><td>Ada, bisa diulang berkali-kali</td><td>Tidak ada</td></tr>
+          <tr><td>Kecepatan</td><td>Bisa disesuaikan, sambil bekerja</td><td>Padat, perlu meluangkan 10 hari penuh</td></tr>
+          <tr><td>Biaya</td><td><b>Rp800.000</b></td><td>Rp4.000.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="banding-note">Singkatnya: pilih online bila Anda punya waktu terbatas, jauh dari Semarang, atau ingin mencicil alat sambil belajar. Pilih basecamp bila Anda ingin selesai cepat dan tidak mau repot menyiapkan alat.</p>
+  </div>
+</section>
+
+<!-- ============ HARGA ============ -->
+<section class="harga-sec" id="daftar">
+  <div class="shell reveal">
+    <div class="harga">
+      <div class="harga-kiri">
+        <p class="eyebrow">Investasi pelatihan</p>
+        <h3>Kelas Online 25 Pertemuan</h3>
+        <p class="sub">Live streaming bersama instruktur \u00B7 [JADWAL]</p>
+        <div class="nominal">
+          <small>Biaya pelatihan</small>
+          <b>Rp800.000</b>
+        </div>
+        <div class="hitung">
+          <span>Untuk 25 pertemuan \u00D7 2 jam, biayanya menjadi</span>
+          <b>Rp32.000 per pertemuan \u00B7 Rp16.000 per jam</b>
+        </div>
+        <a class="btn btn-emas" href="https://wa.me/[NOMOR-WA]?text=Halo%20Quantum%2C%20saya%20mau%20mendaftar%20kelas%20online%2025%20pertemuan">Daftar sekarang →</a>
+        <p class="cicil">Hubungi kami untuk cara pembayaran dan konfirmasi jadwal angkatan berikutnya.</p>
+      </div>
+      <div class="harga-kanan">
+        <h4>Sudah termasuk</h4>
+        <ul>
+          <li><b>25 pertemuan live</b> bersama instruktur, 2 jam per pertemuan</li>
+          <li><b>Rekaman seluruh sesi</b> yang bisa diputar ulang</li>
+          <li><b>Silabus 25 materi</b> beserta lembar kerja diagnosa</li>
+          <li>Koreksi <b>job praktik</b> tiap pertemuan oleh instruktur</li>
+          <li>Grup kelas untuk tanya jawab di luar jam siaran</li>
+          <li>Panduan <b>daftar belanja alat bertahap</b> beserta kisaran harga</li>
+          <li>Pendampingan pemasangan <b>aplikasi skema</b> Borneo/Orion</li>
+          <li>Perangkat usaha: <b>nota servis, daftar harga jasa, form garansi</b></li>
+          <li><b>Sertifikat</b> setelah lulus ujian praktik pertemuan 25</li>
+          <li>Grup alumni dan <b>konsultasi setelah kelas berakhir</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq-sec">
+  <div class="shell reveal">
+    <div class="sec-head">
+      <p class="eyebrow dark">Pertanyaan yang sering masuk</p>
+      <h2>Sebelum Anda memutuskan</h2>
+    </div>
+    <details open>
+      <summary>Belajar servis lewat online, apa benar bisa?</summary>
+      <p>Bisa, dengan satu syarat: Anda benar-benar mengerjakan job praktiknya. Kelas ini dirancang supaya tangan Anda yang bekerja, bukan sekadar mata yang menonton. Setiap pertemuan ditutup dengan job yang hasilnya wajib disetor dan diperiksa instruktur. Peserta yang hanya menonton tanpa praktik memang tidak akan bisa \u2014 dan itu berlaku di kelas mana pun.</p>
+    </details>
+    <details>
+      <summary>Apa bedanya dengan tutorial gratis di YouTube?</summary>
+      <p>Isinya mungkin beririsan, tapi ada tiga hal yang tidak diberikan tutorial gratis: urutan yang tersusun bertingkat sehingga tidak ada lubang pemahaman, orang yang memeriksa hasil kerja Anda dan menunjukkan letak kesalahannya, dan tempat bertanya ketika menghadapi kasus yang tidak ada di video mana pun.</p>
+    </details>
+    <details>
+      <summary>Kalau saya tidak bisa hadir di jam siaran?</summary>
+      <p>Seluruh sesi direkam dan bisa diputar ulang berkali-kali. Job praktiknya tetap dapat Anda kerjakan dan setorkan menyusul. Namun sebisa mungkin hadirlah langsung, karena sesi tanya jawab dan koreksi langsung adalah bagian yang paling berharga.</p>
+    </details>
+    <details>
+      <summary>Saya belum punya alat sama sekali. Apakah harus beli dulu?</summary>
+      <p>Tidak harus lengkap sejak awal. Untuk pertemuan 1\u20136 cukup alat dasar: obeng presisi, multimeter, solder, dan beberapa HP donor. Power supply dan blower baru benar-benar dibutuhkan menjelang pertemuan 7, sedangkan mikroskop dan box programmer menjelang blok lanjut. Pertemuan pertama justru khusus membahas cara membeli bertahap sesuai kemampuan modal.</p>
+    </details>
+    <details>
+      <summary>Bahan praktiknya dari mana?</summary>
+      <p>Dari HP donor atau board bekas milik Anda sendiri \u2014 bisa didapat dari counter servis di sekitar, biasanya dijual murah atau bahkan diberikan. Siapkan minimal dua sampai tiga unit di awal, karena board ini memang untuk dibongkar, dilepas komponennya, dan dijumper tanpa rasa bersalah.</p>
+    </details>
+    <details>
+      <summary>Saya benar-benar awam elektronika. Bisa mengikuti?</summary>
+      <p>Bisa. Dasar kelistrikan diajarkan hanya sebatas yang dipakai di meja servis, tanpa rumus yang tidak terpakai. Yang menentukan bukan latar belakang pendidikan, melainkan kesediaan mengulang sampai tangan terbiasa \u2014 dan justru di situlah rekaman kelas menjadi berguna.</p>
+    </details>
+    <details>
+      <summary>Apakah diajarkan membuka kunci pola dan FRP?</summary>
+      <p>Diajarkan, beserta batas etika dan hukumnya. Anda akan menyusun sendiri form verifikasi pemilik dan surat pernyataan untuk dipakai di counter. Kami tidak mengajarkan pengubahan atau pemalsuan IMEI \u2014 yang diajarkan hanya pemulihan ke IMEI asli perangkat.</p>
+    </details>
+    <details>
+      <summary>Sertifikatnya bagaimana?</summary>
+      <p>Sertifikat dari LPK Quantum Telecommunication, diberikan setelah lulus ujian praktik di pertemuan 25. Ujiannya berupa penanganan unit rusak dari diagnosa sampai serah terima \u2014 kelulusan dinilai dari hasil kerja, bukan dari kehadiran.</p>
+    </details>
+    <details>
+      <summary>Setelah kelas selesai, masih bisa bertanya?</summary>
+      <p>Masih. Alumni tetap berada di grup dan dapat berkonsultasi ketika menghadapi kasus sulit di counter. Bagian ini justru sering menjadi yang paling terpakai, karena kasus aneh biasanya baru datang setelah kelas berakhir.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="shell reveal">
+    <p class="eyebrow">Angkatan berikutnya</p>
+    <h2>Mulai [TANGGAL]</h2>
+    <p>Kirim pesan untuk menanyakan sisa kursi, jadwal siaran, dan cara pembayaran. Kami akan menjelaskan apa saja yang perlu Anda siapkan sebelum pertemuan pertama.</p>
+    <div class="cta-btns">
+      <a class="btn btn-emas" href="https://wa.me/[NOMOR-WA]?text=Halo%20Quantum%2C%20saya%20mau%20menanyakan%20kelas%20online%2025%20pertemuan">Tanya lewat WhatsApp →</a>
+      <a class="btn btn-garis" href="#silabus">Baca lagi silabusnya</a>
+    </div>
+    <div class="kontak">
+      <span>WhatsApp: [NOMOR-WA]</span>
+      <span>Jadwal: [JADWAL]</span>
+      <span>YouTube: Quantum Telecom</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <b>PT QUANTUM TELECOMMUNICATION</b><br>
+    Lembaga Pelatihan Kerja \u2014 Pelatihan Teknisi Smartphone \u00B7 Semarang, Jawa Tengah
+  </div>
+</footer>
+
+<a class="wa-float" id="waf" href="https://wa.me/[NOMOR-WA]?text=Halo%20Quantum%2C%20saya%20mau%20menanyakan%20kelas%20online">Daftar kelas online</a>
+
+<script>
+// ---- panel siaran: menampilkan beberapa pertemuan kunci ----
+(function(){
+  var sesi = [
+    {n:"Pertemuan 04", j:"Dasar Kelistrikan & Alat Diagnosa",
+     p:"Membaca multimeter dan konsumsi ampere. Job praktik: isi Tabel Sidik Jari Board Sehat sebagai pembanding sampai akhir kelas."},
+    {n:"Pertemuan 06", j:"Power Sequence & Distribusi Tegangan",
+     p:"Urutan hidupnya sebuah handphone. Job praktik: ukur urutan kemunculan tegangan pada board sehat, cocokkan dengan skema."},
+    {n:"Pertemuan 07", j:"SOP Pengerjaan Mati Total",
+     p:"Alur baku dari cek short sampai cek CPU. Job praktik: jalankan SOP pada board mati total, isi lembar kerja tiap tahap."},
+    {n:"Pertemuan 11", j:"Jumper Jalur Putus & Perbaikan Pad",
+     p:"Menyambung jalur dengan kawat email di bawah mikroskop. Job praktik: jumper 3 jalur sampai terverifikasi buzzer."},
+    {n:"Pertemuan 20", j:"eMMC / UFS: Reball & Programming",
+     p:"Pekerjaan dengan nilai jasa tertinggi. Job praktik: angkat chip, reball dengan stencil, pasang kembali sampai terbaca."},
+    {n:"Pertemuan 25", j:"Ujian Praktik & Uji Kompetensi",
+     p:"Satu unit rusak tanpa diberi tahu kerusakannya. Diagnosa, perbaiki, QC, buat nota \u2014 seperti menerima order sungguhan."}
+  ];
+  var urut = [4,6,7,11,20,25];
+
+  var peta = document.getElementById('peta');
+  if (peta){
+    for (var k=1;k<=25;k++){
+      var el = document.createElement('i');
+      el.dataset.n = k;
+      peta.appendChild(el);
+    }
+  }
+  var titik = peta ? peta.querySelectorAll('i') : [];
+
+  function tandai(nomor){
+    for (var i=0;i<titik.length;i++){
+      var n = +titik[i].dataset.n;
+      titik[i].className = n === nomor ? 'aktif' : (n < nomor ? 'lewat' : '');
+    }
+  }
+
+  var eN=document.getElementById('lb'), eJ=document.getElementById('lj'), eP=document.getElementById('lp');
+  var diam = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  tandai(7);
+  if (diam || !eN) return;
+
+  var i = 2;
+  setInterval(function(){
+    i = (i + 1) % sesi.length;
+    var s = sesi[i];
+    [eN,eJ,eP].forEach(function(el){ el.style.transition='opacity .35s ease'; el.style.opacity = .2; });
+    setTimeout(function(){
+      eN.textContent = s.n; eJ.textContent = s.j; eP.textContent = s.p;
+      tandai(urut[i]);
+      [eN,eJ,eP].forEach(function(el){ el.style.opacity = 1; });
+    }, 300);
+  }, 3800);
+})();
+
+// ---- reveal saat digulir ----
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    for (var i=0;i<els.length;i++) els[i].classList.add('on');
+    return;
+  }
+  var io = new IntersectionObserver(function(en){
+    en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, {threshold:.1, rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// ---- tombol wa mengambang ----
+(function(){
+  var waf = document.getElementById('waf');
+  if(!waf) return;
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 620) waf.classList.add('on'); else waf.classList.remove('on');
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
