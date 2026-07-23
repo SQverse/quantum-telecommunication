@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>
+      Berita - Roadshow Quantum Telecommunication Kembali Hadir di Pontianak
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        /* Light Mode */
+        --blue-light: #e6f0ff;
+        --blue-medium: #4a90e2;
+        --blue-dark: #1a3c6e;
+        --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
+        
+        /* Added secondary accent color - orange/amber */
+        --accent-orange: #ff8c42;
+        --accent-orange-light: #ffb366;
+        --accent-orange-dark: #e67429;
+        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        
+        --text-dark: #222;
+        --text-light: #fff;
+        --bg-light: #f9fbff;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        /* Transisi */
+        --transition: all 0.3s ease;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; font-weight: 700; }
+      .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+      
+      /* NEWS SPECIFIC STYLES */
+      .news-hero {
+        background: var(--blue-gradient);
+        padding: 150px 20px 80px;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+      
+      .news-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 50px;
+        background: var(--bg-light);
+        border-radius: 30px 30px 0 0;
+      }
+
+      .news-badge {
+        display: inline-block;
+        background: var(--accent-orange);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .news-title {
+        font-size: 2.2rem;
+        max-width: 900px;
+        margin: 0 auto 20px;
+        line-height: 1.4;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      }
+
+      .news-meta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .news-content-wrapper {
+        max-width: 850px;
+        margin: -40px auto 60px;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        position: relative;
+        z-index: 10;
+      }
+
+      .news-main-image {
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .news-main-image img, .news-section-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .image-caption {
+        font-size: 0.85rem;
+        color: #64748b;
+        text-align: center;
+        padding: 12px 20px;
+        background: #f8fafc;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        font-style: italic;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+      }
+
+      .news-text-block {
+        margin-bottom: 40px;
+      }
+
+      .news-text-block h3 {
+        font-size: 1.4rem;
+        color: var(--blue-dark);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .news-text-block h3::before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 24px;
+        background: var(--accent-gradient);
+        border-radius: 5px;
+      }
+
+      .news-text-block p {
+        font-size: 1.1rem;
+        color: #334155;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      .news-section-image {
+        margin: 25px 0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      }
+
+      hr.news-divider {
+        border: 0;
+        height: 1px;
+        background: #e2e8f0;
+        margin: 40px 0;
+      }
+
+      /* SHARE BUTTONS */
+      .share-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 30px;
+        border-top: 2px dashed #e2e8f0;
+        margin-top: 40px;
+      }
+      .share-container span {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: var(--blue-dark);
+      }
+      .share-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .share-btn.wa { background: #25d366; }
+      .share-btn.fb { background: #1877f2; }
+      .share-btn.tw { background: #1da1f2; }
+      .share-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+      /* FOOTER */
+      footer {
+        background: var(--blue-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px;
+        position: relative;
+      }
+      footer::before {
+        content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--blue-gradient);
+      }
+      .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 30px; }
+      .footer-logo { margin-bottom: 15px; font-size: 1.8rem; font-weight: 700; font-family: "Poppins", sans-serif; }
+      .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .mobile-menu-btn { display: block; }
+        nav { display: none; } /* Simplified for demo */
+        .news-title { font-size: 1.6rem; }
+        .news-hero { padding-top: 120px; padding-bottom: 60px; }
+        .news-content-wrapper { padding: 25px 20px; margin-top: -30px; border-radius: 20px; }
+        .news-text-block p { font-size: 1rem; text-align: left; }
+        .news-text-block h3 { font-size: 1.2rem; }
+        .image-caption { font-size: 0.8rem; padding: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <!-- HERO SECTION -->
+    <section class="news-hero">
+      <div class="container">
+        <span class="news-badge">Kegiatan Roadshow</span>
+        <h1 class="news-title">Roadshow Quantum Telecommunication Kembali Hadir di Pontianak, Hadirkan Kelas iPhone Pertama dan Dukungan Industri yang Lebih Lengkap</h1>
+        <div class="news-meta">
+          <span><i class="far fa-calendar-alt"></i> 13 Juni 2026</span>
+          <span><i class="far fa-user"></i> Tim Jurnalis Quantum</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <article class="news-content-wrapper">
+        
+        <!-- FOTO UTAMA -->
+        <div class="news-main-image">
+          <img src="../assets/photos/section/roadshow-pontianak-banner-utama.webp" alt="Foto Utama Banner Berita">
+          <div class="image-caption">
+            Peserta Kelas Android bersama instruktur dan tim penyelenggara dalam Roadshow Quantum Telecommunication di Pontianak.
+          </div>
+        </div>
+
+        <!-- ISI 1 -->
+        <div class="news-text-block">
+          <h3>Antusiasme Peserta dari Berbagai Daerah</h3>
+          <p>
+            Sejak hari pertama pelaksanaan, peserta dari berbagai daerah di Kalimantan Barat memadati lokasi pelatihan di Hotel Merpati Pontianak. Antusiasme ini menunjukkan tingginya minat masyarakat untuk memiliki keterampilan yang dapat langsung digunakan untuk bekerja maupun membangun usaha mandiri.
+          </p>
+          <div class="news-section-image">
+            <img src="../assets/photos/section/roadshow-pontianak-suasana-kelas.webp" alt="Suasana Kelas">
+            <div class="image-caption">
+              Peserta mengikuti sesi pembelajaran yang berlangsung selama program pelatihan.
+            </div>
+          </div>
+        </div>
+
+        <hr class="news-divider">
+
+        <!-- ISI 2 -->
+        <div class="news-text-block">
+          <h3>Pertama Kalinya Hadir Kelas Teknisi iPhone di Pontianak</h3>
+          <p>
+            Berbeda dengan roadshow sebelumnya, tahun ini Quantum Telecommunication menghadirkan Kelas Teknisi iPhone untuk pertama kalinya. Program ini menjadi salah satu yang paling dinantikan karena kebutuhan teknisi iPhone terus meningkat di berbagai daerah.
+          </p>
+          <div class="news-section-image">
+            <img src="../assets/photos/section/roadshow-pontianak-kelas-iphone.png" alt="Foto Praktik iPhone dan Android">
+            <div class="image-caption">
+              Keterangan Foto: Peserta mengikuti sesi praktik perbaikan perangkat iPhone menggunakan metode dan alat yang digunakan oleh teknisi profesional.
+            </div>
+          </div>
+        </div>
+
+        <hr class="news-divider">
+
+        <!-- ISI 3 -->
+        <div class="news-text-block">
+          <h3>Dukungan Penuh Brader Parts untuk Praktik Peserta</h3>
+          <p>
+            Salah satu keunggulan roadshow tahun ini adalah dukungan langsung dari sponsor utama, Brader Parts. Untuk pertama kalinya, berbagai alat praktik yang digunakan selama pelatihan disediakan langsung untuk peserta. Mulai dari microscope, solder station, blower hot air, power supply, solder wick, flux, ragum PCB, hingga berbagai tools teknisi profesional lainnya digunakan selama proses pembelajaran berlangsung.
+          </p>
+          <div class="news-section-image">
+            <img src="../assets/photos/section/roadshow-pontianak-braderparts1.png" alt="Foto Tools dan Praktik">
+            <div class="image-caption">
+              Peralatan praktik yang didukung langsung oleh Brader Parts digunakan peserta selama pelatihan berlangsung.
+            </div>
+          </div>
+        </div>
+
+        <hr class="news-divider">
+
+        <!-- ISI 4 -->
+        <div class="news-text-block">
+          <h3>Booth Brader Parts Menjadi Pusat Perhatian Peserta</h3>
+          <p>
+            Selain mendukung kegiatan praktik, Brader Parts juga menghadirkan berbagai produk tools dan sparepart secara langsung di lokasi pelatihan. Peserta dapat mencoba, berkonsultasi, dan membeli berbagai kebutuhan teknisi dengan harga khusus serta promo yang hanya tersedia selama kegiatan berlangsung.
+          </p>
+          <div class="news-section-image">
+            <img src="../assets/photos/section/roadshow-pontianak-braderparts2.png" alt="Foto Booth Sponsor">
+            <div class="image-caption">
+              Peserta mengunjungi area display Brader Parts untuk melihat berbagai tools dan perlengkapan teknisi yang tersedia selama acara.
+            </div>
+          </div>
+        </div>
+
+        <hr class="news-divider">
+
+        <!-- ISI 5 -->
+        <div class="news-text-block">
+          <h3>Penutupan dan Foto Bersama</h3>
+          <p>
+            Roadshow ditutup dengan sesi foto bersama serta pembagian sertifikat kepada peserta yang telah mengikuti pelatihan. Momen ini menjadi simbol lahirnya calon-calon teknisi baru yang siap berkarier dan membuka usaha di bidang servis handphone.
+          </p>
+          <div class="news-section-image">
+            <img src="../assets/photos/section/roadshow-pontianak-foto-bersama.webp" alt="Foto Penutupan">
+            <div class="image-caption">
+              Peserta berfoto bersama setelah menyelesaikan rangkaian pelatihan Android dan iPhone di Pontianak.
+            </div>
+          </div>
+        </div>
+
+        <!-- SHARE -->
+        <div class="share-container">
+          <span>Bagikan Artikel Ini:</span>
+          <a href="#" class="share-btn wa"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="share-btn fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="share-btn tw"><i class="fab fa-twitter"></i></a>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang Teknisi Ponsel yang menghasilkan
+              tenaga kerja profesional dan kompeten.
+            </p>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2026 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
