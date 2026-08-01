@@ -10,18 +10,18 @@
             />
     </div>
     <div class="news-content">
-              <p class="news-date">
-                <i class="far fa-calendar-alt"></i> [ISI TANGGAL BERITA]
-              </p>
-              <h3 class="news-title">
-                [ISI JUDUL BERITA]
-              </h3>
-              <p class="news-excerpt">
-              [ISI BERITA]
-              </p>
-              <a href="[ISI URL BERITA ASLI]" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-              </a>
-            </div>
-          </div>
+        <p class="news-date">
+            <i class="far fa-calendar-alt"></i> [ISI TANGGAL BERITA]
+        </p>
+        <h3 class="news-title">
+              [ISI JUDUL BERITA]
+        </h3>
+        <p class="news-excerpt">
+            [ISI BERITA]
+        </p>
+        <a href="[ISI URL BERITA ASLI]" target="_blank" class="news-link"
+            >Baca selengkapnya <i class="fas fa-arrow-right"></i
+          ></a>
+        </a>
+    </div>
+</div>
