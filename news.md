@@ -1198,7 +1198,7 @@
       <div class="container header-content">
         <div class="logo">
           <img
-            src="../assets/photos/logo/quantum-logo-color.png"
+            src="../assets/photos/logo/quantum-logo-color.webp"
             alt="Quantum Telecommunication Logo"
           />
         </div>
