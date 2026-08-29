@@ -418,6 +418,11 @@
         margin-bottom: 10px;
         transition: var(--transition);
         line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .news-item:hover .news-title {
@@ -425,18 +430,21 @@
       }
 
       .news-excerpt {
-      text-align: justify;
+        text-align: left;
         color: #666;
         margin-bottom: 15px;
         font-size: 0.95rem;
         line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .news-link {
         margin-top: auto;
-      }
-
-      .news-link {
         color: var(--accent-orange);
         font-weight: 600;
         text-decoration: none;
@@ -449,6 +457,52 @@
       .news-link:hover {
         gap: 10px;
         color: var(--accent-orange-dark);
+      }
+
+      /* Load More */
+      .news-item.load-more-hidden {
+        display: none !important;
+      }
+
+      .load-more-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .btn-load-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 36px;
+        background: var(--card-bg);
+        color: var(--blue-medium);
+        border: 2px solid var(--blue-medium);
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .btn-load-more:hover {
+        background: var(--blue-medium);
+        color: var(--text-light);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .btn-load-more i {
+        transition: var(--transition);
+      }
+
+      .btn-load-more.is-expanded i {
+        transform: rotate(180deg);
+      }
+
+      .btn-load-more.is-hidden {
+        display: none;
       }
 
       /* Pagination */
@@ -763,6 +817,162 @@
         }
       }
 
+      /* News Detail Modal */
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      .news-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 20, 40, 0.65);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .news-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .news-modal {
+        background: var(--card-bg);
+        border-radius: 20px;
+        max-width: 700px;
+        width: 100%;
+        max-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        box-shadow: var(--shadow-hover);
+        transform: scale(0.85);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .news-modal-overlay.active .news-modal {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .news-modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        transition: var(--transition);
+      }
+
+      .news-modal-close:hover {
+        background: var(--accent-orange);
+        transform: rotate(90deg);
+      }
+
+      .news-modal-image {
+        width: 100%;
+        height: 280px;
+        flex-shrink: 0;
+        overflow: hidden;
+        background: var(--blue-light);
+      }
+
+      .news-modal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .news-modal-body {
+        padding: 30px 35px 35px;
+        overflow-y: auto;
+      }
+
+      #newsModalDate {
+        margin-bottom: 12px;
+      }
+
+      .news-modal-title {
+        font-size: 1.5rem;
+        color: var(--blue-dark);
+        margin-bottom: 18px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .news-modal-text {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.8;
+        white-space: pre-line;
+        margin-bottom: 28px;
+      }
+
+      .news-modal-source-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        background: var(--accent-gradient);
+        color: #fff;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        box-shadow: 0 8px 20px rgba(255, 140, 66, 0.25);
+      }
+
+      .news-modal-source-link:hover {
+        transform: translateY(-3px);
+        color: #fff;
+        box-shadow: 0 12px 25px rgba(255, 140, 66, 0.35);
+      }
+
+      .news-modal-source-link.is-hidden {
+        display: none;
+      }
+
+      @media (max-width: 576px) {
+        .news-modal {
+          max-height: 92vh;
+          border-radius: 16px;
+        }
+
+        .news-modal-image {
+          height: 180px;
+        }
+
+        .news-modal-body {
+          padding: 22px 20px 25px;
+        }
+
+        .news-modal-title {
+          font-size: 1.15rem;
+        }
+
+        .news-modal-text {
+          font-size: 0.92rem;
+        }
+      }
+
       /* Responsive Styles */
       @media (max-width: 992px) {
         .news-hero-title {
@@ -945,133 +1155,166 @@
     overflow: hidden;
   }
 
-  /* --- HERO MODERN GLASS PRISM --- */
+  /* --- HERO MINIMALIST CLEAN (Light & Airy) --- */
 .hero-prism {
-  height: 100vh;
+  min-height: 60vh;
+  padding: 150px 0 100px;
   display: flex;
   align-items: center;
   position: relative;
-  background: #050810; /* Dasar gelap banget biar glassmorphism-nya pop up */
+  background-color: #ffffff;
   overflow: hidden;
 }
 
-.prism-bg {
+/* Dekorasi pola titik-titik (dots pattern) di sudut hero */
+.hero-prism::before {
+  content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('../assets/photos/CTA/hero11.jpeg');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.4) saturate(1.2); /* Bikin foto latar lebih dramatis */
-  transform: scale(1);
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 340px;
+  background-image: radial-gradient(
+    var(--blue-medium) 1.8px,
+    transparent 1.8px
+  );
+  background-size: 22px 22px;
+  opacity: 0.25;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-prism::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Latar foto lama dinonaktifkan agar hero tampil bersih & terang */
+.prism-bg {
+  display: none;
 }
 
 .glass-prism-card {
   position: relative;
   z-index: 10;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4px; /* Untuk efek border gradasi */
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.01));
-  border-radius: 35px;
-  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+  max-width: 760px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .glass-inner {
-  background: rgba(15, 23, 42, 0.6); /* Warna navy transparan */
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  padding: 60px;
-  border-radius: 32px;
-  text-align: center;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+  text-align: left;
 }
 
 .prism-subtitle {
-  color: var(--accent-orange);
-  letter-spacing: 5px;
+  color: var(--accent-orange-dark);
+  letter-spacing: 3px;
   font-weight: 700;
   font-size: 0.75rem;
-  display: block;
-  margin-bottom: 20px;
+  display: inline-block;
+  padding: 7px 18px;
+  background: rgba(255, 140, 66, 0.12);
+  border-radius: 30px;
+  margin-bottom: 22px;
 }
 
 .prism-title {
   font-family: 'Poppins', sans-serif; /* Pakai Poppins Adek */
-  font-weight: 900;
-  font-size: 4rem;
-  color: white;
-  margin-bottom: 25px;
-  line-height: 1.1;
+  font-weight: 800;
+  font-size: 3.2rem;
+  color: var(--blue-dark);
+  margin-bottom: 20px;
+  line-height: 1.15;
 }
 
 .prism-desc {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.2rem;
+  color: #5a6472;
+  font-size: 1.1rem;
   line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: 560px;
+  margin: 0 0 36px;
 }
 
-/* Tombol Premium */
+/* Tombol Clean & Modern (Pill Shape) */
 .prism-actions {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 16px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .btn-prism-primary {
   background: var(--accent-gradient);
   color: white;
-  padding: 12px 40px;
-  border-radius: 35px;
+  padding: 14px 34px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(255, 140, 66, 0.3);
   transition: 0.3s;
 }
 
 .btn-prism-link {
-  color: white;
+  color: var(--blue-dark);
+  background: #ffffff;
+  border: 2px solid #e5eaf2;
+  padding: 12px 30px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition: 0.3s;
 }
 
 .btn-prism-primary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(255, 140, 66, 0.4);
   color: white;
 }
 
 .btn-prism-link:hover {
-  color: var(--accent-orange);
-}
-
-/* Efek Cahaya Tambahan */
-.hero-prism::after {
-  content: '';
-  position: absolute;
-  top: 10%; right: 10%;
-  width: 300px; height: 300px;
-  background: var(--accent-orange);
-  filter: blur(150px);
-  opacity: 0.15;
-  z-index: 2;
+  border-color: var(--blue-medium);
+  color: var(--blue-medium);
+  transform: translateY(-4px);
 }
 
 @media (max-width: 768px) {
-  .prism-title { font-size: 2.5rem; }
-  .glass-inner { padding: 40px 20px; }
-  .prism-actions { flex-direction: column; }
+  .hero-prism {
+    padding: 130px 0 80px;
+  }
+  .prism-title { font-size: 2.4rem; }
+  .glass-inner { padding: 0; }
+  .prism-actions { flex-direction: column; align-items: stretch; }
+  .prism-actions a { text-align: center; justify-content: center; }
 }
 
 @media (max-width: 576px) {
  .prism-title {
- font-size: 1.6rem;
+ font-size: 1.7rem;
  }
 
  .prism-desc {
- font-size: 0.9rem;
+ font-size: 0.95rem;
  }
 }
 
@@ -1190,7 +1433,10 @@
 .cta-subtext {
   font-size: 0.6rem;
 }
+
 }
+
+
     </style>  
   </head>
   <body>
@@ -1205,24 +1451,21 @@
         </div>
         <nav>
           <ul>
-            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li class="dropdown">
-              <a href="programs.html"
-                ><i class="fas fa-graduation-cap"></i> Program</a>
-            </li>
-            <li class="dropdown">
+            <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li class="dropdown"> 
               <a href="#collaboration"
                 ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="./kerjasama/pemerintah.html">Pemerintah</a>
-                <a href="./kerjasama/swasta.html">Swasta</a>
-                <a href="./kerjasama/internasional.html">Internasional</a>
+                <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="menu/kerjasama/swasta.html">Swasta</a>
+                <a href="menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="#" class="active"><i class="fas fa-newspaper"></i> Berita</a></li>
+            <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -3375,6 +3618,13 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
           <!-- Berita 4 -->
         </div>
 
+        <!-- Load More -->
+        <div class="load-more-wrapper">
+          <button type="button" id="loadMoreBtn" class="btn-load-more">
+            <span>Tampilkan Berita Lainnya</span> <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+
         <!-- Pagination -->
         <!-- <div class="news-pagination">
           <a href="#" class="pagination-item">1</a>
@@ -3486,6 +3736,44 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
       <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- News Detail Modal -->
+    <div class="news-modal-overlay" id="newsModalOverlay">
+      <div
+        class="news-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="newsModalTitle"
+      >
+        <button
+          type="button"
+          class="news-modal-close"
+          id="newsModalClose"
+          aria-label="Tutup"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="news-modal-image">
+          <img id="newsModalImage" src="" alt="" />
+        </div>
+        <div class="news-modal-body">
+          <p class="news-date" id="newsModalDate">
+            <i class="far fa-calendar-alt"></i> <span></span>
+          </p>
+          <h3 class="news-modal-title" id="newsModalTitle"></h3>
+          <div class="news-modal-text" id="newsModalText"></div>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="news-modal-source-link"
+            id="newsModalSourceLink"
+          >
+            Kunjungi Sumber <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <script>
       // Mobile Menu Toggle
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
@@ -3544,67 +3832,147 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
       });
     }
 
-      // News Category Filter
+      // News Category Filter + Load More
       const categoryButtons = document.querySelectorAll(".news-category");
       const newsItems = document.querySelectorAll(".news-item");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const INITIAL_NEWS_COUNT = 3; // jumlah berita terbaru yang tampil default
 
       function applyFilter(category) {
-  categoryButtons.forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.category === category);
-  });
+        // aktifkan tombol kategori yang dipilih
+        categoryButtons.forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.category === category);
+        });
 
-  newsItems.forEach(item => {
-    item.style.display =
-      item.dataset.category === category ? "flex" : "none";
-  });
-}
+        // kumpulkan item yang sesuai kategori (urutan sesuai DOM = terbaru di atas)
+        const matchedItems = Array.from(newsItems).filter(
+          (item) => item.dataset.category === category
+        );
 
-// klik tab
-categoryButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    applyFilter(btn.dataset.category);
-  });
-});
-
-// default saat load
-window.addEventListener("load", () => {
-  applyFilter("berita");
-});
-
-
-  categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      // aktifkan tombol
-      categoryButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const category = btn.dataset.category;
-
-      newsItems.forEach(item => {
-        if (category === "all" || item.dataset.category === category) {
-          item.style.display = "flex";
-        } else {
+        newsItems.forEach((item) => {
           item.style.display = "none";
+          item.classList.remove("load-more-hidden");
+        });
+
+        matchedItems.forEach((item, index) => {
+          item.style.display = "flex";
+          if (index >= INITIAL_NEWS_COUNT) {
+            item.classList.add("load-more-hidden");
+          }
+        });
+
+        // tampilkan/sembunyikan tombol "Tampilkan Berita Lainnya"
+        if (loadMoreBtn) {
+          loadMoreBtn.classList.remove("is-expanded");
+          loadMoreBtn.querySelector("span").textContent =
+            "Tampilkan Berita Lainnya";
+          loadMoreBtn.classList.toggle(
+            "is-hidden",
+            matchedItems.length <= INITIAL_NEWS_COUNT
+          );
         }
+      }
+
+      // klik tab kategori
+      categoryButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          applyFilter(btn.dataset.category);
+        });
       });
-    });
-  });
 
-  window.addEventListener("load", () => {
-  const defaultCategory = "berita";
+      // klik tombol load more
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          const activeBtn = document.querySelector(".news-category.active");
+          const activeCategory = activeBtn ? activeBtn.dataset.category : "berita";
 
-  categoryButtons.forEach(b => {
-    b.classList.toggle("active", b.dataset.category === defaultCategory);
-  });
+          newsItems.forEach((item) => {
+            if (item.dataset.category === activeCategory) {
+              item.classList.remove("load-more-hidden");
+            }
+          });
 
-  newsItems.forEach(item => {
-    if (item.dataset.category === defaultCategory) {
-      item.style.display = "flex";
-    } else {
-      item.style.display = "none";
-    }
-  });
-});
+          loadMoreBtn.classList.add("is-hidden");
+        });
+      }
+
+      // default saat load
+      window.addEventListener("load", () => {
+        applyFilter("berita");
+      });
+
+      // News Detail Modal
+      const newsModalOverlay = document.getElementById("newsModalOverlay");
+      const newsModalImage = document.getElementById("newsModalImage");
+      const newsModalDateText = document.querySelector("#newsModalDate span");
+      const newsModalTitle = document.getElementById("newsModalTitle");
+      const newsModalText = document.getElementById("newsModalText");
+      const newsModalSourceLink = document.getElementById(
+        "newsModalSourceLink"
+      );
+      const newsModalClose = document.getElementById("newsModalClose");
+
+      function openNewsModal(item) {
+        const imgEl = item.querySelector(".news-image img");
+        const dateEl = item.querySelector(".news-date");
+        const titleEl = item.querySelector(".news-title");
+        const excerptEl = item.querySelector(".news-excerpt");
+        const linkEl = item.querySelector(".news-link");
+
+        if (imgEl) {
+          newsModalImage.src = imgEl.getAttribute("src") || "";
+          newsModalImage.alt = imgEl.getAttribute("alt") || "";
+        }
+        newsModalDateText.textContent = dateEl ? dateEl.textContent.trim() : "";
+        newsModalTitle.textContent = titleEl ? titleEl.textContent.trim() : "";
+        newsModalText.textContent = excerptEl
+          ? excerptEl.textContent.trim()
+          : "";
+
+        const href = linkEl ? (linkEl.getAttribute("href") || "").trim() : "";
+        if (href && href !== "#") {
+          newsModalSourceLink.setAttribute("href", href);
+          newsModalSourceLink.classList.remove("is-hidden");
+        } else {
+          newsModalSourceLink.removeAttribute("href");
+          newsModalSourceLink.classList.add("is-hidden");
+        }
+
+        newsModalOverlay.classList.add("active");
+        document.body.classList.add("modal-open");
+      }
+
+      function closeNewsModal() {
+        newsModalOverlay.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+
+      // klik kartu berita atau tombol "Baca selengkapnya" membuka modal
+      newsItems.forEach((item) => {
+        item.style.cursor = "pointer";
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          openNewsModal(item);
+        });
+      });
+
+      if (newsModalClose) {
+        newsModalClose.addEventListener("click", closeNewsModal);
+      }
+
+      // tutup modal jika area backdrop (luar pop-up) diklik
+      if (newsModalOverlay) {
+        newsModalOverlay.addEventListener("click", (e) => {
+          if (e.target === newsModalOverlay) {
+            closeNewsModal();
+          }
+        });
+      }
+
+      // tutup modal dengan tombol Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeNewsModal();
+      });
 
       
       // Scroll animations
