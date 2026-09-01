@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="LPK Quantum - Pelatihan Teknisi HP & Telekomunikasi Profesional. Dijamin kerja dengan sertifikasi resmi dan penyaluran kerja."
+    />
+    <title>
+      LPK Quantum - Pelatihan Teknisi HP Profesional
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      /* ==========================================================
+         LPK QUANTUM TELECOMMUNICATION — Design System
+         Palette : Navy (#0f172a) / Soft grey (#f8fafc) / Orange (#f26522)
+         Type    : Poppins (heading) + Inter (body)
+         ========================================================== */
+
+      :root {
+        /* Core palette */
+        --navy: #0f172a;
+        --navy-700: #1e293b;
+        --navy-600: #334155;
+        --slate-600: #475569;
+        --slate-500: #64748b;
+        --slate-300: #cbd5e1;
+        --slate-200: #e2e8f0;
+        --slate-100: #f1f5f9;
+        --bg: #ffffff;
+        --bg-soft: #f8fafc;
+        --orange: #f26522;
+        --orange-dark: #d9541a;
+        --white: #ffffff;
+
+        /* Elevation — soft & transparent, never heavy */
+        --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+        --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+        --shadow-lg: 0 24px 56px rgba(15, 23, 42, 0.14);
+
+        /* Radii */
+        --r-sm: 10px;
+        --r-md: 16px;
+        --r-lg: 24px;
+        --r-pill: 999px;
+
+        /* Type */
+        --ff-heading: "Poppins", sans-serif;
+        --ff-body: "Inter", sans-serif;
+
+        /* Layout */
+        --container: 1180px;
+        --header-h: 76px;
+
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-h);
+      }
+
+      body {
+        font-family: var(--ff-body);
+        color: var(--slate-600);
+        line-height: 1.65;
+        background-color: var(--bg);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--ff-heading);
+        color: var(--navy);
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      p {
+        color: var(--slate-600);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* ---------- Layout utilities ---------- */
+      .container {
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      section {
+        padding: 96px 0;
+      }
+
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 56px;
+      }
+
+      .section-head.center {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+      }
+
+      .section-head p {
+        font-size: 1.0625rem;
+        color: var(--slate-500);
+      }
+
+      .bg-soft {
+        background-color: var(--bg-soft);
+      }
+
+      /* ---------- Buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-family: var(--ff-heading);
+        font-weight: 600;
+        font-size: 0.9375rem;
+        padding: 14px 28px;
+        border-radius: var(--r-sm);
+        border: 1px solid transparent;
+        transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: var(--orange);
+        color: var(--white);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn-primary:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-outline-light {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        border-color: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(2px);
+      }
+
+      .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline-navy {
+        background: transparent;
+        color: var(--navy);
+        border-color: var(--slate-200);
+      }
+
+      .btn-outline-navy:hover {
+        border-color: var(--navy);
+        background: var(--navy);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      .btn-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--ff-heading);
+        font-weight: 600;
+        font-size: 0.9375rem;
+        color: var(--navy);
+        padding-bottom: 2px;
+        border-bottom: 2px solid var(--slate-200);
+        transition: border-color 0.25s var(--ease), color 0.25s var(--ease), gap 0.25s var(--ease);
+      }
+
+      .btn-link:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+        gap: 12px;
+      }
+
+      .btn-link i, .btn-link svg {
+        font-size: 0.8em;
+      }
+
+      .btn-center {
+        text-align: center;
+        margin-top: 48px;
+      }
+    </style>
+    <style>
+      /* ---------- Header & Navigation ---------- */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: transparent;
+        transition: background-color 0.35s var(--ease), box-shadow 0.35s var(--ease), padding 0.35s var(--ease);
+        padding: 22px 0;
+      }
+
+      header.is-scrolled {
+        background: rgba(15, 23, 42, 0.96);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-md);
+        padding: 14px 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo img {
+        height: 42px;
+        width: auto;
+      }
+
+      .logo span {
+        font-family: var(--ff-heading);
+        color: var(--white);
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.2;
+      }
+
+      nav ul {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li > a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 500;
+        font-size: 0.9375rem;
+        padding: 10px 16px;
+        border-radius: var(--r-sm);
+        transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+      }
+
+      nav ul li > a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+      }
+
+      nav ul li > a i.fa-chevron-down {
+        font-size: 0.65rem;
+        transition: transform 0.25s var(--ease);
+      }
+
+      .dropdown:hover > a i.fa-chevron-down {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-content {
+        display: block;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        min-width: 220px;
+        background: var(--white);
+        border-radius: var(--r-sm);
+        box-shadow: var(--shadow-lg);
+        padding: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+      }
+
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-content a {
+        display: block;
+        color: var(--navy-600);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 10px 14px;
+        border-radius: 8px;
+        transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+      }
+
+      .dropdown-content a:hover {
+        background: var(--bg-soft);
+        color: var(--orange);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .header-actions .btn {
+        padding: 11px 22px;
+        font-size: 0.875rem;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.4rem;
+        z-index: 1001;
+      }
+
+      @media (max-width: 992px) {
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: min(340px, 84vw);
+          height: 100vh;
+          background: var(--navy);
+          padding: 100px 28px 40px;
+          transition: right 0.4s var(--ease);
+          overflow-y: auto;
+        }
+
+        nav.active {
+          right: 0;
+          box-shadow: var(--shadow-lg);
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 4px;
+        }
+
+        nav ul li > a {
+          padding: 14px 12px;
+          font-size: 1rem;
+          justify-content: space-between;
+        }
+
+        .dropdown-content {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: rgba(255, 255, 255, 0.04);
+          display: none;
+          margin: 4px 0 4px 8px;
+        }
+
+        .dropdown.active .dropdown-content {
+          display: block;
+        }
+
+        .dropdown-content a {
+          color: rgba(255, 255, 255, 0.75);
+        }
+
+        .dropdown-content a:hover {
+          background: rgba(255, 255, 255, 0.08);
+          color: var(--white);
+        }
+
+        .header-actions .btn-primary {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(15, 23, 42, 0.55);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.4s var(--ease), visibility 0.4s;
+          z-index: 999;
+        }
+
+        .nav-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 620px;
+        max-height: 920px;
+        overflow: hidden;
+      }
+
+      .hero .swiper,
+      .hero .swiper-wrapper,
+      .hero .swiper-slide {
+        height: 100%;
+      }
+
+      .hero-slide-img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.55) 45%, rgba(15, 23, 42, 0.88) 100%);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        padding-bottom: 96px;
+        text-align: center;
+      }
+
+      .hero-pills {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .hero-pill {
+        font-family: var(--ff-heading);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        padding: 8px 20px;
+        border-radius: var(--r-pill);
+        backdrop-filter: blur(4px);
+      }
+
+      .hero-title {
+        font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.01em;
+        max-width: 900px;
+        margin: 0 auto 18px;
+      }
+
+      .hero-tagline {
+        font-family: var(--ff-body);
+        font-weight: 400;
+        font-size: clamp(1rem, 1.6vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.88);
+        max-width: 560px;
+        margin: 0 auto 36px;
+      }
+
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .hero-nav {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        width: 46px;
+        height: 46px;
+        margin-top: -23px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.25s var(--ease);
+      }
+
+      .hero-nav:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .hero-nav::after {
+        font-size: 1rem;
+      }
+
+      .hero .swiper-button-prev.hero-nav {
+        left: 24px;
+      }
+
+      .hero .swiper-button-next.hero-nav {
+        right: 24px;
+      }
+
+      .hero .swiper-pagination {
+        bottom: 32px !important;
+      }
+
+      .hero .swiper-pagination-bullet {
+        background: var(--white);
+        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+      }
+
+      .hero .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: var(--orange);
+      }
+
+      @media (max-width: 768px) {
+        .hero-nav {
+          display: none;
+        }
+
+        .hero-content {
+          padding-bottom: 64px;
+        }
+      }
+    </style>
+    <style>
+      /* ---------- About — Bento grid ---------- */
+      .about-bento {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .about-media {
+        position: relative;
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        min-height: 460px;
+      }
+
+      .about-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-badge {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        background: var(--white);
+        border-radius: var(--r-md);
+        padding: 18px 22px;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .about-badge strong {
+        font-family: var(--ff-heading);
+        font-size: 2rem;
+        color: var(--orange);
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .about-badge span {
+        font-size: 0.8125rem;
+        color: var(--slate-600);
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      .about-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .about-panel h3 {
+        font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+        margin-bottom: 14px;
+      }
+
+      .about-lead {
+        font-size: 1.0625rem;
+        color: var(--slate-500);
+      }
+
+      .about-values {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .about-value {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 18px;
+        background: var(--bg-soft);
+        border-radius: var(--r-md);
+        border: 1px solid var(--slate-200);
+      }
+
+      .about-value-icon {
+        flex: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: var(--navy);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      .about-value p {
+        font-size: 0.9375rem;
+        color: var(--slate-600);
+        margin: 0;
+      }
+
+      @media (max-width: 900px) {
+        .about-bento {
+          grid-template-columns: 1fr;
+        }
+
+        .about-media {
+          min-height: 340px;
+        }
+      }
+
+      /* ---------- Video Profile ---------- */
+      .video-frame {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--slate-200);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        background: var(--navy);
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+    </style>
+    <style>
+      /* ---------- Features / Keunggulan ---------- */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .feature-card {
+        background: var(--white);
+        border: 1px solid var(--slate-200);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+        border-color: transparent;
+      }
+
+      .feature-media {
+        position: relative;
+        height: 160px;
+      }
+
+      .feature-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-icon {
+        position: absolute;
+        left: 16px;
+        bottom: -20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--orange);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.05rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .feature-body {
+        padding: 32px 20px 24px;
+      }
+
+      .feature-body h3 {
+        font-size: 1.0625rem;
+        margin-bottom: 8px;
+      }
+
+      .feature-body p {
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 992px) {
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Programs — pricing cards ---------- */
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .price-card {
+        background: var(--white);
+        border: 1px solid var(--slate-200);
+        border-radius: var(--r-lg);
+        padding: 8px 8px 32px;
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      }
+
+      .price-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .price-media {
+        position: relative;
+        border-radius: var(--r-md);
+        overflow: hidden;
+        height: 190px;
+      }
+
+      .price-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .price-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--navy);
+        color: var(--white);
+        font-family: var(--ff-heading);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: 6px 14px;
+        border-radius: var(--r-pill);
+      }
+
+      .price-body {
+        padding: 28px 24px 0;
+      }
+
+      .price-body h3 {
+        font-size: 1.25rem;
+        margin-bottom: 6px;
+      }
+
+      .price-value {
+        font-family: var(--ff-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--orange);
+        margin-bottom: 14px;
+      }
+
+      .price-value span {
+        font-family: var(--ff-body);
+        font-size: 0.8125rem;
+        font-weight: 400;
+        color: var(--slate-500);
+      }
+
+      .price-body p.price-desc {
+        font-size: 0.9375rem;
+        margin-bottom: 24px;
+      }
+
+      .price-body .btn {
+        width: 100%;
+      }
+
+      @media (max-width: 700px) {
+        .programs-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <style>
+      /* ---------- Instructors — cinematic cards ---------- */
+      .instructor-slider {
+        padding-bottom: 56px !important;
+      }
+
+      .instructor-card {
+        position: relative;
+        border-radius: var(--r-md);
+        overflow: hidden;
+        aspect-ratio: 3 / 4;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .instructor-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s var(--ease);
+      }
+
+      .instructor-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .instructor-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 45%, rgba(15, 23, 42, 0.92) 100%);
+      }
+
+      .instructor-info {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        z-index: 2;
+      }
+
+      .instructor-info h5 {
+        color: var(--white);
+        font-size: 1.05rem;
+        margin-bottom: 4px;
+      }
+
+      .instructor-info span {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.8125rem;
+        font-weight: 500;
+      }
+
+      .instructor-slider .swiper-pagination-bullet {
+        background: var(--slate-300);
+        opacity: 1;
+      }
+
+      .instructor-slider .swiper-pagination-bullet-active {
+        background: var(--orange);
+      }
+
+      /* ---------- Alumni testimonial ---------- */
+      .alumni-card {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 0;
+        max-width: 960px;
+        margin: 0 auto;
+        background: var(--white);
+        border: 1px solid var(--slate-200);
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .alumni-media {
+        min-height: 340px;
+      }
+
+      .alumni-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .alumni-body {
+        padding: 44px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .alumni-body i.fa-quote-left {
+        color: var(--orange);
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+      }
+
+      .alumni-quote {
+        font-family: var(--ff-heading);
+        font-size: 1.1875rem;
+        font-weight: 500;
+        color: var(--navy);
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+
+      .alumni-name {
+        font-size: 1.0625rem;
+        margin-bottom: 2px;
+      }
+
+      .alumni-meta {
+        font-size: 0.875rem;
+        color: var(--slate-500);
+        margin-bottom: 14px;
+      }
+
+      .alumni-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--orange-dark);
+        background: rgba(242, 101, 34, 0.08);
+        padding: 8px 14px;
+        border-radius: var(--r-pill);
+        width: fit-content;
+      }
+
+      @media (max-width: 768px) {
+        .alumni-card {
+          grid-template-columns: 1fr;
+        }
+
+        .alumni-media {
+          min-height: 260px;
+        }
+
+        .alumni-body {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+    <style>
+      /* ---------- News — blog cards ---------- */
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+
+      .news-card {
+        background: var(--white);
+        border: 1px solid var(--slate-200);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      }
+
+      .news-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .news-media {
+        height: 220px;
+      }
+
+      .news-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .news-body {
+        padding: 24px;
+      }
+
+      .news-date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8125rem;
+        color: var(--slate-500);
+        margin-bottom: 12px;
+      }
+
+      .news-title {
+        font-size: 1.125rem;
+        margin-bottom: 10px;
+      }
+
+      .news-excerpt {
+        font-size: 0.9375rem;
+        margin-bottom: 18px;
+      }
+
+      /* ---------- Cooperation ---------- */
+      .coop-slider {
+        padding-bottom: 56px !important;
+      }
+
+      .coop-card {
+        background: var(--white);
+        border: 1px solid var(--slate-200);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        height: 100%;
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      }
+
+      .coop-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .coop-media {
+        position: relative;
+        height: 190px;
+      }
+
+      .coop-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .coop-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--white);
+        color: var(--navy);
+        font-family: var(--ff-heading);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: var(--r-pill);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .coop-body {
+        padding: 24px;
+      }
+
+      .coop-body h3 {
+        font-size: 1.0625rem;
+        margin-bottom: 8px;
+      }
+
+      .coop-body p {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+      }
+
+      .coop-slider .swiper-pagination-bullet {
+        background: var(--slate-300);
+        opacity: 1;
+      }
+
+      .coop-slider .swiper-pagination-bullet-active {
+        background: var(--orange);
+      }
+
+      @media (max-width: 700px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <style>
+      /* ---------- Partners marquee ---------- */
+      .partners-section {
+        padding: 72px 0;
+        border-top: 1px solid var(--slate-200);
+        border-bottom: 1px solid var(--slate-200);
+      }
+
+      .partners-marquee {
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+      }
+
+      .partners-track {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        width: max-content;
+        animation: marquee 38s linear infinite;
+      }
+
+      .partners-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .partner-item {
+        flex: none;
+        height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      .partner-item img {
+        height: 100%;
+        width: auto;
+        max-width: 140px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.55;
+        transition: filter 0.3s var(--ease), opacity 0.3s var(--ease);
+      }
+
+      .partner-item:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .partners-track {
+          animation: none;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      /* ---------- CTA floating banner ---------- */
+      .cta-banner-section {
+        padding: 0;
+      }
+
+      .cta-banner {
+        background: var(--navy);
+        border-radius: var(--r-lg);
+        margin: 0 auto;
+        max-width: var(--container);
+        padding: 56px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        right: -60px;
+        top: -60px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: var(--orange);
+        opacity: 0.12;
+      }
+
+      .cta-banner-text h2 {
+        color: var(--white);
+        font-size: clamp(1.5rem, 2.6vw, 2rem);
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      .cta-banner-text p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1rem;
+        max-width: 480px;
+        position: relative;
+      }
+
+      .cta-banner .btn-primary {
+        position: relative;
+        padding: 16px 32px;
+      }
+    </style>
+    <style>
+      /* ---------- Footer ---------- */
+      footer {
+        background: var(--navy);
+        padding: 80px 0 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr 1.3fr;
+        gap: 48px;
+        padding-bottom: 56px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo {
+        font-family: var(--ff-heading);
+        color: var(--white);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .footer-about p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9375rem;
+        margin-bottom: 24px;
+        max-width: 320px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease);
+      }
+
+      .footer-social a:hover {
+        background: var(--orange);
+        border-color: var(--orange);
+      }
+
+      footer h3 {
+        color: var(--white);
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9375rem;
+        transition: color 0.25s var(--ease), padding-left 0.25s var(--ease);
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+        padding-left: 4px;
+      }
+
+      .footer-contact p {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+      }
+
+      .footer-contact p i {
+        color: var(--orange);
+        margin-top: 3px;
+        flex: none;
+        width: 16px;
+      }
+
+      .map-container {
+        border-radius: var(--r-sm);
+        overflow: hidden;
+        margin: 18px 0 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 160px;
+        border: 0;
+        display: block;
+      }
+
+      .map-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--white);
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 2px;
+      }
+
+      .map-button:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+
+      .copyright {
+        padding: 28px 0;
+        text-align: center;
+      }
+
+      .copyright p {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 900px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      /* ---------- Floating widgets ---------- */
+      .whatsapp-float {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        box-shadow: var(--shadow-lg);
+        z-index: 900;
+        transition: transform 0.3s var(--ease);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.08);
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 92px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+        z-index: 900;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        background: var(--orange);
+      }
+
+      /* ---------- Responsive: section rhythm ---------- */
+      @media (max-width: 768px) {
+        section {
+          padding: 64px 0;
+        }
+
+        .section-head {
+          margin-bottom: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="siteHeader">
+      <div class="container header-content">
+        <div class="logo">
+          <img
+            src="assets/photos/logo/quantum-logo-color.webp"
+            alt="Quantum Telecommunication Logo"
+          />
+          <span>LPK Quantum<br />Telecommunication</span>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+        <nav id="siteNav">
+          <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li class="dropdown">
+              <a href="#collaboration"
+                ><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="menu/kerjasama/swasta.html">Swasta</a>
+                <a href="menu/kerjasama/internasional.html">Internasional</a>
+              </div>
+            </li>
+            <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Berita</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="https://wa.me/6282171727337" class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Hubungi Kami
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="swiper-button-next hero-nav"></div>
+      <div class="swiper-button-prev hero-nav"></div>
+
+      <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero-slide-img" style="background-image: url('assets/photos/CTA/AFFILIATE\ X\ COLLABORATION.jpg.webp');"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra7-potret.png');"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra6-potret.png');"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-slide-img" style="background-image: url('assets/photos/mitra/mitra5-potret.png');"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-pills">
+          <span class="hero-pill">Pelatihan</span>
+          <span class="hero-pill">Magang</span>
+          <span class="hero-pill">Kerja</span>
+        </div>
+        <h1 class="hero-title">LPK QUANTUM TELECOMMUNICATION</h1>
+        <h2 class="hero-tagline">Melatih Teknisi Ponsel Yang Amanah <br> Jujur, Handal dan Profesional</h2>
+        <div class="hero-actions">
+          <a href="https://wa.me/6282171727337" class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+          </a>
+          <a href="#programs" class="btn btn-outline-light">
+            Lihat Program Pelatihan
+          </a>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section id="about-quantum" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Lembaga Pelatihan Teknisi Ponsel Terpercaya di Semarang</h2>
+          <p>Sejak 2008, LPK Quantum Telecommunication membekali generasi muda dengan keahlian teknisi ponsel yang diakui industri.</p>
+        </div>
+
+        <div class="about-bento">
+          <div class="about-media">
+            <img src="assets/photos/section/tentang-kami.jpg" alt="Pelatihan LPK Quantum">
+            <div class="about-badge">
+              <strong>15+</strong>
+              <span>Tahun<br>Pengalaman</span>
+            </div>
+          </div>
+
+          <div class="about-panel">
+            <div>
+              <h3>Membangun Keahlian, Mencetak Profesional</h3>
+              <p class="about-lead">Kami konsisten menjadi mitra pembelajaran bagi ribuan teknisi ponsel di Indonesia, melalui kurikulum yang teruji dan pendampingan langsung dari praktisi berpengalaman.</p>
+            </div>
+
+            <div class="about-values">
+              <div class="about-value">
+                <div class="about-value-icon"><i class="fas fa-graduation-cap"></i></div>
+                <p>Pelatihan berbasis kompetensi dan praktik langsung, mengikuti perkembangan teknologi perangkat terkini.</p>
+              </div>
+              <div class="about-value">
+                <div class="about-value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <p>Menanamkan nilai amanah, kejujuran, dan profesionalisme sebagai fondasi setiap lulusan.</p>
+              </div>
+              <div class="about-value">
+                <div class="about-value-icon"><i class="fas fa-user-shield"></i></div>
+                <p>Pendampingan berkelanjutan pasca-pelatihan agar setiap teknisi benar-benar siap terjun ke dunia kerja.</p>
+              </div>
+            </div>
+
+            <a href="menu/about.html" class="btn-link">
+              Pelajari selengkapnya <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-profile">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Company Profile</h2>
+          <p>Simak profil lengkap lembaga kami dalam video berikut.</p>
+        </div>
+
+        <div class="video-frame">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/Cpdx_JTrg68?si=7FqA6Sj5qyW9u7FU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="video-actions">
+          <a href="assets/photos/pdf/Compro Quantum Telecommunication.pdf" target="_blank" class="btn btn-outline-navy">
+            <i class="fas fa-file-pdf"></i> Company Profile
+          </a>
+          <a href="menu/materi.html" class="btn btn-primary">
+            Materi Pelatihan <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mengapa Memilih LPK Quantum</h2>
+          <p>Standar mutu, fasilitas, dan jejaring kerja yang menjadi alasan ribuan siswa memilih kami.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-media">
+              <img src="assets/photos/CTA/hero12.jpeg" alt="Terakreditasi">
+              <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+            </div>
+            <div class="feature-body">
+              <h3>Terakreditasi</h3>
+              <p>Menyelenggarakan pelatihan resmi dengan standar mutu yang diakui secara nasional.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-media">
+              <img src="assets/photos/alumni-page/2024/Desember 2024/desember243.jpeg" alt="Fasilitas Modern">
+              <div class="feature-icon"><i class="fas fa-tools"></i></div>
+            </div>
+            <div class="feature-body">
+              <h3>Fasilitas Modern</h3>
+              <p>Dilengkapi peralatan praktik dan ruang kerja yang menunjang proses belajar secara optimal.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-media">
+              <img src="assets/photos/alumni-page/2024/Konter Sendiri/ks4.jpeg" alt="Penyaluran Kerja">
+              <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+            </div>
+            <div class="feature-body">
+              <h3>Penyaluran Kerja</h3>
+              <p>Membantu proses penyaluran lulusan ke jaringan service center terkemuka di berbagai kota.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-media">
+              <img src="assets/photos/alumni-page/2025/Februari 2025/feb3.jpg" alt="5000+ Alumni">
+              <div class="feature-icon"><i class="fas fa-users"></i></div>
+            </div>
+            <div class="feature-body">
+              <h3>5000+ Alumni</h3>
+              <p>Dipercaya oleh ribuan alumni yang kini berkarier sebagai teknisi ponsel profesional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <a href="menu/about.html" class="btn btn-outline-navy">
+            Selengkapnya Tentang Kami <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Program Pelatihan</h2>
+          <p>Pilih jalur belajar yang sesuai dengan kebutuhan dan waktu Anda.</p>
+        </div>
+
+        <div class="programs-grid">
+          <div class="price-card">
+            <div class="price-media">
+              <img src="./assets/photos/CTA/hero1.jpg" alt="Kelas Offline LPK Quantum">
+              <span class="price-badge">Offline</span>
+            </div>
+            <div class="price-body">
+              <h3>Kelas Offline</h3>
+              <p class="price-value">Rp 4.000.000</p>
+              <p class="price-desc">Pembelajaran tatap muka langsung di Semarang, didampingi instruktur secara intensif dari tahap dasar hingga mahir.</p>
+              <a href="./menu/programs.html" class="btn btn-outline-navy">Detail Kelas</a>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-media">
+              <img src="./assets/photos/CTA/hero6.jpeg" alt="Kelas Online LPK Quantum">
+              <span class="price-badge">Online</span>
+            </div>
+            <div class="price-body">
+              <h3>Kelas Online</h3>
+              <p class="price-value">Rp 800.000</p>
+              <p class="price-desc">Pembelajaran melalui live streaming dengan bimbingan penuh dan konsultasi tanpa batas hingga Anda benar-benar menguasai materi.</p>
+              <a href="./menu/programs.html" class="btn btn-outline-navy">Detail Kelas</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <a href="menu/programs.html" class="btn btn-primary">
+            Lihat Semua Program <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="instructors" class="bg-soft">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Tim Instruktur Kami</h2>
+          <p>Belajar langsung dari praktisi berpengalaman di bidang teknisi ponsel.</p>
+        </div>
+
+        <div class="swiper instructor-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="instructor-card">
+                <img src="assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno">
+                <div class="instructor-info">
+                  <h5>Tomie Sudiarno</h5>
+                  <span>Owner & Leader</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="instructor-card">
+                <img src="assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma">
+                <div class="instructor-info">
+                  <h5>Nandieni Hisma</h5>
+                  <span>Repair Software</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="instructor-card">
+                <img src="assets/photos/instruktur/yosi.webp" alt="Yossi Wahyu Hidayat">
+                <div class="instructor-info">
+                  <h5>Yossi Wahyu Hidayat</h5>
+                  <span>Instructor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="instructor-card">
+                <img src="assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad">
+                <div class="instructor-info">
+                  <h5>Djunaedi Sammad</h5>
+                  <span>Senior Instructor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="instructor-card">
+                <img src="assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih">
+                <div class="instructor-info">
+                  <h5>Ika Fitrianingsih</h5>
+                  <span>Materi Bisnis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="btn-center">
+          <a href="menu/about.html" class="btn btn-outline-navy">
+            Selengkapnya <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="alumni">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Kisah Sukses Alumni</h2>
+          <p>Perjalanan karier nyata dari lulusan LPK Quantum Telecommunication.</p>
+        </div>
+
+        <div class="alumni-card">
+          <div class="alumni-media">
+            <img src="assets/photos/alumni/alumni1.JPG" alt="Khoirul Hidayat">
+          </div>
+          <div class="alumni-body">
+            <i class="fas fa-quote-left"></i>
+            <p class="alumni-quote">Setelah menyelesaikan pelatihan di LPK Quantum, saya berhasil membuka service center sendiri dan kini dipercaya menangani perbaikan berbagai seri iPhone.</p>
+            <h3 class="alumni-name">Khoirul Hidayat</h3>
+            <p class="alumni-meta">Alumni Kelas Offline 2023</p>
+            <span class="alumni-status"><i class="fas fa-briefcase"></i> Owner Service Center Mandiri</span>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <a href="menu/alumni.html" class="btn btn-outline-navy">
+            Lihat Alumni Lainnya <i class="fas fa-users"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Berita Terkini</h2>
+          <p>Aktivitas LPK Quantum yang diliput oleh berbagai media terpercaya.</p>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="news-media">
+              <img src="./assets/photos/section/berita1.jpg" alt="Liputan Metro Times" loading="lazy">
+            </div>
+            <div class="news-body">
+              <p class="news-date"><i class="far fa-calendar-alt"></i> 8 Agustus 2023</p>
+              <h3 class="news-title">Cetak Pengusaha Muda Mandiri Bersama Bamuis BNI</h3>
+              <p class="news-excerpt">LPK Quantum turut mencetak teknisi ponsel profesional yang siap bersaing di dunia kerja.</p>
+              <a href="https://metrotimes.news/..." class="btn-link" target="_blank">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-media">
+              <img src="./assets/photos/section/berita2.jpg" alt="Liputan Suara Merdeka" loading="lazy">
+            </div>
+            <div class="news-body">
+              <p class="news-date"><i class="far fa-calendar-alt"></i> 9 Agustus 2023</p>
+              <h3 class="news-title">Tekan Pengangguran di Semarang Melalui Pelatihan Teknis</h3>
+              <p class="news-excerpt">Belasan peserta dibekali keterampilan teknis guna mendukung penurunan angka pengangguran di Kota Semarang.</p>
+              <a href="https://www.suaramerdeka.com/..." class="btn-link" target="_blank">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <a href="menu/news.html" class="btn btn-outline-navy">Lihat Berita Lainnya</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cooperation">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dokumentasi Kerjasama</h2>
+          <p>LPK Quantum menjalin sinergi dengan berbagai instansi untuk mendukung penyaluran kerja dan pengembangan kurikulum.</p>
+        </div>
+
+        <div class="swiper coop-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="coop-card">
+                <div class="coop-media">
+                  <img src="assets/photos/kerjasama/negeri/BNSP 2024/bnsp-01.jpg" alt="Kerjasama Instansi Negeri">
+                  <span class="coop-badge">Negeri</span>
+                </div>
+                <div class="coop-body">
+                  <h3>Sinergi Instansi Negeri</h3>
+                  <p>Kerjasama strategis dengan dinas dan lembaga pemerintahan dalam proses sertifikasi kompetensi.</p>
+                  <a href="menu/kerjasama/pemerintah.html" class="btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="coop-card">
+                <div class="coop-media">
+                  <img src="assets/photos/kerjasama/Swasta/BAMUIS I/bamuis1.jpg" alt="Kerjasama Swasta">
+                  <span class="coop-badge">Swasta</span>
+                </div>
+                <div class="coop-body">
+                  <h3>Kemitraan Swasta</h3>
+                  <p>Penyaluran lulusan ke berbagai service center dan perusahaan teknologi swasta di seluruh Indonesia.</p>
+                  <a href="menu/kerjasama/swasta.html" class="btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="coop-card">
+                <div class="coop-media">
+                  <img src="assets/photos/kerjasama/Internasional/IOM 2023/IOM-11.jpg" alt="Kerjasama Internasional">
+                  <span class="coop-badge">Internasional</span>
+                </div>
+                <div class="coop-body">
+                  <h3>Jejaring Internasional</h3>
+                  <p>Adopsi kurikulum global untuk mempersiapkan tenaga kerja sesuai standar pasar internasional.</p>
+                  <a href="menu/kerjasama-intl.html" class="btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Mitra Kerjasama</h2>
+          <p>Jaringan service center dan mitra industri yang bekerja sama dengan LPK Quantum.</p>
+        </div>
+      </div>
+      <div class="partners-marquee">
+        <div class="partners-track">
+          <div class="partner-item">
+            <img src="assets/photos/mitra/braderpart-new-mitra-banner.webp" alt="Mitra 1" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra1.png" alt="Mitra 1" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra2.png" alt="Mitra 2" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra3-landscape.png" alt="Mitra 3" loading="lazy" />
+          </div>
+          <a href="https://www.instagram.com/magicservicebanyumaniksemarang/" class="partner-item">
+            <img src="assets/photos/mitra/mitra4-landscape.png" alt="Mitra 4" loading="lazy" />
+          </a>
+          <a href="https://bt-acc.com/" class="partner-item">
+            <img src="assets/photos/mitra/mitra7.png" alt="Mitra 7" loading="lazy" />
+          </a>
+          <a href="https://www.facebook.com/MeetooSunshine.Official/" class="partner-item">
+            <img src="assets/photos/mitra/mitra6-landscape.png" alt="Mitra 6" loading="lazy" />
+          </a>
+          <a href="https://ogsupershinestar.com/" class="partner-item">
+            <img src="assets/photos/mitra/mitra5-landscape.png" alt="Mitra 5" loading="lazy" />
+          </a>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/braderpart-new-mitra-banner.webp" alt="Mitra 1" loading="lazy" />
+          </div>
+          <a href="https://www.instagram.com/juandaservicecenter/" class="partner-item">
+            <img src="assets/photos/mitra/mitra8-landscape.png" alt="Mitra 8" loading="lazy" />
+          </a>
+          <a href="https://borneoschematics.co.id/" class="partner-item">
+            <img src="assets/photos/mitra/mitra9-landscape.png" alt="Mitra 9" loading="lazy" />
+          </a>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra10.png" alt="Mitra 10" loading="lazy" />
+          </div>
+          <a href="https://www.instagram.com/gajahservicecenter/" class="partner-item">
+            <img src="assets/photos/mitra/mitra11-landscape.png" alt="Mitra 11" loading="lazy" />
+          </a>
+
+          <!-- Duplicated set for seamless loop -->
+          <div class="partner-item">
+            <img src="assets/photos/mitra/braderpart-new-mitra-banner.webp" alt="Mitra 1" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra1.png" alt="Mitra 1" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra2.png" alt="Mitra 2" loading="lazy" />
+          </div>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra3-landscape.png" alt="Mitra 3" loading="lazy" />
+          </div>
+          <a href="https://www.instagram.com/magicservicebanyumaniksemarang/" class="partner-item">
+            <img src="assets/photos/mitra/mitra4-landscape.png" alt="Mitra 4" loading="lazy" />
+          </a>
+          <a href="https://bt-acc.com/" class="partner-item">
+            <img src="assets/photos/mitra/mitra7.png" alt="Mitra 7" loading="lazy" />
+          </a>
+          <a href="https://www.facebook.com/MeetooSunshine.Official/" class="partner-item">
+            <img src="assets/photos/mitra/mitra6-landscape.png" alt="Mitra 6" loading="lazy" />
+          </a>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/braderpart-new-mitra-banner.webp" alt="Mitra 1" loading="lazy" />
+          </div>
+          <a href="https://ogsupershinestar.com/" class="partner-item">
+            <img src="assets/photos/mitra/mitra5-landscape.png" alt="Mitra 5" loading="lazy" />
+          </a>
+          <a href="https://www.instagram.com/juandaservicecenter/" class="partner-item">
+            <img src="assets/photos/mitra/mitra8-landscape.png" alt="Mitra 8" loading="lazy" />
+          </a>
+          <a href="https://borneoschematics.co.id/" class="partner-item">
+            <img src="assets/photos/mitra/mitra9-landscape.png" alt="Mitra 9" loading="lazy" />
+          </a>
+          <div class="partner-item">
+            <img src="assets/photos/mitra/mitra10.png" alt="Mitra 10" loading="lazy" />
+          </div>
+          <a href="https://www.instagram.com/gajahservicecenter/" class="partner-item">
+            <img src="assets/photos/mitra/mitra11-landscape.png" alt="Mitra 11" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner-section">
+      <div class="cta-banner">
+        <div class="cta-banner-text">
+          <h2>Siap Memulai Karier Sebagai Teknisi Profesional?</h2>
+          <p>Bergabunglah bersama ribuan alumni LPK Quantum yang telah berkarier di industri teknisi ponsel.</p>
+        </div>
+        <a href="https://wa.me/6282171727337" class="btn btn-primary" target="_blank">
+          Hubungi Admin <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo">LPK Quantum</div>
+            <p>
+              Lembaga Pelatihan Kerja bidang teknisi ponsel yang mencetak
+              tenaga kerja profesional, kompeten, dan siap bersaing di industri.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@quantumtelecom41" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Link Cepat</h3>
+            <ul>
+              <li><a href="#home">Beranda</a></li>
+              <li><a href="menu/about.html">Tentang Kami</a></li>
+              <li><a href="#programs">Program Pelatihan</a></li>
+              <li><a href="menu/kerjasama/pemerintah.html">Kerjasama</a></li>
+              <li><a href="menu/alumni.html">Alumni</a></li>
+              <li><a href="menu/news.html">Berita</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
+              Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
+            </p>
+            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> +62 821 7172 7337</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              quantumtelecommunication38@gmail.com
+            </p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8"
+              target="_blank"
+              class="map-button"
+            >
+              <i class="fas fa-map-marker-alt"></i> Lihat di Google Maps
+            </a>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 LPK Quantum Telecommunication. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/6282171727337"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Hubungi via WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Sticky header on scroll
+      const siteHeader = document.getElementById("siteHeader");
+      function updateHeader() {
+        if (window.scrollY > 40) {
+          siteHeader.classList.add("is-scrolled");
+        } else {
+          siteHeader.classList.remove("is-scrolled");
+        }
+      }
+      window.addEventListener("scroll", updateHeader);
+      updateHeader();
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const nav = document.getElementById("siteNav");
+      const navOverlay = document.getElementById("navOverlay");
+      const body = document.body;
+
+      function closeMobileMenu() {
+        nav.classList.remove("active");
+        navOverlay.classList.remove("active");
+        body.style.overflow = "";
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+
+      mobileMenuBtn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("active");
+        navOverlay.classList.toggle("active", isOpen);
+        body.style.overflow = isOpen ? "hidden" : "";
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-times", isOpen);
+      });
+
+      navOverlay.addEventListener("click", closeMobileMenu);
+
+      // Close mobile menu when clicking a non-dropdown link
+      document.querySelectorAll("nav ul li a:not(.dropdown > a)").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      // Dropdown toggle for mobile
+      document.querySelectorAll("nav ul li.dropdown").forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+        link.addEventListener("click", (e) => {
+          if (window.innerWidth <= 992) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+
+      // Back to top button
+      const backToTop = document.getElementById("backToTop");
+      function updateBackToTop() {
+        backToTop.classList.toggle("visible", window.scrollY > 500);
+      }
+      window.addEventListener("scroll", updateBackToTop);
+      updateBackToTop();
+
+      // Swiper components
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hero slider — manual navigation only, no autoplay
+        new Swiper(".hero-slider", {
+          effect: "fade",
+          fadeEffect: { crossFade: true },
+          loop: true,
+          autoplay: false,
+          speed: 1000,
+          navigation: {
+            nextEl: ".hero .swiper-button-next",
+            prevEl: ".hero .swiper-button-prev",
+          },
+          pagination: {
+            el: ".hero .swiper-pagination",
+            clickable: true,
+          },
+        });
+
+        // Instructors slider
+        new Swiper(".instructor-slider", {
+          slidesPerView: 1,
+          spaceBetween: 24,
+          centeredSlides: true,
+          loop: true,
+          autoplay: { delay: 3200, disableOnInteraction: false },
+          pagination: { el: ".instructor-slider .swiper-pagination", clickable: true },
+          breakpoints: {
+            768: { slidesPerView: 2, centeredSlides: false },
+            1100: { slidesPerView: 4, centeredSlides: false },
+          },
+        });
+
+        // Cooperation slider
+        new Swiper(".coop-slider", {
+          slidesPerView: 1,
+          spaceBetween: 24,
+          centeredSlides: true,
+          loop: true,
+          autoplay: { delay: 4200, disableOnInteraction: false },
+          pagination: { el: ".coop-slider .swiper-pagination", clickable: true },
+          breakpoints: {
+            768: { slidesPerView: 2, centeredSlides: false },
+            1024: { slidesPerView: 3, centeredSlides: false },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
