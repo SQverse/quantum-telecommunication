@@ -4192,6 +4192,99 @@ header .logo img { transition: filter 0.3s ease; }
 @media (max-width: 576px) {
   .section-eyebrow { font-size: 0.7rem; letter-spacing: 3px; }
 }
+
+/* ===== SLIDER BANNER SPONSOR ===== */
+.banner-slider {
+  padding: 60px 0 10px;
+  text-align: center;
+}
+.banner-slider__wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.banner-slider__swiper {
+  padding: 10px 0 45px !important; /* ruang untuk bayangan banner */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.banner-slider__swiper .swiper-slide {
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(26, 60, 110, 0.15);
+  transform: scale(0.9);
+  opacity: 0.45;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.banner-slider__swiper .swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+}
+.banner-slider__swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* untuk logo persegi/tinggi: tampil utuh di atas latar putih */
+.banner-slider__swiper .banner--contain img {
+  object-fit: contain;
+  padding: 4% 0;
+}
+.banner-slider__nav {
+  position: absolute;
+  top: calc(50% - 17px);
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: var(--blue-dark);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.banner-slider__nav:hover {
+  background: var(--accent-orange);
+  color: #fff;
+}
+/* tombol menempel di tepi banner yang aktif */
+.banner-slider__prev { left: calc(16.6% - 24px); }
+.banner-slider__next { right: calc(16.6% - 24px); }
+@media (min-width: 1200px) {
+  .banner-slider__prev { left: calc(20.6% - 24px); }
+  .banner-slider__next { right: calc(20.6% - 24px); }
+}
+.banner-slider__dots {
+  position: static !important;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.banner-slider__dots .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: var(--blue-dark);
+  opacity: 0.25;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.banner-slider__dots .swiper-pagination-bullet-active {
+  width: 26px;
+  border-radius: 5px;
+  background: var(--accent-orange);
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .banner-slider { padding-top: 45px; }
+  .banner-slider__swiper .swiper-slide { border-radius: 14px; }
+  .banner-slider__nav { display: none; } /* di HP cukup geser */
+}
     </style>
   </head>
   <body>
@@ -4267,6 +4360,28 @@ header .logo img { transition: filter 0.3s ease; }
       <div><strong>Siap Kerja</strong><span>Penyaluran Kerja</span></div>
     </div>
   </div>
+</div>
+
+
+<!-- ===== SLIDER BANNER SPONSOR ===== -->
+<!-- Tambah/ganti banner: copy satu baris <div class="swiper-slide">, ganti src & alt. Ukuran ideal 16:9 (mis. 1600x900). -->
+<div class="banner-slider">
+  <span class="section-eyebrow">Didukung Oleh</span>
+  <div class="banner-slider__wrap">
+    <div class="swiper banner-slider__swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide banner--contain"><img src="assets/photos/hero/logo-bplus.jpg" alt="BPlus - High Class Battery" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/hero/logo titan.jpg.jpeg" alt="Titan" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/CTA/AFFILIATE X COLLABORATION.jpg.webp" alt="Kolaborasi Brader Parts x Quantum Telecommunication" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/mitra/mitra7.png" alt="BT-ACC - Baterai Terbaik untuk Ponsel Anda" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/mitra/mitra6-landscape.png" alt="Meetoo - Beyond Ordinary" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/mitra/mitra5-landscape.png" alt="OG Original Quality x Super Sunshine" loading="lazy"></div>
+      </div>
+    </div>
+    <button class="banner-slider__nav banner-slider__prev" aria-label="Banner sebelumnya"><i class="fas fa-chevron-left"></i></button>
+    <button class="banner-slider__nav banner-slider__next" aria-label="Banner berikutnya"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="banner-slider__dots"></div>
 </div>
 
   <section id="about-quantum" class="py-5 section-gradient-soft">
@@ -5373,6 +5488,25 @@ var swiperSponsor = new Swiper(".sponsor-swiper", {
   });
     </script>
       <script>
+      // ===== SLIDER BANNER SPONSOR =====
+      if (typeof Swiper !== "undefined" && document.querySelector(".banner-slider__swiper")) {
+        new Swiper(".banner-slider__swiper", {
+          loop: true,
+          centeredSlides: true,
+          slidesPerView: 1.15,
+          spaceBetween: 12,
+          speed: 700,
+          grabCursor: true,
+          autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
+          navigation: { nextEl: ".banner-slider__next", prevEl: ".banner-slider__prev" },
+          pagination: { el: ".banner-slider__dots", clickable: true },
+          breakpoints: {
+            769: { slidesPerView: 1.5, spaceBetween: 20 },
+            1200: { slidesPerView: 1.7, spaceBetween: 24 },
+          },
+        });
+      }
+
       // ===== PAKET 1 =====
       (function () {
         // Header transparan selama masih di area hero
