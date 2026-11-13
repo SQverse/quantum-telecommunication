@@ -1,6 +1,7 @@
 ## BERITA TEKS
 
-<div class="news-item visible" data-category="berita">
+<!-- data-category: liputan (liputan media) / kegiatan (kegiatan LPK) / video (tutorial YouTube) -->
+<div class="news-item visible" data-category="liputan">
     <div class="news-image">
         <a href="[ISI LINK URL ASLI BERITA DI GOOGLE]" target="_blank">
             <img

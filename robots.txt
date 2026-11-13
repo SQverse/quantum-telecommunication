@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /quantum-lab/
+Disallow: /index1.html
+Disallow: /documentation/
+
+Sitemap: https://quantumtelecom.id/sitemap.xml

@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dokumentasi Alumni - LPK Quantum Telecommunication</title>
+    <title>Cerita Alumni LPK Quantum Telecommunication</title>
+    <meta name="description" content="Kisah lulusan pelatihan teknisi HP Quantum yang kini bekerja di service center atau membuka konter sendiri." />
+    <link rel="canonical" href="https://quantumtelecom.id/menu/alumni.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LPK Quantum Telecommunication" />
+    <meta property="og:title" content="Cerita Alumni LPK Quantum Telecommunication" />
+    <meta property="og:description" content="Kisah lulusan pelatihan teknisi HP Quantum yang kini bekerja di service center atau membuka konter sendiri." />
+    <meta property="og:url" content="https://quantumtelecom.id/menu/alumni.html" />
+    <meta property="og:image" content="https://quantumtelecom.id/assets/photos/CTA/hero1.jpg" />
+    <meta property="og:locale" content="id_ID" />
     <link rel="icon" href="../favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon/favicon-192x192.png" />
@@ -1218,6 +1227,12 @@ html, body {
   width: 20px !important;
   border-radius: 10px !important;
 }
+      .alumni-h1 { font-size: 2.5rem; font-weight: 800; color: var(--blue-dark); margin: 0 0 10px; }
+      @media (max-width: 768px) { .alumni-h1 { font-size: 1.8rem; } }
+      .alumni-cta { padding: 60px 0; text-align: center; background: var(--blue-gradient); color: #fff; opacity: 1 !important; transform: none !important; }
+      .alumni-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+      .alumni-cta p { opacity: .9; margin-bottom: 24px; }
+      .alumni-cta a { display: inline-flex; align-items: center; gap: 10px; background: var(--accent-gradient); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(255,140,66,.35); }
     </style>
   </head>
   <body>
@@ -1232,38 +1247,19 @@ html, body {
         </div>
         <nav>
           <ul>
-            <li>
-              <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
-            </li>
-            <li>
-              <a href="about.html"
-                ><i class="fas fa-info-circle"></i> Tentang Kami</a
-              >
-            </li>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="../menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="../menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
             <li class="dropdown">
-              <a href="programs.html"
-                ><i class="fas fa-graduation-cap"></i> Program</a
-              >
-            </li>
-            <li class="dropdown">
-              <a href="index.html#collaboration"
-                ><i class="fas fa-handshake"></i> Kerjasama
-                <i class="fas fa-chevron-down"></i
-              ></a>
+              <a href="../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-content">
-                <a href="kerjasama/pemerintah.html">Pemerintah</a>
-                <a href="kerjasama/swasta.html">Swasta</a>
-                <a href="kerjasama/internasional.html">Internasional</a>
+                <a href="../menu/kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="../menu/kerjasama/swasta.html">Swasta</a>
+                <a href="../menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li>
-              <a href="alumni.html" class="active"
-                ><i class="fas fa-users"></i> Alumni</a
-              >
-            </li>
-            <li>
-              <a href="news.html"><i class="fas fa-newspaper"></i> Berita</a>
-            </li>
+            <li><a href="../menu/alumni.html" class="active"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="../menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
@@ -1280,7 +1276,7 @@ html, body {
         <div class="breadcrumb-content">
           <a href="../index.html">Beranda</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Dokumentasi Alumni</span>
+          <span>Cerita Alumni</span>
         </div>
       </div>
     </div>
@@ -1289,8 +1285,8 @@ html, body {
      <section class="success-stories py-5">
   <div class="container">
     <div class="section-title text-center mb-5">
-      <h2 class="fw-bold">Kisah Sukses <span class="text-orange">Video Alumni</span></h2>
-      <p class="text-muted">Dengarkan langsung perjalanan mereka bertransformasi di LPK Quantum.</p>
+      <h1 class="alumni-h1">Cerita <span class="text-orange">Alumni</span></h1>
+      <p class="text-muted">Dengarkan langsung perjalanan mereka: dari belajar di LPK Quantum sampai bekerja di service center atau membuka konter sendiri.</p>
     </div>
 
     <div class="swiper alumni-video-swiper">
@@ -1411,7 +1407,7 @@ html, body {
     <!-- Detail Tahun -->
     <section id="alumni-detail">
       <div class="container">
-        <a href="#" class="back-button" id="back-to-years">
+        <a href="#alumni-tahun" class="back-button" id="back-to-years">
           <i class="fas fa-arrow-left"></i> Kembali ke Daftar Tahun
         </a>
 
@@ -1428,7 +1424,7 @@ html, body {
     <!-- Galeri Dokumentasi -->
     <section id="alumni-galeri">
       <div class="container">
-        <a href="#" class="back-button" id="back-to-detail">
+        <a href="#alumni-detail" class="back-button" id="back-to-detail">
           <i class="fas fa-arrow-left"></i> Kembali ke Kegiatan
         </a>
 
@@ -1463,6 +1459,15 @@ html, body {
       </div>
     </div>
 
+    <!-- CTA Alumni -->
+    <section class="alumni-cta">
+      <div class="container">
+        <h2>Ingin Seperti Mereka?</h2>
+        <p>Konsultasi gratis dengan admin, ceritakan tujuan Anda, dan kami sarankan kelas yang cocok.</p>
+        <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20lihat%20cerita%20alumni%20dan%20mau%20tanya%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Saya Mau Seperti Mereka</a>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -1470,8 +1475,7 @@ html, body {
           <div class="footer-about">
             <div class="footer-logo">LPK Quantum</div>
             <p>
-              Lembaga Pelatihan Kerja bidang Teknisi Ponsel yang menghasilkan
-              tenaga kerja profesional dan kompeten.
+              LPK Quantum Telecommunication, lembaga pelatihan kerja teknisi ponsel di Semarang sejak 2008.
             </p>
             <div class="footer-social">
               <a href="https://www.facebook.com/LPKQuantumtelecommunication/"
@@ -1489,11 +1493,11 @@ html, body {
             <h3>Link Cepat</h3>
             <ul>
               <li><a href="../index.html">Beranda</a></li>
-              <li><a href="about.html">Tentang Kami</a></li>
-              <li><a href="../index.html#programs">Program Pelatihan</a></li>
-              <li><a href="kerjasama/pemerintah.html">Kerjasama</a></li>
-              <li><a href="alumni.html">Alumni</a></li>
-              <li><a href="news.html">Berita</a></li>
+              <li><a href="../menu/about.html">Tentang Kami</a></li>
+              <li><a href="../menu/programs.html">Program</a></li>
+              <li><a href="../menu/kerjasama/pemerintah.html">Portofolio</a></li>
+              <li><a href="../menu/alumni.html">Alumni</a></li>
+              <li><a href="../menu/news.html">Kabar</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -1502,8 +1506,7 @@ html, body {
               <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
               Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
             </p>
-            <p><i class="fas fa-phone"></i> 0821 7172 7337</p>
-            <p><i class="fab fa-whatsapp"></i> +62 821 7172 7337</p>
+            <p><i class="fab fa-whatsapp"></i> 0821-7172-7337</p>
             <p>
               <i class="fas fa-envelope"></i>
               quantumtelecommunication38@gmail.com
@@ -1519,7 +1522,8 @@ html, body {
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 LPK Quantum Telecommunication. All Rights Reserved.</p>
+          <p>&copy; <span class="js-year">2026</span> PT Quantum Telecommunication. Hak cipta dilindungi.</p>
+          <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
         </div>
       </div>
     </footer>
