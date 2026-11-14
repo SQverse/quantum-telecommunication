@@ -354,8 +354,84 @@ footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
   }
 }
 </script>
+<link id="qh-fa" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link id="qh-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap">
+<style id="qh-style">
+/* ===== Navbar seragam (mengikuti index.html), ukuran dikunci px ===== */
+header.qh{top:0;left:0;right:auto;width:100%;z-index:1000;margin:0;padding:12px;height:auto;background:linear-gradient(135deg,#4a90e2 0%,#1a3c6e 100%);box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s ease;font-family:"Open Sans",sans-serif;font-size:16px;line-height:1.6;box-sizing:border-box;transform:none;filter:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:0}
+header.qh:not(.qh-fixed){position:sticky}
+header.qh.qh-fixed{position:fixed}
+header.qh *,header.qh *::before,header.qh *::after{box-sizing:border-box}
+header.qh .header-content{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;height:auto;gap:0}
+header.qh .logo{display:flex;align-items:center;margin:0;padding:0}
+header.qh .logo a{display:block;line-height:0}
+header.qh .logo img{display:block;height:45px;width:auto;max-width:none;margin:0 12px 0 0;transition:filter .3s ease}
+header.qh nav{display:block;position:static;top:auto;left:auto;width:auto;max-width:none;height:auto;background:none;padding:0;margin:0;box-shadow:none;overflow:visible;transform:none}
+header.qh nav ul{display:flex;flex-direction:row;list-style:none;gap:5px;margin:0;padding:0}
+header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
+header.qh nav ul li a{display:block;position:relative;color:#fff;text-decoration:none;font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:500;line-height:1.6;letter-spacing:normal;text-transform:none;padding:8px 15px;border-radius:4px;background:none;transition:all .3s ease}
+header.qh nav ul li a i{font-size:inherit}
+header.qh nav ul li a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background:#fff;transition:all .3s ease;transform:translateX(-50%)}
+header.qh nav ul li a:hover{color:#fff}
+header.qh nav ul li a:hover::after{width:70%}
+header.qh .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:200px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.15);border-radius:8px;z-index:1000;margin:0;padding:0;overflow:hidden}
+header.qh .dropdown:hover .dropdown-content{display:block}
+header.qh .dropdown-content a{display:block;color:#222;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.05);font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:400;line-height:1.6;text-decoration:none;background:#fff}
+header.qh .dropdown-content a:hover{background:#e6f0ff;color:#1a3c6e}
+header.qh .mobile-menu-btn{display:none;color:#fff;font-size:24px;line-height:1;background:none;border:none;padding:0;margin-left:15px;cursor:pointer;z-index:1001;width:auto;height:auto}
+header.qh.header--top{background:transparent;box-shadow:none}
+header.qh.header--top .logo img{filter:brightness(0) invert(1)}
+@media (max-width:1200px){header.qh .header-content{padding:0 15px}}
+@media (max-width:768px){
+  header.qh .mobile-menu-btn{display:block}
+  header.qh nav{display:block;position:fixed;top:0;left:-100%;width:80%;max-width:300px;height:100vh;background:#1a3c6e;padding:80px 20px 20px;transition:left .3s ease;z-index:999;box-shadow:5px 0 15px rgba(0,0,0,.2);overflow-y:auto}
+  header.qh nav.active{left:0}
+  header.qh nav ul{flex-direction:column;gap:0}
+  header.qh nav ul li{margin:10px 0}
+  header.qh nav ul li a{padding:12px;border-radius:5px}
+  header.qh nav ul li a:hover{background:rgba(255,255,255,.1)}
+  header.qh .dropdown-content{display:none;position:static;box-shadow:none;background:transparent;margin-left:20px;border-radius:0;min-width:0}
+  header.qh .dropdown.active .dropdown-content{display:block}
+  header.qh .dropdown-content a{color:rgba(255,255,255,.8);padding:10px 15px;border-bottom:none;background:transparent}
+  header.qh .dropdown-content a:hover{background:rgba(255,255,255,.1);color:#fff}
+  header.qh .dropdown > a i.fa-chevron-down{display:none}
+}
+</style>
 </head>
 <body>
+<header class="qh">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="../index.html" aria-label="Beranda"><img
+            src="../assets/photos/logo/quantum-logo-color.webp"
+            alt="Quantum Telecommunication Logo"
+            width="161" height="45"
+          /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="../menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="../menu/programs.html" class="active"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li class="dropdown">
+              <a href="../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="../menu/kerjasama/pemerintah.html">Pemerintah</a>
+                <a href="../menu/kerjasama/swasta.html">Swasta</a>
+                <a href="../menu/kerjasama/internasional.html">Internasional</a>
+              </div>
+            </li>
+            <li><a href="../menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
+            <li><a href="../menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center">
+          <button class="mobile-menu-btn" aria-label="Buka menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -828,6 +904,27 @@ footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
   window.addEventListener('scroll', function(){
     if (window.scrollY > 620) waf.classList.add('on'); else waf.classList.remove('on');
   }, {passive:true});
+})();
+</script>
+<script id="qh-script">
+(function () {
+  var btn = document.querySelector("header.qh .mobile-menu-btn");
+  var nav = document.querySelector("header.qh nav");
+  if (!btn || !nav) return;
+  function setIcon(open) { var i = btn.querySelector("i"); i.classList.toggle("fa-bars", !open); i.classList.toggle("fa-times", open); }
+  btn.addEventListener("click", function () {
+    var open = nav.classList.toggle("active");
+    document.body.style.overflow = open ? "hidden" : "";
+    setIcon(open);
+  });
+  nav.querySelectorAll("ul li a:not(.dropdown > a)").forEach(function (a) {
+    a.addEventListener("click", function () { nav.classList.remove("active"); document.body.style.overflow = ""; setIcon(false); });
+  });
+  nav.querySelectorAll("li.dropdown").forEach(function (d) {
+    d.querySelector("a").addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) { e.preventDefault(); d.classList.toggle("active"); }
+    });
+  });
 })();
 </script>
 </body>

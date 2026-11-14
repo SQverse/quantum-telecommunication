@@ -1234,16 +1234,154 @@ html, body {
       .alumni-cta p { opacity: .9; margin-bottom: 24px; }
       .alumni-cta a { display: inline-flex; align-items: center; gap: 10px; background: var(--accent-gradient); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(255,140,66,.35); }
     </style>
+<style id="qf-style">
+/* ===== Footer v2 (.qf-*): ukuran dikunci px agar sama di semua halaman ===== */
+footer.qf{position:relative;display:block;background:#0b1b33;color:#c9d6e8;padding:0;margin:0;font-family:'Poppins',sans-serif;font-size:15px;line-height:1.6;letter-spacing:normal;text-align:left;overflow:hidden}
+footer.qf *,footer.qf *::before,footer.qf *::after{box-sizing:border-box}
+footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(255,140,66,.14),transparent 70%);pointer-events:none}
+footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#ff8c42)}
+footer.qf .qf-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+footer.qf a{color:inherit;text-decoration:none;transition:color .2s,background .2s,transform .2s}
+footer.qf h3,footer.qf p,footer.qf ul,footer.qf li{margin:0;padding:0}
+footer.qf i{line-height:1}
+footer.qf .qf-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:56px 0 0;padding:28px 32px;border-radius:18px;background:linear-gradient(135deg,#1a3c6e,#2f6cb8);box-shadow:0 18px 40px rgba(0,0,0,.25)}
+footer.qf .qf-cta h3{color:#fff;font-size:22px;font-weight:700;line-height:1.3}
+footer.qf .qf-cta p{color:#dbe7f7;font-size:15px;margin-top:4px}
+footer.qf .qf-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+footer.qf .qf-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap}
+footer.qf .qf-btn-wa{background:#ff8c42;color:#fff}
+footer.qf .qf-btn-wa:hover{background:#ff7a24;transform:translateY(-2px);color:#fff}
+footer.qf .qf-btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+footer.qf .qf-btn-ghost:hover{background:#fff;color:#1a3c6e}
+footer.qf .qf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;padding:56px 0 44px}
+footer.qf .qf-logo{display:inline-block;margin-bottom:16px}
+footer.qf .qf-logo img{display:block;height:46px;width:auto;filter:brightness(0) invert(1)}
+footer.qf .qf-about p{font-size:14.5px;line-height:1.7;color:#aebfd6}
+footer.qf .qf-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+footer.qf .qf-badges span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(74,144,226,.15);color:#9cc4f5;border:1px solid rgba(74,144,226,.3)}
+footer.qf .qf-social{display:flex;gap:10px}
+footer.qf .qf-social a{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px}
+footer.qf .qf-social a:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf h3.qf-h{color:#fff;font-size:16px;font-weight:600;line-height:1.4;letter-spacing:.3px;margin-bottom:18px;position:relative;padding-bottom:10px}
+footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#ff8c42}
+footer.qf .qf-list{list-style:none}
+footer.qf .qf-list li{margin-bottom:10px;list-style:none}
+footer.qf .qf-list a{font-size:14.5px;line-height:1.5;color:#aebfd6;display:inline-flex;align-items:center;gap:8px}
+footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(255,140,66,.5);transition:background .2s}
+footer.qf .qf-list a:hover{color:#fff;transform:translateX(3px)}
+footer.qf .qf-list a:hover::before{background:#ff8c42}
+footer.qf .qf-contact{list-style:none}
+footer.qf .qf-contact li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:14px;line-height:1.6;color:#aebfd6;list-style:none}
+footer.qf .qf-contact i{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(74,144,226,.15);color:#7fb3f0;font-size:14px;margin-top:1px}
+footer.qf .qf-contact a{overflow-wrap:anywhere}
+footer.qf .qf-contact a:hover{color:#fff}
+footer.qf .qf-map{display:block;position:relative;margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);height:150px}
+footer.qf .qf-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#ff9d5c}
+footer.qf .qf-map-link:hover{color:#fff}
+footer.qf .qf-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:#8396b0}
+footer.qf .qf-bottom p{text-align:left;font-size:13.5px}
+footer.qf .qf-eco a{color:#aebfd6;text-decoration:underline;text-underline-offset:3px}
+footer.qf .qf-eco a:hover{color:#fff}
+footer.qf .qf-top{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
+footer.qf .qf-top:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+@media (max-width:992px){footer.qf .qf-grid{grid-template-columns:1fr 1fr;gap:36px}}
+/* HP: ringkas, pas satu layar penuh */
+@media (max-width:600px){
+  footer.qf{display:flex;flex-direction:column;min-height:100vh;min-height:100svh;font-size:13px}
+  footer.qf .qf-wrap{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:0 18px}
+  footer.qf .qf-cta{margin-top:74px;padding:16px;gap:12px;border-radius:14px;flex-direction:column;align-items:stretch;text-align:center}
+  footer.qf .qf-cta h3{font-size:16px}
+  footer.qf .qf-cta p{display:none}
+  footer.qf .qf-cta-btns{gap:8px;flex-wrap:nowrap}
+  footer.qf .qf-btn{flex:1;padding:10px 8px;font-size:13px;gap:6px}
+  footer.qf .qf-grid{grid-template-columns:1fr 1fr;gap:20px 16px;padding:22px 0 16px}
+  footer.qf .qf-about{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 12px}
+  footer.qf .qf-logo{margin:0}
+  footer.qf .qf-logo img{height:32px}
+  footer.qf .qf-about p{grid-column:1/-1;grid-row:2;font-size:12.5px;line-height:1.55}
+  footer.qf .qf-badges{display:none}
+  footer.qf .qf-social{gap:6px;grid-column:2;grid-row:1}
+  footer.qf .qf-social a{width:32px;height:32px;border-radius:9px;font-size:13px}
+  footer.qf h3.qf-h{font-size:14px;margin-bottom:10px;padding-bottom:7px}
+  footer.qf h3.qf-h::after{width:24px;height:2px}
+  footer.qf .qf-list li{margin-bottom:5px}
+  footer.qf .qf-list a{font-size:13px}
+  footer.qf .qf-list a::before{flex-basis:5px;width:5px;height:5px}
+  footer.qf .qf-col-contact{grid-column:1/-1}
+  footer.qf .qf-contact li{gap:10px;margin-bottom:8px;font-size:12.5px;line-height:1.5;align-items:center}
+  footer.qf .qf-contact i{flex-basis:28px;height:28px;border-radius:8px;font-size:12px}
+  footer.qf .qf-map{display:none}
+  footer.qf .qf-map-link{margin-top:2px;font-size:12.5px}
+  footer.qf .qf-bottom{padding:12px 66px 14px 0;gap:2px 10px;flex-direction:column;align-items:flex-start;text-align:left}
+  footer.qf .qf-bottom p{text-align:left;font-size:11.5px;line-height:1.5}
+  footer.qf .qf-bottom .qf-top{display:none}
+}
+/* HP layar pendek (mis. 360x740): lebih rapat lagi */
+@media (max-width:600px) and (max-height:780px){
+  footer.qf .qf-cta{margin-top:74px;padding:12px 14px}
+  footer.qf .qf-about p{display:none}
+  footer.qf .qf-grid{gap:14px 14px;padding:14px 0 8px}
+  footer.qf .qf-list li{margin-bottom:3px}
+  footer.qf .qf-contact li{margin-bottom:6px}
+  footer.qf .qf-list li{margin-bottom:2px}
+  footer.qf h3.qf-h{margin-bottom:8px}
+  footer.qf .qf-bottom{padding-top:8px;padding-bottom:10px}
+}
+</style>
+<link id="qh-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap">
+<style id="qh-style">
+/* ===== Navbar seragam (mengikuti index.html), ukuran dikunci px ===== */
+header.qh{top:0;left:0;right:auto;width:100%;z-index:1000;margin:0;padding:12px;height:auto;background:linear-gradient(135deg,#4a90e2 0%,#1a3c6e 100%);box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s ease;font-family:"Open Sans",sans-serif;font-size:16px;line-height:1.6;box-sizing:border-box;transform:none;filter:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:0}
+header.qh:not(.qh-fixed){position:sticky}
+header.qh.qh-fixed{position:fixed}
+header.qh *,header.qh *::before,header.qh *::after{box-sizing:border-box}
+header.qh .header-content{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;height:auto;gap:0}
+header.qh .logo{display:flex;align-items:center;margin:0;padding:0}
+header.qh .logo a{display:block;line-height:0}
+header.qh .logo img{display:block;height:45px;width:auto;max-width:none;margin:0 12px 0 0;transition:filter .3s ease}
+header.qh nav{display:block;position:static;top:auto;left:auto;width:auto;max-width:none;height:auto;background:none;padding:0;margin:0;box-shadow:none;overflow:visible;transform:none}
+header.qh nav ul{display:flex;flex-direction:row;list-style:none;gap:5px;margin:0;padding:0}
+header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
+header.qh nav ul li a{display:block;position:relative;color:#fff;text-decoration:none;font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:500;line-height:1.6;letter-spacing:normal;text-transform:none;padding:8px 15px;border-radius:4px;background:none;transition:all .3s ease}
+header.qh nav ul li a i{font-size:inherit}
+header.qh nav ul li a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background:#fff;transition:all .3s ease;transform:translateX(-50%)}
+header.qh nav ul li a:hover{color:#fff}
+header.qh nav ul li a:hover::after{width:70%}
+header.qh .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:200px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.15);border-radius:8px;z-index:1000;margin:0;padding:0;overflow:hidden}
+header.qh .dropdown:hover .dropdown-content{display:block}
+header.qh .dropdown-content a{display:block;color:#222;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.05);font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:400;line-height:1.6;text-decoration:none;background:#fff}
+header.qh .dropdown-content a:hover{background:#e6f0ff;color:#1a3c6e}
+header.qh .mobile-menu-btn{display:none;color:#fff;font-size:24px;line-height:1;background:none;border:none;padding:0;margin-left:15px;cursor:pointer;z-index:1001;width:auto;height:auto}
+header.qh.header--top{background:transparent;box-shadow:none}
+header.qh.header--top .logo img{filter:brightness(0) invert(1)}
+@media (max-width:1200px){header.qh .header-content{padding:0 15px}}
+@media (max-width:768px){
+  header.qh .mobile-menu-btn{display:block}
+  header.qh nav{display:block;position:fixed;top:0;left:-100%;width:80%;max-width:300px;height:100vh;background:#1a3c6e;padding:80px 20px 20px;transition:left .3s ease;z-index:999;box-shadow:5px 0 15px rgba(0,0,0,.2);overflow-y:auto}
+  header.qh nav.active{left:0}
+  header.qh nav ul{flex-direction:column;gap:0}
+  header.qh nav ul li{margin:10px 0}
+  header.qh nav ul li a{padding:12px;border-radius:5px}
+  header.qh nav ul li a:hover{background:rgba(255,255,255,.1)}
+  header.qh .dropdown-content{display:none;position:static;box-shadow:none;background:transparent;margin-left:20px;border-radius:0;min-width:0}
+  header.qh .dropdown.active .dropdown-content{display:block}
+  header.qh .dropdown-content a{color:rgba(255,255,255,.8);padding:10px 15px;border-bottom:none;background:transparent}
+  header.qh .dropdown-content a:hover{background:rgba(255,255,255,.1);color:#fff}
+  header.qh .dropdown > a i.fa-chevron-down{display:none}
+}
+</style>
   </head>
   <body>
     <!-- Header & Navigation -->
-    <header>
+    <header class="qh">
       <div class="container header-content">
         <div class="logo">
-          <img
+          <a href="../index.html" aria-label="Beranda"><img
             src="../assets/photos/logo/quantum-logo-color.webp"
             alt="Quantum Telecommunication Logo"
-          />
+            width="161" height="45"
+          /></a>
         </div>
         <nav>
           <ul>
@@ -1263,7 +1401,7 @@ html, body {
           </ul>
         </nav>
         <div style="display: flex; align-items: center">
-          <button class="mobile-menu-btn">
+          <button class="mobile-menu-btn" aria-label="Buka menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -1469,29 +1607,35 @@ html, body {
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-about">
-            <div class="footer-logo">LPK Quantum</div>
-            <p>
-              LPK Quantum Telecommunication, lembaga pelatihan kerja teknisi ponsel di Semarang sejak 2008.
-            </p>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/LPKQuantumtelecommunication/"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.instagram.com/quantum.telecommunication/"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://www.youtube.com/@quantumtelecom41"
-                ><i class="fab fa-youtube"></i
-              ></a>
+    <footer class="qf">
+      <div class="qf-wrap">
+        <div class="qf-cta">
+          <div>
+            <h3>Siap jadi teknisi HP profesional?</h3>
+            <p>Konsultasi gratis dengan admin untuk memilih kelas yang pas.</p>
+          </div>
+          <div class="qf-cta-btns">
+            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat Admin</a>
+            <a class="qf-btn qf-btn-ghost" href="../menu/programs.html">Lihat Program <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="qf-grid">
+          <div class="qf-about">
+            <a class="qf-logo" href="../index.html"><img src="../assets/photos/logo/quantum-logo-color.webp" alt="LPK Quantum Telecommunication" width="168" height="46" loading="lazy"></a>
+            <p>Lembaga Pelatihan Kerja teknisi smartphone di Semarang sejak 2008. Belajar langsung praktik, dari dasar sampai siap buka usaha servis.</p>
+            <div class="qf-badges"><span>Sejak 2008</span><span>Offline &amp; Online</span><span>Android &amp; iPhone</span></div>
+            <div class="qf-social">
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
-          <div class="footer-links">
-            <h3>Link Cepat</h3>
-            <ul>
+
+          <div>
+            <h3 class="qf-h">Menu</h3>
+            <ul class="qf-list">
               <li><a href="../index.html">Beranda</a></li>
               <li><a href="../menu/about.html">Tentang Kami</a></li>
               <li><a href="../menu/programs.html">Program</a></li>
@@ -1500,31 +1644,39 @@ html, body {
               <li><a href="../menu/news.html">Kabar</a></li>
             </ul>
           </div>
-          <div class="footer-contact">
-            <h3>Kontak</h3>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Jl. Bina Remaja No.4,
-              Srondol Wetan, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263
-            </p>
-            <p><i class="fab fa-whatsapp"></i> 0821-7172-7337</p>
-            <p>
-              <i class="fas fa-envelope"></i>
-              quantumtelecommunication38@gmail.com
-            </p>
-            <div class="map-container">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+
+          <div>
+            <h3 class="qf-h">Program</h3>
+            <ul class="qf-list">
+              <li><a href="../menu/detail-offline.html">Kelas Offline</a></li>
+              <li><a href="../menu/detail-online.html">Kelas Online</a></li>
+              <li><a href="../menu/materi.html">Materi Pelatihan</a></li>
+              <li><a href="../menu/kerjasama/pemerintah.html">Mitra Pemerintah</a></li>
+              <li><a href="../menu/kerjasama/swasta.html">Mitra Swasta</a></li>
+              <li><a href="../menu/kerjasama/internasional.html">Mitra Internasional</a></li>
+            </ul>
+          </div>
+
+          <div class="qf-col-contact">
+            <h3 class="qf-h">Kontak</h3>
+            <ul class="qf-contact">
+              <li><i class="fas fa-map-marker-alt"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
+              <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
+              <li><i class="fas fa-envelope"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
+            </ul>
+            <div class="qf-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" title="Lokasi LPK Quantum Telecommunication" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
-        <div class="copyright">
+
+        <div class="qf-bottom">
           <p>&copy; <span class="js-year">2026</span> PT Quantum Telecommunication. Hak cipta dilindungi.</p>
-          <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+          <p class="qf-eco">Ekosistem Quantum: <a href="https://vbatponsel.com/" target="_blank" rel="noopener">Aplikasi VBATPonsel</a> &middot; <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener">Kanal YouTube</a></p>
+          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i></a>
         </div>
+        <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
       </div>
     </footer>
 
