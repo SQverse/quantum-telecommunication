@@ -157,7 +157,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 
 /* --- cara kelas berjalan --- */
 .alur{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.alur-item{background:#fff;border:1px solid rgba(26,35,126,.1);border-radius:14px;padding:1.4rem 1.3rem;position:relative}
+.alur-item{background:#fff;border:1px solid rgba(26,35,126,.1);border-radius:10px;padding:1.4rem 1.3rem;position:relative}
 .alur-item .step{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;
   color:var(--gold-500);line-height:1;margin-bottom:.6rem}
 .alur-item h3{font-size:1rem;color:var(--navy-900);margin-bottom:.4rem}
@@ -198,7 +198,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .gelap h2{font-size:clamp(1.6rem,3.3vw,2.3rem);color:#fff;margin:.85rem 0 .75rem}
 .gelap .sec-head p{color:#b8caea}
 .tahap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.tahap-kartu{background:rgba(255,255,255,.045);border:1px solid rgba(255,179,102,.2);border-radius:14px;padding:1.4rem}
+.tahap-kartu{background:rgba(255,255,255,.045);border:1px solid rgba(255,179,102,.2);border-radius:10px;padding:1.4rem}
 .tahap-kartu .lab{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--gold-300)}
 .tahap-kartu h3{font-size:1.02rem;color:#fff;margin:.35rem 0 .6rem}
 .tahap-kartu ul{list-style:none;font-size:.87rem;color:#b3c6e4}
@@ -236,7 +236,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 
 /* --- harga --- */
 .harga-sec{background:var(--cream);padding-block:clamp(3.2rem,6vw,5rem)}
-.harga{display:grid;grid-template-columns:1.05fr .95fr;border-radius:22px;overflow:hidden;
+.harga{display:grid;grid-template-columns:1.05fr .95fr;border-radius:12px;overflow:hidden;
   border:1px solid rgba(26,35,126,.14);box-shadow:0 40px 90px -50px rgba(26,60,110,.7)}
 .harga-kiri{background:linear-gradient(160deg,var(--navy-900),var(--navy-800) 70%,var(--navy-600));color:#fff;
   padding:clamp(1.8rem,3.4vw,2.7rem);position:relative;overflow:hidden}
@@ -355,47 +355,85 @@ footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
 }
 </script>
 <link id="qh-fa" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link id="qh-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap">
+<link id="qh-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 <style id="qh-style">
-/* ===== Navbar seragam (mengikuti index.html), ukuran dikunci px ===== */
-header.qh{top:0;left:0;right:auto;width:100%;z-index:1000;margin:0;padding:12px;height:auto;background:linear-gradient(135deg,#4a90e2 0%,#1a3c6e 100%);box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s ease;font-family:"Open Sans",sans-serif;font-size:16px;line-height:1.6;box-sizing:border-box;transform:none;filter:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:0}
+/* ===== Navbar v2: putih bersih + efek kaca (sama di semua halaman) ===== */
+header.qh{top:0;left:0;right:auto;width:100%;z-index:1000;margin:0;padding:12px;height:auto;background:transparent;box-shadow:none;border:0;font-family:"Poppins",sans-serif;font-size:16px;line-height:1.6;box-sizing:border-box;transform:none;filter:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:padding .3s ease}
+/* lapisan kaca di pseudo-element supaya menu HP (position:fixed) tetap jalan */
+header.qh::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.88);-webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(26,60,110,.08);box-shadow:0 6px 24px rgba(26,60,110,.06);transition:opacity .3s ease}
 header.qh:not(.qh-fixed){position:sticky}
 header.qh.qh-fixed{position:fixed}
 header.qh *,header.qh *::before,header.qh *::after{box-sizing:border-box}
-header.qh .header-content{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;height:auto;gap:0}
-header.qh .logo{display:flex;align-items:center;margin:0;padding:0}
+header.qh .header-content{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;height:auto;gap:16px}
+header.qh .logo{display:flex;align-items:center;margin:0;padding:0;flex-shrink:0}
 header.qh .logo a{display:block;line-height:0}
-header.qh .logo img{display:block;height:45px;width:auto;max-width:none;margin:0 12px 0 0;transition:filter .3s ease}
+header.qh .logo img{display:block;height:45px;width:auto;max-width:none;margin:0;transition:filter .3s ease}
 header.qh nav{display:block;position:static;top:auto;left:auto;width:auto;max-width:none;height:auto;background:none;padding:0;margin:0;box-shadow:none;overflow:visible;transform:none}
-header.qh nav ul{display:flex;flex-direction:row;list-style:none;gap:5px;margin:0;padding:0}
+header.qh nav ul{display:flex;flex-direction:row;align-items:center;list-style:none;gap:2px;margin:0;padding:0}
 header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
-header.qh nav ul li a{display:block;position:relative;color:#fff;text-decoration:none;font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:500;line-height:1.6;letter-spacing:normal;text-transform:none;padding:8px 15px;border-radius:4px;background:none;transition:all .3s ease}
-header.qh nav ul li a i{font-size:inherit}
-header.qh nav ul li a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background:#fff;transition:all .3s ease;transform:translateX(-50%)}
-header.qh nav ul li a:hover{color:#fff}
-header.qh nav ul li a:hover::after{width:70%}
-header.qh .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:200px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.15);border-radius:8px;z-index:1000;margin:0;padding:0;overflow:hidden}
-header.qh .dropdown:hover .dropdown-content{display:block}
-header.qh .dropdown-content a{display:block;color:#222;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.05);font-family:"Open Sans",sans-serif;font-size:14.4px;font-weight:400;line-height:1.6;text-decoration:none;background:#fff}
-header.qh .dropdown-content a:hover{background:#e6f0ff;color:#1a3c6e}
-header.qh .mobile-menu-btn{display:none;color:#fff;font-size:24px;line-height:1;background:none;border:none;padding:0;margin-left:15px;cursor:pointer;z-index:1001;width:auto;height:auto}
-header.qh.header--top{background:transparent;box-shadow:none}
+header.qh nav ul li a{display:flex;align-items:center;gap:6px;position:relative;color:#3a4a63;text-decoration:none;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px;background:transparent;transition:color .2s ease,background .2s ease}
+header.qh nav ul li a::after{display:none}
+header.qh nav ul li > a > i:not(.fa-chevron-down){display:none}
+header.qh nav ul li a i.fa-chevron-down{font-size:10px;opacity:.7;transition:transform .2s ease}
+header.qh nav ul li a:hover{color:#1a3c6e;background:rgba(74,144,226,.10)}
+header.qh nav ul li a.active{color:#1f5fae;background:#eaf2fd;font-weight:600}
+header.qh .dropdown:hover > a i.fa-chevron-down{transform:rotate(180deg)}
+header.qh .dropdown-content{display:block;visibility:hidden;opacity:0;transform:translateY(6px);position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#fff;border:1px solid rgba(26,60,110,.08);box-shadow:0 18px 40px rgba(26,60,110,.14);border-radius:14px;z-index:1000;margin:0;padding:8px;overflow:visible;transition:opacity .2s ease,transform .2s ease,visibility .2s}
+header.qh .dropdown-content::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+header.qh .dropdown:hover .dropdown-content{visibility:visible;opacity:1;transform:translateY(0)}
+header.qh .dropdown-content a{display:block;color:#3a4a63;padding:10px 14px;border:0;border-radius:10px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;background:transparent}
+header.qh .dropdown-content a:hover{background:#eaf2fd;color:#1a3c6e}
+header.qh .qh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8c42,#e67429);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(255,140,66,.32);transition:transform .2s ease,box-shadow .2s ease}
+header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,140,66,.42);color:#fff}
+header.qh .mobile-menu-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;color:#1a3c6e;font-size:20px;line-height:1;background:#f1f5fb;border:1px solid rgba(26,60,110,.08);border-radius:12px;padding:0;margin:0;cursor:pointer;z-index:1001;transition:background .2s ease,color .2s ease}
+/* ===== status transparan di atas hero beranda ===== */
+header.qh.header--top::before{opacity:0}
 header.qh.header--top .logo img{filter:brightness(0) invert(1)}
+header.qh.header--top nav ul li > a{color:rgba(255,255,255,.92)}
+header.qh.header--top nav ul li > a:hover{color:#fff;background:rgba(255,255,255,.14)}
+header.qh.header--top nav ul li > a.active{color:#fff;background:rgba(255,255,255,.18)}
+header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22)}
 @media (max-width:1200px){header.qh .header-content{padding:0 15px}}
+@media (max-width:1100px) and (min-width:769px){header.qh nav ul li a{padding:8px 10px;font-size:13.5px}header.qh .qh-cta{padding:9px 14px}}
+@media (max-width:900px) and (min-width:769px){header.qh .qh-cta span{display:none}}
 @media (max-width:768px){
-  header.qh .mobile-menu-btn{display:block}
-  header.qh nav{display:block;position:fixed;top:0;left:-100%;width:80%;max-width:300px;height:100vh;background:#1a3c6e;padding:80px 20px 20px;transition:left .3s ease;z-index:999;box-shadow:5px 0 15px rgba(0,0,0,.2);overflow-y:auto}
+  header.qh .mobile-menu-btn{display:inline-flex}
+  header.qh .qh-cta{padding:8px 14px;font-size:13px}
+  header.qh .qh-cta span{display:none}
+  header.qh .qh-actions{gap:8px}
+  header.qh nav{display:block;position:fixed;top:0;left:-100%;width:82%;max-width:320px;height:100vh;height:100dvh;background:#fff;padding:88px 16px 24px;transition:left .3s ease;z-index:999;box-shadow:12px 0 40px rgba(10,27,51,.18);overflow-y:auto;border-radius:0 20px 20px 0}
   header.qh nav.active{left:0}
-  header.qh nav ul{flex-direction:column;gap:0}
-  header.qh nav ul li{margin:10px 0}
-  header.qh nav ul li a{padding:12px;border-radius:5px}
-  header.qh nav ul li a:hover{background:rgba(255,255,255,.1)}
-  header.qh .dropdown-content{display:none;position:static;box-shadow:none;background:transparent;margin-left:20px;border-radius:0;min-width:0}
+  header.qh nav ul{flex-direction:column;align-items:stretch;gap:4px}
+  header.qh nav ul li{margin:0}
+  header.qh nav ul li > a,header.qh.header--top nav ul li > a{color:#3a4a63;padding:12px 14px;border-radius:12px;font-size:15px;gap:12px}
+  header.qh nav ul li > a > i:not(.fa-chevron-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
+  header.qh nav ul li > a:hover,header.qh.header--top nav ul li > a:hover{background:#f1f5fb;color:#1a3c6e}
+  header.qh nav ul li > a.active,header.qh.header--top nav ul li > a.active{background:#eaf2fd;color:#1f5fae}
+  header.qh .dropdown-content{display:none;visibility:visible;opacity:1;transform:none;position:static;box-shadow:none;border:0;background:transparent;margin:2px 0 4px 34px;padding:0;border-left:2px solid #eaf2fd;border-radius:0;min-width:0}
+  header.qh .dropdown-content::before{display:none}
   header.qh .dropdown.active .dropdown-content{display:block}
-  header.qh .dropdown-content a{color:rgba(255,255,255,.8);padding:10px 15px;border-bottom:none;background:transparent}
-  header.qh .dropdown-content a:hover{background:rgba(255,255,255,.1);color:#fff}
+  header.qh .dropdown-content a{color:#5b6b84;padding:9px 14px;font-size:14px}
+  header.qh .dropdown-content a:hover{background:#f1f5fb;color:#1a3c6e}
   header.qh .dropdown > a i.fa-chevron-down{display:none}
 }
+@media (max-width:380px){header.qh .logo img{height:38px}header.qh .qh-cta{padding:7px 12px}}
+</style>
+<style id="qx-style">
+/* ===== Penyegaran tampilan (fresh & clean, tetap biru brand) ===== */
+:root{
+  --shadow:0 1px 2px rgba(16,42,82,.04),0 6px 20px rgba(16,42,82,.06);
+  --shadow-hover:0 2px 4px rgba(16,42,82,.04),0 14px 34px rgba(16,42,82,.11);
+  --r:12px;
+}
+/* Judul section seragam dengan beranda */
+body .section-title,body .section-header{text-align:center;max-width:780px;margin-left:auto;margin-right:auto;margin-bottom:44px}
+body .section-title h2,body .section-header h2{font-family:"Poppins",sans-serif!important;font-weight:800!important;font-size:clamp(26px,3.4vw,36px)!important;line-height:1.25!important;letter-spacing:-.01em!important;text-transform:none!important;color:#1a3c6e!important;margin:0!important;padding:0!important}
+body .section-title h2::after,body .section-header h2::after,body .section-title::after,body .section-header::after{display:none!important}
+body .section-title h2 span,body .section-header h2 span{color:inherit!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+body .section-title p,body .section-header p,body .section-title + .section-subtitle,body .section-title .section-subtitle{font-size:17px!important;font-weight:400!important;line-height:1.75!important;color:#55657e!important;max-width:720px;margin:14px auto 0!important;text-transform:none!important;letter-spacing:0!important}
+body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-align:center}
+.cta-section .section-title h2,.cta-section-modern .section-title h2{color:#fff!important}
 </style>
 </head>
 <body>
@@ -425,7 +463,8 @@ header.qh.header--top .logo img{filter:brightness(0) invert(1)}
             <li><a href="../menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
-        <div style="display: flex; align-items: center">
+        <div class="qh-actions">
+          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Daftar<span> Sekarang</span></a>
           <button class="mobile-menu-btn" aria-label="Buka menu">
             <i class="fas fa-bars"></i>
           </button>
