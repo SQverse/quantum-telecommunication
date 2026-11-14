@@ -55,11 +55,7 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
@@ -129,7 +125,7 @@
 
         /* Hilangkan chevron down di mobile */
         /* Hilangkan chevron down di mobile */
-        .dropdown > a i.fa-chevron-down {
+        .dropdown > a i.ph-caret-down {
           display: none;
         }
 
@@ -144,10 +140,10 @@
         --blue-gradient: linear-gradient(135deg, #4a90e2 0%, #1a3c6e 100%);
         
         /* Added secondary accent color - orange/amber */
-        --accent-orange: #ff8c42;
-        --accent-orange-light: #ffb366;
-        --accent-orange-dark: #e67429;
-        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        --accent-orange: #1592d8;
+        --accent-orange-light: #5cc8f0;
+        --accent-orange-dark: #064ec1;
+        --accent-gradient: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         
         --text-dark: #222;
         --text-light: #fff;
@@ -416,7 +412,7 @@
 }
 
 .hero-nav:hover {
-    background: var(--accent-orange);
+    background: #16a5e4;
 }
       /* Enhanced CTA button with hover effects and animations */
       @keyframes slideInUp {
@@ -458,7 +454,7 @@
       /* Enhanced button styles with gradient hover effects */
       .btn {
   display: inline-block;
-  background: var(--accent-gradient);
+  background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
   color: var(--text-light);
   /* Padding dikurangi agar tidak terlalu raksasa */
   padding: 12px 35px; 
@@ -580,7 +576,7 @@
       }
 
       .btn-daftar {
-        background: var(--accent-orange);
+        background: #1592d8;
         color: var(--text-light);
       }
 
@@ -590,7 +586,7 @@
       }
 
       .btn-daftar:hover {
-        background: var(--accent-orange-dark);
+        background: #064ec1;
         color: var(--text-light);
       }
 
@@ -634,7 +630,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         border-radius: 2px;
       }
 
@@ -719,7 +715,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        color: var(--accent-orange);
+        color: #0e95d6;
         font-weight: bold;
         font-size: 1.2rem;
       }
@@ -811,7 +807,7 @@
 
       .scroll-progress-bar {
         height: 100%;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         width: 0%;
         transition: width 0.3s ease;
         border-radius: 2px;
@@ -827,7 +823,7 @@
       }
 
       .features-grid::-webkit-scrollbar-thumb {
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         border-radius: 10px;
       }
 
@@ -1898,7 +1894,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--accent-orange);
+        background: #16a5e4;
       }
 
       .footer-links ul {
@@ -1922,7 +1918,7 @@
 
       .footer-links ul li a i {
         font-size: 0.9rem;
-        color: var(--accent-orange);
+        color: #0e95d6;
         width: 16px;
       }
 
@@ -1969,7 +1965,7 @@
         display: none;
         margin-top: 15px;
         padding: 10px 20px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         color: var(--text-light);
         border: none;
         border-radius: 25px;
@@ -1982,7 +1978,7 @@
 
       .map-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
+        box-shadow: 0 5px 15px rgba(22, 165, 228, 0.3);
       }
 
       .copyright {
@@ -2508,7 +2504,7 @@
   font-style: italic; /* Cara bikin miring di CSS */
   font-weight: 300;
   color: #ffd700;
-  border-left: 3px solid var(--accent-orange); /* Kasih aksen garis di samping */
+  border-left: 3px solid #16a5e4; /* Kasih aksen garis di samping */
   padding-left: 15px;
 }
 
@@ -3431,7 +3427,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--accent-gradient, orange);
+  background: var(--accent-gradient, #16a5e4);
   border-radius: 2px;
 }
 
@@ -3528,7 +3524,7 @@
 
 /* Biar pas di-hover ikonnya tetep ganteng */
 .feature-depth-card:hover .feature-icon-overlay {
-  background: orange;
+  background: #16a5e4;
   transform: translateX(-50%) scale(1.1) translateY(-5px);
 }
 
@@ -3564,7 +3560,7 @@
 }
 
 .feature-depth-card:hover .feature-icon-overlay {
-  background: orange; /* Berubah jadi oren pas di hover biar eye-catching */
+  background: #16a5e4; /* Berubah jadi oren pas di hover biar eye-catching */
   transform: translateX(-50%) scale(1.1);
 }
 
@@ -3604,12 +3600,12 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background: var(--accent-gradient);
+  background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
   color: white;
   padding: 20px 30px;
   border-radius: 25px;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
+  box-shadow: 0 10px 20px rgba(22, 165, 228, 0.3);
   z-index: 5;
 }
 
@@ -3649,7 +3645,7 @@
 .adv-card:hover {
   transform: translateX(10px);
   background: #ffffff;
-  border-color: var(--accent-orange);
+  border-color: #16a5e4;
 }
 
 .adv-icon {
@@ -3674,9 +3670,9 @@
 }
 
 .btn-learn-more:hover {
-  background: var(--accent-orange);
+  background: #16a5e4;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
+  box-shadow: 0 10px 20px rgba(22, 165, 228, 0.3);
 }
 
 /* Mobile Responsive */
@@ -3771,8 +3767,8 @@
 }
 
 .btn-compro:hover {
-  background: var(--accent-orange);
-  box-shadow: 0 15px 30px rgba(255, 140, 66, 0.3);
+  background: #16a5e4;
+  box-shadow: 0 15px 30px rgba(22, 165, 228, 0.3);
 }
 
 .btn-materi:hover {
@@ -3818,7 +3814,7 @@
 }
 
 .cta-title span {
-    color: var(--accent-orange); /* Aksen Oranye Quantum */
+    color: #0e95d6; /* Aksen Oranye Quantum */
 }
 
 .cta-text {
@@ -3841,10 +3837,10 @@
 }
 
 .btn-cta-main:hover {
-    background: var(--accent-orange);
+    background: #1592d8;
     color: white;
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(22, 146, 216, 0.3);
 }
 
 /* Responsif untuk HP */
@@ -4040,7 +4036,7 @@
   font-weight: 600;
   letter-spacing: 6px;
   text-transform: uppercase;
-  color: var(--accent-orange);
+  color: #0e95d6;
   margin-bottom: 12px;
 }
 .hero-full__title {
@@ -4072,7 +4068,7 @@
 }
 .hero-full__slogan i {
   font-style: normal;
-  color: var(--accent-orange);
+  color: #0e95d6;
   margin: 0 8px;
 }
 .hero-full__tagline {
@@ -4105,9 +4101,9 @@
   transition: transform 0.25s ease, background 0.25s ease;
 }
 .hero-full__btn--primary {
-  background: var(--accent-gradient);
+  background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
   color: #fff;
-  box-shadow: 0 8px 24px rgba(255, 140, 66, 0.4);
+  box-shadow: 0 8px 24px rgba(22, 146, 216, 0.4);
 }
 .hero-full__btn--ghost {
   color: #fff;
@@ -4180,11 +4176,11 @@ header .logo img { transition: filter 0.3s ease; }
 .stats-strip__item:last-child { border-right: none; }
 .stats-strip__item > i {
   font-size: 1.5rem;
-  color: var(--accent-orange);
+  color: #0e95d6;
   width: 52px;
   height: 52px;
   border-radius: 10px;
-  background: rgba(255, 140, 66, 0.12);
+  background: rgba(22, 165, 228, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4223,7 +4219,7 @@ header .logo img { transition: filter 0.3s ease; }
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--accent-orange);
+  color: #0e95d6;
   margin-bottom: 8px;
 }
 @media (max-width: 576px) {
@@ -4287,7 +4283,7 @@ header .logo img { transition: filter 0.3s ease; }
   transition: background 0.25s ease, color 0.25s ease;
 }
 .banner-slider__nav:hover {
-  background: var(--accent-orange);
+  background: #16a5e4;
   color: #fff;
 }
 /* tombol menempel di tepi banner yang aktif */
@@ -4314,7 +4310,7 @@ header .logo img { transition: filter 0.3s ease; }
 .banner-slider__dots .swiper-pagination-bullet-active {
   width: 26px;
   border-radius: 5px;
-  background: var(--accent-orange);
+  background: #16a5e4;
   opacity: 1;
 }
 @media (max-width: 768px) {
@@ -4342,6 +4338,26 @@ header .logo img { transition: filter 0.3s ease; }
 }
 #home .hero-full__eyebrow { letter-spacing: 3px; line-height: 1.6; }
 @media (max-width: 576px) { .hero-full__title.hero-full__title--long { letter-spacing: 0; } #home .hero-full__eyebrow { letter-spacing: 2px; } }
+/* Eyebrow hero: badge kaca */
+#home .hero-full__eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px 8px 10px; margin-bottom: 20px;
+  border-radius: 999px; background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .28);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(5, 20, 45, .25);
+  font-size: 13px; font-weight: 600; letter-spacing: 3px; line-height: 1.2;
+  color: #fff; text-shadow: none;
+}
+#home .hero-full__eyebrow i {
+  width: 24px; height: 24px; border-radius: 50%; flex: 0 0 24px;
+  display: grid; place-items: center; font-size: 11px; letter-spacing: 0;
+  background: linear-gradient(135deg, #16a5e4, #064ec1); color: #fff;
+}
+@media (max-width: 576px) {
+  #home .hero-full__eyebrow { font-size: 11px; letter-spacing: 2px; padding: 6px 14px 6px 7px; gap: 8px; margin-bottom: 14px; }
+  #home .hero-full__eyebrow i { width: 20px; height: 20px; flex-basis: 20px; font-size: 9px; }
+}
 
 .hq-section { padding: 80px 0; background: #fff; }
 .hq-section--soft { background: #f3f7fd; }
@@ -4362,14 +4378,14 @@ header .logo img { transition: filter 0.3s ease; }
   font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.92rem;
   text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-.hq-btn--solid { background: var(--accent-gradient); color: #fff; box-shadow: 0 8px 20px rgba(255, 140, 66, .3); }
+.hq-btn--solid { background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); color: #fff; box-shadow: 0 8px 20px rgba(22, 146, 216, .3); }
 .hq-btn--line { border: 2px solid var(--blue-dark); color: var(--blue-dark); background: transparent; }
 .hq-btn:hover { transform: translateY(-2px); }
 .hq-btn--solid:hover { color: #fff; }
 .hq-btn--line:hover { background: var(--blue-dark); color: #fff; }
 
 .hq-note { text-align: center; margin: 28px 0 0; color: #33445e; font-size: .95rem; }
-.hq-note i { color: var(--accent-orange); margin-right: 6px; }
+.hq-note i { color: #0e95d6; margin-right: 6px; }
 
 /* ===== Kartu Pilih Kelas v2 (.qk-*) ===== */
 .qk-group + .qk-group { margin-top: 40px; }
@@ -4390,7 +4406,7 @@ header .logo img { transition: filter 0.3s ease; }
 .qk-card__head h3 { position: relative; margin: 0; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.25; color: #fff; }
 .qk-card__body { flex: 1; display: flex; flex-direction: column; padding: 22px 24px 24px; }
 .qk-card__for { margin: 0 0 18px; font-size: .95rem; line-height: 1.6; color: #33445e; }
-.qk-card__for span { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--accent-orange); margin-bottom: 4px; }
+.qk-card__for span { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: #0e95d6; margin-bottom: 4px; }
 .qk-card__meta { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; }
 .qk-card__meta li { display: flex; align-items: center; gap: 12px; font-size: .92rem; color: #33445e; }
 .qk-ico { flex: 0 0 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; background: #f1f6fd; color: #2f6cb8; font-size: .85rem; }
@@ -4413,7 +4429,7 @@ header .logo img { transition: filter 0.3s ease; }
   .qk-card__price { font-size: 1.45rem; }
 }
 .qk-help { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 32px 28px; border-radius: 16px; background: linear-gradient(160deg, #ffffff 0%, #eef5fe 100%); border: 1.5px dashed rgba(47,108,184,.35); }
-.qk-help__icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: #fff3ea; color: var(--accent-orange); font-size: 1.35rem; margin-bottom: 18px; }
+.qk-help__icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: #e6f6fd; color: #0e95d6; font-size: 1.35rem; margin-bottom: 18px; }
 .qk-help h3 { margin: 0 0 8px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--blue-dark); }
 .qk-help p { margin: 0 0 6px; font-size: .95rem; line-height: 1.65; color: #55657e; }
 .qk-btn--wa { background: #25d366; color: #fff; box-shadow: 0 6px 16px rgba(37,211,102,.28); }
@@ -4428,7 +4444,7 @@ header .logo img { transition: filter 0.3s ease; }
 /* Tombol beranda: dari pil menjadi kotak membulat */
 .hq-btn { border-radius: 10px; padding: 13px 24px; }
 .hq-btn--line { border-width: 1.5px; }
-.hq-btn--solid { background: var(--accent-gradient); box-shadow: 0 6px 16px rgba(255, 140, 66, .28); }
+.hq-btn--solid { background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); box-shadow: 0 6px 16px rgba(22, 146, 216, .28); }
 
 /* Kenapa */
 .hq-why { display: grid; grid-template-columns: 1fr 1.15fr; gap: 44px; align-items: center; }
@@ -4437,7 +4453,7 @@ header .logo img { transition: filter 0.3s ease; }
 .hq-why__list li { display: flex; gap: 16px; align-items: flex-start; color: #33445e; line-height: 1.65; }
 .hq-why__list li > i {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  background: rgba(255, 140, 66, .13); color: var(--accent-orange); font-size: 1.1rem;
+  background: rgba(22, 165, 228, .13); color: #0e95d6; font-size: 1.1rem;
 }
 .hq-why__list b { color: var(--blue-dark); }
 
@@ -4453,7 +4469,7 @@ header .logo img { transition: filter 0.3s ease; }
 }
 .hq-porto__card:hover { transform: translateY(-4px); }
 .hq-porto__card img { width: 100%; height: 190px; object-fit: cover; display: block; }
-.hq-porto__badge { position: absolute; top: 14px; left: 14px; background: var(--accent-gradient); color: #fff; font-size: .75rem; font-weight: 700; padding: 5px 12px; border-radius: 30px; }
+.hq-porto__badge { position: absolute; top: 14px; left: 14px; background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); color: #fff; font-size: .75rem; font-weight: 700; padding: 5px 12px; border-radius: 30px; }
 .hq-porto__card div { padding: 18px 20px 22px; }
 .hq-porto__card h3 { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 6px; }
 .hq-porto__card p { margin: 0; color: #55657e; font-size: .9rem; line-height: 1.55; }
@@ -4487,7 +4503,7 @@ header .logo img { transition: filter 0.3s ease; }
   font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--blue-dark);
 }
 .hq-faq summary::-webkit-details-marker { display: none; }
-.hq-faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--accent-orange); }
+.hq-faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: #0e95d6; }
 .hq-faq details[open] summary::after { content: "\2212"; }
 .hq-faq details p { margin: 0 0 18px; color: #55657e; line-height: 1.7; }
 
@@ -4497,7 +4513,7 @@ header .logo img { transition: filter 0.3s ease; }
 .hq-news__card:hover { transform: translateY(-4px); }
 .hq-news__card img { width: 100%; height: 190px; object-fit: cover; display: block; }
 .hq-news__card div { padding: 18px 20px 22px; }
-.hq-news__date { margin: 0 0 8px; font-size: .82rem; color: var(--accent-orange); font-weight: 600; }
+.hq-news__date { margin: 0 0 8px; font-size: .82rem; color: #0e95d6; font-weight: 600; }
 .hq-news__card h3 { margin: 0; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; color: var(--blue-dark); line-height: 1.45; }
 
 .footer-eco { margin-top: 14px; font-size: .88rem; opacity: .9; }
@@ -4517,8 +4533,8 @@ header .logo img { transition: filter 0.3s ease; }
 /* ===== Footer v2 (.qf-*): ukuran dikunci px agar sama di semua halaman ===== */
 footer.qf{position:relative;display:block;background:#0b1b33;color:#c9d6e8;padding:0;margin:0;font-family:'Poppins',sans-serif;font-size:15px;line-height:1.6;letter-spacing:normal;text-align:left;overflow:hidden}
 footer.qf *,footer.qf *::before,footer.qf *::after{box-sizing:border-box}
-footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(255,140,66,.14),transparent 70%);pointer-events:none}
-footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#ff8c42)}
+footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(22, 165, 228,.14),transparent 70%);pointer-events:none}
+footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#16a5e4)}
 footer.qf .qf-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 footer.qf a{color:inherit;text-decoration:none;transition:color .2s,background .2s,transform .2s}
 footer.qf h3,footer.qf p,footer.qf ul,footer.qf li{margin:0;padding:0}
@@ -4528,8 +4544,8 @@ footer.qf .qf-cta h3{color:#fff;font-size:22px;font-weight:700;line-height:1.3}
 footer.qf .qf-cta p{color:#dbe7f7;font-size:15px;margin-top:4px}
 footer.qf .qf-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
 footer.qf .qf-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap}
-footer.qf .qf-btn-wa{background:#ff8c42;color:#fff}
-footer.qf .qf-btn-wa:hover{background:#ff7a24;transform:translateY(-2px);color:#fff}
+footer.qf .qf-btn-wa{background:#1592d8;color:#fff}
+footer.qf .qf-btn-wa:hover{background:#064ec1;transform:translateY(-2px);color:#fff}
 footer.qf .qf-btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 footer.qf .qf-btn-ghost:hover{background:#fff;color:#1a3c6e}
 footer.qf .qf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;padding:56px 0 44px}
@@ -4540,15 +4556,15 @@ footer.qf .qf-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
 footer.qf .qf-badges span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(74,144,226,.15);color:#9cc4f5;border:1px solid rgba(74,144,226,.3)}
 footer.qf .qf-social{display:flex;gap:10px}
 footer.qf .qf-social a{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px}
-footer.qf .qf-social a:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-social a:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 footer.qf h3.qf-h{color:#fff;font-size:16px;font-weight:600;line-height:1.4;letter-spacing:.3px;margin-bottom:18px;position:relative;padding-bottom:10px}
-footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#ff8c42}
+footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#16a5e4}
 footer.qf .qf-list{list-style:none}
 footer.qf .qf-list li{margin-bottom:10px;list-style:none}
 footer.qf .qf-list a{font-size:14.5px;line-height:1.5;color:#aebfd6;display:inline-flex;align-items:center;gap:8px}
-footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(255,140,66,.5);transition:background .2s}
+footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(22, 165, 228,.5);transition:background .2s}
 footer.qf .qf-list a:hover{color:#fff;transform:translateX(3px)}
-footer.qf .qf-list a:hover::before{background:#ff8c42}
+footer.qf .qf-list a:hover::before{background:#16a5e4}
 footer.qf .qf-contact{list-style:none}
 footer.qf .qf-contact li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:14px;line-height:1.6;color:#aebfd6;list-style:none}
 footer.qf .qf-contact i{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(74,144,226,.15);color:#7fb3f0;font-size:14px;margin-top:1px}
@@ -4556,14 +4572,14 @@ footer.qf .qf-contact a{overflow-wrap:anywhere}
 footer.qf .qf-contact a:hover{color:#fff}
 footer.qf .qf-map{display:block;position:relative;margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);height:150px}
 footer.qf .qf-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
-footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#ff9d5c}
+footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#5cc8f0}
 footer.qf .qf-map-link:hover{color:#fff}
 footer.qf .qf-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:#8396b0}
 footer.qf .qf-bottom p{text-align:left;font-size:13.5px}
 footer.qf .qf-eco a{color:#aebfd6;text-decoration:underline;text-underline-offset:3px}
 footer.qf .qf-eco a:hover{color:#fff}
 footer.qf .qf-top{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
-footer.qf .qf-top:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-top:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 @media (max-width:992px){footer.qf .qf-grid{grid-template-columns:1fr 1fr;gap:36px}}
 /* HP: ringkas, pas satu layar penuh */
 @media (max-width:600px){
@@ -4626,19 +4642,19 @@ header.qh nav ul{display:flex;flex-direction:row;align-items:center;list-style:n
 header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
 header.qh nav ul li a{display:flex;align-items:center;gap:6px;position:relative;color:#3a4a63;text-decoration:none;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px;background:transparent;transition:color .2s ease,background .2s ease}
 header.qh nav ul li a::after{display:none}
-header.qh nav ul li > a > i:not(.fa-chevron-down){display:none}
-header.qh nav ul li a i.fa-chevron-down{font-size:10px;opacity:.7;transition:transform .2s ease}
+header.qh nav ul li > a > i:not(.ph-caret-down){display:none}
+header.qh nav ul li a i.ph-caret-down{font-size:10px;opacity:.7;transition:transform .2s ease}
 header.qh nav ul li a:hover{color:#1a3c6e;background:rgba(74,144,226,.10)}
 header.qh nav ul li a.active{color:#1f5fae;background:#eaf2fd;font-weight:600}
-header.qh .dropdown:hover > a i.fa-chevron-down{transform:rotate(180deg)}
+header.qh .dropdown:hover > a i.ph-caret-down{transform:rotate(180deg)}
 header.qh .dropdown-content{display:block;visibility:hidden;opacity:0;transform:translateY(6px);position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#fff;border:1px solid rgba(26,60,110,.08);box-shadow:0 18px 40px rgba(26,60,110,.14);border-radius:14px;z-index:1000;margin:0;padding:8px;overflow:visible;transition:opacity .2s ease,transform .2s ease,visibility .2s}
 header.qh .dropdown-content::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 header.qh .dropdown:hover .dropdown-content{visibility:visible;opacity:1;transform:translateY(0)}
 header.qh .dropdown-content a{display:block;color:#3a4a63;padding:10px 14px;border:0;border-radius:10px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;background:transparent}
 header.qh .dropdown-content a:hover{background:#eaf2fd;color:#1a3c6e}
 header.qh .qh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8c42,#e67429);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(255,140,66,.32);transition:transform .2s ease,box-shadow .2s ease}
-header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,140,66,.42);color:#fff}
+header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(22, 146, 216,.32);transition:transform .2s ease,box-shadow .2s ease}
+header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(22, 146, 216,.42);color:#fff}
 header.qh .mobile-menu-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;color:#1a3c6e;font-size:20px;line-height:1;background:#f1f5fb;border:1px solid rgba(26,60,110,.08);border-radius:12px;padding:0;margin:0;cursor:pointer;z-index:1001;transition:background .2s ease,color .2s ease}
 /* ===== status transparan di atas hero beranda ===== */
 header.qh.header--top::before{opacity:0}
@@ -4660,7 +4676,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh nav ul{flex-direction:column;align-items:stretch;gap:4px}
   header.qh nav ul li{margin:0}
   header.qh nav ul li > a,header.qh.header--top nav ul li > a{color:#3a4a63;padding:12px 14px;border-radius:12px;font-size:15px;gap:12px}
-  header.qh nav ul li > a > i:not(.fa-chevron-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
+  header.qh nav ul li > a > i:not(.ph-caret-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
   header.qh nav ul li > a:hover,header.qh.header--top nav ul li > a:hover{background:#f1f5fb;color:#1a3c6e}
   header.qh nav ul li > a.active,header.qh.header--top nav ul li > a.active{background:#eaf2fd;color:#1f5fae}
   header.qh .dropdown-content{display:none;visibility:visible;opacity:1;transform:none;position:static;box-shadow:none;border:0;background:transparent;margin:2px 0 4px 34px;padding:0;border-left:2px solid #eaf2fd;border-radius:0;min-width:0}
@@ -4668,7 +4684,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh .dropdown.active .dropdown-content{display:block}
   header.qh .dropdown-content a{color:#5b6b84;padding:9px 14px;font-size:14px}
   header.qh .dropdown-content a:hover{background:#f1f5fb;color:#1a3c6e}
-  header.qh .dropdown > a i.fa-chevron-down{display:none}
+  header.qh .dropdown > a i.ph-caret-down{display:none}
 }
 @media (max-width:380px){header.qh .logo img{height:38px}header.qh .qh-cta{padding:7px 12px}}
 </style>
@@ -4687,7 +4703,12 @@ body .section-title h2 span,body .section-header h2 span{color:inherit!important
 body .section-title p,body .section-header p,body .section-title + .section-subtitle,body .section-title .section-subtitle{font-size:17px!important;font-weight:400!important;line-height:1.75!important;color:#55657e!important;max-width:720px;margin:14px auto 0!important;text-transform:none!important;letter-spacing:0!important}
 body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-align:center}
 .cta-section .section-title h2,.cta-section-modern .section-title h2{color:#fff!important}
+/* Ikon Phosphor Bold: sedikit lebih besar dari Font Awesome lama */
+:where(.ph-bold){font-size:1.14em;vertical-align:-.14em}
+/* Aksen cyan versi terang untuk teks di atas latar gelap */
+[class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   </head>
   <body>
     <header class="qh qh-fixed">
@@ -4701,25 +4722,25 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </div>
         <nav>
           <ul>
-            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li><a href="menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li><a href="index.html" class="active"><i class="ph-bold ph-house"></i> Beranda</a></li>
+            <li><a href="menu/about.html"><i class="ph-bold ph-info"></i> Tentang Kami</a></li>
+            <li><a href="menu/programs.html"><i class="ph-bold ph-graduation-cap"></i> Program</a></li>
             <li class="dropdown">
-              <a href="menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
+              <a href="menu/kerjasama/pemerintah.html"><i class="ph-bold ph-handshake"></i> Portofolio <i class="ph-bold ph-caret-down"></i></a>
               <div class="dropdown-content">
                 <a href="menu/kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="menu/kerjasama/swasta.html">Swasta</a>
                 <a href="menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
+            <li><a href="menu/alumni.html"><i class="ph-bold ph-users-three"></i> Alumni</a></li>
+            <li><a href="menu/news.html"><i class="ph-bold ph-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
         <div class="qh-actions">
-          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Daftar<span> Sekarang</span></a>
+          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Daftar<span> Sekarang</span></a>
           <button class="mobile-menu-btn" aria-label="Buka menu">
-            <i class="fas fa-bars"></i>
+            <i class="ph-bold ph-list"></i>
           </button>
         </div>
       </div>
@@ -4730,35 +4751,35 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
   <div class="hero-full__overlay"></div>
 
   <div class="hero-full__content">
-    <span class="hero-full__eyebrow">Lembaga Pelatihan Kerja</span>
+    <span class="hero-full__eyebrow"><i class="ph-bold ph-graduation-cap" aria-hidden="true"></i>Lembaga Pelatihan Kerja</span>
     <h1 class="hero-full__title">Quantum<span>Telecommunication</span></h1>
     <p class="hero-full__slogan">Pelatihan <i>&bull;</i> Magang <i>&bull;</i> Kerja</p>
     <p class="hero-full__tagline">Melatih Teknisi Ponsel yang Amanah, Jujur, Handal dan Profesional</p>
     <div class="hero-full__actions">
       <a href="menu/programs.html" class="hero-full__btn hero-full__btn--primary">Lihat Program</a>
-      <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener" class="hero-full__btn hero-full__btn--ghost"><i class="fab fa-whatsapp"></i> Daftar Sekarang</a>
+      <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener" class="hero-full__btn hero-full__btn--ghost"><i class="ph-bold ph-whatsapp-logo"></i> Daftar Sekarang</a>
     </div>
   </div>
 
-  <a href="#kelas" class="hero-full__scroll" aria-label="Gulir ke bawah"><i class="fas fa-chevron-down"></i></a>
+  <a href="#kelas" class="hero-full__scroll" aria-label="Gulir ke bawah"><i class="ph-bold ph-caret-down"></i></a>
 </section>
 
 <div class="stats-strip">
   <div class="stats-strip__inner">
     <div class="stats-strip__item">
-      <i class="fas fa-award"></i>
+      <i class="ph-bold ph-medal"></i>
       <div><strong><span class="count-up" data-target="18">18</span> Tahun</strong><span>Melatih teknisi, sejak 2008</span></div>
     </div>
     <div class="stats-strip__item">
-      <i class="fas fa-user-graduate"></i>
+      <i class="ph-bold ph-student"></i>
       <div><strong><span class="count-up" data-target="5000">5.000</span>+</strong><span>Alumni di seluruh Indonesia</span></div>
     </div>
     <div class="stats-strip__item">
-      <i class="fas fa-certificate"></i>
+      <i class="ph-bold ph-seal-check"></i>
       <div><strong>LA-LPK</strong><span>Lembaga terakreditasi</span></div>
     </div>
     <div class="stats-strip__item">
-      <i class="fab fa-youtube"></i>
+      <i class="ph-bold ph-youtube-logo"></i>
       <div><strong><span class="count-up" data-target="23000">23.000</span>+</strong><span>Subscriber YouTube Quantum Telecom</span></div>
     </div>
   </div>
@@ -4772,6 +4793,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     <div class="swiper banner-slider__swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="assets/photos/mitra/banner-bplus-hcb.jpg" alt="BPlus x HCB - Original Battery" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/photos/mitra/banner-digitalways.jpg" alt="Digital Ways" loading="lazy"></div>
         <div class="swiper-slide"><img src="assets/photos/hero/logo titan.jpg.jpeg" alt="Titan" loading="lazy"></div>
         <div class="swiper-slide"><img src="assets/photos/mitra/banner-braderparts.jpg" alt="BraderParts" loading="lazy"></div>
         <div class="swiper-slide"><img src="assets/photos/mitra/banner-bt-acc.jpg" alt="BT-ACC - Baterai Terbaik untuk Ponsel Anda" loading="lazy"></div>
@@ -4779,8 +4801,8 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="swiper-slide"><img src="assets/photos/mitra/mitra5-landscape.png" alt="OG Original Quality x Super Sunshine" loading="lazy"></div>
       </div>
     </div>
-    <button class="banner-slider__nav banner-slider__prev" aria-label="Banner sebelumnya"><i class="fas fa-chevron-left"></i></button>
-    <button class="banner-slider__nav banner-slider__next" aria-label="Banner berikutnya"><i class="fas fa-chevron-right"></i></button>
+    <button class="banner-slider__nav banner-slider__prev" aria-label="Banner sebelumnya"><i class="ph-bold ph-caret-left"></i></button>
+    <button class="banner-slider__nav banner-slider__next" aria-label="Banner berikutnya"><i class="ph-bold ph-caret-right"></i></button>
   </div>
   <div class="banner-slider__dots"></div>
 </div>
@@ -4794,64 +4816,64 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </div>
 
     <div class="qk-group">
-      <div class="qk-group__label"><i class="fab fa-android"></i> Kelas Android <span>3 pilihan</span></div>
+      <div class="qk-group__label"><i class="ph-bold ph-android-logo"></i> Kelas Android <span>3 pilihan</span></div>
       <div class="qk-grid">
         <article class="qk-card qk-card--android">
           <div class="qk-card__head">
-            <i class="fab fa-android qk-card__mark" aria-hidden="true"></i>
+            <i class="ph-bold ph-android-logo qk-card__mark" aria-hidden="true"></i>
             <span class="qk-card__mode">Offline &middot; Semarang</span>
             <h3>Android Offline</h3>
           </div>
           <div class="qk-card__body">
             <p class="qk-card__for"><span>Cocok untuk</span>Pemula yang ingin cepat mahir dengan praktik langsung</p>
             <ul class="qk-card__meta">
-            <li><span class="qk-ico"><i class="fas fa-calendar-day"></i></span>10 hari di Semarang</li>
-            <li><span class="qk-ico"><i class="far fa-clock"></i></span>09.30&ndash;17.00 WIB</li>
-            <li><span class="qk-ico"><i class="fas fa-users"></i></span>Maksimal 8 peserta</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-calendar-dot"></i></span>10 hari di Semarang</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-clock"></i></span>09.30&ndash;17.00 WIB</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-users-three"></i></span>Maksimal 8 peserta</li>
             </ul>
             <div class="qk-card__foot">
               <span class="qk-card__label">Biaya kelas</span>
               <p class="qk-card__price">Rp4.000.000</p>
-              <a href="menu/detail-offline.html" class="qk-btn qk-btn--primary">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+              <a href="menu/detail-offline.html" class="qk-btn qk-btn--primary">Lihat Detail <i class="ph-bold ph-arrow-right"></i></a>
             </div>
           </div>
         </article>
         <article class="qk-card qk-card--android">
           <div class="qk-card__head">
-            <i class="fab fa-android qk-card__mark" aria-hidden="true"></i>
+            <i class="ph-bold ph-android-logo qk-card__mark" aria-hidden="true"></i>
             <span class="qk-card__mode">Online &middot; Live</span>
             <h3>Android Online</h3>
           </div>
           <div class="qk-card__body">
             <p class="qk-card__for"><span>Cocok untuk</span>Pemula yang belajar dari rumah</p>
             <ul class="qk-card__meta">
-            <li><span class="qk-ico"><i class="fas fa-video"></i></span>25 pertemuan live</li>
-            <li><span class="qk-ico"><i class="far fa-clock"></i></span>2 jam per sesi</li>
-            <li><span class="qk-ico"><i class="fas fa-redo"></i></span>Rekaman bisa diulang</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-video-camera"></i></span>25 pertemuan live</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-clock"></i></span>2 jam per sesi</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-arrow-clockwise"></i></span>Rekaman bisa diulang</li>
             </ul>
             <div class="qk-card__foot">
               <span class="qk-card__label">Biaya kelas</span>
               <p class="qk-card__price">Rp800.000</p>
-              <a href="menu/detail-online.html" class="qk-btn qk-btn--primary">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+              <a href="menu/detail-online.html" class="qk-btn qk-btn--primary">Lihat Detail <i class="ph-bold ph-arrow-right"></i></a>
             </div>
           </div>
         </article>
         <article class="qk-card qk-card--android">
           <div class="qk-card__head">
-            <i class="fab fa-android qk-card__mark" aria-hidden="true"></i>
+            <i class="ph-bold ph-android-logo qk-card__mark" aria-hidden="true"></i>
             <span class="qk-card__mode">Private &middot; 1 on 1</span>
             <h3>Android Private</h3>
           </div>
           <div class="qk-card__body">
             <p class="qk-card__for"><span>Cocok untuk</span>Yang ingin jadwal sendiri dan bimbingan satu instruktur</p>
             <ul class="qk-card__meta">
-            <li><span class="qk-ico"><i class="fas fa-user-tie"></i></span>Tatap muka, satu instruktur</li>
-            <li><span class="qk-ico"><i class="fas fa-calendar-check"></i></span>Jadwal menyesuaikan</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-chalkboard-teacher"></i></span>Tatap muka, satu instruktur</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-calendar-check"></i></span>Jadwal menyesuaikan</li>
             </ul>
             <div class="qk-card__foot">
               <span class="qk-card__label">Biaya kelas</span>
               <p class="qk-card__price">Rp10.000.000</p>
-              <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20jadwal%20Kelas%20Android%20Private" class="qk-btn qk-btn--soft" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Tanya Jadwal</a>
+              <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20jadwal%20Kelas%20Android%20Private" class="qk-btn qk-btn--soft" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Tanya Jadwal</a>
             </div>
           </div>
         </article>
@@ -4859,57 +4881,57 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </div>
 
     <div class="qk-group">
-      <div class="qk-group__label"><i class="fab fa-apple"></i> Kelas iPhone <span>2 pilihan</span></div>
+      <div class="qk-group__label"><i class="ph-bold ph-apple-logo"></i> Kelas iPhone <span>2 pilihan</span></div>
       <div class="qk-grid qk-grid--two">
         <article class="qk-card qk-card--iphone">
           <div class="qk-card__head">
-            <i class="fab fa-apple qk-card__mark" aria-hidden="true"></i>
+            <i class="ph-bold ph-apple-logo qk-card__mark" aria-hidden="true"></i>
             <span class="qk-card__mode">Online &middot; Live</span>
             <h3>iPhone Expert Online</h3>
           </div>
           <div class="qk-card__body">
             <p class="qk-card__for"><span>Cocok untuk</span>Teknisi Android yang naik kelas ke iPhone</p>
             <ul class="qk-card__meta">
-            <li><span class="qk-ico"><i class="fas fa-video"></i></span>30 pertemuan live, 6 level</li>
-            <li><span class="qk-ico"><i class="far fa-clock"></i></span>20.00&ndash;21.30 WIB</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-video-camera"></i></span>30 pertemuan live, 6 level</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-clock"></i></span>20.00&ndash;21.30 WIB</li>
             </ul>
             <div class="qk-card__foot">
               <span class="qk-card__label">Biaya kelas</span>
               <p class="qk-card__price">Rp2.500.000</p>
-            <span class="qk-note"><i class="fas fa-tag"></i> Alumni Quantum Rp2.000.000</span>
-              <a href="menu/programs.html#iphone-academy" class="qk-btn qk-btn--primary">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <span class="qk-note"><i class="ph-bold ph-tag"></i> Alumni Quantum Rp2.000.000</span>
+              <a href="menu/programs.html#iphone-academy" class="qk-btn qk-btn--primary">Lihat Detail <i class="ph-bold ph-arrow-right"></i></a>
             </div>
           </div>
         </article>
         <article class="qk-card qk-card--iphone">
           <div class="qk-card__head">
-            <i class="fab fa-apple qk-card__mark" aria-hidden="true"></i>
+            <i class="ph-bold ph-apple-logo qk-card__mark" aria-hidden="true"></i>
             <span class="qk-card__mode">Private &middot; 1 on 1</span>
             <h3>iPhone Expert Private</h3>
           </div>
           <div class="qk-card__body">
             <p class="qk-card__for"><span>Cocok untuk</span>Yang ingin fokus iPhone dengan satu instruktur</p>
             <ul class="qk-card__meta">
-            <li><span class="qk-ico"><i class="fas fa-user-tie"></i></span>Tatap muka, satu instruktur</li>
-            <li><span class="qk-ico"><i class="fas fa-calendar-check"></i></span>Jadwal menyesuaikan</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-chalkboard-teacher"></i></span>Tatap muka, satu instruktur</li>
+            <li><span class="qk-ico"><i class="ph-bold ph-calendar-check"></i></span>Jadwal menyesuaikan</li>
             </ul>
             <div class="qk-card__foot">
               <span class="qk-card__label">Biaya kelas</span>
               <p class="qk-card__price">Rp15.000.000</p>
-              <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20jadwal%20Kelas%20iPhone%20Expert%20Private" class="qk-btn qk-btn--soft" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Tanya Jadwal</a>
+              <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20jadwal%20Kelas%20iPhone%20Expert%20Private" class="qk-btn qk-btn--soft" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Tanya Jadwal</a>
             </div>
           </div>
         </article>
         <article class="qk-help">
-          <span class="qk-help__icon"><i class="fas fa-headset"></i></span>
+          <span class="qk-help__icon"><i class="ph-bold ph-headset"></i></span>
           <h3>Masih bingung pilih kelas?</h3>
           <p>Ceritakan tujuan dan waktu luang Anda. Admin akan menyarankan kelas yang paling cocok, gratis.</p>
-          <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20bingung%20pilih%20kelas%2C%20bisa%20bantu%20sarankan%3F" target="_blank" rel="noopener" class="qk-btn qk-btn--wa"><i class="fab fa-whatsapp"></i> Konsultasi Gratis</a>
+          <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20bingung%20pilih%20kelas%2C%20bisa%20bantu%20sarankan%3F" target="_blank" rel="noopener" class="qk-btn qk-btn--wa"><i class="ph-bold ph-whatsapp-logo"></i> Konsultasi Gratis</a>
         </article>
       </div>
     </div>
 
-    <p class="hq-note"><i class="fas fa-info-circle"></i> Kursi Kelas Offline dibatasi 8 orang per angkatan. Tanyakan tanggal angkatan terdekat ke admin.</p>
+    <p class="hq-note"><i class="ph-bold ph-info"></i> Kursi Kelas Offline dibatasi 8 orang per angkatan. Tanyakan tanggal angkatan terdekat ke admin.</p>
   </div>
 </section>
 
@@ -4926,11 +4948,11 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <img src="assets/photos/section/tentang-kami.jpg" alt="Peserta praktik servis HP di kelas LPK Quantum" loading="lazy">
       </div>
       <ul class="hq-why__list">
-        <li><i class="fas fa-tools"></i><div><b>70% praktik.</b> Setiap peserta Kelas Offline mendapat meja kerja sendiri, lengkap dengan solder station, multimeter, power supply, dan mikroskop.</div></li>
-        <li><i class="fas fa-users"></i><div><b>Kelas kecil.</b> Satu instruktur mendampingi paling banyak 8 peserta.</div></li>
-        <li><i class="fas fa-store"></i><div><b>Materi bisnis ikut diajarkan.</b> Anda pulang membawa templat nota, daftar harga, dan form garansi untuk konter sendiri.</div></li>
-        <li><i class="fas fa-hands-helping"></i><div><b>Didampingi setelah lulus.</b> Grup alumni dan konsultasi tetap terbuka setelah kelas selesai.</div></li>
-        <li><i class="fas fa-certificate"></i><div><b>Lembaga resmi.</b> Terakreditasi LA-LPK; lulusan menerima sertifikat LPK.</div></li>
+        <li><i class="ph-bold ph-wrench"></i><div><b>70% praktik.</b> Setiap peserta Kelas Offline mendapat meja kerja sendiri, lengkap dengan solder station, multimeter, power supply, dan mikroskop.</div></li>
+        <li><i class="ph-bold ph-users-three"></i><div><b>Kelas kecil.</b> Satu instruktur mendampingi paling banyak 8 peserta.</div></li>
+        <li><i class="ph-bold ph-storefront"></i><div><b>Materi bisnis ikut diajarkan.</b> Anda pulang membawa templat nota, daftar harga, dan form garansi untuk konter sendiri.</div></li>
+        <li><i class="ph-bold ph-hand-heart"></i><div><b>Didampingi setelah lulus.</b> Grup alumni dan konsultasi tetap terbuka setelah kelas selesai.</div></li>
+        <li><i class="ph-bold ph-seal-check"></i><div><b>Lembaga resmi.</b> Terakreditasi LA-LPK; lulusan menerima sertifikat LPK.</div></li>
       </ul>
     </div>
     <div class="hq-center">
@@ -4963,10 +4985,10 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 
     <div class="video-cta-group mt-5">
       <a href="assets/photos/pdf/Compro Quantum Telecommunication.pdf" target="_blank" class="btn-minimal btn-compro">
-        <i class="fas fa-file-pdf me-2"></i> Company Profile
+        <i class="ph-bold ph-file-pdf me-2"></i> Company Profile
       </a>
       <a href="menu/materi.html" class="btn-minimal btn-materi">
-        Materi Pelatihan <i class="fas fa-arrow-right ms-2"></i>
+        Materi Pelatihan <i class="ph-bold ph-arrow-right ms-2"></i>
       </a>
     </div>
   </div>
@@ -5159,21 +5181,21 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
       <a class="hq-news__card" href="https://vbatponsel.com/" target="_blank" rel="noopener">
         <img src="assets/photos/section/berita-perkenalan-vbatponsel.jpeg" alt="Aplikasi VBATPONSEL karya LPK Quantum" loading="lazy">
         <div>
-          <p class="hq-news__date"><i class="far fa-calendar-alt"></i> 1 Agustus 2026</p>
+          <p class="hq-news__date"><i class="ph-bold ph-calendar-blank"></i> 1 Agustus 2026</p>
           <h3>VBATPONSEL, Aplikasi Karya LPK Quantum yang Jadi &ldquo;Kamus Digital&rdquo; bagi Teknisi Smartphone</h3>
         </div>
       </a>
       <a class="hq-news__card" href="https://semarangnews.id/2026/06/26/lpk-quantum-kembali-latih-penyandang-disabilitas-jadi-teknisi-hp-siapkan-modal-usaha-hingga-magang/?amp=1" target="_blank" rel="noopener">
         <img src="assets/photos/section/pelatihan1-disabilitas-semarangnews.jpeg" alt="Pelatihan teknisi HP bagi penyandang disabilitas angkatan kedua" loading="lazy">
         <div>
-          <p class="hq-news__date"><i class="far fa-calendar-alt"></i> 26 Juni 2026</p>
+          <p class="hq-news__date"><i class="ph-bold ph-calendar-blank"></i> 26 Juni 2026</p>
           <h3>LPK Quantum Kembali Latih Penyandang Disabilitas Jadi Teknisi HP, Siapkan Modal Usaha hingga Magang</h3>
         </div>
       </a>
       <a class="hq-news__card" href="menu/detail-roadshow-pontianak.html">
         <img src="assets/photos/section/roadshow-pontianak.jpg" alt="Roadshow Quantum Telecommunication di Pontianak" loading="lazy">
         <div>
-          <p class="hq-news__date"><i class="far fa-calendar-alt"></i> 12 Juni 2026</p>
+          <p class="hq-news__date"><i class="ph-bold ph-calendar-blank"></i> 12 Juni 2026</p>
           <h3>Roadshow Quantum Kembali Hadir di Pontianak, Hadirkan Kelas iPhone Pertama</h3>
         </div>
       </a>
@@ -5236,7 +5258,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </div>
         <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
           <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20ketersediaan%20kursi%20angkatan%20berikutnya" target="_blank" rel="noopener" class="btn-cta-main">
-            Chat Admin di WhatsApp <i class="fab fa-whatsapp ms-2"></i>
+            Chat Admin di WhatsApp <i class="ph-bold ph-whatsapp-logo ms-2"></i>
           </a>
         </div>
       </div>
@@ -5252,8 +5274,8 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             <p>Konsultasi gratis dengan admin untuk memilih kelas yang pas.</p>
           </div>
           <div class="qf-cta-btns">
-            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat Admin</a>
-            <a class="qf-btn qf-btn-ghost" href="menu/programs.html">Lihat Program <i class="fas fa-arrow-right"></i></a>
+            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Chat Admin</a>
+            <a class="qf-btn qf-btn-ghost" href="menu/programs.html">Lihat Program <i class="ph-bold ph-arrow-right"></i></a>
           </div>
         </div>
 
@@ -5263,10 +5285,10 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             <p>Lembaga Pelatihan Kerja teknisi smartphone di Semarang sejak 2008. Belajar langsung praktik, dari dasar sampai siap buka usaha servis.</p>
             <div class="qf-badges"><span>Sejak 2008</span><span>Offline &amp; Online</span><span>Android &amp; iPhone</span></div>
             <div class="qf-social">
-              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ph-bold ph-facebook-logo"></i></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="ph-bold ph-youtube-logo"></i></a>
+              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph-bold ph-whatsapp-logo"></i></a>
             </div>
           </div>
 
@@ -5297,21 +5319,21 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
           <div class="qf-col-contact">
             <h3 class="qf-h">Kontak</h3>
             <ul class="qf-contact">
-              <li><i class="fas fa-map-marker-alt"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
-              <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
-              <li><i class="fas fa-envelope"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
+              <li><i class="ph-bold ph-map-pin"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
+              <li><i class="ph-bold ph-whatsapp-logo"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
+              <li><i class="ph-bold ph-envelope-simple"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
             </ul>
             <div class="qf-map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" title="Lokasi LPK Quantum Telecommunication" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="fas fa-external-link-alt"></i></a>
+            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="ph-bold ph-arrow-square-out"></i></a>
           </div>
         </div>
 
         <div class="qf-bottom">
           <p>&copy; <span class="js-year">2026</span> PT Quantum Telecommunication. Hak cipta dilindungi.</p>
           <p class="qf-eco">Ekosistem Quantum: <a href="https://vbatponsel.com/" target="_blank" rel="noopener">Aplikasi VBATPonsel</a> &middot; <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener">Kanal YouTube</a></p>
-          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i></a>
+          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="ph-bold ph-arrow-up"></i></a>
         </div>
         <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
       </div>
@@ -5323,10 +5345,10 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
       rel="noopener"
       aria-label="Chat admin via WhatsApp"
     >
-      <i class="fab fa-whatsapp"></i>
+      <i class="ph-bold ph-whatsapp-logo"></i>
     </a>
     <a href="#home" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
+      <i class="ph-bold ph-arrow-up"></i>
     </a>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -5344,11 +5366,11 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         // Change icon
         const icon = mobileMenuBtn.querySelector("i");
         if (nav.classList.contains("active")) {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-times");
+          icon.classList.remove("ph-list");
+          icon.classList.add("ph-x");
         } else {
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         }
       });
 
@@ -5363,8 +5385,8 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 
           // Reset icon
           const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         });
       });
 

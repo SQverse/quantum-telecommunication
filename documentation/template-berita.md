@@ -12,7 +12,7 @@
     </div>
     <div class="news-content">
         <p class="news-date">
-            <i class="far fa-calendar-alt"></i> [ISI TANGGAL BERITA]
+            <i class="ph-bold ph-calendar-blank"></i> [ISI TANGGAL BERITA]
         </p>
         <h3 class="news-title">
               [ISI JUDUL BERITA]
@@ -21,7 +21,7 @@
             [ISI BERITA]
         </p>
         <a href="[ISI URL BERITA ASLI]" target="_blank" class="news-link"
-            >Baca selengkapnya <i class="fas fa-arrow-right"></i
+            >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
           ></a>
         </a>
     </div>

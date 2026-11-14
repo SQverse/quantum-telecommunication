@@ -28,11 +28,7 @@
   rel="stylesheet"
 />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
@@ -52,10 +48,10 @@
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
         /* Added secondary accent color - orange/amber */
-        --accent-orange: #ff8c42;
-        --accent-orange-light: #ffb366;
-        --accent-orange-dark: #e67429;
-        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        --accent-orange: #1592d8;
+        --accent-orange-light: #5cc8f0;
+        --accent-orange-dark: #064ec1;
+        --accent-gradient: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
 
         /* Transisi */
         --transition: all 0.3s ease;
@@ -226,7 +222,7 @@
         }
 
         /* Hilangkan chevron down di mobile */
-        .dropdown > a i.fa-chevron-down {
+        .dropdown > a i.ph-caret-down {
           display: none;
         }
 
@@ -307,7 +303,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         border-radius: 2px;
       }
 
@@ -704,7 +700,7 @@
 
       .btn {
         display: inline-block;
-        background-color: var(--accent-orange);
+        background-color: #1592d8;
         color: var(--text-light);
         padding: 16px 40px;
         border-radius: 30px;
@@ -810,7 +806,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
       }
 
       .footer-links ul {
@@ -1628,7 +1624,7 @@
 }
 
 .text-orange {
-  color: #ff8c42 !important;
+  color: #0e95d6 !important;
 }
 
 .hero-desc {
@@ -1640,8 +1636,8 @@
 
 /* Badge & Stats */
 .badge-history {
-  background: rgba(255, 140, 66, 0.2);
-  color: #ffb366;
+  background: rgba(22, 165, 228, 0.2);
+  color: #5cc8f0;
   padding: 8px 20px;
   border-radius: 50px;
   font-weight: 600;
@@ -1673,7 +1669,7 @@
 .cta-group { display: flex; gap: 15px; }
 
 .btn-main {
-  background: #ff8c42;
+  background: #1592d8;
   color: #fff !important;
   padding: 15px 35px;
   border-radius: 30px;
@@ -1850,7 +1846,7 @@
   position: absolute;
   width: 20px; height: 20px;
   background: #fff;
-  border: 4px solid var(--accent-orange);
+  border: 4px solid #16a5e4;
   border-radius: 50%;
   top: 25px;
   z-index: 10;
@@ -1945,7 +1941,7 @@
   transform: translateY(-10px);
   background: #fff;
   box-shadow: 0 20px 40px rgba(26, 60, 110, 0.08);
-  border-color: var(--accent-orange);
+  border-color: #16a5e4;
 }
 
 .v-icon-circle {
@@ -1961,7 +1957,7 @@
 .v-label {
   display: block;
   font-size: 0.75rem; font-weight: 800;
-  color: var(--accent-orange);
+  color: #0e95d6;
   letter-spacing: 2px; margin-bottom: 10px;
 }
 
@@ -1985,7 +1981,7 @@
   margin-bottom: 15px; display: flex; align-items: center; gap: 12px;
 }
 
-.v-list-modern i { color: var(--accent-orange); font-size: 1.1rem; }
+.v-list-modern i { color: #0e95d6; font-size: 1.1rem; }
 
 /* Desktop Grid for Values */
 .v-list-modern.grid-2 {
@@ -2013,13 +2009,13 @@
   position: absolute;
   top: -50%; left: -20%;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(255, 140, 66, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(22, 165, 228, 0.1) 0%, transparent 70%);
   z-index: 1;
 }
 
 .cta-badge {
-  background: rgba(255, 140, 66, 0.2);
-  color: var(--accent-orange);
+  background: rgba(22, 165, 228, 0.2);
+  color: #0e95d6;
   padding: 8px 20px;
   border-radius: 50px;
   font-weight: 700;
@@ -2051,10 +2047,10 @@
 .roadmap-icon {
   width: 60px; height: 60px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 140, 66, 0.3);
+  border: 1px solid rgba(22, 165, 228, 0.3);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; color: var(--accent-orange);
+  font-size: 1.5rem; color: #0e95d6;
   margin: 0 auto 15px;
   transition: 0.3s;
 }
@@ -2069,23 +2065,23 @@
 
 .btn-cta-primary {
   display: inline-block;
-  background: var(--accent-gradient);
+  background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
   color: white !important;
   padding: 18px 45px;
   border-radius: 50px;
   font-weight: 800;
   font-size: 1.1rem;
   text-decoration: none !important;
-  box-shadow: 0 10px 30px rgba(255, 140, 66, 0.4);
+  box-shadow: 0 10px 30px rgba(22, 146, 216, 0.4);
   transition: 0.3s;
 }
 
 .pulse-orange { animation: pulse-orange 2s infinite; }
 
 @keyframes pulse-orange {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 140, 66, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 140, 66, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 140, 66, 0); }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 146, 216, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(22, 146, 216, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 146, 216, 0); }
 }
 
 .trust-note { margin-top: 20px; font-size: 0.85rem; opacity: 0.5; }
@@ -2150,7 +2146,7 @@
 
 .node-info span {
     font-size: 0.75rem;
-    color: #ff6b00;
+    color: #0e95d6;
     font-weight: 600;
     display: block;
 }
@@ -2273,7 +2269,7 @@
 
 .node-info span {
     font-size: 0.85rem;
-    color: var(--accent-orange);
+    color: #0e95d6;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2297,8 +2293,8 @@
 /* ===== Footer v2 (.qf-*): ukuran dikunci px agar sama di semua halaman ===== */
 footer.qf{position:relative;display:block;background:#0b1b33;color:#c9d6e8;padding:0;margin:0;font-family:'Poppins',sans-serif;font-size:15px;line-height:1.6;letter-spacing:normal;text-align:left;overflow:hidden}
 footer.qf *,footer.qf *::before,footer.qf *::after{box-sizing:border-box}
-footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(255,140,66,.14),transparent 70%);pointer-events:none}
-footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#ff8c42)}
+footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(22, 165, 228,.14),transparent 70%);pointer-events:none}
+footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#16a5e4)}
 footer.qf .qf-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 footer.qf a{color:inherit;text-decoration:none;transition:color .2s,background .2s,transform .2s}
 footer.qf h3,footer.qf p,footer.qf ul,footer.qf li{margin:0;padding:0}
@@ -2308,8 +2304,8 @@ footer.qf .qf-cta h3{color:#fff;font-size:22px;font-weight:700;line-height:1.3}
 footer.qf .qf-cta p{color:#dbe7f7;font-size:15px;margin-top:4px}
 footer.qf .qf-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
 footer.qf .qf-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap}
-footer.qf .qf-btn-wa{background:#ff8c42;color:#fff}
-footer.qf .qf-btn-wa:hover{background:#ff7a24;transform:translateY(-2px);color:#fff}
+footer.qf .qf-btn-wa{background:#1592d8;color:#fff}
+footer.qf .qf-btn-wa:hover{background:#064ec1;transform:translateY(-2px);color:#fff}
 footer.qf .qf-btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 footer.qf .qf-btn-ghost:hover{background:#fff;color:#1a3c6e}
 footer.qf .qf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;padding:56px 0 44px}
@@ -2320,15 +2316,15 @@ footer.qf .qf-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
 footer.qf .qf-badges span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(74,144,226,.15);color:#9cc4f5;border:1px solid rgba(74,144,226,.3)}
 footer.qf .qf-social{display:flex;gap:10px}
 footer.qf .qf-social a{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px}
-footer.qf .qf-social a:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-social a:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 footer.qf h3.qf-h{color:#fff;font-size:16px;font-weight:600;line-height:1.4;letter-spacing:.3px;margin-bottom:18px;position:relative;padding-bottom:10px}
-footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#ff8c42}
+footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#16a5e4}
 footer.qf .qf-list{list-style:none}
 footer.qf .qf-list li{margin-bottom:10px;list-style:none}
 footer.qf .qf-list a{font-size:14.5px;line-height:1.5;color:#aebfd6;display:inline-flex;align-items:center;gap:8px}
-footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(255,140,66,.5);transition:background .2s}
+footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(22, 165, 228,.5);transition:background .2s}
 footer.qf .qf-list a:hover{color:#fff;transform:translateX(3px)}
-footer.qf .qf-list a:hover::before{background:#ff8c42}
+footer.qf .qf-list a:hover::before{background:#16a5e4}
 footer.qf .qf-contact{list-style:none}
 footer.qf .qf-contact li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:14px;line-height:1.6;color:#aebfd6;list-style:none}
 footer.qf .qf-contact i{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(74,144,226,.15);color:#7fb3f0;font-size:14px;margin-top:1px}
@@ -2336,14 +2332,14 @@ footer.qf .qf-contact a{overflow-wrap:anywhere}
 footer.qf .qf-contact a:hover{color:#fff}
 footer.qf .qf-map{display:block;position:relative;margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);height:150px}
 footer.qf .qf-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
-footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#ff9d5c}
+footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#5cc8f0}
 footer.qf .qf-map-link:hover{color:#fff}
 footer.qf .qf-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:#8396b0}
 footer.qf .qf-bottom p{text-align:left;font-size:13.5px}
 footer.qf .qf-eco a{color:#aebfd6;text-decoration:underline;text-underline-offset:3px}
 footer.qf .qf-eco a:hover{color:#fff}
 footer.qf .qf-top{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
-footer.qf .qf-top:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-top:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 @media (max-width:992px){footer.qf .qf-grid{grid-template-columns:1fr 1fr;gap:36px}}
 /* HP: ringkas, pas satu layar penuh */
 @media (max-width:600px){
@@ -2406,19 +2402,19 @@ header.qh nav ul{display:flex;flex-direction:row;align-items:center;list-style:n
 header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
 header.qh nav ul li a{display:flex;align-items:center;gap:6px;position:relative;color:#3a4a63;text-decoration:none;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px;background:transparent;transition:color .2s ease,background .2s ease}
 header.qh nav ul li a::after{display:none}
-header.qh nav ul li > a > i:not(.fa-chevron-down){display:none}
-header.qh nav ul li a i.fa-chevron-down{font-size:10px;opacity:.7;transition:transform .2s ease}
+header.qh nav ul li > a > i:not(.ph-caret-down){display:none}
+header.qh nav ul li a i.ph-caret-down{font-size:10px;opacity:.7;transition:transform .2s ease}
 header.qh nav ul li a:hover{color:#1a3c6e;background:rgba(74,144,226,.10)}
 header.qh nav ul li a.active{color:#1f5fae;background:#eaf2fd;font-weight:600}
-header.qh .dropdown:hover > a i.fa-chevron-down{transform:rotate(180deg)}
+header.qh .dropdown:hover > a i.ph-caret-down{transform:rotate(180deg)}
 header.qh .dropdown-content{display:block;visibility:hidden;opacity:0;transform:translateY(6px);position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#fff;border:1px solid rgba(26,60,110,.08);box-shadow:0 18px 40px rgba(26,60,110,.14);border-radius:14px;z-index:1000;margin:0;padding:8px;overflow:visible;transition:opacity .2s ease,transform .2s ease,visibility .2s}
 header.qh .dropdown-content::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 header.qh .dropdown:hover .dropdown-content{visibility:visible;opacity:1;transform:translateY(0)}
 header.qh .dropdown-content a{display:block;color:#3a4a63;padding:10px 14px;border:0;border-radius:10px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;background:transparent}
 header.qh .dropdown-content a:hover{background:#eaf2fd;color:#1a3c6e}
 header.qh .qh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8c42,#e67429);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(255,140,66,.32);transition:transform .2s ease,box-shadow .2s ease}
-header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,140,66,.42);color:#fff}
+header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(22, 146, 216,.32);transition:transform .2s ease,box-shadow .2s ease}
+header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(22, 146, 216,.42);color:#fff}
 header.qh .mobile-menu-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;color:#1a3c6e;font-size:20px;line-height:1;background:#f1f5fb;border:1px solid rgba(26,60,110,.08);border-radius:12px;padding:0;margin:0;cursor:pointer;z-index:1001;transition:background .2s ease,color .2s ease}
 /* ===== status transparan di atas hero beranda ===== */
 header.qh.header--top::before{opacity:0}
@@ -2440,7 +2436,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh nav ul{flex-direction:column;align-items:stretch;gap:4px}
   header.qh nav ul li{margin:0}
   header.qh nav ul li > a,header.qh.header--top nav ul li > a{color:#3a4a63;padding:12px 14px;border-radius:12px;font-size:15px;gap:12px}
-  header.qh nav ul li > a > i:not(.fa-chevron-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
+  header.qh nav ul li > a > i:not(.ph-caret-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
   header.qh nav ul li > a:hover,header.qh.header--top nav ul li > a:hover{background:#f1f5fb;color:#1a3c6e}
   header.qh nav ul li > a.active,header.qh.header--top nav ul li > a.active{background:#eaf2fd;color:#1f5fae}
   header.qh .dropdown-content{display:none;visibility:visible;opacity:1;transform:none;position:static;box-shadow:none;border:0;background:transparent;margin:2px 0 4px 34px;padding:0;border-left:2px solid #eaf2fd;border-radius:0;min-width:0}
@@ -2448,7 +2444,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh .dropdown.active .dropdown-content{display:block}
   header.qh .dropdown-content a{color:#5b6b84;padding:9px 14px;font-size:14px}
   header.qh .dropdown-content a:hover{background:#f1f5fb;color:#1a3c6e}
-  header.qh .dropdown > a i.fa-chevron-down{display:none}
+  header.qh .dropdown > a i.ph-caret-down{display:none}
 }
 @media (max-width:380px){header.qh .logo img{height:38px}header.qh .qh-cta{padding:7px 12px}}
 </style>
@@ -2467,7 +2463,12 @@ body .section-title h2 span,body .section-header h2 span{color:inherit!important
 body .section-title p,body .section-header p,body .section-title + .section-subtitle,body .section-title .section-subtitle{font-size:17px!important;font-weight:400!important;line-height:1.75!important;color:#55657e!important;max-width:720px;margin:14px auto 0!important;text-transform:none!important;letter-spacing:0!important}
 body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-align:center}
 .cta-section .section-title h2,.cta-section-modern .section-title h2{color:#fff!important}
+/* Ikon Phosphor Bold: sedikit lebih besar dari Font Awesome lama */
+:where(.ph-bold){font-size:1.14em;vertical-align:-.14em}
+/* Aksen cyan versi terang untuk teks di atas latar gelap */
+[class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   </head>
   <body>
     <!-- Header & Navigation -->
@@ -2482,25 +2483,25 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </div>
         <nav>
           <ul>
-            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../menu/about.html" class="active"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li><a href="../menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li><a href="../index.html"><i class="ph-bold ph-house"></i> Beranda</a></li>
+            <li><a href="../menu/about.html" class="active"><i class="ph-bold ph-info"></i> Tentang Kami</a></li>
+            <li><a href="../menu/programs.html"><i class="ph-bold ph-graduation-cap"></i> Program</a></li>
             <li class="dropdown">
-              <a href="../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
+              <a href="../menu/kerjasama/pemerintah.html"><i class="ph-bold ph-handshake"></i> Portofolio <i class="ph-bold ph-caret-down"></i></a>
               <div class="dropdown-content">
                 <a href="../menu/kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="../menu/kerjasama/swasta.html">Swasta</a>
                 <a href="../menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
+            <li><a href="../menu/alumni.html"><i class="ph-bold ph-users-three"></i> Alumni</a></li>
+            <li><a href="../menu/news.html"><i class="ph-bold ph-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
         <div class="qh-actions">
-          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Daftar<span> Sekarang</span></a>
+          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Daftar<span> Sekarang</span></a>
           <button class="mobile-menu-btn" aria-label="Buka menu">
-            <i class="fas fa-bars"></i>
+            <i class="ph-bold ph-list"></i>
           </button>
         </div>
       </div>
@@ -2521,7 +2522,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     <div class="row align-items-center min-vh-100">
       <div class="col-lg-7">
         <div class="glass-card animate__animated animate__fadeInLeft">
-          <span class="badge-history"><i class="fas fa-award me-2"></i>Terpercaya Sejak 2008</span>
+          <span class="badge-history"><i class="ph-bold ph-medal me-2"></i>Terpercaya Sejak 2008</span>
           
           <h1 class="hero-title">
             Membangun <span class="text-orange">Keahlian</span>, Mewujudkan <span class="text-orange">Masa Depan</span>
@@ -2546,7 +2547,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
           <div class="cta-group">
             <a href="#sejarah" class="btn-main">Sejarah Kami</a>
             <a href="https://wa.me/6282171727337" class="btn-wa" target="_blank">
-              <i class="fab fa-whatsapp"></i> Chat Admin
+              <i class="ph-bold ph-whatsapp-logo"></i> Chat Admin
             </a>
           </div>
         </div>
@@ -2666,7 +2667,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="feature-bg" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
         <div class="feature-overlay"></div>
         <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="fas fa-tools"></i></div>
+          <div class="feature-icon-small"><i class="ph-bold ph-wrench"></i></div>
           <h3>70% Praktik</h3>
           <p>Setiap peserta Kelas Offline mendapat meja kerja sendiri, lengkap dengan solder station, multimeter, power supply, dan mikroskop.</p>
         </div>
@@ -2676,7 +2677,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Desember 2024/desember242.jpeg');"></div>
         <div class="feature-overlay"></div>
         <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="fas fa-users"></i></div>
+          <div class="feature-icon-small"><i class="ph-bold ph-users-three"></i></div>
           <h3>Kelas Kecil</h3>
           <p>Satu instruktur mendampingi paling banyak 8 peserta.</p>
         </div>
@@ -2686,7 +2687,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="feature-bg" style="background-image: url('../assets/photos/instruktur/tomi1.JPG');"></div>
         <div class="feature-overlay"></div>
         <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="fas fa-store"></i></div>
+          <div class="feature-icon-small"><i class="ph-bold ph-storefront"></i></div>
           <h3>Materi Bisnis Ikut Diajarkan</h3>
           <p>Anda pulang membawa templat nota, daftar harga, dan form garansi untuk konter sendiri.</p>
         </div>
@@ -2696,7 +2697,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Konter Sendiri/ks4.jpeg');"></div>
         <div class="feature-overlay"></div>
         <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="fas fa-hands-helping"></i></div>
+          <div class="feature-icon-small"><i class="ph-bold ph-hand-heart"></i></div>
           <h3>Didampingi Setelah Lulus</h3>
           <p>Grup alumni dan konsultasi tetap terbuka setelah kelas selesai.</p>
         </div>
@@ -2706,7 +2707,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         <div class="feature-bg" style="background-image: url('../assets/photos/kerjasama/Swasta/Gajah Ponsel/gajah-ponsel.jpg');"></div>
         <div class="feature-overlay"></div>
         <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="fas fa-certificate"></i></div>
+          <div class="feature-icon-small"><i class="ph-bold ph-seal-check"></i></div>
           <h3>Lembaga Resmi</h3>
           <p>Terakreditasi LA-LPK; lulusan menerima sertifikat LPK.</p>
         </div>
@@ -2726,7 +2727,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     <div class="bento-vision-grid">
       <div class="bento-vision-item bento-visi animate__animated animate__fadeInUp">
         <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="fas fa-eye"></i></div>
+          <div class="v-icon-circle"><i class="ph-bold ph-eye"></i></div>
           <span class="v-label">VISI KAMI</span>
           <h3>Melatih Teknisi Ponsel Yang <span class="text-orange">Amanah, Jujur, Handal dan Profesional.</span></h3>
         </div>
@@ -2734,25 +2735,25 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 
       <div class="bento-vision-item bento-misi animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
         <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="fas fa-bullseye"></i></div>
+          <div class="v-icon-circle"><i class="ph-bold ph-target"></i></div>
           <span class="v-label">MISI UTAMA</span>
           <ul class="v-list-modern">
-            <li><i class="fas fa-check-circle"></i> Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik</li>
-            <li><i class="fas fa-check-circle"></i> Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan</li>
-            <li><i class="fas fa-check-circle"></i> Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja</li>
+            <li><i class="ph-bold ph-check-circle"></i> Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik</li>
+            <li><i class="ph-bold ph-check-circle"></i> Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan</li>
+            <li><i class="ph-bold ph-check-circle"></i> Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja</li>
           </ul>
         </div>
       </div>
 
       <div class="bento-vision-item bento-values animate__animated animate__fadeInUp" style="animation-delay: 0git .4s;">
         <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="fas fa-gem"></i></div>
+          <div class="v-icon-circle"><i class="ph-bold ph-diamond"></i></div>
           <span class="v-label">NILAI INTI</span>
           <ul class="v-list-modern grid-2">
-            <li><i class="fas fa-star"></i> Profesionalisme</li>
-            <li><i class="fas fa-lightbulb"></i> Inovasi Pengajaran</li>
-            <li><i class="fas fa-handshake"></i> Integritas</li>
-            <li><i class="fas fa-user-graduate"></i> Fokus Keberhasilan</li>
+            <li><i class="ph-bold ph-star"></i> Profesionalisme</li>
+            <li><i class="ph-bold ph-lightbulb"></i> Inovasi Pengajaran</li>
+            <li><i class="ph-bold ph-handshake"></i> Integritas</li>
+            <li><i class="ph-bold ph-student"></i> Fokus Keberhasilan</li>
           </ul>
         </div>
       </div>
@@ -2925,26 +2926,26 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 
     <div class="cta-roadmap-flow">
       <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="fas fa-comments"></i></div>
+        <div class="roadmap-icon"><i class="ph-bold ph-chats-circle"></i></div>
         <p>Konsultasi Gratis</p>
       </div>
       <div class="roadmap-connector"></div>
       <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="roadmap-icon"><i class="ph-bold ph-student"></i></div>
         <p>Pelatihan Intensif</p>
       </div>
       <div class="roadmap-connector"></div>
       <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="fas fa-store"></i></div>
+        <div class="roadmap-icon"><i class="ph-bold ph-storefront"></i></div>
         <p>Siap Buka Usaha</p>
       </div>
     </div>
 
     <div class="cta-btns-wrapper">
       <a href="https://wa.me/6282171727337" target="_blank" class="btn-cta-primary pulse-orange">
-        <i class="fab fa-whatsapp"></i> DAFTAR SEKARANG
+        <i class="ph-bold ph-whatsapp-logo"></i> DAFTAR SEKARANG
       </a>
-      <p class="trust-note"><i class="fas fa-check-circle"></i> Bergabung dengan 5000+ alumni sukses</p>
+      <p class="trust-note"><i class="ph-bold ph-check-circle"></i> Bergabung dengan 5000+ alumni sukses</p>
     </div>
   </div>
 </section>
@@ -2958,8 +2959,8 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             <p>Konsultasi gratis dengan admin untuk memilih kelas yang pas.</p>
           </div>
           <div class="qf-cta-btns">
-            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat Admin</a>
-            <a class="qf-btn qf-btn-ghost" href="../menu/programs.html">Lihat Program <i class="fas fa-arrow-right"></i></a>
+            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Chat Admin</a>
+            <a class="qf-btn qf-btn-ghost" href="../menu/programs.html">Lihat Program <i class="ph-bold ph-arrow-right"></i></a>
           </div>
         </div>
 
@@ -2969,10 +2970,10 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             <p>Lembaga Pelatihan Kerja teknisi smartphone di Semarang sejak 2008. Belajar langsung praktik, dari dasar sampai siap buka usaha servis.</p>
             <div class="qf-badges"><span>Sejak 2008</span><span>Offline &amp; Online</span><span>Android &amp; iPhone</span></div>
             <div class="qf-social">
-              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ph-bold ph-facebook-logo"></i></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="ph-bold ph-youtube-logo"></i></a>
+              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph-bold ph-whatsapp-logo"></i></a>
             </div>
           </div>
 
@@ -3003,21 +3004,21 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
           <div class="qf-col-contact">
             <h3 class="qf-h">Kontak</h3>
             <ul class="qf-contact">
-              <li><i class="fas fa-map-marker-alt"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
-              <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
-              <li><i class="fas fa-envelope"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
+              <li><i class="ph-bold ph-map-pin"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
+              <li><i class="ph-bold ph-whatsapp-logo"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
+              <li><i class="ph-bold ph-envelope-simple"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
             </ul>
             <div class="qf-map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" title="Lokasi LPK Quantum Telecommunication" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="fas fa-external-link-alt"></i></a>
+            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="ph-bold ph-arrow-square-out"></i></a>
           </div>
         </div>
 
         <div class="qf-bottom">
           <p>&copy; <span class="js-year">2026</span> PT Quantum Telecommunication. Hak cipta dilindungi.</p>
           <p class="qf-eco">Ekosistem Quantum: <a href="https://vbatponsel.com/" target="_blank" rel="noopener">Aplikasi VBATPonsel</a> &middot; <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener">Kanal YouTube</a></p>
-          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i></a>
+          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="ph-bold ph-arrow-up"></i></a>
         </div>
         <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
       </div>
@@ -3029,12 +3030,12 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
       class="whatsapp-float"
       target="_blank"
     >
-      <i class="fab fa-whatsapp"></i>
+      <i class="ph-bold ph-whatsapp-logo"></i>
     </a>
 
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
+      <i class="ph-bold ph-arrow-up"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -3052,11 +3053,11 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         // Change icon
         const icon = mobileMenuBtn.querySelector("i");
         if (nav.classList.contains("active")) {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-times");
+          icon.classList.remove("ph-list");
+          icon.classList.add("ph-x");
         } else {
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         }
       });
 
@@ -3069,8 +3070,8 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 
           // Reset icon
           const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         });
       });
 

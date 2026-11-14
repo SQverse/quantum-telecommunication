@@ -24,11 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
@@ -48,10 +44,10 @@
         --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
 
         /* Added secondary accent color - orange/amber */
-        --accent-orange: #ff8c42;
-        --accent-orange-light: #ffb366;
-        --accent-orange-dark: #e67429;
-        --accent-gradient: linear-gradient(135deg, #ff8c42 0%, #e67429 100%);
+        --accent-orange: #1592d8;
+        --accent-orange-light: #5cc8f0;
+        --accent-orange-dark: #064ec1;
+        --accent-gradient: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
 
         /* Transisi */
         --transition: all 0.3s ease;
@@ -321,7 +317,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         border-radius: 2px;
       }
 
@@ -458,7 +454,7 @@
 
       .news-link {
         margin-top: auto;
-        color: var(--accent-orange);
+        color: #0e95d6;
         font-weight: 600;
         text-decoration: none;
         display: inline-flex;
@@ -469,7 +465,7 @@
 
       .news-link:hover {
         gap: 10px;
-        color: var(--accent-orange-dark);
+        color: #0b7fc0;
       }
 
       /* Load More */
@@ -679,7 +675,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
       }
 
       .footer-links ul {
@@ -895,7 +891,7 @@
       }
 
       .news-modal-close:hover {
-        background: var(--accent-orange);
+        background: #16a5e4;
         transform: rotate(90deg);
       }
 
@@ -944,19 +940,19 @@
         align-items: center;
         gap: 8px;
         padding: 12px 28px;
-        background: var(--accent-gradient);
+        background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
         color: #fff;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
         transition: var(--transition);
-        box-shadow: 0 8px 20px rgba(255, 140, 66, 0.25);
+        box-shadow: 0 8px 20px rgba(22, 165, 228, 0.25);
       }
 
       .news-modal-source-link:hover {
         transform: translateY(-3px);
         color: #fff;
-        box-shadow: 0 12px 25px rgba(255, 140, 66, 0.35);
+        box-shadow: 0 12px 25px rgba(22, 165, 228, 0.35);
       }
 
       .news-modal-source-link.is-hidden {
@@ -1237,13 +1233,13 @@
 }
 
 .prism-subtitle {
-  color: var(--accent-orange-dark);
+  color: #0b7fc0;
   letter-spacing: 3px;
   font-weight: 700;
   font-size: 0.75rem;
   display: inline-block;
   padding: 7px 18px;
-  background: rgba(255, 140, 66, 0.12);
+  background: rgba(22, 165, 228, 0.12);
   border-radius: 30px;
   margin-bottom: 22px;
 }
@@ -1275,13 +1271,13 @@
 }
 
 .btn-prism-primary {
-  background: var(--accent-gradient);
+  background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);
   color: white;
   padding: 14px 34px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 10px 25px rgba(255, 140, 66, 0.3);
+  box-shadow: 0 10px 25px rgba(22, 146, 216, 0.3);
   transition: 0.3s;
 }
 
@@ -1301,7 +1297,7 @@
 
 .btn-prism-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(255, 140, 66, 0.4);
+  box-shadow: 0 14px 30px rgba(22, 146, 216, 0.4);
   color: white;
 }
 
@@ -1355,8 +1351,8 @@
 }
 
 .cta-badge {
-  background: rgba(255, 107, 0, 0.1);
-  color: #ff6b00; /* Oranye Quantum */
+  background: rgba(22, 165, 228, 0.1);
+  color: #0e95d6; /* Oranye Quantum */
   padding: 8px 20px;
   border-radius: 50px;
   font-weight: 700;
@@ -1392,20 +1388,20 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+  background: linear-gradient(135deg, #1592d8 0%, #ff9500 100%);
   color: white;
   padding: 18px 40px;
   border-radius: 40px;
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(22, 146, 216, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn-quantum-wa:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(22, 146, 216, 0.4);
   color: white;
   filter: brightness(1.1);
 }
@@ -1455,8 +1451,8 @@
 /* ===== Footer v2 (.qf-*): ukuran dikunci px agar sama di semua halaman ===== */
 footer.qf{position:relative;display:block;background:#0b1b33;color:#c9d6e8;padding:0;margin:0;font-family:'Poppins',sans-serif;font-size:15px;line-height:1.6;letter-spacing:normal;text-align:left;overflow:hidden}
 footer.qf *,footer.qf *::before,footer.qf *::after{box-sizing:border-box}
-footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(255,140,66,.14),transparent 70%);pointer-events:none}
-footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#ff8c42)}
+footer.qf::before{content:"";position:absolute;inset:0;height:auto;width:auto;background:radial-gradient(600px 300px at 10% 0%,rgba(74,144,226,.22),transparent 70%),radial-gradient(500px 260px at 95% 100%,rgba(22, 165, 228,.14),transparent 70%);pointer-events:none}
+footer.qf::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#4a90e2,#16a5e4)}
 footer.qf .qf-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 footer.qf a{color:inherit;text-decoration:none;transition:color .2s,background .2s,transform .2s}
 footer.qf h3,footer.qf p,footer.qf ul,footer.qf li{margin:0;padding:0}
@@ -1466,8 +1462,8 @@ footer.qf .qf-cta h3{color:#fff;font-size:22px;font-weight:700;line-height:1.3}
 footer.qf .qf-cta p{color:#dbe7f7;font-size:15px;margin-top:4px}
 footer.qf .qf-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
 footer.qf .qf-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap}
-footer.qf .qf-btn-wa{background:#ff8c42;color:#fff}
-footer.qf .qf-btn-wa:hover{background:#ff7a24;transform:translateY(-2px);color:#fff}
+footer.qf .qf-btn-wa{background:#1592d8;color:#fff}
+footer.qf .qf-btn-wa:hover{background:#064ec1;transform:translateY(-2px);color:#fff}
 footer.qf .qf-btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 footer.qf .qf-btn-ghost:hover{background:#fff;color:#1a3c6e}
 footer.qf .qf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;padding:56px 0 44px}
@@ -1478,15 +1474,15 @@ footer.qf .qf-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
 footer.qf .qf-badges span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(74,144,226,.15);color:#9cc4f5;border:1px solid rgba(74,144,226,.3)}
 footer.qf .qf-social{display:flex;gap:10px}
 footer.qf .qf-social a{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px}
-footer.qf .qf-social a:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-social a:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 footer.qf h3.qf-h{color:#fff;font-size:16px;font-weight:600;line-height:1.4;letter-spacing:.3px;margin-bottom:18px;position:relative;padding-bottom:10px}
-footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#ff8c42}
+footer.qf h3.qf-h::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:3px;border-radius:3px;background:#16a5e4}
 footer.qf .qf-list{list-style:none}
 footer.qf .qf-list li{margin-bottom:10px;list-style:none}
 footer.qf .qf-list a{font-size:14.5px;line-height:1.5;color:#aebfd6;display:inline-flex;align-items:center;gap:8px}
-footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(255,140,66,.5);transition:background .2s}
+footer.qf .qf-list a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:rgba(22, 165, 228,.5);transition:background .2s}
 footer.qf .qf-list a:hover{color:#fff;transform:translateX(3px)}
-footer.qf .qf-list a:hover::before{background:#ff8c42}
+footer.qf .qf-list a:hover::before{background:#16a5e4}
 footer.qf .qf-contact{list-style:none}
 footer.qf .qf-contact li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:14px;line-height:1.6;color:#aebfd6;list-style:none}
 footer.qf .qf-contact i{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(74,144,226,.15);color:#7fb3f0;font-size:14px;margin-top:1px}
@@ -1494,14 +1490,14 @@ footer.qf .qf-contact a{overflow-wrap:anywhere}
 footer.qf .qf-contact a:hover{color:#fff}
 footer.qf .qf-map{display:block;position:relative;margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);height:150px}
 footer.qf .qf-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
-footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#ff9d5c}
+footer.qf .qf-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:600;color:#5cc8f0}
 footer.qf .qf-map-link:hover{color:#fff}
 footer.qf .qf-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:#8396b0}
 footer.qf .qf-bottom p{text-align:left;font-size:13.5px}
 footer.qf .qf-eco a{color:#aebfd6;text-decoration:underline;text-underline-offset:3px}
 footer.qf .qf-eco a:hover{color:#fff}
 footer.qf .qf-top{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
-footer.qf .qf-top:hover{background:#ff8c42;border-color:#ff8c42;transform:translateY(-3px)}
+footer.qf .qf-top:hover{background:#16a5e4;border-color:#16a5e4;transform:translateY(-3px)}
 @media (max-width:992px){footer.qf .qf-grid{grid-template-columns:1fr 1fr;gap:36px}}
 /* HP: ringkas, pas satu layar penuh */
 @media (max-width:600px){
@@ -1564,19 +1560,19 @@ header.qh nav ul{display:flex;flex-direction:row;align-items:center;list-style:n
 header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
 header.qh nav ul li a{display:flex;align-items:center;gap:6px;position:relative;color:#3a4a63;text-decoration:none;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px;background:transparent;transition:color .2s ease,background .2s ease}
 header.qh nav ul li a::after{display:none}
-header.qh nav ul li > a > i:not(.fa-chevron-down){display:none}
-header.qh nav ul li a i.fa-chevron-down{font-size:10px;opacity:.7;transition:transform .2s ease}
+header.qh nav ul li > a > i:not(.ph-caret-down){display:none}
+header.qh nav ul li a i.ph-caret-down{font-size:10px;opacity:.7;transition:transform .2s ease}
 header.qh nav ul li a:hover{color:#1a3c6e;background:rgba(74,144,226,.10)}
 header.qh nav ul li a.active{color:#1f5fae;background:#eaf2fd;font-weight:600}
-header.qh .dropdown:hover > a i.fa-chevron-down{transform:rotate(180deg)}
+header.qh .dropdown:hover > a i.ph-caret-down{transform:rotate(180deg)}
 header.qh .dropdown-content{display:block;visibility:hidden;opacity:0;transform:translateY(6px);position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#fff;border:1px solid rgba(26,60,110,.08);box-shadow:0 18px 40px rgba(26,60,110,.14);border-radius:14px;z-index:1000;margin:0;padding:8px;overflow:visible;transition:opacity .2s ease,transform .2s ease,visibility .2s}
 header.qh .dropdown-content::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 header.qh .dropdown:hover .dropdown-content{visibility:visible;opacity:1;transform:translateY(0)}
 header.qh .dropdown-content a{display:block;color:#3a4a63;padding:10px 14px;border:0;border-radius:10px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;background:transparent}
 header.qh .dropdown-content a:hover{background:#eaf2fd;color:#1a3c6e}
 header.qh .qh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8c42,#e67429);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(255,140,66,.32);transition:transform .2s ease,box-shadow .2s ease}
-header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,140,66,.42);color:#fff}
+header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(22, 146, 216,.32);transition:transform .2s ease,box-shadow .2s ease}
+header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(22, 146, 216,.42);color:#fff}
 header.qh .mobile-menu-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;color:#1a3c6e;font-size:20px;line-height:1;background:#f1f5fb;border:1px solid rgba(26,60,110,.08);border-radius:12px;padding:0;margin:0;cursor:pointer;z-index:1001;transition:background .2s ease,color .2s ease}
 /* ===== status transparan di atas hero beranda ===== */
 header.qh.header--top::before{opacity:0}
@@ -1598,7 +1594,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh nav ul{flex-direction:column;align-items:stretch;gap:4px}
   header.qh nav ul li{margin:0}
   header.qh nav ul li > a,header.qh.header--top nav ul li > a{color:#3a4a63;padding:12px 14px;border-radius:12px;font-size:15px;gap:12px}
-  header.qh nav ul li > a > i:not(.fa-chevron-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
+  header.qh nav ul li > a > i:not(.ph-caret-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
   header.qh nav ul li > a:hover,header.qh.header--top nav ul li > a:hover{background:#f1f5fb;color:#1a3c6e}
   header.qh nav ul li > a.active,header.qh.header--top nav ul li > a.active{background:#eaf2fd;color:#1f5fae}
   header.qh .dropdown-content{display:none;visibility:visible;opacity:1;transform:none;position:static;box-shadow:none;border:0;background:transparent;margin:2px 0 4px 34px;padding:0;border-left:2px solid #eaf2fd;border-radius:0;min-width:0}
@@ -1606,7 +1602,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh .dropdown.active .dropdown-content{display:block}
   header.qh .dropdown-content a{color:#5b6b84;padding:9px 14px;font-size:14px}
   header.qh .dropdown-content a:hover{background:#f1f5fb;color:#1a3c6e}
-  header.qh .dropdown > a i.fa-chevron-down{display:none}
+  header.qh .dropdown > a i.ph-caret-down{display:none}
 }
 @media (max-width:380px){header.qh .logo img{height:38px}header.qh .qh-cta{padding:7px 12px}}
 </style>
@@ -1625,7 +1621,12 @@ body .section-title h2 span,body .section-header h2 span{color:inherit!important
 body .section-title p,body .section-header p,body .section-title + .section-subtitle,body .section-title .section-subtitle{font-size:17px!important;font-weight:400!important;line-height:1.75!important;color:#55657e!important;max-width:720px;margin:14px auto 0!important;text-transform:none!important;letter-spacing:0!important}
 body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-align:center}
 .cta-section .section-title h2,.cta-section-modern .section-title h2{color:#fff!important}
+/* Ikon Phosphor Bold: sedikit lebih besar dari Font Awesome lama */
+:where(.ph-bold){font-size:1.14em;vertical-align:-.14em}
+/* Aksen cyan versi terang untuk teks di atas latar gelap */
+[class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   </head>
   <body>
     <!-- Header & Navigation -->
@@ -1640,25 +1641,25 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </div>
         <nav>
           <ul>
-            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li><a href="../menu/programs.html"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li><a href="../index.html"><i class="ph-bold ph-house"></i> Beranda</a></li>
+            <li><a href="../menu/about.html"><i class="ph-bold ph-info"></i> Tentang Kami</a></li>
+            <li><a href="../menu/programs.html"><i class="ph-bold ph-graduation-cap"></i> Program</a></li>
             <li class="dropdown">
-              <a href="../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
+              <a href="../menu/kerjasama/pemerintah.html"><i class="ph-bold ph-handshake"></i> Portofolio <i class="ph-bold ph-caret-down"></i></a>
               <div class="dropdown-content">
                 <a href="../menu/kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="../menu/kerjasama/swasta.html">Swasta</a>
                 <a href="../menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../menu/news.html" class="active"><i class="fas fa-newspaper"></i> Kabar</a></li>
+            <li><a href="../menu/alumni.html"><i class="ph-bold ph-users-three"></i> Alumni</a></li>
+            <li><a href="../menu/news.html" class="active"><i class="ph-bold ph-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
         <div class="qh-actions">
-          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Daftar<span> Sekarang</span></a>
+          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Daftar<span> Sekarang</span></a>
           <button class="mobile-menu-btn" aria-label="Buka menu">
-            <i class="fas fa-bars"></i>
+            <i class="ph-bold ph-list"></i>
           </button>
         </div>
       </div>
@@ -1678,7 +1679,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </p>
         <div class="prism-actions">
           <a href="#news-list" class="btn-prism-primary">Mulai Membaca</a>
-          <a href="#news-list" class="btn-prism-link">Video Tutorial <i class="fas fa-play-circle"></i></a>
+          <a href="#news-list" class="btn-prism-link">Video Tutorial <i class="ph-bold ph-play-circle"></i></a>
         </div>
       </div>
     </div>
@@ -1710,7 +1711,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </div>
     <div class="news-content">
         <p class="news-date">
-            <i class="far fa-calendar-alt"></i> 29 Oktober 2026
+            <i class="ph-bold ph-calendar-blank"></i> 29 Oktober 2026
         </p>
         <h3 class="news-title">
             Titan dan Babon Hadir di Localism Market PIK 2, Tawarkan Diskon Hingga 50 Persen
@@ -1719,7 +1720,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             Dua barnd lokal, Titan dan Babon, dipastikan akan memeriahkan acara pameran Localism Market yang diselenggarakan di kawasan Pantai Indah Kapuk (PIK) 2 mulai tanggal 30 Oktober hingga 1 November 2026. Dalam partisipasinya kali ini, Titan dan Babon menghadirkan berbagai penawaran spesial bagi para pengunjung, termasuk potongan harga hingga 50% serta promo eksklusif Beli 1 Gratis 1. Masyarakat, khususnya yang berdomisili di wilayah Jakarta dan sekitarnya, diundang untuk mengunjungi booth resmi tersebut dan memanfaatkan momentum pameran ini.
         </p>
         <a href="https://www.facebook.com/share/p/1Don3JEgJG/" target="_blank" class="news-link"
-            >Selengkapnya <i class="fas fa-arrow-right"></i
+            >Selengkapnya <i class="ph-bold ph-arrow-right"></i
           ></a>
     </div>
 </div>
@@ -1736,7 +1737,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </div>
     <div class="news-content">
         <p class="news-date">
-            <i class="far fa-calendar-alt"></i> 23 Agustus 2026
+            <i class="ph-bold ph-calendar-blank"></i> 23 Agustus 2026
         </p>
         <h3 class="news-title">
               DigitalWays Store Semarang Resmi Hadir, Surganya Tools Profesional untuk Teknisi
@@ -1763,7 +1764,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
             Saatnya upgrade tools. Saatnya naik level. DigitalWays Store Semarang siap mendukung meja servis para teknisi.
         </p>
         <a href="https://www.youtube.com/shorts/U6zSodjr_OQ?si=emDmhk4fKwCeCgVC" target="_blank" class="news-link"
-            >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+            >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
           ></a>
     </div>
 </div>
@@ -1780,7 +1781,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </div>
     <div class="news-content">
         <p class="news-date">
-            <i class="far fa-calendar-alt"></i> 5 Agustus 2026
+            <i class="ph-bold ph-calendar-blank"></i> 5 Agustus 2026
         </p>
         <h3 class="news-title">
               OPENING DigitalWays STORE
@@ -1803,7 +1804,7 @@ DigitalWays Store — Opening Soon!
 🛒 DigitalWays Official Store
         </p>
         <a href="https://www.instagram.com/p/DbpLLVmE0ex/" target="_blank" class="news-link"
-            >Baca selengkapnya <i class="fas fa-arrow-right"></i
+            >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
           ></a>
     </div>
 </div>
@@ -1820,7 +1821,7 @@ DigitalWays Store — Opening Soon!
             </div>
             <div class="news-content">
                 <p class="news-date">
-                    <i class="far fa-calendar-alt"></i> 1 Agustus 2026
+                    <i class="ph-bold ph-calendar-blank"></i> 1 Agustus 2026
                 </p>
                 <h3 class="news-title">
                       VBATPONSEL, Aplikasi Karya LPK Quantum Telecommunication yang Jadi “Kamus Digital” bagi Teknisi Smartphone
@@ -1843,7 +1844,7 @@ DigitalWays Store — Opening Soon!
                 VBATPONSEL — Belajar teknisi smartphone kapan saja & dimana saja.
                 </p>
                 <a href="https://vbatponsel.com/" target="_blank" class="news-link"
-                    >Lihat Website VBAT Ponsel <i class="fas fa-arrow-right"></i
+                    >Lihat Website VBAT Ponsel <i class="ph-bold ph-arrow-right"></i
                   ></a>
             </div>
         </div>
@@ -1859,7 +1860,7 @@ DigitalWays Store — Opening Soon!
     </div>
     <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 15 Juli 2026
+                <i class="ph-bold ph-calendar-blank"></i> 15 Juli 2026
               </p>
               <h3 class="news-title">
                 VBAT Ponsel Resmi Hadir di Kudus, Siap Berikan Layanan Servis Smartphone Profesional dan Cepat
@@ -1907,7 +1908,7 @@ DigitalWays Store — Opening Soon!
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 26 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 26 Juni 2026
               </p>
               <h3 class="news-title">
                 LPK Quantum Bekali Keterampilan Tuna Daksa Jadi Teknisi Hp Profesional
@@ -1974,7 +1975,7 @@ Melalui pelatihan teknisi handphone ini, LPK Quantum Telecommunication berharap 
 Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk berkarya dan berdaya secara ekonomi. 
                 </p>
               <a href="https://santrindalan.id/lpk-quantum-bekali-ketrampilan-tuna-daksa-jadi-teknisi-hp-profesional/" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -1991,7 +1992,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 26 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 26 Juni 2026
               </p>
               <h3 class="news-title">
                 LPK Quantum Kembali Latih Penyandang Disabilitas Jadi Teknisi HP, Siapkan Modal Usaha hingga Magang
@@ -2034,7 +2035,7 @@ Sebelumnya Abdul Wahid bekerja di bidang pengeditan skripsi. Kini ia ingin mempe
 Melalui program ini, LPK Quantum Telecommunication berharap semakin banyak penyandang disabilitas memiliki keterampilan kerja, mampu membuka usaha secara mandiri, sekaligus membuktikan bahwa keterbatasan fisik bukan menjadi penghalang untuk berkarya, berprestasi, dan berdaya secara ekonomi.
                 </p>
               <a href="https://semarangnews.id/2026/06/26/lpk-quantum-kembali-latih-penyandang-disabilitas-jadi-teknisi-hp-siapkan-modal-usaha-hingga-magang/?amp=1" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2051,7 +2052,7 @@ Melalui program ini, LPK Quantum Telecommunication berharap semakin banyak penya
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 26 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 26 Juni 2026
               </p>
               <h3 class="news-title">
                 Penyandang Disabilitas di Semarang Dapat Pelatihan Servis HP Gratis, Langsung Dibekali Modal Usaha
@@ -2102,7 +2103,7 @@ Selain program khusus bagi penyandang disabilitas, LPK Quantum Telecommunication
 Melalui program ini, LPK Quantum berharap semakin banyak penyandang disabilitas memiliki keterampilan profesional, mampu membuka usaha secara mandiri. Sekaligus membuktikan bahwa keterbatasan fisik bukan penghalang untuk berkarya dan meraih masa depan yang lebih baik.
                 </p>
               <a href="https://beritajateng.tv/penyandang-disabilitas-di-semarang-dapat-pelatihan-servis-hp-gratis-langsung-dibekali-modal-usaha/" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2119,7 +2120,7 @@ Melalui program ini, LPK Quantum berharap semakin banyak penyandang disabilitas 
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 23 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 23 Juni 2026
               </p>
               <h3 class="news-title">
                 Tuna Daksa Dilatih Jadi Teknisi HP Profesional, Siap Buka Usaha Mandiri
@@ -2188,7 +2189,7 @@ Melalui pelatihan teknisi handphone ini, LPK Quantum Telecommunication berharap 
 Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk berkarya dan berdaya secara ekonomi.
                 </p>
               <a href="https://www.suaramerdeka.com/semarang-raya/0417281157/tuna-daksa-dilatih-jadi-teknisi-hp-profesional-siap-buka-usaha-mandiri?page=3" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2205,7 +2206,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 23 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 23 Juni 2026
               </p>
               <h3 class="news-title">
                 Penyandang Disabilitas di Semarang Dilatih Jadi Teknisi HP, Siap Naik Kelas ke Servis iPhone
@@ -2249,7 +2250,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 "Yang penting mereka punya keinginan, mau belajar, kita kasih fasilitas," pungkasnya.
               </p>
               <a href="https://joglosemar.inews.id/read/698376/penyandang-disabilitas-di-semarang-dilatih-jadi-teknisi-hp-siap-naik-kelas-ke-servis-iphone" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2266,7 +2267,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 22 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 22 Juni 2026
               </p>
               <h3 class="news-title">
                 PEMBUKAAN PELATIHAN TEKNISI HANDPHONE GRATIS UNTUK PESERTA DISABILITAS BATCH 2
@@ -2283,7 +2284,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Semoga melalui pelatihan ini lahir teknisi-teknisi handphone yang profesional, mandiri, dan mampu menjadi inspirasi bagi masyarakat bahwa keterbatasan bukanlah penghalang untuk berkarya, berprestasi, dan meraih masa depan yang lebih baik.
               </p>
               <a href="https://www.youtube.com/live/uF4co6GxVYY?si=SZeNGQGoRYUS7If5" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2300,7 +2301,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 22 - 28 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 22 - 28 Juni 2026
               </p>
               <h3 class="news-title">
                 ACARA PEMBUKAAN PELATIHAN DISABILITAS KOTA SEMARANG
@@ -2311,7 +2312,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Acara pembukaan ini menjadi titik awal dari komitmen bersama untuk meningkatkan kapasitas, kemandirian, dan daya saing para penyandang disabilitas di Kota Semarang. Melalui pelatihan teknisi ponsel ini, para peserta akan mendapatkan berbagai materi dan pendampingan keterampilan teknis yang sangat relevan dengan peluang usaha di era digital saat ini.
               </p>
               <a href="https://www.youtube.com/live/uF4co6GxVYY?si=uF6BV48TP2B7rTTu" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2328,7 +2329,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 19 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 19 Juni 2026
               </p>
               <h3 class="news-title">
                 Quantum Telecommunication Gelar Bali Service Solution One Day Workshop, Tingkatkan Kompetensi Teknisi Handphone di Bali
@@ -2395,7 +2396,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 12 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 12 Juni 2026
               </p>
               <h3 class="news-title">
                 Roadshow Quantum Telecommunication Kembali Hadir di Pontianak, Hadirkan Kelas iPhone Pertama dan Dukungan Industri yang Lebih Lengkap
@@ -2412,7 +2413,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
               Rangkaian kegiatan pun resmi ditutup dengan sesi foto bersama dan pembagian sertifikat bagi para peserta yang telah menyelesaikan pelatihan. Momen ini menjadi simbol lahirnya calon-calon teknisi baru yang kini telah dibekali dengan keahlian mumpuni untuk siap berkarier dan membuka peluang usaha di industri servis handphone.
               </p>
               <a href="detail-roadshow-pontianak.html" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2429,7 +2430,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 10 Juni 2026
               </p>
               <h3 class="news-title">
                 Didukung BT ACC sebagai Sponsor Utama, LPK Quantum Telecommunication Serahkan Peralatan Kerja kepada 10 Peserta Disabilitas dan Siapkan Pelatihan Gratis Angkatan Kedua Tahun 2026
@@ -2452,7 +2453,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Juni 2026
+                <i class="ph-bold ph-calendar-blank"></i> 10 Juni 2026
               </p>
               <h3 class="news-title">
                 BraderParts Dukung Roadshow Tespoin Jawa Barat 2026, Dorong Teknisi Smartphone Naik Kelas
@@ -2491,7 +2492,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 30 Mei 2026
+                <i class="ph-bold ph-calendar-blank"></i> 30 Mei 2026
               </p>
               <h3 class="news-title">
                 Roadshow Tespoin Jawa Barat 2026 Hadir di Bandung, Teknisi Berkesempatan Raih Sertifikasi BNSP Gratis dan Doorprize Umroh
@@ -2539,7 +2540,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 11 Mei 2026
+                <i class="ph-bold ph-calendar-blank"></i> 11 Mei 2026
               </p>
               <h3 class="news-title">
                 Kini Hadir di Cililitan, BraderParts Resmi Buka Toko Sparepart Smartphone dan Accessories
@@ -2568,7 +2569,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 27 April 2026
+                <i class="ph-bold ph-calendar-blank"></i> 27 April 2026
               </p>
               <h3 class="news-title">
                 LPK Quantum Telecommunication Jalin Kolaborasi Strategis dengan BraderParts, Hadirkan Program Affiliate untuk Dorong Penghasilan Alumni
@@ -2595,7 +2596,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 23 April 2026
+                <i class="ph-bold ph-calendar-blank"></i> 23 April 2026
               </p>
               <h3 class="news-title">
                 Didukung Penuh BraderParts, ATPJ Championship 2026 Sukses Dorong Standar Teknisi Ponsel Indonesia
@@ -2612,7 +2613,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Ke depan, kolaborasi antara komunitas dan industri seperti yang ditunjukkan dalam ATPJ Championship diharapkan dapat terus berkembang demi menciptakan teknisi yang unggul dan siap bersaing di tingkat nasional maupun internasional.
               </p>
               <a href="https://www.youtube.com/watch?v=tuWjXHXEiZg" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2629,7 +2630,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>     
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 26 Januari 2026
+                <i class="ph-bold ph-calendar-blank"></i> 26 Januari 2026
               </p>
               <h3 class="news-title">
                 HP Mati Total? Jangan Panik! Ini Urutan Cek yang Benar | Part 2
@@ -2671,7 +2672,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔔 Jangan lupa Like, Comment, dan Subscribe untuk Part selanjutnya & tips teknisi lainnya!
               </p>
               <a href="https://youtu.be/AzPDyJBzUvk?si=XRHtl0mZDdJgFz6K" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2688,7 +2689,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>     
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 24 Januari 2026
+                <i class="ph-bold ph-calendar-blank"></i> 24 Januari 2026
               </p>
               <h3 class="news-title">
                 HP Mati Total? Jangan Panik! Ini Urutan Cek yang Benar | Part 1
@@ -2732,7 +2733,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔔 Jangan lupa Like, Comment, dan Subscribe untuk Part selanjutnya & tips teknisi lainnya!
               </p>
               <a href="https://youtu.be/k-mS4pRcFDY?si=cgsSzIQQubFkALml" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2749,7 +2750,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>     
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 11 Januari 2026
+                <i class="ph-bold ph-calendar-blank"></i> 11 Januari 2026
               </p>
               <h3 class="news-title">
                 Teknisi Wajib Tahu! Pengenalan UFI BOX untuk Software HP | PART 1
@@ -2771,7 +2772,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 👉 Subscribe dan share ke rekan teknisi biar sama-sama upgrade skill.
               </p>
               <a href="https://youtu.be/R3mOb2yEhOs?si=fimmRBuBko680tl9" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2788,7 +2789,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>     
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 11 Januari 2026
+                <i class="ph-bold ph-calendar-blank"></i> 11 Januari 2026
               </p>
               <h3 class="news-title">
                 Dasar-Dasar Software HP yang Wajib Dipahami | PART 2
@@ -2809,7 +2810,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 👉 Jangan lupa subscribe & share ke circle teknisi lo biar sama-sama upgrade skill.
               </p>
               <a href="https://youtu.be/bdd3fTJaxno?si=0i8ZjJZzDAR5nPT9" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2826,7 +2827,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Januari 2026
+                <i class="ph-bold ph-calendar-blank"></i> 10 Januari 2026
               </p>
               <h3 class="news-title">
                 Dasar-Dasar Software HP yang Wajib Dipahami | PART 1
@@ -2847,7 +2848,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 👉 Jangan lupa subscribe & share ke circle teknisi lo biar sama-sama upgrade skill.
               </p>
               <a href="https://youtu.be/Co6w51TSQIo?si=gdIdhRq2fMkIbgAj" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2864,7 +2865,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 29 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 29 Desember 2025
               </p>
               <h3 class="news-title">
                 Berdayakan Penyandang Disabilitas Melalui Pelatihan Teknisi
@@ -2874,7 +2875,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Selama pelatihan, para peserta diajarkan berbagai keahlian teknis, mulai dari dasar-dasar ilmu kelistrikan hingga praktik langsung seperti mengganti LCD, memperbaiki konektor pengisi daya, serta menangani ponsel yang mati total.
               </p>
               <a href="https://youtu.be/9hcUKRBAl60?si=_Mvs1gp8wq1FLgN_" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2891,7 +2892,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 24 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 24 Desember 2025
               </p>
               <h3 class="news-title">
                 Keterbatasan Fisik Bukan Penghalang. LPK Quantum Telecommunication Persembahkan Pelatihan Teknisi Handphone Gratis Bagi Penyandang Disabilitas
@@ -2901,7 +2902,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
               </p>
               <a href="https://www.digtara.com/berita/210094/keterbatasan-fisik-bukan-penghalang-lpk-quantum-telecommunication-persembahkan-pelatihan-teknisi-handphone-gratis-bagi-penyandang-disabilitas/" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2918,7 +2919,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 19 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 19 Desember 2025
               </p>
               <h3 class="news-title">
                 LPK Swasta di Semarang Latih Disabilitas Tunadaksa Jadi Teknisi Gratis | KOMPAS SIANG
@@ -2930,7 +2931,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Program ini bertujuan mengentaskan kemiskinan serta membekali keterampilan baru bagi penyandang disabilitas agar tetap produktif dan mampu menghasilkan pendapatan meski memiliki keterbatasan fisik.
               </p>
               <a href="https://youtu.be/uufiGFswFKk?si=0qXcqWkopjgNbvqf" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2947,7 +2948,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 19 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 19 Desember 2025
               </p>
               <h3 class="news-title">
                 ALAT DAN BAHAN YANG WAJIB DI MILIKI PARA TEKNISI PEMULA
@@ -2978,7 +2979,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Cocok buat kamu yang masih belajar, magang, atau baru mulai usaha jasa teknisi.
               </p>
               <a href="https://youtu.be/hYbwad_sjE8?si=PB6QhIABT29dOpMW" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -2995,7 +2996,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 18 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 18 Desember 2025
               </p>
               <h3 class="news-title">
                 Pelatihan Teknisi Handphone Gratis untuk Disabilitas Digelar di Semarang, Dorong Kemandirian Ekonomi
@@ -3004,7 +3005,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 LPK Quantum Telecommunication Semarang menggelar pelatihan teknisi handphone gratis bagi penyandang disabilitas dengan dukungan mitra industri sebagai upaya mendorong kemandirian ekonomi, inklusivitas, dan pembukaan usaha mandiri di Kota Semarang.
               </p>
               <a href="https://jateng.pikiran-rakyat.com/jawa-tengah/pr-3739870364/pelatihan-teknisi-handphone-gratis-untuk-disabilitas-digelar-di-semarang-dorong-kemandirian-ekonomi?page=all" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3021,7 +3022,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 17 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 17 Desember 2025
               </p>
               <h3 class="news-title">
                 LPK Quantum Telecommunication Buka Pelatihan Gratis Teknisi HP untuk Disabilitas
@@ -3030,7 +3031,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 LPK Quantum Telecommunication Semarang menggelar pelatihan teknisi handphone gratis bagi 10 penyandang disabilitas dari Semarang, Salatiga, dan Kabupaten Semarang untuk meningkatkan keterampilan sekaligus mendorong kemandirian ekonomi, dengan dukungan mitra industri hingga pendampingan pembukaan usaha.
               </p>
               <a href="https://beritajateng.tv/lpk-quantum-telecommunication-buka-pelatihan-gratis-teknisi-hp-untuk-disabilitas/" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3047,7 +3048,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 17 Desember 2025
+                <i class="ph-bold ph-calendar-blank"></i> 17 Desember 2025
               </p>
               <h3 class="news-title">
                 Merakit Harapan dari Ponsel Rusak, Jalan Baru Kemandirian Disabilitas di Semarang
@@ -3058,7 +3059,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 pelu  ang kemandirian ekonomi melalui keterampilan teknis.
               </p>
               <a href="https://www.suaramerdeka.com/ekonomi/0416430662/merakit-harapan-dari-ponsel-rusak-jalan-baru-kemandirian-disabilitas-di-semarang" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3075,7 +3076,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 6 November 2025
+                <i class="ph-bold ph-calendar-blank"></i> 6 November 2025
               </p>
               <h3 class="news-title">
                 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 3
@@ -3090,7 +3091,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
               </p>
               <a href="https://youtu.be/79_X_L4E7JE?si=w1tUezkyE9JwY0ur" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3107,7 +3108,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 3 November 2025
+                <i class="ph-bold ph-calendar-blank"></i> 3 November 2025
               </p>
               <h3 class="news-title">
                 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 2
@@ -3122,7 +3123,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
               </p>
               <a href="https://youtu.be/OZVgJWY3GRM?si=9drTLsawT6Lm2cXL" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3139,7 +3140,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 1 November 2025
+                <i class="ph-bold ph-calendar-blank"></i> 1 November 2025
               </p>
               <h3 class="news-title">
                 HP Nyala Cuma Logo Terus Gelap? Yuk Analisa Bareng - Part 1
@@ -3154,7 +3155,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Simak sampai akhir, karena bakal ada tips praktis dan contoh kasus real di meja servis!
               </p>
               <a href="https://youtu.be/NJxex-2gUTw?si=z8GEzEQeF26tqkNR" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3171,7 +3172,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 17 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 17 Oktober 2025
               </p>
               <h3 class="news-title">
                 HP Mati Total, Arus Masuk Tapi Drop — Ini Penyebab & Solusinya - Part 2
@@ -3190,7 +3191,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 💬 Tonton sampai habis biar gak salah diagnosa!
               </p>
               <a href="https://youtu.be/AgSVWJ5qiIQ?si=7eiOJBDChPEweHf0" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3207,7 +3208,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 17 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 17 Oktober 2025
               </p>
               <h3 class="news-title">
                 HP Mati Total, Arus Masuk Tapi Drop — Ini Penyebab & Solusinya - Part 1
@@ -3226,7 +3227,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 💬 Tonton sampai habis biar gak salah diagnosa!
               </p>
               <a href="https://youtu.be/N3Mdbr5-ZRU?si=O7kG380ALRxJbwuV" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3243,7 +3244,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 16 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 16 Oktober 2025
               </p>
               <h3 class="news-title">
                 🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 2
@@ -3260,7 +3261,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
               </p>
               <a href="https://youtu.be/XzvXQh3WxpY?si=lDkRGpE4yx5W1x7h" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3277,7 +3278,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 15 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 15 Oktober 2025
               </p>
               <h3 class="news-title">
                 Teknisi Pemula Wajib Tahu! Cara Cek HP Mati Total dari Nol - Part 2
@@ -3305,7 +3306,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 👉 Share ke sesama teknisi biar makin banyak yang upgrade skill!
               </p>
               <a href="https://youtu.be/SDATqyfZMoU?si=RWSEYEksA59vaE5a" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3322,7 +3323,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 15 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 15 Oktober 2025
               </p>
               <h3 class="news-title">
                 Teknisi Pemula Wajib Tahu! Cara Cek HP Mati Total dari No - Part 1
@@ -3344,7 +3345,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Konten ini cocok banget buat teknisi pemula yang pengen belajar lebih dalam soal troubleshooting hardware, atau buat lo yang penasaran kenapa HP bisa tiba-tiba mati total tanpa sebab.
               </p>
               <a href="https://youtu.be/-7YMfkMhd08?si=N2dadMUv8QYVXJWI" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3361,7 +3362,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 12 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 12 Oktober 2025
               </p>
               <h3 class="news-title">
                 🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 3
@@ -3378,7 +3379,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
               </p>
               <a href="https://youtu.be/5Tv-_EBQbPo?si=NHt8HZGHdXsFjryC" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3395,7 +3396,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 12 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 12 Oktober 2025
               </p>
               <h3 class="news-title">
                 🎥 INI DASARNYA!!! Penggunaan Alat Ukur dan Alat Uji Telepon – Part 1
@@ -3412,7 +3413,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 biar kamu gak ketinggalan seri selanjutnya dari Belajar Servis HP dari Nol!
               </p>
               <a href="https://youtu.be/VgGktIz0kH0?si=ELz21GDXEvngRZMX" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3429,7 +3430,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 11 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 11 Oktober 2025
               </p>
               <h3 class="news-title">
                 📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 3
@@ -3443,7 +3444,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan konten seputar service HP, teknik analisa kerusakan, dan tutorial perbaikan!
               </p>
               <a href="https://youtu.be/ioz2LuYQXFU?si=-VtNif-F1aB49SMP" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3460,7 +3461,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 10 Oktober 2025
               </p>
               <h3 class="news-title">
                 📱🔧 MARI BELAJAR!!! KOMPONEN DASAR PADA SMARTPHONE – PART 2
@@ -3483,7 +3484,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan video belajar servis HP lainnya!
               </p>
               <a href="https://youtu.be/3iLMkpyEFhA?si=yVIL_8hRDh2cIxSu" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3500,7 +3501,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 10 Oktober 2025
               </p>
               <h3 class="news-title">
                 📱🔧 MARI BELAJAR!!! KOMPONEN DASAR PADA SMARTPHONE – PART 1
@@ -3521,7 +3522,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 🔥 Jangan lupa LIKE, KOMEN, dan SUBSCRIBE biar gak ketinggalan video belajar servis HP lainnya!
               </p>
               <a href="https://youtu.be/vI7eztNd5WY?si=oNKYfWHfZSkqKWd2" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3538,7 +3539,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 10 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 10 Oktober 2025
               </p>
               <h3 class="news-title">
                 📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 2
@@ -3557,7 +3558,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
               </p>
               <a href="https://youtu.be/nEMbG8exgRw?si=NEhNBu-ZMfZtYAPy" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3574,7 +3575,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 9 Oktober 2025
+                <i class="ph-bold ph-calendar-blank"></i> 9 Oktober 2025
               </p>
               <h3 class="news-title">
                 📱🔧 Simak Yuk!! Alat dan Reparasi Smartphone – Part 1
@@ -3586,7 +3587,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Mulai dari alat dasar sampai yang sering dipakai teknisi profesional — semua bakal aku jelasin satu per satu biar kamu paham fungsinya dan bisa mulai praktek dari rumah.
               </p>
               <a href="https://youtu.be/evLHe6mgqb4?si=kE9Vv0lRDFpHtgsQ" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3603,7 +3604,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 29 Agustus 2025
+                <i class="ph-bold ph-calendar-blank"></i> 29 Agustus 2025
               </p>
               <h3 class="news-title">
                 Rahasia Service HP: Teknik Angkat Pasang Komponen yang Benar - Part 2
@@ -3635,7 +3636,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 0821 71 72 73 37
               </p>
               <a href="https://youtu.be/tn7mj6mItvg?si=BIOa6qkPTw25c4Qp" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3652,7 +3653,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 28 Agustus 2025
+                <i class="ph-bold ph-calendar-blank"></i> 28 Agustus 2025
               </p>
               <h3 class="news-title">
                 Rahasia Service HP: Teknik Angkat Pasang Komponen yang Benar - Part 1
@@ -3684,7 +3685,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 0821 71 72 73 37
               </p>
               <a href="https://youtu.be/OoX5BgBI74g?si=ejEL3XjBr-cLcCMm" target="_blank" class="news-link"
-                >Tonton selengkapnya <i class="fas fa-arrow-right"></i
+                >Tonton selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3701,7 +3702,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 9 Agustus 2023
+                <i class="ph-bold ph-calendar-blank"></i> 9 Agustus 2023
               </p>
               <h3 class="news-title">
                 Tekan Potensi Pengangguran di Kota Semarang yang Tinggi, Belasan
@@ -3713,7 +3714,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Jawa Tengah.
               </p>
               <a href="https://www.suaramerdeka.com/ekonomi/049761409/tekan-potensi-pengangguran-di-kota-semarang-yang-tinggi-belasan-orang-dibekali-ketrampilan-teknis" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3730,7 +3731,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 8 Agustus 2023
+                <i class="ph-bold ph-calendar-blank"></i> 8 Agustus 2023
               </p>
               <h3 class="news-title">
                 Cetak Pengusaha Muda Mandiri, LPK Quantum Telecommunication
@@ -3742,7 +3743,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 dunia kerja.
               </p>
               <a href="https://metrotimes.news/cetak-pengusaha-muda-mandiri-lpk-quantum-communication-gandeng-bamuis-bni-gelar-pelatihan-teknisi-smartphone/" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3759,7 +3760,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             </div>
             <div class="news-content">
               <p class="news-date">
-                <i class="far fa-calendar-alt"></i> 19 Februari 2020
+                <i class="ph-bold ph-calendar-blank"></i> 19 Februari 2020
               </p>
               <h3 class="news-title">
                 30 Mantan Pecandu Narkoba Dapat Pelatihan Reparasi HP
@@ -3770,7 +3771,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
                 Jalan Gayamsari II No 41 A, Rabu (19/2/2020).
               </p>
               <a href="https://www.ayosemarang.com/semarang-raya/pr-77784910/30-Mantan-Pecandu-Narkoba-Dapat-Pelatihan-Reparasi-HP" target="_blank" class="news-link"
-                >Baca selengkapnya <i class="fas fa-arrow-right"></i
+                >Baca selengkapnya <i class="ph-bold ph-arrow-right"></i
               ></a>
             </div>
           </div>
@@ -3780,7 +3781,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
         <!-- Load More -->
         <div class="load-more-wrapper">
           <button type="button" id="loadMoreBtn" class="btn-load-more">
-            <span>Tampilkan Berita Lainnya</span> <i class="fas fa-chevron-down"></i>
+            <span>Tampilkan Berita Lainnya</span> <i class="ph-bold ph-caret-down"></i>
           </button>
         </div>
 
@@ -3810,7 +3811,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
         <div class="cta-action-wrapper">
           <a href="https://wa.me/6282171727337" target="_blank" class="btn-quantum-wa">
-            <i class="fab fa-whatsapp"></i> Daftar Sekarang via WhatsApp
+            <i class="ph-bold ph-whatsapp-logo"></i> Daftar Sekarang via WhatsApp
           </a>
           <p class="cta-subtext">Respon cepat di jam kerja (08.00 - 16.00 WIB)</p>
         </div>
@@ -3828,8 +3829,8 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             <p>Konsultasi gratis dengan admin untuk memilih kelas yang pas.</p>
           </div>
           <div class="qf-cta-btns">
-            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat Admin</a>
-            <a class="qf-btn qf-btn-ghost" href="../menu/programs.html">Lihat Program <i class="fas fa-arrow-right"></i></a>
+            <a class="qf-btn qf-btn-wa" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Chat Admin</a>
+            <a class="qf-btn qf-btn-ghost" href="../menu/programs.html">Lihat Program <i class="ph-bold ph-arrow-right"></i></a>
           </div>
         </div>
 
@@ -3839,10 +3840,10 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             <p>Lembaga Pelatihan Kerja teknisi smartphone di Semarang sejak 2008. Belajar langsung praktik, dari dasar sampai siap buka usaha servis.</p>
             <div class="qf-badges"><span>Sejak 2008</span><span>Offline &amp; Online</span><span>Android &amp; iPhone</span></div>
             <div class="qf-social">
-              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.facebook.com/LPKQuantumtelecommunication/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ph-bold ph-facebook-logo"></i></a>
+              <a href="https://www.instagram.com/quantum.telecommunication/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+              <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener" aria-label="YouTube"><i class="ph-bold ph-youtube-logo"></i></a>
+              <a href="https://wa.me/6282171727337" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph-bold ph-whatsapp-logo"></i></a>
             </div>
           </div>
 
@@ -3873,21 +3874,21 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
           <div class="qf-col-contact">
             <h3 class="qf-h">Kontak</h3>
             <ul class="qf-contact">
-              <li><i class="fas fa-map-marker-alt"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
-              <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
-              <li><i class="fas fa-envelope"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
+              <li><i class="ph-bold ph-map-pin"></i><span>Jl. Bina Remaja No.4, Srondol Wetan, Banyumanik, Kota Semarang, Jawa Tengah 50263</span></li>
+              <li><i class="ph-bold ph-whatsapp-logo"></i><a href="https://wa.me/6282171727337" target="_blank" rel="noopener">0821-7172-7337</a></li>
+              <li><i class="ph-bold ph-envelope-simple"></i><a href="mailto:quantumtelecommunication38@gmail.com">quantumtelecommunication38@gmail.com</a></li>
             </ul>
             <div class="qf-map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773.945912584695!2d110.40388278197543!3d-7.0723822998514585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70895bad0a1e53%3A0xbbad707ca17f9ba6!2sLPK%20QUANTUM%20TELECOMMUNICATION%20-%20Private%20Smartphone%20Technicians%20Training%20Institute!5e0!3m2!1sen!2sid!4v1756793238467!5m2!1sen!2sid" title="Lokasi LPK Quantum Telecommunication" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="fas fa-external-link-alt"></i></a>
+            <a class="qf-map-link" href="https://maps.app.goo.gl/ryciCEjWvHpzmipa8" target="_blank" rel="noopener">Buka di Google Maps <i class="ph-bold ph-arrow-square-out"></i></a>
           </div>
         </div>
 
         <div class="qf-bottom">
           <p>&copy; <span class="js-year">2026</span> PT Quantum Telecommunication. Hak cipta dilindungi.</p>
           <p class="qf-eco">Ekosistem Quantum: <a href="https://vbatponsel.com/" target="_blank" rel="noopener">Aplikasi VBATPonsel</a> &middot; <a href="https://www.youtube.com/@quantumtelecom41" target="_blank" rel="noopener">Kanal YouTube</a></p>
-          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i></a>
+          <a class="qf-top" href="#" aria-label="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="ph-bold ph-arrow-up"></i></a>
         </div>
         <script>document.querySelectorAll(".js-year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
       </div>
@@ -3899,12 +3900,12 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
       class="whatsapp-float"
       target="_blank"
     >
-      <i class="fab fa-whatsapp"></i>
+      <i class="ph-bold ph-whatsapp-logo"></i>
     </a>
 
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
+      <i class="ph-bold ph-arrow-up"></i>
     </a>
 
     <!-- News Detail Modal -->
@@ -3921,14 +3922,14 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
           id="newsModalClose"
           aria-label="Tutup"
         >
-          <i class="fas fa-times"></i>
+          <i class="ph-bold ph-x"></i>
         </button>
         <div class="news-modal-image">
           <img id="newsModalImage" src="" alt="" />
         </div>
         <div class="news-modal-body">
           <p class="news-date" id="newsModalDate">
-            <i class="far fa-calendar-alt"></i> <span></span>
+            <i class="ph-bold ph-calendar-blank"></i> <span></span>
           </p>
           <h3 class="news-modal-title" id="newsModalTitle"></h3>
           <div class="news-modal-text" id="newsModalText"></div>
@@ -3939,7 +3940,7 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
             class="news-modal-source-link"
             id="newsModalSourceLink"
           >
-            Kunjungi Sumber <i class="fas fa-external-link-alt"></i>
+            Kunjungi Sumber <i class="ph-bold ph-arrow-square-out"></i>
           </a>
         </div>
       </div>
@@ -3959,11 +3960,11 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
         // Change icon
         const icon = mobileMenuBtn.querySelector("i");
         if (nav.classList.contains("active")) {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-times");
+          icon.classList.remove("ph-list");
+          icon.classList.add("ph-x");
         } else {
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         }
       });
 
@@ -3978,8 +3979,8 @@ Selanjutnya mampu membuktikan bahwa keterbatasan fisik bukan penghalang untuk be
 
           // Reset icon
           const icon = mobileMenuBtn.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+          icon.classList.remove("ph-x");
+          icon.classList.add("ph-list");
         });
       });
 

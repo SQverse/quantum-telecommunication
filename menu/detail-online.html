@@ -34,10 +34,10 @@
   --navy-800:#1a237e;
   --navy-600:#4a90e2;
 
-  --gold-700:#e67429;
-  --gold-500:#ff8c42;
-  --gold-300:#ffb366;
-  --gold-100:#ffe4cc;
+  --gold-700:#0b7fc0;
+  --gold-500:#16a5e4;
+  --gold-300:#5cc8f0;
+  --gold-100:#d5f0fc;
 
   --live:#e0453c;
 
@@ -77,11 +77,11 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
   font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;
   padding:1rem 1.7rem;border-radius:999px;text-decoration:none;border:1px solid transparent;
   transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-.btn-emas{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#fff;
-  box-shadow:0 10px 34px -12px rgba(255,140,66,.85)}
-.btn-emas:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(255,140,66,.95)}
-.btn-garis{border-color:rgba(255,179,102,.45);color:var(--gold-100);background:rgba(255,255,255,.03)}
-.btn-garis:hover{background:rgba(255,179,102,.12);transform:translateY(-2px)}
+.btn-emas{background:linear-gradient(135deg,#16a5e4,#064ec1);color:#fff;
+  box-shadow:0 10px 34px -12px rgba(22,165,228,.85)}
+.btn-emas:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(22,165,228,.95)}
+.btn-garis{border-color:rgba(92,200,240,.45);color:var(--gold-100);background:rgba(255,255,255,.03)}
+.btn-garis:hover{background:rgba(92,200,240,.12);transform:translateY(-2px)}
 
 /* ================= HERO ================= */
 .hero{position:relative;isolation:isolate;padding:clamp(3.6rem,8vw,6.4rem) 0 clamp(3.4rem,6vw,5.4rem);overflow:hidden}
@@ -91,7 +91,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
   background:radial-gradient(120% 90% at 12% 8%,rgba(74,144,226,.5),transparent 62%),
   linear-gradient(180deg,rgba(15,23,42,.94),rgba(26,60,110,.9) 46%,rgba(26,60,110,.97))}
 .glow{position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);pointer-events:none}
-.glow-a{width:420px;height:420px;background:rgba(255,140,66,.2);top:-130px;right:-70px}
+.glow-a{width:420px;height:420px;background:rgba(22,165,228,.2);top:-130px;right:-70px}
 .glow-b{width:520px;height:520px;background:rgba(74,144,226,.33);bottom:-230px;left:-150px}
 
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
@@ -106,7 +106,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 
 /* --- panel siaran: elemen tanda tangan --- */
 .siaran{background:linear-gradient(165deg,rgba(26,60,110,.93),rgba(15,23,42,.97));
-  border:1px solid rgba(255,179,102,.28);border-radius:var(--r);padding:1.4rem;
+  border:1px solid rgba(92,200,240,.28);border-radius:var(--r);padding:1.4rem;
   box-shadow:0 30px 70px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
 .siaran-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
 .badge-live{display:inline-flex;align-items:center;gap:.45rem;background:rgba(224,69,60,.14);
@@ -127,12 +127,12 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .grid25{display:grid;grid-template-columns:repeat(13,1fr);gap:5px;margin-top:1.1rem}
 .grid25 i{aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.05);transition:background .35s ease,transform .35s ease}
-.grid25 i.aktif{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));transform:scale(1.18)}
-.grid25 i.lewat{background:rgba(255,179,102,.34)}
+.grid25 i.aktif{background:linear-gradient(135deg,#16a5e4,#064ec1);transform:scale(1.18)}
+.grid25 i.lewat{background:rgba(92,200,240,.34)}
 .siaran-foot{margin-top:1rem;font-size:.75rem;color:#7f9bc4;line-height:1.5}
 
 /* ================= BAR ANGKA ================= */
-.bar{background:var(--navy-950);border-block:1px solid rgba(255,179,102,.16);padding:2.3rem 0}
+.bar{background:var(--navy-950);border-block:1px solid rgba(92,200,240,.16);padding:2.3rem 0}
 .bar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;text-align:center}
 .bar-grid b{display:block;font-family:'JetBrains Mono',monospace;font-size:clamp(1.6rem,3.3vw,2.4rem);font-weight:700;
   background:linear-gradient(120deg,var(--gold-100),var(--gold-500));
@@ -186,7 +186,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
   padding:.48rem .9rem;font-size:.9rem;color:var(--ink-soft);align-items:start}
 .blok li::before{content:counter(m,decimal-leading-zero);font-family:'JetBrains Mono',monospace;
   font-size:.72rem;color:var(--gold-700);font-weight:700;padding-top:.18rem}
-.blok li.kunci{background:rgba(255,140,66,.1);border-radius:8px}
+.blok li.kunci{background:rgba(22,165,228,.1);border-radius:8px}
 .blok li.kunci b{color:var(--navy-900)}
 
 /* --- alat yang disiapkan --- */
@@ -198,14 +198,14 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .gelap h2{font-size:clamp(1.6rem,3.3vw,2.3rem);color:#fff;margin:.85rem 0 .75rem}
 .gelap .sec-head p{color:#b8caea}
 .tahap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.tahap-kartu{background:rgba(255,255,255,.045);border:1px solid rgba(255,179,102,.2);border-radius:10px;padding:1.4rem}
+.tahap-kartu{background:rgba(255,255,255,.045);border:1px solid rgba(92,200,240,.2);border-radius:10px;padding:1.4rem}
 .tahap-kartu .lab{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--gold-300)}
 .tahap-kartu h3{font-size:1.02rem;color:#fff;margin:.35rem 0 .6rem}
 .tahap-kartu ul{list-style:none;font-size:.87rem;color:#b3c6e4}
 .tahap-kartu li{padding-left:1rem;position:relative;margin-bottom:.2rem}
 .tahap-kartu li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
   border-radius:50%;background:var(--gold-500)}
-.catatan-alat{margin-top:1.4rem;background:rgba(255,179,102,.09);border-left:3px solid var(--gold-500);
+.catatan-alat{margin-top:1.4rem;background:rgba(92,200,240,.09);border-left:3px solid var(--gold-500);
   border-radius:0 10px 10px 0;padding:1.1rem 1.3rem;font-size:.92rem;color:#dbe6f7}
 .catatan-alat b{color:var(--gold-100)}
 
@@ -214,7 +214,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .hasil-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem 2rem}
 .h-item{display:flex;gap:.85rem;align-items:flex-start;padding:.72rem 0;border-bottom:1px dashed rgba(26,35,126,.14)}
 .check{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-top:.15rem;
-  background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#fff;font-size:.72rem;font-weight:700}
+  background:linear-gradient(135deg,#16a5e4,#064ec1);color:#fff;font-size:.72rem;font-weight:700}
 .h-item p{font-size:.94rem;color:var(--ink-soft)}
 .h-item p b{color:var(--navy-900)}
 
@@ -229,7 +229,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
   font-size:.86rem;font-weight:700}
 .banding thead th:nth-child(2){background:var(--navy-800);color:var(--gold-100)}
 .banding td:first-child{font-weight:600;color:var(--navy-900);width:30%}
-.banding td:nth-child(2){background:rgba(255,140,66,.07);color:var(--ink-soft)}
+.banding td:nth-child(2){background:rgba(22,165,228,.07);color:var(--ink-soft)}
 .banding td:nth-child(3){color:var(--ink-soft)}
 .banding tr:last-child td{border-bottom:0}
 .banding-note{margin-top:1.1rem;font-size:.9rem;color:var(--ink-soft);font-style:italic}
@@ -241,7 +241,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .harga-kiri{background:linear-gradient(160deg,var(--navy-900),var(--navy-800) 70%,var(--navy-600));color:#fff;
   padding:clamp(1.8rem,3.4vw,2.7rem);position:relative;overflow:hidden}
 .harga-kiri::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;
-  background:rgba(255,140,66,.18);filter:blur(70px);bottom:-140px;right:-100px}
+  background:rgba(22,165,228,.18);filter:blur(70px);bottom:-140px;right:-100px}
 .harga-kiri h3{font-size:1.3rem;color:#fff;margin-bottom:.35rem}
 .harga-kiri .sub{color:#a9c1e6;font-size:.9rem}
 .nominal{margin:1.4rem 0 .4rem}
@@ -250,7 +250,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.13;letter-spacing:-.022em}
 .nominal b{font-family:'Sora',sans-serif;font-size:clamp(2.2rem,5vw,3.1rem);font-weight:800;
   background:linear-gradient(110deg,var(--gold-100),var(--gold-300) 45%,var(--gold-500));
   -webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.03em}
-.hitung{margin-top:1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,179,102,.22);
+.hitung{margin-top:1rem;background:rgba(255,255,255,.06);border:1px solid rgba(92,200,240,.22);
   border-radius:12px;padding:.9rem 1.1rem;position:relative;z-index:1}
 .hitung span{display:block;font-size:.86rem;color:#c6d6ef;margin-bottom:.2rem}
 .hitung b{font-family:'JetBrains Mono',monospace;font-size:1.35rem;color:var(--gold-300)}
@@ -293,12 +293,12 @@ details p{padding:0 1.3rem 1.1rem;color:var(--ink-soft);font-size:.92rem}
   justify-content:center;flex-wrap:wrap}
 
 footer{background:var(--navy-950);color:#7f9bc4;padding:2.1rem 0;font-size:.83rem;
-  text-align:center;border-top:1px solid rgba(255,179,102,.14)}
+  text-align:center;border-top:1px solid rgba(92,200,240,.14)}
 footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
 
 /* --- tombol wa mengambang --- */
 .wa-float{position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;display:flex;align-items:center;gap:.55rem;
-  background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:#fff;
+  background:linear-gradient(135deg,#16a5e4,#064ec1);color:#fff;
   font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;padding:.85rem 1.3rem;border-radius:999px;
   text-decoration:none;box-shadow:0 14px 36px -12px rgba(0,0,0,.6);
   opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
@@ -354,7 +354,6 @@ footer b{color:var(--gold-100);font-family:'Sora',sans-serif}
   }
 }
 </script>
-<link id="qh-fa" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link id="qh-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 <style id="qh-style">
 /* ===== Navbar v2: putih bersih + efek kaca (sama di semua halaman) ===== */
@@ -373,19 +372,19 @@ header.qh nav ul{display:flex;flex-direction:row;align-items:center;list-style:n
 header.qh nav ul li{position:relative;margin:0;padding:0;list-style:none}
 header.qh nav ul li a{display:flex;align-items:center;gap:6px;position:relative;color:#3a4a63;text-decoration:none;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px;background:transparent;transition:color .2s ease,background .2s ease}
 header.qh nav ul li a::after{display:none}
-header.qh nav ul li > a > i:not(.fa-chevron-down){display:none}
-header.qh nav ul li a i.fa-chevron-down{font-size:10px;opacity:.7;transition:transform .2s ease}
+header.qh nav ul li > a > i:not(.ph-caret-down){display:none}
+header.qh nav ul li a i.ph-caret-down{font-size:10px;opacity:.7;transition:transform .2s ease}
 header.qh nav ul li a:hover{color:#1a3c6e;background:rgba(74,144,226,.10)}
 header.qh nav ul li a.active{color:#1f5fae;background:#eaf2fd;font-weight:600}
-header.qh .dropdown:hover > a i.fa-chevron-down{transform:rotate(180deg)}
+header.qh .dropdown:hover > a i.ph-caret-down{transform:rotate(180deg)}
 header.qh .dropdown-content{display:block;visibility:hidden;opacity:0;transform:translateY(6px);position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#fff;border:1px solid rgba(26,60,110,.08);box-shadow:0 18px 40px rgba(26,60,110,.14);border-radius:14px;z-index:1000;margin:0;padding:8px;overflow:visible;transition:opacity .2s ease,transform .2s ease,visibility .2s}
 header.qh .dropdown-content::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 header.qh .dropdown:hover .dropdown-content{visibility:visible;opacity:1;transform:translateY(0)}
 header.qh .dropdown-content a{display:block;color:#3a4a63;padding:10px 14px;border:0;border-radius:10px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;background:transparent}
 header.qh .dropdown-content a:hover{background:#eaf2fd;color:#1a3c6e}
 header.qh .qh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8c42,#e67429);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(255,140,66,.32);transition:transform .2s ease,box-shadow .2s ease}
-header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(255,140,66,.42);color:#fff}
+header.qh .qh-cta{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg, #16a5e4 0%, #064ec1 100%);color:#fff;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(22, 146, 216,.32);transition:transform .2s ease,box-shadow .2s ease}
+header.qh .qh-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(22, 146, 216,.42);color:#fff}
 header.qh .mobile-menu-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;color:#1a3c6e;font-size:20px;line-height:1;background:#f1f5fb;border:1px solid rgba(26,60,110,.08);border-radius:12px;padding:0;margin:0;cursor:pointer;z-index:1001;transition:background .2s ease,color .2s ease}
 /* ===== status transparan di atas hero beranda ===== */
 header.qh.header--top::before{opacity:0}
@@ -407,7 +406,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh nav ul{flex-direction:column;align-items:stretch;gap:4px}
   header.qh nav ul li{margin:0}
   header.qh nav ul li > a,header.qh.header--top nav ul li > a{color:#3a4a63;padding:12px 14px;border-radius:12px;font-size:15px;gap:12px}
-  header.qh nav ul li > a > i:not(.fa-chevron-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
+  header.qh nav ul li > a > i:not(.ph-caret-down){display:inline-block;width:20px;text-align:center;color:#4a90e2;font-size:15px}
   header.qh nav ul li > a:hover,header.qh.header--top nav ul li > a:hover{background:#f1f5fb;color:#1a3c6e}
   header.qh nav ul li > a.active,header.qh.header--top nav ul li > a.active{background:#eaf2fd;color:#1f5fae}
   header.qh .dropdown-content{display:none;visibility:visible;opacity:1;transform:none;position:static;box-shadow:none;border:0;background:transparent;margin:2px 0 4px 34px;padding:0;border-left:2px solid #eaf2fd;border-radius:0;min-width:0}
@@ -415,7 +414,7 @@ header.qh.header--top .mobile-menu-btn{color:#fff;background:rgba(255,255,255,.1
   header.qh .dropdown.active .dropdown-content{display:block}
   header.qh .dropdown-content a{color:#5b6b84;padding:9px 14px;font-size:14px}
   header.qh .dropdown-content a:hover{background:#f1f5fb;color:#1a3c6e}
-  header.qh .dropdown > a i.fa-chevron-down{display:none}
+  header.qh .dropdown > a i.ph-caret-down{display:none}
 }
 @media (max-width:380px){header.qh .logo img{height:38px}header.qh .qh-cta{padding:7px 12px}}
 </style>
@@ -434,7 +433,12 @@ body .section-title h2 span,body .section-header h2 span{color:inherit!important
 body .section-title p,body .section-header p,body .section-title + .section-subtitle,body .section-title .section-subtitle{font-size:17px!important;font-weight:400!important;line-height:1.75!important;color:#55657e!important;max-width:720px;margin:14px auto 0!important;text-transform:none!important;letter-spacing:0!important}
 body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-align:center}
 .cta-section .section-title h2,.cta-section-modern .section-title h2{color:#fff!important}
+/* Ikon Phosphor Bold: sedikit lebih besar dari Font Awesome lama */
+:where(.ph-bold){font-size:1.14em;vertical-align:-.14em}
+/* Aksen cyan versi terang untuk teks di atas latar gelap */
+[class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
 </head>
 <body>
 <header class="qh">
@@ -448,25 +452,25 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
         </div>
         <nav>
           <ul>
-            <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="../menu/about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-            <li><a href="../menu/programs.html" class="active"><i class="fas fa-graduation-cap"></i> Program</a></li>
+            <li><a href="../index.html"><i class="ph-bold ph-house"></i> Beranda</a></li>
+            <li><a href="../menu/about.html"><i class="ph-bold ph-info"></i> Tentang Kami</a></li>
+            <li><a href="../menu/programs.html" class="active"><i class="ph-bold ph-graduation-cap"></i> Program</a></li>
             <li class="dropdown">
-              <a href="../menu/kerjasama/pemerintah.html"><i class="fas fa-handshake"></i> Portofolio <i class="fas fa-chevron-down"></i></a>
+              <a href="../menu/kerjasama/pemerintah.html"><i class="ph-bold ph-handshake"></i> Portofolio <i class="ph-bold ph-caret-down"></i></a>
               <div class="dropdown-content">
                 <a href="../menu/kerjasama/pemerintah.html">Pemerintah</a>
                 <a href="../menu/kerjasama/swasta.html">Swasta</a>
                 <a href="../menu/kerjasama/internasional.html">Internasional</a>
               </div>
             </li>
-            <li><a href="../menu/alumni.html"><i class="fas fa-users"></i> Alumni</a></li>
-            <li><a href="../menu/news.html"><i class="fas fa-newspaper"></i> Kabar</a></li>
+            <li><a href="../menu/alumni.html"><i class="ph-bold ph-users-three"></i> Alumni</a></li>
+            <li><a href="../menu/news.html"><i class="ph-bold ph-newspaper"></i> Kabar</a></li>
           </ul>
         </nav>
         <div class="qh-actions">
-          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Daftar<span> Sekarang</span></a>
+          <a class="qh-cta" href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener"><i class="ph-bold ph-whatsapp-logo"></i> Daftar<span> Sekarang</span></a>
           <button class="mobile-menu-btn" aria-label="Buka menu">
-            <i class="fas fa-bars"></i>
+            <i class="ph-bold ph-list"></i>
           </button>
         </div>
       </div>
@@ -950,7 +954,7 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
   var btn = document.querySelector("header.qh .mobile-menu-btn");
   var nav = document.querySelector("header.qh nav");
   if (!btn || !nav) return;
-  function setIcon(open) { var i = btn.querySelector("i"); i.classList.toggle("fa-bars", !open); i.classList.toggle("fa-times", open); }
+  function setIcon(open) { var i = btn.querySelector("i"); i.classList.toggle("ph-list", !open); i.classList.toggle("ph-x", open); }
   btn.addEventListener("click", function () {
     var open = nav.classList.toggle("active");
     document.body.style.overflow = open ? "hidden" : "";
