@@ -27,7 +27,6 @@
   href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@800;900&display=swap"
   rel="stylesheet"
 />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -2469,10 +2468,175 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 [class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<style id="ab-style">
+/* ===== Tentang Kami: tampilan selaras beranda (Nov 2026) ===== */
+/* -- Hero -- */
+.ab-hero { position: relative; min-height: 88vh; min-height: 88svh; display: flex; align-items: center; justify-content: center; overflow: hidden !important; color: #fff; text-align: center; padding: 0; opacity: 1; transform: none; }
+.ab-hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.05); animation: abZoom 18s ease-out forwards; }
+@keyframes abZoom { to { transform: scale(1); } }
+.ab-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,25,50,.55) 0%, rgba(10,25,50,.65) 55%, rgba(10,25,50,.9) 100%); }
+.ab-hero__content { position: relative; z-index: 2; width: 100%; max-width: 900px; padding: 130px 24px 80px; display: flex; flex-direction: column; align-items: center; }
+.ab-hero__content > * { opacity: 0; animation: abFadeUp .9s ease forwards; }
+.ab-hero__content > *:nth-child(2) { animation-delay: .15s; }
+.ab-hero__content > *:nth-child(3) { animation-delay: .3s; }
+.ab-hero__content > *:nth-child(4) { animation-delay: .45s; }
+@keyframes abFadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.ab-hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; padding: 8px 20px 8px 10px; margin-bottom: 20px;
+  border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(5,20,45,.25);
+  font: 600 13px/1.2 'Poppins', sans-serif; letter-spacing: 3px; text-transform: uppercase; color: #fff;
+}
+.ab-hero__eyebrow i { width: 24px; height: 24px; flex: 0 0 24px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; background: linear-gradient(135deg, #16a5e4, #064ec1); color: #fff; }
+.ab-hero__title { font: 800 clamp(2rem, 5.2vw, 3.6rem)/1.12 'Poppins', sans-serif; color: #fff; margin: 0 0 20px; max-width: 860px; text-shadow: 0 6px 30px rgba(0,0,0,.5); }
+.ab-hero__title span { color: #5cc8f0; }
+.ab-hero__lead { font-family: 'Poppins', sans-serif; font-size: clamp(.98rem, 1.9vw, 1.18rem); line-height: 1.65; color: #e6efff; max-width: 680px; margin: 0 0 32px; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.ab-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.ab-hero__btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 10px; font: 600 .95rem/1.2 'Poppins', sans-serif; text-decoration: none; transition: transform .25s ease, background .25s ease; }
+.ab-hero__btn--primary { background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); color: #fff; box-shadow: 0 8px 24px rgba(22,146,216,.4); }
+.ab-hero__btn--ghost { color: #fff; border: 1.5px solid rgba(255,255,255,.8); background: rgba(255,255,255,.08); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.ab-hero__btn:hover { transform: translateY(-3px); color: #fff; }
+.ab-hero__btn--ghost:hover { background: rgba(255,255,255,.2); }
+@media (prefers-reduced-motion: reduce) { .ab-hero__bg, .ab-hero__content > * { animation: none; opacity: 1; transform: none; } }
+
+/* -- Pola section beranda (hq-*) -- */
+.hq-section { padding: 80px 0; background: #fff; }
+.hq-section--soft { background: #f3f7fd; }
+.section-eyebrow { display: block; font: 700 .8rem/1.4 'Poppins', sans-serif; letter-spacing: 4px; text-transform: uppercase; color: #0e95d6; margin-bottom: 8px; }
+.hq-head { text-align: center; max-width: 780px; margin: 0 auto 44px; }
+.hq-head h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; color: var(--blue-dark); line-height: 1.25; margin: 0; }
+.hq-head p { margin: 16px auto 0; color: #55657e; line-height: 1.75; }
+.hq-head--left { text-align: left; margin: 0 0 26px; }
+
+.hq-why { display: grid; grid-template-columns: 1fr 1.15fr; gap: 52px; align-items: center; }
+.hq-why__img { position: relative; }
+.hq-why__img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 45px rgba(26,60,110,.18); display: block; }
+.ab-why__tag { position: absolute; left: 20px; bottom: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px; background: rgba(255,255,255,.92); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); font: 600 .88rem/1 'Poppins', sans-serif; color: var(--blue-dark); box-shadow: 0 8px 22px rgba(16,42,82,.15); }
+.ab-why__tag i { color: #0e95d6; }
+.hq-why__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.hq-why__list li { display: flex; gap: 16px; align-items: flex-start; color: #33445e; line-height: 1.65; }
+.hq-why__list li > i { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(22,165,228,.13); color: #0e95d6; font-size: 1.1rem; }
+.hq-why__list b { color: var(--blue-dark); }
+
+/* -- Timeline zigzag -- */
+.ab-tl { list-style: none; margin: 0 auto; padding: 0; max-width: 1040px; position: relative; }
+.ab-tl::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; margin-left: -1.5px; border-radius: 3px; background: linear-gradient(180deg, #16a5e4, #064ec1); opacity: .35; }
+.ab-tl__item { position: relative; width: 50%; padding: 0 44px 36px 0; }
+.ab-tl__item:nth-child(even) { margin-left: 50%; padding: 0 0 36px 44px; }
+.ab-tl__item:last-child { padding-bottom: 0; }
+@media (min-width: 901px) { .ab-tl__item + .ab-tl__item { margin-top: -80px; } }
+.ab-tl__item::before { content: ""; position: absolute; top: 26px; right: -10px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 5px solid #16a5e4; box-shadow: 0 0 0 5px rgba(22,165,228,.15); z-index: 1; }
+.ab-tl__item:nth-child(even)::before { right: auto; left: -10px; }
+.ab-tl__card { display: grid; grid-template-columns: 150px 1fr; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(26,60,110,.08); box-shadow: 0 10px 28px rgba(16,42,82,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.ab-tl__card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(16,42,82,.13); }
+.ab-tl__card img { width: 100%; height: 100%; min-height: 150px; object-fit: cover; display: block; }
+.ab-tl__body { padding: 18px 20px 20px; }
+.ab-tl__year { display: inline-block; padding: 4px 12px; border-radius: 999px; background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); color: #fff; font: 700 .78rem/1.3 'Poppins', sans-serif; letter-spacing: .5px; margin-bottom: 10px; }
+.ab-tl__body h3 { margin: 0 0 6px; font: 700 1.05rem/1.35 'Poppins', sans-serif; color: var(--blue-dark); }
+.ab-tl__body p { margin: 0; font-size: .9rem; line-height: 1.6; color: #55657e; }
+
+/* -- Visi, misi, nilai -- */
+.ab-vm { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 22px; align-items: stretch; }
+.ab-vm__card { position: relative; overflow: hidden; padding: 30px 28px; border-radius: 16px; background: #fff; border: 1px solid rgba(26,60,110,.08); box-shadow: 0 10px 28px rgba(16,42,82,.07); }
+.ab-vm__ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.4rem; background: #e6f6fd; color: #0e95d6; margin-bottom: 18px; }
+.ab-vm__label { display: block; font: 700 .75rem/1.3 'Poppins', sans-serif; letter-spacing: 3px; text-transform: uppercase; color: #0e95d6; margin-bottom: 10px; }
+.ab-vm__card--visi { color: #fff; border: 0; background: linear-gradient(135deg, #1a3c6e 0%, #0d2a55 60%, #082046 100%); box-shadow: 0 20px 45px rgba(26,60,110,.25); }
+.ab-vm__card--visi::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(22,165,228,.35), transparent 70%); }
+.ab-vm__card--visi .ab-vm__ico { background: rgba(92,200,240,.14); color: #5cc8f0; border: 1px solid rgba(92,200,240,.3); }
+.ab-vm__card--visi .ab-vm__label { color: #5cc8f0; }
+.ab-vm__card--visi h3 { position: relative; z-index: 1; margin: 0; font: 700 1.45rem/1.4 'Poppins', sans-serif; color: #fff; }
+.ab-vm__card--visi h3 span { color: #5cc8f0; }
+.ab-vm__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.ab-vm__list li { display: flex; gap: 10px; align-items: flex-start; color: #33445e; line-height: 1.6; font-size: .95rem; }
+.ab-vm__list i { color: #0e95d6; margin-top: 3px; }
+.ab-vm__values { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+.ab-vm__values li { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 10px; background: #f3f7fd; font-weight: 600; font-size: .93rem; color: var(--blue-dark); }
+.ab-vm__values i { color: #0e95d6; }
+
+/* -- Tim -- */
+.ab-team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.ab-team__card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(26,60,110,.08); box-shadow: 0 10px 28px rgba(16,42,82,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.ab-team__card:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(16,42,82,.14); }
+.ab-team__photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #e6eef9; }
+.ab-team__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .5s ease; }
+.ab-team__card:hover .ab-team__photo img { transform: scale(1.05); }
+.ab-team__badge { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: linear-gradient(135deg, #16a5e4 0%, #064ec1 100%); color: #fff; font: 700 .72rem/1.3 'Poppins', sans-serif; box-shadow: 0 6px 14px rgba(6,78,193,.3); }
+.ab-team__body { padding: 16px 18px 20px; border-top: 3px solid transparent; }
+.ab-team__card--lead .ab-team__body { border-top-color: #16a5e4; }
+.ab-team__body h3 { margin: 0 0 4px; font: 700 1rem/1.35 'Poppins', sans-serif; color: var(--blue-dark); }
+.ab-team__role { margin: 0 0 8px; font-size: .84rem; font-weight: 600; color: #0e95d6; }
+.ab-team__desc { margin: 0; font-size: .86rem; line-height: 1.55; color: #6b7a90; }
+
+/* -- CTA penutup (sama dengan beranda) -- */
+.hq-cta { padding: 70px 0 80px; }
+.hq-cta-card { position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; padding: 56px; border-radius: 16px; color: #fff; background: linear-gradient(135deg, #1a3c6e 0%, #0d2a55 55%, #082046 100%); box-shadow: 0 24px 60px rgba(26,60,110,.28); }
+.hq-cta-card::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(520px 320px at 100% 0%, rgba(22,165,228,.38), transparent 70%), radial-gradient(420px 280px at 0% 100%, rgba(6,78,193,.45), transparent 70%); }
+.hq-cta-card::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 36px 36px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%); mask-image: linear-gradient(90deg, transparent, #000 60%); }
+.hq-cta-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; margin-bottom: 18px; font: 600 .82rem/1 'Poppins', sans-serif; letter-spacing: .3px; color: #5cc8f0; background: rgba(92,200,240,.12); border: 1px solid rgba(92,200,240,.3); }
+.hq-cta-dot { width: 8px; height: 8px; border-radius: 50%; background: #5cc8f0; position: relative; }
+.hq-cta-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #5cc8f0; animation: hqCtaPulse 1.8s ease-out infinite; }
+@keyframes hqCtaPulse { from { transform: scale(.5); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
+.hq-cta-title { font: 800 clamp(1.7rem, 3.2vw, 2.5rem)/1.18 'Poppins', sans-serif; margin: 0 0 14px; color: #fff; }
+.hq-cta-title span { background: linear-gradient(90deg, #5cc8f0, #16a5e4); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.hq-cta-text { margin: 0 0 22px; font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,.78); max-width: 520px; }
+.hq-cta-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.hq-cta-list li { display: flex; align-items: center; gap: 8px; font-size: .95rem; color: rgba(255,255,255,.9); }
+.hq-cta-list i { color: #5cc8f0; font-size: 1.1rem; }
+.hq-cta-panel { padding: 26px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.hq-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 16px 22px; border-radius: 10px; text-decoration: none; font: 700 1rem/1 'Poppins', sans-serif; color: #fff; background: #25d366; box-shadow: 0 10px 24px rgba(37,211,102,.3); transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.hq-cta-btn i { font-size: 1.3rem; }
+.hq-cta-btn:hover { color: #fff; background: #1fbe5b; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(37,211,102,.38); }
+.hq-cta-link { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; font-weight: 600; font-size: .95rem; color: #5cc8f0; text-decoration: none; }
+.hq-cta-link:hover { color: #fff; }
+.hq-cta-link i { transition: transform .25s ease; }
+.hq-cta-link:hover i { transform: translateX(4px); }
+.ab-steps { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 4px; counter-reset: abstep; position: relative; }
+.ab-steps li { position: relative; display: flex; align-items: center; gap: 14px; padding: 8px 0; text-align: left; }
+.ab-steps li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 52px; height: calc(100% - 44px); width: 2px; background: rgba(92,200,240,.3); }
+.ab-steps li > span { flex: 0 0 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.25rem; color: #5cc8f0; background: rgba(22,165,228,.14); border: 1px solid rgba(92,200,240,.28); }
+.ab-steps strong { display: block; font: 700 1rem/1.3 'Poppins', sans-serif; color: #fff; }
+.ab-steps small { display: block; margin-top: 2px; font-size: .85rem; color: rgba(255,255,255,.65); }
+
+/* -- Responsif -- */
+@media (max-width: 1100px) { .ab-team { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) {
+  .hq-section { padding: 60px 0; }
+  .hq-why { grid-template-columns: 1fr; gap: 32px; }
+  .hq-why__img img { aspect-ratio: 16 / 10; }
+  .ab-vm { grid-template-columns: 1fr; }
+  .ab-tl::before { left: 9px; margin-left: 0; }
+  .ab-tl__item, .ab-tl__item:nth-child(even) { width: auto; margin-left: 0; padding: 0 0 24px 40px; }
+  .ab-tl__item::before, .ab-tl__item:nth-child(even)::before { left: 0; right: auto; top: 22px; }
+  .hq-cta-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
+}
+@media (max-width: 600px) {
+  .ab-hero__eyebrow { font-size: 11px; letter-spacing: 2px; padding: 6px 14px 6px 7px; gap: 8px; margin-bottom: 14px; }
+  .ab-hero__eyebrow i { width: 20px; height: 20px; flex-basis: 20px; font-size: 9px; }
+  .ab-hero__content { padding: 110px 20px 64px; }
+  .ab-hero__btn { padding: 12px 22px; font-size: .9rem; }
+  .section-eyebrow { font-size: .7rem; letter-spacing: 3px; }
+  .ab-tl__card { grid-template-columns: 96px 1fr; }
+  .ab-tl__card img { min-height: 0; }
+  .ab-tl__body { padding: 14px 14px 16px; }
+  .ab-tl__body h3 { font-size: .98rem; }
+  .ab-tl__body p { font-size: .86rem; }
+  .ab-team { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 -15px; padding: 6px 15px 18px; scrollbar-width: none; }
+  .ab-team::-webkit-scrollbar { display: none; }
+  .ab-team__card { flex: 0 0 70%; scroll-snap-align: center; }
+  .ab-team__card:hover { transform: none; }
+  .hq-cta { padding: 48px 0 56px; }
+  .hq-cta-card { padding: 32px 20px; text-align: center; }
+  .hq-cta-text { margin-left: auto; margin-right: auto; }
+  .hq-cta-list { justify-content: center; }
+  .hq-cta-panel { padding: 20px 16px; }
+  .hq-cta-btn { padding: 15px 12px; font-size: .95rem; white-space: nowrap; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .hq-cta-dot::after { animation: none; } }
+</style>
   </head>
   <body>
     <!-- Header & Navigation -->
-    <header class="qh">
+    <header class="qh qh-fixed header--top">
       <div class="container header-content">
         <div class="logo">
           <a href="../index.html" aria-label="Beranda"><img
@@ -2507,448 +2671,254 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
       </div>
     </header>
 
-    <!-- Hero Section untuk Halaman Tentang -->
-  <section class="hero-about-pro">
-  <div class="swiper hero-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
-      <div class="swiper-slide" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
-    </div>
-  </div>
+    <!-- ===== HERO TENTANG KAMI ===== -->
+    <section class="ab-hero">
+      <div class="ab-hero__bg" style="background-image: url('../assets/photos/CTA/hero11.jpeg');"></div>
+      <div class="ab-hero__overlay"></div>
+      <div class="ab-hero__content">
+        <span class="ab-hero__eyebrow"><i class="ph-bold ph-medal" aria-hidden="true"></i>Terpercaya Sejak 2008</span>
+        <h1 class="ab-hero__title">Membangun Keahlian, <span>Mewujudkan Masa Depan</span></h1>
+        <p class="ab-hero__lead">Selama 18 tahun LPK Quantum mendidik ribuan teknisi ponsel profesional. Kami bukan sekadar tempat kursus, tapi partner perjalanan karier Anda.</p>
+        <div class="ab-hero__actions">
+          <a href="#sejarah" class="ab-hero__btn ab-hero__btn--primary">Sejarah Kami <i class="ph-bold ph-arrow-down"></i></a>
+          <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20tanya%20tentang%20LPK%20Quantum" target="_blank" rel="noopener" class="ab-hero__btn ab-hero__btn--ghost"><i class="ph-bold ph-whatsapp-logo"></i> Chat Admin</a>
+        </div>
+      </div>
+    </section>
 
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-container-fixed">
-    <div class="row align-items-center min-vh-100">
-      <div class="col-lg-7">
-        <div class="glass-card animate__animated animate__fadeInLeft">
-          <span class="badge-history"><i class="ph-bold ph-medal me-2"></i>Terpercaya Sejak 2008</span>
-          
-          <h1 class="hero-title">
-            Membangun <span class="text-orange">Keahlian</span>, Mewujudkan <span class="text-orange">Masa Depan</span>
-          </h1>
-          
-          <p class="hero-desc">
-            Selama 18 tahun LPK Quantum mendidik ribuan teknisi ponsel profesional. Kami bukan sekadar tempat kursus, tapi partner perjalanan karier Anda.
-          </p>
-          
-          <div class="stats-row">
-            <div class="stat-box">
-              <span class="stat-num">18</span>
-              <span class="stat-label">Tahun</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-box">
-              <span class="stat-num">5000+</span>
-              <span class="stat-label">Alumni</span>
-            </div>
+    <!-- ===== PROFIL & KENAPA ===== -->
+    <section id="why-us" class="hq-section">
+      <div class="container">
+        <div class="hq-why">
+          <div class="hq-why__img">
+            <img src="../assets/photos/CTA/hero12.jpeg" alt="Peserta praktik di meja kerja LPK Quantum" loading="lazy">
+            <div class="ab-why__tag"><i class="ph-bold ph-map-pin"></i> Semarang, Jawa Tengah</div>
           </div>
+          <div>
+            <div class="hq-head hq-head--left">
+              <span class="section-eyebrow">Kenapa Memilih Kami</span>
+              <h2>Diajar Praktisi, Bukan Sekadar Teori</h2>
+              <p>LPK Quantum berdiri di Semarang sejak 2008 sebagai pusat pelatihan teknisi ponsel. Fokus kami sederhana: lulusan yang benar-benar bisa memperbaiki HP dan siap bekerja atau membuka usaha servis.</p>
+            </div>
+            <ul class="hq-why__list">
+              <li><i class="ph-bold ph-wrench"></i><div><b>70% praktik.</b> Setiap peserta Kelas Offline mendapat meja kerja sendiri, lengkap dengan solder station, multimeter, power supply, dan mikroskop.</div></li>
+              <li><i class="ph-bold ph-users-three"></i><div><b>Kelas kecil.</b> Instruktur mendampingi langsung di meja kerja setiap peserta.</div></li>
+              <li><i class="ph-bold ph-storefront"></i><div><b>Materi bisnis ikut diajarkan.</b> Anda pulang membawa templat nota, daftar harga, dan form garansi untuk konter sendiri.</div></li>
+              <li><i class="ph-bold ph-hand-heart"></i><div><b>Didampingi setelah lulus.</b> Grup alumni dan konsultasi tetap terbuka setelah kelas selesai.</div></li>
+              <li><i class="ph-bold ph-seal-check"></i><div><b>Lembaga resmi.</b> Terakreditasi LA-LPK; lulusan menerima sertifikat LPK.</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="cta-group">
-            <a href="#sejarah" class="btn-main">Sejarah Kami</a>
-            <a href="https://wa.me/6282171727337" class="btn-wa" target="_blank">
-              <i class="ph-bold ph-whatsapp-logo"></i> Chat Admin
+    <!-- ===== PERJALANAN (TIMELINE) ===== -->
+    <section id="sejarah" class="hq-section hq-section--soft">
+      <div class="container">
+        <div class="hq-head">
+          <span class="section-eyebrow">Perjalanan Kami</span>
+          <h2>18 Tahun Mencetak Teknisi Ponsel</h2>
+          <p>Membangun keahlian dan mencetak ribuan teknisi sejak 2008.</p>
+        </div>
+
+        <ol class="ab-tl">
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/CTA/hero1.jpg" alt="Kelas pelatihan LPK Quantum di Semarang" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2008</span>
+                <h3>Berdiri di Semarang</h3>
+                <p>Berdiri di Semarang sebagai pusat pelatihan teknisi ponsel.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/CTA/hero5.jpeg" alt="Kegiatan pelatihan LPK Quantum" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2012</span>
+                <h3>Izin &amp; Akreditasi</h3>
+                <p>Memperoleh izin penyelenggaraan LPK dan akreditasi LA-LPK.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/kerjasama/negeri/Bimtek Semarang 2018/bimtek-semarang-01.jpg" alt="Bimtek Kementerian Perindustrian Semarang 2018" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2018–2019</span>
+                <h3>Bimtek Kementerian Perindustrian</h3>
+                <p>Pelaksana Bimbingan Teknis Kementerian Perindustrian di Semarang, Tanjungpinang, Tasikmalaya, dan Bangka Selatan.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/kerjasama/Internasional/IOM 2023/IOM-11.jpg" alt="Pelatihan teknisi bersama IOM 2023" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2023</span>
+                <h3>IOM &amp; BAMUIS BNI</h3>
+                <p>Pelatihan teknisi bagi migran bersama IOM; pelatihan angkatan pertama bersama BAMUIS BNI.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/kerjasama/negeri/BNSP 2024/bnsp-01.jpg" alt="Sertifikasi kompetensi BNSP 2024" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2024</span>
+                <h3>BAMUIS BNI II &amp; BNSP</h3>
+                <p>Angkatan kedua bersama BAMUIS BNI dan sertifikasi kompetensi BNSP.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/section/tuna-daksa-berita.webp" alt="Pelatihan teknisi HP bagi penyandang disabilitas" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2025</span>
+                <h3>Pelatihan Disabilitas</h3>
+                <p>Pelatihan gratis teknisi HP bagi penyandang disabilitas, diliput Kompas TV, Suara Merdeka, dan media lainnya.</p>
+              </div>
+            </div>
+          </li>
+          <li class="ab-tl__item">
+            <div class="ab-tl__card">
+              <img src="../assets/photos/section/roadshow-pontianak.jpg" alt="Roadshow Quantum di Pontianak 2026" loading="lazy">
+              <div class="ab-tl__body">
+                <span class="ab-tl__year">2026</span>
+                <h3>Angkatan Kedua &amp; Roadshow</h3>
+                <p>Angkatan kedua pelatihan disabilitas, roadshow ke Bandung dan Pontianak, serta peluncuran aplikasi VBATPonsel.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== VISI, MISI & NILAI ===== -->
+    <section id="vision-mission" class="hq-section">
+      <div class="container">
+        <div class="hq-head">
+          <span class="section-eyebrow">Visi, Misi &amp; Nilai</span>
+          <h2>Komitmen Kami</h2>
+          <p>Pondasi utama kami dalam mencetak teknisi ponsel profesional sejak 2008.</p>
+        </div>
+
+        <div class="ab-vm">
+          <div class="ab-vm__card ab-vm__card--visi">
+            <span class="ab-vm__ico"><i class="ph-bold ph-eye"></i></span>
+            <span class="ab-vm__label">Visi</span>
+            <h3>Melatih Teknisi Ponsel yang <span>Amanah, Jujur, Handal dan Profesional.</span></h3>
+          </div>
+          <div class="ab-vm__card">
+            <span class="ab-vm__ico"><i class="ph-bold ph-target"></i></span>
+            <span class="ab-vm__label">Misi</span>
+            <ul class="ab-vm__list">
+              <li><i class="ph-bold ph-check-circle"></i> Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik</li>
+              <li><i class="ph-bold ph-check-circle"></i> Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan</li>
+              <li><i class="ph-bold ph-check-circle"></i> Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja</li>
+            </ul>
+          </div>
+          <div class="ab-vm__card">
+            <span class="ab-vm__ico"><i class="ph-bold ph-diamond"></i></span>
+            <span class="ab-vm__label">Nilai Inti</span>
+            <ul class="ab-vm__values">
+              <li><i class="ph-bold ph-star"></i> Profesionalisme</li>
+              <li><i class="ph-bold ph-lightbulb"></i> Inovasi Pengajaran</li>
+              <li><i class="ph-bold ph-handshake"></i> Integritas</li>
+              <li><i class="ph-bold ph-student"></i> Fokus Keberhasilan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIM INSTRUKTUR ===== -->
+    <section id="instructors" class="hq-section hq-section--soft">
+      <div class="container">
+        <div class="hq-head">
+          <span class="section-eyebrow">Tim Kami</span>
+          <h2>Belajar Langsung dari Praktisi</h2>
+          <p>Para instruktur berpengalaman di bidang telekomunikasi dan teknisi HP yang mendampingi Anda dari dasar sampai mahir.</p>
+        </div>
+
+        <div class="ab-team">
+          <article class="ab-team__card ab-team__card--lead">
+            <div class="ab-team__photo">
+              <img src="../assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno" loading="lazy">
+              <span class="ab-team__badge"><i class="ph-bold ph-crown-simple"></i> Direktur</span>
+            </div>
+            <div class="ab-team__body">
+              <h3>Tomie Sudiarno</h3>
+              <p class="ab-team__role">Direktur &amp; Instruktur Utama</p>
+              <p class="ab-team__desc">Praktisi reparasi ponsel selama 25 tahun</p>
+            </div>
+          </article>
+          <article class="ab-team__card">
+            <div class="ab-team__photo"><img src="../assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad" loading="lazy"></div>
+            <div class="ab-team__body">
+              <h3>Djunaedi Sammad</h3>
+              <p class="ab-team__role">Instruktur Senior Hardware</p>
+              <p class="ab-team__desc">Andal dalam perbaikan hardware</p>
+            </div>
+          </article>
+          <article class="ab-team__card">
+            <div class="ab-team__photo"><img src="../assets/photos/instruktur/yosi.webp" alt="Yossi Wahyu Hidayat" loading="lazy"></div>
+            <div class="ab-team__body">
+              <h3>Yossi Wahyu Hidayat</h3>
+              <p class="ab-team__role">Instruktur Hardware</p>
+              <p class="ab-team__desc">Andal dalam perbaikan hardware</p>
+            </div>
+          </article>
+          <article class="ab-team__card">
+            <div class="ab-team__photo"><img src="../assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma" loading="lazy"></div>
+            <div class="ab-team__body">
+              <h3>Nandieni Hisma</h3>
+              <p class="ab-team__role">Instruktur Software</p>
+              <p class="ab-team__desc">Andal dalam perbaikan software</p>
+            </div>
+          </article>
+          <article class="ab-team__card">
+            <div class="ab-team__photo"><img src="../assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih" loading="lazy"></div>
+            <div class="ab-team__body">
+              <h3>Ika Fitrianingsih</h3>
+              <p class="ab-team__role">Instruktur Bisnis</p>
+              <p class="ab-team__desc">Praktisi bisnis reparasi handphone</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA PENUTUP ===== -->
+    <section class="hq-cta">
+      <div class="container">
+        <div class="hq-cta-card">
+          <div class="hq-cta-copy">
+            <span class="hq-cta-badge"><span class="hq-cta-dot"></span> Mulai Sekarang</span>
+            <h2 class="hq-cta-title">Siap Mengembangkan <br><span>Karier Anda?</span></h2>
+            <p class="hq-cta-text">Hanya butuh 3 langkah untuk menjadi teknisi ponsel profesional bersama LPK Quantum. Konsultasinya gratis.</p>
+            <ul class="hq-cta-list">
+              <li><i class="ph-bold ph-check-circle"></i> 5.000+ alumni</li>
+              <li><i class="ph-bold ph-check-circle"></i> Offline &amp; Online</li>
+              <li><i class="ph-bold ph-check-circle"></i> Android &amp; iPhone</li>
+            </ul>
+          </div>
+          <div class="hq-cta-panel">
+            <ol class="ab-steps">
+              <li><span><i class="ph-bold ph-chats-circle"></i></span><div><strong>Konsultasi Gratis</strong><small>Pilih kelas yang pas dengan admin</small></div></li>
+              <li><span><i class="ph-bold ph-student"></i></span><div><strong>Pelatihan Intensif</strong><small>Praktik langsung didampingi instruktur</small></div></li>
+              <li><span><i class="ph-bold ph-storefront"></i></span><div><strong>Siap Buka Usaha</strong><small>Bekal teknis &amp; bisnis untuk konter sendiri</small></div></li>
+            </ol>
+            <a href="https://wa.me/6282171727337?text=Halo%20Admin%2C%20saya%20mau%20daftar%20kelas%20teknisi%20HP" target="_blank" rel="noopener" class="hq-cta-btn">
+              <i class="ph-bold ph-whatsapp-logo"></i> Daftar Sekarang
             </a>
+            <a href="programs.html" class="hq-cta-link">Lihat semua program <i class="ph-bold ph-arrow-right"></i></a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Sejarah & Profil Section -->
-    <section id="sejarah" class="sejarah-section py-5">
-  <div class="container">
-    <div class="section-title text-center mb-5">
-      <h2 class="fw-bold">Perjalanan <span class="text-orange">Kami</span></h2>
-      <p class="text-muted">Membangun keahlian dan mencetak ribuan teknisi sejak 2008.</p>
-    </div>
-
-    <div class="timeline-wrapper">
-      <div class="timeline-item left animate__animated animate__fadeInLeft">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2008</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/CTA/hero1.jpg" alt="Kelas pelatihan LPK Quantum di Semarang" loading="lazy">
-    </div>
-          <h3>Berdiri di Semarang</h3>
-          <p>Berdiri di Semarang sebagai pusat pelatihan teknisi ponsel.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item right animate__animated animate__fadeInRight">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2012</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/CTA/hero5.jpeg" alt="Kegiatan pelatihan LPK Quantum" loading="lazy">
-    </div>
-          <h3>Izin &amp; Akreditasi</h3>
-          <p>Memperoleh izin penyelenggaraan LPK dan akreditasi LA-LPK.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item left animate__animated animate__fadeInLeft">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2018–2019</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/kerjasama/negeri/Bimtek Semarang 2018/bimtek-semarang-01.jpg" alt="Bimtek Kementerian Perindustrian Semarang 2018" loading="lazy">
-    </div>
-          <h3>Bimtek Kementerian Perindustrian</h3>
-          <p>Pelaksana Bimbingan Teknis Kementerian Perindustrian di Semarang, Tanjungpinang, Tasikmalaya, dan Bangka Selatan.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item right animate__animated animate__fadeInRight">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2023</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/kerjasama/Internasional/IOM 2023/IOM-11.jpg" alt="Pelatihan teknisi bersama IOM 2023" loading="lazy">
-    </div>
-          <h3>IOM &amp; BAMUIS BNI</h3>
-          <p>Pelatihan teknisi bagi migran bersama IOM; pelatihan angkatan pertama bersama BAMUIS BNI.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item left animate__animated animate__fadeInLeft">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/kerjasama/negeri/BNSP 2024/bnsp-01.jpg" alt="Sertifikasi kompetensi BNSP 2024" loading="lazy">
-    </div>
-          <h3>BAMUIS BNI II &amp; BNSP</h3>
-          <p>Angkatan kedua bersama BAMUIS BNI dan sertifikasi kompetensi BNSP.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item right animate__animated animate__fadeInRight">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2025</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/section/tuna-daksa-berita.webp" alt="Pelatihan teknisi HP bagi penyandang disabilitas" loading="lazy">
-    </div>
-          <h3>Pelatihan Disabilitas</h3>
-          <p>Pelatihan gratis teknisi HP bagi penyandang disabilitas, diliput Kompas TV, Suara Merdeka, dan media lainnya.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item left animate__animated animate__fadeInLeft">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2026</div>
-        <div class="timeline-card">
-          <div class="timeline-img">
-      <img src="../assets/photos/section/roadshow-pontianak.jpg" alt="Roadshow Quantum di Pontianak 2026" loading="lazy">
-    </div>
-          <h3>Angkatan Kedua &amp; Roadshow</h3>
-          <p>Angkatan kedua pelatihan disabilitas, roadshow ke Bandung dan Pontianak, serta peluncuran aplikasi VBATPonsel.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Mengapa Memilih Kami Section -->
-     <section id="why-us" class="why-us-section py-5">
-  <div class="container">
-    <div class="section-title text-center mb-4">
-      <h2 class="fw-bold">Mengapa Memilih <span class="text-orange">Kami</span></h2>
-    </div>
-    <p class="section-subtitle text-center mb-5">
-      Diajar praktisi, bukan sekadar teori.
-    </p>
-
-    <div class="features-grid">
-      <div class="feature-card-visual">
-        <div class="feature-bg" style="background-image: url('../assets/photos/CTA/hero12.jpeg');"></div>
-        <div class="feature-overlay"></div>
-        <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="ph-bold ph-wrench"></i></div>
-          <h3>70% Praktik</h3>
-          <p>Setiap peserta Kelas Offline mendapat meja kerja sendiri, lengkap dengan solder station, multimeter, power supply, dan mikroskop.</p>
-        </div>
-      </div>
-
-      <div class="feature-card-visual">
-        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Desember 2024/desember242.jpeg');"></div>
-        <div class="feature-overlay"></div>
-        <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="ph-bold ph-users-three"></i></div>
-          <h3>Kelas Kecil</h3>
-          <p>Satu instruktur mendampingi paling banyak 8 peserta.</p>
-        </div>
-      </div>
-
-      <div class="feature-card-visual">
-        <div class="feature-bg" style="background-image: url('../assets/photos/instruktur/tomi1.JPG');"></div>
-        <div class="feature-overlay"></div>
-        <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="ph-bold ph-storefront"></i></div>
-          <h3>Materi Bisnis Ikut Diajarkan</h3>
-          <p>Anda pulang membawa templat nota, daftar harga, dan form garansi untuk konter sendiri.</p>
-        </div>
-      </div>
-
-      <div class="feature-card-visual">
-        <div class="feature-bg" style="background-image: url('../assets/photos/alumni-page/2024/Konter Sendiri/ks4.jpeg');"></div>
-        <div class="feature-overlay"></div>
-        <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="ph-bold ph-hand-heart"></i></div>
-          <h3>Didampingi Setelah Lulus</h3>
-          <p>Grup alumni dan konsultasi tetap terbuka setelah kelas selesai.</p>
-        </div>
-      </div>
-
-      <div class="feature-card-visual">
-        <div class="feature-bg" style="background-image: url('../assets/photos/kerjasama/Swasta/Gajah Ponsel/gajah-ponsel.jpg');"></div>
-        <div class="feature-overlay"></div>
-        <div class="feature-content-inner">
-          <div class="feature-icon-small"><i class="ph-bold ph-seal-check"></i></div>
-          <h3>Lembaga Resmi</h3>
-          <p>Terakreditasi LA-LPK; lulusan menerima sertifikat LPK.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section Visi Misi -->
- <section id="vision-mission" class="py-5 bg-white">
-  <div class="container">
-    <div class="section-title text-center mb-5">
-      <h2 class="fw-bold">Komitmen <span class="text-orange">Masa Depan</span></h2>
-      <p class="text-muted">Inilah pondasi utama kami dalam mencetak teknisi ponsel profesional sejak 2008.</p>
-    </div>
-
-    <div class="bento-vision-grid">
-      <div class="bento-vision-item bento-visi animate__animated animate__fadeInUp">
-        <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="ph-bold ph-eye"></i></div>
-          <span class="v-label">VISI KAMI</span>
-          <h3>Melatih Teknisi Ponsel Yang <span class="text-orange">Amanah, Jujur, Handal dan Profesional.</span></h3>
-        </div>
-      </div>
-
-      <div class="bento-vision-item bento-misi animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-        <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="ph-bold ph-target"></i></div>
-          <span class="v-label">MISI UTAMA</span>
-          <ul class="v-list-modern">
-            <li><i class="ph-bold ph-check-circle"></i> Menyelenggarakan pelatihan teknisi ponsel berbasis kompetensi dan praktik</li>
-            <li><i class="ph-bold ph-check-circle"></i> Menanamkan nilai amanah, jujur, dan profesional dalam setiap lulusan</li>
-            <li><i class="ph-bold ph-check-circle"></i> Memberikan pendampingan berkelanjutan agar teknisi handal dan siap kerja</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="bento-vision-item bento-values animate__animated animate__fadeInUp" style="animation-delay: 0git .4s;">
-        <div class="bento-vision-content">
-          <div class="v-icon-circle"><i class="ph-bold ph-diamond"></i></div>
-          <span class="v-label">NILAI INTI</span>
-          <ul class="v-list-modern grid-2">
-            <li><i class="ph-bold ph-star"></i> Profesionalisme</li>
-            <li><i class="ph-bold ph-lightbulb"></i> Inovasi Pengajaran</li>
-            <li><i class="ph-bold ph-handshake"></i> Integritas</li>
-            <li><i class="ph-bold ph-student"></i> Fokus Keberhasilan</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Struktur Organisasi -->
-     <section class="org-structure">
-  <div class="container">
-    <div class="section-title text-center animate__animated animate__fadeIn">
-      <h2>Struktur Organisasi</h2>
-      <p class="section-subtitle">Manajemen profesional di balik kesuksesan LPK Quantum.</p>
-    </div>
-
-    <div class="org-tree-wrapper animate__animated animate__fadeInUp">
-      <div class="org-level main-level">
-        <div class="org-node">
-          <div class="node-photo">
-            <img src="../assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno">
-          </div>
-          <div class="node-info">
-            <h4>Tomie Sudiarno</h4>
-            <span>Direktur &amp; Instruktur Utama</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="org-connector-v"></div>
-
-      <div class="org-level sub-level">
-        <div class="org-node">
-          <div class="node-photo">
-            <img src="../assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad">
-          </div>
-          <div class="node-info">
-            <h4>Djunaedi Sammad</h4>
-            <span>Instruktur Senior Hardware</span>
-          </div>
-        </div>
-        
-        <div class="org-node">
-          <div class="node-photo">
-            <img src="../assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma">
-          </div>
-          <div class="node-info">
-            <h4>Nandieni Hisma</h4>
-            <span>Instruktur Software</span>
-          </div>
-        </div>
-
-        <div class="org-node">
-          <div class="node-photo">
-            <img src="../assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih">
-          </div>
-          <div class="node-info">
-            <h4>Ika Fitrianingsih</h4>
-            <span>Instruktur Bisnis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Tim & Instruktur Section -->
-    <section id="instructors" class="py-5">
-  <div class="container">
-    <div class="section-title text-center">
-      <h2>Tim Instruktur</h2>
-    </div>
-    <p class="section-subtitle text-center">
-      Belajar langsung dari para praktisi berpengalaman di bidang telekomunikasi dan teknisi HP
-    </p>
-
-    <div class="swiper instructor-slider">
-      <div class="swiper-wrapper">
-        
-        <div class="swiper-slide">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/tomi1.JPG" alt="Tomie Sudiarno" loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Tomie Sudiarno</h3>
-              <p class="instructor-role">Direktur &amp; Instruktur Utama</p>
-              <p class="instructor-desc">Praktisi reparasi ponsel selama 25 tahun</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/jun.jpeg" alt="Djunaedi Sammad" loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Djunaedi Sammad</h3>
-              <p class="instructor-role">Instruktur Senior Hardware</p>
-              <p class="instructor-desc">Andal dalam perbaikan hardware</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/yosi.webp" alt="Yossi Wahyu Hidayat" loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Yossi Wahyu Hidayat</h3>
-              <p class="instructor-role">Instruktur Hardware</p>
-              <p class="instructor-desc">Andal dalam perbaikan hardware</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/nandieni-hisma.jpeg" alt="Nandieni Hisma" loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Nandieni Hisma</h3>
-              <p class="instructor-role">Instruktur Software</p>
-              <p class="instructor-desc">Andal dalam perbaikan software</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="instructor-card">
-            <div class="instructor-image">
-              <img src="../assets/photos/instruktur/ika.jpeg" alt="Ika Fitrianingsih" loading="lazy" />
-            </div>
-            <div class="instructor-info">
-              <h3 class="instructor-name">Ika Fitrianingsih</h3>
-              <p class="instructor-role">Instruktur Bisnis</p>
-              <p class="instructor-desc">Praktisi Bisnis Reparasi Handphone</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
-
-<!-- why -->
-
-    <!-- Lightbox Modal -->
-    <div id="lightboxModal" class="lightbox-modal">
-      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-      <div class="lightbox-content">
-        <img id="lightboxImage" src="" alt="" />
-        <div id="lightboxCaption" class="lightbox-caption"></div>
-      </div>
-    </div>
-
-    <!-- CTA Section -->
-    <section class="cta-section-modern">
-  <div class="cta-bg-overlay"></div>
-  <div class="container position-relative">
-    <div class="cta-header animate__animated animate__fadeInDown">
-      <span class="cta-badge">MULAI SEKARANG</span>
-      <h2 class="cta-main-title">Siap Mengembangkan <br><span class="text-orange">Karier Anda?</span></h2>
-      <p class="cta-subtitle">Hanya butuh 3 langkah untuk menjadi teknisi ponsel profesional bersama LPK Quantum.</p>
-    </div>
-
-    <div class="cta-roadmap-flow">
-      <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="ph-bold ph-chats-circle"></i></div>
-        <p>Konsultasi Gratis</p>
-      </div>
-      <div class="roadmap-connector"></div>
-      <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="ph-bold ph-student"></i></div>
-        <p>Pelatihan Intensif</p>
-      </div>
-      <div class="roadmap-connector"></div>
-      <div class="roadmap-item">
-        <div class="roadmap-icon"><i class="ph-bold ph-storefront"></i></div>
-        <p>Siap Buka Usaha</p>
-      </div>
-    </div>
-
-    <div class="cta-btns-wrapper">
-      <a href="https://wa.me/6282171727337" target="_blank" class="btn-cta-primary pulse-orange">
-        <i class="ph-bold ph-whatsapp-logo"></i> DAFTAR SEKARANG
-      </a>
-      <p class="trust-note"><i class="ph-bold ph-check-circle"></i> Bergabung dengan 5000+ alumni sukses</p>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="qf">
@@ -3034,11 +3004,10 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
     </a>
 
     <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top">
+    <a href="#" class="back-to-top">
       <i class="ph-bold ph-arrow-up"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
       // Mobile Menu Toggle
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
@@ -3169,56 +3138,21 @@ if (themeToggle) {
         return re.test(email);
       }
 
-var swiperHero = new Swiper(".hero-slider", {
-  effect: "fade", // Efek transisi halus (memudar)
-  loop: true,
-  autoplay: {
-    delay: 3000, // Ganti foto setiap 5 detik
-    disableOnInteraction: false,
-  },
-  speed: 1000, // Kecepatan transisi 1 detik
-});
-
-var swiperVision = new Swiper(".vision-mission-slider", {
-  slidesPerView: 1.1,
-  spaceBetween: 20,
-  centeredSlides: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    // Ketika layar lebih besar dari 768px (Desktop)
-    769: {
-      enabled: false, // MATIKAN SLIDER
-      slidesPerView: 3,
-      spaceBetween: 30,
-      centeredSlides: false,
-    }
-  }
-});
-
-var swiperInstructors = new Swiper(".instructor-slider", {
-  slidesPerView: 1.1, // Biar di HP kelihatan kartu selanjutnya ngintip
-  spaceBetween: 20,
-  centeredSlides: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    // Di layar komputer (Desktop), tunjukkan 3 atau 4 kartu langsung
-    992: {
-      slidesPerView: 4,
-      centeredSlides: false,
-      spaceBetween: 30
-    },
-    768: {
-      slidesPerView: 2,
-      centeredSlides: false
-    }
-  }
-});
+    </script>
+    <script>
+      // Navbar transparan selama masih di area hero (sama dengan beranda)
+      (function () {
+        var header = document.querySelector("header.qh");
+        var hero = document.querySelector(".ab-hero");
+        function updateHeader() {
+          if (!header || !hero) return;
+          var batas = hero.offsetHeight - header.offsetHeight - 40;
+          header.classList.toggle("header--top", window.scrollY < batas);
+        }
+        window.addEventListener("scroll", updateHeader, { passive: true });
+        window.addEventListener("resize", updateHeader);
+        updateHeader();
+      })();
     </script>
   </body>
 </html>

@@ -431,9 +431,13 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 [class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<style id="qh-top-style">
+/* ruang untuk navbar fixed di atas hero */
+header.hero{padding-top:calc(clamp(4rem,9vw,7rem) + 70px)}
+</style>
 </head>
 <body>
-<header class="qh">
+<header class="qh qh-fixed header--top">
       <div class="container header-content">
         <div class="logo">
           <a href="../index.html" aria-label="Beranda"><img
@@ -817,5 +821,20 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
   });
 })();
 </script>
+    <script id="qh-top-script">
+      // Navbar transparan selama masih di area hero (sama dengan beranda)
+      (function () {
+        var header = document.querySelector("header.qh");
+        var hero = document.querySelector(".ab-hero, .qp-hero, .hero-programs-v2, .hero-small, .news-hero, header.hero");
+        function updateHeader() {
+          if (!header || !hero) return;
+          var batas = hero.offsetHeight - header.offsetHeight - 40;
+          header.classList.toggle("header--top", window.scrollY < batas);
+        }
+        window.addEventListener("scroll", updateHeader, { passive: true });
+        window.addEventListener("resize", updateHeader);
+        updateHeader();
+      })();
+    </script>
 </body>
 </html>

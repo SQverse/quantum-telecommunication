@@ -1232,11 +1232,43 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
 [class*="hero"] .text-orange,.cta-title span,.cta-main-title span,.cta-main-title .text-orange{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
-  </head>
+  <style id="qp-style">
+/* ===== Hero foto halaman (navbar transparan di atasnya), identik di semua halaman yang memakainya ===== */
+.qp-hero{position:relative;min-height:72vh;min-height:72svh;display:flex;align-items:center;justify-content:center;overflow:hidden!important;color:#fff;text-align:center;padding:0!important;margin:0;opacity:1!important;transform:none!important}
+.qp-hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:qpZoom 18s ease-out forwards}
+@keyframes qpZoom{to{transform:scale(1)}}
+.qp-hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,50,.6) 0%,rgba(10,25,50,.68) 55%,rgba(10,25,50,.9) 100%)}
+.qp-hero__content{position:relative;z-index:2;width:100%;max-width:880px;padding:130px 24px 80px;display:flex;flex-direction:column;align-items:center;box-sizing:border-box}
+.qp-hero__content>*{opacity:0;animation:qpFadeUp .9s ease forwards}
+.qp-hero__content>*:nth-child(2){animation-delay:.15s}
+.qp-hero__content>*:nth-child(3){animation-delay:.3s}
+.qp-hero__content>*:nth-child(4){animation-delay:.45s}
+@keyframes qpFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.qp-crumb{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:0 0 20px;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(5,20,45,.25);font:600 13px/1.3 "Poppins",sans-serif;letter-spacing:.3px;color:#fff}
+.qp-crumb a{color:rgba(255,255,255,.78);text-decoration:none;transition:color .2s ease}
+.qp-crumb a:hover{color:#fff}
+.qp-crumb i{font-size:11px;color:#5cc8f0}
+.qp-hero__title{font:800 clamp(2rem,5vw,3.4rem)/1.15 "Poppins",sans-serif!important;color:#fff!important;margin:0 0 18px!important;max-width:820px;text-shadow:0 6px 30px rgba(0,0,0,.5);text-transform:none;letter-spacing:0}
+.qp-hero__title span{color:#5cc8f0!important;-webkit-text-fill-color:#5cc8f0!important;background:none!important}
+.qp-hero__lead{font-family:"Poppins",sans-serif;font-size:clamp(.98rem,1.9vw,1.15rem);line-height:1.65;color:#e6efff!important;max-width:660px;margin:0 0 30px!important;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.qp-hero__actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.qp-hero__btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;font:600 .95rem/1.2 "Poppins",sans-serif;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.qp-hero__btn--primary{background:linear-gradient(135deg,#16a5e4 0%,#064ec1 100%);color:#fff;box-shadow:0 8px 24px rgba(22,146,216,.4)}
+.qp-hero__btn--ghost{color:#fff;border:1.5px solid rgba(255,255,255,.8);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.qp-hero__btn:hover{transform:translateY(-3px);color:#fff}
+.qp-hero__btn--ghost:hover{background:rgba(255,255,255,.2)}
+@media (max-width:600px){
+  .qp-hero__content{padding:110px 20px 64px}
+  .qp-crumb{font-size:12px;padding:6px 14px;margin-bottom:14px}
+  .qp-hero__btn{padding:12px 22px;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){.qp-hero__bg,.qp-hero__content>*{animation:none;opacity:1;transform:none}}
+</style>
+</head>
   <body>
 
     <!-- Header & Navigation -->
-    <header class="qh">
+    <header class="qh qh-fixed header--top">
       <div class="container header-content">
         <div class="logo">
           <a href="../../index.html" aria-label="Beranda"><img
@@ -1271,36 +1303,19 @@ body .section-title + .section-subtitle{margin:-30px auto 44px!important;text-al
       </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <div class="container breadcrumb-content">
-        <a href="../../index.html">Beranda</a>
-        <i class="ph-bold ph-caret-right"></i>
-        <a href="pemerintah.html">Portofolio</a>
-        <i class="ph-bold ph-caret-right"></i>
-        <span>Swasta</span>
-      </div>
-    </div>
-
-    <!-- Hero Section -->
-     <section class="hero-simple-gov">
-  <div class="container">
-    <div class="row min-vh-100 align-items-center">
-      
-      <div class="col-lg-6 animate__animated animate__fadeIn">
-        <h1 class="simple-title">Kerja Sama Dengan <br>Lembaga Swasta</h1>
-        <p class="simple-text">
-          Menjadi mitra penyedia tenaga kerja ahli dan pelatihan kustom untuk kebutuhan industri teknisi ponsel.
-        </p>
-        <div class="simple-actions">
-          <a href="#kerjasama" class="btn-simple-primary">Lihat Kemitraan</a>
-          <a href="../../assets/photos/pdf/Compro Quantum Telecommunication.pdf" target="_blank" class="btn-simple-link">Company Profile <i class="ph-bold ph-arrow-square-out"></i></a>
+    <section class="qp-hero">
+      <div class="qp-hero__bg" style="background-image: url('../../assets/photos/kerjasama/Swasta/Gajah Ponsel/gajah-ponsel.jpg');"></div>
+      <div class="qp-hero__overlay"></div>
+      <div class="qp-hero__content">
+        <div class="qp-crumb"><a href="../../index.html">Beranda</a><i class="ph-bold ph-caret-right" aria-hidden="true"></i><a href="pemerintah.html">Portofolio</a><i class="ph-bold ph-caret-right" aria-hidden="true"></i><span>Swasta</span></div>
+        <h1 class="qp-hero__title">Kerja Sama dengan <span>Lembaga Swasta</span></h1>
+        <p class="qp-hero__lead">Menjadi mitra penyedia tenaga kerja ahli dan pelatihan kustom untuk kebutuhan industri teknisi ponsel.</p>
+        <div class="qp-hero__actions">
+          <a href="#kerjasama-swasta" class="qp-hero__btn qp-hero__btn--primary">Lihat Kemitraan <i class="ph-bold ph-arrow-down"></i></a>
+          <a href="../../assets/photos/pdf/Compro Quantum Telecommunication.pdf" target="_blank" rel="noopener" class="qp-hero__btn qp-hero__btn--ghost">Company Profile <i class="ph-bold ph-arrow-square-out"></i></a>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Kerjasama Swasta Section -->
     <section id="kerjasama-swasta">
@@ -1774,5 +1789,20 @@ if (themeToggle) {
         return re.test(email);
       }
     </script>
-  </body>
+      <script id="qh-top-script">
+      // Navbar transparan selama masih di area hero (sama dengan beranda)
+      (function () {
+        var header = document.querySelector("header.qh");
+        var hero = document.querySelector(".ab-hero, .qp-hero, .hero-programs-v2, .hero-small, .news-hero, header.hero");
+        function updateHeader() {
+          if (!header || !hero) return;
+          var batas = hero.offsetHeight - header.offsetHeight - 40;
+          header.classList.toggle("header--top", window.scrollY < batas);
+        }
+        window.addEventListener("scroll", updateHeader, { passive: true });
+        window.addEventListener("resize", updateHeader);
+        updateHeader();
+      })();
+    </script>
+</body>
 </html>
